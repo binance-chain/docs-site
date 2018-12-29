@@ -17,7 +17,10 @@ theme:
 nav:
   - 'Home': index.md
   - API Reference:
-    - DEX API: api-reference/dex-api.md
+    - HTTP API - Paths: api-reference/dex-api/paths.md
+    - HTTP API - Objects: api-reference/dex-api/definitions.md
+    - WebSockets - Paths: api-reference/dex-api/ws-connection.md
+    - WebSockets - Streams: api-reference/dex-api/ws-streams.md
     - Node RPC: api-reference/node-rpc.md
     - SDK: api-reference/sdk.md
     - Commands: api-reference/cli.md
