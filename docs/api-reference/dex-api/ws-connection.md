@@ -1,25 +1,23 @@
-## Connection
+## WebSocket Connections
 
-The sockets service starts by establishing a TCP server that accepts new end-users' connections. Upon a new connection, the service stores the user connection into the memory with a initital expiry after 60 minutes.
+The DEX exposes several data streams over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
 
-- The base endpoint is: **https://testnet-dex.binance.org/api/**
-- Streams can be access either in a single raw stream or a combined stream
-- All symbols for streams are lowercase
-- A single connection to **https://testnet-dex.binance.org/api/** is only valid for 24 hours; expect to be disconnected at the 24 hour mark
+- The base endpoint is: **wss://testnet-dex.binance.org/api/**.
+- Each connection can consume a single stream or multiple streams may be multiplexed through one connection for more complex apps.
+- A single connection to **https://testnet-dex.binance.org/api/** is only valid for 24 hours, so expect to be disconnected at around the 24 hour mark. Your app should handle this with reconnection logic.
+- All symbols in stream names are lowercase.
 
-There are 2 ways to connect to the WS, **the first one** is using different connections for custom URL connections. While **the second method** is through a single connection to the root service and use a `Subscribe/Unsubscribe` method to start or stop receiving feeds for different streams.
+Stream names may be provided in the URL **or** there is a mechanism to `subscribe` to consume streams on demand through one connection.
+Examples for each of these methods are provided below in JavaScript:
 
-Examples are written by javascript.
+### Method 1: Connect with stream names in the URL
 
-### 1 Connect via URL streams
+Using this method, stream names are specified in the URLs used to connect to the data streams:
 
-Can be established through a different URL streams as follows:
+- Single streams may be accessed at **/ws/\<streamName\>**
+- Combined streams may be accessed at **/stream?streams=\<streamName1\>/\<streamName2\>/\<streamName3\>** (etc.)
 
-- Raw streams are accessed at **/ws/\<streamName\>**
-- Combined streams are accessed at **/stream?streams=\<streamName1\>/\<streamName2\>/\<streamName3\>**
-- Ex: to establish a connection
-
-> please note all the example code are in Javascript.
+**Example:** Various methods of connecting to streams where stream names are provided in URLs:
 
 ```javascript
   // for personal streams, ex: Account & Orders
@@ -40,28 +38,28 @@ Can be established through a different URL streams as follows:
   const combinedFeeds = new WebSocket("ws://testnet-dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
-### 2 Connect via Subscribe method
+### Method 2: Subscribe to streams on demand
 
-Connect using subscribe/unsubscribe socket messages through a single connection, Ex: To establish a connection:
+Using this method, streams are be consumed via subscribe and unsubscribe commands, sent through a single WebSocket connection.
 
 ```javascript
     const conn = new WebSocket("ws://testnet-dex.binance.org/api");
     conn.onopen = function(evt) {
-        // send messages
+        // send Subscribe/Unsubscribe messages here (see below)
     }
-
     conn.onmessage = function(evt) {
-        console.log(evt.data);
+        console.info('received data', evt.data);
     };
-
     conn.onerror = function(evt) {
-        console.log(evt.data);
+        console.error('an error occurred', evt.data);
     };
 ```
 
-After successfuly connection, a user can subscribe/unsubscribe to different topics.
+After connecting successfully, a user can subscribe/unsubscribe to different topics.
 
-  Ex: To subscribe to orders events; a user needs to send socket message with the payload
+#### Examples
+
+**Example:** To subscribe to orders events and market depth updates, a user needs to send socket messages with the `subscribe` payloads as below:
 
 ```javascript
     const conn = new WebSocket("ws://testnet-dex.binance.org/api");
@@ -75,7 +73,7 @@ After successfuly connection, a user can subscribe/unsubscribe to different topi
     }
 ```
 
-- Ex: To unsubscribe from orders events; a user needs to send socket message with the payload
+**Example:** To unsubscribe from orders events, a user needs to send socket message with the payloads as below:
 
 ```javascript
     // unsubscribe from topic
@@ -85,7 +83,7 @@ After successfuly connection, a user can subscribe/unsubscribe to different topi
     conn.send(JSON.stringify({ method: "unsubscribe", topic: "marketDepth", symbols: ["BNB_BTC"] }));
 ```
 
-- Ex: To extend connection life; a user needs to send socket message with the payload
+**Example:** To extend connection life, a user needs to send a message with a payload using the `keepAlive` method:
 
 ```javascript
     // This will extend the connection time to another 60 minutes
@@ -93,7 +91,7 @@ After successfuly connection, a user can subscribe/unsubscribe to different topi
     conn.send(JSON.stringify({ method: "keepAlive" }));
 ```
 
-- Ex: To close a connection life; a user needs to send socket message with the payload
+**Example:** To close a connection, a user needs to send socket message with the payload as below:
 
 ```javascript
     // Connections will auto close after 60 minutes by default if no "keepAlive" messages received
