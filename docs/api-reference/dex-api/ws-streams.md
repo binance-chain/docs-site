@@ -1,10 +1,10 @@
 ## Streams
 
-### 1 Orders
+### 1. Orders
 
-Returns individual orders updates.
+Returns individual order updates.
 
-Examples are written by javascript.
+Examples are written in JavaScript.
 
 **Topic Name:** orders | Stream: /ws/userAddress
 
@@ -81,7 +81,7 @@ Examples are written by javascript.
 ]
 ```
 
-### 2 Account
+### 2. Account
 
 Return account updates.
 
@@ -129,7 +129,7 @@ Return account updates.
 }
 ```
 
-### 3 Trades
+### 3. Trades
 
 Returns individual trade updates.
 
@@ -184,9 +184,9 @@ Returns individual trade updates.
 ]
 ```
 
-### 4 Diff. Depth Stream
+### 4. Diff. Depth Stream
 
-Order book price and quantity depth updates used to locally manage an order book.
+Order book price and quantity depth updates used to locally keep an order book.
 
 **Topic Name:** marketDiff | Stream: \<symbol\>@marketDiff
 
@@ -228,7 +228,7 @@ Order book price and quantity depth updates used to locally manage an order book
 }
 ```
 
-### 5 Book Depth Streams
+### 5. Book Depth Streams
 
 Top 20 levels of bids and asks.
 
@@ -270,9 +270,9 @@ Top 20 levels of bids and asks.
 }
 ```
 
-### 6 Kline/Candlestick Streams
+### 6. Kline/Candlestick Streams
 
-The Kline/Candlestick Stream push updates to the current klines/candlestick every second.
+The kline/candlestick stream pushes updates to the current klines/candlestick every second.
 
 **Kline/Candlestick chart intervals:**
 
@@ -338,9 +338,9 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 }
 ```
 
-### 7 Individual Symbol Ticker Streams
+### 7. Individual Symbol Ticker Streams
 
-24hr Ticker statistics for a single symbol pushed every second.
+24hr Ticker statistics for a single symbol are pushed every second.
 
 **Topic Name:** ticker | Stream: \<symbol\>@ticker
 
@@ -387,9 +387,9 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 }
 ```
 
-### 8 All Symbols Ticker Streams
+### 8. All Symbols Ticker Streams
 
-24hr Ticker statistics for a all symbols pushed every second.
+24hr Ticker statistics for a all symbols are pushed every second.
 
 **Topic Name:** allTickers | Stream: $all@ticker
 
@@ -441,9 +441,9 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 ]
 ```
 
-### 9 Individual Symbol Mini Ticker Streams
+### 9. Individual Symbol Mini Ticker Streams
 
-Array of 24hr Mini Ticker statistics for a single symbol pushed every second.
+A ticker for a single symbol is pushed every second.
 
 **Topic Name:** miniTicker | Stream: \<symbol\>@miniTicker
 
@@ -476,7 +476,7 @@ Array of 24hr Mini Ticker statistics for a single symbol pushed every second.
 }
 ```
 
-### 10 All Symbols Mini Ticker Streams
+### 10. All Symbols Mini Ticker Streams
 
 Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
 
@@ -516,9 +516,9 @@ Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
 ]
 ```
 
-### 11 Blockheight
+### 11. Blockheight
 
-Continues update for the latest blockheight
+Streams the latest block height.
 
 **Topic Name:** blockheight | Stream: $all@blockheight
 
