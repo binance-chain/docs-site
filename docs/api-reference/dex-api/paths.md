@@ -3,10 +3,14 @@
 ## Paths
 
 <a name="gettradestatisticsdtousingget"></a>
-### trades statistics by symbol
+### Get Trade Statistics
 ```
 GET /api/query/trades-statistics
 ```
+
+
+#### Description
+Gets statistics about market trades for a given pair symbol.
 
 
 #### Parameters
@@ -28,7 +32,7 @@ GET /api/query/trades-statistics
 
 #### Produces
 
-* `\*/*`
+* `application/json`
 
 
 #### Tags
@@ -37,10 +41,14 @@ GET /api/query/trades-statistics
 
 
 <a name="getaccount"></a>
-### Gets account metadata given an address
+### Get Account
 ```
 GET /api/v1/account/{address}
 ```
+
+
+#### Description
+Gets account metadata for an address.
 
 
 #### Parameters
@@ -72,10 +80,14 @@ GET /api/v1/account/{address}
 
 
 <a name="getaccountsequence"></a>
-### Gets the current sequence for an address
+### Get Account Sequence
 ```
 GET /api/v1/account/{address}/sequence
 ```
+
+
+#### Description
+Gets an account sequence for an address.
 
 
 #### Parameters
@@ -107,14 +119,14 @@ GET /api/v1/account/{address}/sequence
 
 
 <a name="getblocktradesusingget"></a>
-### Trades grouped by block
+### Get Trades in Block
 ```
 GET /api/v1/block-trades
 ```
 
 
 #### Description
-Get historical trades per block. Order by block height DESC.
+Gets historical trades per block. Sorted by block height in descending order.
 
 
 #### Parameters
@@ -150,14 +162,14 @@ Get historical trades per block. Order by block height DESC.
 
 
 <a name="broadcasttx"></a>
-### Broadcasts a transaction, or a batch of up to 5 transactions, given their signed binary forms.
+### Post Transaction to Broadcast
 ```
 POST /api/v1/broadcast
 ```
 
 
 #### Description
-Use this API to broadcast your own signed transactions. Transactions must be sent in hex format in plain text, separated by commas (,).
+Broadcasts a signed transaction. A single transaction must be sent in hex format in plain text.
 
 
 #### Parameters
@@ -205,14 +217,14 @@ Use this API to broadcast your own signed transactions. Transactions must be sen
 
 
 <a name="getcryptocurrencyrateusingget"></a>
-### CryptoCurrency rate
+### Get Currency Exchange Rate
 ```
 GET /api/v1/crypto-currency
 ```
 
 
 #### Description
-Get exchange rate of crypto currency off Binance Chain. The rate is updated every 30 seconds.
+Gets exchange rates for tokens on Binance DEX. The rate is updated every 30 seconds.
 
 
 #### Responses
@@ -236,10 +248,14 @@ Get exchange rate of crypto currency off Binance Chain. The rate is updated ever
 
 
 <a name="getdepth"></a>
-### getDepth
+### Get Order Depth Data
 ```
 GET /api/v1/depth
 ```
+
+
+#### Description
+Gets the order book depth data for a given pair symbol.
 
 
 #### Parameters
@@ -271,14 +287,14 @@ GET /api/v1/depth
 
 
 <a name="getfiatcurrencyrateusingget"></a>
-### Fiat currency rate
+### Get Fiat Exchange Rate
 ```
 GET /api/v1/fiat-currency
 ```
 
 
 #### Description
-Get exchange rate of fiat currency. The rate is updated every 5 minutes.
+Gets exchange rates of fiat currency to crypto currency. The rate is updated every 5 minutes.
 
 
 #### Responses
@@ -302,10 +318,14 @@ Get exchange rate of fiat currency. The rate is updated every 5 minutes.
 
 
 <a name="getfrontierinfo"></a>
-### Obtains frontier runtime data
+### Get Frontier Information
 ```
 GET /api/v1/frontier-info
 ```
+
+
+#### Description
+Gets runtime information about the frontier services.
 
 
 #### Responses
@@ -334,14 +354,14 @@ GET /api/v1/frontier-info
 
 
 <a name="getcandlestickbarsusingget"></a>
-### Kline
+### Get Candlestick Bars
 ```
 GET /api/v1/klines
 ```
 
 
 #### Description
-Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
+Gets candlestick/kline bars for a symbol. Bars are uniquely identified by their open time.
 
 
 #### Parameters
@@ -359,10 +379,7 @@ Kline/candlestick bars for a symbol. Klines are uniquely identified by their ope
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**200**|OK|< [CandlestickVo](#candlestickvo) > array|
-|**400**|Bad Request|[Error](#error)|
-|**404**|Not Found|No Content|
-|**default**|Generic error response|[Error](#error)|
+|**200**|OK|< object > array|
 
 
 #### Produces
@@ -375,11 +392,23 @@ Kline/candlestick bars for a symbol. Klines are uniquely identified by their ope
 * market
 
 
+#### Example HTTP response
+
+##### Response 200
+```json
+" [[\n1499040000000,      // Open time\n\"0.01634790\",       // Open\n\"0.80000000\",       // High\n\"0.01575800\",       // Low\n\"0.01577100\",       // Close\n\"148976.11427815\",  // Volume\n1499644799999,      // Close time\n\"2434.19055334\",    // Quote asset volume\n308                // Number of trades\n]] "
+```
+
+
 <a name="getpairs"></a>
-### Gets a list of market pairs.
+### Get Market Pairs
 ```
 GET /api/v1/markets
 ```
+
+
+#### Description
+Gets the list of market pairs that have been listed.
 
 
 #### Responses
@@ -403,10 +432,14 @@ GET /api/v1/markets
 
 
 <a name="getnodeinfo"></a>
-### Obtain blockchain node runtime metadata
+### Get Node Information
 ```
 GET /api/v1/node-info
 ```
+
+
+#### Description
+Gets runtime information about the node.
 
 
 #### Responses
@@ -428,14 +461,14 @@ GET /api/v1/node-info
 
 
 <a name="getclosedordersusingget"></a>
-### Closed order
+### Get Closed Orders
 ```
 GET /api/v1/orders/closed
 ```
 
 
 #### Description
-Get closed (filled and cancelled) openOrders for a given address
+Gets closed (filled and cancelled) orders for a given address.
 
 
 #### Parameters
@@ -470,14 +503,14 @@ Get closed (filled and cancelled) openOrders for a given address
 
 
 <a name="getopenordersusingget"></a>
-### Open order
+### Get Open Orders
 ```
 GET /api/v1/orders/open
 ```
 
 
 #### Description
-Get open openOrders for a given address
+Gets open orders for a given address.
 
 
 #### Parameters
@@ -511,14 +544,14 @@ Get open openOrders for a given address
 
 
 <a name="getorderusingget"></a>
-### Order
+### Get Order
 ```
 GET /api/v1/orders/{id}
 ```
 
 
 #### Description
-Get an individual order's status
+Gets metadata for an individual order.
 
 
 #### Parameters
@@ -549,10 +582,14 @@ Get an individual order's status
 
 
 <a name="getpeers"></a>
-### Obtain the peers list
+### Get Peers
 ```
 GET /api/v1/peers
 ```
+
+
+#### Description
+Gets the list of network peers.
 
 
 #### Responses
@@ -577,14 +614,14 @@ GET /api/v1/peers
 
 
 <a name="get24hrpricestatisticsusingget"></a>
-### 24 hour price
+### Get Ticker
 ```
 GET /api/v1/ticker/24hr
 ```
 
 
 #### Description
-24 hour price change statistics.
+Gets 24 hour price change statistics for a market pair symbol.
 
 
 #### Parameters
@@ -615,10 +652,14 @@ GET /api/v1/ticker/24hr
 
 
 <a name="gettime"></a>
-### getTime
+### Get Block Time
 ```
 GET /api/v1/time
 ```
+
+
+#### Description
+Gets the latest block time and the current time according to the HTTP service.
 
 
 #### Responses
@@ -650,10 +691,14 @@ GET /api/v1/time
 
 
 <a name="gettokens"></a>
-### Gets a list of available tokens.
+### Get Tokens
 ```
 GET /api/v1/tokens
 ```
+
+
+#### Description
+Gets a list of tokens that have been issued.
 
 
 #### Responses
@@ -677,14 +722,14 @@ GET /api/v1/tokens
 
 
 <a name="gettradesusingget"></a>
-### Trades
+### Get Trades
 ```
 GET /api/v1/trades
 ```
 
 
 #### Description
-Get historical trades.
+Gets a list of historical trades.
 
 
 #### Parameters
@@ -726,14 +771,14 @@ Get historical trades.
 
 
 <a name="txnsusingget"></a>
-### Transactions
+### Get Transactions
 ```
 GET /api/v1/transactions
 ```
 
 
 #### Description
-Get transactions.
+Gets a list of transactions.
 
 
 #### Parameters
@@ -763,7 +808,7 @@ Get transactions.
 
 #### Produces
 
-* `\*/*`
+* `application/json`
 
 
 #### Tags
@@ -772,10 +817,14 @@ Get transactions.
 
 
 <a name="gettransaction"></a>
-### Gets metadata for an individual transaction
+### Get Transaction
 ```
 GET /api/v1/tx/{hash}
 ```
+
+
+#### Description
+Gets transaction metadata by transaction ID.
 
 
 #### Parameters
@@ -807,10 +856,14 @@ GET /api/v1/tx/{hash}
 
 
 <a name="getvalidators"></a>
-### Obtain blockchain validators list
+### Get Validators
 ```
 GET /api/v1/validators
 ```
+
+
+#### Description
+Gets the list of consensus validators.
 
 
 #### Responses
