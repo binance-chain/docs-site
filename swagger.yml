@@ -56,7 +56,8 @@ paths:
     get:
       tags:
       - misc
-      summary: getTime
+      summary: Get Block Time
+      description: Gets the latest block time and the current time according to the HTTP service.
       operationId: getTime
       produces:
       - application/json
@@ -81,7 +82,8 @@ paths:
             $ref: "#/definitions/Error"
   /api/v1/node-info:
     get:
-      summary: 'Obtain blockchain node runtime metadata'
+      summary: Get Node Information
+      description: Gets runtime information about the node.
       operationId: getNodeInfo
       produces:
       - application/json
@@ -97,7 +99,8 @@ paths:
             description: 'Represents block height, current timestamp and the number of connected peers.'
   /api/v1/validators:
     get:
-      summary: 'Obtain blockchain validators list'
+      summary: Get Validators
+      description: Gets the list of consensus validators.
       operationId: getValidators
       produces:
       - application/json
@@ -121,7 +124,8 @@ paths:
             $ref: "#/definitions/Error"
   /api/v1/peers:
     get:
-      summary: Obtain the peers list
+      summary: Get Peers
+      description: Gets the list of network peers.
       operationId: getPeers
       produces:
       - application/json
@@ -145,7 +149,8 @@ paths:
             $ref: "#/definitions/Error"
   /api/v1/frontier-info:
     get:
-      summary: 'Obtains frontier runtime data'
+      summary: Get Frontier Information
+      description: Gets runtime information about the frontier services.
       operationId: getFrontierInfo
       produces:
       - application/json
@@ -167,7 +172,8 @@ paths:
                 format: int64
   /api/v1/account/{address}:
     get:
-      summary: 'Gets account metadata given an address'
+      summary: Get Account
+      description: Gets account metadata for an address.
       operationId: getAccount
       produces:
       - application/json
@@ -198,7 +204,8 @@ paths:
         type: string
   /api/v1/account/{address}/sequence:
     get:
-      summary: 'Gets the current sequence for an address'
+      summary: Get Account Sequence
+      description: Gets an account sequence for an address.
       operationId: getAccountSequence
       produces:
       - application/json
@@ -229,7 +236,8 @@ paths:
         type: string
   /api/v1/tx/{hash}:
     get:
-      summary: 'Gets metadata for an individual transaction'
+      summary: Get Transaction
+      description: Gets transaction metadata by transaction ID.
       operationId: getTransaction
       produces:
       - application/json
@@ -262,7 +270,8 @@ paths:
     get:
       tags:
       - tokens
-      summary: Gets a list of available tokens.
+      summary: Get Tokens
+      description: Gets a list of tokens that have been issued.
       operationId: getTokens
       produces:
       - application/json
@@ -285,7 +294,8 @@ paths:
     get:
       tags:
       - market
-      summary: Gets a list of market pairs.
+      summary: Get Market Pairs
+      description: Gets the list of market pairs that have been listed.
       operationId: getPairs
       produces:
       - application/json
@@ -308,7 +318,8 @@ paths:
     get:
       tags:
       - market
-      summary: getDepth
+      summary: Get Order Depth Data
+      description: Gets the order book depth data for a given pair symbol.
       operationId: getDepth
       produces:
       - application/json
@@ -344,8 +355,8 @@ paths:
       tags:
       - node
       operationId: broadcastTx
-      summary: 'Broadcasts a transaction, or a batch of up to 5 transactions, given their signed binary forms.'
-      description: 'Use this API to broadcast your own signed transactions. Transactions must be sent in hex format in plain text, separated by commas (,).'
+      summary: Post Transaction to Broadcast
+      description: Broadcasts a signed transaction. A single transaction must be sent in hex format in plain text.
       consumes:
       - text/plain
       produces:
@@ -400,10 +411,11 @@ paths:
     get:
       tags:
       - explorer
-      summary: trades statistics by symbol
+      summary: Get Trade Statistics
+      description: Gets statistics about market trades for a given pair symbol.
       operationId: getTradeStatisticsDTOUsingGET
       produces:
-      - '*/*'
+      - application/json
       parameters:
       - name: symbol
         in: query
@@ -430,8 +442,8 @@ paths:
     get:
       tags:
       - trade
-      summary: Trades grouped by block
-      description: Get historical trades per block. Order by block height DESC.
+      summary: Get Trades in Block
+      description: Gets historical trades per block. Sorted by block height in descending order.
       operationId: getBlockTradesUsingGET
       produces:
       - application/json
@@ -499,8 +511,8 @@ paths:
     get:
       tags:
       - market
-      summary: CryptoCurrency rate
-      description: Get exchange rate of crypto currency off Binance Chain. The rate is updated every 30 seconds.
+      summary: Get Currency Exchange Rate
+      description: Gets exchange rates for tokens on Binance DEX. The rate is updated every 30 seconds.
       operationId: getCryptoCurrencyRateUsingGET
       produces:
       - application/json
@@ -527,8 +539,8 @@ paths:
     get:
       tags:
       - market
-      summary: Fiat currency rate
-      description: Get exchange rate of fiat currency. The rate is updated every 5 minutes.
+      summary: Get Fiat Exchange Rate
+      description: Gets exchange rates of fiat currency to crypto currency. The rate is updated every 5 minutes.
       operationId: getFiatCurrencyRateUsingGET
       produces:
       - application/json
@@ -555,8 +567,8 @@ paths:
     get:
       tags:
       - market
-      summary: Kline
-      description: Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time.
+      summary: Get Candlestick Bars
+      description: Gets candlestick/kline bars for a symbol. Bars are uniquely identified by their open time.
       operationId: getCandlestickBarsUsingGET
       produces:
       - application/json
@@ -642,8 +654,8 @@ paths:
     get:
       tags:
       - order
-      summary: Closed order
-      description: Get closed (filled and cancelled) openOrders for a given address
+      summary: Get Closed Orders
+      description: Gets closed (filled and cancelled) orders for a given address.
       operationId: getClosedOrdersUsingGET
       produces:
       - application/json
@@ -717,8 +729,8 @@ paths:
     get:
       tags:
       - order
-      summary: Open order
-      description: Get open openOrders for a given address
+      summary: Get Open Orders
+      description: Gets open orders for a given address.
       operationId: getOpenOrdersUsingGET
       produces:
       - application/json
@@ -770,8 +782,8 @@ paths:
     get:
       tags:
       - order
-      summary: Order
-      description: Get an individual order's status
+      summary: Get Order
+      description: Gets metadata for an individual order.
       operationId: getOrderUsingGET
       produces:
       - application/json
@@ -801,8 +813,8 @@ paths:
     get:
       tags:
       - market
-      summary: 24 hour price
-      description: 24 hour price change statistics.
+      summary: Get Ticker
+      description: Gets 24 hour price change statistics for a market pair symbol.
       operationId: get24HrPriceStatisticsUsingGET
       produces:
       - application/json
@@ -834,8 +846,8 @@ paths:
     get:
       tags:
       - trade
-      summary: Trades
-      description: Get historical trades.
+      summary: Get Trades
+      description: Gets a list of historical trades.
       operationId: getTradesUsingGET
       produces:
       - application/json
@@ -941,11 +953,11 @@ paths:
     get:
       tags:
       - transaction
-      summary: Transactions
-      description: Get transactions.
+      summary: Get Transactions
+      description: Gets a list of transactions.
       operationId: txnsUsingGET
       produces:
-      - '*/*'
+      - application/json
       parameters:
       - name: address
         in: query
