@@ -13,7 +13,6 @@ Validators would vote to accept the proposal. Fee would be charged to prevent ab
 endorse the asset. Once the proposal is accepted, the owner of the base asset can list the trading pair 
 via interfaces.
 
-
 ## List Transaction
 
 As mentioned before, if you wan to list a trading pair, you have to create a proposal first and deposit 

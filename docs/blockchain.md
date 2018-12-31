@@ -1,14 +1,10 @@
-# Binance Chain as A Blockchain
+# Binance Chain's Blockchain
 
-The purpose of the new blockchain and DEX is to create an alternative marketplace for 
-issuing and exchanging digital assets amongst everyone in the world in a decentralized manner. 
+The purpose of the new blockchain and DEX is to create an alternative marketplace for issuing and exchanging digital assets in a decentralized manner.
 
 ## Consensus Details
 
-As Blockchain, essentially Binance Chain is a p2p network, with multiple clients on it to 
-reach consensus on data state. Binance Chain uses [Tendermint](https://github.com/tendermint/tendermint) 
-consensus mechnism, which is BFT based, and build a dedicated `application layer` upon it. Its 
-simplified architecture is as below:
+Binance Chain is a peer-to-peer distributed system, connecting together multiple clients that reach consensus on their views of the "state of the world". Binance Chain uses [Tendermint](https://github.com/tendermint/tendermint) BFT consensus and has a dedicated `application layer` that runs upon it. A simplified overview of the application's architecture might look something like this:
 
 ```
 +------------+-----------+
@@ -29,7 +25,7 @@ simplified architecture is as below:
 
 ```
 
-Please refer to [Tendermint spec](https://github.com/tendermint/tendermint/blob/master/docs/spec/consensus/consensus.md)
+For more information, please have a look at the [Tendermint spec](https://github.com/tendermint/tendermint/blob/master/docs/spec/consensus/consensus.md).
 
 
 ## Node Roles
