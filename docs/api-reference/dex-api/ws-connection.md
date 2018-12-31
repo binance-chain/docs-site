@@ -4,7 +4,7 @@ The DEX exposes several data streams over standard WebSocket connections, which 
 
 - The base endpoint is: **wss://testnet-dex.binance.org/api/**.
 - Each connection can consume a single stream or multiple streams may be multiplexed through one connection for more complex apps.
-- A single connection to **https://testnet-dex.binance.org/api/** is only valid for 24 hours, so expect to be disconnected at around the 24 hour mark. Your app should handle this with reconnection logic.
+- A single connection to **wss://testnet-dex.binance.org/api/** is only valid for 24 hours, so expect to be disconnected at around the 24 hour mark. Your app should handle this with reconnection logic.
 - All symbols in stream names are lowercase.
 
 Stream names may be provided in the URL **or** there is a mechanism to `subscribe` to consume streams on demand through one connection.
