@@ -4,7 +4,7 @@ Binance Chain transactions are protocol-based data types and can be only submit 
 
 The fundamental encoding logic is from [Tendermint Amino](https://github.com/tendermint/go-amino), which derives from and is "largely compatible with" Google protocol-buffer's Proto3. 
 
-However the client sides only need to stick to the below specification for the most frequently used transactions.
+However the client sides only need to stick to the below specifications for the most frequently used transactions.
 
 ## Encoding Output
 
@@ -32,13 +32,14 @@ Binary encoding is a variant of Google protocol buffer. The bytes are layed out 
     - to encode data field of some specific types, an object type prefix for the field would be added ahead of the real encoding.
 4. repeated (array) Encoding - it is the same as google protocol buffer, while encoding of the object/struct may contain the type prefix as showed below.
 
-## Binance Chain Encoding Types
+## Binance Chain Transaction Encoding
 
-Here below are listed the real data types that should be sent to Binance Chain as request, and their encoding layout. To simply the presentation, here we use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, the other fields should use the default `proto3` encoding logic.
+Below are the data types that should be sent to Binance Chain as requests, and their encoding layout. To simply the presentation, here we use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, the other fields should use the default `proto3` encoding logic.
 
 
-### Standard Transaction to Use and Encode for Binance Chain
-Transaction submit are all wraped into the below `Standard Transaction`.
+### Standard Transaction
+
+Transactions are each wrapped in the below "Standard Transaction": structure:
 
 ```go
 
@@ -54,11 +55,83 @@ message StdTx {
 }
 ```
 
-### Transaction Types
-Transactions are different types of write requests to Binance Chain, which can be inserted into `StdTx.msgs` field. So far every `StdTx` can only contain one transaction in one type.
+### Canonical Bytes for Signing
+
+A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical represenation of the transaction is generated in JSON format for signing.
+
+This would allow for clients to sign a transaction off-chain on, for example, a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. Such an external system would not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
+
+The canonical bytes for signing are generated from the [StdSignBytes](https://github.com/binance-chain/bnc-cosmos-sdk/blob/50675b8015ab0dbac91a926a2df746174dbb33f7/x/auth/stdtx.go#L123) method. It produces a JSON string similar to the following (formatted for clarity):
+
+```json
+{
+   "sequence" : "64",
+   "account_number" : "12",
+   "data" : null,
+   "chain_id" : "chain-bnb",
+   "memo" : "smiley",
+   "msgs" : [
+      {
+         "inputs" : [
+            {
+               "coins" : [
+                  {
+                     "denom" : "BNB",
+                     "amount" : "200000000"
+                  }
+               ],
+               "address" : "bnc1hgm0p7khfk85zpz5v0j8wnej3a90w7098fpxyh"
+            }
+         ],
+         "outputs" : [
+            {
+               "address" : "bnc1cku54wwn66w2rkgs3h6v5zxrwtzyew8chcl720",
+               "coins" : [
+                  {
+                     "denom" : "BNB",
+                     "amount" : "200000000"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "source" : "1"
+}
+```
+
+This JSON string, **with all whitespace and keys sorted in alphabetical order**, is signed with the private key of the sender. This signature is then attached to the `StdTx` structure described in the above section. Please note that the transaction broadcasted to the blockchain is not JSON - the JSON is merely used as a canonical representation to generate the signature.
+
+The next section describes how the generated signature is attached to a transaction.
+
+### Standard Signature
+
+The sender's signature is stored in the `Standard Transaction` data via a `Standard Signature`, as below. This structure is included in the `StdTx` (see above).
+
+Please note that `StdSignature` itself doesn't have type prefix, while the `PubKey` has.
+
+```go
+message StdSignature {
+  uint64 SIZE-OF-ENCODED // varint encoded length of the structure after encoding
+  // please note there is no type prefix for StdSignature
+  message PubKey {
+    0xEB5AE987 // hardcoded, object type prefix in 4 bytes
+    uint64 SIZE-OF-ENCODED // varint encoded length of the bytes below
+    bytes // no name or field id, just encode the bytes
+  }
+  PubKey pub_key = 1 // public key bytes of the signer address
+  bytes signature = 2 // signature bytes, please check chain access section for signature generation
+  sint64 account_number = 3 // another identifier of signer, which can be read from chain by account REST API or RPC
+  sint64 sequence = 4 // sequence number for the next transaction of the client, which can be read fro chain by account REST API or RPC. please check chain acces section for details.
+}
+
+```
+
+### Message Types
+Messages represent the individual operations possible on Binance Chain, and these can be inserted into `StdTx.msgs` field. These are otherwise known as "transaction types", and these terms are used interchangably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
 
 #### Transfer
-Transfer is the transaction for transfering fund to different addresses.
+Transfer is the transaction for transfering funds to different addresses.
 
 ```go
 // please note the field name is the JSON name.
@@ -146,26 +219,5 @@ message TokenUnfreeze {
   sint64 amount = 3 // amount of token to unfreeze
 }
 ```
-### Standard Signature Type
-Request senders' signature is stored on the `Standard Transaction` data via a `Standard Signature` as below.
 
-Please note `StdSignature` itself doesn't have type prefix, while the `PubKey` has.
-
-```go
-
-message StdSignature {
-  uint64 SIZE-OF-ENCODED // varint encoded length of the structure after encoding
-  // please note there is no type prefix for StdSignature
-  message PubKey {
-    0xEB5AE987 // hardcoded, object type prefix in 4 bytes
-    uint64 SIZE-OF-ENCODED // varint encoded length of the bytes below
-    bytes // no name or field id, just encode the bytes
-  }
-  PubKey pub_key = 1 // public key bytes of the signer address
-  bytes signature = 2 // signature bytes, please check chain access section for signature generation
-  sint64 account_number = 3 // another identifier of signer, which can be read from chain by account REST API or RPC
-  sint64 sequence = 4 // sequence number for the next transaction of the client, which can be read fro chain by account REST API or RPC. please check chain acces section for details.
-}
-
-```
 
