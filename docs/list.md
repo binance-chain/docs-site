@@ -15,8 +15,8 @@ via interfaces.
 
 ## List Transaction
 
-As mentioned before, if you wan to list a trading pair, you have to create a proposal first and deposit 
-enough BNB, then you should wait for voting result of validators (so far is two weeks).
+As mentioned before, if you wan to list a trading pair, you need to issue the token you wan to list. Then you have to 
+create a proposal first and deposit enough BNB, then you should wait for voting result of validators (so far is two weeks).
 
 But to prevent abuse, if your proposal is rejected by validators, all of your deposit will be distributed to 
 validators. So please make sure you are creating **reasonable** proposals, and you are encouraged to talk with 
@@ -26,10 +26,18 @@ will be returned to your account.
 Then the owner of the asset to be listed can list the trading pair via command line according to the proposal 
 approved before the proposal is expired.
 
+### Issue token
+
+First, you need to issue the token. You have to make sure that there is enough BNB remaining in your account.
+
+```bash
+$  ./bnbcli token issue --home ./testnodecli -s AAA --token-name "Token AAA" --total-supply 10000000000000 \
+ --from test --json --node=172.22.41.165:26657 --chain-id chain-bnb
+```
+
 ### Create a proposal
 
-Assume that the token you want to list already exists. Then you need to create a proposal to list this token
-against one benchmark asset.
+After issuing the token, you need to create a proposal to list this token against one benchmark asset.
 
 ```bash
 $  ./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB \
