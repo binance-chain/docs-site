@@ -164,97 +164,80 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 10 requests per IP per second.
 
-
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| hash | path | The transaction hash to query | Yes | string |
-
-**Responses**
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [Transaction](#transaction) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
-
-### /api/v1/tx-json/{hash}
----
-##### ***GET***
-**Summary:** Gets detail for an individual transaction
-
-**Description:** Gets transaction detail by transaction ID.
-
-**Destination:** Seed node.
-
-**Rate Limit:** 10 requests per IP per second.
-
 **Example:**
-
-Below is a response of a send transaction.
+If `format` is not provided or `format` is not `json`, the response should look like:
 ```
 {
-    "hash": "E81BAB8E555819E4211D62E2E536B6D5812D3D91C105F998F5C6EB3AB8136482",
-    "height": "754",
-    "tx": {
-        "type": "auth/StdTx", // fixed, type of transaction
-        "value": {            // fixed, detail of the transaction
-            "data": null,     // fixed, data of the transaction
-            "memo": "",       // fixed, memo
-            "msg": [          // fixed, msgs of the transaction
-                {
-                    "type": "cosmos-sdk/Send",  // vary with msg type
-                    "value": {                  // value content vary with mst type
-                        "inputs": [
-                            {
-                                "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-                                "coins": [
-                                    {
-                                        "amount": "100000000000000",
-                                        "denom": "BNB"
-                                    }
-                                ]
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-                                "coins": [
-                                    {
-                                        "amount": "100000000000000",
-                                        "denom": "BNB"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ],
-            "signatures": [ // fixed, signatures of the transaction
-                {
-                    "account_number": "0",
-                    "pub_key": {
-                        "type": "tendermint/PubKeySecp256k1",
-                        "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-                    },
-                    "sequence": "1",
-                    "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-                }
-            ],
-            "source": "0"  // fixed, source of the transaction
-        }
-    }
+    data: "Tx{DD01F0625DEE0A65CE6DC0430A148672775CD0C8EA51364B5231FD9A63893B55FF82122B383637323737354344304338454135313336344235323331464439413633383933423535464638322D32391A0D4144412E422D4632465F424E422002280230E0891C3880C2D72F4001126E0A26EB5AE98721034C8D7630EAB6CF86963D0CFBAFBC01A4E78841334A740726BCBC4E531957B0D7124053C0B41B7FAD40BD1B25E592A20B7D95A871975A209A9AB5D156717B7BCE36F66495D23705B253A7C63781E17E0EC17D2D6AB809C37E29BBA0F1468200D7C4231818201C2003}",
+    hash: "E81BAB8E555819E4211D62E2E536B6D5812D3D91C105F998F5C6EB3AB8136482",
+    log: "Msg 0: ",
+    ok: true
 }
 ```
 
+If `format` is `json`, the response should look like:
+```
+ {
+     "hash": "E81BAB8E555819E4211D62E2E536B6D5812D3D91C105F998F5C6EB3AB8136482",
+     "height": "754",
+     "tx": {
+         "type": "auth/StdTx", // fixed, type of transaction
+         "value": {            // fixed, detail of the transaction
+             "data": null,     // fixed, data of the transaction
+             "memo": "",       // fixed, memo
+             "msg": [          // fixed, msgs of the transaction
+                 {
+                     "type": "cosmos-sdk/Send",  // vary with msg type
+                     "value": {                  // value content vary with mst type
+                         "inputs": [
+                             {
+                                 "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
+                                 "coins": [
+                                     {
+                                         "amount": "100000000000000",
+                                         "denom": "BNB"
+                                     }
+                                 ]
+                             }
+                         ],
+                         "outputs": [
+                             {
+                                 "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
+                                 "coins": [
+                                     {
+                                         "amount": "100000000000000",
+                                         "denom": "BNB"
+                                     }
+                                 ]
+                             }
+                         ]
+                     }
+                 }
+             ],
+             "signatures": [ // fixed, signatures of the transaction
+                 {
+                     "account_number": "0",
+                     "pub_key": {
+                         "type": "tendermint/PubKeySecp256k1",
+                         "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
+                     },
+                     "sequence": "1",
+                     "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
+                 }
+             ],
+             "source": "0"  // fixed, source of the transaction
+         }
+     }
+ }
+ ```
+
 
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | hash | path | The transaction hash to query | Yes | string |
+| format | query | format of tx, if provided, will return specific format of tx, only support `json` (optional) | No | string |
 
 **Responses**
 
