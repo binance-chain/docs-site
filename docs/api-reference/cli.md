@@ -112,7 +112,7 @@ For detailed usage, you can refer to:
 - [transfer](../transfer.md)
 - [trade](../trade.md)
 - [issue](../tokens.md)
-- [Governance](../governance.md)
+- [governance](../governance.md)
 - [list](../list.md)
 - [keys](../keys.md)
 
