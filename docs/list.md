@@ -112,7 +112,7 @@ In this case, `14` is your proposal ID, and you should then use it in the `--pro
 
 ### The deposit
 
-Before validators can vote on the proposal you created, you need to deposit enough BNB (at least 2000 BNB). You 
+Before validators can vote on the proposal you created, you need to deposit enough BNB (at least 1000 BNB in mainnet and 2000BNB in testnet). You 
 may have already deposit a number of BNB when you propose, in the upper case, it is 100 BNB. So now you still 
 need to deposit another 1900 BNB.
 

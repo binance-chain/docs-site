@@ -29,13 +29,10 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 * `deposit_period`: This is a global parameter and the value for mainnet is two days and testnet is two week. It means the time to deposit enough BNB tokens is two days in mainnet and two weeks in testnet.
 * `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md)
 
-
 ### Proposal Parameters
 * `deposit` :  your input must be larger than `min-depost`.
 * `voting-period`: This is the time for validators to vote, your input in seconds, if you ommit this field, the default voting period is one week. 
 * `expire-time`: This is the time for you to send list transaction if your proposal is passed. This time cannot be ealry than current time.
-
-
 
 ### Participate in Governance
 
