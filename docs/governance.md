@@ -64,7 +64,7 @@ Example on **testnet**:
 ```
 
 #### Add deposit for a Proposal
-In current Binance Chain Testnet, the max deposit period is **two days**. After submitting a proposal, you have two weeks to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly. 
+In current Binance Chain Mainnet, the max deposit period is **two days**. After submitting a proposal, you have two weeks to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly. 
 
 Please note the amount is  boosted by **1e8** for decimal part. 
 
