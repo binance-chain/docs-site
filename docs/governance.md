@@ -26,8 +26,8 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 
 ### Global Parameters
 * `min-deposit`: The threshold for submitting a proposal on mainnet is **1000BNB**
-* `deposit_period`: This is a global parameter and the value for both mainnet and testnet is two week. It means the time to deposit enough BNB tokens is two weeks.
-* `fee`: Chekout the fee of governance-related transactions [here](trading-spec.md)
+* `deposit_period`: This is a global parameter and the value for mainnet is two days and testnet is two week. It means the time to deposit enough BNB tokens is two days in mainnet and two weeks in testnet.
+* `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md/)
 
 ### Proposal Parameters
 * `deposit` :  your input must be larger than `min-depost`.
@@ -40,15 +40,21 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 
 ####  Submit a List Proposal
 To add a new trading pairs, you could run the following command :
+Please note:
 
-Please note the amount is  boosted by **1e8** for decimal part. 
++ `--init-price` is  boosted by **1e8** for decimal part, such as100000000, is 1 BNB 
++ `--from`: put  your key name for the address / key, you can only list with the owner address of your token.
++ `--expire-time`: expire time is after when you will not be able to list your token though your proposal is passed. 
++ `--voting-period`: The voting period is for validators to vote. The unit is second and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period.
+
+Please note the all the  numbers are  boosted by **1e8** for decimal part. 
 
 Example on **mainnet**:
 
 ```shell
 ./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB 
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB" 
---description "list AAA-254/BNB" --expire-time 1570665600  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --json
+--description "list AAA-254/BNB" --expire-time 1570665600  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --voting-period 604800 --json
 ```
 
 Example on **testnet**:
@@ -56,7 +62,7 @@ Example on **testnet**:
 ```shell
 ./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB 
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB" 
---description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json
+--description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800 
 ```
 
 #### Add deposit for a Proposal
