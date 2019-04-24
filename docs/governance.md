@@ -27,7 +27,8 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 ### Global Parameters
 * `min-deposit`: The threshold for submitting a proposal on mainnet is **1000BNB**
 * `deposit_period`: This is a global parameter and the value for mainnet is two days and testnet is two week. It means the time to deposit enough BNB tokens is two days in mainnet and two weeks in testnet.
-* `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md/)
+* `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md)
+
 
 ### Proposal Parameters
 * `deposit` :  your input must be larger than `min-depost`.
@@ -66,7 +67,7 @@ Example on **testnet**:
 ```
 
 #### Add deposit for a Proposal
-In current Binance Chain Testnet, the max deposit period is **two weeks**. After submitting a proposal, you have two weeks to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly. 
+In current Binance Chain Testnet, the max deposit period is **two days**. After submitting a proposal, you have two weeks to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly. 
 
 Please note the amount is  boosted by **1e8** for decimal part. 
 
