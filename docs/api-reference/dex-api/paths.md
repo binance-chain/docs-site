@@ -17,7 +17,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
+**URL for mainnet:** [https://dex.binance.org/api/v1/time](https://dex.binance.org/api/v1/time)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
 
 
 **Responses**
@@ -40,7 +42,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
+**URL for mainnet:** [https://dex.binance.org/api/v1/node-info](https://dex.binance.org/api/v1/node-info)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
 
 
 **Responses**
@@ -60,7 +64,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 10 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
+**URL for mainnet:** [https://dex.binance.org/api/v1/validators](https://dex.binance.org/api/v1/validators)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
 
 
 **Responses**
@@ -83,7 +89,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
+**URL for mainnet:** [https://dex.binance.org/api/v1/peers](https://dex.binance.org/api/v1/peers)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
 
 
 **Responses**
@@ -106,7 +114,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 5 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
+**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
 
 
 **Parameters**
@@ -135,7 +145,9 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 **Rate Limit:** 5 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
+**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
 
 
 **Parameters**
@@ -250,7 +262,9 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
+**URL for mainnet:** [https://dex.binance.org/api/v1/tokens](https://dex.binance.org/api/v1/tokens)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
 
 
 **Parameters**
@@ -280,7 +294,9 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
+**URL for mainnet:** [https://dex.binance.org/api/v1/markets](https://dex.binance.org/api/v1/markets)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
 
 
 **Parameters**
@@ -310,7 +326,9 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
+**URL for mainnet:** [https://dex.binance.org/api/v1/fees](https://dex.binance.org/api/v1/fees)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
 
 
 **Responses**
@@ -333,7 +351,9 @@ The given _limit_ must be one of the allowed limits below.
 
 **Rate Limit:** 10 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**URL for mainnet:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
 
 
 **Parameters**
@@ -363,7 +383,9 @@ The given _limit_ must be one of the allowed limits below.
 
 **Rate Limit:** 5 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
+**URL for mainnet:** [https://dex.binance.org/api/v1/broadcast](https://dex.binance.org/api/v1/broadcast)
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
 
 
 **Parameters**
@@ -393,7 +415,10 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Rate Limit:** 10 requests per IP per second.
 
-**Test URL:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+**URL for mainnet:** [https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
 
 **Example**
 
@@ -687,6 +712,9 @@ If the time window is larger than limits, only the first n klines will return. I
 | hash | string | Hash of transaction |  |
 | log | string | Log of transaction |  |
 | data | string | Data of transaction |  |
+| height | string | Height of transaction |  |
+| code | integer | Result code of transaction |  |
+| ok | boolean |  |  |
 | tx | object | Detail of transaction, like transaction type, messages and signature
 
 For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
@@ -743,9 +771,6 @@ varies with msg type.
 }
 ```
  |  |
-| height | string | Height of transaction |  |
-| code | integer | Result code of transaction |  |
-| ok | boolean |  |  |
 
 ### Account  
 

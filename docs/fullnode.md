@@ -94,7 +94,7 @@ If you want to add  seed nodes, please feel free to edit the field `seeds` of `$
 
 Start the full node according to the platform. Replace the `platform` var with `mac` or `linux` in the following command:
 ```bash
-./{{platform}}/bnbchaind start --home $BNCHOME &
+./{{platform}}/bnbchaind start --home $BNCHOME --pruning breathe &
 ```
 
 Only after catching up with Binance Chain, the full node can handle requests correctly.

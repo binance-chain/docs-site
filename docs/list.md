@@ -16,6 +16,7 @@ Fees will be charge when issuing a token, creating a proposal, depositing and li
 
 Example on **mainnet**:
 ```bash
+
 $  ./bnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 --init-price 100000000 --proposal-id 15 --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --json
 {  
