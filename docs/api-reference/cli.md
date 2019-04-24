@@ -63,11 +63,15 @@ This is the default way to sign transactions with `bnbcli`. It will use the encr
 
 * Use Private Key in Hardware Wallet
 
-If you add `--ledger` when creating a new address, then the private key file in ledger will be used to generate a new address.
+First, you must add `--ledger` when creating a new address. For example, 
 ```
 bnbcli keys add test --ledger --index 0 --account 0
 ```
-You could also specify `--account` and `--index` to generate more addresses. Then, when you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
+Then,  the private key file in ledger will be used to generate a new address.
+
+You could also specify `--account` and `--index` to generate more addresses. After the generation, you could use Ledger for signing. 
+
+When you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
 
 ## How to use
 
