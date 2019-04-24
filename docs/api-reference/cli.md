@@ -53,6 +53,21 @@ Please note that there are two types of nodes that offer RPC services. Some supp
 ## Which Chain-ID to use
 
 `chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. Please choose the correct one in your case. 
+## Which Private Key To Use
+
+There are two ways for you to sign transaction：
+
+* Use Local Keystore File
+
+This is the default way to sign transactions with `bnbcli`. It will use the encrypted  keystore files saved at bnbcli home. You need to specify which key to decrypt with `--from`. 
+
+* Use Private Key in Hardware Wallet
+
+If you add `--ledger` when creating a new address, then the private key file in ledger will be used to generate a new address.
+```
+bnbcli keys add test --ledger --index 0 --account 0
+```
+You could also specify `--account` and `--index` to generate more addresses. Then, when you use the address stored in Ledger to sign transactions,  `bnbcli` will send transactions to Ledger and get then  signed with the private key stored in the hardware. 
 
 ## How to use
 
