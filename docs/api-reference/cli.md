@@ -67,7 +67,7 @@ If you add `--ledger` when creating a new address, then the private key file in 
 ```
 bnbcli keys add test --ledger --index 0 --account 0
 ```
-You could also specify `--account` and `--index` to generate more addresses. Then, when you use the address stored in Ledger to sign transactions,  `bnbcli` will send transactions to Ledger and get then  signed with the private key stored in the hardware. 
+You could also specify `--account` and `--index` to generate more addresses. Then, when you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
 
 ## How to use
 
