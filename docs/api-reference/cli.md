@@ -111,8 +111,8 @@ Please confirm if address displayed on ledger is identical to bnb15339dcwlq5nza4
 ```
 3. User can click confirm button on ledger device and input yes to continue following steps.
 4. Then user can preview the transaction data on ledger screen.
-5. After preview all transaction data, user can select sign transaction or reject.
-6. After user select sign transaction, bnbcli will get signature and broadcast the signed transaction to blockchain nodes.
+5. After preview all transaction data, user can select `sign transaction` or` reject`.
+6. After user select `sign transaction`, `bnbcli` will get signature and broadcast the signed transaction to blockchain nodes.
 
 ## How to use
 
