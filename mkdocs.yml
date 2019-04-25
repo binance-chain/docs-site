@@ -27,6 +27,7 @@ nav:
     - WalletConnect: walletconnect.md
   - FAQ: faq.md
   - Exchange Integration: exchange-integration.md
+  - List Instructions: list_instruction.md
   - More Help: resources.md
   - Binance DEX TestNet: https://testnet.binance.org
   - Chain Explorer TestNet: https://testnet-explorer.binance.org

@@ -1,5 +1,17 @@
 # Command Line Interface (CLI)
 
+- [Command Line Interface (CLI)](#command-line-interface--cli-)
+  * [Where can I download the Binance Chain CLI?](#where-can-i-download-the-binance-chain-cli-)
+    + [CLI installation](#cli-installation)
+  * [Where to connect](#where-to-connect)
+  * [Which Chain-ID to use](#which-chain-id-to-use)
+  * [Key manager](#key-manager)
+    + [Local key](#local-key)
+    + [Ledger key](#ledger-key)
+  * [How to use](#how-to-use)
+  * [CLI Reference](#cli-reference)
+  * [Use CLI for Different Blockchains](#use-cli-for-different-blockchains)
+
 Binance Chain CLI is one of several ways to interact with Binance Chain.
 
 Binance Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
@@ -53,25 +65,54 @@ Please note that there are two types of nodes that offer RPC services. Some supp
 ## Which Chain-ID to use
 
 `chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. Please choose the correct one in your case. 
-## Which Private Key To Use
 
-There are two ways for you to sign transaction：
+## Key manager
 
-* Use Local Keystore File
+Here we support two types of key: local key and leder key
 
-This is the default way to sign transactions with `bnbcli`. It will use the encrypted  keystore files saved at bnbcli home. You need to specify which key to decrypt with `--from`. 
-
-* Use Private Key in Hardware Wallet
-
-First, you must add `--ledger` when creating a new address. For example, 
+### Local key
+* Create a local key
 ```
-bnbcli keys add test --ledger --index 0 --account 0
+bnbcli keys add test_key
 ```
-Then,  the private key file in ledger will be used to generate a new address.
+The new created local key will be encrypted and saved to local keystore.
+* Sign transation with a local key
+```
+bnbcli send --chain-id=<chain-id> --from=test_key --amount=100:BNB --to=<address>
+```
+For instance, if you want to send a token transfer transaction, you can use the above command. The flag --from is used to specify which key to sign the transaction.
 
-You could also specify `--account` and `--index` to generate more addresses. After the generation, you could use Ledger for signing. 
+###  Ledger key
+* Create a local key
 
-When you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
+Before creating a new ledger key, make sure you have done these steps:
+1. Ledger device is installed binance ledger app and the version should be later or equal to **v1.1.3**.
+2. Connect your ledger device to your machine and input pin code to unlock it.
+3. Open binanche ledger app on your ledger device. 
+```
+bnbcli keys add test_ledger_key --ledger
+```
+Execute the above command to create a ledger key. The private key is only stored in your ledger device. And your local key store will save the corresponding publick key and address.
+```
+bnbcli keys add test_ledger_key_new --ledger --index 0 --account 0
+```
+You can also specify --account and --index to generate more keys. 
+
+* Sign transation with a ledger key
+
+Taking transfer transaction for example, please follow these steps:
+1. Execute command in your console:
+``` 
+bnbcli send --chain-id=<chain-id> --from=test_ledger_key --amount=100:BNB --to=<address>
+```
+2. Your console will print some message like this:
+```
+Please confirm if address displayed on ledger is identical to bnb15339dcwlq5nza4atfmqxfx6mhamywz35evruva (yes/no)?
+```
+3. User can click confirm button on ledger device and input yes to continue following steps.
+4. Then user can preview the transaction data on ledger screen.
+5. After preview all transaction data, user can select sign transaction or reject.
+6. After user select sign transaction, bnbcli will get signature and broadcast the signed transaction to blockchain nodes.
 
 ## How to use
 
@@ -135,7 +176,7 @@ For detailed usage, you can refer to:
 - [list](../list.md)
 - [keys](../keys.md)
 
-## Use CLI for Different Blockchain
+## Use CLI for Different Blockchains
 
 `bnbcli` will save data about validatorset changes at home of `bnbcli`. Once you want to use `bnbcli` for different blockchains, for example, you want to change from testnet to mainnet, the data will be stale. In order to swtich between blockchains, you need clean data folder `rm -rf ~/.bnbcli/.bnblite/`  or create a new home folder for bnbcli with `--home` flag.
 If you forget to specify different home folder path, then you will not be able to make queries with `bnbcli`.

@@ -7,7 +7,7 @@ Protect your crypto assets with the first and only independently-certified hardw
 
 ## Instructions
 
-https://testnet.binance.org/guides/ledger
+<https://www.binance.org/static/guides/DEX-Ledger-Documentation.html>
 
 
 ## Resource

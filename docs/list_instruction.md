@@ -7,7 +7,7 @@ There are the steps to get your tokens listed:
 ![workflow](./assets/listing-workflow.jpg)
 
 ## 1. Issue Tokens on Binance Chain 
-Please refer to this [issue doc](issue.md) to learn about how to issue your own asset on Binance Chain. 
+Please refer to this [token issue doc](tokens.md) to learn about how to issue your own asset on Binance Chain. 
 
 ## 2. Submit Proposal 
 
@@ -31,3 +31,4 @@ Simply allowing trading between two assets seems easy enough, however it is expe
 ### How is a trading pair created on Binance DEX?
 
 The design philosophy of Binance DEX adheres to the idea that the most efficient and low cost way to perform trading and price-discovery is still to use single order book. This single order book is managed and replicated across all full nodes with the same, deterministic matching logic.
+
