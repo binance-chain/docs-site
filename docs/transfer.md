@@ -32,7 +32,7 @@ Fee charged and balance will be showed in below.
 
 If you want to send token to an address, make sure you have restored your key. You can list all of your keys:
 ```bash
-$  ./bnbcli keys list --home ~/.bnbcli
+ ./bnbcli keys list --home ~/.bnbcli
 NAME:	TYPE:	ADDRESS:						PUBKEY:
 test	local	bnb17kwznuljsy4n89wcjd6esx2j5t0w326c03xhyr	bncp1addwnpepq2gudmfe0dqqax3f57j9azy5rujlwcra4w8ueehsl5whzhlvczxuuakuldy
 ```
@@ -40,7 +40,7 @@ test	local	bnb17kwznuljsy4n89wcjd6esx2j5t0w326c03xhyr	bncp1addwnpepq2gudmfe0dqqa
 Query your addresses on testnet
 
 ```bash
-$  ./tbnbcli keys list	PUBKEY:
+ ./tbnbcli keys list	PUBKEY:
 test	local	tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5	bnbp1addwnpepqgfehhv4meevy2kz52c0s7znk8x2969dl8zc5jngn36axf3szdzp5efearf
 ```
 
@@ -48,7 +48,7 @@ test	local	tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5	bnbp1addwnpepqgfehhv4meev
 You can query your balance on mainnet before send tokens.
 
 ```bash
-$  bnbcli account bnb1XXXXXXXXXXXXXXXXXXX --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --indent
+ ./bnbcli account bnb1XXXXXXXXXXXXXXXXXXX --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --indent
 {
   "type": "bnbchain/Account",
   "value": {
@@ -74,7 +74,7 @@ $  bnbcli account bnb1XXXXXXXXXXXXXXXXXXX --chain-id Binance-Chain-Tigris --node
 You can query your balance on testnet before send tokens.
 
 ```bash
-$   ./tbnbcli account tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5 --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --indent
+./tbnbcli account tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5 --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --indent
 {
   "type": "bnbchain/Account",
   "value": {
@@ -104,7 +104,7 @@ Please note that you need to boosted the amount you want to send by **e^8** .
 Example on **mainnet**:
 
 ```bash
-➜  build git:(master) ✗ ./bnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --json --memo "Test transfer"
+./bnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --json --memo "Test transfer"
 Password to sign with 'test':
 {  
    "Height":"272155",
@@ -131,7 +131,7 @@ Password to sign with 'test':
 
 Example on **testnet**:
 ```bash
-➜  build git:(master) ✗ ./tbnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer"
+./tbnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer"
 Password to sign with 'test':
 {
    "Height":"272155",
@@ -158,7 +158,7 @@ Password to sign with 'test':
 
 If you are not familiar with CLI, you can use `-h` to get helps:
 ```bash
-$  ./bnbcli send -h
+ ./bnbcli send -h
 Create and sign a send tx
 
 Usage:
@@ -197,7 +197,7 @@ Sometimes, you may want to transfer tokens to multiple people. So `bnbcli` also 
 
 You can use `-h` to get helps:
 ```bash
-$ ./bnbcli token multi-send -h
+ ./bnbcli token multi-send -h
 Create and sign a multi send tx
 
 Usage:
@@ -237,7 +237,7 @@ flag and read from the file contains transaction.
 Example, you can specify `--transfers` and send it to **mainnet**:
 
 ```bash
-$ ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers "[{\"to\":\"bnb1g5p04snezgpky203fq6da9qyjsy2k9kzr5yuhl\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"bnb1l86xty0m55ryct9pnypz6chvtsmpyewmhrqwxw\",\"amount\":\"100000000000000:BNB\"}]" --json
+ ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers "[{\"to\":\"bnb1g5p04snezgpky203fq6da9qyjsy2k9kzr5yuhl\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"bnb1l86xty0m55ryct9pnypz6chvtsmpyewmhrqwxw\",\"amount\":\"100000000000000:BNB\"}]" --json
 Password to sign with 'test':
 {  
    "Height":"1412",
@@ -269,7 +269,7 @@ Password to sign with 'test':
 Example on **testnet**:
 
 ```bash
-$ ./tbnbcli token multi-send --home ./testnodecli --from test --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80  --transfers "[{\"to\":\"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"tbnb1e244vmvym7g6cn9lk4hmhf9p2f9jaf0x9hxmwc\",\"amount\":\"100000000000000:BNB\"}]" --json
+./tbnbcli token multi-send --home ./testnodecli --from test --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80  --transfers "[{\"to\":\"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"tbnb1e244vmvym7g6cn9lk4hmhf9p2f9jaf0x9hxmwc\",\"amount\":\"100000000000000:BNB\"}]" --json
 Password to sign with 'test':
 {
    "Height":"1412",
@@ -316,7 +316,7 @@ Assume that you have a file named `transaction.json` in your current path and co
 
 Then you can specify `--transfers-file` and send it to **mainnet**:
 ```bash
-$ ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers-file ./transaction.json --json
+ ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers-file ./transaction.json --json
 Password to sign with 'test':
 {  
    "Height":"1412",
@@ -347,7 +347,7 @@ Password to sign with 'test':
 
 Example on **testnet**:
 ```bash
-$ ./tbnbcli token multi-send --home ./testnodecli --from test--chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80  --transfers-file ./transaction.json --json
+ ./tbnbcli token multi-send --home ./testnodecli --from test--chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80  --transfers-file ./transaction.json --json
 Password to sign with 'test':
 {
    "Height":"1412",
