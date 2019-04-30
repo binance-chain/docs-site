@@ -189,7 +189,7 @@ message CancelOrder {
   0x166E681B   // hardcoded, object type prefix in 4 bytes
   bytes sender = 1 // order originating address'
   string symbol = 2 // symbol for trading pair in full name of the tokens
-  string refid = 4 // order id of the one to cancel
+  string refid = 3 // order id of the one to cancel
 }
 ```
   
@@ -240,5 +240,85 @@ OptionAbstain       = 0x02  // abstain
 OptionNo            = 0x03  // no
 OptionNoWithVeto    = 0x04  // no with veto
 ```
+#### Issue
 
+Issue is to create new asset on Binance chain.
+```go
+message IssueTokenValue  {
+  0x17EFAB80 // hardcoded, object type prefix in 4 bytes
+  string Name = 1 //token name      
+  string Symbol = 2 //token symbol     
+  string OrigSymbol = 3 //original symbol 
+  string TotalSupply = 4  //total supply
+  string Owner = 5 //token owner      
+}
+```
+#### Mint
 
+Mint is to increase the total supply of a token.
+
+```go
+message Mint {
+  0x467E0829  // hardcoded, object type prefix in 4 bytes
+  bytes From = 1 //sender's address
+  string Symbol string = 2 //token symbol
+  int64 Amount = 3 // increase amount
+}
+```
+
+#### Burn
+
+Burn is to decrease the total supply of a token.
+```go
+message TokenBurn {
+  0x7ED2D2A0  // hardcoded, object type prefix in 4 bytes
+  bytes From = 1 //sender's address
+  string Symbol string = 2 //token symbol
+  int64 Amount = 3 // increase amount
+}
+```
+#### List
+
+List is to add a new trading pair.
+
+```go
+message DexList {
+  0xB41DE13F // hardcoded, object type prefix in 4 bytes
+  bytes From = 1 //sender's address 
+  int64 ProposalId  = 2 // id of corresponding proposal  
+  string BaseAssetSymbol  = 3 // token symbol of base asset     
+  string QuoteAssetSymbol = 4 // token symbol of quote asset
+  int64 InitPrice = 5 //  init price of the new token
+}
+```
+#### Submit Proposal
+Submit proposal is to create a proposal for validators about adding trading pairs
+```go
+message {
+  0xACCBA2DE // hardcoded, object type prefix in 4 bytes
+  string Title = 1      //  Title of the proposal
+  string Description = 2 //  Description of the proposal
+  byte ProposalType  = 3  //  Type of proposal. Initial set {PlainTextProposal, SoftwareUpgradeProposal}
+  bytes Proposer = 4  //  Address of the proposer
+  message Coin {
+    string denom = 1
+    int64 amount = 2 
+  }
+  int64 VotingPeriod  = 5 //  Length of the voting period (s) 
+}
+```
+#### Deposit
+
+Deposit is to increase the total deposit of a proposal.
+
+```go
+message Deposit{
+  0xA18A56E5 // hardcoded, object type prefix in 4 bytes
+  int64 ProposalID  = 1 // ID of the proposal
+  bytes Depositer  = 2 // Address of the depositer
+  message Coin {
+    string denom = 1
+    int64 amount = 2 
+  }
+}
+```
