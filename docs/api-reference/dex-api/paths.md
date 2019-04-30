@@ -246,9 +246,9 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | [Transaction](#transaction) |
-| 400 | Bad Request | [Error](#error) |
+| 0 | Success | [Transaction](#transaction) |
 | 404 | Not Found |  |
+| 500 | Bad Request | [Error](#error) |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/tokens
@@ -688,16 +688,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | block_height | long | Current block height | 12345 |
-| validators | [ [Validator](#validator) ] |  |  |
-
-### Validator  
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| address | string (hex address) | Address |  |
-| pub_key | [ integer ] | Public key bytes |  |
-| voting_power | integer |  |  |
-| accum | integer |  |  |
+| validators | [ [ValidatorInfo](#validatorinfo) ] |  |  |
 
 ### Peer  
 
@@ -724,62 +715,6 @@ If the time window is larger than limits, only the first n klines will return. I
 | height | string | Height of transaction |  |
 | code | integer | Result code of transaction |  |
 | ok | boolean |  |  |
-| tx | object | Detail of transaction, like transaction type, messages and signature
-
-For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-varies with msg type.
-
-```
-{
-    "type": "auth/StdTx", // fixed, type of transaction
-    "value": {            // fixed, detail of the transaction
-        "data": null,     // fixed, data of the transaction
-        "memo": "",       // fixed, memo
-        "msg": [          // fixed, msgs of the transaction
-            {
-                "type": "cosmos-sdk/Send",  // vary with msg type
-                "value": {                  // value content vary with mst type
-                    "inputs": [
-                        {
-                            "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-                            "coins": [
-                                {
-                                    "amount": "100000000000000",
-                                    "denom": "BNB"
-                                }
-                            ]
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-                            "coins": [
-                                {
-                                    "amount": "100000000000000",
-                                    "denom": "BNB"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ],
-        "signatures": [ // fixed, signatures of the transaction
-            {
-                "account_number": "0",
-                "pub_key": {
-                    "type": "tendermint/PubKeySecp256k1",
-                    "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-                },
-                "sequence": "1",
-                "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-            }
-        ],
-        "source": "0"  // fixed, source of the transaction
-    }
-}
-``` 
- |  |
 
 ### Account  
 
@@ -995,3 +930,43 @@ varies with msg type.
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ExchangeRate | object |  |  |
+
+### ResultStatus  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| ValidatorInfo | [ [ValidatorInfo](#validatorinfo) ] |  |  |
+| SyncInfo | [ [SyncInfo](#syncinfo) ] |  |  |
+| NodeInfo | [ [NodeInfo](#nodeinfo) ] |  |  |
+
+### NodeInfo  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| ProtocolVersion | [ [ProtocolVersion](#protocolversion) ] |  |  |
+| ID | string |  |  |
+| ListenAddr | string |  |  |
+| Network | string |  |  |
+| Version | string |  |  |
+| Channels | string |  |  |
+| Moniker | string |  |  |
+| Other | object |  |  |
+
+### SyncInfo  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| LatestBlockHash | string (hex) |  |  |
+| LatestAppHash | string (hex) |  |  |
+| LatestBlockHeight | long |  |  |
+| LatestBlockTime | time |  |  |
+| CatchingUp | boolean |  |  |
+
+### ValidatorInfo  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| Address | string | hex address |  |
+| PubKey | string | hex-encoded |  |
+| ProposerPriority | long |  |  |
+| VotingPower | long |  |  |

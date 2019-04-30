@@ -350,11 +350,11 @@ paths:
         required: false
         type: string
       responses:
-        '200':
+        '0':
           description: Success
           schema:
             $ref: '#/definitions/Transaction'
-        '400':
+        '500':
           description: 'Bad Request'
           schema:
             $ref: "#/definitions/Error"
@@ -1272,33 +1272,7 @@ definitions:
         required: true
         title: Validators
         items:
-          $ref: '#/definitions/Validator'
-
-
-  Validator:
-        type: object
-        properties:
-            address:
-              type: string
-              description: Address
-              format: hex address
-              required: true
-            pub_key:
-              type: array
-              title: 'Public key'
-              description: 'Public key bytes'
-              required: true
-              items:
-                type: integer
-                format: int32
-            voting_power:
-              type: integer
-              required: true
-            accum:
-              type: integer
-              required: true
-
-
+          $ref: '#/definitions/ValidatorInfo'
 
   Peer:
     type: object
@@ -1382,65 +1356,65 @@ definitions:
         description: 'Result code of transaction'
       ok:
         type: boolean
-      tx:
-        title: Tx
-        type: object
-        description: |
-          Detail of transaction, like transaction type, messages and signature
+      # tx:
+      #   title: Tx
+      #   type: object
+      #   description: |
+      #     Detail of transaction, like transaction type, messages and signature
 
-          For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-          varies with msg type.
+      #     For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
+      #     varies with msg type.
 
-          ```
-          {
-              "type": "auth/StdTx", // fixed, type of transaction
-              "value": {            // fixed, detail of the transaction
-                  "data": null,     // fixed, data of the transaction
-                  "memo": "",       // fixed, memo
-                  "msg": [          // fixed, msgs of the transaction
-                      {
-                          "type": "cosmos-sdk/Send",  // vary with msg type
-                          "value": {                  // value content vary with mst type
-                              "inputs": [
-                                  {
-                                      "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-                                      "coins": [
-                                          {
-                                              "amount": "100000000000000",
-                                              "denom": "BNB"
-                                          }
-                                      ]
-                                  }
-                              ],
-                              "outputs": [
-                                  {
-                                      "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-                                      "coins": [
-                                          {
-                                              "amount": "100000000000000",
-                                              "denom": "BNB"
-                                          }
-                                      ]
-                                  }
-                              ]
-                          }
-                      }
-                  ],
-                  "signatures": [ // fixed, signatures of the transaction
-                      {
-                          "account_number": "0",
-                          "pub_key": {
-                              "type": "tendermint/PubKeySecp256k1",
-                              "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-                          },
-                          "sequence": "1",
-                          "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-                      }
-                  ],
-                  "source": "0"  // fixed, source of the transaction
-              }
-          }
-          ``` 
+      #     ```
+      #     {
+      #         "type": "auth/StdTx", // fixed, type of transaction
+      #         "value": {            // fixed, detail of the transaction
+      #             "data": null,     // fixed, data of the transaction
+      #             "memo": "",       // fixed, memo
+      #             "msg": [          // fixed, msgs of the transaction
+      #                 {
+      #                     "type": "cosmos-sdk/Send",  // vary with msg type
+      #                     "value": {                  // value content vary with mst type
+      #                         "inputs": [
+      #                             {
+      #                                 "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
+      #                                 "coins": [
+      #                                     {
+      #                                         "amount": "100000000000000",
+      #                                         "denom": "BNB"
+      #                                     }
+      #                                 ]
+      #                             }
+      #                         ],
+      #                         "outputs": [
+      #                             {
+      #                                 "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
+      #                                 "coins": [
+      #                                     {
+      #                                         "amount": "100000000000000",
+      #                                         "denom": "BNB"
+      #                                     }
+      #                                 ]
+      #                             }
+      #                         ]
+      #                     }
+      #                 }
+      #             ],
+      #             "signatures": [ // fixed, signatures of the transaction
+      #                 {
+      #                     "account_number": "0",
+      #                     "pub_key": {
+      #                         "type": "tendermint/PubKeySecp256k1",
+      #                         "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
+      #                     },
+      #                     "sequence": "1",
+      #                     "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
+      #                 }
+      #             ],
+      #             "source": "0"  // fixed, source of the transaction
+      #         }
+      #     }
+      #     ``` 
 
   Account:
     type: object
@@ -1929,3 +1903,89 @@ definitions:
     additionalProperties:
       type: number
       format: double
+  ResultStatus:
+    type: object
+    properties: 
+      ValidatorInfo:
+        type: array
+        items:
+          $ref: '#/definitions/ValidatorInfo'
+      SyncInfo:
+        type: array
+        items:
+          $ref: '#/definitions/SyncInfo'
+      NodeInfo:
+        type: array
+        items:
+          $ref: '#/definitions/NodeInfo'
+  NodeInfo:
+    type: object
+    properties: 
+      ProtocolVersion:
+        type: array
+        items:
+          $ref: '#/definitions/ProtocolVersion'
+      ID :
+        type: string
+      ListenAddr:
+        type: string
+      Network:
+        type: string
+      Version:
+        type: string
+      Channels:
+        type: string
+      Moniker:
+        type: string
+      Other:
+        type: object
+
+
+  SyncInfo:
+        type: object 
+        properties:
+          LatestBlockHash:
+            type: string
+            format: hex
+          LatestAppHash:
+            type: string
+            format: hex
+          LatestBlockHeight:
+            type: integer
+            format: int64
+          LatestBlockTime:
+            type: time
+          CatchingUp:
+            type: boolean
+
+
+
+  ValidatorInfo:
+        type: object 
+        properties:
+          Address:
+            type: string
+            description: hex address
+          PubKey:
+            type: string
+            description: hex-encoded
+          ProposerPriority:
+            type: integer
+            format: int64
+          VotingPower:
+            type: integer
+            format: int64
+
+ProtocolVersion:
+  type: object 
+  properties:
+    P2P:
+      type: integer
+      format: uint64
+    Block: 
+      type: integer
+      format: uint64
+    App:
+      type: integer
+      format: uint64
+
