@@ -16,11 +16,13 @@ Binance Chain Web Wallet also presents a trading UI similar to Binance.com, wher
 ## Chain Explorer
 Chain Explorer provides a portal to explore blocks and transaction details. On Binance Chain Explorer, you can also check different types assets, the distribution of their ownerships, and owners' transactions.
 
-## API
-Similar to Binance.com, you can access Binance Chain and DEX via APIs. There are http REST APIs, Websocket interface for market data and user data, node rpc for transactions and blockchain information. The Binance Chain HTTP API provides data services. Here is a list of all the API information it provides: <https://docs.binance.org/api-reference/dex-api/paths.html> . For programmers interested in developing light wallets and other custom integrations,
+## REST API
+There are some [accelerate nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) which provides some advanced API services for the public.
+Here is a list of all the Rest API information it provides: <https://docs.binance.org/api-reference/dex-api/paths.html>
 
-### Use Public Node RPC Service 
-RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction. Read more about RPC in this [doc](api-reference/node-rpc.md)
+### Node RPC  
+There are some data seed node in the network which allow users perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
+If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: <https://docs.binance.org/api-reference/node-rpc.html>
 
 ## Advanced Ways To Use Blockchain
 ### Run your own full node

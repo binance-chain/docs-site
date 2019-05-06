@@ -9,10 +9,10 @@ There are 3 ways to read and write data from Binance chain:
 ## Web API
 The `Accelerated Node` infrastructure provide easy access via http REST API and WebSocket 
 push APIs. There are mulitple endpoints from different validator infrastructures. Please 
-check the [Web API Reference](api-reference/dex-api.md)
+check the [Web API Reference](api-reference/dex-api/paths.md)
 
-## Node, and Node RPC
-There are public accessible node peers that joins the Binance Chain network. They usually 
+## Node RPC
+There are public data seed nodes that joins the Binance Chain network. They usually 
 provide RPC calls. Please check the [Node RPC Reference](api-reference/node-rpc.md).
 
 You can also run a [full node](fullnode.md) by yourself, so that you would have a local server 
@@ -33,7 +33,7 @@ The transaction body, memo, signature, etc. fill in the `Standard Transaction an
 
 ### Transaction Encoding 
 Encoding defines the way how transactions are serialized and transferred between clients and nodes, 
-and different nodes themselves. [here](encoding.md) has a detailed specification on the transaction 
+and different nodes themselves. [here](encoding.md) is a detailed specification on the transaction 
 types and encoding logic.
 
 ### Signature
