@@ -60,7 +60,7 @@ More documentation is available [here](../encoding.md)
 
 Binance Chain JavaScript SDK Amino API [example](https://github.com/binance-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
 
-```
+
 | Type | Name | Prefix | Length | Notes |
 | ---- | ---- | ------ | ----- | ------ |
 | PubKeyEd25519 | tendermint/PubKeyEd25519 | 0x1624DE64 | 0x20 |  |
@@ -99,5 +99,5 @@ Binance Chain JavaScript SDK Amino API [example](https://github.com/binance-chai
 | FixedFeeParams | params/FixedFeeParams | 0xC2A96FA3 | variable |  |
 | TransferFeeParam | params/TransferFeeParams | 0x9A3D2769 | variable |  |
 | DexFeeParam | params/DexFeeParam | 0x495A5044 | variable |  |
-```
+
 
