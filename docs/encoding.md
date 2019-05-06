@@ -248,9 +248,8 @@ message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
   string Name = 1 //token name      
   string Symbol = 2 //token symbol     
-  string OrigSymbol = 3 //original symbol 
-  string TotalSupply = 4  //total supply
-  string Owner = 5 //token owner      
+  string TotalSupply = 3  //total supply
+  bool Mintable = 4 //is mintable
 }
 ```
 #### Mint
