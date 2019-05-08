@@ -1579,6 +1579,9 @@ definitions:
       fixed_fee_params:
         description: Set if the fee is fixed
         $ref: '#/definitions/FixedFeeParams'
+      dex_fee_fields:
+        description: dex fee
+        $ref: '#/definitions/DexFeeFieldParams'
   FixedFeeParams:
     type: object
     properties:
@@ -1594,6 +1597,15 @@ definitions:
         type: integer
         description: 1 = proposer, 2 = all, 3 = free
         example: 1
+  DexFeeFieldParams:
+     type: object
+     properties:
+       fee_name:
+         type: string
+         description: fee name
+       fee_value:
+        type: integer
+        description: fee value
   MarketDepth:
     type: object
     properties:

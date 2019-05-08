@@ -836,6 +836,7 @@ varies with msg type.
 | multi_transfer_fee | string | Fee for multi-transfer | 200000 |
 | lower_limit_as_multi | string | e.g. 2 | 2 |
 | fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
+| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
 
 ### FixedFeeParams  
 
@@ -844,6 +845,13 @@ varies with msg type.
 | msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
 | fee | number | The fixed fee amount | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
+
+### DexFeeFieldParams  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| fee_name | string | fee name |  |
+| fee_value | integer | fee value |  |
 
 ### MarketDepth  
 
