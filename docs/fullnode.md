@@ -105,7 +105,7 @@ There are two ways for you to get synced with other peers in blockchain network:
 * Fast Sync
 * State Sync
 
-These two method can be used together. 
+These two method can be used together.
 
 #####  Fast Sync
 The default way for syncing with other data seed node is fast sync. In fast sync, you need to download all the blocks from your peers and execute all the transansaction in every block. The sync speed is about 20 blocks/s, which is slower than state sync.

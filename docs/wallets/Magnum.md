@@ -5,7 +5,7 @@
 
 
 ## Instruction
-https://app.magnumwallet.co/ 
+https://app.magnumwallet.co/
 
 ## Resource
 

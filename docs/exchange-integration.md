@@ -8,10 +8,10 @@
   * [Use SDKs](#use-sdks)
 
 
-## Use Public Services 
+## Use Public Services
 
 There are some public nodes running by Binance Chain community which allows you to interact with the blockchain. There are two ways:
-### REST API 
+### REST API
 There are some [accelerate nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) which provides some advanced API services for the public.
 Here is a list of all the Rest API information it provides: <https://docs.binance.org/api-reference/dex-api/paths.html>
 
@@ -22,7 +22,7 @@ If you run a full node by yourself, you can also use those RPC functions. Here i
 
 ## Run your own full node
 
-Running a full node requires a much more technical resources, and you need to allocate more hardware/bandwidth resources. 
+Running a full node requires a much more technical resources, and you need to allocate more hardware/bandwidth resources.
 Please refer to this guide about [how to run your own node](fullnode.md).
 
 ## Access via Node Command Line Interface (CLI)
