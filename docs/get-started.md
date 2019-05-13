@@ -20,7 +20,7 @@ Chain Explorer provides a portal to explore blocks and transaction details. On B
 There are some [accelerate nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) which provides some advanced API services for the public.
 Here is a list of all the Rest API information it provides: <https://docs.binance.org/api-reference/dex-api/paths.html>
 
-### Node RPC  
+### Node RPC
 There are some data seed node in the network which allow users perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
 If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: <https://docs.binance.org/api-reference/node-rpc.html>
 

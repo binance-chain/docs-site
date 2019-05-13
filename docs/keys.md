@@ -2,11 +2,11 @@
 
 Binance Chain CLI has a sub-command named `keys` to manage private keys. It is a key store to manage keys for users.
 
-You can add a new key or import a key from seed. Then you can list the keys added and show the detail info of a 
+You can add a new key or import a key from seed. Then you can list the keys added and show the detail info of a
 specific key. You can also delete the given key or update the password used to protect private key.
 
 Binance Chain CLI use the keys you add to sign transactions for you. For example, if you want to transfer tokens to
-someone else, you just need to specify the name of the key you want to use, and input the password of the key, then 
+someone else, you just need to specify the name of the key you want to use, and input the password of the key, then
 Binance Chain CLI will sign the transaction for you if the password is right.
 
 
@@ -54,7 +54,7 @@ $ ./bnbcli keys mnemonic
 uncle mule squirrel cover theory oven rookie dry intact alert right afraid differ ability mule struggle spray usual must purity social ball flat short
 ```
 
-### add 
+### add
 
 You can use `add` to create a new key or import from seed (mnemonic). You have to specify the name for the key you want
 to create.
@@ -98,7 +98,7 @@ test	local	bnc16jv838jw8zcgucvrhreen73adwgnue6ujcz2cf	bncp1addwnpepqgxacvpgnvss9
 testkey	local	bnc1e8zhj9wmgq4pwzrv264gfru2fk8x2hdvpclx3n	bncp1addwnpepqffepxlkrka9n33vyzmjwkpy05gpm46cn5de3x9v0vqswk7st5lkc7alhjv
 ```
 
-### show 
+### show
 
 `show` is used to show the detail of the key by the name.
 

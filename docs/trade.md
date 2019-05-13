@@ -19,7 +19,7 @@ $ bnbcli dex order  --symbol ZEBRA-16D_BNB  --side 1 --price 1000000 --qty 1000 
 
 For `side`, you need to put 1 as buy or 2 as sell.
 
-Please note that quantity should be rounded to `lotSize`. Otherwise your order could not be valid. 
+Please note that quantity should be rounded to `lotSize`. Otherwise your order could not be valid.
 The return output is the folllowing:
 
 ```
@@ -34,7 +34,7 @@ To cancel an order, you could use the following command to cencel order on testn
 ```
 tbnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --refid  813E4939F1567B219704FFC2AD4DF58BDE010879-30 --from guest
 ```
-Please note that `refid` is what you got from `order` command. 
+Please note that `refid` is what you got from `order` command.
 
 Example on **mainnet**:
 
@@ -44,7 +44,7 @@ bnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Tigris   --n
 
 ## View Orders
 
-To veryfy that your commands are executed as expected, you could query the orderbook of testnet. 
+To veryfy that your commands are executed as expected, you could query the orderbook of testnet.
 
 ```
 tbnbcli dex show -l ZEBRA-16D_BNB   --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80

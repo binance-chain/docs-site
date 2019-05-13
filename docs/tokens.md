@@ -3,7 +3,7 @@
 ## Introduction
 Assets are stored as `tokens` on Binance Chain, and the below management actions are available. All the assets are complied with [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md).
 
-The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of these operations can be executed. The fees for testnet and mainnet are different. 
+The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of these operations can be executed. The fees for testnet and mainnet are different.
 
 **Please note:** Before you run any command examples on this page, and if you have not done so already, you must [generate or add a key to bnbcli](./keys.md).
 
@@ -21,14 +21,14 @@ An issuance transaction contains:
 * Total Supply: an int64 boosted by **1e8** for decimal part. The max total supply is 90 billion.
 * Mintable: that means whether this token can be minted in the future. Default is false.
 
-Example on **mainnet**: 
+Example on **mainnet**:
 
 ```bash
 # To issue a NNB token with total-supply 1 billion on mainnet
 > ./bnbcli token issue --token-name "new token" --total-supply 100000000000000000 --symbol NNB --mintable --from alice  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
 ```
 
-Example on **testnet**: 
+Example on **testnet**:
 
 ```bash
 # To issue a NNB token with total-supply 1 billion on testnet
@@ -41,20 +41,20 @@ Committed at block 1887 (tx hash: B90A055DDD570AE42A7050182993A0B4DBC81A0D, ... 
 ## Mint
 Tokens that is "mintable"(specified when issue) can use this function. The amount is  boosted by **1e8** for decimal part. The total supply after mint is still restricted by 90 billion. Note only the `owner` of the token can use this transaction.
 
-Example on **mainnet**: 
+Example on **mainnet**:
 
 ```bash
  > ./bnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
 ```
 
-Example on **testnet**: 
+Example on **testnet**:
 
 ```bash
  > ./tbnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```
 
 ## Burn
-Burn is to destroy certain amount of token, after which that amount of tokens will be subtracted from the operator's balance. The total supply will be updated at the same time. Notice that only the owner of the token has the permission to burn token. The amount is  boosted by **1e8** for decimal part. 
+Burn is to destroy certain amount of token, after which that amount of tokens will be subtracted from the operator's balance. The total supply will be updated at the same time. Notice that only the owner of the token has the permission to burn token. The amount is  boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
 
@@ -62,7 +62,7 @@ Example on **mainnet**:
  > ./bnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
 ```
 
-Example on **testnet**: 
+Example on **testnet**:
 
 ```bash
  > ./tbnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
@@ -71,7 +71,7 @@ Example on **testnet**:
 ## Freeze & Unfreeze
 Freeze would move the specified amount of token into "frozen" status, so that these tokens can not transferred, spent in orders or any other transaction until they are unfreezed.
 
-Anyone can (only) freeze or unfreeze tokens on their account with status in "free". The amount is  boosted by **1e8** for decimal part. 
+Anyone can (only) freeze or unfreeze tokens on their account with status in "free". The amount is  boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
 
@@ -84,7 +84,7 @@ Example on **mainnet**:
 > ./bnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
 ```
 
-Example on **testnet**: 
+Example on **testnet**:
 
 ```bash
 > ./tbnbcli token freeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node

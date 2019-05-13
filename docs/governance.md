@@ -19,7 +19,7 @@
 
 ## Primer on Governance
 
-Binance Chain has its own built-in governance module that lets BNB holders submit proposals for adding trade pairs.  In order for the proposal to be open for voting, it needs to come with a `deposit` that is greater than a parameter called `Deposit`. The `deposit` need not be provided in its entirety by the submitter. If the initial proposer's `deposit` is not sufficient, the proposal enters the `deposit_period` status. Then, any BNB holder can increase the deposit by sending a `depositTx`. 
+Binance Chain has its own built-in governance module that lets BNB holders submit proposals for adding trade pairs.  In order for the proposal to be open for voting, it needs to come with a `deposit` that is greater than a parameter called `Deposit`. The `deposit` need not be provided in its entirety by the submitter. If the initial proposer's `deposit` is not sufficient, the proposal enters the `deposit_period` status. Then, any BNB holder can increase the deposit by sending a `depositTx`.
 
 ## Proposal Workflow
 ![workflow](./assets/workflow.jpg)
@@ -31,7 +31,7 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 
 ### Proposal Parameters
 * `deposit` :  your input must be larger than `min-depost`.
-* `voting-period`: This is the time for validators to vote, your input in seconds, if you ommit this field, the default voting period is one week. 
+* `voting-period`: This is the time for validators to vote, your input in seconds, if you ommit this field, the default voting period is one week.
 * `expire-time`: This is the time for you to send list transaction if your proposal is passed. This time cannot be ealry than current time.
 
 ### Participate in Governance
@@ -43,18 +43,18 @@ Please use this [tool](<https://github.com/binance-chain/node-binary/tree/master
 To add a new trading pairs, you could run the following command :
 Please note:
 
-+ `--init-price` is  boosted by **1e8** for decimal part, such as100000000, is 1 BNB 
++ `--init-price` is  boosted by **1e8** for decimal part, such as100000000, is 1 BNB
 + `--from`: put  your key name for the address / key, you can only list with the owner address of your token.
-+ `--expire-time`: expire time is after when you will not be able to list your token though your proposal is passed. 
++ `--expire-time`: expire time is after when you will not be able to list your token though your proposal is passed.
 + `--voting-period`: The voting period is for validators to vote. The unit is second and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period.
 
-Please note the all the  numbers are  boosted by **1e8** for decimal part. 
+Please note the all the  numbers are  boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB 
---base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB" 
+./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB
+--base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --voting-period 604800 --json
 ```
 
@@ -62,20 +62,20 @@ Example on **testnet**:
 
 ```shell
 ./tbnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB
---base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB" 
---description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800 
+--base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
+--description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
 ```
 
 #### Add deposit for a Proposal (Optional)
 If the initial deppsit for your proposal in `submit-list-proposal` is not enough, you can increase the deposit with `deposit` operation. In current Binance Chain Mainnet, the max deposit period is **two days**. After submitting a proposal, you have two days  to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly.
 
-Please note the amount is  boosted by **1e8** for decimal part. 
+Please note the amount is  boosted by **1e8** for decimal part.
 
 
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>：BNB  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 
+./bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>：BNB  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -90,7 +90,7 @@ To see detailed information of some proposla, you could run the following comman
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov query-proposal --proposal-id <proposal-ID>  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 
+./bnbcli gov query-proposal --proposal-id <proposal-ID>  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -125,7 +125,7 @@ Example output；
   }
 }
 ```
-You could get the information about the proposal's status and its tally result clearly. 
+You could get the information about the proposal's status and its tally result clearly.
 
 #### Query votes of a Proposal
 You could track the votes for your proposal with the following command；
@@ -133,7 +133,7 @@ You could track the votes for your proposal with the following command；
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov query-votes --proposal-id 272 --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 
+./bnbcli gov query-votes --proposal-id 272 --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -208,19 +208,19 @@ Example output:
 There are four vote options:
 - `Yes`
 - `No`
-- `NoWithVeto` 
-- `Abstain` 
+- `NoWithVeto`
+- `Abstain`
 
-`No` represents the validator is against this proposal and `NoWithVeto` suggests the validator is strongly against 
-this proposal. `Abstain` option allows voters to signal that they do not intend to vote in favor or against 
-the proposal but accept the result of the vote. 
+`No` represents the validator is against this proposal and `NoWithVeto` suggests the validator is strongly against
+this proposal. `Abstain` option allows voters to signal that they do not intend to vote in favor or against
+the proposal but accept the result of the vote.
 
 #### Quorum
 
-Quorum is defined as the minimum percentage of voting power that needs to be casted on a proposal for the result to 
+Quorum is defined as the minimum percentage of voting power that needs to be casted on a proposal for the result to
 be valid, which is 0.5(50%) now.
 
-If voting power does not reach quorum at the end of the voting period, the proposal will be rejected and all deposits 
+If voting power does not reach quorum at the end of the voting period, the proposal will be rejected and all deposits
 will be returned to depositors' addresses.
 
 **Note**: There is a special case that if all votes are `Abstain` and voting power is superior to 50%, the proposal will be rejected and all deposits will be refunded.

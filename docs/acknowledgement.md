@@ -2,7 +2,7 @@
 
 Binance Chain has been through several iterations and evolutions, each time building upon work contributed by members of the blockchain community. We would like to acknowledge the outstanding work that we have been able to build on during development. Let's build the future together!
 
-## Bitcoin and Ethereum 
+## Bitcoin and Ethereum
 No doubt. These two projects and their communities enable us from day one with countless creativities. They are the root of ground-zero thought and keep providing brilliant utilities and ideas.
 
 ## Binance Dexathon

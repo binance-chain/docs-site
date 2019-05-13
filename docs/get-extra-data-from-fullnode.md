@@ -2,7 +2,7 @@
 
 This document is for developer who is very interested in transactions in every block, or order book, or account changes or block fee charge and would like to build his own downstream services of the full node. Please refer to [run a full node](fullnode.md), if you still haven't deploy a full node.
 
-## Publish Different Messages to Local Files 
+## Publish Different Messages to Local Files
 
 You can set  the  `publishLocal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save the messages that you are interested under `{fullnode home}`/marketdata/marketdata.json, and you can consume them in your own apps. The messages types are explained below.
 
@@ -103,7 +103,7 @@ You can set  the  `publishOrderBook` option to `true` in `nodebinary/fullnode/{n
        Sells:  []{
             Price:   int64,
             LastQty: int64
-       } 
+       }
     }
 }
 ```
@@ -136,8 +136,8 @@ You can set  the  `publishTransfer` option to `true` in `nodebinary/fullnode/{ne
         To:   []{
             Addr:  string,
             Coins: []{
-                Denom:  string, 
-                Amount: int64 
+                Denom:  string,
+                Amount: int64
             }
         }
 	}
@@ -146,8 +146,8 @@ You can set  the  `publishTransfer` option to `true` in `nodebinary/fullnode/{ne
 
 
 
-## Publish  Different Messages to Kafka 
-You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save the messages that you are interested to Kafka, and you can consume them in your own apps. The message is encoded based on `Avro` serialization system. Their schemas are shown as below: 
+## Publish  Different Messages to Kafka
+You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save the messages that you are interested to Kafka, and you can consume them in your own apps. The message is encoded based on `Avro` serialization system. Their schemas are shown as below:
 
 - **OrderUpdates**:
 ```
@@ -215,7 +215,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
                             { "name": "lastExecutedPrice", "type": "long" },
                             { "name": "lastExecutedQty", "type": "long" },
                             { "name": "cumQty", "type": "long" },
-                            { "name": "fee", "type": "string" }, 
+                            { "name": "fee", "type": "string" },
                             { "name": "orderCreationTime", "type": "long" },
                             { "name": "transactionTime", "type": "long" },
                             { "name": "timeInForce", "type": "int" },
@@ -340,7 +340,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
 ```
 
 
-- **BlockFeeSchema**: 
+- **BlockFeeSchema**:
 ```
 {
     "type": "record",
@@ -354,7 +354,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
 }
 ```
 
-- **TransfersSchema**: 
+- **TransfersSchema**:
 ```
 {
     "type": "record",
@@ -365,7 +365,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
         { "name": "num", "type": "int" },
         { "name": "timestamp", "type": "long" },
         { "name": "transfers",
-          "type": {	
+          "type": {
             "type": "array",
             "items": {
                 "type": "record",
@@ -373,7 +373,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
                 "namespace": "com.company",
                 "fields": [
                     { "name": "from", "type": "string"},
-                    { "name": "to", 
+                    { "name": "to",
                         "type": {
                             "type": "array",
                             "items": {
@@ -394,7 +394,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
                                                     { "name": "amount", "type": "long" }
                                                 ]
                                             }
-                                        }	
+                                        }
                                     }
                                 ]
                             }
@@ -402,7 +402,7 @@ You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{netwo
                     }
                 ]
             }
-          }	
+          }
         }
     ]
 }

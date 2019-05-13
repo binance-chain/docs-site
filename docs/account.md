@@ -23,7 +23,7 @@ Pleas note that the number is boosted by **e^8**.
 {"type":"bnbchain/Account","value":{"base":{"address":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","coins":[{"denom":"000-0E1","amount":"10530"},{"denom":"BNB","amount":"247349863800"},{"denom":"BTC.B-918","amount":"113218800"},{"denom":"COSMOS-587","amount":"50000101983748977"},{"denom":"EDU-DD0","amount":"139885964"},{"denom":"MFH-9B5","amount":"1258976083286"},{"denom":"NASC-137","amount":"0"},{"denom":"PPC-00A","amount":"205150260"},{"denom":"TGT-9FC","amount":"33251102828"},{"denom":"UCX-CC8","amount":"1398859649"},{"denom":"USDT.B-B7C","amount":"140456966268"},{"denom":"YLC-D8B","amount":"210572645"},{"denom":"ZZZ-21E","amount":"13988596"}],"public_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"account_number":"406226","sequence":"29"},"name":"","frozen":null,"locked":[{"denom":"KOGE48-35D","amount":"10000000000"}]}}
 ```
 
-As you can see from the ouput, this account's `account_number` is 406226 and its `sequence` is 29. These are important information about this account. 
+As you can see from the ouput, this account's `account_number` is 406226 and its `sequence` is 29. These are important information about this account.
 
 ## Create Account
 
@@ -91,24 +91,24 @@ Please note the amount is boosted by 1e8 for decimal part.
 Example on  **mainnet**:
 
 ```bash
-$  ./bnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 
+$  ./bnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
 ```
 Example on **testnet**:
 
 ```bash
 $  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
-{  
+{
    "type":"bnbchain/Account",
-   "value":{  
-      "base":{  
+   "value":{
+      "base":{
          "address":"bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa",
-         "coins":[  
-            {  
+         "coins":[
+            {
                "denom":"AAA-254",
                "amount":"19500000000000000"
             }
          ],
-         "public_key":{  
+         "public_key":{
             "type":"tendermint/PubKeySecp256k1",
             "value":"A1V88I61gCbF2V1RqdCxb0UN/8g95mNUlJGH5htNNC70"
          },
@@ -122,6 +122,6 @@ $  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node  --
 }
 ```
 
-## Get Testnet BNB 
+## Get Testnet BNB
 
-You can get test BNB by following [this guide](https://www.binance.vision/tutorials/binance-dex-funding-your-testnet-account). 
+You can get test BNB by following [this guide](https://www.binance.vision/tutorials/binance-dex-funding-your-testnet-account).

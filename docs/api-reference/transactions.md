@@ -1,5 +1,5 @@
 # Transaction Data
-A transaction in tendermint is any sequence of bytes. It's up to the ABCI application to accept or reject the transactions. 
+A transaction in tendermint is any sequence of bytes. It's up to the ABCI application to accept or reject the transactions.
 
 On Binance Chain, all kinds of transactions are wrapped in type `StdTx` before marshalling by [Amino](https://github.com/tendermint/go-amino):
 ```go
@@ -8,7 +8,7 @@ type StdTx struct {
     Fee        StdFee         `json:"fee"`
     Signatures []StdSignature `json:"signatures"`
 }
-``` 
+```
 
 All kinds of transactions have the same type of Fee and Signatures, the difference is the `msg` part.
 

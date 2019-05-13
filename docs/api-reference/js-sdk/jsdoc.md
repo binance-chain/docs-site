@@ -65,7 +65,7 @@
 ### client.BncClient
 The Binance Chain client.
 
-**Kind**: static class of [<code>client</code>](#module_client)  
+**Kind**: static class of [<code>client</code>](#module_client)
 
 * [.BncClient](#module_client.BncClient)
     * [new exports.BncClient(server, useAsyncBroadcast)](#new_module_client.BncClient_new)
@@ -109,85 +109,85 @@ The Binance Chain client.
 #### bncClient.initChain() ⇒ <code>Promise</code>
 Initialize the client with the chain's ID. Asynchronous.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 <a name="module_client.BncClient+setPrivateKey"></a>
 
 #### bncClient.setPrivateKey() ⇒ <code>Promise</code>
 Sets the client's private key for calls made by this client. Asynchronous.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 <a name="module_client.BncClient+useAsyncBroadcast"></a>
 
 #### bncClient.useAsyncBroadcast(useAsyncBroadcast) ⇒ <code>BncClient</code>
 Use async broadcast mode. Broadcasts faster with less guarantees (default off)
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 
 | Param | Type | Default |
 | --- | --- | --- |
-| useAsyncBroadcast | <code>Boolean</code> | <code>true</code> | 
+| useAsyncBroadcast | <code>Boolean</code> | <code>true</code> |
 
 <a name="module_client.BncClient+setSigningDelegate"></a>
 
 #### bncClient.setSigningDelegate(delegate) ⇒ <code>BncClient</code>
 Sets the signing delegate (for wallet integrations).
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 
 | Param | Type |
 | --- | --- |
-| delegate | <code>function</code> | 
+| delegate | <code>function</code> |
 
 <a name="module_client.BncClient+setBroadcastDelegate"></a>
 
 #### bncClient.setBroadcastDelegate(delegate) ⇒ <code>BncClient</code>
 Sets the broadcast delegate (for wallet integrations).
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 
 | Param | Type |
 | --- | --- |
-| delegate | <code>function</code> | 
+| delegate | <code>function</code> |
 
 <a name="module_client.BncClient+useDefaultSigningDelegate"></a>
 
 #### bncClient.useDefaultSigningDelegate() ⇒ <code>BncClient</code>
 Applies the default signing delegate.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 <a name="module_client.BncClient+useDefaultBroadcastDelegate"></a>
 
 #### bncClient.useDefaultBroadcastDelegate() ⇒ <code>BncClient</code>
 Applies the default broadcast delegate.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 <a name="module_client.BncClient+useLedgerSigningDelegate"></a>
 
 #### bncClient.useLedgerSigningDelegate(ledgerApp, preSignCb, postSignCb, errCb) ⇒ <code>BncClient</code>
 Applies the Ledger signing delegate.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>BncClient</code> - this instance (for chaining)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>BncClient</code> - this instance (for chaining)
 
 | Param | Type |
 | --- | --- |
-| ledgerApp | <code>function</code> | 
-| preSignCb | <code>function</code> | 
-| postSignCb | <code>function</code> | 
-| errCb | <code>function</code> | 
+| ledgerApp | <code>function</code> |
+| preSignCb | <code>function</code> |
+| postSignCb | <code>function</code> |
+| errCb | <code>function</code> |
 
 <a name="module_client.BncClient+transfer"></a>
 
 #### bncClient.transfer(fromAddress, toAddress, amount, asset, memo, sequence) ⇒ <code>Object</code>
 Transfer tokens from one address to another.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -203,8 +203,8 @@ Transfer tokens from one address to another.
 #### bncClient.cancelOrder(fromAddress, symbol, refid, sequence) ⇒ <code>Object</code>
 Cancel an order.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -218,8 +218,8 @@ Cancel an order.
 #### bncClient.placeOrder(address, symbol, side, price, quantity, sequence, timeinforce) ⇒ <code>Object</code>
 Place an order.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -236,8 +236,8 @@ Place an order.
 #### bncClient.\_prepareTransaction(msg, stdSignMsg, address, sequence, memo) ⇒ [<code>Transaction</code>](#Transaction)
 Prepare a serialized raw transaction for sending to the blockchain.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: [<code>Transaction</code>](#Transaction) - signed transaction  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: [<code>Transaction</code>](#Transaction) - signed transaction
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -252,8 +252,8 @@ Prepare a serialized raw transaction for sending to the blockchain.
 #### bncClient.sendTransaction(tx, sync) ⇒ <code>Object</code>
 Broadcast a transaction to the blockchain.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -265,8 +265,8 @@ Broadcast a transaction to the blockchain.
 #### bncClient.sendRawTransaction(signedBz, sync) ⇒ <code>Object</code>
 Broadcast a raw transaction to the blockchain.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -278,8 +278,8 @@ Broadcast a raw transaction to the blockchain.
 #### bncClient.\_sendTransaction(msg, stdSignMsg, address, sequence, memo, sync) ⇒ <code>Object</code>
 Broadcast a raw transaction to the blockchain.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - response (success or fail)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - response (success or fail)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -295,20 +295,20 @@ Broadcast a raw transaction to the blockchain.
 #### bncClient.getAccount(address) ⇒ <code>Object</code>
 get account
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - http response  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - http response
 
 | Param | Type |
 | --- | --- |
-| address | <code>String</code> | 
+| address | <code>String</code> |
 
 <a name="module_client.BncClient+getBalance"></a>
 
 #### bncClient.getBalance(address) ⇒ <code>Object</code>
 get balances
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
-**Returns**: <code>Object</code> - http response  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
+**Returns**: <code>Object</code> - http response
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -319,15 +319,15 @@ get balances
 #### bncClient.createAccount() ⇒ <code>Object</code>
 Creates a private key.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 **Returns**: <code>Object</code> - {
  address,
  privateKey
-}  
+}
 <a name="module_client.BncClient+createAccountWithKeystore"></a>
 
 #### bncClient.createAccountWithKeystore(password)
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -336,16 +336,16 @@ Creates a private key.
 <a name="module_client.BncClient+createAccountWithMneomnic"></a>
 
 #### bncClient.createAccountWithMneomnic() ⇒ <code>Object</code>
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 **Returns**: <code>Object</code> - {
  privateKey,
  address,
  mnemonic
-}  
+}
 <a name="module_client.BncClient+recoverAccountFromKeystore"></a>
 
 #### bncClient.recoverAccountFromKeystore(keystore, password)
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -355,7 +355,7 @@ Creates a private key.
 <a name="module_client.BncClient+recoverAccountFromMneomnic"></a>
 
 #### bncClient.recoverAccountFromMneomnic(mneomnic)
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -364,7 +364,7 @@ Creates a private key.
 <a name="module_client.BncClient+recoverAccountFromPrivateKey"></a>
 
 #### bncClient.recoverAccountFromPrivateKey(privateKey)
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -373,24 +373,24 @@ Creates a private key.
 <a name="module_client.BncClient+checkAddress"></a>
 
 #### bncClient.checkAddress(address) ⇒ <code>Boolean</code>
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 
 | Param | Type |
 | --- | --- |
-| address | <code>String</code> | 
+| address | <code>String</code> |
 
 <a name="module_client.BncClient+getClientKeyAddress"></a>
 
 #### bncClient.getClientKeyAddress() ⇒ <code>String</code>
 Returns the address for the current account if setPrivateKey has been called on this client.
 
-**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)  
+**Kind**: instance method of [<code>BncClient</code>](#module_client.BncClient)
 <a name="module_client.DefaultSigningDelegate"></a>
 
 ### client.DefaultSigningDelegate ⇒ [<code>Transaction</code>](#Transaction)
 The default signing delegate which uses the local private key.
 
-**Kind**: static constant of [<code>client</code>](#module_client)  
+**Kind**: static constant of [<code>client</code>](#module_client)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -402,7 +402,7 @@ The default signing delegate which uses the local private key.
 ### client.DefaultBroadcastDelegate
 The default broadcast delegate which immediately broadcasts a transaction.
 
-**Kind**: static constant of [<code>client</code>](#module_client)  
+**Kind**: static constant of [<code>client</code>](#module_client)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -413,25 +413,25 @@ The default broadcast delegate which immediately broadcasts a transaction.
 ### client.LedgerSigningDelegate ⇒ <code>function</code>
 The Ledger signing delegate.
 
-**Kind**: static constant of [<code>client</code>](#module_client)  
+**Kind**: static constant of [<code>client</code>](#module_client)
 
 | Param | Type |
 | --- | --- |
-| ledgerApp | <code>LedgerApp</code> | 
-| function | <code>preSignCb</code> | 
-| function | <code>postSignCb</code> | 
-| function | <code>errCb</code> | 
+| ledgerApp | <code>LedgerApp</code> |
+| function | <code>preSignCb</code> |
+| function | <code>postSignCb</code> |
+| function | <code>errCb</code> |
 
 <a name="module_client..checkNumber"></a>
 
 ### client~checkNumber(value)
 validate the input number.
 
-**Kind**: inner method of [<code>client</code>](#module_client)  
+**Kind**: inner method of [<code>client</code>](#module_client)
 
 | Param | Type |
 | --- | --- |
-| value | <code>Number</code> | 
+| value | <code>Number</code> |
 
 <a name="module_crypto"></a>
 
@@ -461,7 +461,7 @@ validate the input number.
 ### crypto.decodeAddress
 Decodes an address in bech32 format.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -472,7 +472,7 @@ Decodes an address in bech32 format.
 ### crypto.checkAddress
 checek address whether is valid
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -483,7 +483,7 @@ checek address whether is valid
 ### crypto.encodeAddress
 Encodes an address from input data bytes.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -496,8 +496,8 @@ Encodes an address from input data bytes.
 ### crypto.generatePrivateKey ⇒ <code>string</code>
 Generates 32 bytes of random entropy
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>string</code> - entropy bytes hexstring  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>string</code> - entropy bytes hexstring
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -508,7 +508,7 @@ Generates 32 bytes of random entropy
 ### crypto.generateRandomArray ⇒ <code>ArrayBuffer</code>
 Generates an arrayBuffer filled with random bits.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -517,8 +517,8 @@ Generates an arrayBuffer filled with random bits.
 <a name="module_crypto.getPublicKey"></a>
 
 ### crypto.getPublicKey ⇒ <code>Elliptic.PublicKey</code>
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>Elliptic.PublicKey</code> - public key hexstring  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>Elliptic.PublicKey</code> - public key hexstring
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -529,8 +529,8 @@ Generates an arrayBuffer filled with random bits.
 ### crypto.getPublicKeyFromPrivateKey ⇒ <code>string</code>
 Calculates the public key from a given private key.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>string</code> - public key hexstring  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>string</code> - public key hexstring
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -542,19 +542,19 @@ Calculates the public key from a given private key.
 PubKey performs the point-scalar multiplication from the privKey on the
 generator point to get the pubkey.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>Elliptic.PublicKey</code> - PubKey  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>Elliptic.PublicKey</code> - PubKey
 
 | Param | Type |
 | --- | --- |
-| privateKey | <code>Buffer</code> | 
+| privateKey | <code>Buffer</code> |
 
 <a name="module_crypto.getAddressFromPublicKey"></a>
 
 ### crypto.getAddressFromPublicKey
 Gets an address from a public key hex.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -565,7 +565,7 @@ Gets an address from a public key hex.
 ### crypto.getAddressFromPrivateKey
 Gets an address from a private key.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -576,8 +576,8 @@ Gets an address from a private key.
 ### crypto.generateSignature ⇒ <code>Buffer</code>
 Generates a signature (64 byte <r,s>) for a transaction based on given private key.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>Buffer</code> - Signature. Does not include tx.  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>Buffer</code> - Signature. Does not include tx.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -589,8 +589,8 @@ Generates a signature (64 byte <r,s>) for a transaction based on given private k
 ### crypto.verifySignature ⇒ <code>Buffer</code>
 Verifies a signature (64 byte <r,s>) given the sign bytes and public key.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>Buffer</code> - Signature. Does not include tx.  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>Buffer</code> - Signature. Does not include tx.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -603,8 +603,8 @@ Verifies a signature (64 byte <r,s>) given the sign bytes and public key.
 ### crypto.generateKeyStore ⇒ <code>object</code>
 Generates a keystore based on given private key and password.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>object</code> - the keystore object.  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>object</code> - the keystore object.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -616,7 +616,7 @@ Generates a keystore based on given private key and password.
 ### crypto.getPrivateKeyFromKeyStore
 Gets a private key from a keystore given its password.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -628,14 +628,14 @@ Gets a private key from a keystore given its password.
 ### crypto.generateMnemonic
 Generates mnemonic phrase words using random entropy.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
 <a name="module_crypto.validateMnemonic"></a>
 
 ### crypto.validateMnemonic ⇒ <code>bool</code>
 Validates mnemonic phrase words.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>bool</code> - validation result  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>bool</code> - validation result
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -646,8 +646,8 @@ Validates mnemonic phrase words.
 ### crypto.getPrivateKeyFromMnemonic ⇒ <code>string</code>
 Get a private key from mnemonic words.
 
-**Kind**: static constant of [<code>crypto</code>](#module_crypto)  
-**Returns**: <code>string</code> - hexstring  
+**Kind**: static constant of [<code>crypto</code>](#module_crypto)
+**Returns**: <code>string</code> - hexstring
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -676,50 +676,50 @@ Get a private key from mnemonic words.
 ### amino.encodeNumber
 encode number
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param |
 | --- |
-| num | 
+| num |
 
 <a name="module_amino.encodeBool"></a>
 
 ### amino.encodeBool
 encode bool
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param |
 | --- |
-| b | 
+| b |
 
 <a name="module_amino.encodeString"></a>
 
 ### amino.encodeString
 encode string
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param |
 | --- |
-| str | 
+| str |
 
 <a name="module_amino.encodeTime"></a>
 
 ### amino.encodeTime
 encode time
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param |
 | --- |
-| value | 
+| value |
 
 <a name="module_amino.convertObjectToSignBytes"></a>
 
 ### amino.convertObjectToSignBytes ⇒ <code>Buffer</code>
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
-**Returns**: <code>Buffer</code> - bytes  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
+**Returns**: <code>Buffer</code> - bytes
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -730,30 +730,30 @@ encode time
 ### amino.marshalBinary
 js amino MarshalBinary
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param | Type |
 | --- | --- |
-| obj | <code>Object</code> | 
+| obj | <code>Object</code> |
 
 <a name="module_amino.marshalBinaryBare"></a>
 
 ### amino.marshalBinaryBare
 js amino MarshalBinaryBare
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
 
 | Param | Type |
 | --- | --- |
-| obj | <code>Object</code> | 
+| obj | <code>Object</code> |
 
 <a name="module_amino.encodeBinary"></a>
 
 ### amino.encodeBinary ⇒ <code>Buffer</code>
 This is the main entrypoint for encoding all types in binary form.
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
-**Returns**: <code>Buffer</code> - binary of object.  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
+**Returns**: <code>Buffer</code> - binary of object.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -766,28 +766,28 @@ This is the main entrypoint for encoding all types in binary form.
 ### amino.encodeBinaryByteArray ⇒ <code>Buffer</code>
 prefixed with bytes length
 
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
-**Returns**: <code>Buffer</code> - with bytes length prefixed  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
+**Returns**: <code>Buffer</code> - with bytes length prefixed
 
 | Param | Type |
 | --- | --- |
-| bytes | <code>Buffer</code> | 
+| bytes | <code>Buffer</code> |
 
 <a name="module_amino.encodeObjectBinary"></a>
 
 ### amino.encodeObjectBinary ⇒ <code>Buffer</code>
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
-**Returns**: <code>Buffer</code> - with bytes length prefixed  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
+**Returns**: <code>Buffer</code> - with bytes length prefixed
 
 | Param | Type |
 | --- | --- |
-| obj | <code>Object</code> | 
+| obj | <code>Object</code> |
 
 <a name="module_amino.encodeArrayBinary"></a>
 
 ### amino.encodeArrayBinary ⇒ <code>Buffer</code>
-**Kind**: static constant of [<code>amino</code>](#module_amino)  
-**Returns**: <code>Buffer</code> - bytes of array  
+**Kind**: static constant of [<code>amino</code>](#module_amino)
+**Returns**: <code>Buffer</code> - bytes of array
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -813,7 +813,7 @@ prefixed with bytes length
 ### ledger.LedgerApp
 Ledger app interface.
 
-**Kind**: static class of [<code>ledger</code>](#module_ledger)  
+**Kind**: static class of [<code>ledger</code>](#module_ledger)
 
 * [.LedgerApp](#module_ledger.LedgerApp)
     * [new LedgerApp(transport, interactiveTimeout, nonInteractiveTimeout)](#new_module_ledger.LedgerApp_new)
@@ -840,7 +840,7 @@ Constructs a new LedgerApp.
 #### ledgerApp.getVersion()
 Gets the version of the Ledger app that is currently open on the device.
 
-**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)  
+**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)
 **Throws**:
 
 - Will throw Error if a transport error occurs, or if the firmware app is not open.
@@ -850,7 +850,7 @@ Gets the version of the Ledger app that is currently open on the device.
 #### ledgerApp.publicKeySecp256k1(hdPath)
 Gets the public key from the Ledger app that is currently open on the device.
 
-**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)  
+**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)
 **Throws**:
 
 - Will throw Error if a transport error occurs, or if the firmware app is not open.
@@ -865,7 +865,7 @@ Gets the public key from the Ledger app that is currently open on the device.
 #### ledgerApp.signSecp256k1(signBytes, hdPath)
 Sends a transaction sign doc to the Ledger app to be signed.
 
-**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)  
+**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)
 **Throws**:
 
 - Will throw Error if a transport error occurs, or if the firmware app is not open.
@@ -881,7 +881,7 @@ Sends a transaction sign doc to the Ledger app to be signed.
 #### ledgerApp.getPublicKey(hdPath)
 Gets the public key from the Ledger app that is currently open on the device.
 
-**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)  
+**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)
 **Throws**:
 
 - Will throw Error if a transport error occurs, or if the firmware app is not open.
@@ -896,7 +896,7 @@ Gets the public key from the Ledger app that is currently open on the device.
 #### ledgerApp.sign(signBytes, hdPath)
 Sends a transaction sign doc to the Ledger app to be signed.
 
-**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)  
+**Kind**: instance method of [<code>LedgerApp</code>](#module_ledger.LedgerApp)
 **Throws**:
 
 - Will throw Error if a transport error occurs, or if the firmware app is not open.
@@ -932,17 +932,17 @@ Sends a transaction sign doc to the Ledger app to be signed.
 <a name="module_utils.ab2str"></a>
 
 ### utils.ab2str ⇒ <code>string</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - ASCII string  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - ASCII string
 
 | Param | Type |
 | --- | --- |
-| buf | <code>arrayBuffer</code> | 
+| buf | <code>arrayBuffer</code> |
 
 <a name="module_utils.str2ab"></a>
 
 ### utils.str2ab ⇒ <code>arrayBuffer</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -951,7 +951,7 @@ Sends a transaction sign doc to the Ledger app to be signed.
 <a name="module_utils.hexstring2ab"></a>
 
 ### utils.hexstring2ab ⇒ <code>Array.&lt;number&gt;</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -960,18 +960,18 @@ Sends a transaction sign doc to the Ledger app to be signed.
 <a name="module_utils.ab2hexstring"></a>
 
 ### utils.ab2hexstring ⇒ <code>string</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - HEX string  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - HEX string
 
 | Param | Type |
 | --- | --- |
-| arr | <code>arrayBuffer</code> | 
+| arr | <code>arrayBuffer</code> |
 
 <a name="module_utils.str2hexstring"></a>
 
 ### utils.str2hexstring ⇒ <code>string</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - HEX string  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - HEX string
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -980,8 +980,8 @@ Sends a transaction sign doc to the Ledger app to be signed.
 <a name="module_utils.hexstring2str"></a>
 
 ### utils.hexstring2str ⇒ <code>string</code>
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - ASCII string  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - ASCII string
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -992,18 +992,18 @@ Sends a transaction sign doc to the Ledger app to be signed.
 ### utils.int2hex ⇒ <code>string</code>
 convert an integer to big endian hex and add leading zeros
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type |
 | --- | --- |
-| num | <code>Number</code> | 
+| num | <code>Number</code> |
 
 <a name="module_utils.num2hexstring"></a>
 
 ### utils.num2hexstring ⇒ <code>string</code>
 Converts a number to a big endian hexstring of a suitable size, optionally little endian
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1016,8 +1016,8 @@ Converts a number to a big endian hexstring of a suitable size, optionally littl
 ### utils.num2VarInt ⇒ <code>string</code>
 Converts a number to a variable length Int. Used for array length header
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - hexstring of the variable Int.  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - hexstring of the variable Int.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1028,8 +1028,8 @@ Converts a number to a variable length Int. Used for array length header
 ### utils.hexXor ⇒ <code>string</code>
 XORs two hexstrings
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - XOR output as a HEX string  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - XOR output as a HEX string
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1041,25 +1041,25 @@ XORs two hexstrings
 ### utils.reverseArray ⇒ <code>Uint8Array</code>
 Reverses an array. Accepts arrayBuffer.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type |
 | --- | --- |
-| arr | <code>Array</code> | 
+| arr | <code>Array</code> |
 
 <a name="module_utils.reverseHex"></a>
 
 ### utils.reverseHex ⇒ <code>string</code>
 Reverses a HEX string, treating 2 chars as a byte.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - HEX string reversed in 2s.  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - HEX string reversed in 2s.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | hex | <code>string</code> | HEX string |
 
-**Example**  
+**Example**
 ```js
 reverseHex('abcdef') = 'efcdab'
 ```
@@ -1068,13 +1068,13 @@ reverseHex('abcdef') = 'efcdab'
 ### utils.isHex ⇒ <code>boolean</code>
 Checks if input is a hexstring. Empty string is considered a hexstring.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type |
 | --- | --- |
-| str | <code>string</code> | 
+| str | <code>string</code> |
 
-**Example**  
+**Example**
 ```js
 isHex('0101') = true
 isHex('') = true
@@ -1085,19 +1085,19 @@ isHex('0x01') = false
 ### utils.ensureHex
 Throws an error if input is not hexstring.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
 
 | Param | Type |
 | --- | --- |
-| str | <code>string</code> | 
+| str | <code>string</code> |
 
 <a name="module_utils.sha256ripemd160"></a>
 
 ### utils.sha256ripemd160 ⇒ <code>string</code>
 Performs a SHA256 followed by a RIPEMD160.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - hash output  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - hash output
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1108,8 +1108,8 @@ Performs a SHA256 followed by a RIPEMD160.
 ### utils.sha256 ⇒ <code>string</code>
 Performs a single SHA256.
 
-**Kind**: static constant of [<code>utils</code>](#module_utils)  
-**Returns**: <code>string</code> - hash output  
+**Kind**: static constant of [<code>utils</code>](#module_utils)
+**Returns**: <code>string</code> - hash output
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1120,7 +1120,7 @@ Performs a single SHA256.
 ## Transaction
 Creates a new transaction object.
 
-**Kind**: global class  
+**Kind**: global class
 **Properties**
 
 | Name | Type | Description |
@@ -1149,7 +1149,7 @@ Creates a new transaction object.
 | data.msg | <code>Object</code> | object data of tx type |
 | data.sequence | <code>Number</code> | transaction counts |
 
-**Example**  
+**Example**
 ```js
 var rawTx = {
   account_number: 1,
@@ -1166,7 +1166,7 @@ var tx = new Transaction(rawTx);
 ### transaction.getSignBytes(concrete) ⇒ <code>Buffer</code>
 generate the sign bytes for a transaction, given a msg
 
-**Kind**: instance method of [<code>Transaction</code>](#Transaction)  
+**Kind**: instance method of [<code>Transaction</code>](#Transaction)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1177,19 +1177,19 @@ generate the sign bytes for a transaction, given a msg
 ### transaction.addSignature(pubKey, signature) ⇒ [<code>Transaction</code>](#Transaction)
 attaches a signature to the transaction
 
-**Kind**: instance method of [<code>Transaction</code>](#Transaction)  
+**Kind**: instance method of [<code>Transaction</code>](#Transaction)
 
 | Param | Type |
 | --- | --- |
-| pubKey | <code>Elliptic.PublicKey</code> | 
-| signature | <code>Buffer</code> | 
+| pubKey | <code>Elliptic.PublicKey</code> |
+| signature | <code>Buffer</code> |
 
 <a name="Transaction+sign"></a>
 
 ### transaction.sign(privateKey, concrete) ⇒ [<code>Transaction</code>](#Transaction)
 sign transaction with a given private key and msg
 
-**Kind**: instance method of [<code>Transaction</code>](#Transaction)  
+**Kind**: instance method of [<code>Transaction</code>](#Transaction)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1201,7 +1201,7 @@ sign transaction with a given private key and msg
 ### transaction.serialize(opts)
 encode signed transaction to hex which is compatible with amino
 
-**Kind**: instance method of [<code>Transaction</code>](#Transaction)  
+**Kind**: instance method of [<code>Transaction</code>](#Transaction)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1212,9 +1212,9 @@ encode signed transaction to hex which is compatible with amino
 ### transaction.\_serializePubKey(unencodedPubKey) ⇒ <code>Buffer</code>
 serializes a public key in a 33-byte compressed format.
 
-**Kind**: instance method of [<code>Transaction</code>](#Transaction)  
+**Kind**: instance method of [<code>Transaction</code>](#Transaction)
 
 | Param | Type |
 | --- | --- |
-| unencodedPubKey | <code>Elliptic.PublicKey</code> | 
+| unencodedPubKey | <code>Elliptic.PublicKey</code> |
 
