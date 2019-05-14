@@ -7,9 +7,9 @@
   * [2. Protocols](#2-protocols)
   * [3. Configuration](#3-configuration)
   * [4. Arguments](#4-arguments)
-    + [4.1 URI/HTTP](#41-uri-http)
-    + [4.2  JSONRPC/HTTP](#42--jsonrpc-http)
-    + [4.3  JSONRPC/websockets](#43--jsonrpc-websockets)
+    + [4.1 URI/HTTP](#41-urihttp)
+    + [4.2 JSONRPC/HTTP](#42-jsonrpchttp)
+    + [4.3 JSONRPC/websockets](#43-jsonrpcwebsockets)
   * [5. RPC Endpoint List](#5-rpc-endpoint-list)
   * [6. APIs](#6-apis)
     + [6.1 Query APIs](#61-query-apis)
@@ -22,18 +22,18 @@
       - [6.1.7 Query NumUnconfirmedTxs](#617-query-numunconfirmedtxs)
       - [6.1.8 Query Status](#618-query-status)
       - [6.1.9 ABCIQuery](#619-abciquery)
-      - [6.1.10  Query Block](#6110--query-block)
+      - [6.1.10 Query Block](#6110-query-block)
       - [6.1.11 Query BlockResults](#6111-query-blockresults)
       - [6.1.12 Query BlockchainInfo](#6112-query-blockchaininfo)
       - [6.1.13 Query Commit](#6113-query-commit)
       - [6.1.14 Query Tx](#6114-query-tx)
       - [6.1.15 Query TxSearch](#6115-query-txsearch)
     + [6.2 Tx APIs](#62-tx-apis)
-      - [6.2.1   BroadcastTxAsync](#621---broadcasttxasync)
-      - [6.2.2  BroadcastTxCommit](#622--broadcasttxcommit)
-      - [6.2.3  BroadcastTxSync](#623--broadcasttxsync)
+      - [6.2.1 BroadcastTxAsync](#621-broadcasttxasync)
+      - [6.2.2 BroadcastTxCommit](#622-broadcasttxcommit)
+      - [6.2.3 BroadcastTxSync](#623-broadcasttxsync)
     + [6.3 Websocket APIs](#63-websocket-apis)
-      - [6.3.1  Subscribe](#631--subscribe)
+      - [6.3.1 Subscribe](#631-subscribe)
       - [6.3.2 Unsubscribe](#632-unsubscribe)
       - [6.3.3 UnsubscribeAll](#633-unsubscribeall)
 
@@ -51,7 +51,7 @@ Alternatively, you are able to use a node that is hosted in the Binance Chain ne
 
 ### 1.2 Use an existing node on the network
 
-The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.html#apiv1peers) endpoint to get a list of network peers.
+The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](/api-reference/dex-api/paths.html#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 
