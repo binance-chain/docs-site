@@ -78,7 +78,5 @@ Read on below if you are more interested in what is happening under the hood!
 
 - [Binance Chain Governance](governance.md): about proposal, vote, and join as a validator.
 
-- [Disaster Recovery and Emergency](recovery.md): what are the disaster and emergency cases
-
 ## Acknowledgement
 Thanks to the [community, our partners and supporters](acknowledgement.md).
