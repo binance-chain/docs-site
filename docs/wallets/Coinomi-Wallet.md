@@ -5,7 +5,7 @@ Coinomi provides native support and true ownership for more than 125 blockchains
 
 ## Instruction
 
-* Downloads: https://www.coinomi.com/en/downloads/ 
+* Downloads: https://www.coinomi.com/en/downloads/
 
 ## Resource
 

@@ -4,7 +4,7 @@
 
 ## What is it?
 
-Hoo Wallet supports Cloud Wallet and HD Wallet. 
+Hoo Wallet supports Cloud Wallet and HD Wallet.
 
 ## Instruction
 

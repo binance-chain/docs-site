@@ -74,8 +74,8 @@ There are two parameters you need to figure out to start a light client node: `c
 The `chain id` of the network that you want join in. You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/node/config/genesis.json)
 or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/node/config/genesis.json).
 
- The `node` field can be any full nodes you have deployed. You can 
-refer to [Run a Binance Chain full node](fullnode.md) to get more detailed. We supply a bunch of full nodes that you can 
+ The `node` field can be any full nodes you have deployed. You can
+refer to [Run a Binance Chain full node](fullnode.md) to get more detailed. We supply a bunch of full nodes that you can
 
 connect in testnet.
 You cat get full nodes info through a simple python script(notice to replace domain according to different network):
@@ -89,7 +89,7 @@ print fullnodes
 
 ### Example for Mainnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Tigris"    --node tcp://dataseed1.binance.org:80 > node.log  & 
+./lightd --chain-id "Binance-Chain-Tigris"    --node tcp://dataseed1.binance.org:80 > node.log  &
 ```
 
 ### Example for Testnet:
