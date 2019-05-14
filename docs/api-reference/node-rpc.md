@@ -145,7 +145,7 @@ curl 'localhost:27147/broadcast_tx_sync?tx=0xdb01f0625dee0a63ce6dc0430a14813e493
 }
 ```
 
-### 4.2  JSONRPC/HTTP
+### 4.2 JSONRPC/HTTP
 
 JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="http://localhost:27147/">http://localhost:27147/</a>).
 
@@ -160,7 +160,7 @@ JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="
 }
 ```
 
-### 4.3  JSONRPC/websockets
+### 4.3 JSONRPC/websockets
 
 JSONRPC requests can be made via websocket. The websocket endpoint is at `/websocket`, e.g. `localhost:27147/websocket`.  Asynchronous RPC functions like event `subscribe` and `unsubscribe` are only available via websockets.
 
@@ -2453,7 +2453,7 @@ tx, err := client.TxSearch(q, true)
 ```
 
 ### 6.2 Tx APIs
-#### 6.2.1   BroadcastTxAsync
+#### 6.2.1 BroadcastTxAsync
 This method just return transaction hash right away and there is no return from CheckTx or DeliverTx.
 
 **Transaction Parameters**
@@ -2540,7 +2540,7 @@ It returns the height which it was committed:
 ```
 
 
-#### 6.2.2  BroadcastTxCommit
+#### 6.2.2 BroadcastTxCommit
 The transaction will be broadcasted and returns with the response from CheckTx and DeliverTx.
 
 This method will waitCONTRACT: only returns error if mempool.CheckTx() errs or if we timeout
@@ -2642,7 +2642,7 @@ The above command returns JSON structured like this. Please note that the return
 To understand the output data, you could decode these data information of base64 encoding: "{"order_id":"813E4939F1567B219704FFC2AD4DF58BDE010879-46"}"
 
 
-#### 6.2.3  BroadcastTxSync
+#### 6.2.3 BroadcastTxSync
 The transaction will be broadcasted and returns with the response from CheckTx.
 
 **Transaction Parameters**
@@ -2722,7 +2722,7 @@ To understand the output data, you could decode these data information of hex.: 
 
 ### 6.3 Websocket APIs
 
-#### 6.3.1  Subscribe
+#### 6.3.1 Subscribe
 
 Subscribe for events via WebSocket.
 
