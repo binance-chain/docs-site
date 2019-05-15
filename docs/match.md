@@ -62,9 +62,12 @@ Among all the orders to be allocated, between buy and sell sides, there will be 
 ### Quantity Allocation
 The below match illustrates how quantity of the base and quote assets are allocated among different orders.
 
-1. Orders with best bid price would match with order with best ask price;
-2. If the orders with one limit price level cannot be fully filled by the opposite orders: for the orders with the same price, the orders from the earlier blocks (leftover orders) would be selected and filled first
-3. If the orders have the same price and block height, and cannot be fully filled, the execution would be allocated to each order in proportion to their quantity (floored if the number has a partial lot). If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent bias to any orders: according to a sequence they are included into the block.
+1. After we conclude the execution price and maximum execution quantity, determine the orders that would be matched in this round.
+   - Orders with best price would be selected first. 
+   - If the orders with one limit price level cannot be fully filled by the opposite orders: for the orders with the same price, the orders from the earlier blocks (leftover orders) would be selected.
+   - If the orders have the same price and block height, and cannot be fully filled, all of them would be selected with their quantity adjusted proportionally (floored if the number has a partial lot). If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent bias to any orders: according to a sequence they are included into the block.
+2. Rearrange the selected orders: for maker side, all maker orders are kept in their original price level, all taker orders are merged into the concluded price level and sorted by their order price; for taker side, all orders are merged into one price level and sorted by **order quantity**.
+3. For each price level(from best to worst) in maker side, allocate it's orders in proportion to the quantity of orders from taker side.
 
 ### Execution Pricing
 Among all the orders to be allocated, 
