@@ -51,7 +51,7 @@ Alternatively, you are able to use a node that is hosted in the Binance Chain ne
 
 ### 1.2 Use an existing node on the network
 
-The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](/api-reference/dex-api/paths.html#apiv1peers) endpoint to get a list of network peers.
+The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 

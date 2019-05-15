@@ -71,8 +71,8 @@ Start the light client node according to the Platform. Replace the `platform` va
 ```
 
 There are two parameters you need to figure out to start a light client node: `chain id` and `full node addr`.
-The `chain id` of the network that you want join in. You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/node/config/genesis.json)
-or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/node/config/genesis.json).
+The `chain id` of the network that you want join in. You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
+or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json).
 
  The `node` field can be any full nodes you have deployed. You can
 refer to [Run a Binance Chain full node](fullnode.md) to get more detailed. We supply a bunch of full nodes that you can
