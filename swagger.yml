@@ -104,7 +104,7 @@ paths:
         '200':
           description: Success
           schema:
-            type: object
+            $ref: "#/definitions/ResultStatus"
             title: 'Node info'
             description: 'Represents block height, current timestamp and the number of connected peers.'
   /api/v1/validators:
@@ -1333,8 +1333,9 @@ definitions:
     properties:
       hash:
         type: string
+        format: hex
         title: Hash
-        description: 'Hash of transaction'
+        description: 'Hash of transaction, it returned as bytes before, and now it returns as hex string'
       log:
         title: Log
         type: string
@@ -1356,65 +1357,65 @@ definitions:
         description: 'Result code of transaction'
       ok:
         type: boolean
-      # tx:
-      #   title: Tx
-      #   type: object
-      #   description: |
-      #     Detail of transaction, like transaction type, messages and signature
+      tx:
+        title: Tx
+        type: object
+        description: |
+          Detail of transaction, like transaction type, messages and signature
 
-      #     For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-      #     varies with msg type.
+          For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
+          varies with msg type, if you query with --format=json.
 
-      #     ```
-      #     {
-      #         "type": "auth/StdTx", // fixed, type of transaction
-      #         "value": {            // fixed, detail of the transaction
-      #             "data": null,     // fixed, data of the transaction
-      #             "memo": "",       // fixed, memo
-      #             "msg": [          // fixed, msgs of the transaction
-      #                 {
-      #                     "type": "cosmos-sdk/Send",  // vary with msg type
-      #                     "value": {                  // value content vary with mst type
-      #                         "inputs": [
-      #                             {
-      #                                 "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-      #                                 "coins": [
-      #                                     {
-      #                                         "amount": "100000000000000",
-      #                                         "denom": "BNB"
-      #                                     }
-      #                                 ]
-      #                             }
-      #                         ],
-      #                         "outputs": [
-      #                             {
-      #                                 "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-      #                                 "coins": [
-      #                                     {
-      #                                         "amount": "100000000000000",
-      #                                         "denom": "BNB"
-      #                                     }
-      #                                 ]
-      #                             }
-      #                         ]
-      #                     }
-      #                 }
-      #             ],
-      #             "signatures": [ // fixed, signatures of the transaction
-      #                 {
-      #                     "account_number": "0",
-      #                     "pub_key": {
-      #                         "type": "tendermint/PubKeySecp256k1",
-      #                         "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-      #                     },
-      #                     "sequence": "1",
-      #                     "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-      #                 }
-      #             ],
-      #             "source": "0"  // fixed, source of the transaction
-      #         }
-      #     }
-      #     ``` 
+          ```
+          {
+              "type": "auth/StdTx", // fixed, type of transaction
+              "value": {            // fixed, detail of the transaction
+                  "data": null,     // fixed, data of the transaction
+                  "memo": "",       // fixed, memo
+                  "msg": [          // fixed, msgs of the transaction
+                      {
+                          "type": "cosmos-sdk/Send",  // vary with msg type
+                          "value": {                  // value content vary with mst type
+                              "inputs": [
+                                  {
+                                      "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
+                                      "coins": [
+                                          {
+                                              "amount": "100000000000000",
+                                              "denom": "BNB"
+                                          }
+                                      ]
+                                  }
+                              ],
+                              "outputs": [
+                                  {
+                                      "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
+                                      "coins": [
+                                          {
+                                              "amount": "100000000000000",
+                                              "denom": "BNB"
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      }
+                  ],
+                  "signatures": [ // fixed, signatures of the transaction
+                      {
+                          "account_number": "0",
+                          "pub_key": {
+                              "type": "tendermint/PubKeySecp256k1",
+                              "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
+                          },
+                          "sequence": "1",
+                          "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
+                      }
+                  ],
+                  "source": "0"  // fixed, source of the transaction
+              }
+          }
+          ``` 
 
   Account:
     type: object
@@ -1906,56 +1907,56 @@ definitions:
   ResultStatus:
     type: object
     properties: 
-      ValidatorInfo:
+      validator_info:
         type: array
         items:
           $ref: '#/definitions/ValidatorInfo'
-      SyncInfo:
+      sync_info:
         type: array
         items:
           $ref: '#/definitions/SyncInfo'
-      NodeInfo:
+      node_info:
         type: array
         items:
           $ref: '#/definitions/NodeInfo'
   NodeInfo:
     type: object
     properties: 
-      ProtocolVersion:
+      Protocol_Version:
         type: array
         items:
           $ref: '#/definitions/ProtocolVersion'
       ID :
         type: string
-      ListenAddr:
+      listen_addr:
         type: string
-      Network:
+      network:
         type: string
-      Version:
+      version:
         type: string
-      Channels:
+      channels:
         type: string
-      Moniker:
+      moniker:
         type: string
-      Other:
+      other:
         type: object
 
 
   SyncInfo:
         type: object 
         properties:
-          LatestBlockHash:
+          Latest_Bloc_kHash:
             type: string
             format: hex
-          LatestAppHash:
+          latest_app_hash:
             type: string
             format: hex
-          LatestBlockHeight:
+          latest_block_height:
             type: integer
             format: int64
-          LatestBlockTime:
+          latest_block_time:
             type: time
-          CatchingUp:
+          catching_up:
             type: boolean
 
 
@@ -1963,16 +1964,16 @@ definitions:
   ValidatorInfo:
         type: object 
         properties:
-          Address:
+          address:
             type: string
             description: hex address
-          PubKey:
+          pub_key:
             type: string
             description: hex-encoded
-          ProposerPriority:
+          proposer_priority:
             type: integer
             format: int64
-          VotingPower:
+          voting_power:
             type: integer
             format: int64
 
@@ -1982,10 +1983,10 @@ ProtocolVersion:
     P2P:
       type: integer
       format: uint64
-    Block: 
+    block: 
       type: integer
       format: uint64
-    App:
+    app:
       type: integer
       format: uint64
 
