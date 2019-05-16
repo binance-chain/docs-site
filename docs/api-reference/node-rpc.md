@@ -2352,7 +2352,7 @@ list of transactions (maximum ?per_page entries) and the total count.
 
 **Available Query Path**
 
-For now, you could only query by transaction height: `tx.height`.
+For now, you could only query by transaction height: `tx.height`. Please note that on Binance Chain testnet, you can only use this data seed node for tx search: https://data-seed-pre-0-s3.binance.org 
 
 **Example**
 
