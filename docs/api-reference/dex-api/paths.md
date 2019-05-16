@@ -1012,7 +1012,7 @@ varies with msg type, if you query with --format=json.
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| Latest_Bloc_kHash | string (hex) |  |  |
+| latest_block_hash | string (hex) |  |  |
 | latest_app_hash | string (hex) |  |  |
 | latest_block_height | long |  |  |
 | latest_block_time | time |  |  |

@@ -1945,7 +1945,7 @@ definitions:
   SyncInfo:
         type: object 
         properties:
-          Latest_Bloc_kHash:
+          latest_block_hash:
             type: string
             format: hex
           latest_app_hash:
