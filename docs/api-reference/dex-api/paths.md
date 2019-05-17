@@ -401,6 +401,7 @@ The given _limit_ must be one of the allowed limits below.
 | ---- | ----------- | ------ |
 | 200 | Success | [ [Transaction](#transaction) ] |
 | 400 | Bad Request | [Error](#error) |
+| 401 | Bad Signature | [Error](#error) |
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
 

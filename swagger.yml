@@ -190,7 +190,7 @@ paths:
         **Destination:** Witness node.
 
         **Rate Limit:** 5 requests per IP per second.
-        
+
         **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
 
         **URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
@@ -272,7 +272,7 @@ paths:
         **Destination:** Seed node.
 
         **Rate Limit:** 10 requests per IP per second.
-        
+
         **Example:**
 
         Below is an example response of a send transaction when `?format=json` is used.
@@ -603,6 +603,10 @@ paths:
               $ref: '#/definitions/Transaction'
         '400':
           description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '401':
+          description: 'Bad Signature'
           schema:
             $ref: "#/definitions/Error"
         '404':
@@ -1257,7 +1261,7 @@ definitions:
     title: Times
     properties:
       ap_time: {type: string, description: event time , example: e.g. 2019-01-21T10:30:00Z}
-      block_time: {type: string, description: block height, example: 12345678}
+      block_time: {type: string, description: the time of latest block, example: e.g. 2019-01-21T10:30:00Z}
   Validators:
     type: object
     properties:
@@ -1273,8 +1277,6 @@ definitions:
         title: Validators
         items:
           $ref: '#/definitions/Validator'
-
-
   Validator:
         type: object
         properties:
@@ -1369,7 +1371,7 @@ definitions:
         title: Data
         type: string
         description: 'Data of transaction'
-          
+
       height:
         title: Height
         type: string
@@ -1440,7 +1442,7 @@ definitions:
                   "source": "0"  // fixed, source of the transaction
               }
           }
-          ``` 
+          ```
 
   Account:
     type: object
