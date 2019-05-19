@@ -1,53 +1,53 @@
 # Account and Balance
 
-Each account contains cryptographic authentication info. It is created by a user of blockchain. It also  includes public key, address, and account number/sequence number for replay protection. Whenever a new address receives an asset, the corresponding transaction would create an `Account`for that address, which contains balances across all assets that are owned on this address.
+Each account contains cryptographic authentication info. It is created by a user of the blockchain. It also includes public key, address, and account number/sequence number for replay protection. Whenever a new address receives an asset, the corresponding transaction would create an `Account` for that address, which contains balances across all assets that are owned on this address.
 
-The balance (the amount of token) of each asset is composed of 3 different parts:
+The balance (the amount of tokens) of each asset is composed of 3 different parts:
 
-- Available: the amount of token can be transferred, and spent to swap (buy) other assets
-- Locked: the amount of token has been used in any outstanding orders. Once the order terminates (either filled, canceled or expired), the locked amount would decrease.
-- Frozen: the amount of token has been frozen via `Freeze` transactions.
+- Available: the amount of tokens that can be transferred, and spent to swap (buy) other assets
+- Locked: the amount of tokens that has been used in any outstanding orders. Once the order terminates (either filled, canceled or expired), the locked amount will decrease.
+- Frozen: the amount of tokens that has been frozen via `Freeze` transactions.
 
-You could query the account info with the following command on mainnet:
+You can query the account info with the following command on mainnet:
 
 ```shell
-./bnbcli account <your-address> --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --indent --trust-node
+./bnbcli account <your-address> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --indent --trust-node
 ```
 
 Example output:
 
-Pleas note that the number is boosted by **e^8**.
-
+Please note that the amount is boosted by **e^8** for the decimal part.
 
 ```json
 {"type":"bnbchain/Account","value":{"base":{"address":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","coins":[{"denom":"000-0E1","amount":"10530"},{"denom":"BNB","amount":"247349863800"},{"denom":"BTC.B-918","amount":"113218800"},{"denom":"COSMOS-587","amount":"50000101983748977"},{"denom":"EDU-DD0","amount":"139885964"},{"denom":"MFH-9B5","amount":"1258976083286"},{"denom":"NASC-137","amount":"0"},{"denom":"PPC-00A","amount":"205150260"},{"denom":"TGT-9FC","amount":"33251102828"},{"denom":"UCX-CC8","amount":"1398859649"},{"denom":"USDT.B-B7C","amount":"140456966268"},{"denom":"YLC-D8B","amount":"210572645"},{"denom":"ZZZ-21E","amount":"13988596"}],"public_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"account_number":"406226","sequence":"29"},"name":"","frozen":null,"locked":[{"denom":"KOGE48-35D","amount":"10000000000"}]}}
 ```
 
-As you can see from the ouput, this account's `account_number` is 406226 and its `sequence` is 29. These are important information about this account.
+From the ouput you can see that this account `account_number` is 406226 and its `sequence` is 29.
+This is the important information about this account.
 
 ## Create Account
 
-There are two options to create an account on Binance Chain: creating a key in web wallet and creating a key via `bnbcli`. Please make sure you backup your mnemonic.
+There are two ways of creating an account on Binance Chain: creating a key in web wallet and creating a key via `bnbcli`. Please make sure you backup your mnemonic.
 
 ### Web Wallet
 
 + You can create a key via [web wallet](https://testnet.binance.org/create)
 
-Follow the instructions and set your password here(password is used to unlock the keystore file you will get here):
+Follow the instructions and set your password (password is used to unlock the keystore file that you will get here):
 
 ![create key](./assets/create_key_1.png)
 
-Then click `Download Keystore File` and you will get a keystore file and be directed mnemonic page. Pls back up mnemonic here and it will be used to restore your key.
+Then click `Download Keystore File` and you will get a keystore file and be directed to mnemonic page. Make sure to back up mnemonic here as it will be used to restore your key.
 
 ![create key](./assets/create_key_2.png)
 
-+ You can restore you key [here](https://testnet.binance.org/unlock)
++ You can restore your key [here](https://testnet.binance.org/unlock)
 
-Choose `Mnenomic Phrase`, paste the mnemonic you get above and set you session password:
+Choose `Mnenomic Phrase`, paste the mnemonic you get above and set your session password:
 
 ![create key](./assets/create_key_3.png)
 
-Your wallet will be unlocked and you can get you address(for this example is `tbnb14m2gcdjq7aqkdtu2m9qrqrl8eevzpqfj9xc0uu`) here:
+Your wallet will be unlocked and you can get your address here (for this example it is `tbnb14m2gcdjq7aqkdtu2m9qrqrl8eevzpqfj9xc0uu`):
 
 ![create key](./assets/create_key_4.png)
 
@@ -56,7 +56,7 @@ Your wallet will be unlocked and you can get you address(for this example is `tb
 
 You can get `bnbcli` by following instructions [here](./api-reference/cli.md).
 
-You should get mnemonic if you follow the instructions above. You can restore you key via `bnbcli` or `tbnbcli`.
+You should get `mnemonic` if you follow the instructions above. You can restore you key via `bnbcli` or `tbnbcli`.
 
 + Restore your key
 
@@ -86,17 +86,17 @@ napkin degree boring custom differ smart bundle ball length lyrics auto forest j
 ```
 ### Query Account Balance
 
-Please note the amount is boosted by 1e8 for decimal part.
+Please note that the amount is boosted by **e^8** for the decimal part.
 
-Example on  **mainnet**:
+Example on **mainnet**:
 
 ```bash
-$  ./bnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
+$  ./bnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
 ```
 Example on **testnet**:
 
 ```bash
-$  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+$  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
 {
    "type":"bnbchain/Account",
    "value":{
