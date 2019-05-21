@@ -65,7 +65,7 @@ For mainnet, there would be more accelerated nodes.
 
 ## Blocking
 
-Binance Chain uses a similar block structure as Tendermint proposes, with a size limit of 10 megabytes.
+Binance Chain uses a similar block structure as Tendermint proposes, with a size limit of 1 megabyte.
 It is expected a block will be produced on a-few-of-seconds level among validators, and can include
 from 0 up to several thousands of transactions.
 
