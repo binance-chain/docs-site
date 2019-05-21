@@ -346,7 +346,7 @@ paths:
       -
         name: format
         in: query
-        description: 'Response format (`json` or omit)'
+        description: 'Response format (`json` or amino)'
         required: false
         type: string
       responses:
