@@ -670,28 +670,28 @@ If the time window is larger than limits, only the first n klines will return. I
 ### Models
 ---
 
-### Error  
+### Error
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | code | long | error code | 400 |
 | message | string | error message |  |
 
-### Times  
+### Times
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ap_time | string | event time | e.g. 2019-01-21T10:30:00Z |
 | block_time | string | the time of latest block | e.g. 2019-01-21T10:30:00Z |
 
-### Validators  
+### Validators
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | block_height | long | Current block height | 12345 |
 | validators | [ [Validator](#validator) ] |  |  |
 
-### Validator  
+### Validator
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -700,7 +700,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | voting_power | integer |  |  |
 | accum | integer |  |  |
 
-### Peer  
+### Peer
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -715,7 +715,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |
 | accelerated | boolean | Is an accelerated path to a validator node |  |
 
-### Transaction  
+### Transaction
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -782,7 +782,7 @@ varies with msg type.
 ```
  |  |
 
-### Account  
+### Account
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -792,13 +792,13 @@ varies with msg type.
 | public_key | [ integer ] | Public key bytes |  |
 | sequence | long | sequence is for preventing replay attack |  |
 
-### AccountSequence  
+### AccountSequence
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | sequence | long | number used for preventing replay attack | 1 |
 
-### Balance  
+### Balance
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -807,7 +807,7 @@ varies with msg type.
 | locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 | frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 
-### Token  
+### Token
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -817,7 +817,7 @@ varies with msg type.
 | total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
 | owner | string (address) | Address which issue the token |  |
 
-### Market  
+### Market
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -827,7 +827,7 @@ varies with msg type.
 | tick_size | string (fixed8) | Minimium price change in decimal form, e.g. 1.00000000 | 0.00000001 |
 | lot_size | string (fixed8) | Minimium trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
 
-### Fee  
+### Fee
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -839,7 +839,7 @@ varies with msg type.
 | fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
 | dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
 
-### FixedFeeParams  
+### FixedFeeParams
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -847,21 +847,21 @@ varies with msg type.
 | fee | number | The fixed fee amount | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
 
-### DexFeeFieldParams  
+### DexFeeFieldParams
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | fee_name | string | fee name |  |
 | fee_value | integer | fee value |  |
 
-### MarketDepth  
+### MarketDepth
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 | bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 
-### Candlestick  
+### Candlestick
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -875,14 +875,14 @@ varies with msg type.
 | quoteAssetVolume | number |  |  |
 | volume | number |  |  |
 
-### OrderList  
+### OrderList
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | order | [ [Order](#order) ] | list of orders |  |
 | total | long |  |  |
 
-### Order  
+### Order
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -904,7 +904,7 @@ varies with msg type.
 | transactionTime | dateTime | time of transaction |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
-### TickerStatistics  
+### TickerStatistics
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -930,14 +930,14 @@ varies with msg type.
 | volume | string |  |  |
 | weightedAvgPrice | string |  |  |
 
-### TradePage  
+### TradePage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long |  |  |
 | trade | [ [Trade](#trade) ] |  |  |
 
-### Trade  
+### Trade
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -956,14 +956,14 @@ varies with msg type.
 | time | long | trade time |  |
 | tradeId | string | trade ID |  |
 
-### BlockExchangeFeePage  
+### BlockExchangeFeePage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |  |  |
 | total | long |  |  |
 
-### BlockExchangeFee  
+### BlockExchangeFee
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -973,14 +973,14 @@ varies with msg type.
 | fee | string | total fee collected |  |
 | tradeCount | long | trade count of the address on the block |  |
 
-### TxPage  
+### TxPage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long | total sum of transactions |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
-### Tx  
+### Tx
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -999,7 +999,7 @@ varies with msg type.
 | txType | string | type of transaction |  |
 | value | string | value of transaction |  |
 
-### ExchangeRate  
+### ExchangeRate
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
