@@ -32,19 +32,19 @@ For more information, please have a look at the [Tendermint spec](https://github
 
 ### What is a Validator Node?
 
-Validators are a group of IT infrastructure who take the responsibility to maintain the Binance
-Chain/DEX data and validate all the transactions. They would join the consensus procedure and
-vote to produce blocks. The fees would be collected and distributed among all validators.
+Validators are a group/IT infrastructure that take the responsibility to maintain the Binance
+Chain/DEX data and validate all the transactions. They join the consensus procedure and
+vote to produce blocks. The fees are collected and distributed among all validators.
 You can consider Validator as "miner" in Bitcoin and Ethereum and similar concepts exist in dPoS
 blockchain as EOS or dBFT in NEO. The initial validators are selected from trusted members of the
 Binance community, and will eventually expand to more members as the Binance blockchain and
 ecosystem matures, this responsibility will be distributed. The decentralized governance procedure
-would be introduced and executed. More qualified organization/individual can become Validator.
+will be introduced and executed. More qualified organization/individual can become Validators.
 
 
 ### What is a Witness Node?
 
-Witness nodes represent the majority nodes in a Binance Chain deployment. Although they do not join the consensus process
+Witness nodes represent the majority of nodes in a Binance Chain deployment. Although they do not join the consensus process
 and produce blocks, they take care of:
 
 - The witness consensus process.
@@ -65,8 +65,8 @@ For mainnet, there would be more accelerated nodes.
 
 ## Blocking
 
-Binance Chain uses a similar block structure as Tendermint proposes, with a size limit as 10 megabytes.
-It is expected a block would be produced on a-few-of-seconds level among validators, and can include
+Binance Chain uses a similar block structure as Tendermint proposes, with a size limit of 10 megabytes.
+It is expected a block will be produced on a-few-of-seconds level among validators, and can include
 from 0 up to several thousands of transactions.
 
 ## Blockchain State
@@ -80,7 +80,7 @@ Blockchain state stores the below information:
 - tick size and lot size
 - governance information
 
-please note the transactions are not stored as chain state, because they are stored on blocks, while
+please note the transactions are not stored as chain state, because they are stored in blocks, while
 trades are not stored as state either, because they can be reproduced via balances and transactions.
 
 ## Cryptographic Design
@@ -90,7 +90,7 @@ For normal users, all the keys and addresses can be generated via Binance [Web W
 
 This default wallet would use a similar way to generate keys as Bitcoin, i.e. use 256 bits entropy to generate a 24-word mnemonic based on [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), and then use the mnemonic and an empty passphrase to generate a seed; finally use the seed to generate a master key, and derive the private key using BIP32/BIP44 with HD prefix as `"44'/714'/"`, which is reserved at [SLIP 44](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
->714 comes from Binance's birthday, July 14th. :)
+*714 comes from Binance's birthday, July 14th. :)*
 
 #### Keys
 Binance Chain uses the same elliptic curve cryptography as the current [Bitcoin implementation](https://github.com/btcsuite/btcd/tree/master/btcec), i.e. `secp256k1`. Its private key is 32 bytes while public key is 33 bytes.

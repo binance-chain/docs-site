@@ -1,6 +1,6 @@
 # How to Access Binance Chain
 
-[Get Started](get-started.md) pages already talk about access Binance Chain and DEX via
+[Get Started](get-started.md) pages already show how to access Binance Chain and DEX via
 Wallet and Explorers. Here we would like to dive into some technology details for access
 in a programming way.
 
@@ -15,7 +15,7 @@ check the [Web API Reference](api-reference/dex-api/paths.md)
 There are public data seed nodes that joins the Binance Chain network. They usually
 provide RPC calls. Please check the [Node RPC Reference](api-reference/node-rpc.md).
 
-You can also run a [full node](fullnode.md) by yourself, so that you would have a local server
+You can also run a [full node](fullnode.md) by yourself, so that you will have a local server
 to send RPC requests and read Chain information off.
 
 ## Command Line Interface
@@ -24,12 +24,12 @@ Essentially command line interfaces are just tools that wrap the incoming comman
 
 ## Write APIs
 You can only write to Binance Chain via `Transactions`. Both Web API and Node RPC provide
-a `broadcastTx` API to submit a `signed and encoded` transaction onto the Binance Chain. The detailed process would be like the below:
+a `broadcastTx` API to submit a `signed and encoded` transaction onto the Binance Chain. The detailed process is outlined below:
 
 ### Message Composition
-The transaction message and related information would be packed into a `payload`, which is the so called [`Standard Transaction`](encoding.md#standard-transaction-to-use-and-encode-for-binance_chain).
+The transaction message and related information will be packed into `payload`, which is the so called [`Standard Transaction`](encoding.md#standard-transaction-to-use-and-encode-for-binance_chain).
 
-The transaction body, memo, signature, etc. fill in the `Standard Transaction and encoded and broadcast out together onto Binance Chain.
+The transaction body, memo, signature, etc. all fill in the `Standard Transaction`, encode and then broadcast out together onto Binance Chain.
 
 ### Transaction Encoding
 Encoding defines the way how transactions are serialized and transferred between clients and nodes,
@@ -37,7 +37,7 @@ and different nodes themselves. [here](encoding.md) is a detailed specification 
 types and encoding logic.
 
 ### Signature
-Signature is the evidence to prove the sender owns the transaction. It would be performed in the below actions:
+Signature is the evidence to prove the sender owns the transaction. It will be created from the actions outlined below:
 
 1. Compose a data structure. please note `msgs`, `memo`, `source`, `data` are the same as in the above `payload`.
 
@@ -50,7 +50,7 @@ Signature is the evidence to prove the sender owns the transaction. It would be 
     - `data`: byte array, reserved for future use
 
 
-2. Encode the above data structure in json, with ordered key,  Specifically:
+2. Encode the above data structure in json, with ordered key, Specifically:
 
     - Maps have their keys sorted lexicographically
     - Structs keys are marshalled in the order defined in the struct
@@ -58,7 +58,7 @@ Signature is the evidence to prove the sender owns the transaction. It would be 
 
 3. Sign SHA256 of the encoded byte array, to create an ECDSA signature on curve Secp256k1 and serialize the `R` and `S` result into a 64-byte array. (both `R` and `S` are encoded into 32-byte big endian integers, and then `R` is put into the first 32 bytes and `S` are put into the last 32 bytes of the byte array. In order to break `S` 's malleability, `S` set to `curve.Order() - S` if `S > curnve.Order()/2`.)
 
-The `signature` would be encoded together with transaction message and sent as `payload` to Binance Chain node via RPC or http REST API, as described in the above section.
+The `signature` will be encoded together with transaction message and sent as `payload` to Binance Chain node via RPC or http REST API, as described in the above section.
 
 ## Account and Sequence Number
 
@@ -70,12 +70,12 @@ After `Account` is [created](transfer.md#account_and_balance), besides the balan
 The Sequence Number is the way how Binance Chain prevents `Replay Attack` (the idea is borrowed from Cosmos
 network, but varies a bit in handling). Every transaction should have a new `Sequence Number` increased by
 1 from the current latest sequence number of the `Account`, and after this transaction is recorded on the
-block chain, the `Sequence Number` would be set to the same as the one of latest transaction.
+block chain, the `Sequence Number` will be set to the same number as the one of latest transaction.
 
-This logic forces the client has to be aware of the current `Sequence Number`, either by reading from the
-blockchain via API, or keeping counting locally by themselves. The encouraged way would be to keep
-counting locally and re-synchronized from the blockchain periodically.
+This logic forces the client to be aware of the current `Sequence Number`, either by reading from the
+blockchain via API, or keep the counting locally by themselves. The recommended way is to keep
+counting locally and re-synchronize from the blockchain periodically.
 
 ## Examples
 
-[SDK](api-reference/sdk.md) in different languages act as examples to use APIs to access Binance Chain.
+[SDK](api-reference/sdk.md) in different languages are provided to simplify use of APIs to access Binance Chain.
