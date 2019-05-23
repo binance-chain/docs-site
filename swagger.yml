@@ -1977,28 +1977,28 @@ definitions:
             type: integer
             format: int64
 
-ProtocolVersion:
-  type: object
-  properties:
-    P2P:
-      type: integer
-      format: uint64
-    block:
-      type: integer
-      format: uint64
-    app:
-      type: integer
-      format: uint64
+  ProtocolVersion:
+    type: object
+    properties:
+      P2P:
+        type: integer
+        format: uint64
+      block:
+        type: integer
+        format: uint64
+      app:
+        type: integer
+        format: uint64
 
-Validator:
-        type: object
-        properties:
-          address:
-            type: string
-            description: hex address
-          pub_key:
-            type: string
-            description: hex-encoded
-          voting_power:
-            type: integer
-            format: int64
+  Validator:
+          type: object
+          properties:
+            address:
+              type: string
+              description: hex address
+            pub_key:
+              type: string
+              description: hex-encoded
+            voting_power:
+              type: integer
+              format: int64

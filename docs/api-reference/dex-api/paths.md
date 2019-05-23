@@ -1026,3 +1026,19 @@ varies with msg type, if you query with --format=json.
 | pub_key | string | hex-encoded |  |
 | proposer_priority | long |  |  |
 | voting_power | long |  |  |
+
+### ProtocolVersion  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| P2P | integer (uint64) |  |  |
+| block | integer (uint64) |  |  |
+| app | integer (uint64) |  |  |
+
+### Validator  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| address | string | hex address |  |
+| pub_key | string | hex-encoded |  |
+| voting_power | long |  |  |
