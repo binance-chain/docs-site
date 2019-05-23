@@ -769,7 +769,7 @@ varies with msg type, if you query with --format=json.
         "source": "0"  // fixed, source of the transaction
     }
 }
-``` 
+```
  |  |
 
 ### Account  
@@ -991,7 +991,7 @@ varies with msg type, if you query with --format=json.
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| validator_info | [ [ValidatorInfo](#validatorinfo) ] |  |  |
+| validator_info | [ [Validator](#validator) ] |  |  |
 | sync_info | [ [SyncInfo](#syncinfo) ] |  |  |
 | node_info | [ [NodeInfo](#nodeinfo) ] |  |  |
 

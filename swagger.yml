@@ -190,7 +190,7 @@ paths:
         **Destination:** Witness node.
 
         **Rate Limit:** 5 requests per IP per second.
-        
+
         **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
 
         **URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
@@ -272,7 +272,7 @@ paths:
         **Destination:** Seed node.
 
         **Rate Limit:** 10 requests per IP per second.
-        
+
         **Example:**
 
         Below is an example response of a send transaction when `?format=json` is used.
@@ -1344,7 +1344,7 @@ definitions:
         title: Data
         type: string
         description: 'Data of transaction'
-          
+
       height:
         title: Height
         type: string
@@ -1415,7 +1415,7 @@ definitions:
                   "source": "0"  // fixed, source of the transaction
               }
           }
-          ``` 
+          ```
 
   Account:
     type: object
@@ -1906,11 +1906,11 @@ definitions:
       format: double
   ResultStatus:
     type: object
-    properties: 
+    properties:
       validator_info:
         type: array
         items:
-          $ref: '#/definitions/ValidatorInfo'
+          $ref: '#/definitions/Validator'
       sync_info:
         type: array
         items:
@@ -1921,7 +1921,7 @@ definitions:
           $ref: '#/definitions/NodeInfo'
   NodeInfo:
     type: object
-    properties: 
+    properties:
       Protocol_Version:
         type: array
         items:
@@ -1943,7 +1943,7 @@ definitions:
 
 
   SyncInfo:
-        type: object 
+        type: object
         properties:
           latest_block_hash:
             type: string
@@ -1962,7 +1962,7 @@ definitions:
 
 
   ValidatorInfo:
-        type: object 
+        type: object
         properties:
           address:
             type: string
@@ -1978,15 +1978,27 @@ definitions:
             format: int64
 
 ProtocolVersion:
-  type: object 
+  type: object
   properties:
     P2P:
       type: integer
       format: uint64
-    block: 
+    block:
       type: integer
       format: uint64
     app:
       type: integer
       format: uint64
 
+Validator:
+        type: object
+        properties:
+          address:
+            type: string
+            description: hex address
+          pub_key:
+            type: string
+            description: hex-encoded
+          voting_power:
+            type: integer
+            format: int64
