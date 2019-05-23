@@ -1272,7 +1272,7 @@ definitions:
         required: true
         title: Validators
         items:
-          $ref: '#/definitions/ValidatorInfo'
+          $ref: '#/definitions/Validator'
 
   Peer:
     type: object
@@ -1910,7 +1910,7 @@ definitions:
       validator_info:
         type: array
         items:
-          $ref: '#/definitions/Validator'
+          $ref: '#/definitions/ValidatorInfo'
       sync_info:
         type: array
         items:
@@ -1961,7 +1961,7 @@ definitions:
 
 
 
-  ValidatorInfo:
+  Validator:
         type: object
         properties:
           address:
@@ -1990,15 +1990,15 @@ definitions:
         type: integer
         format: uint64
 
-  Validator:
-          type: object
-          properties:
-            address:
-              type: string
-              description: hex address
-            pub_key:
-              type: string
-              description: hex-encoded
-            voting_power:
-              type: integer
-              format: int64
+ValidatorInfo:
+        type: object
+        properties:
+          address:
+            type: string
+            description: hex address
+          pub_key:
+            type: string
+            description: hex-encoded
+          voting_power:
+            type: integer
+            format: int64
