@@ -1990,7 +1990,7 @@ definitions:
         type: integer
         format: uint64
 
-ValidatorInfo:
+  ValidatorInfo:
         type: object
         properties:
           address:

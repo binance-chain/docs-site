@@ -1034,3 +1034,11 @@ varies with msg type, if you query with --format=json.
 | P2P | integer (uint64) |  |  |
 | block | integer (uint64) |  |  |
 | app | integer (uint64) |  |  |
+
+### ValidatorInfo  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| address | string | hex address |  |
+| pub_key | string | hex-encoded |  |
+| voting_power | long |  |  |
