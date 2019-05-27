@@ -17,4 +17,7 @@
 | 11     | [Ellipal Wallet](wallets/Ellipal-Wallet.md)            | <https://www.ellipal.com/>       |
 | 12     | [Exodus](wallets/Exodus.md)                            | <https://www.exodus.io/>         |
 | 13     | [HooWallet](wallets/Hoo-Wallet.md)                     | <https://hoo.com/>               |
+| 14     | [MEET.ONE Wallet](wallets/meet.md)                     | <https://meet.one//>             |
+| 15     | [Guarda Wallet](wallets/Guarda.md)                     | <https://guarda.co/>             |
+
 
