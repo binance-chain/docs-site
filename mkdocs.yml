@@ -21,6 +21,7 @@ nav:
     - WebSockets - Connecting: api-reference/dex-api/ws-connection.md
     - WebSockets - Streams: api-reference/dex-api/ws-streams.md
     - Node RPC: api-reference/node-rpc.md
+    - API Server: api-reference/api-server.md
     - SDK: api-reference/sdk.md
     - Commands: api-reference/cli.md
     - Transactions: encoding.md
