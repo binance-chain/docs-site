@@ -3,29 +3,30 @@ API Server
 
 API server daemon
 
-Start the api server according to the Platform. Replace the `platform` var with `mac` or `linux` in the following command:
+Start the API server according to the Platform.<br/>
+Replace the `platform` variable with `mac`, `windows` or `linux` in the following command:
 ```bash
-./{{platform}}/bnbcli --chain-id "{chain-id}"    --node tcp://{full node addr}:80  
+./{{platform}}/bnbcli api-server --chain-id "{chain-id}" --node tcp://{full node addr}:80 --laddr localhost:8080
 ```
 
 ### Example for Mainnet:
+
 ```bash
-./bnbcli api-server --chain-id "Binance-Chain-Tigris"    --node tcp://dataseed1.binance.org:80 --laddr tcp://127.0.0.1:8080  --trust-node
+./bnbcli api-server --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
 ```
 
 ### Example for Testnet:
-```bash
-./tbnbcli api-server --chain-id "Binance-Chain-Nile"    --node tcp://data-seed-pre-0-s1.binance.org:80  --laddr tcp://127.0.0.1:8080  --trust-node
-```
- 
 
-### /version 
+```bash
+./tbnbcli api-server --chain-id "Binance-Chain-Nile" --node tcp://data-seed-pre-0-s1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
+```
+
+### /version
 ---
 ##### ***GET***
 **Summary:** Get the blockchain version.
 
-**Description:**Get the blockchain version of the fullnode you connect with.
-
+**Description:** Get the blockchain version of the fullnode you connect with.
 
 **Example**
 
@@ -42,13 +43,12 @@ http://localhost:8080/version
 
 **Description:** Gets account metadata for an address.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/account/bnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtwqmzfj
 ```
 
-**Example for testnet:** 
-
+**Example for testnet:**
 ```
 http://localhost:8080/api/v1/account/tbnb1ke87gxdtsk32kuaqxj6skhhmn79ma89cx2ep4g
 ```
@@ -78,12 +78,12 @@ http://localhost:8080/api/v1/account/tbnb1ke87gxdtsk32kuaqxj6skhhmn79ma89cx2ep4g
 
 **Description:** Gets the list of market pairs that have been listed.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/markets
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/markets
@@ -114,12 +114,11 @@ http://localhost:8080/api/v1/markets
 **Description:** Gets the order book depth data for a given pair symbol.
 
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/depth?symbol=SPNDB-916_BNB
-
 ```
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/depth?symbol=GEOP-152_BNB
@@ -149,12 +148,12 @@ http://localhost:8080/api/v1/depth?symbol=GEOP-152_BNB
 **Description:** Gets open orders for a given address.
 
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/orders/open?address=bnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtwqmzfj&symbol=SPNDB-916_BNB
 
 ```
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/orders/open?address=tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr&symbol=TEST-599_BNB
@@ -167,7 +166,7 @@ http://localhost:8080/api/v1/orders/open?address=tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpm
 | limit | query | default 100; max 1000. | No | integer |
 | offset | query | start with 0; default 0. | No | integer |
 | symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| total | query | total number required, 0 for not required and 1 for required; default not required, return total =-1 in response | No | integer |
 
 **Responses**
 
@@ -185,12 +184,12 @@ http://localhost:8080/api/v1/orders/open?address=tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpm
 
 **Description:** Gets a list of tokens that have been issued.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/tokens
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/tokens
@@ -215,16 +214,16 @@ http://localhost:8080/api/v1/tokens
 ### /api/v1/tokens/{symbol}
 ---
 ##### ***GET***
-**Summary:** Get information of a token.
+**Summary:** Get information for a token.
 
-**Description:**  Get information of a token.
+**Description:** Get information for a token.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/tokens/SPNDB-916
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/tokens/TEST-599
@@ -243,16 +242,16 @@ http://localhost:8080/api/v1/tokens/TEST-599
 ### /api/v1/balance/{address}
 ---
 ##### ***GET***
-**Summary:** Get account balance  of an address.
+**Summary:** Get account balance for an address.
 
-**Description:**  Get account balance  of an address.
+**Description:** Get account balance for an address.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/balances/bnb1qwugqccfrefqyg9kgm0st8szjf8mmgkmvyt76lv9
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr
@@ -271,16 +270,16 @@ http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxf
 ### /api/v1/balance/{address}/{symbol}
 ---
 ##### ***GET***
-**Summary:** Get  balance  of one token from an address.
+**Summary:** Get balance for one token from an address.
 
-**Description:**  Get  balance  of one token from an address.
+**Description:** Get balance for one token from an address.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/balances/bnb1qwugqccfrefqyg9kgm0st8szjf8mmgkmvyt76lv9/BNB
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr/BNB
@@ -304,12 +303,12 @@ http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxf
 
 **Description:** Gets the current trading fees settings.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/fees
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/fees
@@ -330,12 +329,12 @@ http://localhost:8080/api/v1/fees
 
 **Description:** Gets the list of validators used in consensus.
 
-**Example for mainnet** 
+**Example for mainnet**
 ```
 http://localhost:8080/api/v1/stake/validators
 ```
 
-**Example for testnet:** 
+**Example for testnet:**
 
 ```
 http://localhost:8080/api/v1/stake/validators
@@ -398,8 +397,8 @@ http://localhost:8080/api/v1/stake/validators
 | base_asset_symbol | string (currency) | symbol of base asset | BNB |
 | quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
 | price | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form, e.g. 1.00000000 | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
+| tick_size | string (fixed8) | Minimum price change in decimal form, e.g. 1.00000000 | 0.00000001 |
+| lot_size | string (fixed8) | Minimum trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
 
 ### Fee
 
