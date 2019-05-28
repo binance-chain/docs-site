@@ -5,7 +5,7 @@ API server daemon
 
 Start the api server according to the Platform. Replace the `platform` var with `mac` or `linux` in the following command:
 ```bash
-./{{platform}}/bnbcli --chain-id "{chain-id}"    --node tcp://{full node addr}:80  
+./{{platform}}/bnbcli api-server --chain-id "{chain-id}"    --node tcp://{full node addr}:80  --laddr localhost:8080
 ```
 
 ### Example for Mainnet:
