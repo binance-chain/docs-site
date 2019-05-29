@@ -53,7 +53,7 @@ Please note the all the  numbers are  boosted by **1e8** for decimal part.
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB
+./bnbcli gov submit-list-proposal --from test --deposit 100000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --voting-period 604800 --json
 ```
@@ -61,7 +61,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```shell
-./tbnbcli gov submit-list-proposal --from test --deposit 10000000000:BNB
+./tbnbcli gov submit-list-proposal --from test --deposit 200000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
 ```

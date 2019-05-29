@@ -84,8 +84,8 @@ You cat also get seeds info through a simple python script (replace domain name 
 import requests, json
 d = requests.get('https://dex.binance.org/api/v1/peers').text # replace dex.binance.org with testnet-dex.binance.org for testnet
 l = json.loads(d)
-seeds = ",".join([ (seed["id"]+"@"+seed["original_listen_addr"]) for seed in l if "accelerated" not in seed ])
-print seeds
+seeds = ",".join([ (seed["id"]+"@"+seed["original_listen_addr"]) for seed in l if seed["accelerated"] == False])
+print (seeds)
 ```
 
 If you want to add seed nodes, please feel free to edit the field `seeds` of `$BNCHOME/config/config.yaml` with returned seed node info from previous request.

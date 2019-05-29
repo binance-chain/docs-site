@@ -36,7 +36,7 @@ git clone https://github.com/binance-chain/node-binary.git
 Go to directory according to the network you want to join in. Replace the `network` var with `testnet` or `prod` in the
 following command:
 ```bash
-cd node-binary/lightd/{network}
+cd node-binary/lightd/{network}/{version}
 ```
 
 Help info:
@@ -83,8 +83,8 @@ You cat get full nodes info through a simple python script(notice to replace dom
 import requests, json
 d = requests.get('https://dex.binance.org/api/v1/peers').text # replace dex.binance.org with testnet-dex.binance.org for testnet
 l = json.loads(d)
-fullnodes = [(fullnode["listen_addr"].strip("http://")) for fullnode in l if "accelerated" not in fullnode ]
-print fullnodes
+seeds = ",".join([ (seed["id"]+"@"+seed["original_listen_addr"]) for seed in l if seed["accelerated"] == False])
+print (seeds)
 ```
 
 ### Example for Mainnet:
