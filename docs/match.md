@@ -1,7 +1,7 @@
 # What exactly is Binance DEX matching logic?
 
-Binance DEX uses periodic auction to match all available orders. Because the match happens at the 
-same time for all orders with the same price in every auction, so there is no concept of `Maker` or `Taker`. 
+Binance DEX uses periodic auction to match all available orders. Because the match happens at the
+same time for all orders with the same price in every auction, so there is no concept of `Maker` or `Taker`.
 
 ## Match Candidates
 
@@ -17,9 +17,9 @@ Candidates would be matched right after one block is committed (except midnight 
 
 The below matching logic would be applied on every listed token pairs.
 
-- The match only happens when the best bid and ask prices are 'crossed', i.e. best bid > best ask. 
+- The match only happens when the best bid and ask prices are 'crossed', i.e. best bid > best ask.
 
-- There would be only 1 price selected in one match round as the best prices among all the fillable 
+- There would be only 1 price selected in one match round as the best prices among all the fillable
 orders, to show the fairness.
 
 - All the orders would be matched first by the price aggressiveness and then block height that they get accepted.
@@ -42,7 +42,7 @@ After the execution price is concluded. Order match would happen in sequence of 
 - Orders with best bid price would match with order with best ask price;
 - If the orders on one price cannot be fully filled by the opposite orders:
 for the orders with the same price, the orders from the earlier blocks would be selected and filled first
-- If the orders have the same price and block height, and cannot be fully filled, the execution 
-would be allocated to each order in proportion to their quantity (floored if the number has a partial lot). 
-If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent 
+- If the orders have the same price and block height, and cannot be fully filled, the execution
+would be allocated to each order in proportion to their quantity (floored if the number has a partial lot).
+If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent
 bias to any orders: according to a sorted sequence of a de facto random order ID.

@@ -360,7 +360,7 @@ paths:
       -
         name: format
         in: query
-        description: 'Response format (`json` or omit)'
+        description: 'Response format (`json` or amino)'
         required: false
         type: string
       responses:
@@ -617,6 +617,10 @@ paths:
               $ref: '#/definitions/Transaction'
         '400':
           description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '401':
+          description: 'Bad Signature'
           schema:
             $ref: "#/definitions/Error"
         '404':
@@ -1271,7 +1275,7 @@ definitions:
     title: Times
     properties:
       ap_time: {type: string, description: event time , example: e.g. 2019-01-21T10:30:00Z}
-      block_time: {type: string, description: block height, example: 12345678}
+      block_time: {type: string, description: the time of latest block, example: e.g. 2019-01-21T10:30:00Z}
   Validators:
     type: object
     properties:
@@ -1287,6 +1291,31 @@ definitions:
         title: Validators
         items:
           $ref: '#/definitions/Validator'
+  
+  Validator:
+        type: object
+        properties:
+            address:
+              type: string
+              description: Address
+              format: hex address
+              required: true
+            pub_key:
+              type: array
+              title: 'Public key'
+              description: 'Public key bytes'
+              required: true
+              items:
+                type: integer
+                format: int32
+            voting_power:
+              type: integer
+              required: true
+            accum:
+              type: integer
+              required: true
+
+
 
   Peer:
     type: object
@@ -1568,6 +1597,9 @@ definitions:
       fixed_fee_params:
         description: Set if the fee is fixed
         $ref: '#/definitions/FixedFeeParams'
+      dex_fee_fields:
+        description: dex fee
+        $ref: '#/definitions/DexFeeFieldParams'
   FixedFeeParams:
     type: object
     properties:
@@ -1583,6 +1615,15 @@ definitions:
         type: integer
         description: 1 = proposer, 2 = all, 3 = free
         example: 1
+  DexFeeFieldParams:
+     type: object
+     properties:
+       fee_name:
+         type: string
+         description: fee name
+       fee_value:
+        type: integer
+        description: fee value
   MarketDepth:
     type: object
     properties:

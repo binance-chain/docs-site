@@ -15,13 +15,13 @@
 Binance Chain CLI is one of several ways to interact with Binance Chain.
 
 Binance Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
-key or restore your key from mnemonic words. And you can list your keys and show specified key info. 
+key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With Binance Chain CLI, you can send transactions to Binance Chain, like placing an order, transferring token, 
+With Binance Chain CLI, you can send transactions to Binance Chain, like placing an order, transferring token,
 issuing token and so on. Actually you can do almost everything you can do with Binance Chain web wallet. What is
 more, you can propose to list trading pairs and join chain governance.
 
-In addition, you can do some simple queries through CLI. For example, you can query your account's 
+In addition, you can do some simple queries through CLI. For example, you can query your account's
 balance, transaction detail by transaction hash and etc.
 
 ## Where can I download the Binance Chain CLI?
@@ -66,7 +66,7 @@ C:\> tbnbcli.exe
 
 You can manage you keys locally without connecting to any node. But if you want to interact with Binance Chain, you need to connect to one of Binance Chain full nodes.
 
-You can run your own full node, which may automatically connect to Binance Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people. 
+You can run your own full node, which may automatically connect to Binance Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
 
 You could query this API for for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
 
@@ -78,24 +78,24 @@ Please note that there are two types of nodes that offer RPC services. Some supp
 
 ## Which Chain-ID to use
 
-`chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. Please choose the correct one in your case. 
+`chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. Please choose the correct one in your case.
 ## Which Private Key To Use
 
 There are two ways for you to sign transaction：
 
 * Use Local Keystore File
 
-This is the default way to sign transactions with `bnbcli`. It will use the encrypted  keystore files saved at bnbcli home. You need to specify which key to decrypt with `--from`. 
+This is the default way to sign transactions with `bnbcli`. It will use the encrypted  keystore files saved at bnbcli home. You need to specify which key to decrypt with `--from`.
 
 * Use Private Key in Hardware Wallet
 
-First, you must add `--ledger` when creating a new address. For example, 
+First, you must add `--ledger` when creating a new address. For example,
 ```
 bnbcli keys add test --ledger --index 0 --account 0
 ```
 Then,  the private key file in ledger will be used to generate a new address.
 
-You could also specify `--account` and `--index` to generate more addresses. After the generation, you could use Ledger for signing. 
+You could also specify `--account` and `--index` to generate more addresses. After the generation, you could use Ledger for signing.
 
 When you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
 
@@ -121,7 +121,7 @@ For instance, if you want to send a token transfer transaction, you can use the 
 Before creating a new ledger key, make sure you have done these steps:
 1. Ledger device is installed binance ledger app and the version should be later or equal to **v1.1.3**.
 2. Connect your ledger device to your machine and input pin code to unlock it.
-3. Open binanche ledger app on your ledger device. 
+3. Open binanche ledger app on your ledger device.
 ```
 bnbcli keys add test_ledger_key --ledger
 ```
@@ -129,13 +129,13 @@ Execute the above command to create a ledger key. The private key is only stored
 ```
 bnbcli keys add test_ledger_key_new --ledger --index 0 --account 0
 ```
-You can also specify --account and --index to generate more keys. 
+You can also specify --account and --index to generate more keys.
 
 * Sign transation with a ledger key
 
 Taking transfer transaction for example, please follow these steps:
 1. Execute command in your console:
-``` 
+```
 bnbcli send --chain-id=<chain-id> --from=test_ledger_key --amount=100:BNB --to=<address>
 ```
 2. Your console will print some message like this:
@@ -188,7 +188,7 @@ Flags:
 Use "bnbcli [command] --help" for more information about a command.
 ```
 
-**Note**:there is one special flag `--trust-node` of most subcommands, if not enabled which is by default the CLI 
+**Note**:there is one special flag `--trust-node` of most subcommands, if not enabled which is by default the CLI
 will take an extra 2-4 seconds to verify blockchain proof at current height. You can enable that flag if the peer is trustful so that most commands will accomplish in 500 milliseconds. If your node cannot prove the transaction, there will be the following notice:
 ```
 Create verifier failed: Commit: Response error: RPC error -32603 - Internal error: runtime error: invalid memory address or nil pointer dereference

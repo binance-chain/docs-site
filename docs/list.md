@@ -19,13 +19,13 @@ Example on **mainnet**:
 
 $  ./bnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 --init-price 100000000 --proposal-id 15 --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --json
-{  
+{
    "Height":"282409",
    "TxHash":"77AE3D190F430FE6E4B1A9659BEBB3F022CF7631",
-   "Response":{  
+   "Response":{
       "log":"Msg 0: ",
-      "tags":[  
-         {  
+      "tags":[
+         {
             "key":"YWN0aW9u",
             "value":"ZGV4TGlzdA=="
          }
@@ -39,13 +39,13 @@ Example on **testnet**:
 ```bash
 $  ./tbnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 --init-price 100000000 --proposal-id 15 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json
-{  
+{
    "Height":"282409",
    "TxHash":"77AE3D190F430FE6E4B1A9659BEBB3F022CF7631",
-   "Response":{  
+   "Response":{
       "log":"Msg 0: ",
-      "tags":[  
-         {  
+      "tags":[
+         {
             "key":"YWN0aW9u",
             "value":"ZGV4TGlzdA=="
          }
@@ -54,6 +54,6 @@ $  ./tbnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 }
 ```
 
-After the transaction is executed, you could see the newly added trading pair from Explorer and maket API. 
+After the transaction is executed, you could see the newly added trading pair from Explorer and maket API.
 
 
