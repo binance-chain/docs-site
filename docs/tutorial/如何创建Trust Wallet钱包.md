@@ -10,13 +10,13 @@
 
 * 打开手机上的trust wallet，如果你没有钱包，请点击【创建钱包】，你将会看到12个帮助恢复钱包的短语，点击【继续】。
 
-![img](/Users/huangsuyu/go/src/github.com/binance-chain/docs-site/docs/tutorial/pic/create.png )
+![img](./pic/create.png )
 
 * 【复制】你的12个短语，并将它们保存在安全的地方。点击【继续】；点击短语把它们按正确的顺序放在一起，点击【继续】。永远不要和任何人共享恢复短语。trust wallet无法帮你恢复钱包，也无法访问你的恢复短语。请务必保存好你的12个恢复短语。
 
-![img](/Users/huangsuyu/go/src/github.com/binance-chain/docs-site/docs/tutorial/pic/seed.png)
+![img](./pic/seed.png)
 * 请务必保存好你的12个恢复短语。
-![img](/Users/huangsuyu/go/src/github.com/binance-chain/docs-site/docs/tutorial/pic/recover.png)
+![img](./pic/recover.png)
 
 * 新创建的多币钱包现在可以处理超过30种区块链的加密货币，包括BTC，ETH，BNB，XRP等等。 使用我们即将推出的Token交换功能交换这些加密货币，并使用信用卡购买比特币，以太坊等。
 
