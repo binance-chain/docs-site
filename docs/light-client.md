@@ -1,30 +1,28 @@
 # Run a light client to join Binance Chain
 
-Light client is a program that connect to a full node to help users access and interact with Binance chain
+Light client is a program that connects to a full node to help users access and interact with Binance chain
 in a secure and decentralized manner without having to sync the full blockchain.
 
 ## Light Client Versus Full Node
 
-- Light client do not store blocks or states so that it need less disk space(50 megabytes will be enough).
-- Light client do not join p2p network and it do not produce any network cost when it is idle. The network
+- Light client does not store blocks or states,this way it needs less disk space (50 megabytes will be enough).
+- Light client does not join p2p network and it does not produce any network cost when it is idle. The network
 overhead depends on how many requests the light client handles concurrently.
-- Light client do not replay state of the chain so that there is not cpu cost when idle. The cpu cost also
+- Light client does not replay state of the chain so that there is not CPU cost when idle. The CPU cost also
 depends on how many requests the light client handles concurrently.
-- Light client is more fast than full node even it lagged behind the core network monthly. It only need a few seconds
+- Light client is faster than a full node even if it lagged behind the core network for a few months. It only needs a few seconds
 to catch up with core network.
 
 ## Platforms and System Requirement
 
 ### Platforms
 
-We support running light client node on `Mac OS X` and `Linux`. The light client will soon be open source,
-then you can cross compile light client binary and run it on other platforms.
+We support running light client node on `Mac OS X`, `Windows` and `Linux`.<br/>
+The light client will soon be open sourced, afterwards you can cross compile light client binary and run it on other platforms.
 
 ### Requirements
-Light client node has little requirements.
-
 - 50 megabytes of free disk space.
-- 0.2 cores of CPU, 50 megabytes of memory (RAM).
+- 2 CPU cores, 50 megabytes of memory (RAM).
 
 ## Run a light client node
 
@@ -33,8 +31,9 @@ Download:
 git clone https://github.com/binance-chain/node-binary.git
 ```
 
-Go to directory according to the network you want to join in. Replace the `network` var with `testnet` or `prod` in the
-following command:
+Go to directory according to the network you want to join in.<br/>
+Replace the `network` variable with `testnet` or `prod` in the following command:
+
 ```bash
 cd node-binary/lightd/{network}/{version}
 ```
@@ -65,20 +64,22 @@ Flags:
 
 You can specify all the parameters above.
 
-Start the light client node according to the Platform. Replace the `platform` var with `mac` or `linux` in the following command:
+Start the light client node according to the Platform. Replace the `platform` variable with `mac` `windows` or `linux` in the following command:
+
 ```bash
-./{{platform}}/lightd --chain-id "{chain-id}"    --node tcp://{full node addr}:80  > node.log  &
+./{{platform}}/lightd --chain-id "{chain-id}" --node tcp://{full node addr}:80 > node.log  &
 ```
 
-There are two parameters you need to figure out to start a light client node: `chain id` and `full node addr`.
-The `chain id` of the network that you want join in. You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
-or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json).
+There are two required parameters to start a light client node: `chain id` and `full node addr`.<br/>
+The `chain id` of the network that you want join in.<br/>
+You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
+or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json).<br/>
+The `full node addr` field can be an address of any full node that you have deployed.<br/>
+You can refer to [Run a Binance Chain full node](fullnode.md) to get more details.<br/>
 
- The `node` field can be any full nodes you have deployed. You can
-refer to [Run a Binance Chain full node](fullnode.md) to get more detailed. We supply a bunch of full nodes that you can
+We supply a bunch of full nodes that you can connect to in testnet.<br/>
+You cat get full nodes info through a simple python script(notice to replace domain according to different network):<br/>
 
-connect in testnet.
-You cat get full nodes info through a simple python script(notice to replace domain according to different network):
 ```python
 import requests, json
 d = requests.get('https://dex.binance.org/api/v1/peers').text # replace dex.binance.org with testnet-dex.binance.org for testnet
@@ -89,16 +90,16 @@ print (seeds)
 
 ### Example for Mainnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Tigris"    --node tcp://dataseed1.binance.org:80 > node.log  &
+./lightd --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.binance.org:80 > node.log  &
 ```
 
 ### Example for Testnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Nile"    --node tcp://data-seed-pre-0-s1.binance.org:80  > node.log  &
+./lightd --chain-id "Binance-Chain-Nile" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
 ```
 
 
-## Work with light client
+## Working with the light client
 
-Light client has the same RPC interface as the list here [rpc-api](api-reference/node-rpc.md), also the default port of light
-client is `27147`.
+Light client has the same RPC interface as [rpc-api](api-reference/node-rpc.md).<br/>
+The default port of light client is `27147`.
