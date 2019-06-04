@@ -284,3 +284,15 @@ For options in `tally result`:
 We can calculate proportion of each vote option easily.<br/>
 In this case, total voting power is 1100000000000 and voting power of `Yes` is 1100000000000,
 so the proportion of `Yes` is 100% and the proposal should be passed and and 2000 BNB will be returned.
+
+**Note:** Trying to query proposal that didn't enter the voting period will result in `error`.
+
+```bash
+$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --proposal-id 25
+{
+  "codespace": 5,
+  "code": 1,
+  "abci_code": 327681,
+  "message": "Unknown proposal with id 25"
+}
+```
