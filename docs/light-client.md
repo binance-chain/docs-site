@@ -64,7 +64,7 @@ Flags:
 
 You can specify all the parameters above.
 
-Start the light client node according to the Platform. Replace the `platform` variable with `mac` `windows` or `linux` in the following command:
+Start the light client node according to the Platform. Replace the `platform` variable with `mac`, `windows` or `linux` in the following command:
 
 ```bash
 ./{{platform}}/lightd --chain-id "{chain-id}" --node tcp://{full node addr}:80 > node.log  &
@@ -77,7 +77,7 @@ or [genesis file in prod network](https://github.com/binance-chain/node-binary/b
 The `full node addr` field can be an address of any full node that you have deployed.<br/>
 You can refer to [Run a Binance Chain full node](fullnode.md) to get more details.<br/>
 
-We supply a bunch of full nodes that you can connect to in testnet.<br/>
+We supply a bunch of full nodes that you can connect to for both mainnet and testnet.<br/>
 You cat get full nodes info through a simple python script(notice to replace domain according to different network):<br/>
 
 ```python
