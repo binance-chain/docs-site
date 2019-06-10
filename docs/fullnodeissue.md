@@ -7,6 +7,7 @@
         - [Connection Timeout](#connection-timeout)
         - [Out of memory](#out-of-memory)
         - [No priv_validator_state.json after reset](#no-priv_validator_statejson-after-reset)
+        - [bnbchaind crashing due to too many open files](#bnbchaind-crashes-because-of-too-many-open-files)
 
 
 ### How to monitor your full node syncing process?
@@ -87,11 +88,13 @@ open /Users/.bnbchaind/data/priv_validator_state.json: no such file or directory
 
 Delete both `priv_validator_state.json` file and `data` folder if you want to reset your full node.
 
-###  `bnbchaind` crashes because of `too many open files`
+#### `bnbchaind` crashes because of `too many open files`
 
-The default number of files Linux can open (per-process) is `1024`. `bnbchaind` is likely to open more than `1024` files. This causes the process to crash. 
+The default number of files Linux can open (per-process) is `1024`.<br/>
+`bnbchaind` is likely to open more than `1024` files.<br/>
+This causes the process to crash.<br/>
 
-A quick fix is to run `ulimit -n 65535` (increase the number of open files allowed) and then restart the process with 
+A quick fix is to run `ulimit -n 65535` (increase the number of open files allowed) and then restart the process with:
 ```
 bnbchaind start
 ```
@@ -116,4 +119,4 @@ max user processes              (-u) 3829
 virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 ```
-Please note that open files are different now. 
+Please note that open files are different now.
