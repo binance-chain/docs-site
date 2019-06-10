@@ -179,7 +179,7 @@ In special cases, you may have to do extra steps for an incompatible version (ha
 
 ## Monitoring
 
-Prometheus is enabled on port `26660` by default, and the endpoint is `/metrics`.
+Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`.
 
 ## Get Extra Data From Your Full Node
 

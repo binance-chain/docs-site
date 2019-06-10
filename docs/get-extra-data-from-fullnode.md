@@ -1,21 +1,23 @@
 # Get Extra Data From Your Full Node
 
-This document is for developer who is very interested in transactions in every block, or order book, or account changes or block fee charge and would like to build his own downstream services of the full node. Please refer to [run a full node](fullnode.md), if you still haven't deploy a full node.
+This document is intended for developers who are interested in transactions, order books, account changes, fee charges in every block and would like to build their own downstream services of the full node.<br/>
+Please refer to [Running Full Node](fullnode.md), if you still haven't deployed a full node.
 
 ## Publish Different Messages to Local Files
 
-You can set  the  `publishLocal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save the messages that you are interested under `{fullnode home}`/marketdata/marketdata.json, and you can consume them in your own apps. The messages types are explained below.
+You can set the `publishLocal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+The full node will now save the messages that you are interested under `{fullnode home}`/marketdata/marketdata.json, and you can consume them in your own apps. The messages types are explained below.
 
 ### 1. OrderUpdates
-You can set  the  `publishOrderUpdates` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save all the trades that been filled, orders that changed and proposals that been submitted in this blocks.
-
+You can set  the `publishOrderUpdates` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save all the trades that have been filled, orders that changed and proposals that been submitted in these blocks.
 
 * Example:
 ```
 {
 	Height:    int64,
-	Timestamp: int64, // milli seconds since Epoch
-	NumOfMsgs: int,   // number of individual messages we published, consumer can verify messages they received against this field to make sure they does not miss messages
+	Timestamp: int64, // milliseconds since Epoch
+	NumOfMsgs: int,   // number of individual messages that we published, consumer can verify messages that they received against this field to make sure they did not miss any messages
 	Trades: {
 	    NumOfMsgs: int,
         Trades:    []{
@@ -65,10 +67,10 @@ You can set  the  `publishOrderUpdates` option to `true` in `nodebinary/fullnode
 
 ```
 
-
 ### 2. AccountBalance
 
-You can set  the  `publishAccountBalance` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save all the changed accounts after this blocks.
+You can set the `publishAccountBalance` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save all the changed accounts after this blocks.
 
 * Example
 
@@ -85,10 +87,14 @@ You can set  the  `publishAccountBalance` option to `true` in `nodebinary/fullno
 
 }
 ```
-### 3. OrderbBook
 
-You can set  the  `publishOrderBook` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save all the  the order book changes after this block ends.
+### 3. OrderBook
+
+You can set the `publishOrderBook` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save all order book changes after this block ends.
+
 * Example
+
 ```
 {
     Height:    int64,
@@ -110,19 +116,23 @@ You can set  the  `publishOrderBook` option to `true` in `nodebinary/fullnode/{n
 
 ### 4. BlockFee
 
-You can set  the  `publishBlockFee` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save all thethe block fee charged in this block.
+You can set the `publishBlockFee` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save all the block fee charged in this block.
+
 * Example
+
 ```
 {
-    	Height:     int64,
-    	Fee:        string,
-    	Validators: []string
+    Height:     int64,
+    Fee:        string,
+    Validators: []string
 }
 ```
 
 
 ### 5. Transfers
-You can set  the  `publishTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save all the transfer transactions in this block.
+You can set the `publishTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save all the transfer transactions in this block.
 
 * Example
 
@@ -144,10 +154,11 @@ You can set  the  `publishTransfer` option to `true` in `nodebinary/fullnode/{ne
 }
 ```
 
-
-
-## Publish  Different Messages to Kafka
-You can set  the  `publishKafka` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.  Then, the full node will save the messages that you are interested to Kafka, and you can consume them in your own apps. The message is encoded based on `Avro` serialization system. Their schemas are shown as below:
+## Publish Different Messages to Kafka
+You can set the `publishKafka` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
+Then, the full node will save messages that you are interested into Kafka, and you can consume them in your own apps.<br/>
+The message is encoded based on `Avro` serialization system.<br/>
+Their schemas are shown below:<br/>
 
 - **OrderUpdates**:
 ```

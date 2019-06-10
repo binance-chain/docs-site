@@ -134,10 +134,15 @@ For example, if you send 3 ABC token,1 SAT token and 1 ABC to 3 different addres
    }
 ]
 ```
-You will pay
+You will pay on mainnet
 
 ```
-0.001 BNB * 5 = 0.05 BNB
+0.0005 BNB * 5 = 0.0025 BNB
+```
+You will pay on testnet
+
+```
+0.001 BNB * 5 = 0.005 BNB
 ```
 ### Trading Fees
 

@@ -59,7 +59,7 @@ A transaction signature is **not** formed from the Amino-encoded transaction byt
 
 This would allow for clients to sign a transaction off-chain, for example, a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. For example an external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
 
-The canonical bytes for signing are generated from the [StdSignBytes](https://github.com/binance-chain/bnc-cosmos-sdk/blob/50675b8015ab0dbac91a926a2df746174dbb33f7/x/auth/stdtx.go#L123) method. It produces a JSON string similar to the format below (formatted for clarity):
+The canonical bytes for signing are generated from the [StdSignBytes](https://github.com/cosmos/cosmos-sdk/blob/9c049321a1ba88e2d51996fd59c0e49013180aea/x/auth/stdtx.go#L169) method. It produces a JSON string similar to the format below (formatted for clarity):
 
 ```json
 {

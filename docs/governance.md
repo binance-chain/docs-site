@@ -5,10 +5,10 @@
     + [Global Parameters](#global-parameters)
     + [Proposal Parameters](#proposal-parameters)
     + [Participate in Governance](#participate-in-governance)
-      - [Submit a List Proposal](#submit-a-list-proposal)
-      - [Add deposit for a Proposal](#add-deposit-for-a-proposal)
-      - [Query Information of a Proposal](#query-information-of-a-proposal)
-      - [Query votes of a Proposal](#query-votes-of-a-proposal)
+        - [Submit a List Proposal](#submit-a-list-proposal)
+        - [Add deposit for a Proposal](#add-deposit-for-a-proposal-optional)
+        - [Query Information of a Proposal](#query-information-of-a-proposal)
+        - [Query votes of a Proposal](#query-votes-of-a-proposal)
   * [Key Notions](#key-notions)
       - [Vote options](#vote-options)
       - [Quorum](#quorum)
@@ -19,7 +19,7 @@
 
 ## Primer on Governance
 
-Binance Chain has its own built-in governance module that lets BNB holders submit proposals for adding trade pairs.  In order for the proposal to be open for voting, it needs to come with a `deposit` that is greater than a parameter called `Deposit`. The `deposit` need not be provided in its entirety by the submitter. If the initial proposer's `deposit` is not sufficient, the proposal enters the `deposit_period` status. Then, any BNB holder can increase the deposit by sending a `depositTx`.
+Binance Chain has its own built-in governance module that lets BNB holders submit proposals for adding trade pairs. In order for the proposal to be open for voting, it needs to come with a `deposit` that is greater than a parameter called `Deposit`. The `deposit` need not be provided in its entirety by the submitter. If the initial proposer's `deposit` is not sufficient, the proposal enters the `deposit_period` status. Then, any BNB holder can increase the deposit by sending a `depositTx`.
 
 ## Proposal Workflow
 ![workflow](./assets/workflow.jpg)
@@ -30,32 +30,32 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 * `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md)
 
 ### Proposal Parameters
-* `deposit` :  your input must be larger than `min-depost`.
-* `voting-period`: This is the time for validators to vote, your input in seconds, if you ommit this field, the default voting period is one week.
-* `expire-time`: This is the time for you to send list transaction if your proposal is passed. This time cannot be ealry than current time.
+* `deposit` : your input must be larger than `min-deposit`.
+* `voting-period`: This is the time for validators to vote, your input in seconds, if you omit this field, the default voting period is one week.
+* `expire-time`: This is the time for you to send list transaction if your proposal passed. This time cannot be earlier than current time.
 
 ### Participate in Governance
-####  Tools
+#### Tools
 
 Please use this [tool](<https://github.com/binance-chain/node-binary/tree/master/tools>) for generating
 
-####  Submit a List Proposal
-To add a new trading pairs, you could run the following command :
-Please note:
+#### Submit a List Proposal
+To add a new trading pairs, you can run the following command:<br/>
+Please note:<br/>
 
-+ `--init-price` is  boosted by **1e8** for decimal part, such as100000000, is 1 BNB
-+ `--from`: put  your key name for the address / key, you can only list with the owner address of your token.
-+ `--expire-time`: expire time is after when you will not be able to list your token though your proposal is passed.
-+ `--voting-period`: The voting period is for validators to vote. The unit is second and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period.
++ `--init-price` is boosted by **1e8** for decimal part, such as 100000000, is 1 BNB
++ `--from`: put your key name for the address / key, you can only list with the owners address of your token.
++ `--expire-time`: expire time is the deadline after which you will no longer be able to list your token though your proposal is passed.
++ `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
 
-Please note the all the  numbers are  boosted by **1e8** for decimal part.
+Please note that the deposit and init-price are boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
 
 ```shell
 ./bnbcli gov submit-list-proposal --from test --deposit 100000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
---description "list AAA-254/BNB" --expire-time 1570665600  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --voting-period 604800 --json
+--description "list AAA-254/BNB" --expire-time 1570665600 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --voting-period 604800 --json
 ```
 
 Example on **testnet**:
@@ -67,15 +67,14 @@ Example on **testnet**:
 ```
 
 #### Add deposit for a Proposal (Optional)
-If the initial deppsit for your proposal in `submit-list-proposal` is not enough, you can increase the deposit with `deposit` operation. In current Binance Chain Mainnet, the max deposit period is **two days**. After submitting a proposal, you have two days  to increase your deposit, otherwise your proposal will not go to voting period and get rejected directly.
+If the initial deposit for your proposal in `submit-list-proposal` is not enough, you can increase the deposit with `deposit` operation. In current Binance Chain Mainnet, the max deposit period is **two days**. After submitting a proposal, you have two days to increase your deposit, otherwise your proposal will not go into the voting period and gets rejected directly.
 
-Please note the amount is  boosted by **1e8** for decimal part.
-
+Please note the amount is boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
+./bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -85,12 +84,12 @@ Example on **testnet**:
 ```
 
 #### Query Information of a Proposal
-To see detailed information of some proposla, you could run the following command:
+To see detailed information of specific proposal, you can run the following command:
 
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov query-proposal --proposal-id <proposal-ID>  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
+./bnbcli gov query-proposal --proposal-id <proposal-ID> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -98,7 +97,8 @@ Example on **testnet**:
 ```shell
 ./tbnbcli gov query-proposal --proposal-id <proposal-ID> --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
 ```
-Example output；
+
+Example output:
 ```json
 {
   "type": "gov/TextProposal",
@@ -125,15 +125,15 @@ Example output；
   }
 }
 ```
-You could get the information about the proposal's status and its tally result clearly.
+You can get the information about the proposal's status and its tally result this way.
 
 #### Query votes of a Proposal
-You could track the votes for your proposal with the following command；
+You can track the votes for your proposal with the following command:
 
 Example on **mainnet**:
 
 ```shell
-./bnbcli gov query-votes --proposal-id 272 --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443
+./bnbcli gov query-votes --proposal-id 272 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
 ```
 
 Example on **testnet**:
@@ -141,6 +141,7 @@ Example on **testnet**:
 ```shell
 ./tbnbcli gov query-votes --proposal-id 272 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
 ```
+
 Example output:
 ```
 [
@@ -202,7 +203,7 @@ Example output:
 ]
 ```
 
-##  Key Notions
+## Key Notions
 
 #### Vote options
 There are four vote options:
@@ -212,7 +213,8 @@ There are four vote options:
 - `Abstain`
 
 `No` represents the validator is against this proposal and `NoWithVeto` suggests the validator is strongly against
-this proposal. `Abstain` option allows voters to signal that they do not intend to vote in favor or against
+this proposal.<br/>
+`Abstain` option allows voters to signal that they do not intend to vote in favor or against
 the proposal but accept the result of the vote.
 
 #### Quorum
@@ -223,7 +225,7 @@ be valid, which is 0.5(50%) now.
 If voting power does not reach quorum at the end of the voting period, the proposal will be rejected and all deposits
 will be returned to depositors' addresses.
 
-**Note**: There is a special case that if all votes are `Abstain` and voting power is superior to 50%, the proposal will be rejected and all deposits will be refunded.
+**Note**: There is a special case when all votes are `Abstain` and voting power is superior to 50%, the proposal will be rejected and all deposits will be refunded.
 
 #### Veto
 
@@ -237,10 +239,10 @@ If the proportion of `NoWithVeto` votes is inferior to 1/3 and the proportion of
 
 #### Tally Result Example
 
-We can query a proposal via `bnbcli`.
+You can query a proposal via `bnbcli`.
 
 ```bash
-$ ./bnbcli gov  query-proposal --chain-id Binance-Chain-Nile --node=tcp://data-seed-pre-1-s3.binance.org:80 --proposal-id 370
+$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Nile --node=tcp://data-seed-pre-1-s3.binance.org:80 --proposal-id 370
 {
   "type": "gov/TextProposal",
   "value": {
@@ -269,13 +271,28 @@ $ ./bnbcli gov  query-proposal --chain-id Binance-Chain-Nile --node=tcp://data-s
 }
 ```
 
-We can get `tally result` and `proposal_status`. For options in `tally result`:
+You can get `tally result` and `proposal_status`.<br/>
+
+For options in `tally result`:
 
 - `yes` denotes voting power votes `Yes`
 - `abstain` denotes voting power votes `Abstain`
 - `no` denotes voting power votes `No`
 - `no_with_veto` denotes voting power votes `NoWithVeto`
-- `total` denotes total voting power when voting period end
+- `total` denotes total voting power when voting period ends
 
-So we can calculate proportion of each vote option easily. In this case, total voting power is 1100000000000 and voting
-power of `Yes` is 1100000000000, so the proportion of `Yes` is 100% and the proposal should be passed and and 2000 BNB will be returned.
+We can calculate proportion of each vote option easily.<br/>
+In this case, total voting power is 1100000000000 and voting power of `Yes` is 1100000000000,
+so the proportion of `Yes` is 100% and the proposal should be passed and and 2000 BNB will be returned.
+
+**Note:** Trying to query proposal that didn't enter the voting period will result in `error`.
+
+```bash
+$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --proposal-id 25
+{
+  "codespace": 5,
+  "code": 1,
+  "abci_code": 327681,
+  "message": "Unknown proposal with id 25"
+}
+```
