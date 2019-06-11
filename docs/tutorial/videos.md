@@ -1,7 +1,7 @@
 # Video Tutorials
 
-1. Cool Wallet: <https://www.youtube.com/watch?feature=youtu.be&v=C4Ic20hv50Q&app=desktop>
+1. Cool Wallet: [YouTube](https://youtu.be/C4Ic20hv50Q)
 
-2. Math Wallet: <https://youtu.be/cBrf8Is8Vxs>
+2. Math Wallet: [YouTube](https://youtu.be/cBrf8Is8Vxs)
 
-3. Trust Wallet: <https://www.youtube.com/watch?v=kI6UiqudBng&feature=youtu.be>
+3. Trust Wallet: [YouTube](https://youtu.be/kI6UiqudBng)
