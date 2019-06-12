@@ -134,16 +134,12 @@ For example, if you send 3 ABC token,1 SAT token and 1 ABC to 3 different addres
    }
 ]
 ```
-You will pay on mainnet
+You will pay on mainnet/testnet
 
 ```
-0.0005 BNB * 5 = 0.0025 BNB
+0.0003 BNB * 5 = 0.0015 BNB
 ```
-You will pay on testnet
 
-```
-0.001 BNB * 5 = 0.005 BNB
-```
 ### Trading Fees
 
 Trading fees are subject to complex logic that may mean that individual trades are not charged exactly by the rates below, but between them instead; this is due to the block-based matching engine in use on the DEX.
