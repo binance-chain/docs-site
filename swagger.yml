@@ -1553,7 +1553,7 @@ definitions:
         example: ABC-5CA
         format: currency
         required: true
-      price:
+      list_price:
         type: string
         description: "In decimal form, e.g. 1.00000000"
         example: "0.00000000"
@@ -1995,8 +1995,6 @@ definitions:
         type: string
       other:
         type: object
-
-
   SyncInfo:
         type: object
         properties:
@@ -2013,25 +2011,6 @@ definitions:
             type: time
           catching_up:
             type: boolean
-
-
-
-  Validator:
-        type: object
-        properties:
-          address:
-            type: string
-            description: hex address
-          pub_key:
-            type: string
-            description: hex-encoded
-          proposer_priority:
-            type: integer
-            format: int64
-          voting_power:
-            type: integer
-            format: int64
-
   ProtocolVersion:
     type: object
     properties:
