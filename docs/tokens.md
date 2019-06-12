@@ -17,7 +17,11 @@ An issuance transaction contains:
 
 * Source Address: the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
 * Token Name: it is the long official name, such as "Binance Coin". It is limited to 32 characters.
-* Symbol: identifier of the token, limited to 8 alphanumeric characters and is case insensitive, for example, "BNB". ".B" suffixed symbol is also allowed for migrating these tokens already exist on other chains. The symbol do not need to be unique, a random 3 letters would be appended, after a "-", to the provided symbol to avoid uniqueness constraint. Those 3 letters are the first three letters of tx hash of that `issue` transaction. For example, "NNB-B90". Only BNB does not have this suffix.
+* Symbol: identifier of the token, limited to 8 alphanumeric characters and is case insensitive, for example, "BNB".<br/>
+".B" suffixed symbol is also allowed for migrating tokens that already exist on other chains.<br/>
+The symbol doesn't have to be unique, "-" followed by random 3 letters will be appended to the provided symbol to avoid uniqueness constraint.<br/>
+Those 3 letters are the first three letters of tx hash of the `issue` transaction.<br/>
+For example, "NNB-B90". **Only BNB does not have this suffix.**<br/>
 * Total Supply: an int64 boosted by **1e8** for decimal part. The max total supply is 90 billion.
 * Mintable: that means whether this token can be minted in the future. To set the tokes to be mintable, you need to add `--mintable`, otherwise just omit this field to set this token to be non-mintable.
 
@@ -30,7 +34,7 @@ Example on **mainnet**:
 ```bash
 # To issue a NNB non-mintable token with total-supply 1 billion on mainnet
 > ./bnbcli token issue --token-name "new token" --total-supply 100000000000000000 --symbol NNB --from alice  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
-``` 
+```
 Example on **testnet**:
 
 ```bash
