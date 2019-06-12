@@ -96,18 +96,18 @@ Fees are variable and may change over time as governance proposals are proposed 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
 New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.0005 BNB | 0.0001 BNB | Y
-Order Expire (No Fill) | Equivalent 0.0005 BNB | 0.0001 BNB | Y
-IOC (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
-Transfer | N/A | 0.000625 BNB | N
-Multi-send | N/A | 0.0005 BNB | N
-Issue Asset | N/A | 1000 BNB | N
-Mint Asset | N/A | 200 BNB | N
-Burn Asset | N/A | 1 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.01 BNB | N
-List Asset | N/A | 2000 BNB | N
-Submit Proposal | N/A | 10 BNB | N
-Deposit | N/A | 0.00125 BNB | N
+Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
+Transfer | N/A | 0.000375 BNB | N
+Multi-send | N/A | 0.0003 BNB | N
+Issue Asset | N/A | 500 BNB | N
+Mint Asset | N/A | 5 BNB | N
+Burn Asset | N/A | 0.5 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
+List Asset | N/A | 1000 BNB | N
+Submit Proposal | N/A | 5 BNB | N
+Deposit | N/A | 0.000625 BNB | N
 
 ### Mainnet Fees API
 
@@ -163,18 +163,18 @@ Fees are variable and may change over time as governance proposals are proposed 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
 New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.001 BNB | 0.0002 BNB | Y
-Order Expire (No Fill) | Equivalent 0.001 BNB | 0.0002 BNB | Y
-IOC (No Fill) | Equivalent 0.0005 BNB | 0.0001 BNB | Y
-Transfer | N/A | 0.00125 BNB | N
-Multi-send | N/A | 0.001 BNB | N
-Issue Asset | N/A | 400 BNB | N
-Mint Asset | N/A | 200 BNB | N
-Burn Asset | N/A | 1 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.01 BNB | N
-List Asset | N/A | 800 BNB | N
-Submit Proposal | N/A | 10 BNB | N
-Deposit | N/A | 0.00125 BNB | N
+Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
+Transfer | N/A | 0.000375 BNB | N
+Multi-send | N/A | 0.0003 BNB | N
+Issue Asset | N/A | 500 BNB | N
+Mint Asset | N/A | 5 BNB | N
+Burn Asset | N/A | 0.5 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
+List Asset | N/A | 1000 BNB | N
+Submit Proposal | N/A | 5 BNB | N
+Deposit | N/A | 0.000625 BNB | N
 
 ### Testnet Fees API
 
