@@ -25,7 +25,7 @@ Locate "Binance Chain", then click on "Install".
 
 ![img](pic/install.png)
 
-![img](puc/search.png)
+![img](pic/search.png)
 
 
 3) The Binance app will now install on your Ledger device.
@@ -74,7 +74,7 @@ Confirming a trade on a Ledger Wallet:
 
 You can view the transaction info and confirm it on Ledger:
 
-![img](pic/preview.jpg)
+![img](pic/preview.png)
 
 Once the transaction has successfully been signed and broadcasted, your Ledger device will display this screen.
 
