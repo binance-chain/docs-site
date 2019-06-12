@@ -33,6 +33,7 @@ Locate "Binance Chain", then click on "Install".
 ![img](pic/installing.png)
 
 4) When you see a popup message indicating "Successfully installed Binance Chain", the installation is complete.
+
 ![img](pic/success.png)
 
 
