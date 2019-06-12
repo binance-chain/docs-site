@@ -18,28 +18,28 @@ In order to use a Ledger device with Binance Chain and Binance DEX, you will nee
 
 1) Plug in and unlock your Ledger device, open Ledger Live on your computer, then open the "Manager" panel.
 
-![img](https://lh5.googleusercontent.com/bQx2rjd_8s_hcmV3rnJ6a3hKqnOyKrRkngGCE6ANNHL9ImOT07HZKqMB-DquH5NaScs60IR_Juhz6vN0xX6uwLBrGz8MRRN9kQjt1fDV_3ffh__GDLpENnZgNp7CLz01jGt-wnox)
+![img](pic/manage.png)
 
 2) Within the "Manager" pane, type in "Binance" in the search field.<br/>
 Locate "Binance Chain", then click on "Install".
 
-![img](https://lh6.googleusercontent.com/1tp2d3-459c6lMqt10Duq7uektkWXzKEi45FDml7ldW8OjQ4TzDYA9mNOqVYpKfDyTOvsbV81WG6_NRFJKKjAoYYWLVgVAUPaxBJ2dbdht-p9WCGIlJDaL8Py8mIhM4ptSFav1fz)
+![img](pic/install.png)
 
-![img](https://lh5.googleusercontent.com/yXOF30cNsABy-AoPxI3A0DzWC9s5m6yaHcQrexw8m0BT2F5Oa9CSFfurT2Xg35PWbNpvt33baf-jE25Au74nMKJY3YNx4yAxkB0nTyBwxkMuqcs4bOEwftVw4LsggzgtSz736AYr)
+![img](puc/search.png)
 
 
 3) The Binance app will now install on your Ledger device.
 
-![img](https://lh4.googleusercontent.com/zgy2PXWoDaymalYusYWv_k1pVl4CGb8A4SQCUhzqj_VQre33ibyvpoVE7GjSySgto4kLaLwiHnsCoyzPrVf-HoCD56Isl3sZlp-6HZm0NsJ8t2NnzbkWAr8jV2l8k5bEMnXnEE0-)
+![img](pic/installing.png)
 
 4) When you see a popup message indicating "Successfully installed Binance Chain", the installation is complete.
-![img](https://lh3.googleusercontent.com/SuAmT7VV2vag44_FyAS852ckyx3RebObkXTrWcaUPWVAmYBG0GDNEMF2ojFRQ7ktGfWs5cxnn6o6I4RzsHsA_HzDfp97y8Lgqqb6-332_E8H8SGoRqeH8pO9Cz0PljlqkiPSyvnd)
+![img](pic/success.png)
 
 
 5) Check that the "Binance Chain" app is shown on your Ledger device dashboard as in the photo below.<br/>
 If it is, the installation has been successful.
 
-![img](https://lh4.googleusercontent.com/DEcDbR6zX8SllVV_d9DT856DHCnRCHoMUqUEF_L1IeXGvGm92fSdS0CKkXopD9MOhZKCALr8EvqBJ2uAv77WCJBy41lgD5l6qhlWKzCkOGtdgLH_3zGyAeDzsTUQTMfc2VkT5joM)
+![img](pic/app.png)
 
 ## Setup/Login Instructions
 
@@ -47,20 +47,20 @@ If it is, the installation has been successful.
 
 Go to [www.binance.org](http://www.binance.org/), click on "Start Trading".
 
-![img](https://lh3.googleusercontent.com/eueHwpGQoZ2vO6vd1TAMAyEWF7ry39jZ8H64bVY3ozNXlWllVGOpKF9niIebhco9oevBJYs8NU8yDI5Dvv4mlI4nzo0mV04-HtMxnPXapeKpKgvu50L5ML6YBq0GEiYLP6AxMP9q)
+![img](pic/start.png)
 
 Click "Unlock wallet" on the top right navigation bar.
 
-![img](https://lh3.googleusercontent.com/UFdxmyC25MWnJ1QeX1z6LE_-EhRm6CA7lDqKj360_59BH-mO-cmYDj1aBPh1WQ8bAmxx7QegMcM0bzmg2qPraDFwfXWDmg-TGWSerV-a3GbjIJoT_FVyL60Jn6-xhSVpmtFqqTi0)
+![img](pic/unlock.png)
 
 Choose "Ledger Device" and verify your address.
 
-![img](https://lh4.googleusercontent.com/tjOcHSFckOPkE_mT4zIXwqM6sBTX4hOBEz_asUbgAMy6jlmQyubgMYcS40Yk2y-iM8Dg22-UoGqiUYuGVda15W5JNIL_oP7HNX_sxh9JijC_AAhAtFINBIib77TEF5xsxprbxY1H)
+![img](pic/ledger.png)
 
 Choose one address to use for this session and click on "Confirm".<br/>
 You will then be redirected to the Trading Interface.
 
-![img](https://lh3.googleusercontent.com/zGvtXEKd5YlVEvagvM5oQgSFR__lpFL01ml-Ramj5xVzKCHXNBRsXCA6Vk1qmuOvPNGP3BcTA0WdDBP0fMRXc_MJV8QBPGLV4rNj-QbraOj4yoUXjclxsrwlQt4MFEqPrUGymVIW)
+![img](pic/address.png)
 
 
 For your security, please read the information displayed in the following popup and confirm that the address shown on your Ledger device matches the one shown on-screen.<br/>
@@ -68,19 +68,17 @@ Press the right button on your device to confirm that the address matches (You m
 
 ## How to send Binance Chain crypto assets
 
-Once the transaction has been signed and successfully broadcasted, your Ledger device will display this screen.
-
-![image-20190604173338510](/Users/huangsuyu/Library/Application Support/typora-user-images/image-20190604173338510.png)
-
 Confirming a trade on a Ledger Wallet:
 
-![img](https://lh4.googleusercontent.com/pz_7B_9EAB43-lvmt8Zvr5qgwD_BbTwbdPI2tonRHYK7B4C4jaXqe_OVaNYHBqkKQxCLvMp97UM2l8VTAEjd7_L-oEgK-z8LfJmDCksAEvyCQdJrZqbGCHxEIJTomg122ucfanPe)
+![img](pic/transaction.png)
 
 You can view the transaction info and confirm it on Ledger:
 
-![img](https://lh4.googleusercontent.com/wCRnKHz1zpiuUjO5fXgi0PtEuGJaxGkDbnN7AmrEkQeH8zIdr4lKjy1sKS92ljy2T-UmQTlQeuYQQxCqImxbilM54c6Bp01jTEJUeFAqr6XAmKnfaND1LM7nE8soSHOUDbABpIC5)
+![img](pic/preview.png)
 
+Once the transaction has successfully been signed and broadcasted, your Ledger device will display this screen.
 
+![image-20190612143052030](pic/sign.png)
 
 
 
