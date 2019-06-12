@@ -74,7 +74,7 @@ Confirming a trade on a Ledger Wallet:
 
 You can view the transaction info and confirm it on Ledger:
 
-![img](pic/preview.png)
+![img](pic/preview.jpg)
 
 Once the transaction has successfully been signed and broadcasted, your Ledger device will display this screen.
 
