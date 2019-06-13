@@ -2,12 +2,12 @@
 
 **Step 1.** To get the latest Trust Wallet App you should follow one of the download links on our website [trustwallet.com](https://trustwallet.com/).
 
-![img](https://lh4.googleusercontent.com/TTNHOXw9oIZ7kgPV0AWRCIYfHMt3sTD4N4_epRXAu-nWWEkHU5g5Kn8boHuPimX8T5cUkR4DGLHqhlvQmAaap8Qm2gdXepx9WcxtMlANsvSaAyISqH2RjFHm8MpP4DQ0_OczQh61)
+![img](assets/how-to-create-a-wallet-on-trustwallet/1.png)
 
 **Step 2.** Once you have downloaded and installed the app, open Trust Wallet and tap on "Create a new wallet".<br/>
 In the next step you will receive your 12 word recovery phrase, which acts as a backup for you funds.
 
-![img](https://lh3.googleusercontent.com/2rlmfpf5cWXKHUTSfU1ntBBeOFcMAOTk9Ki4zdtsJ8U8N3A2ammuzvZdyYisQqx5mgn16CKiBrqGMPMMyycab1_fJZL5No6vlDnzP6IZPcWpQUYS_j3yMY9UZv_IYV_yOmcVVFWt)
+![img](assets/how-to-create-a-wallet-on-trustwallet/2.png)
 
 IMPORTANT: There is no way to change or recover your 12 word phrase if it's lost or forgotten.<br/>
 If you lose your recovery phrase you will lose your funds with it.<br/>
@@ -20,7 +20,7 @@ It is technically not possible for us to recover wallets since we do not have ac
 
 **IMPORTANT:** It is strongly recommended to do your backup now and [store it somewhere safe](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-to-Store-Recovery-Phrase-and-Private-Keys)!
 
-![img](https://lh3.googleusercontent.com/ppMvW6LHE-_OjfQoxHEkRJ-ry8ZJCX_oVXoJmHiqU_M60-vdc3F7PmXe2n0QCIrTEChQmzaCwm3WZVMDG4ukIVTSOcL85HGNy2W4Bi282zkzy50ZeMWyd2A0uyx2LENP5v6tA6Uh)
+![img](assets/how-to-create-a-wallet-on-trustwallet/3.png)
 
 And that's it, you are done!<br/>
 Your newly created multi-coin wallet is now ready to handle cryptocurrencies for over
@@ -28,4 +28,4 @@ Your newly created multi-coin wallet is now ready to handle cryptocurrencies for
 [BNB](https://trustwallet.com/assets/binance-coin), [XRP](https://trustwallet.com/assets/xrp) and many more.<br/>
 Exchange these cryptocurrencies with our upcoming coin swap function and buy Bitcoin, Ethereum and more with your credit card.
 
-![img](https://lh3.googleusercontent.com/ykD5acWTWP9BfaAcPqONbYLeS8ESaJCHvvL7Zfu7tPN-um-Rku3KL0F3-oRnoVk6dVpNx-G0S8EuyUJxt63qRoMUmvOIcjElzEEXcXcVy9zbWLTmYWZAL8HUAPAmhxI5IO_lXDaa)
+![img](assets/how-to-create-a-wallet-on-trustwallet/4.png)
