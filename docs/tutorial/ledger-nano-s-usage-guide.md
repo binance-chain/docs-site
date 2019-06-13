@@ -18,50 +18,50 @@ In order to use a Ledger device with Binance Chain and Binance DEX, you will nee
 
 1) Plug in and unlock your Ledger device, open Ledger Live on your computer, then open the "Manager" panel.
 
-![img](pic/manage.png)
+![img](assets/ledger-nano-s-usage-guide/manage.png)
 
 2) Within the "Manager" pane, type in "Binance" in the search field.<br/>
 Locate "Binance Chain", then click on "Install".
 
-![img](pic/install.png)
+![img](assets/ledger-nano-s-usage-guide/install.png)
 
-![img](pic/search.png)
+![img](assets/ledger-nano-s-usage-guide/search.png)
 
 
 3) The Binance app will now install on your Ledger device.
 
-![img](pic/installing.png)
+![img](assets/ledger-nano-s-usage-guide/installing.png)
 
 4) When you see a popup message indicating "Successfully installed Binance Chain", the installation is complete.
 
-![img](pic/success.png)
+![img](assets/ledger-nano-s-usage-guide/success.png)
 
 
 5) Check that the "Binance Chain" app is shown on your Ledger device dashboard as in the photo below.<br/>
 If it is, the installation has been successful.
 
-![img](pic/app.png)
+![img](assets/ledger-nano-s-usage-guide/app.png)
 
 ## Setup/Login Instructions
 
-1) Visit the binance.org website and click on the "Unlock Wallet" link on the top right part of the page.
+6) Visit the binance.org website and click on the "Unlock Wallet" link on the top right part of the page.
 
 Go to [www.binance.org](http://www.binance.org/), click on "Start Trading".
 
-![img](pic/start.png)
+![img](assets/ledger-nano-s-usage-guide/start.png)
 
 Click "Unlock wallet" on the top right navigation bar.
 
-![img](pic/unlock.png)
+![img](assets/ledger-nano-s-usage-guide/unlock.png)
 
 Choose "Ledger Device" and verify your address.
 
-![img](pic/ledger.png)
+![img](assets/ledger-nano-s-usage-guide/ledger.png)
 
 Choose one address to use for this session and click on "Confirm".<br/>
 You will then be redirected to the Trading Interface.
 
-![img](pic/address.png)
+![img](assets/ledger-nano-s-usage-guide/address.png)
 
 
 For your security, please read the information displayed in the following popup and confirm that the address shown on your Ledger device matches the one shown on-screen.<br/>
@@ -71,15 +71,15 @@ Press the right button on your device to confirm that the address matches (You m
 
 Confirming a trade on a Ledger Wallet:
 
-![img](pic/transaction.png)
+![img](assets/ledger-nano-s-usage-guide/transaction.png)
 
 You can view the transaction info and confirm it on Ledger:
 
-![img](pic/preview.png)
+![img](assets/ledger-nano-s-usage-guide/preview.png)
 
 Once the transaction has successfully been signed and broadcasted, your Ledger device will display this screen.
 
-![image-20190612143052030](pic/sign.png)
+![img](assets/ledger-nano-s-usage-guide/sign.png)
 
 
 
