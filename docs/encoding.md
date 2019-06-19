@@ -243,6 +243,7 @@ Issue (create) new asset on Binance chain.
 ```go
 message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
+  bytes  From  // issuer's address
   string Name // token name
   string Symbol // token symbol
   string TotalSupply // total supply
