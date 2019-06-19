@@ -17,7 +17,7 @@
 | 11     | [Ellipal Wallet](wallets/Ellipal-Wallet.md)            | <https://www.ellipal.com/>       |True|
 | 12     | [Exodus](wallets/Exodus.md)                            | <https://www.exodus.io/>         |False|
 | 13     | [HooWallet](wallets/Hoo-Wallet.md)                     | <https://hoo.com/>               |False|
-| 14     | [MEET.ONE Wallet](wallets/meet.md)                     | <https://meet.one//>             |True|
+| 14     | [MEET.ONE Wallet](wallets/meet.md)                     | <https://meet.one/>             |True|
 | 15     | [Guarda Wallet](wallets/Guarda.md)                     | <https://guarda.co/>             |False|
 | 16     | [DDEX Wallet](wallets/ddex.md)                         | <https://ddex.io/>               |True|
 | 17     | [Equal Wallet](wallets/equal.md)                       | <https://equal.tech/>            |False|
