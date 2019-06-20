@@ -13,56 +13,109 @@ You can set  the `publishOrderUpdates` option to `true` in `nodebinary/fullnode/
 Then, the full node will save all the trades that have been filled, orders that changed and proposals that been submitted in these blocks.
 
 * Example:
-```
+```json
 {
-	Height:    int64,
-	Timestamp: int64, // milliseconds since Epoch
-	NumOfMsgs: int,   // number of individual messages that we published, consumer can verify messages that they received against this field to make sure they did not miss any messages
-	Trades: {
-	    NumOfMsgs: int,
-        Trades:    []{
-            Id:     string,
-        	Symbol: string,
-        	Price:  int64,
-        	Qty:    int64,
-        	Sid:    string,
-        	Bid:    string,
-        	Sfee:   string,
-        	Bfee:   string,
-        	SAddr:  string, // string representation of AccAddress
-        	BAddr:  string // string representation of AccAddress
-        },
-	},
-	Orders: {
-	    NumOfMsgs: int,
-        Orders:    []{
-            	Symbol:               string,
-            	Status:               uint8,
-            	OrderId:              string,
-            	TradeId:              string,
-            	Owner:                string,
-            	Side:                 int8,
-            	OrderType:            int8,
-            	Price:                int64,
-            	Qty:                  int64,
-            	LastExecutedPrice:    int64,
-            	LastExecutedQty:      int64,
-            	CumQty:               int64,
-            	Fee:                  string,
-            	OrderCreationTime:    int64,
-            	TransactionTime:      int64,
-            	TimeInForce:          int8,
-            	CurrentExecutionType: uint8,
-            	TxHash:               string
-        }
-	},
-	Proposals: {
-	    NumOfMsgs: int,
-        Proposals: []{
-            Id:     int64,
-            Status: uint8
-        }
-	}
+   "Height":3154,
+   "Timestamp":1560927932877738000,
+   "NumOfMsgs":4,
+   "Trades":{
+      "NumOfMsgs":1,
+      "Trades":[
+         {
+            "Id":"3154-0",
+            "Symbol":"NNB-811_BNB",
+            "Price":1200000000,
+            "Qty":1200000000,
+            "Sid":"8FEC97AB9B3F52A30B860CFBB8E41B72E9EB02C1-11",
+            "Bid":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
+            "Sfee":"BNB:5760000",
+            "Bfee":"BNB:5760000",
+            "SSrc":0,
+            "BSrc":0,
+            "SSingleFee":"",
+            "BSingleFee":"",
+            "TickType":0,
+            "SAddr":"bnb13lkf02um8af2xzuxpnam3eqmwt57kqkp3hcvyp",
+            "BAddr":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch"
+         }
+      ]
+   },
+   "Orders":{
+      "NumOfMsgs":3,
+      "Orders":[
+         {
+            "Symbol":"NNB-811_BNB",
+            "Status":0,
+            "OrderId":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
+            "TradeId":"",
+            "Owner":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch",
+            "Side":1,
+            "OrderType":2,
+            "Price":1300000000,
+            "Qty":1300000000,
+            "LastExecutedPrice":0,
+            "LastExecutedQty":0,
+            "CumQty":1200000000,
+            "Fee":"",
+            "OrderCreationTime":1560927932877738000,
+            "TransactionTime":1560927932877738000,
+            "TimeInForce":1,
+            "CurrentExecutionType":0,
+            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865",
+            "SingleFee":""
+         },
+         {
+            "Symbol":"NNB-811_BNB",
+            "Status":5,
+            "OrderId":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
+            "TradeId":"3154-0",
+            "Owner":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch",
+            "Side":1,
+            "OrderType":2,
+            "Price":1300000000,
+            "Qty":1300000000,
+            "LastExecutedPrice":1200000000,
+            "LastExecutedQty":1200000000,
+            "CumQty":1200000000,
+            "Fee":"BNB:5760000",
+            "OrderCreationTime":1560927932877738000,
+            "TransactionTime":1560927932877738000,
+            "TimeInForce":1,
+            "CurrentExecutionType":0,
+            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865",
+            "SingleFee":""
+         },
+         {
+            "Symbol":"NNB-811_BNB",
+            "Status":6,
+            "OrderId":"8FEC97AB9B3F52A30B860CFBB8E41B72E9EB02C1-11",
+            "TradeId":"3154-0",
+            "Owner":"bnb13lkf02um8af2xzuxpnam3eqmwt57kqkp3hcvyp",
+            "Side":2,
+            "OrderType":2,
+            "Price":1200000000,
+            "Qty":1200000000,
+            "LastExecutedPrice":1200000000,
+            "LastExecutedQty":1200000000,
+            "CumQty":1200000000,
+            "Fee":"BNB:5760000",
+            "OrderCreationTime":1560927931834863000,
+            "TransactionTime":1560927932877738000,
+            "TimeInForce":1,
+            "CurrentExecutionType":0,
+            "TxHash":"617565ECA6464E1B7435819A8154BCF5FC773FE1C5982A833DBEEDBE78E660C6",
+            "SingleFee":""
+         }
+      ]
+   },
+   "Proposals":{
+      "NumOfMsgs":0,
+      "Proposals":null
+   },
+   "StakeUpdates":{
+      "NumOfMsgs":0,
+      "CompletedUnbondingDelegations":null
+   }
 }
 
 ```
