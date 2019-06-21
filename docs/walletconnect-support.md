@@ -5,6 +5,6 @@
 
 | Number | Wallet Name                                            | Network                          |
 | ------ | ------------------------------------------------------ | -------------------------------- |
-| 1      | [Trust Wallet](wallets/Trust-Wallet.md)                | Mainnet                          |
-| 2      | [CoolWallet](wallets/Cool-Wallet.md)                   | Mainnet                          |
-| 3      | [Math Wallet](wallets/Math-Wallet.md)                  | Mainnet                          |
+| 1      | [Trust Wallet](wallets/trust-wallet.md)                | Mainnet                          |
+| 2      | [CoolWallet](wallets/cool-wallet.md)                   | Mainnet                          |
+| 3      | [Math Wallet](wallets/math-wallet.md)                  | Mainnet                          |
