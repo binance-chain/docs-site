@@ -10,7 +10,3 @@ Protect your crypto assets with the first and only independently-certified hardw
 
 ## Resource
 <https://www.ledger.com/>
-
-
-
-
