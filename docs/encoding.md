@@ -290,10 +290,10 @@ message DexList {
 Submit proposal is used to create a proposal for validators about adding trading pairs
 ```go
 message {
-  0xB42D614E // hardcoded, object type prefix in 4 bytes
+  0xACCBA2DE // hardcoded, object type prefix in 4 bytes
   string Title // Title of the proposal
   string Description // Description of the proposal
-  byte ProposalType // Type of proposal. Initial set {PlainTextProposal, SoftwareUpgradeProposal}
+  byte ProposalType // Type of proposal. Initial set {PlainTextProposal, SoftwareUpgradeProposal,ListTradingPair, FixedFeeParams}
   bytes Proposer // Address of the proposer
   message Coin {
     string denom
