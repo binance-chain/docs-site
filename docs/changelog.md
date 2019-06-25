@@ -14,7 +14,7 @@ Example:
 https://dex-atlantic.binance.org/api/v1/
 
 ##### ***Changes***
-Please note that `singlefee` is added in the `Order` data structure to help you know the trading fee of this order.
+Please note that `singleFee` is added in the `Order` data structure to help you know the trading fee of this order.
 
 ##### ***GET***
 **Summary:** Get an order.
