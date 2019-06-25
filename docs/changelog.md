@@ -8,62 +8,8 @@ As you know, There are some accelerate nodes which provides some advanced API se
 
 In the latest update of HTTP API for testnet, there are the following changes:
 
-1. /api/v1/orders/{id}
-Example:
+1. /api/v1/trades
 
-https://dex-atlantic.binance.org/api/v1/
-
-##### ***Changes***
-Please note that `singlefee` is added in the `Order` data structure to help you know the trading fee of this order.
-
-##### ***GET***
-**Summary:** Get an order.
-
-**Description:** Gets metadata for an individual order by its ID.
-
-**Rate Limit:** 5 requests per IP per second.
-
-
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path | order id | Yes | string |
-
-**Responses**
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [Order](#order) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
-
-### Order
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| cumulateQuantity | string |  |  |
-| fee | string | trading fee on the block of this order |  |
-| lastExecutedPrice | string | price of last execution |  |
-| lastExecutedQuantity | string | quantity of last execution |  |
-| orderCreateTime | dateTime | time of order creation |  |
-| orderId | string | order ID |  |
-| owner | string | order issuer |  |
-| price | string | order price |  |
-| quantity | string | order quantity |  |
-| side | integer | 1 for buy and 2 for sell |  |
-| **singleFee** | string | trading fee of this order |  |
-| status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
-| symbol | string |  |  |
-| timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
-| tradeId | string | trade ID |  |
-| transactionHash | string |  |  |
-| transactionTime | dateTime | time of transaction |  |
-| type | integer | only 2 is available for now, meaning limit order |  |
-
-
-### /api/v1/trades
 ---
 ##### ***Changes***
 In the `Trade` data structure, a new field `Ticker Type` is added. The enumerate values are: "Unknown", "SellTaker","BuyTaker","BuySurplus","SellSurplus","Neutral". When there is a maker and taker, `SellTaker` and  `BuyTaker` are used to indicate the side. When both sides are taker,  `BuySurplus`, `SellSurplus` and `Neutral` are used to indicate market pressure.`Unknown` mean the type is not possible to define.
