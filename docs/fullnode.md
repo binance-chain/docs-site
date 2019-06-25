@@ -43,10 +43,16 @@ More hours will be better, run your node continuously for best results.
 
 ## Steps to Run a Full Node
 
-### Download Binary:
+### Install Git LFS
+
+Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
+
+Please go to <https://git-lfs.github.com/> and install `git lfs`.
+
+### Download Binary with Git LFS:
 
 ```bash
-git clone https://github.com/binance-chain/node-binary.git
+git lfs clone https://github.com/binance-chain/node-binary.git
 ```
 
 Please go to [changelog](https://github.com/binance-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
