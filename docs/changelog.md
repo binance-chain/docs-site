@@ -10,6 +10,7 @@ In the latest update of HTTP API for testnet, there are the following changes:
 
 
 ### /api/v1/trades
+---
 
 ##### ***Changes***
 In the `Trade` data structure, a new field `Ticker Type` is added. The enumerate values are: "Unknown", "SellTaker","BuyTaker","BuySurplus","SellSurplus","Neutral". When there is a maker and taker, `SellTaker` and  `BuyTaker` are used to indicate the side. When both sides are taker,  `BuySurplus`, `SellSurplus` and `Neutral` are used to indicate market pressure.`Unknown` mean the type is not possible to define.
