@@ -27,6 +27,7 @@ nav:
     - Commands: api-reference/cli.md
     - Transactions: encoding.md
     - WalletConnect: walletconnect.md
+    - changelog: changelog.md
   - FAQ: faq.md
   - Exchange Integration: exchange-integration.md
   - List Instructions: list_instruction.md
