@@ -98,7 +98,7 @@ The canonical bytes for signing are generated from the [StdSignBytes](https://gi
 }
 ```
 
-This JSON string, **with all whitespace and keys sorted in alphabetical order**, is signed with the private key of the sender. This signature is then attached to the `StdTx` structure described in the above section. Please note that the transaction broadcasted to the blockchain is not JSON - the JSON is merely used as a canonical representation to generate the signature.
+This JSON string, **with all keys sorted in alphabetical order**, is signed with the private key of the sender. This signature is then attached to the `StdTx` structure described in the above section. Please note that the transaction broadcasted to the blockchain is not JSON - the JSON is merely used as a canonical representation to generate the signature.
 
 The next section describes how the generated signature is attached to a transaction.
 
