@@ -208,6 +208,7 @@ For detailed usage, you can refer to:
 - [governance](../governance.md)
 - [list](../list.md)
 - [keys](../keys.md)
+- [offline](../offline.md)
 
 ## Use CLI for Different Blockchains
 
