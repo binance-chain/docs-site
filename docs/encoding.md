@@ -53,13 +53,27 @@ message StdTx {
 }
 ```
 
+### StdSignBytes
+```go
+type StdSignDoc struct {
+  AccountNumber int64             `json:"account_number"`
+  ChainID       string            `json:"chain_id"`
+  Memo          string            `json:"memo"`
+  Msgs          []json.RawMessage `json:"msgs"`
+  Sequence      int64             `json:"sequence"`
+  Source        int64             `json:"source"`
+  Data          []byte            `json:"data"`
+}
+
+```
+
 ### Canonical Bytes for Signing
 
 A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical represenation of the transaction is generated in JSON format for signing.
 
 This would allow for clients to sign a transaction off-chain, for example, a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. For example an external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
 
-The canonical bytes for signing are generated from the [StdSignBytes](https://github.com/cosmos/cosmos-sdk/blob/9c049321a1ba88e2d51996fd59c0e49013180aea/x/auth/stdtx.go#L169) method. It produces a JSON string similar to the format below (formatted for clarity):
+The canonical bytes for signing are generated from the StdSignBytes method. It produces a JSON string similar to the format below (formatted for clarity):
 
 ```json
 {
