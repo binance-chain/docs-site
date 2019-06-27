@@ -21,7 +21,7 @@ You must use `--broadcast` to submit your tranaction to the blockchain, otherwis
 
 ### Fee
 
-A fee (a fixed amount of BNB) will be charged on TimeLock transactions.
+0.01 BNB will be charged on TimeLock transactions.
 
 ### Example
 
@@ -39,6 +39,11 @@ TimeUnlock will claim the locked tokens back when the specified lock time has pa
 | :------------ | :-------- | :------------------------------------------------------------ |
 | address   | string  | the address you want to query|
 | time-lock-id  | int64   | the id of your locking, it's incremental |
+
+
+### Fee
+
+0.01 BNB will be charged on ReLock transactions.
 
 ### Example
 
@@ -69,7 +74,7 @@ PLease note that you either increase the `expire time` or amount of your lock of
 
 ### Fee
 
-A fee (a fixed amount of BNB) will be charged on TimeLock transactions.
+0.01 BNB will be charged on UnLock transactions.
 
 ### Example
 
