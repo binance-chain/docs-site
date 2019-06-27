@@ -209,6 +209,7 @@ For detailed usage, you can refer to:
 - [list](../list.md)
 - [keys](../keys.md)
 - [offline](../offline.md)
+- [timelock](../timelock.md)
 
 ## Use CLI for Different Blockchains
 

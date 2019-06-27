@@ -39,6 +39,8 @@ Binance Chain has its own built-in governance module that lets BNB holders submi
 
 Please use this [tool](<https://github.com/binance-chain/node-binary/tree/master/tools>) for generating
 
+If you are using a MacBook, you can also use this [desktop GUI](https://github.com/binance-chain/chain-tooling/tree/airdrop/token-app) for token management operations.
+
 #### Submit a List Proposal
 To add a new trading pairs, you can run the following command:<br/>
 Please note:<br/>
@@ -47,7 +49,7 @@ Please note:<br/>
 + `--from`: put your key name for the address / key, you can only list with the owners address of your token.
 + `--expire-time`: expire time is the deadline after which you will no longer be able to list your token though your proposal is passed.
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
-
++ `--title`: title of proposal
 Please note that the deposit and init-price are boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
@@ -64,6 +66,24 @@ Example on **testnet**:
 ./tbnbcli gov submit-list-proposal --from test --deposit 200000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
+```
+
+
+#### Submit a Delist Proposal
+In testnet, only validators can make a delist proposal. To add a new delist pairs, a validator can run the following command:<br/>
+
+Please note:<br/>
++ `--quote-asset-symbol`: the base asset symbol
++  --base-asset-symbol`: the asset symbol you want to delist
++ `--from`: put your key name for the address / key, you can only list with the owners address of your token.
++ `--expire-time`: expire time is the deadline after which you will no longer be able to list your token though your proposal is passed.
++ `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
++ `--justification`: reason for proposal
+
+Example on **testnet**:
+
+```
+tbnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from eagle --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
 ```
 
 #### Add deposit for a Proposal (Optional)
