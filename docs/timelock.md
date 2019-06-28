@@ -25,7 +25,7 @@ You must use `--broadcast` to submit your tranaction to the blockchain, otherwis
 
 ### Example
 
-On testnet, you can unlock 1BNB for 1 day.
+On testnet, you can lock 1BNB for 1 day.
 ```
 ./tbnbcli token time-lock  --amount "100000000:BNB" --from <your-name> --description " test timelock"  --lock-time <lock-timestamp> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80 --broadcast
 ```
@@ -48,7 +48,7 @@ TimeUnlock will claim the locked tokens back when the specified lock time has pa
 ### Example
 
 ```
-./tbnbcli token time-unlock  --address  <your-address> --time-lock-id <lock-id> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token time-unlock  --from  <your-address> --time-lock-id <lock-id> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 

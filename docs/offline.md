@@ -8,9 +8,11 @@
 
 First step is that you need to generate your unsigned transaction and save it in a file.
 
+> Note: `--account-number` and `--node` is not mandatory in unsigned command
+
 For example, you can generate an unsigned transfer transaction:
 ```
-./tbnbcli send --from <your-address>    --account-number <your-sccount-number> --dry --to <destination-address> --amount 200000000:BNB   --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --generate-only --offline
+./tbnbcli send --from <your-address>    --account-number <your-sccount-number> --dry --to <destination-address> --amount 200000000:BNB   --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --generate-only --offline >> unsigned.json
 ```
 Then, you can see that the signature of unsigned.json is empty.
 

@@ -74,9 +74,8 @@ In testnet, only validators can make a delist proposal. To add a new delist pair
 
 Please note:<br/>
 + `--quote-asset-symbol`: the base asset symbol
-+  --base-asset-symbol`: the asset symbol you want to delist
-+ `--from`: put your key name for the address / key, you can only list with the owners address of your token.
-+ `--expire-time`: expire time is the deadline after which you will no longer be able to list your token though your proposal is passed.
++  `--base-asset-symbol`: the asset symbol you want to delist
++ `--from`: put your key name for the address key, you can only list with the owners address of your token.
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
 + `--justification`: reason for proposal
 
