@@ -2332,6 +2332,10 @@ Tx filed is:
 TxSearch allows you to query for multiple transactions results.You could search transaction by its index.  It returns a
 list of transactions (maximum ?per_page entries) and the total count.
 
+**Enable Indexer**
+
+You need to enable indexer in `config.tml`. You can modify the `index_tags` to `tx.height`, which is the only tag we support now. In this way, you can index transactions by height by adding "tx.height" tag here.
+
 **Query Parameters**
 
 | Parameter | Type   | Default | Required | Description                                               |
