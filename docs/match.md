@@ -11,7 +11,7 @@ Orders meet any of the below conditions would be considered as the candidates of
 
 ## Match Time
 
-Candidates would be matched right after one block is committed (except midnight block).
+Candidates would be matched right after one block is committed (except midnight block). Each block has one round of match.
 
 ## Match Logic
 
@@ -30,7 +30,7 @@ The execution price would be selected as the below logic, in order to:
 
 - Maximize the execution quantity
 - Execute all orders or at least all orders on one side that are fillable against the selected price.
-- Indicate the market pressure from either buy or sell and also consider to limit the max price movement
+- Indicate the market pressure from either buy or sell and also consider to limit the max price movement. Let’s call this concluded price P.
 
 Please check [this article](match-examples.md) with detailed examples for this if you are interested.
 
@@ -56,7 +56,21 @@ After the execution price `P` is concluded, buy orders with price equal to or la
 Here the below is the allocated process:
 
 ### Definition of Maker and Taker
-Among all the orders to be allocated, between buy and sell sides, there will be at least one side that only has new incoming orders, while the other side has orders left from the previous blocks("leftover orders"), or new incoming orders, or both. Here the side with leftover orders is called "Maker side", while the leftover orders are called "Maker orders". All the other orders (no matter whether they are on "Maker side" or not) are called "Taker orders", and the side with all new orders to be allocated is called "Taker side".
+
+Among all the orders to be allocated, between buy and sell sides, this specification defines four concepts.
+
+| Name        | Definition                           |
+| ----------- | ------------------------------------ |
+| Maker Order | order from the previous blocks       |
+| Taker Order | new incoming order in the current block   |
+| Maker Side  | buy or sell side which has maker orders. May also have taker orders.  |
+| Taker Side  | buy or sell side which only has taker orders. |
+
+In each round of match, for all the orders that can be filled with the concluded price `P`, the algorithm ensures only one of the below two circumstances can happen, 
+
+1. Both buy and sell side are `Taker Side`, when there is no leftover orders from all the previous blocks; 
+
+2. One side is `Maker Side` that has orders from previous blocks (and may/may not have orders from this current block),  and the other is `Taker Side` that only has orders from this current block.
 
 
 ### Quantity Allocation
@@ -70,8 +84,13 @@ The below match illustrates how quantity of the base and quote assets are alloca
 3. For each price level(from best to worst) in maker side, allocate it's orders in proportion to the quantity of orders from taker side.
 
 ### Execution Pricing
-Among all the orders to be allocated, 
+Among all the orders to be allocated,
 
-1. all the Maker orders will be executed at their **limit price**;
-2. all the new orders on the Maker side will be executed at the **concluded price** `P`;
-3. all the new orders (actually all the orders to be allocated) on the Taker side will be executed at the **average execution price** from the above #1 and #2.
+1. For maker side,
+
+* all the maker orders are executed at their limit price
+* all the taker orders on the maker side are executed at the concluded price P
+
+2. For taker side, all the orders are executed at the average execution price from the above #1
+
+If no maker side in this match, all the orders are executed at price P.
