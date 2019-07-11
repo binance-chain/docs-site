@@ -1,7 +1,6 @@
 # What exactly is Binance DEX matching logic?
 
-Binance DEX uses periodic auction to match all available orders. Because the match happens at the 
-same time for all orders with the same price in every auction, so there is no concept of `Maker` or `Taker`. 
+Binance DEX uses periodic auction to match all available orders. Maker/Taker concepts are introduced to enhance the current periodic auction match algorithm. The match is still executed only once in each block while the execution prices may vary for maker and taker orders.
 
 ## Match Candidates
 
@@ -11,15 +10,15 @@ Orders meet any of the below conditions would be considered as the candidates of
 
 ## Match Time
 
-Candidates would be matched right after one block is committed (except midnight block). Each block has one round of match.
+Candidates would be matched right after one block is committed. Each block has one round of match.
 
 ## Match Logic
 
 The below matching logic would be applied on every listed token pairs.
 
-- The match only happens when the best bid and ask prices are 'crossed', i.e. best bid > best ask. 
+- The match only happens when the best bid and ask prices are 'crossed', i.e. best bid > best ask.
 
-- There would be only 1 price selected in one match round as the best prices among all the fillable 
+- There would be only 1 price selected in one match round as the best prices among all the fillable
 orders, to show the fairness.
 
 - All the orders would be matched first by the price aggressiveness and then block height that they get accepted.
@@ -42,16 +41,16 @@ Please check [this article](match-examples.md) with detailed examples for this i
 - ~Orders with best bid price would match with order with best ask price;~
 - ~If the orders on one price cannot be fully filled by the opposite orders:~
 ~for the orders with the same price, the orders from the earlier blocks would be selected and filled first~
-- ~If the orders have the same price and block height, and cannot be fully filled, the execution 
-would be allocated to each order in proportion to their quantity (floored if the number has a partial lot). 
-If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent 
+- ~If the orders have the same price and block height, and cannot be fully filled, the execution
+would be allocated to each order in proportion to their quantity (floored if the number has a partial lot).
+If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent
 bias to any orders: according to a sorted sequence of a de facto random order ID.~
 
 After the execution price `P` is concluded, buy orders with price equal to or larger than `P`, and sell orders with price equal to or less than `P` will match and trade will be allocated according to the below principles:
 
-- All new incoming buy orders into this current block (called "new orders" in this context) will get executed with the same price, so do all the sell orders; so that there is no chance for front-running on the same side. 
+- All new incoming buy orders into this current block (called "new orders" in this context) will get executed with the same price, so do all the sell orders; so that there is no chance for front-running on the same side.
 - All the executed price will honor the order limit price;
-- All the executed price for the new orders will be equal to or better than the concluded auction price `P`, so no front-running from the opposite side. 
+- All the executed price for the new orders will be equal to or better than the concluded auction price `P`, so no front-running from the opposite side.
 
 Here the below is the allocated process:
 
@@ -66,9 +65,9 @@ Among all the orders to be allocated, between buy and sell sides, this specifica
 | Maker Side  | buy or sell side which has maker orders. May also have taker orders.  |
 | Taker Side  | buy or sell side which only has taker orders. |
 
-In each round of match, for all the orders that can be filled with the concluded price `P`, the algorithm ensures only one of the below two circumstances can happen, 
+In each round of match, for all the orders that can be filled with the concluded price `P`, the algorithm ensures only one of the below two circumstances can happen,
 
-1. Both buy and sell side are `Taker Side`, when there is no leftover orders from all the previous blocks; 
+1. Both buy and sell side are `Taker Side`, when there is no leftover orders from all the previous blocks;
 
 2. One side is `Maker Side` that has orders from previous blocks (and may/may not have orders from this current block),  and the other is `Taker Side` that only has orders from this current block.
 
@@ -77,7 +76,7 @@ In each round of match, for all the orders that can be filled with the concluded
 The below match illustrates how quantity of the base and quote assets are allocated among different orders.
 
 1. After we conclude the execution price and maximum execution quantity, determine the orders that would be matched in this round.
-   - Orders with best price would be selected first. 
+   - Orders with best price would be selected first.
    - If the orders with one limit price level cannot be fully filled by the opposite orders: for the orders with the same price, the orders from the earlier blocks (leftover orders) would be selected.
    - If the orders have the same price and block height, and cannot be fully filled, all of them would be selected with their quantity adjusted proportionally (floored if the number has a partial lot). If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent bias to any orders: according to a sequence they are included into the block.
 2. Rearrange the selected orders: for maker side, all maker orders are kept in their original price level, all taker orders are merged into the concluded price level and sorted by their order price; for taker side, all orders are merged into one price level and sorted by **order quantity**.
