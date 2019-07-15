@@ -149,6 +149,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 * `recv_rate` Must set to `102428800`
 * `ping_interval` Recommendation is set to `10m30s`
 * `pong_timeout` Recommendation is set to `450s`
+* `ping_interval` Recommendation is set to `0`, so it allows to state sync from the peers's latest height.
 
 State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in binance chain testnet can be synced in around 45 minutes) so that you can receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync DOES NOT download historical blocks before state sync height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
 
