@@ -13,9 +13,27 @@ You can set  the `publishOrderUpdates` option to `true` in `nodebinary/fullnode/
 Then, the full node will save all the trades that have been filled, orders that changed and proposals that been submitted in these blocks.
 
 * Example:
+
+All those [extra info](https://docs.binance.org/get-extra-data-from-fullnode.html#publish-different-messages-to-local-files ) can also be found in exported data from your fullnode.
+
+### Changes
+In `trade` data structure, there are five new fields: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee` and `TickerType`.
+
+* `SSrc`: Source code of Sell order transaction
+* `BSrc`: Source code of Buy order transaction
+* `SSingleFee`: fee of matched sell order
+* `BSingleFee`: fee of matched buy order
+* `TickerType`: ticker type
+
+In `Order` data structure, there is a new field: `singlefee`. This is used to show the fee of this order.
+
+
+
+For example:
+
+
 ```json
-{
-   "Height":3154,
+"Height":3154,
    "Timestamp":1560927932877738000,
    "NumOfMsgs":4,
    "Trades":{
@@ -61,8 +79,7 @@ Then, the full node will save all the trades that have been filled, orders that 
             "TransactionTime":1560927932877738000,
             "TimeInForce":1,
             "CurrentExecutionType":0,
-            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865",
-            "SingleFee":""
+            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865"
          },
          {
             "Symbol":"NNB-811_BNB",
@@ -82,8 +99,7 @@ Then, the full node will save all the trades that have been filled, orders that 
             "TransactionTime":1560927932877738000,
             "TimeInForce":1,
             "CurrentExecutionType":0,
-            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865",
-            "SingleFee":""
+            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865"
          },
          {
             "Symbol":"NNB-811_BNB",
@@ -103,8 +119,7 @@ Then, the full node will save all the trades that have been filled, orders that 
             "TransactionTime":1560927932877738000,
             "TimeInForce":1,
             "CurrentExecutionType":0,
-            "TxHash":"617565ECA6464E1B7435819A8154BCF5FC773FE1C5982A833DBEEDBE78E660C6",
-            "SingleFee":""
+            "TxHash":"617565ECA6464E1B7435819A8154BCF5FC773FE1C5982A833DBEEDBE78E660C6"
          }
       ]
    },
@@ -117,8 +132,8 @@ Then, the full node will save all the trades that have been filled, orders that 
       "CompletedUnbondingDelegations":null
    }
 }
-
 ```
+
 
 ### 2. AccountBalance
 
