@@ -1291,7 +1291,6 @@ definitions:
         title: Validators
         items:
           $ref: '#/definitions/Validator'
-  
   Validator:
         type: object
         properties:
@@ -1555,20 +1554,20 @@ definitions:
         required: true
       list_price:
         type: string
-        description: "In decimal form, e.g. 1.00000000"
-        example: "0.00000000"
+        description: "In decimal form"
+        example: "1.00000000"
         format: fixed8
         required: true
       tick_size:
         type: string
-        description: "Minimium price change in decimal form, e.g. 1.00000000"
+        description: "Minimium price change in decimal form"
         example: "0.00000001"
         format: fixed8
         required: true
       lot_size:
         type: string
-        description: "Minimium trading quantity in decimal form, e.g. 1.00000000"
-        example: "0.000001"
+        description: "Minimium trading quantity in decimal form"
+        example: "1.00000000"
         format: fixed8
         required: true
   Fee:
@@ -1694,7 +1693,7 @@ definitions:
         type: string
       fee:
         type: string
-        description: trading fee on the block of this order
+        description: trading fee on the latest updated block of this order. Multiple assets are split by semicolon.
       lastExecutedPrice:
         type: string
         description: price of last execution
@@ -1837,6 +1836,10 @@ definitions:
       buyerOrderId:
         type: string
         description: order id for buyer
+      buySingleFee:
+        type: string
+        description: trading fee for the buyer address on this single trade
+        example: "BNB:0.00000172;"
       price:
         type: string
         description: trade price
@@ -1855,9 +1858,16 @@ definitions:
       sellerOrderId:
         type: string
         description: seller order ID
+      sellSingleFee:
+        type: string
+        description: trading fee for the seller address on this single trade
+        example: "BNB:0.00000216;"
       symbol:
         type: string
         description: asset symbol
+      tickType:
+        type: string
+        description: "enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral]"
       time:
         type: integer
         description: trade time
@@ -1890,7 +1900,7 @@ definitions:
         format: int64
       fee:
         type: string
-        description: total fee collected
+        description: total fee collected. Multiple assets are split by semicolon.
       tradeCount:
         type: integer
         description: trade count of the address on the block

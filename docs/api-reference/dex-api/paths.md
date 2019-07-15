@@ -838,8 +838,8 @@ varies with msg type, if you query with --format=json.
 | base_asset_symbol | string (currency) | symbol of base asset | BNB |
 | quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
 | list_price | string (fixed8) | In decimal form | 1.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form | 1.00000000 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 0.00000001 |
+| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
+| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
 
 ### Fee
 
@@ -910,6 +910,7 @@ varies with msg type, if you query with --format=json.
 | price | string | order price |  |
 | quantity | string | order quantity |  |
 | side | integer | 1 for buy and 2 for sell |  |
+| singleFee | string | trading fee of this order |  |
 | status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
 | symbol | string |  |  |
 | timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
@@ -960,13 +961,16 @@ varies with msg type, if you query with --format=json.
 | buyFee | string | trading fee for the buyer address on the block of this trade |  |
 | buyerId | string | id of buyer |  |
 | buyerOrderId | string | order id for buyer |  |
+| buySingleFee | string | trading fee for the buyer address on this single trade |  |
 | price | string | trade price |  |
 | quantity | string | trade quantity |  |
 | quoteAsset | string | quote asset |  |
 | sellFee | string | trading fee for the seller address on the block of this trade |  |
 | sellerId | string | seller ID |  |
 | sellerOrderId | string | seller order ID |  |
+| sellSingleFee | string | trading fee for the seller address on this single trade |  |
 | symbol | string | asset symbol |  |
+| tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
 | time | long | trade time |  |
 | tradeId | string | trade ID |  |
 
