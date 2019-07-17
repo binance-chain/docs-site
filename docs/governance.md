@@ -6,6 +6,7 @@
     + [Proposal Parameters](#proposal-parameters)
     + [Participate in Governance](#participate-in-governance)
         - [Submit a List Proposal](#submit-a-list-proposal)
+        - [Submit a Delist Proposal](#submit-a-delist-proposal)
         - [Add deposit for a Proposal](#add-deposit-for-a-proposal-optional)
         - [Query Information of a Proposal](#query-information-of-a-proposal)
         - [Query votes of a Proposal](#query-votes-of-a-proposal)
@@ -79,10 +80,17 @@ Please note:<br/>
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
 + `--justification`: reason for proposal
 
+Example on **mainnet**:
+
+```
+bnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --trust-node
+```
+
+
 Example on **testnet**:
 
 ```
-tbnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from eagle --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
+tbnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from <your-key-name>  --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
 ```
 
 #### Add deposit for a Proposal (Optional)
