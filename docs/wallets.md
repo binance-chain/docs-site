@@ -23,5 +23,6 @@
 | 17     | [Equal Wallet](wallets/equal.md)                       | <https://equal.tech/>            |True|
 | 18     | [Pundi X Wallet](wallets/pundi.md)                     | <https://pundix.com/>            |False|
 | 19     | [Arax Wallet](wallets/arax.md)                         | <https://arax.io>                |False|
+| 20     | [SafePal Wallet](wallets/safepal.md) (Hardware Wallet) | <https://www.safepal.io/index.html> |True|
 
 
