@@ -1,6 +1,32 @@
 # Timelock
 
+
+- [Timelock](#timelock)
+  * [TimeLock](#timelock)
+    + [Command line](#command-line)
+    + [Parameters](#parameters)
+    + [Fee](#fee)
+    + [Example](#example)
+  * [TimeUnlock](#timeunlock)
+    + [Parameter](#parameter)
+    + [Fee](#fee-1)
+    + [Example](#example-1)
+  * [TimeRelock](#timerelock)
+    + [Parameters](#parameters-1)
+    + [Fee](#fee-2)
+    + [Example](#example-2)
+  * [QueryTimeLock](#querytimelock)
+    + [Parameter](#parameter-1)
+    + [Example](#example-3)
+  * [QueryTimeLocks](#querytimelocks)
+    + [QueryTimeLock Parameters](#querytimelock-parameters)
+    + [Example](#example-4)
+
+
+
 As explained in BEP9, some business plans decide to lock certain amount tokens for pre-defined periods of time, and the only vest in the future according to the schedules. For example, some projects may lock some allocation of the issued tokens as a commitment by the founding team; some business scenarios also need to lock some tokens as collateral for value.
+
+
 
 ## TimeLock
 

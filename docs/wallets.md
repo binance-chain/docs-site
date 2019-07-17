@@ -20,7 +20,7 @@
 | 14     | [MEET.ONE Wallet](wallets/meet.md)                     | <https://meet.one/>              |True|
 | 15     | [Guarda Wallet](wallets/guarda.md)                     | <https://guarda.co/>             |False|
 | 16     | [DDEX Wallet](wallets/ddex.md)                         | <https://ddex.io/>               |True|
-| 17     | [Equal Wallet](wallets/equal.md)                       | <https://equal.tech/>            |False|
+| 17     | [Equal Wallet](wallets/equal.md)                       | <https://equal.tech/>            |True|
 | 18     | [Pundi X Wallet](wallets/pundi.md)                     | <https://pundix.com/>            |False|
 | 19     | [Arax Wallet](wallets/arax.md)                         | <https://arax.io>                |False|
 

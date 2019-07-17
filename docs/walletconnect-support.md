@@ -8,3 +8,4 @@
 | 1      | [Trust Wallet](wallets/trust-wallet.md)                | Mainnet                          |
 | 2      | [CoolWallet](wallets/cool-wallet.md)                   | Mainnet                          |
 | 3      | [Math Wallet](wallets/math-wallet.md)                  | Mainnet                          |
+| 4      | [Equal Wallet](wallets/equal.md)                       | Mainnet                          |
