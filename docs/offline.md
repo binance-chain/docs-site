@@ -1,6 +1,5 @@
 # Offline
 
-> Note: this feature is only available in testnet.
 
 `bnbcli` support generating and signing all types of transactions offline, then broadcast them. This feature will let users generate and sign their transactions at an offline machine, then use another machine to broadcast it to the network
 
