@@ -331,3 +331,48 @@ message Deposit{
   }
 }
 ```
+
+
+#### Time-lock
+You can only lock tokens on your own account for a certain period of time.
+```go
+message Deposit{
+  0x07921531 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  string Description // Description of the lock
+  message Coin {
+    string denom
+    int64 amount
+  }
+  int64 LockTime // lock time
+}
+```
+
+
+#### Time-unlock
+You can  unlock tokens on your own account after a certain period of time.
+```go
+message Deposit{
+  0xC4050C6C   // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  int64 Id // lock time id
+}
+```
+
+#### Time-relock
+You can  relock tokens on your own account after a certain period of time.
+```go
+message Deposit{
+  0x504711DA // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  int64 Id // lock time id
+  string Description // Description of the lock
+  message Coin {
+    string denom
+    int64 amount
+  }
+  int64 LockTime // lock time
+}
+```
+
+
