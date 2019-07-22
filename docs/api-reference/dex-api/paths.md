@@ -51,7 +51,7 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | object |
+| 200 | Success | [ResultStatus](#resultstatus) |
 
 ### /api/v1/validators
 ---
@@ -180,58 +180,72 @@ The Binance Chain HTTP API provides access to a Binance Chain node deployment an
 
 Below is an example response of a send transaction when `?format=json` is used.
 ```
-{
-    "hash": "E81BAB8E555819E4211D62E2E536B6D5812D3D91C105F998F5C6EB3AB8136482",
-    "height": "754",
-    "tx": {
-        "type": "auth/StdTx", // fixed, type of transaction
-        "value": {            // fixed, detail of the transaction
-            "data": null,     // fixed, data of the transaction
-            "memo": "",       // fixed, memo
-            "msg": [          // fixed, msgs of the transaction
-                {
-                    "type": "cosmos-sdk/Send",  // vary with msg type
-                    "value": {                  // value content vary with mst type
-                        "inputs": [
-                            {
-                                "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-                                "coins": [
-                                    {
-                                        "amount": "100000000000000",
-                                        "denom": "BNB"
-                                    }
-                                ]
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-                                "coins": [
-                                    {
-                                        "amount": "100000000000000",
-                                        "denom": "BNB"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ],
-            "signatures": [ // fixed, signatures of the transaction
-                {
-                    "account_number": "0",
-                    "pub_key": {
-                        "type": "tendermint/PubKeySecp256k1",
-                        "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-                    },
-                    "sequence": "1",
-                    "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-                }
-            ],
-            "source": "0"  // fixed, source of the transaction
-        }
-    }
-}
+    {
+     code:0,
+     hash:"433806D6A4AB6359CB56EC55BA99896DFAB2AF11326B74881A2ABA7049C492D3",
+     height:"7850389",
+     log:"Msg 0: ",
+     ok:true,
+     tx:{
+        type:"auth/StdTx",
+        value:{
+           data:null,
+           memo:"101192150",
+           msg:[
+              {
+                 type:"cosmos-sdk/Send",
+                 value:{
+                    inputs:[
+                       {
+                          address:"bnb1jafs33u9u6f7w7wzfmm4rr9rzy2cgqzp78kwaw",
+                          coins:[
+                             {
+                                amount:"496429373",
+                                denom:"BNB",
+
+                             }
+                          ],
+
+                       }
+                    ],
+                    outputs:[
+                       {
+                          address:"bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23",
+                          coins:[
+                             {
+                                amount:"496429373",
+                                denom:"BNB",
+
+                             }
+                          ],
+
+                       }
+                    ],
+
+                 },
+
+              }
+           ],
+           signatures:[
+              {
+                 account_number:"438",
+                 pub_key:{
+                    type:"tendermint/PubKeySecp256k1",
+                    value:"A3mfgg/i12XNyy9esqCjI7yrkrOs9dngP7c9cDUEJly5",
+
+                 },
+                 sequence:"0",
+                 signature:"VvvGz3qbyirJ7vv01Df8tuAd7K4I+HK+yEBfep+qwtMKuHWQQH3XtMB9Pqtc2jlia0AtDe+BUEMtIyh3/N66IQ==",
+
+              }
+           ],
+           source:"1",
+
+        },
+
+     },
+
+  }
 ```
 
 
@@ -240,15 +254,15 @@ Below is an example response of a send transaction when `?format=json` is used.
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | hash | path | The transaction hash to query | Yes | string |
-| format | query | Response format (`json` or omit) | No | string |
+| format | query | Response format (`json` or amino) | No | string |
 
 **Responses**
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | [Transaction](#transaction) |
-| 400 | Bad Request | [Error](#error) |
+| 0 | Success | [Transaction](#transaction) |
 | 404 | Not Found |  |
+| 500 | Bad Request | [Error](#error) |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/tokens
@@ -401,6 +415,7 @@ The given _limit_ must be one of the allowed limits below.
 | ---- | ----------- | ------ |
 | 200 | Success | [ [Transaction](#transaction) ] |
 | 400 | Bad Request | [Error](#error) |
+| 401 | Bad Signature | [Error](#error) |
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
 
@@ -669,28 +684,28 @@ If the time window is larger than limits, only the first n klines will return. I
 ### Models
 ---
 
-### Error  
+### Error
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | code | long | error code | 400 |
 | message | string | error message |  |
 
-### Times  
+### Times
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ap_time | string | event time | e.g. 2019-01-21T10:30:00Z |
-| block_time | string | block height | 12345678 |
+| block_time | string | the time of latest block | e.g. 2019-01-21T10:30:00Z |
 
-### Validators  
+### Validators
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | block_height | long | Current block height | 12345 |
 | validators | [ [Validator](#validator) ] |  |  |
 
-### Validator  
+### Validator
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -699,7 +714,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | voting_power | integer |  |  |
 | accum | integer |  |  |
 
-### Peer  
+### Peer
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -714,11 +729,11 @@ If the time window is larger than limits, only the first n klines will return. I
 | capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |
 | accelerated | boolean | Is an accelerated path to a validator node |  |
 
-### Transaction  
+### Transaction
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| hash | string | Hash of transaction |  |
+| hash | string (hex) | Hash of transaction, it returned as bytes before, and now it returns as hex string |  |
 | log | string | Log of transaction |  |
 | data | string | Data of transaction |  |
 | height | string | Height of transaction |  |
@@ -727,7 +742,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | tx | object | Detail of transaction, like transaction type, messages and signature
 
 For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-varies with msg type.
+varies with msg type, if you query with --format=json.
 
 ```
 {
@@ -778,10 +793,10 @@ varies with msg type.
         "source": "0"  // fixed, source of the transaction
     }
 }
-``` 
+```
  |  |
 
-### Account  
+### Account
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -791,13 +806,13 @@ varies with msg type.
 | public_key | [ integer ] | Public key bytes |  |
 | sequence | long | sequence is for preventing replay attack |  |
 
-### AccountSequence  
+### AccountSequence
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | sequence | long | number used for preventing replay attack | 1 |
 
-### Balance  
+### Balance
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -806,7 +821,7 @@ varies with msg type.
 | locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 | frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 
-### Token  
+### Token
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -816,17 +831,17 @@ varies with msg type.
 | total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
 | owner | string (address) | Address which issue the token |  |
 
-### Market  
+### Market
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | base_asset_symbol | string (currency) | symbol of base asset | BNB |
 | quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| price | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form, e.g. 1.00000000 | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
+| list_price | string (fixed8) | In decimal form | 1.00000000 |
+| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
+| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
 
-### Fee  
+### Fee
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -836,8 +851,9 @@ varies with msg type.
 | multi_transfer_fee | string | Fee for multi-transfer | 200000 |
 | lower_limit_as_multi | string | e.g. 2 | 2 |
 | fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
+| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
 
-### FixedFeeParams  
+### FixedFeeParams
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -845,14 +861,21 @@ varies with msg type.
 | fee | number | The fixed fee amount | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
 
-### MarketDepth  
+### DexFeeFieldParams
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| fee_name | string | fee name |  |
+| fee_value | integer | fee value |  |
+
+### MarketDepth
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 | bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 
-### Candlestick  
+### Candlestick
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -866,14 +889,14 @@ varies with msg type.
 | quoteAssetVolume | number |  |  |
 | volume | number |  |  |
 
-### OrderList  
+### OrderList
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | order | [ [Order](#order) ] | list of orders |  |
 | total | long |  |  |
 
-### Order  
+### Order
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -887,6 +910,7 @@ varies with msg type.
 | price | string | order price |  |
 | quantity | string | order quantity |  |
 | side | integer | 1 for buy and 2 for sell |  |
+| singleFee | string | trading fee of this order |  |
 | status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
 | symbol | string |  |  |
 | timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
@@ -895,7 +919,7 @@ varies with msg type.
 | transactionTime | dateTime | time of transaction |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
-### TickerStatistics  
+### TickerStatistics
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -921,14 +945,14 @@ varies with msg type.
 | volume | string |  |  |
 | weightedAvgPrice | string |  |  |
 
-### TradePage  
+### TradePage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long |  |  |
 | trade | [ [Trade](#trade) ] |  |  |
 
-### Trade  
+### Trade
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -937,24 +961,27 @@ varies with msg type.
 | buyFee | string | trading fee for the buyer address on the block of this trade |  |
 | buyerId | string | id of buyer |  |
 | buyerOrderId | string | order id for buyer |  |
+| buySingleFee | string | trading fee for the buyer address on this single trade |  |
 | price | string | trade price |  |
 | quantity | string | trade quantity |  |
 | quoteAsset | string | quote asset |  |
 | sellFee | string | trading fee for the seller address on the block of this trade |  |
 | sellerId | string | seller ID |  |
 | sellerOrderId | string | seller order ID |  |
+| sellSingleFee | string | trading fee for the seller address on this single trade |  |
 | symbol | string | asset symbol |  |
+| tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
 | time | long | trade time |  |
 | tradeId | string | trade ID |  |
 
-### BlockExchangeFeePage  
+### BlockExchangeFeePage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |  |  |
 | total | long |  |  |
 
-### BlockExchangeFee  
+### BlockExchangeFee
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -964,14 +991,14 @@ varies with msg type.
 | fee | string | total fee collected |  |
 | tradeCount | long | trade count of the address on the block |  |
 
-### TxPage  
+### TxPage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long | total sum of transactions |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
-### Tx  
+### Tx
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -990,8 +1017,55 @@ varies with msg type.
 | txType | string | type of transaction |  |
 | value | string | value of transaction |  |
 
-### ExchangeRate  
+### ExchangeRate
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ExchangeRate | object |  |  |
+
+### ResultStatus
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| validator_info | [ [ValidatorInfo](#validatorinfo) ] |  |  |
+| sync_info | [ [SyncInfo](#syncinfo) ] |  |  |
+| node_info | [ [NodeInfo](#nodeinfo) ] |  |  |
+
+### NodeInfo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| Protocol_Version | [ [ProtocolVersion](#protocolversion) ] |  |  |
+| ID | string |  |  |
+| listen_addr | string |  |  |
+| network | string |  |  |
+| version | string |  |  |
+| channels | string |  |  |
+| moniker | string |  |  |
+| other | object |  |  |
+
+### SyncInfo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| latest_block_hash | string (hex) |  |  |
+| latest_app_hash | string (hex) |  |  |
+| latest_block_height | long |  |  |
+| latest_block_time | time |  |  |
+| catching_up | boolean |  |  |
+
+### ProtocolVersion
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| P2P | integer (uint64) |  |  |
+| block | integer (uint64) |  |  |
+| app | integer (uint64) |  |  |
+
+### ValidatorInfo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| address | string | hex address |  |
+| pub_key | string | hex-encoded |  |
+| voting_power | long |  |  |

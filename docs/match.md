@@ -2,6 +2,7 @@
 
 Binance DEX uses periodic auction to match all available orders. Maker/Taker concepts are introduced to enhance the current periodic auction match algorithm. The match is still executed only once in each block while the execution prices may vary for maker and taker orders.
 
+
 ## Match Candidates
 
 Orders meet any of the below conditions would be considered as the candidates of next match round:

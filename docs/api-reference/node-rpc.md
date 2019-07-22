@@ -7,35 +7,35 @@
   * [2. Protocols](#2-protocols)
   * [3. Configuration](#3-configuration)
   * [4. Arguments](#4-arguments)
-    + [4.1 URI/HTTP](#41-uri-http)
-    + [4.2  JSONRPC/HTTP](#42--jsonrpc-http)
-    + [4.3  JSONRPC/websockets](#43--jsonrpc-websockets)
+    + [4.1 URI/HTTP](#41-urihttp)
+    + [4.2 JSONRPC/HTTP](#42-jsonrpchttp)
+    + [4.3 JSONRPC/websockets](#43-jsonrpcwebsockets)
   * [5. RPC Endpoint List](#5-rpc-endpoint-list)
   * [6. APIs](#6-apis)
     + [6.1 Query APIs](#61-query-apis)
-      - [6.1.1 Query ABCIInfo](#611-query-abciinfo)
-      - [6.1.2 Query ConsensusState](#612-query-consensusstate)
-      - [6.1.3 Query DumpConsensusState](#613-query-dumpconsensusstate)
-      - [6.1.4 Query NetInfo](#614-query-netinfo)
-      - [6.1.5 Query Genesis File](#615-query-genesis-file)
-      - [6.1.6 Query Health](#616-query-health)
-      - [6.1.7 Query NumUnconfirmedTxs](#617-query-numunconfirmedtxs)
-      - [6.1.8 Query Status](#618-query-status)
-      - [6.1.9 ABCIQuery](#619-abciquery)
-      - [6.1.10  Query Block](#6110--query-block)
-      - [6.1.11 Query BlockResults](#6111-query-blockresults)
-      - [6.1.12 Query BlockchainInfo](#6112-query-blockchaininfo)
-      - [6.1.13 Query Commit](#6113-query-commit)
-      - [6.1.14 Query Tx](#6114-query-tx)
-      - [6.1.15 Query TxSearch](#6115-query-txsearch)
+        - [6.1.1 Query ABCIInfo](#611-query-abciinfo)
+        - [6.1.2 Query ConsensusState](#612-query-consensusstate)
+        - [6.1.3 Query DumpConsensusState](#613-query-dumpconsensusstate)
+        - [6.1.4 Query NetInfo](#614-query-netinfo)
+        - [6.1.5 Query Genesis File](#615-query-genesis-file)
+        - [6.1.6 Query Health](#616-query-health)
+        - [6.1.7 Query NumUnconfirmedTxs](#617-query-numunconfirmedtxs)
+        - [6.1.8 Query Status](#618-query-status)
+        - [6.1.9 ABCIQuery](#619-abciquery)
+        - [6.1.10 Query Block](#6110-query-block)
+        - [6.1.11 Query BlockResults](#6111-query-blockresults)
+        - [6.1.12 Query BlockchainInfo](#6112-query-blockchaininfo)
+        - [6.1.13 Query Commit](#6113-query-commit)
+        - [6.1.14 Query Tx](#6114-query-tx)
+        - [6.1.15 Query TxSearch](#6115-query-txsearch)
     + [6.2 Tx APIs](#62-tx-apis)
-      - [6.2.1   BroadcastTxAsync](#621---broadcasttxasync)
-      - [6.2.2  BroadcastTxCommit](#622--broadcasttxcommit)
-      - [6.2.3  BroadcastTxSync](#623--broadcasttxsync)
+        - [6.2.1 BroadcastTxAsync](#621-broadcasttxasync)
+        - [6.2.2 BroadcastTxCommit](#622-broadcasttxcommit)
+        - [6.2.3 BroadcastTxSync](#623-broadcasttxsync)
     + [6.3 Websocket APIs](#63-websocket-apis)
-      - [6.3.1  Subscribe](#631--subscribe)
-      - [6.3.2 Unsubscribe](#632-unsubscribe)
-      - [6.3.3 UnsubscribeAll](#633-unsubscribeall)
+        - [6.3.1 Subscribe](#631-subscribe)
+        - [6.3.2 Unsubscribe](#632-unsubscribe)
+        - [6.3.3 UnsubscribeAll](#633-unsubscribeall)
 
 RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
 
@@ -51,7 +51,7 @@ Alternatively, you are able to use a node that is hosted in the Binance Chain ne
 
 ### 1.2 Use an existing node on the network
 
-The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.html#apiv1peers) endpoint to get a list of network peers.
+The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 
@@ -145,7 +145,7 @@ curl 'localhost:27147/broadcast_tx_sync?tx=0xdb01f0625dee0a63ce6dc0430a14813e493
 }
 ```
 
-### 4.2  JSONRPC/HTTP
+### 4.2 JSONRPC/HTTP
 
 JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="http://localhost:27147/">http://localhost:27147/</a>).
 
@@ -160,7 +160,7 @@ JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="
 }
 ```
 
-### 4.3  JSONRPC/websockets
+### 4.3 JSONRPC/websockets
 
 JSONRPC requests can be made via websocket. The websocket endpoint is at `/websocket`, e.g. `localhost:27147/websocket`.  Asynchronous RPC functions like event `subscribe` and `unsubscribe` are only available via websockets.
 
@@ -252,12 +252,12 @@ info, err := client.ABCIInfo()
 
 ```json
 {
-    "jsonrpc": "2.0", 
-    "id": "", 
+    "jsonrpc": "2.0",
+    "id": "",
     "result": {
         "response": {
-            "data": "BNBChain", 
-            "last_block_height": "7579978", 
+            "data": "BNBChain",
+            "last_block_height": "7579978",
             "last_block_app_hash": "92HKpxrNKqYkzSRj49FI+PjzVx7oirnYrwhMzG0CRDg="
         }
     }
@@ -266,7 +266,7 @@ info, err := client.ABCIInfo()
 
 #### 6.1.2 Query ConsensusState
 
-ConsensusState returns a concise summary of the consensus state. This is just a snapshot of consensus state, and it will not persist. 
+ConsensusState returns a concise summary of the consensus state. This is just a snapshot of consensus state, and it will not persist.
 
 
 **Return Parameters**
@@ -329,7 +329,7 @@ The above command returns JSON structured like this:
 ```
 #### 6.1.3 Query DumpConsensusState
 
-DumpConsensusState dumps consensus state. This is just a snapshot of consensus state, and it will not persist. 
+DumpConsensusState dumps consensus state. This is just a snapshot of consensus state, and it will not persist.
 
 **Return Parameters**
 return round states
@@ -640,7 +640,7 @@ info, err := client.NetInfo()
       }
     ]
   }
-} 
+}
 ```
 
 #### 6.1.5 Query Genesis File
@@ -654,16 +654,16 @@ return round states
 ```
 // Genesis file
 type ResultGenesis struct {
-	Genesis *types.GenesisDoc 
+	Genesis *types.GenesisDoc
 }
 // GenesisDoc defines the initial conditions for a tendermint blockchain, in particular its validator set.
 type GenesisDoc struct {
-	GenesisTime     time.Time          
-	ChainID         string             
-	ConsensusParams *ConsensusParams   
-	Validators      []GenesisValidator 
-	AppHash         cmn.HexBytes      
-	AppState        json.RawMessage    
+	GenesisTime     time.Time
+	ChainID         string
+	ConsensusParams *ConsensusParams
+	Validators      []GenesisValidator
+	AppHash         cmn.HexBytes
+	AppState        json.RawMessage
 }
 ```
 
@@ -1561,8 +1561,8 @@ Get number of unconfirmed transactions.
 ```
 // List of mempool txs
 type ResultUnconfirmedTxs struct {
-	N   int        
-	Txs []types.Tx 
+	N   int
+	Txs []types.Tx
 }
 ```
 
@@ -1608,9 +1608,9 @@ hash, app hash, block height and time.
 ```
 // Node Status
 type ResultStatus struct {
-	NodeInfo      p2p.DefaultNodeInfo 
-	SyncInfo      SyncInfo            
-	ValidatorInfo ValidatorInfo      
+	NodeInfo      p2p.DefaultNodeInfo
+	SyncInfo      SyncInfo
+	ValidatorInfo ValidatorInfo
 }
 ```
 
@@ -1675,7 +1675,7 @@ result, err := client.Status()
 }
 ```
 
-  
+
 
 #### 6.1.9 ABCIQuery
 Query the application for some information.
@@ -1691,7 +1691,7 @@ Query the application for some information.
 
 **Available Query Path**
 
-* `/store/acc/key` 
+* `/store/acc/key`
 *  `/tokens/info`
 *  `/tokens/list`
 *  `/dex/pairs`
@@ -1718,13 +1718,13 @@ type ResponseQuery struct {
 In this example, we will explain how to query account info with `abci_query`.
 1. Generate query key
     To get the correct key you need to ：
-    The query key is : "account:" || address in hex. The first part is in ASCII. 
+    The query key is : "account:" || address in hex. The first part is in ASCII.
 
-  “account:” in ASCII is 6163636F756E756E and the address derived from public key is 743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886. You need to add these to part to get the correct key. 
+  “account:” in ASCII is 6163636F756E756E and the address derived from public key is 743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886. You need to add these to part to get the correct key.
 
 2. Run query
 ```shell
-curl 'https://data-seed-pre-0-s3.binance.org/abci_query?path="/store/acc/key"&data=0x6163636F756E743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886' 
+curl 'https://data-seed-pre-0-s3.binance.org/abci_query?path="/store/acc/key"&data=0x6163636F756E743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886'
 ```
 
 ```go
@@ -1739,7 +1739,7 @@ result, err := client.ABCIQuery("/store/acc/key", "6163636F756E743A89F856CB39D25
 
 > The above command returns JSON structured like this:
 >
-> Please note that the response is amino-encoded. 
+> Please note that the response is amino-encoded.
 
 ```json
 {
@@ -1773,21 +1773,21 @@ If no height is provided, it will fetch the latest block.
 
 ```
 type ResultBlock struct {
-	BlockMeta *types.BlockMeta 
-	Block     *types.Block     
+	BlockMeta *types.BlockMeta
+	Block     *types.Block
 }
 // BlockMeta contains meta information about a block - namely, it's ID and Header.
 type BlockMeta struct {
-	BlockID BlockID  
-	Header  Header     
+	BlockID BlockID
+	Header  Header
 }
 // Block defines the atomic unit of a Tendermint blockchain.
 type Block struct {
 	mtx        sync.Mutex
 	Header     `json:"header"`
 	Data       `json:"data"`
-	Evidence   EvidenceData 
-	LastCommit *Commit      
+	Evidence   EvidenceData
+	LastCommit *Commit
 }
 ```
 
@@ -1813,44 +1813,44 @@ info, err := client.Block(10)
 
 ```json
 {
-    "jsonrpc": "2.0", 
-    "id": "", 
+    "jsonrpc": "2.0",
+    "id": "",
     "result": {
-        "last_height": "7570471", 
+        "last_height": "7570471",
         "block_metas": [
             {
                 "block_id": {
-                    "hash": "5701A12896315A121303A979ACB707ACC447E20EFACFCB26174E9ED3997E2F5C", 
+                    "hash": "5701A12896315A121303A979ACB707ACC447E20EFACFCB26174E9ED3997E2F5C",
                     "parts": {
-                        "total": "1", 
+                        "total": "1",
                         "hash": "8C63BE3E3A221B984219CFAA1C196DDF0F202D68293311BFA9EE0B7A9155EACD"
                     }
-                }, 
+                },
                 "header": {
                     "version": {
-                        "block": "10", 
+                        "block": "10",
                         "app": "0"
-                    }, 
-                    "chain_id": "Binance-Chain-Nile", 
-                    "height": "10", 
-                    "time": "2019-03-07T01:57:22.135103158Z", 
-                    "num_txs": "0", 
-                    "total_txs": "0", 
+                    },
+                    "chain_id": "Binance-Chain-Nile",
+                    "height": "10",
+                    "time": "2019-03-07T01:57:22.135103158Z",
+                    "num_txs": "0",
+                    "total_txs": "0",
                     "last_block_id": {
-                        "hash": "1AF674F804E277354E8742176ECA74E338F52C237E6DBFF92819D75037E4F651", 
+                        "hash": "1AF674F804E277354E8742176ECA74E338F52C237E6DBFF92819D75037E4F651",
                         "parts": {
-                            "total": "1", 
+                            "total": "1",
                             "hash": "BB3C36D5BBDAB441A7339385C071C4E804C4C3DD5C7BC15D60BC658A6B261906"
                         }
-                    }, 
-                    "last_commit_hash": "5442553C06521016756796015AF78FCAC752FFA9E94ACAF4DAA5DF4113B4B354", 
-                    "data_hash": "", 
-                    "validators_hash": "80D9AB0FC10D18CA0E0832D5F4C063C5489EC1443DFB738252D038A82131B27A", 
-                    "next_validators_hash": "80D9AB0FC10D18CA0E0832D5F4C063C5489EC1443DFB738252D038A82131B27A", 
-                    "consensus_hash": "294D8FBD0B94B767A7EBA9840F299A3586DA7FE6B5DEAD3B7EECBA193C400F93", 
-                    "app_hash": "E7D96927FD82FD910624AA8034B8A527FCEB1F7AB353DE789A3ECA8D400BDE31", 
-                    "last_results_hash": "", 
-                    "evidence_hash": "", 
+                    },
+                    "last_commit_hash": "5442553C06521016756796015AF78FCAC752FFA9E94ACAF4DAA5DF4113B4B354",
+                    "data_hash": "",
+                    "validators_hash": "80D9AB0FC10D18CA0E0832D5F4C063C5489EC1443DFB738252D038A82131B27A",
+                    "next_validators_hash": "80D9AB0FC10D18CA0E0832D5F4C063C5489EC1443DFB738252D038A82131B27A",
+                    "consensus_hash": "294D8FBD0B94B767A7EBA9840F299A3586DA7FE6B5DEAD3B7EECBA193C400F93",
+                    "app_hash": "E7D96927FD82FD910624AA8034B8A527FCEB1F7AB353DE789A3ECA8D400BDE31",
+                    "last_results_hash": "",
+                    "evidence_hash": "",
                     "proposer_address": "E0DD72609CC106210D1AA13936CB67B93A0AEE21"
                 }
             }
@@ -1874,8 +1874,8 @@ Thus response.results[5] is the results of executing getBlock(h).Txs[5]
 
 ```
 type ResultBlockResults struct {
-	Height  int64                
-	Results *state.ABCIResponses 
+	Height  int64
+	Results *state.ABCIResponses
 }
 ```
 
@@ -1901,30 +1901,30 @@ info, err := client.BlockResults(10)
 
 ```json
 {
-    "jsonrpc": "2.0", 
-    "id": "", 
+    "jsonrpc": "2.0",
+    "id": "",
     "result": {
-        "height": "7570163", 
+        "height": "7570163",
         "results": {
             "DeliverTx": [
                 {
-                    "data": "eyJvcmRlcl9pZCI6IkI3ODFFNURDREU1NUNGRjY2NkM5QTNGNjMwREZFQUE0RkE5NDBDQkEtMjMzMSJ9", 
-                    "log": "Msg 0: ", 
+                    "data": "eyJvcmRlcl9pZCI6IkI3ODFFNURDREU1NUNGRjY2NkM5QTNGNjMwREZFQUE0RkE5NDBDQkEtMjMzMSJ9",
+                    "log": "Msg 0: ",
                     "tags": [
                         {
-                            "key": "YWN0aW9u", 
+                            "key": "YWN0aW9u",
                             "value": "b3JkZXJOZXc="
                         }
                     ]
                 }
-            ], 
+            ],
             "EndBlock": {
                 "validator_updates": null
-            }, 
+            },
             "BeginBlock": { }
         }
     }
-} 
+}
 ```
 
 #### 6.1.12 Query BlockchainInfo
@@ -1943,8 +1943,8 @@ Block headers are returned in descending order (highest first).
 List of blocks
 ```
 type ResultBlockchainInfo struct {
-	LastHeight int64             
-	BlockMetas []*types.BlockMeta 
+	LastHeight int64
+	BlockMetas []*types.BlockMeta
 }
 ```
 **Example**
@@ -2029,8 +2029,8 @@ If no height is provided, it will fetch the commit for the latest block.
 
 ```
 type ResultCommit struct {
-	types.SignedHeader 
-	CanonicalCommit    bool 
+	types.SignedHeader
+	CanonicalCommit    bool
 }
 ```
 
@@ -2307,7 +2307,7 @@ tx, err := client.Tx([]byte("AB1B84C7C0B0B195941DCE9CFE1A54214B72D5DB54AD388D8B1
 }
 ```
 Please note that this transaction information is amino-encoded. You will see the original transaction information after decoding:
-`Data` field is: 
+`Data` field is:
 ```json
 {
   "orderData": {
@@ -2332,6 +2332,10 @@ Tx filed is:
 TxSearch allows you to query for multiple transactions results.You could search transaction by its index.  It returns a
 list of transactions (maximum ?per_page entries) and the total count.
 
+**Enable Indexer**
+
+You need to enable indexer in `config.tml`. You can modify the `index_tags` to `tx.height`, which is the only tag we support now. In this way, you can index transactions by height by adding "tx.height" tag here.
+
 **Query Parameters**
 
 | Parameter | Type   | Default | Required | Description                                               |
@@ -2352,7 +2356,7 @@ list of transactions (maximum ?per_page entries) and the total count.
 
 **Available Query Path**
 
-For now, you could only query by transaction height: `tx.height`.
+Right now, you can only query by transaction height: `tx.height`. Please note that on Binance Chain testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
 
 **Example**
 
@@ -2453,8 +2457,8 @@ tx, err := client.TxSearch(q, true)
 ```
 
 ### 6.2 Tx APIs
-#### 6.2.1   BroadcastTxAsync
-This method just return transaction hash right away and there is no return from CheckTx or DeliverTx. 
+#### 6.2.1 BroadcastTxAsync
+This method just return transaction hash right away and there is no return from CheckTx or DeliverTx.
 
 **Transaction Parameters**
 
@@ -2468,10 +2472,10 @@ CheckTx Result
 
 ```
 type ResultBroadcastTx struct {
-	Code uint32      
-	Data cmn.HexBytes 
-	Log  string      
-	Hash cmn.HexBytes 
+	Code uint32
+	Data cmn.HexBytes
+	Log  string
+	Hash cmn.HexBytes
 }
 ```
 **Example**
@@ -2492,7 +2496,7 @@ The returned value is the transaction to be sent without signature：
 ```shell
 tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding: 
+This transaction is generatedas as a signed transaction in amino encoding:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2540,10 +2544,12 @@ It returns the height which it was committed:
 ```
 
 
-#### 6.2.2  BroadcastTxCommit
+#### 6.2.2 BroadcastTxCommit
 The transaction will be broadcasted and returns with the response from CheckTx and DeliverTx.
 
-This method will waitCONTRACT: only returns error if mempool.CheckTx() errs or if we timeout
+This method will wait for both CheckTx and DeliverTx, so it is the slowest way to broadcast through RPC but offers the most accurate success/failure response.
+
+CONTRACT: only returns error if mempool.CheckTx() errs or if we timeout
 waiting for tx to commit.
 
 If CheckTx or DeliverTx fail, no error will be returned, but the returned result
@@ -2561,10 +2567,10 @@ CheckTx and DeliverTx results
 
 ```
 type ResultBroadcastTxCommit struct {
-	CheckTx   abci.ResponseCheckTx   
-	DeliverTx abci.ResponseDeliverTx 
-	Hash      cmn.HexBytes           
-	Height    int64                  
+	CheckTx   abci.ResponseCheckTx
+	DeliverTx abci.ResponseDeliverTx
+	Hash      cmn.HexBytes
+	Height    int64
 }
 ```
 **Example**
@@ -2585,7 +2591,7 @@ The returned value is the transaction to be sent without signature：
 ```shell
 tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding: 
+This transaction is generatedas as a signed transaction in amino encoding:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2607,7 +2613,7 @@ defer client.Stop()
 result, err := client.BroadcastTxCommit("789")
 ```
 
-The above command returns JSON structured like this. Please note that the returned data contains both CheckTx and DeliverTx output. 
+The above command returns JSON structured like this. Please note that the returned data contains both CheckTx and DeliverTx output.
 
 ```json
 {
@@ -2642,7 +2648,7 @@ The above command returns JSON structured like this. Please note that the return
 To understand the output data, you could decode these data information of base64 encoding: "{"order_id":"813E4939F1567B219704FFC2AD4DF58BDE010879-46"}"
 
 
-#### 6.2.3  BroadcastTxSync
+#### 6.2.3 BroadcastTxSync
 The transaction will be broadcasted and returns with the response from CheckTx.
 
 **Transaction Parameters**
@@ -2657,10 +2663,10 @@ CheckTx results
 
 ```
 type ResultBroadcastTx struct {
-	Code uint32       
-	Data cmn.HexBytes 
-	Log  string       
-	Hash cmn.HexBytes 
+	Code uint32
+	Data cmn.HexBytes
+	Log  string
+	Hash cmn.HexBytes
 }
 ```
 **Example**
@@ -2670,7 +2676,7 @@ bnbcli account your-address  --chain-id=Binance-Chain-Nile --node=data-seed-pre-
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only 
+bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```
@@ -2680,7 +2686,7 @@ The returned value is the transaction to be sent without signature：
 ```shell
 bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding: 
+This transaction is generatedas as a signed transaction in amino encoding:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2722,7 +2728,7 @@ To understand the output data, you could decode these data information of hex.: 
 
 ### 6.3 Websocket APIs
 
-#### 6.3.1  Subscribe
+#### 6.3.1 Subscribe
 
 Subscribe for events via WebSocket.
 
@@ -2758,7 +2764,7 @@ DeliverTx response.
 				"agent.name": "K",
 			}
 	  }
-	
+
 		tm.event = 'Tx' AND agent.name = 'K'
 		tm.event = 'Tx' AND account.created_at >= TIME 2013-05-03T14:45:00Z
 		tm.event = 'Tx' AND contract.sign_date = DATE 2017-01-01

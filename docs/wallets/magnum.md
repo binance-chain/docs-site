@@ -5,8 +5,8 @@
 
 
 ## Instruction
-https://app.magnumwallet.co/ 
+<https://app.magnumwallet.co/>
 
 ## Resource
 
-https://magnumwallet.co/
+<https://magnumwallet.co/>

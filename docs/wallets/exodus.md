@@ -8,8 +8,8 @@ Exodus is a multi-asset cryptocurrency wallet designed to empower you with finan
 
 ## Instruction
 
-https://support.exodus.io/article/1139-exodus-is-supporting-bnb-mainnet
+<https://support.exodus.io/article/1139-exodus-is-supporting-bnb-mainnet>
 
 ## Resource
 
-https://www.exodus.io
+<https://www.exodus.io>

@@ -8,4 +8,4 @@ Trust Wallet (trustwallet.com ) is a secure, open source, decentralized and anon
 
 ## Resource
 
-https://trustwallet.com/
+<https://trustwallet.com/>

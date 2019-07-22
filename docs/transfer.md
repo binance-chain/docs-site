@@ -14,7 +14,7 @@ and have unlocked your wallet on browser or restored your key via CLI.
 
 You can always input a "memo" sentence as extra information to be recorded on the blockchain, though it has a limit on the length.
 
-### Web wallet 
+### Web wallet
 
 You can easily send tokens to another address on web wallet.
 
@@ -106,21 +106,21 @@ Example on **mainnet**:
 ```bash
 ./bnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --json --memo "Test transfer"
 Password to sign with 'test':
-{  
+{
    "Height":"272155",
    "TxHash":"A8F78BF8736A35B9433CA9CD1CDD03A8FB3D5D82",
-   "Response":{  
+   "Response":{
       "log":"Msg 0: ",
-      "tags":[  
-         {  
+      "tags":[
+         {
             "key":"c2VuZGVy",
             "value":"Ym5jMTdrd3pudWxqc3k0bjg5d2NqZDZlc3gyajV0MHczMjZjMDN4aHly"
          },
-         {  
+         {
             "key":"cmVjaXBpZW50",
             "value":"Ym5jMWw3a3IzNWRnajNqZXpqdnc2bnQ2enlxY215dDJqaDdyczJ2NG45"
          },
-         {  
+         {
             "key":"YWN0aW9u",
             "value":"c2VuZA=="
          }
@@ -231,7 +231,7 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-The difference here is you have to construct the transfer detail by yourself. You have to specify `--transfers` flag and 
+The difference here is you have to construct the transfer detail by yourself. You have to specify `--transfers` flag and
 format is showed above. In the same time, you can write the transaction detail in a file and specify `--transfers-file`
 flag and read from the file contains transaction.
 
@@ -240,25 +240,25 @@ Example, you can specify `--transfers` and send it to **mainnet**:
 ```bash
  ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers "[{\"to\":\"bnb1g5p04snezgpky203fq6da9qyjsy2k9kzr5yuhl\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"bnb1l86xty0m55ryct9pnypz6chvtsmpyewmhrqwxw\",\"amount\":\"100000000000000:BNB\"}]" --json
 Password to sign with 'test':
-{  
+{
    "Height":"1412",
    "TxHash":"A238C3C33625B5398FE648BD3FE9822CB7A07A2DB7778376546916F81C634138",
-   "Response":{  
+   "Response":{
       "log":"Msg 0: ",
-      "tags":[  
-         {  
+      "tags":[
+         {
             "key":"c2VuZGVy",
             "value":"Ym5iMXFnOTRzMnYzM3NyNTVrNDAybnN2M3NmY3ozMmVtdGF3NmRjeTk2"
          },
-         {  
+         {
             "key":"cmVjaXBpZW50",
             "value":"Ym5iMWc1cDA0c25lemdwa3kyMDNmcTZkYTlxeWpzeTJrOWt6cjV5dWhs"
          },
-         {  
+         {
             "key":"cmVjaXBpZW50",
             "value":"Ym5iMWw4Nnh0eTBtNTVyeWN0OXBueXB6NmNodnRzbXB5ZXdtaHJxd3h3"
          },
-         {  
+         {
             "key":"YWN0aW9u",
             "value":"c2VuZA=="
          }
@@ -305,12 +305,12 @@ And you can also try `--transfers-file`.
 
 Assume that you have a file named `transaction.json` in your current path and content is :
 ```json
-[  
-   {  
+[
+   {
       "to":"bnb1g5p04snezgpky203fq6da9qyjsy2k9kzr5yuhl",
       "amount":"100000000000000:BNB"
    },
-   {  
+   {
       "to":"bnb1l86xty0m55ryct9pnypz6chvtsmpyewmhrqwxw",
       "amount":"100000000000000:BNB"
    }
@@ -321,25 +321,25 @@ Then you can specify `--transfers-file` and send it to **mainnet**:
 ```bash
  ./bnbcli token multi-send --home ./testnodecli --from test --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443  --transfers-file ./transaction.json --json
 Password to sign with 'test':
-{  
+{
    "Height":"1412",
    "TxHash":"A238C3C33625B5398FE648BD3FE9822CB7A07A2DB7778376546916F81C634138",
-   "Response":{  
+   "Response":{
       "log":"Msg 0: ",
-      "tags":[  
-         {  
+      "tags":[
+         {
             "key":"c2VuZGVy",
             "value":"Ym5iMXFnOTRzMnYzM3NyNTVrNDAybnN2M3NmY3ozMmVtdGF3NmRjeTk2"
          },
-         {  
+         {
             "key":"cmVjaXBpZW50",
             "value":"Ym5iMWc1cDA0c25lemdwa3kyMDNmcTZkYTlxeWpzeTJrOWt6cjV5dWhs"
          },
-         {  
+         {
             "key":"cmVjaXBpZW50",
             "value":"Ym5iMWw4Nnh0eTBtNTVyeWN0OXBueXB6NmNodnRzbXB5ZXdtaHJxd3h3"
          },
-         {  
+         {
             "key":"YWN0aW9u",
             "value":"c2VuZA=="
          }

@@ -10,5 +10,4 @@ Thanks to the combination of both usability and the patented tamper-proof securi
 
 ## Resource
 
-https://coolwallet.io
-
+<https://coolwallet.io>

@@ -104,7 +104,7 @@ paths:
         '200':
           description: Success
           schema:
-            type: object
+            $ref: "#/definitions/ResultStatus"
             title: 'Node info'
             description: 'Represents block height, current timestamp and the number of connected peers.'
   /api/v1/validators:
@@ -190,7 +190,7 @@ paths:
         **Destination:** Witness node.
 
         **Rate Limit:** 5 requests per IP per second.
-        
+
         **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
 
         **URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
@@ -272,63 +272,77 @@ paths:
         **Destination:** Seed node.
 
         **Rate Limit:** 10 requests per IP per second.
-        
+
         **Example:**
 
         Below is an example response of a send transaction when `?format=json` is used.
         ```
-        {
-            "hash": "E81BAB8E555819E4211D62E2E536B6D5812D3D91C105F998F5C6EB3AB8136482",
-            "height": "754",
-            "tx": {
-                "type": "auth/StdTx", // fixed, type of transaction
-                "value": {            // fixed, detail of the transaction
-                    "data": null,     // fixed, data of the transaction
-                    "memo": "",       // fixed, memo
-                    "msg": [          // fixed, msgs of the transaction
-                        {
-                            "type": "cosmos-sdk/Send",  // vary with msg type
-                            "value": {                  // value content vary with mst type
-                                "inputs": [
-                                    {
-                                        "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
-                                        "coins": [
-                                            {
-                                                "amount": "100000000000000",
-                                                "denom": "BNB"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "outputs": [
-                                    {
-                                        "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
-                                        "coins": [
-                                            {
-                                                "amount": "100000000000000",
-                                                "denom": "BNB"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "signatures": [ // fixed, signatures of the transaction
-                        {
-                            "account_number": "0",
-                            "pub_key": {
-                                "type": "tendermint/PubKeySecp256k1",
-                                "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
-                            },
-                            "sequence": "1",
-                            "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
-                        }
-                    ],
-                    "source": "0"  // fixed, source of the transaction
-                }
-            }
-        }
+            {
+             code:0,
+             hash:"433806D6A4AB6359CB56EC55BA99896DFAB2AF11326B74881A2ABA7049C492D3",
+             height:"7850389",
+             log:"Msg 0: ",
+             ok:true,
+             tx:{
+                type:"auth/StdTx",
+                value:{
+                   data:null,
+                   memo:"101192150",
+                   msg:[
+                      {
+                         type:"cosmos-sdk/Send",
+                         value:{
+                            inputs:[
+                               {
+                                  address:"bnb1jafs33u9u6f7w7wzfmm4rr9rzy2cgqzp78kwaw",
+                                  coins:[
+                                     {
+                                        amount:"496429373",
+                                        denom:"BNB",
+
+                                     }
+                                  ],
+
+                               }
+                            ],
+                            outputs:[
+                               {
+                                  address:"bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23",
+                                  coins:[
+                                     {
+                                        amount:"496429373",
+                                        denom:"BNB",
+
+                                     }
+                                  ],
+
+                               }
+                            ],
+
+                         },
+
+                      }
+                   ],
+                   signatures:[
+                      {
+                         account_number:"438",
+                         pub_key:{
+                            type:"tendermint/PubKeySecp256k1",
+                            value:"A3mfgg/i12XNyy9esqCjI7yrkrOs9dngP7c9cDUEJly5",
+
+                         },
+                         sequence:"0",
+                         signature:"VvvGz3qbyirJ7vv01Df8tuAd7K4I+HK+yEBfep+qwtMKuHWQQH3XtMB9Pqtc2jlia0AtDe+BUEMtIyh3/N66IQ==",
+
+                      }
+                   ],
+                   source:"1",
+
+                },
+
+             },
+
+          }
         ```
       operationId: getTransaction
       produces:
@@ -346,15 +360,15 @@ paths:
       -
         name: format
         in: query
-        description: 'Response format (`json` or omit)'
+        description: 'Response format (`json` or amino)'
         required: false
         type: string
       responses:
-        '200':
+        '0':
           description: Success
           schema:
             $ref: '#/definitions/Transaction'
-        '400':
+        '500':
           description: 'Bad Request'
           schema:
             $ref: "#/definitions/Error"
@@ -603,6 +617,10 @@ paths:
               $ref: '#/definitions/Transaction'
         '400':
           description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '401':
+          description: 'Bad Signature'
           schema:
             $ref: "#/definitions/Error"
         '404':
@@ -1257,7 +1275,7 @@ definitions:
     title: Times
     properties:
       ap_time: {type: string, description: event time , example: e.g. 2019-01-21T10:30:00Z}
-      block_time: {type: string, description: block height, example: 12345678}
+      block_time: {type: string, description: the time of latest block, example: e.g. 2019-01-21T10:30:00Z}
   Validators:
     type: object
     properties:
@@ -1273,8 +1291,6 @@ definitions:
         title: Validators
         items:
           $ref: '#/definitions/Validator'
-
-
   Validator:
         type: object
         properties:
@@ -1359,8 +1375,9 @@ definitions:
     properties:
       hash:
         type: string
+        format: hex
         title: Hash
-        description: 'Hash of transaction'
+        description: 'Hash of transaction, it returned as bytes before, and now it returns as hex string'
       log:
         title: Log
         type: string
@@ -1369,7 +1386,7 @@ definitions:
         title: Data
         type: string
         description: 'Data of transaction'
-          
+
       height:
         title: Height
         type: string
@@ -1389,7 +1406,7 @@ definitions:
           Detail of transaction, like transaction type, messages and signature
 
           For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-          varies with msg type.
+          varies with msg type, if you query with --format=json.
 
           ```
           {
@@ -1440,7 +1457,7 @@ definitions:
                   "source": "0"  // fixed, source of the transaction
               }
           }
-          ``` 
+          ```
 
   Account:
     type: object
@@ -1535,22 +1552,22 @@ definitions:
         example: ABC-5CA
         format: currency
         required: true
-      price:
+      list_price:
         type: string
-        description: "In decimal form, e.g. 1.00000000"
-        example: "0.00000000"
+        description: "In decimal form"
+        example: "1.00000000"
         format: fixed8
         required: true
       tick_size:
         type: string
-        description: "Minimium price change in decimal form, e.g. 1.00000000"
+        description: "Minimium price change in decimal form"
         example: "0.00000001"
         format: fixed8
         required: true
       lot_size:
         type: string
-        description: "Minimium trading quantity in decimal form, e.g. 1.00000000"
-        example: "0.000001"
+        description: "Minimium trading quantity in decimal form"
+        example: "1.00000000"
         format: fixed8
         required: true
   Fee:
@@ -1579,6 +1596,9 @@ definitions:
       fixed_fee_params:
         description: Set if the fee is fixed
         $ref: '#/definitions/FixedFeeParams'
+      dex_fee_fields:
+        description: dex fee
+        $ref: '#/definitions/DexFeeFieldParams'
   FixedFeeParams:
     type: object
     properties:
@@ -1594,6 +1614,15 @@ definitions:
         type: integer
         description: 1 = proposer, 2 = all, 3 = free
         example: 1
+  DexFeeFieldParams:
+     type: object
+     properties:
+       fee_name:
+         type: string
+         description: fee name
+       fee_value:
+        type: integer
+        description: fee value
   MarketDepth:
     type: object
     properties:
@@ -1664,7 +1693,7 @@ definitions:
         type: string
       fee:
         type: string
-        description: trading fee on the block of this order
+        description: trading fee on the latest updated block of this order. Multiple assets are split by semicolon.
       lastExecutedPrice:
         type: string
         description: price of last execution
@@ -1807,6 +1836,10 @@ definitions:
       buyerOrderId:
         type: string
         description: order id for buyer
+      buySingleFee:
+        type: string
+        description: trading fee for the buyer address on this single trade
+        example: "BNB:0.00000172;"
       price:
         type: string
         description: trade price
@@ -1825,9 +1858,16 @@ definitions:
       sellerOrderId:
         type: string
         description: seller order ID
+      sellSingleFee:
+        type: string
+        description: trading fee for the seller address on this single trade
+        example: "BNB:0.00000216;"
       symbol:
         type: string
         description: asset symbol
+      tickType:
+        type: string
+        description: "enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral]"
       time:
         type: integer
         description: trade time
@@ -1860,7 +1900,7 @@ definitions:
         format: int64
       fee:
         type: string
-        description: total fee collected
+        description: total fee collected. Multiple assets are split by semicolon.
       tradeCount:
         type: integer
         description: trade count of the address on the block
@@ -1929,3 +1969,80 @@ definitions:
     additionalProperties:
       type: number
       format: double
+  ResultStatus:
+    type: object
+    properties:
+      validator_info:
+        type: array
+        items:
+          $ref: '#/definitions/ValidatorInfo'
+      sync_info:
+        type: array
+        items:
+          $ref: '#/definitions/SyncInfo'
+      node_info:
+        type: array
+        items:
+          $ref: '#/definitions/NodeInfo'
+  NodeInfo:
+    type: object
+    properties:
+      Protocol_Version:
+        type: array
+        items:
+          $ref: '#/definitions/ProtocolVersion'
+      ID :
+        type: string
+      listen_addr:
+        type: string
+      network:
+        type: string
+      version:
+        type: string
+      channels:
+        type: string
+      moniker:
+        type: string
+      other:
+        type: object
+  SyncInfo:
+        type: object
+        properties:
+          latest_block_hash:
+            type: string
+            format: hex
+          latest_app_hash:
+            type: string
+            format: hex
+          latest_block_height:
+            type: integer
+            format: int64
+          latest_block_time:
+            type: time
+          catching_up:
+            type: boolean
+  ProtocolVersion:
+    type: object
+    properties:
+      P2P:
+        type: integer
+        format: uint64
+      block:
+        type: integer
+        format: uint64
+      app:
+        type: integer
+        format: uint64
+
+  ValidatorInfo:
+        type: object
+        properties:
+          address:
+            type: string
+            description: hex address
+          pub_key:
+            type: string
+            description: hex-encoded
+          voting_power:
+            type: integer
+            format: int64
