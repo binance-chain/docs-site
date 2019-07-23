@@ -39,7 +39,7 @@ Using this method, stream names are specified in the URLs used to connect to the
   const blockHeight = new WebSocket("wss://dex.binance.org/api/ws/$all@blockheight");
 
   // for combined streams, can combined a mixed symbols and streams
-  const combinedFeeds = new WebSocket("wss://tdex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
+  const combinedFeeds = new WebSocket("wss://dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
 **Testnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
