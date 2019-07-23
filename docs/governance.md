@@ -83,14 +83,14 @@ Please note:<br/>
 Example on **mainnet**:
 
 ```
-bnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --trust-node
+bnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --trust-node
 ```
 
 
 Example on **testnet**:
 
 ```
-tbnbcli gov submit-delist-proposal  --title "delist EDD-0AC" --voting-period 7200  --deposit "200000000000:BNB" --justification " justification "  --base-asset-symbol EDD-0AC  --quote-asset-symbol BNB --from <your-key-name>  --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
+tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
 ```
 
 #### Add deposit for a Proposal (Optional)
