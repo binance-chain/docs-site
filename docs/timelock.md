@@ -30,7 +30,7 @@ You can only lock tokens on your own account. TimeLock will transfer locked toke
 
 ### Command line
 
-You must use `--broadcast` to submit your transaction to the blockchain, otherwise it will return an unknown transaction.
+You must use `--broadcast` to submit your transaction to the blockchain, otherwise it will return an unsigned transaction.
 
 ### Parameters
 
