@@ -17,8 +17,8 @@ Examples for each of these methods are provided below in JavaScript:
 
 Using this method, stream names are specified in the URLs used to connect to the data streams:
 
-- Single streams may be accessed at **/ws/\<streamName\>**
-- Combined streams may be accessed at **/stream?streams=\<streamName1\>/\<streamName2\>/\<streamName3\>** (etc.)
+- Single streams `/ws/<streamName>`
+- Combined streams `/stream?streams=<streamName1>/<streamName2>/<streamName3>` (etc.)
 
 
 **Mainnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
