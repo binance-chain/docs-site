@@ -67,7 +67,7 @@ This transaction is aimed to set account flags to any hex value.
 | :------------ | :-------- | :------------------------------------------------------------ |
 | account-flags  | string   | account flags, must be hex encoding string with prefix 0x |
 
-Example on testnet:
+* Example on testnet:
 
 ```
 ./tbnbcli token account_flags set-account-flags --from <your-key-name> --account-flags 0x01 --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
@@ -78,7 +78,8 @@ Example on testnet:
 This transaction is aimed to aimed to enable transfer memo checker scripts.
 
 
-Example on testnet:
+* Example on testnet:
+
 ```
 ./tbnbcli account_flag enable-memo-checker --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
@@ -88,7 +89,8 @@ Example on testnet:
 This transaction is aimed to  disable tranfer memo checker.
 
 
-Example on testnet:
+* Example on testnet:
+
 ```
 ./tbnbcli account_flag disable-memo-checker --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
