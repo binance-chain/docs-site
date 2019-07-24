@@ -41,58 +41,42 @@ return nil
 
 | **Field**    | **Type** | **Description**                                              |
 | :------------ | :-------- | :------------------------------------------------------------ |
-| from   | address  | Description of the lock operation. Max length of description is 128 bytes. |
-| Amount        | []Coin   | A set of tokens to be locked |
-| LockTime      | int64  | The time when these tokens can be unlocked. LockTime is a future timestamp(seconds elapsed from January 1st, 1970 at UTC) and max LockTime should be before 10 years from now.  |
-| broadcast     | bool   | if you want to submit your tranaction to the blockchain |
+| from   | string  |Name of your key. |
+| chain-id        | string   | Name of blockchain |
+| node      | string   | url of the node|
 
 
 ###  Set-account-flags
 
-set account flags
+This transaction is aimed to set account flags. To set for
 ### Parameters
 
 | **Field**    | **Type** | **Description**                                              |
 | :------------ | :-------- | :------------------------------------------------------------ |
-| account-flags  | string   | account flags, hex encoding string with prefix 0x |
+| account-flags  | string   | account flags, must be hex encoding string with prefix 0x |
 
-Example:
+Example on testnet:
+
 ```
-bnbcli account_flag set-account-flags
+./tbnbcli token account_flags set-account-flags --from <your-key-name> --account-flags 0x01 --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
-### enable-memo-checker
+### Enable-memo-checker
 
-enable memo checker
-
-### Parameters
-
-| **Field**    | **Type** | **Description**                                              |
-| :------------ | :-------- | :------------------------------------------------------------ |
-| account-flags  | string   | account flags, hex encoding string with prefix 0x |
+This transaction is aimed to ensure that the transfer transactions to this address have valid memo of all digits.
 
 
 Example on testnet:
 ```
-bnbcli account_flag enable-memo-checker
+./tbnbcli account_flag enable-memo-checker --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
-Example on mainnet:
+### Disable-memo-checker
+
+This transaction is aimed to remove memo checker
+
+
+Example on testnet:
 ```
-bnbcli account_flag enable-memo-checker
-```
-
-### disable-memo-checker
-
-enable memo checker
-
-### Parameters
-
-| **Field**    | **Type** | **Description**                                              |
-| :------------ | :-------- | :------------------------------------------------------------ |
-| account-flags  | string   | account flags, hex encoding string with prefix 0x |
-
-Example:
-```
-bnbcli account_flag disable-memo-checker
+./tbnbcli account_flag disable-memo-checker --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
