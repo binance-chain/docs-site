@@ -59,7 +59,8 @@ return nil
 
 ###  Set-account-flags
 
-This transaction is aimed to set account flags. To set for
+This transaction is aimed to set account flags to any hex value.
+
 ### Parameters
 
 | **Field**    | **Type** | **Description**                                              |
@@ -74,7 +75,7 @@ Example on testnet:
 
 ### Enable-memo-checker
 
-This transaction is aimed to ensure that the transfer transactions to this address have valid memo of all digits.
+This transaction is aimed to aimed to enable transfer memo checker scripts.
 
 
 Example on testnet:
@@ -84,7 +85,7 @@ Example on testnet:
 
 ### Disable-memo-checker
 
-This transaction is aimed to remove memo checker
+This transaction is aimed to  disable tranfer memo checker.
 
 
 Example on testnet:
