@@ -152,33 +152,8 @@ State sync can help fullnode in same status with other peers within short time (
 
 If full node has already started, suggested way is to delete the (after backup) `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before enabling state sync.
 
-For state-sync to work, we need the ability to read state from an app, as well as write it. The app with up-to-date state is the one being read from, while the app trying to sync is the one written to. When reading and writing, it’s necessary to lock the reading/writing process to a certain height. For reading, this is made possible with historical queries, while the app stays in sync with the blockchain. Applications will have to maintain multiple snapshots of their state for reading. For writing, since Tendermint cannot currently pause or shut down reactors, we start the state reactor first, on its own, so that no other ABCI messages are sent to the app until the state is synced or the reactor exits. Once complete, Tendermint
-
 State-sync refer to the implemendation of [Parity Warp Sync](https://wiki.parity.io/Warp-Sync). It is an extension to the Ethereum Wire protocol, which involves sending snapshots over the network to get the full state at a given block extremely quickly, and then filling in the blocks between the genesis and the snapshot in the background.
 
-Process:
-
-1. Organize state to be synced in MANIFEST file and block chunk snapshots based on state-sync request
-2. Persist chuncks to disks
-3. Update state of application
-
-* Manifest
-
-This contains metadata about the snapshot itself, and is used to coordinate snapshots between nodes. Every snapshot will have a unique manifest, so two identical manifests will refer to the same snapshot.
-
-SHA256 hash sum of each chunk synced will be checked against the hash declared within the manifest file.
-```
-[
-    version: snapshot version.
-    Height: height of this snapshot
-    state_hashes: hash of Tendermint state
-    block_hashes: hashes of the blocks in this snapshot
-    appstate_hashes: hashes of app state chunks
-]
-```
-* Block chunks
-
-App state chunk includes iavl tree nodes. Usually, each app state chunk takes up to 4MB serialized iavl tree nodes (before snappy compression).
 
 ##### Monitor Syncing Process
 
