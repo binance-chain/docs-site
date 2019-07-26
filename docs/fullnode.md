@@ -140,7 +140,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
 But, you need to allocate more than `16 GB memory` to your full node for this feature to work.
 
-*Configuration is located in `$BNCHOME/config/config.toml`:
+Configuration is located in `$BNCHOME/config/config.toml`:
 
 * `state_sync_reactor` Must be set to `true`
 * `recv_rate` Must set to `102428800`
