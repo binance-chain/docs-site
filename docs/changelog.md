@@ -1,3 +1,46 @@
+- [Upcoming Changes in Binance Chain API v0.6.1](#upcoming-changes-in-binance-chain-api-v061)
+- [Upcoming Changes in Binance Chain API v0.6.0](#upcoming-changes-in-binance-chain-api-v060)
+  * [HTTP API](#http-api)
+    + [/api/v1/trades](#-api-v1-trades)
+        * [***Changes***](#---changes---)
+        * [***GET***](#---get---)
+    + [TradePage](#tradepage)
+    + [Trade](#trade)
+  * [Websocket](#websocket)
+    + [Trades](#trades)
+      - [Changes](#changes)
+  * [Extra data from your fullnode](#extra-data-from-your-fullnode)
+    + [Changes](#changes-1)
+
+
+# Upcoming Changes in Binance Chain API v0.6.1
+
+## HTTP API
+
+As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.binance.org/api-reference/dex-api/paths.html
+
+In the latest update of HTTP API for testnet, there are the following changes:
+
+### /api/v1/account/{address}
+---
+
+##### ***Changes***
+In the `Account` data structure, a new field `flags` is added to indicate the constrains for this address.
+
+* `flags` is used to indicate which script needs to be executed.
+
+### Account
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| account_number | integer |  |  |
+| address | string (address) |  |  |
+| balances | [ [Balance](#balance) ] |  |  |
+| public_key | [ integer ] | Public key bytes |  |
+| flags | integer | indicate additional check for this account|  |
+| sequence | long | sequence is for preventing replay attack |  |
+
+
 # Upcoming Changes in Binance Chain API v0.6.0
 
 
@@ -15,7 +58,7 @@ In the latest update of HTTP API for testnet, there are the following changes:
 ##### ***Changes***
 In the `Trade` data structure, a new field `Ticker Type` is added. The enumerate values are: "Unknown", "SellTaker","BuyTaker","BuySurplus","SellSurplus","Neutral". When there is a maker and taker, `SellTaker` and  `BuyTaker` are used to indicate the side. When both sides are taker,  `BuySurplus`, `SellSurplus` and `Neutral` are used to indicate market pressure.`Unknown` mean the type is not possible to define.
 
-* `buySingleFee` is used to show trading fee for the buyer address on this single trade .
+* `buySingleFee` is used to show trading fee for the buyer address on this single trade.
 * `sellSingleFee`is used to show  trading fee for the seller address on this single trade.
 
 ##### ***GET***
