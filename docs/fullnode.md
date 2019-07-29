@@ -137,8 +137,8 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 
 ##### State Sync
 
-State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
-But, you need to allocate more than `16 GB memory` to your full node for this feature to work.
+As explained in [BEP18](https://github.com/binance-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
+Now you do not need to allocate more memories to your full node for this feature to work.
 
 *Configuration is located in `$BNCHOME/config/config.toml`:
 
@@ -152,8 +152,10 @@ State sync can help fullnode in same status with other peers within short time (
 
 If full node has already started, suggested way is to delete the (after backup) `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before enabling state sync.
 
-State-sync refer to the implemendation of [Parity Warp Sync](https://wiki.parity.io/Warp-Sync). It is an extension to the Ethereum Wire protocol, which involves sending snapshots over the network to get the full state at a given block extremely quickly, and then filling in the blocks between the genesis and the snapshot in the background.
+State sync will run only once after you start your full node. Once state sync succeeds, later fullnode restart would not state sync anymore. But if you do want state sync again, you need to delete `$BNCHOME/data/STATESYNC.LOCK`.
 
+
+If you turn on the `state_sync_reactor`, the snapshots of heights will be saved at `$HOME/data/snapshot/<height>` automatically. To save disk space, you can delete the directory or turn off the  `state_sync_reactor`.
 
 ##### Monitor Syncing Process
 
