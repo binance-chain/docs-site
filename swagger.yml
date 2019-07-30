@@ -399,10 +399,10 @@ paths:
       parameters:
       - name: limit
         in: query
-        description: default 500; max 1000.
+        description: default 100.
         required: false
         type: integer
-        default: 500
+        default: 100
         format: int32
         allowEmptyValue: false
       - name: offset
