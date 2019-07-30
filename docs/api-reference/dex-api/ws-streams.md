@@ -6,7 +6,7 @@ Returns individual order updates.
 
 Examples are written in JavaScript.
 
-**Topic Name:** orders | Stream: /ws/userAddress
+**Topic Name:** orders | Stream: /ws/address
 
 **Mainnet Connection Example:**
 
@@ -17,7 +17,7 @@ Examples are written in JavaScript.
     // Or Subscribe method
     const conn = new WebSocket("wss://dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", userAddress: "bnb1m4m9etgf3ca5wpgkqe5nr6r33a4ynxfln3yz4v" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", address: "bnb1m4m9etgf3ca5wpgkqe5nr6r33a4ynxfln3yz4v" }));
     }
 ```
 
@@ -30,7 +30,7 @@ Examples are written in JavaScript.
     // Or Subscribe method
     const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", userAddress: "tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", address: "tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc" }));
     }
 ```
 
@@ -90,7 +90,7 @@ Examples are written in JavaScript.
 
 Return account updates.
 
-**Topic Name:** accounts | Stream: /ws/userAddress
+**Topic Name:** accounts | Stream: /ws/address
 
 **Mainnet Connection Example:**
 
@@ -101,7 +101,7 @@ Return account updates.
     // Or Subscribe method
     const conn = new WebSocket("wss://dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "accounts", userAddress: "bnb1m4m9etgf3ca5wpgkqe5nr6r33a4ynxfln3yz4v" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "accounts", address: "bnb1m4m9etgf3ca5wpgkqe5nr6r33a4ynxfln3yz4v" }));
     }
 ```
 
@@ -115,7 +115,7 @@ Return account updates.
     // Or Subscribe method
     const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "accounts", userAddress: "tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "accounts", address: "tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc" }));
     }
 ```
 
@@ -153,9 +153,9 @@ Return account updates.
 
 ### 3. Transfer
 
-Return transfer updates if userAddress is involved (as sender or receiver) in a transfer. Multisend is also covered
+Return transfer updates if address is involved (as sender or receiver) in a transfer. Multisend is also covered
 
-**Topic Name:** transfers | Stream: /ws/userAddress
+**Topic Name:** transfers | Stream: /ws/address
 
 **Mainnet Connection Example:**
 
@@ -166,7 +166,7 @@ Return transfer updates if userAddress is involved (as sender or receiver) in a 
     // Or Subscribe method
     const conn = new WebSocket("wss://dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", userAddress: "bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", address: "bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9" }));
     }
 ```
 
@@ -179,7 +179,7 @@ Return transfer updates if userAddress is involved (as sender or receiver) in a 
     // Or Subscribe method
     const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
     conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", userAddress: "tbnb1c346qk3yfk89lzcacwzxsx402rv25gu6v40ghf" }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", address: "tbnb1c346qk3yfk89lzcacwzxsx402rv25gu6v40ghf" }));
     }
 ```
 
