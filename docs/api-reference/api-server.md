@@ -350,6 +350,56 @@ http://localhost:8080/api/v1/stake/validators
 | default | Generic error response | [Error](#error) |
 
 
+### /api/v1/timelock/timelocks/{address}
+---
+##### ***GET***
+**Summary:** Get all the timelock records of an address.
+
+**Description:** Gets the list of the timelock records of an address.
+
+**Example for mainnet**
+```
+http://localhost:8080/api/v1/timelock/timelocks/bnb1ycuzfx8cxpqmleu7z64uys9wx5ntcujre2knpc
+```
+
+**Example for testnet:**
+
+```
+http://localhost:8080/api/v1/timelock/timelocks/tbnb1g9rzc0e2jf8ef3qp9ax7h0pmpmvjzwmtq4jxfr
+```
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [TimelockList](#TimelockList)  |
+| default | Generic error response | [Error](#error) |
+
+### /api/v1/timelock/timelock/{address}/{id}
+---
+##### ***GET***
+**Summary:** Get a timelock record of an address.
+
+**Description:** Gets a timelock record of an address.
+
+**Example for mainnet**
+```
+http://localhost:8080/api/v1/timelock/timelock/bnb1ycuzfx8cxpqmleu7z54uys9wx5ntcujre2knpc/1
+```
+
+**Example for testnet:**
+
+```
+http://localhost:8080/api/v1/timelock/timelock/tbnb1g9rzc0e2jf7ef3qp9ax8h0pmpmvjzwmtq4jxfr/1
+```
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [Timelock](#Timelock)  |
+| default | Generic error response | [Error](#error) |
+
 
 ### Account
 
@@ -471,3 +521,23 @@ http://localhost:8080/api/v1/stake/validators
 | transactionTime | dateTime | time of transaction |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
+### TimelockList
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| Timelocks | [ [Timelock](#timelock) ] | list of timelock records |  |
+
+#### Timelock
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| ID | integer |  |  |
+| description | string |  |  |
+| amount | [Coin](#coin) |  |  |
+| locktime | timestamp |  |  |
+
+
+#### Coin
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| denom | string |  |  |
+| amount | int |  |  |
