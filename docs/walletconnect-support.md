@@ -6,6 +6,8 @@
 | Number | Wallet Name                                            | Network                          |
 | ------ | ------------------------------------------------------ | -------------------------------- |
 | 1      | [Trust Wallet](wallets/trust-wallet.md)                | Mainnet                          |
-| 2      | [CoolWallet](wallets/cool-wallet.md)                   | Mainnet                          |
-| 3      | [Math Wallet](wallets/math-wallet.md)                  | Mainnet                          |
+| 2      | [Math Wallet](wallets/math-wallet.md)                  | Mainnet                          |
+| 3      | [Meet.One Wallet](wallets/meet-wallet.md)              | Mainnet                          |
 | 4      | [Equal Wallet](wallets/equal.md)                       | Mainnet                          |
+| 5      | [SafePal Wallet](wallets/safepal.md)                   | Mainnet                          |
+| 6      | [CoolWallet](wallets/cool-wallet.md)                   | Mainnet                          |
