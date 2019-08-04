@@ -192,6 +192,7 @@ Return transfer updates if address is involved (as sender or receiver) in a tran
     "e":"outboundTransferInfo",                                                // Event type
     "E":12893,                                                                 // Event height
     "H":"0434786487A1F4AE35D49FAE3C6F012A2AAF8DD59EC860DC7E77123B761DD91B",    // Transaction hash
+    "M":"123456789",                                                           // Transaction memo, added for BEP39
     "f":"bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9",                          // From addr
     "t":
       [{

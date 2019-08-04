@@ -212,6 +212,8 @@ Then, the full node will save all the transfer transactions.
 	Num:       int,
 	Timestamp: int64,
 	Transfers: []{
+        TxHash: string,
+        Memo: string,
 	    From: string,
         To:   []{
             Addr:  string,
