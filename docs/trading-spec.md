@@ -110,6 +110,8 @@ List Asset | N/A | 1000 BNB | N
 Submit List Proposal | N/A | 5 BNB | N
 Submit Delist Proposal | N/A | 1000 BNB | N
 Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
 
 
 ### Mainnet Fees API
@@ -177,6 +179,8 @@ List Asset | N/A | 1000 BNB | N
 Submit List Proposal | N/A | 5 BNB | N
 Submit Delist Proposal | N/A | 1000 BNB | N
 Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
 
 ### Testnet Fees API
 

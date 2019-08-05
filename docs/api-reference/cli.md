@@ -210,6 +210,7 @@ For detailed usage, you can refer to:
 - [keys](../keys.md)
 - [offline](../offline.md)
 - [timelock](../timelock.md)
+- [memo validation](../memo-validation.md)
 
 ## Use CLI for Different Blockchains
 
