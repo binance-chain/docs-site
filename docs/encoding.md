@@ -179,7 +179,7 @@ message NewOrder {
   int64 ordertype // only accept 2 for now, meaning limit order
   int64 side // 1 for buy and 2 fory sell
   int64 price // price of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
-  int64 quantity // quantity of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
+  int64 quantity // quantity of the order, which is the real quantity multiplied by 1e8 (10^8) and rounded to integer
   int64 timeinforce // 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)
 }
 ```

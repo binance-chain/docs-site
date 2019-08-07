@@ -60,8 +60,11 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 - `testnet-dex-atlantic.binance.org`
 - `testnet-dex-asiapacific.binance.org`
 
-For mainnet, there would be more accelerated nodes.
+For mainnet, there are more accelerated nodes.
 
+- `dex-atlantic.binance.org`
+- `dex-asiapacific.binance.org`
+- `dex-european.binance.org`
 
 ## Blocking
 
