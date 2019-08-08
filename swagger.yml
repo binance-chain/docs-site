@@ -1159,7 +1159,7 @@ paths:
       - transaction
       summary: Get transactions.
       description: |
-        Gets a list of transactions. Multisend transaction is not available in this API.
+        Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
 
         **Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.
 
@@ -1221,7 +1221,7 @@ paths:
         type: string
       - name: txType
         in: query
-        description: "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT]"
+        description: "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG]"
         required: false
         type: enum string
         allowEmptyValue: false
@@ -1245,6 +1245,39 @@ paths:
             $ref: '#/definitions/TxPage'
         '400':
           description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/transactions-in-block/{blockHeight}:
+    get:
+      tags:
+        - transaction in block
+      summary: Get transactions in the specific block.
+      description: |
+        Get transactions in a specific block. Currently 'confirmBlocks' and 'txAge' are not supported.
+
+        **Rate Limit:** 60 requests per IP per minute.
+      operationId: getTransactionsInBlock
+      produces:
+        - application/json
+      parameters:
+        - name: blockHeight
+          in: path
+          description: block height
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BlockTxVo'
+        '400':
+          description: 'Bad Request. The block to query is higher than current highest block.'
           schema:
             $ref: "#/definitions/Error"
         '404':
@@ -1943,6 +1976,17 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Tx'
+  BlockTxVo:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      tx:
+        type: array
+        items:
+          $ref: '#/definitions/Tx'
   Tx:
     type: object
     properties:
@@ -1989,6 +2033,14 @@ definitions:
       value:
         type: string
         description: value of transaction
+      source:
+        type: integer
+        format: int64
+      sequence:
+        type: integer
+        format: int64
+      proposalId:
+        type: string
     title: Tx
   ExchangeRate:
     type: object
