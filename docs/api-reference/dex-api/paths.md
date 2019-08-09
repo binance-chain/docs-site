@@ -915,7 +915,7 @@ varies with msg type, if you query with --format=json.
 | timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
 | tradeId | string | trade ID |  |
 | transactionHash | string | hash of transaction |  |
-| transactionTime | dateTime | time of latest order updates, for example, cancel, expire |  |
+| transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
 ### TickerStatistics

@@ -1752,7 +1752,7 @@ definitions:
         description: hash of transaction
       transactionTime:
         type: string
-        description: time of latest order updates, for example, cancel, expire
+        description: time of latest order update, for example, cancel, expire
         format: date-time
       type:
         type: integer
