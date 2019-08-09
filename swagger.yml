@@ -1253,7 +1253,7 @@ paths:
           description: Generic error response
           schema:
             $ref: "#/definitions/Error"
-acc      deprecated: false
+
 definitions:
   Error:
     type: object
@@ -1753,7 +1753,7 @@ definitions:
         description: hash of transaction
       transactionTime:
         type: string
-        description: time of transaction
+        description: time of latest order updates, for example, cancel, expire
         format: date-time
       type:
         type: integer

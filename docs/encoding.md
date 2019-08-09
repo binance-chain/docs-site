@@ -375,4 +375,12 @@ message Deposit{
 }
 ```
 
-
+#### Set Account Flags
+You can  set the flag value of your account.
+```go
+message SetAccountFlags{
+  0xBEA6E301 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  int64 Flag // account flag
+}
+```
