@@ -26,5 +26,5 @@
 | 20     | [SafePal Wallet](wallets/safepal.md) (Hardware Wallet) | <https://www.safepal.io>         |True|
 | 21     | [Zengo Wallet](wallets/zengo.md)                       | <https://zengo.com/>             |False|
 | 22     | [TokenPocket Wallet](wallets/tokenpocket.md)           | <https://www.tokenpocket.pro/>   |False|
-
+| 23     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |False|
 
