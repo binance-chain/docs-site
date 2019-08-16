@@ -27,4 +27,4 @@
 | 21     | [Zengo Wallet](wallets/zengo.md)                       | <https://zengo.com/>             |False|
 | 22     | [TokenPocket Wallet](wallets/tokenpocket.md)           | <https://www.tokenpocket.pro/>   |False|
 | 23     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |False|
-
+| 24     | [X Wallet](wallets/xwallet.md)                         | <https://xwallet.pundix.com>     |False|
