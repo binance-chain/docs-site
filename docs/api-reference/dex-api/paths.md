@@ -651,7 +651,7 @@ If the time window is larger than limits, only the first n klines will return. I
 ##### ***GET***
 **Summary:** Get transactions.
 
-**Description:** Gets a list of transactions. Multisend transaction is not available in this API.
+**Description:** Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
 
 **Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.
 
@@ -670,7 +670,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | side | query | transaction side. Allowed value: [ RECEIVE, SEND] | No | enum string |
 | startTime | query | start time in Milliseconds | No | long |
 | txAsset | query | txAsset | No | string |
-| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT] | No | enum string |
+| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG] | No | enum string |
 
 **Responses**
 
@@ -681,31 +681,56 @@ If the time window is larger than limits, only the first n klines will return. I
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
 
+### /api/v1/transactions-in-block/{blockHeight}
+---
+##### ***GET***
+**Summary:** Get transactions in the specific block.
+
+**Description:** Get transactions in a specific block. Currently 'confirmBlocks' and 'txAge' are not supported.
+
+**Rate Limit:** 60 requests per IP per minute.
+
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| blockHeight | path | block height | Yes | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [BlockTxVo](#blocktxvo) |
+| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+| 404 | Not Found |  |
+| default | Generic error response | [Error](#error) |
+
 ### Models
 ---
 
-### Error
+### Error  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | code | long | error code | 400 |
 | message | string | error message |  |
 
-### Times
+### Times  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ap_time | string | event time | e.g. 2019-01-21T10:30:00Z |
 | block_time | string | the time of latest block | e.g. 2019-01-21T10:30:00Z |
 
-### Validators
+### Validators  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | block_height | long | Current block height | 12345 |
 | validators | [ [Validator](#validator) ] |  |  |
 
-### Validator
+### Validator  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -714,7 +739,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | voting_power | integer | validator's voting power |  |
 | accum | integer | validator's accumulated voting power |  |
 
-### Peer
+### Peer  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -729,7 +754,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |
 | accelerated | boolean | Is an accelerated path to a validator node |  |
 
-### Transaction
+### Transaction  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -796,7 +821,7 @@ varies with msg type, if you query with --format=json.
 ```
  |  |
 
-### Account
+### Account  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -806,13 +831,13 @@ varies with msg type, if you query with --format=json.
 | public_key | [ integer ] | Public key bytes |  |
 | sequence | long | sequence is for preventing replay attack |  |
 
-### AccountSequence
+### AccountSequence  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | sequence | long | number used for preventing replay attack | 1 |
 
-### Balance
+### Balance  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -821,7 +846,7 @@ varies with msg type, if you query with --format=json.
 | locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 | frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
 
-### Token
+### Token  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -831,7 +856,7 @@ varies with msg type, if you query with --format=json.
 | total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
 | owner | string (address) | Address which issue the token |  |
 
-### Market
+### Market  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -841,7 +866,7 @@ varies with msg type, if you query with --format=json.
 | tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
 | lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
 
-### Fee
+### Fee  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -853,7 +878,7 @@ varies with msg type, if you query with --format=json.
 | fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
 | dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
 
-### FixedFeeParams
+### FixedFeeParams  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -861,21 +886,21 @@ varies with msg type, if you query with --format=json.
 | fee | number | The fixed fee amount | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
 
-### DexFeeFieldParams
+### DexFeeFieldParams  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | fee_name | string | fee name |  |
 | fee_value | integer | fee value |  |
 
-### MarketDepth
+### MarketDepth  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 | bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
 
-### Candlestick
+### Candlestick  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -889,14 +914,14 @@ varies with msg type, if you query with --format=json.
 | quoteAssetVolume | number | the total trading volume in quote asset |  |
 | volume | number | the total trading volume |  |
 
-### OrderList
+### OrderList  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | order | [ [Order](#order) ] | list of orders |  |
 | total | long |  |  |
 
-### Order
+### Order  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -915,10 +940,10 @@ varies with msg type, if you query with --format=json.
 | timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
 | tradeId | string | trade ID |  |
 | transactionHash | string | hash of transaction |  |
-| transactionTime | dateTime | time of transaction |  |
+| transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
-### TickerStatistics
+### TickerStatistics  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -944,14 +969,14 @@ varies with msg type, if you query with --format=json.
 | volume | string | trading volume |  |
 | weightedAvgPrice | string | weighted average price |  |
 
-### TradePage
+### TradePage  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long | total number of trades |  |
 | trade | [ [Trade](#trade) ] |  |  |
 
-### Trade
+### Trade  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -973,14 +998,14 @@ varies with msg type, if you query with --format=json.
 | time | long | trade time |  |
 | tradeId | string | trade ID |  |
 
-### BlockExchangeFeePage
+### BlockExchangeFeePage  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |  |  |
 | total | long |  |  |
 
-### BlockExchangeFee
+### BlockExchangeFee  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -990,14 +1015,21 @@ varies with msg type, if you query with --format=json.
 | fee | string | total fee collected. Multiple assets are split by semicolon. |  |
 | tradeCount | long | trade count of the address on the block |  |
 
-### TxPage
+### TxPage  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | total | long | total sum of transactions |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
-### Tx
+### BlockTxVo  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long | block height |  |
+| tx | [ [Tx](#tx) ] |  |  |
+
+### Tx  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1015,14 +1047,17 @@ varies with msg type, if you query with --format=json.
 | txHash | string | hash of transaction |  |
 | txType | string | type of transaction |  |
 | value | string | value of transaction |  |
+| source | long |  |  |
+| sequence | long |  |  |
+| proposalId | string |  |  |
 
-### ExchangeRate
+### ExchangeRate  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | ExchangeRate | object |  |  |
 
-### ResultStatus
+### ResultStatus  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1030,7 +1065,7 @@ varies with msg type, if you query with --format=json.
 | sync_info | [ [SyncInfo](#syncinfo) ] |  |  |
 | node_info | [ [NodeInfo](#nodeinfo) ] |  |  |
 
-### NodeInfo
+### NodeInfo  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1043,7 +1078,7 @@ varies with msg type, if you query with --format=json.
 | moniker | string |  |  |
 | other | object |  |  |
 
-### SyncInfo
+### SyncInfo  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1053,7 +1088,7 @@ varies with msg type, if you query with --format=json.
 | latest_block_time | time |  |  |
 | catching_up | boolean |  |  |
 
-### ProtocolVersion
+### ProtocolVersion  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1061,7 +1096,7 @@ varies with msg type, if you query with --format=json.
 | block | integer (uint64) |  |  |
 | app | integer (uint64) |  |  |
 
-### ValidatorInfo
+### ValidatorInfo  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |

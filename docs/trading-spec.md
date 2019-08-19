@@ -159,7 +159,7 @@ Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=
 
 ### Current Fees Table on Testnet
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Tetnet as of **2019-04-17** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2019-04-17** is as follows:
 
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related

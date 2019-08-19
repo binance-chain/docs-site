@@ -256,7 +256,7 @@ Returns individual trade updates.
         "T": 123456785,     // Trade time
         "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
         "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": "SellTaker"   //tiekertype
+        "tt": 1             //tiekertype 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
     },
     {
         "e": "trade",       // Event type
@@ -270,7 +270,7 @@ Returns individual trade updates.
         "T": 123456795,     // Trade time
         "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
         "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": "BuyTaker"    //tiekertype
+        "tt": 1             //tiekertype 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
     }]
 }
 ```

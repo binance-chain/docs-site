@@ -1,16 +1,16 @@
 - [Upcoming Changes in Binance Chain API v0.6.1](#upcoming-changes-in-binance-chain-api-v061)
-- [Upcoming Changes in Binance Chain API v0.6.0](#upcoming-changes-in-binance-chain-api-v060)
   * [HTTP API](#http-api)
-    + [/api/v1/trades](#-api-v1-trades)
-        * [***Changes***](#---changes---)
-        * [***GET***](#---get---)
+    + [/api/v1/account/{address}](#apiv1accountaddress)
+    + [Account](#account)
+- [Upcoming Changes in Binance Chain API v0.6.0](#upcoming-changes-in-binance-chain-api-v060)
+  * [HTTP API](#http-api_1)
+    + [/api/v1/trades](#apiv1trades)
     + [TradePage](#tradepage)
     + [Trade](#trade)
   * [Websocket](#websocket)
     + [Trades](#trades)
-      - [Changes](#changes)
   * [Extra data from your fullnode](#extra-data-from-your-fullnode)
-    + [Changes](#changes-1)
+    + [Changes](#changes_3)
 
 
 # Upcoming Changes in Binance Chain API v0.6.1

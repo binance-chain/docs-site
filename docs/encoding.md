@@ -350,7 +350,7 @@ message Deposit{
 
 
 #### Time-unlock
-You can  unlock tokens on your own account after a certain period of time.
+You can unlock tokens on your own account after a certain period of time.
 ```go
 message Deposit{
   0xC4050C6C   // hardcoded, object type prefix in 4 bytes
@@ -360,7 +360,7 @@ message Deposit{
 ```
 
 #### Time-relock
-You can  relock tokens on your own account after a certain period of time.
+You can relock tokens on your own account after a certain period of time.
 ```go
 message Deposit{
   0x504711DA // hardcoded, object type prefix in 4 bytes
@@ -375,4 +375,12 @@ message Deposit{
 }
 ```
 
-
+#### Set Account Flags
+You can set the flag value of your account.
+```go
+message SetAccountFlags{
+  0xBEA6E301 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  int64 Flag // account flag
+}
+```
