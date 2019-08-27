@@ -32,7 +32,7 @@ Each party has its own home directory to save the encrypted private key shares a
 
 ##  Where can I download the Binance TSS CLI?
 
-- You can download tss client from: [https://github.com/binance-chain/tss-binary](https://github.com/binance-chain/node-binary)
+- You can download tss client from: [https://github.com/binance-chain/node-binary/tss](https://github.com/binance-chain/node-binary/tss)
 - You can download Binance Chain CLI release tbnbcli/bnbcli from: https://github.com/binance-chain/node-binary
 
 ## How to Use
