@@ -129,7 +129,8 @@ config of this vault:
 [Enter]
 channel id: 3085D3EC76D
 ```
-3. Keygen
+
+### Keygen
 
 This command will generated the private key and share the secret.
 
