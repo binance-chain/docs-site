@@ -1,5 +1,23 @@
 # User Guide of Threshold Signature Scheme (TSS) in Binance Chain
 
+  * [Introduction](#introduction)
+  * [Motivation](#motivation)
+  * [Workflow](#workflow)
+  * [Where can I download the Binance TSS CLI?](#where-can-i-download-the-binance-tss-cli-)
+  * [How to Use](#how-to-use)
+    + [Init](#init)
+    + [Describe](#describe)
+    + [Channel](#channel)
+    + [Keygen](#keygen)
+    + [Regroup](#regroup)
+  * [Changes to `bnbcli/tbnbcli`](#changes-to--bnbcli-tbnbcli-)
+  * [Example](#example)
+    + [Step 1: Init TSS](#step-1--init-tss)
+    + [Step 2: Generate Channel ID for bootstraping](#step-2--generate-channel-id-for-bootstraping)
+    + [Step 3: Generate and Share Secret](#step-3--generate-and-share-secret)
+    + [Step 3: Sing Transaction](#step-3--sing-transaction)
+
+
 ## Introduction
 
 **Threshold Signature Scheme (TSS)** is a cryptographic protocol for distributed key generation and signing. TSS allows constructing a signature that is distributed among different parties (for example three users), and each user receives a share of the private signing key. To sign a transaction, at least two of these three users need to join. For individuals, threshold signatures allow for two-factor security or splitting the ability to sign between two devices so that a single compromised device won’t put the money at risk. For businesses, threshold signatures allow for the realization of access control policies that prevent both insiders and outsiders from stealing corporate funds. TSS technology allows us to replace all signing commands with distributed computations.The private key is no longer a single point of failure.
@@ -13,7 +31,7 @@ With **Threshold Signatures**, all of the parties must forge the vault’s lock 
 
 Combining TSS feature  with Binance Chain client will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
 
-## Architecture
+## Workflow
 Let’s take a look at the major steps in TSS:
 * **Key Generation**: the first step is also the most complex. We need to define the quorum policy: count of total parties (n) that holds secret shares and threshold (t) which means at least t + 1 parties need to take part in the signing process. We need to generate a key which will be public and used to verify future signatures. However, we also have to generate an individual secret for each party, which is called a secret share. The functions guarantee the same public key to all parties and a different secret share for each. In this way, we achieve: (1) privacy: no secret shares data is leaked between any parties, and (2) correctness: the public key is intact with secret share.
 
@@ -47,6 +65,7 @@ Here are the global transaction flags:
 | password   | string | the password of the vault                                    | must be 32 bytes or more, the default value is 48 |
 | home       | string | Path to config/route_table/node_key/tss_key files, configs in config file can be overridden by command line argument | the default value is "~/.tss"                     |
 
+Here are the flags for `tss init`:
 
 | Name       | Type   | Description                                                  | Note                                              |
 | ---------- | ------ | ------------------------------------------------------------ | ------------------------------------------------- |
@@ -58,17 +77,6 @@ Here are the global transaction flags:
 |moniker	|string	|moniker of current party	||
 |p2p.listen	|string	 |Adds a multiaddress to the listen list	||
 
-* Example
-
-In this example, A, B and C are the parties who decided to share a private key together.
-
-
-|                            | A                                                            | B                                                            | C                                                            |
-| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| command                    | ./tss init                                                   | ./tss init                                                   | ./tss init                                                   |
-| Interactive input          | > please set moniker of this party: tss1> please set vault of this party:vault1> please set password of this vault:1234qwerasdf> please input again:1234qwerasdf | > please set moniker of this party: tss2> please set vault of this party:vault1> please set password of this vault:asdfqwer1234> please input again:asdfqwer1234 | > please set moniker of this party: tss3> please set vault of this party:vault1> please set password of this vault:qwer1234asdf> please input again:qwer1234asdf |
-| output                     | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        |
-| Files touched or generated | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              |
 
 ### Describe
 
@@ -190,5 +198,57 @@ To add a tss key into bnbcli’s keystore:
 bnbcli keys add --home ~/.customized_cli --tss -t tss --tss-home ~/.test1 --tss-vault “default” my_name
 ```
 All other commands (i.e. send token, place order, delete key etc.) of bnbcli should support tss type key.
+
+## Example
+
+In this example, A, B and C are the parties who decided to share a private key together. They decided that any two of them can sign a transaction. To complete a TSS signing process, they need to follow the following steps:
+
+### Step 1: Init TSS
+
+During this step, all parties have to initialite their P2P settings before generate TSS key.
+
+
+|                            | A                                                            | B                                                            | C                                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss init                                                   | ./tss init                                                   | ./tss init                                                   |
+| Interactive input          | > please set moniker of this party: tss1> please set vault of this party:vault1> please set password of this vault:1234qwerasdf> please input again:1234qwerasdf | > please set moniker of this party: tss2> please set vault of this party:vault1> please set password of this vault:asdfqwer1234> please input again:asdfqwer1234 | > please set moniker of this party: tss3> please set vault of this party:vault1> please set password of this vault:qwer1234asdf> please input again:qwer1234asdf |
+| output                     | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        |
+| Files touched or generated | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              |
+
+
+### Step 2: Generate Channel ID for bootstraping
+
+In this step, the parties will create a secrect communication channel between them. One of then will generate the channel ID and share with others. In this example, A will generate the channel ID. B and C will not have to do anything. A can also specify the longttivity for this channel and the default time is 30 mins.
+
+|                   | A                           | B    | C    |
+| ----------------- | --------------------------- | ---- | ---- |
+| command           | ./tss channel               | N/A  | N/A  |
+| Interactive input | > please set expire time in minutes, (default: 30): | N/A  | N/A  |
+| output            | channel id: **5185D3EF597** | N/A  | N/A  |
+
+
+### Step 3: Generate and Share Secret
+
+In this step, the private key will be generated and shared between these three parties. All the parties have to be online at the sme time.
+
+|                            | A                                                            | B                                                            | C                                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss keygen --vault_name vault1                             | ./tss keygen --vault_name vault1                             | ./tss keygen --vault_name vault1                             |
+| Interactive input          | > Password to sign with this vault:1234qwerasdf> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties  need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session:123456789Password of this tss vault: 1234qwerasdf | > Password to sign with this vault:asdfqwer1234> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session: 123456789Password of this tss vault: asdfqwer1234 | > Password to sign with this vault:qwer1234asdf> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session: 123456789Password of this tss vault: qwer1234asdf |
+| output                     | 18:00:09.777  INFO    tss-lib: party {0,tss1}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss1] received save data client.go:30418:00:09.777  INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss1_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.777  INFO    tss-lib: party {1,tss2}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss2] received save data client.go:30418:00:09.777  INFO        tss: [tss2] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss2_vault1       tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.773  INFO    tss-lib: party {2,tss3}: keygen finished! party.go:11318:00:09.773  INFO        tss: [tss3] received save data client.go:30418:00:09.773  INFO        tss: [tss3] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss3_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc |
+| Files touched or generated | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json |
+
+### Step 3: Sing Transaction
+
+In this steo, A and B decided to sign a transaction together. Both A and B will try to broadcast the transaction and only one of them will succeed.
+
+|                            | A                                                            | B                                                            | C    |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
+| command                    | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss1_vault1 --chain-id Binance-Chain-Nile --node https://data-seed-pre-0-s1.binance.org:443 --trust-node | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss2_vault1 --chain-id Binance-Chain-Nile --node https://data-seed-pre-0-s1.binance.org:443 --trust-node | NA   |
+| Interactive input          | Password to sign with tss_tss1_vault1:1234qwerasdf> Channel id:5185D3EF597please input password (AGREED offline with peers) of this session: 987654321 | Password to sign with tss_tss2_vault1:asdfqwer1234> Channel id:5185D3EF597please input password (AGREED offline with peers) of this session: 987654321 | N/A  |
+| output                     | Committed at block 33600477 (tx hash: 4FB8096A93D545612A3B5DCE520622608C299C7742103A6BE34C444829BD83A5 | ERROR: broadcast_tx_commit: Response error: RPC error -32603 - Internal error: Error on broadcastTxCommit: Tx already exists in cache | N/A  |
+| Files touched or generated | N/A                                                          | N/A                                                          | N/A  |
+
+
 
 
