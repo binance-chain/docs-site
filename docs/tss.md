@@ -33,12 +33,14 @@ Combining TSS feature  with Binance Chain client will help users manage their fu
 
 ## Workflow
 Let’s take a look at the major steps in TSS:
-* **Channel Initialization**: the first step is for setting up network parameters between parties. They need to agree on the channel which they want to use for sending messages between each other. The channel will have its corresponding password. Both ID and password needs to be shared offline.
-* **Key Generation**: the second step is also the most complex. We need to define the quorum policy: count of total parties (n) that holds secret shares and threshold (t) which means at least t + 1 parties need to take part in the signing process. We need to generate a key which will be public and used to verify future signatures. However, we also have to generate an individual secret for each party, which is called a secret share. The functions guarantee the same public key to all parties and a different secret share for each. In this way, we achieve: (1) privacy: no secret shares data is leaked between any parties, and (2) correctness: the public key is intact with secret share.
+* **Vault Initialization**: the first step is for setting up tss parameters of each party. This will initialize the node's p2p listen address and setup a directory to save key. It's recommended that you should save your tss key in a different folder other than normal key info. 
+* **Key Generation**: the second step is also the most complex. We need to define the quorum policy: count of total parties (n) that holds secret shares and threshold (t) which means at least t + 1 parties need to take part in the signing process. We need to generate a key which will be public and used to verify future signatures. However, we also have to generate an individual secret for each party, which is called a secret share. The functions guarantee the same public key to all parties and a different secret share for each. In this way, we achieve: (1) privacy: no secret shares data is leaked between any parties, and (2) correctness: the public key is intact with secret share. They need to agree on the channel which they want to use for sending messages between each other. The channel will have its corresponding password. Both ID and password needs to be shared offline.
 
 * **Signing**: this step involves a signature generation function. The input of each party will be its own secret share, created as output of the distributed key generation in the previous step. There is also public input known to all, which is the message to be signed. The output will be a digital signature, and the property of privacy ensures that no leakage of secret shares occurred during the computation.
 
 * **Verification**: the verification algorithm remains as it is in the classical setting. To be compatible with single key signatures, Binance Chain validator nodes can be able to verify the signature with the public key. The transaction will be no different from others.
+* **Vault Regroup**:  Regrouop will reset secret share and configs between all parties.It's recommend to switch the configuration periodically, say once a month. If some party lost his key, it's also necessory to reset the distribution once some party lost their key. Regroup will generate new_n secrete share with new_t threshold. At least old_t + 1 should participant
+
 
 ##  Where can I download the Binance TSS CLI?
 
@@ -168,9 +170,9 @@ This command will generate new_n secrete from the same private key, and it will 
 
 | Name       | Type   | Description                                                  | Note                                              |
 | ---------- | ------ | ------------------------------------------------------------ | ------------------------------------------------- |
-|address_prefix|string|prefix of bech32 address|the default value is bnb|
+|channel_password|string|channel password of this session||
 |channel_id|string|channel id of this session||
-|is_old_member|string|whether this party is old committee. If it is set to true, it will participant signing in regroup. There should be only t+1 parties set this to true for one regroup||
+|is_old|string|whether this party is old committee. If it is set to true, it will participant signing in regroup. There should be only t+1 parties set this to true for one regroup||
 |is_new_member|string|whether this party is new committee, for new party it will changed to true automatically. if an old party set this to true, its share will be replaced by one generated one||
 |new_parties|int|new total parties of regrouped scheme||
 |new_threshold|int|new threshold of regrouped scheme||
@@ -242,4 +244,43 @@ In this steo, A and B decided to sign a transaction together. Both A and B will 
 
 
 
+### Step 3: Regroup Vault
 
+First, please generate a new channel for messaging:
+
+|                   | A                                                            | B    | C    |
+| ----------------- | ------------------------------------------------------------ | ---- | ---- |
+| command           | ./tss channel                                                | N/A  | N/A  |
+| Interactive input | > please set expire time in minutes, (default: 30):<br/>[input time] | N/A  | N/A  |
+| output            | channel id: **3415D3FBE00**                                  | N/A  | N/A  |
+
+Then, we can switch to the new channel for sending messages to each others.
+
+
+
+|                            | A                                                            | B                                                            | C                                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss regroup                                                | ./tss regroup                                                | ./tss regroup                                                |
+| Interactive input          | > please set vault of this party:<br/>vault1<br/>> Password to sign with this vault:<br/>Password to sign with tss_tss1_vault1:<br/>[Enter password]<br/>> Participant as an old committee? [Y/n]:<br/>Y<br/>> Participant as a new committee? [Y/n]:<br/>Y<br/>> please set new total parties(n): <br/>3<br/>> please set new threshold(t), at least t + 1 parties   participant signing: <br/>1<br/>> Channel id:<br/>3415D3FBE00<br/>please input password (AGREED offline with peers) of this session: <br/>Password to sign with tss_tss1_vault1:<br/>[Enter password] | > please set vault of this party:<br/>vault1<br/>> Password to sign with this vault:<br/>Password to sign with tss_tss1_vault1:<br/>[Enter password]<br/>> Participant as an old committee? [Y/n]:<br/>Y<br/>> Participant as a new committee? [Y/n]:<br/>Y<br/>> please set new total parties(n): <br/>3<br/>> please set new threshold(t), at least t + 1 parties   participant signing: <br/>1<br/>> Channel id:<br/>3415D3FBE00<br/>please input password (AGREED offline with peers) of this session: <br/>Password to sign with tss_tss1_vault1:<br/>[Enter password] | > please set vault of this party:<br/>vault1<br/>> Password to sign with this vault:<br/>Password to sign with tss_tss1_vault1:<br/>[Enter password]<br/>> Participant as an old committee? [Y/n]:<br/>Y<br/>> Participant as a new committee? [Y/n]:<br/>Y<br/>> please set new total parties(n): <br/>3<br/>> please set new threshold(t), at least t + 1 parties   participant signing: <br/>1<br/>> Channel id:<br/>3415D3FBE00<br/>please input password (AGREED offline with peers) of this session: <br/>Password to sign with tss_tss1_vault1:<br/>[Enter password] |
+| output                     | INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp | INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp | INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp |
+| Files touched or generated | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key |
+
+* New committee having different t-n from old committee
+1. Change 1-3 into 2-4 scheme.  
+2. old parties (A, B) join new committee
+3. new parties (D, E) are newly-joined
+
+|         | D                               | E                               |
+| ------- | ------------------------------- | ------------------------------- |
+| command | ./tss init  --vault_name vault1 | ./tss init  --vault_name vault1 |
+|Interactive input|> please set moniker of this party:<br/> tss4<br/>> please set password for key share:<br/>[Enter password]<br/>> please intput again: <br/>[Enter password]|> please set moniker of this party:<br/> tss4<br/>> please set password for key share:<br/>[Enter password]<br/>> please intput again:<br/>[Enter password]|
+|output|Local party has been initialized under: ~/.tss/vault1|Local party has been initialized under: ~/.tss/vault1|
+
+* Regroup from 1-3 to 2-4, with 2 old parties (A and B) and 2 new parties (D and E)
+
+|                            | A (old&new committee)                                        | B (old&new committee)                                        | D (new committee)                                            | E (new committee)                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss regroup/ --vault_name vault1                           | ./tss regroup  --vault_name vault1                           | ./tss regroup  --vault_name vault1                           | ./tss regroup  --vault_name vault1                           |
+| Interactive input          | > please input password:<br/> [Enter password] <br/>> Participant as an old committee? [Y/n]: <br/>Y<br/> > Participant as a new commitee? [Y/n]: <br/>Y <br/>> please set NEW total parties(n):<br/> 4<br/> > please set NEW threshold(t), at least t + 1 parties   participant signing: <br/>2 <br/>> Channel id:<br/> 3415D3FBE00<br/> > please input password (AGREED offline with peers) of this session: <br/>[Enter password] | > please input password: <br/>[Enter password]<br/> > Participant as an old committee? [Y/n]:<br/> Y <br/>> Participant as a new committee? [Y/n]:<br/> Y <br/>> please set NEW total parties(n):<br/> 4<br/> > please set NEW threshold(t), at least t + 1 parties need participant signing:<br/> 2 <br/>> Channel id: 3415D3FBE00 <br/>> please input password (AGREED offline with peers) of this session: <br/>[Enter password] | > please input password: <br/>[Enter password] <br/>> please set Old total parties(n): <br/>3 <br/>> please set Old threshold(t), at least t + 1 parties need participant signing: <br/>1 <br/>> please set NEW total parties(n): <br/>4 <br/>> please set NEW threshold(t), at least t + 1 parties need participant signing: <br/>2<br/> > Channel id: <br/>3415D3FBE00 <br/>> please input password (AGREED offline with peers) of this session: <br/>[Enter password] | > please input password:<br/>[Enter password] <br/>> please set Old total parties(n): <br/>3 <br/>> please set Old threshold(t), at least t + 1 parties need participant signing: <br/>1 <br/>> please set NEW total parties(n): <br/>4<br/> > please set NEW threshold(t), at least t + 1 parties need participant signing: <br/>2<br/> > Channel id: <br/>3415D3FBE00<br/> > please input password (AGREED offline with peers) of this session: <br/>[Enter password] |
+| output                     |                                                              |                                                              |                                                              |                                                              |
+| Files touched or generated | ~/.tss/vault1/config.json<br/>  ~/.tss/vault1/pk.json <br/> ~/.tss/vault1/sk.json | ~/.tss/vault1/config.json<br/>  ~/.tss/vault1/pk.json <br/> ~/.tss/vault1/sk.json | ~/.tss/vault1/config.json<br/>  ~/.tss/vault1/pk.json <br/> ~/.tss/vault1/sk.json | ~/.tss/payment/config.json<br/>  ~/.tss/payment/pk.json <br/> ~/.tss/vault1/sk.json |
