@@ -11,7 +11,7 @@ Traditional **MultiSig (multi-signature)** is a more refined unlocking system th
 
 With **Threshold Signatures**, all of the parties must forge the vault’s lock together, in a modular way, where each party owns a share of the key. A TSS vault is indistinguishable from a regular vault and is hence universal, and it has the same privacy and verification cost of a regular vault. Even if only a subset of the keys is available, the vault may still be unlocked (this is known as meeting a threshold of participation).
 
-On Binance Chain, the new TSS feature will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
+Combining TSS feature  with Binance Chain client will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
 
 ## Architecture
 Let’s take a look at the major steps in TSS:
@@ -34,6 +34,11 @@ Let’s take a look at the major steps in TSS:
 cp -r ~/.bnbcli ~/.bnbcli_backup_tss (replace ~/.bnbcli with their bnbcli home)
 ```
 
+### Init
+
+`tss init` will create home directory of a new tss setup, generate p2p key pair.
+
+
 Here are the global transaction flags:
 
 | Name       | Type   | Description                                                  | Note                                              |
@@ -42,9 +47,6 @@ Here are the global transaction flags:
 | password   | string | the password of the vault                                    | must be 32 bytes or more, the default value is 48 |
 | home       | string | Path to config/route_table/node_key/tss_key files, configs in config file can be overridden by command line argument | the default value is "~/.tss"                     |
 
-### Init
-
-`tss init` will create home directory of a new tss setup, generate p2p key pair.
 
 | Name       | Type   | Description                                                  | Note                                              |
 | ---------- | ------ | ------------------------------------------------------------ | ------------------------------------------------- |
@@ -57,17 +59,16 @@ Here are the global transaction flags:
 |p2p.listen	|string	 |Adds a multiaddress to the listen list	||
 
 * Example
-```
-./tss init
-> please set moniker of this party:
-tss1
-> please set vault of this party:
-vault1
-> please set password of this vault:
-1234
-> please input again:
-1234
-```
+
+In this example, A, B and C are the parties who decided to share a private key together.
+
+
+|                            | A                                                            | B                                                            | C                                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss init                                                   | ./tss init                                                   | ./tss init                                                   |
+| Interactive input          | > please set moniker of this party: tss1> please set vault of this party:vault1> please set password of this vault:1234qwerasdf> please input again:1234qwerasdf | > please set moniker of this party: tss2> please set vault of this party:vault1> please set password of this vault:asdfqwer1234> please input again:asdfqwer1234 | > please set moniker of this party: tss3> please set vault of this party:vault1> please set password of this vault:qwer1234asdf> please input again:qwer1234asdf |
+| output                     | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        | Local party has been initialized under: ~/.tss/vault1        |
+| Files touched or generated | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              | ~/.tss/vault1/config.json~/.tss/vault1/node_key              |
 
 ### Describe
 
@@ -123,12 +124,14 @@ config of this vault:
 |channel_expire|int|expire time in minutes of this channel||
 
 * Example
-```
-./tss channel
-> please set expire time in minutes, (default: 30):
-[Enter]
-channel id: 3085D3EC76D
-```
+
+|                            | A                                                          | B    | C    |
+| -------------------------- | ---------------------------------------------------------- | ---- | ---- |
+| command                    | ./tss channel                                              | N/A  | N/A  |
+| Interactive input          | > please set expire time in minutes, (default: 30):[Enter] | N/A  | N/A  |
+| output                     | channel id: **3085D3EC76D**                                | N/A  | N/A  |
+| Files touched or generated | N/A                                                        | N/A  | N/A  |
+
 
 ### Keygen
 
@@ -147,34 +150,14 @@ Note: you need to make sure that all the parties are online.
 |threshold|int|threshold of this scheme, at least threshold + 1 parties need participant signing||
 
 * Example
-```
-./tss keygen --vault_name vault1
-> Password to sign with this vault:
-1234
-> Do you like re-bootstrap again?[y/N]:
-[Enter]
-> please set total parties(n):
-3
-> please set threshold(t), at least t + 1 parties  need participant signing:
-1
-> please set channel id of this session
-3085D3EC76D
-please input password (AGREED offline with peers) of this session:
-123456789
-Password of this tss vault: 1234qwerasdf
-18:00:09.777  INFO    tss-lib: party {0,tss1}: keygen finished! party.go:113
-18:00:09.777  INFO        tss: [tss1] received save data client.go:304
-18:00:09.777  INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309
-Password of this tss vault:
-NAME:   TYPE:   ADDRESS:                                                PUBKEY:
-tss_tss1_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc
 
-Output
-You should see the generated files in the home folder
-~/.tss/vault1/pk.json
-~/.tss/vault1/sk.json
-~/.tss/vault1/config.json
-```
+|                            | A                                                            | B                                                            | C                                                            |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| command                    | ./tss keygen --vault_name vault1                             | ./tss keygen --vault_name vault1                             | ./tss keygen --vault_name vault1                             |
+| Interactive input          | > Password to sign with this vault:1234qwerasdf> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties  need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session:123456789Password of this tss vault: 1234qwerasdf | > Password to sign with this vault:asdfqwer1234> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session: 123456789Password of this tss vault: asdfqwer1234 | > Password to sign with this vault:qwer1234asdf> Do you like re-bootstrap again?[y/N]: [Enter] > please set total parties(n): 3> please set threshold(t), at least t + 1 parties need participant signing: 1> please set channel id of this session3085D3EC76Dplease input password (AGREED offline with peers) of this session: 123456789Password of this tss vault: qwer1234asdf |
+| output                     | 18:00:09.777  INFO    tss-lib: party {0,tss1}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss1] received save data client.go:30418:00:09.777  INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss1_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.777  INFO    tss-lib: party {1,tss2}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss2] received save data client.go:30418:00:09.777  INFO        tss: [tss2] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss2_vault1       tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.773  INFO    tss-lib: party {2,tss3}: keygen finished! party.go:11318:00:09.773  INFO        tss: [tss3] received save data client.go:30418:00:09.773  INFO        tss: [tss3] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss3_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc |
+| Files touched or generated | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json | ~/.tss/vault1/pk.json~/.tss/vault1/sk.json~/.tss/vault1/config.json |
+
 
 if you want to add the generated key files in the bnbcli home, you can copy it to the home folder:
 ```
