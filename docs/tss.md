@@ -203,7 +203,7 @@ During this step, all parties have to initialite their P2P settings before gener
 | command                    | ./tss init                                                   | ./tss init                                                   | ./tss init                                                   |
 | Interactive input          | > please set moniker of this party: <br> tss1<br/>> please set vault of this party:<br/>vault1<br/>> please set password of thisvault:<br/>[input password]<br/>> please input again:<br/>[input password] | > please set moniker of this party: <br/>tss2<br/>> please set vault of this party:<br/>vault1<br/>> please set password of this vault:<br/>[input password]<br/>>please input again:<br/>[input password] | > please set moniker of this party:<br/>tss3<br/>> please set vault of this party:vault1<br/>> please set password of this vault:<br/>[input password]<br/>> please input again:<br/>[input password] |
 | output                     | Local party has been initialized under: <br/>~/.tss/vault1   | Local party has been initialized under: <br/>~/.tss/vault1   | Local party has been initialized under: <br/>~/.tss/vault1   |
-| Files touched or generated | ~/.tss/vault1/config.json <br/>~/.tss/vault1/node_key        | ~/.tss/vault1/config.json <br/>~/.tss/vault1/node_key        | ~/.tss/vault1/config.json <br/>~/.tss/vault1/node_key        |
+| Files touched or generated | ~/.tss/vault1/config.json      <br/>  ~/.tss/vault1/node_key | ~/.tss/vault1/config.json <br/>  ~/.tss/vault1/node_key      | ~/.tss/vault1/config.json <br/>   ~/.tss/vault1/node_key     |
 
 
 ### Step 2: Generate Channel ID for bootstraping
