@@ -1286,6 +1286,49 @@ paths:
           description: Generic error response
           schema:
             $ref: "#/definitions/Error"
+  /api/v1/timelock/{account_addr}?(id={recordid}):
+    get:
+      tags:
+        - timelock records
+      summary: Get timelock records of an address.
+      description: |
+          Get the timelock history of an address.
+
+          **Rate Limit:** 60 requests per IP per minute.
+      operationId: getTimeLocks
+      produces:
+          - application/json
+      parameters:
+          - name: address
+            in: path
+            type: string
+            description: 'The account address to query'
+            required: true
+          - in: query
+            name: id
+            description: "the record id of timelock to query"
+            required: false
+            type: integer
+            format: int64
+      responses:
+          '200':
+            description: Success
+            schema:
+              $ref: '#/definitions/TimeLocks'
+          '400':
+            description: 'Bad Request'
+            schema:
+              $ref: "#/definitions/Error"
+          '404':
+            description: 'Not Found'
+          '500':
+            description: 'internal server error'
+            schema:
+              $ref: "#/definitions/Error"
+          default:
+            description: Generic error response
+            schema:
+              $ref: "#/definitions/Error"
 
 definitions:
   Error:
@@ -2123,3 +2166,31 @@ definitions:
           voting_power:
             type: integer
             format: int64
+
+  TimeLocks:
+      type: array
+      properties:
+        id:
+          type: integer
+          title: ID
+          description: "The record id of the timelock transaction"
+          format: int64
+          x-omitempty: false
+        description:
+          type: string
+          description: "The description of the timelock transaction"
+          title: Description
+          x-omitempty: false
+        amount:
+          type: array
+          title: "Locked coins"
+          x-omitempty: false
+          items:
+            properties:
+              symbol: {type: string, example: BNB, format: currency}
+              amount: {type: string, title: Amount, description: "In decimal form, e.g. 0.00000000", example: "0.00000000", format: fixed8, x-omitempty: false}
+        locktime:
+          type: string
+          description: "The available unlock time"
+          title: LockTime
+          x-omitempty: false

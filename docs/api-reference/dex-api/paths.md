@@ -706,6 +706,33 @@ If the time window is larger than limits, only the first n klines will return. I
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
 
+### /api/v1/timelock/{account_addr}?(id={recordid})
+---
+##### ***GET***
+**Summary:** Get timelock records of an address.
+
+**Description:** Get the timelock history of an address.
+
+**Rate Limit:** 60 requests per IP per minute.
+
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| address | path | The account address to query | Yes | string |
+| id | query | the record id of timelock to query | No | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [TimeLocks](#timelocks) |
+| 400 | Bad Request | [Error](#error) |
+| 404 | Not Found |  |
+| 500 | internal server error | [Error](#error) |
+| default | Generic error response | [Error](#error) |
+
 ### Models
 ---
 
@@ -1103,3 +1130,12 @@ varies with msg type, if you query with --format=json.
 | address | string | hex address |  |
 | pub_key | string | hex-encoded |  |
 | voting_power | long |  |  |
+
+### TimeLocks
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | long | The record id of the timelock transaction |  |
+| description | string | The description of the timelock transaction |  |
+| amount | [  ] |  |  |
+| locktime | string | The available unlock time |  |
