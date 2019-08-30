@@ -53,6 +53,46 @@ In brief, transactions pass through several [phases](https://tendermint.com/docs
 
 The status "code" recorded for each of these phases can differ, so be sure to check that it is `0` (meaning success) for each of them. A non-zero "code" indicates that there was a problem with the transaction during processing.
 
+For example, [this transaction](https://explorer.binance.org/tx/F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362) was invalid because the order was already canceled. You can query that the code for this transaction is `405`.
+```json
+{
+code: 393621,
+hash: "F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362",
+height: "30771453",
+log: "{"codespace":6,"code":405,"abci_code":393621,"message":"Failed to find order [E0B781A5DA419E0E596D13FE8A06BF5F9CE9C37D-19450]"}",
+ok: false,
+tx: {
+type: "auth/StdTx",
+value: {
+data: null,
+memo: "",
+msg: [
+{
+type: "dex/CancelOrder",
+value: {
+refid: "E0B781A5DA419E0E596D13FE8A06BF5F9CE9C37D-19450",
+sender: "bnb1uzmcrfw6gx0quktdz0lg5p4lt7wwnsmat6ksd6",
+symbol: "BNB_TUSDB-888"
+}
+}
+],
+signatures: [
+{
+account_number: "153135",
+pub_key: {
+type: "tendermint/PubKeySecp256k1",
+value: "AzWMnQAwvCP9mbpNyaGuOtNVum1ktvlBb+XFy8D50xmh"
+},
+sequence: "19452",
+signature: "y2FTS4rAqWvDmNWLxsOg+8vrz9XZ4gDXs/tGh/psnQwRMQBtw1x1a2TSCgc0G4qbvh0YICe5ZvJFRNvg/zGG7w=="
+}
+],
+source: "889"
+}
+}
+}
+```
+
 The two phases we should be concerned about are `CheckTx` and `DeliverTx`.
 
 We recommend that you broadcast your transactions via [REST API](#rest-api) or, if you wish to run a [Full Node](#full-node), [Node RPC](#node-rpc) via the `BroadcastTxSync` command.
