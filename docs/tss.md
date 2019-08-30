@@ -15,7 +15,10 @@
     + [Step 1: Init TSS](#step-1--init-tss)
     + [Step 2: Generate Channel ID for bootstraping](#step-2--generate-channel-id-for-bootstraping)
     + [Step 3: Generate and Share Secret](#step-3--generate-and-share-secret)
-    + [Step 3: Sign Transaction](#step-3--sign-transaction)
+    + [Step 4: Sign Transaction](#step-3--sign-transaction)
+    + [Step 5: Regroup Vault](#step-5--regroup-vault)
+
+
 
 
 ## Introduction
@@ -33,7 +36,7 @@ Combining TSS feature  with Binance Chain client will help users manage their fu
 
 ## Workflow
 Let’s take a look at the major steps in TSS:
-* **Vault Initialization**: the first step is for setting up tss parameters of each party. This will initialize the node's p2p listen address and setup a directory to save key. It's recommended that you should save your tss key in a different folder other than normal key info. 
+* **Vault Initialization**: the first step is for setting up tss parameters of each party. This will initialize the node's p2p listen address and setup a directory to save key. It's recommended that you should save your tss key in a different folder other than normal key info.
 * **Key Generation**: the second step is also the most complex. We need to define the quorum policy: count of total parties (n) that holds secret shares and threshold (t) which means at least t + 1 parties need to take part in the signing process. We need to generate a key which will be public and used to verify future signatures. However, we also have to generate an individual secret for each party, which is called a secret share. The functions guarantee the same public key to all parties and a different secret share for each. In this way, we achieve: (1) privacy: no secret shares data is leaked between any parties, and (2) correctness: the public key is intact with secret share. They need to agree on the channel which they want to use for sending messages between each other. The channel will have its corresponding password. Both ID and password needs to be shared offline.
 
 * **Signing**: this step involves a signature generation function. The input of each party will be its own secret share, created as output of the distributed key generation in the previous step. There is also public input known to all, which is the message to be signed. The output will be a digital signature, and the property of privacy ensures that no leakage of secret shares occurred during the computation.
@@ -142,7 +145,7 @@ It's advised to refresh the channels regularly.
 
 ### Keygen
 
-This command will generated the private key and share the secret. Everyone needs to agree on the password of this private key. The lenght of password must be more than **eight**. 
+This command will generated the private key and share the secret. Everyone needs to agree on the password of this private key. The lenght of password must be more than **eight**.
 
 Note: you need to make sure that all the parties are online.
 
@@ -198,7 +201,7 @@ In this example, A, B and C are the parties who decided to share a private key t
 
 ### Step 1: Init TSS
 
-During this step, all parties have to initialite their P2P settings before generate the shared key.
+During this step, all parties from different machines have to initialite their P2P settings before generate the shared key.
 
 
 |                            | A                                                            | B                                                            | C                                                            |
@@ -231,7 +234,7 @@ In this step, the private key will be generated and shared between these three p
 | output                     | 18:00:09.777  INFO    tss-lib: party {0,tss1}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss1] received save data client.go:30418:00:09.777  INFO        tss: [tss1] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss1_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.777  INFO    tss-lib: party {1,tss2}: keygen finished! party.go:11318:00:09.777  INFO        tss: [tss2] received save data client.go:30418:00:09.777  INFO        tss: [tss2] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss2_vault1       tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc | 18:00:09.773  INFO    tss-lib: party {2,tss3}: keygen finished! party.go:11318:00:09.773  INFO        tss: [tss3] received save data client.go:30418:00:09.773  INFO        tss: [tss3] bech32 address is: tbnb1mcn0tl9rtf03ke7g2a6nedqtrd470e8l8035jp client.go:309Password of this tss vault:NAME:   TYPE:   ADDRESS:                                                PUBKEY:tss_tss3_vault1        tss     tbnb19277gzv934ayctxeg5k9zdwnx3j48u6tydjv9p     bnbp1addwnpepqwazk6d3f6e3f5rjev6z0ufqxk8znq8z89ax2tgnwmzreaq8nu7sx2u4jcc |
 | Files touched or generated | ~/.tss/vault1/pk.json <br/>~/.tss/vault1/sk.json<br/>~/.tss/vault1/config.json | ~/.tss/vault1/pk.json<br/>~/.tss/vault1/sk.json<br/>~/.tss/vault1/config.json | ~/.tss/vault1/pk.json<br/>~/.tss/vault1/sk.json<br/>~/.tss/vault1/config.json |
 
-### Step 3: Sign Transaction
+### Step 4: Sign Transaction
 
 In this steo, A and B decided to sign a transaction together. Both A and B will try to broadcast the transaction and only one of them will succeed.
 
@@ -244,7 +247,7 @@ In this steo, A and B decided to sign a transaction together. Both A and B will 
 
 
 
-### Step 3: Regroup Vault
+### Step 5: Regroup Vault
 
 First, please generate a new channel for messaging:
 
@@ -266,7 +269,7 @@ Then, we can switch to the new channel for sending messages to each others.
 | Files touched or generated | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key | ~/.tss/vault1/config.json<br/> ~/.tss/vault1/pk.json<br/> ~/.tss/vault1/sk.json<br/> ~/.tss/vault1/node_key |
 
 * New committee having different t-n from old committee
-1. Change 1-3 into 2-4 scheme.  
+1. Change 1-3 into 2-4 scheme.
 2. old parties (A, B) join new committee
 3. new parties (D, E) are newly-joined
 
