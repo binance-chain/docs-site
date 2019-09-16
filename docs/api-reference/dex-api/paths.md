@@ -769,6 +769,32 @@ If the time window is larger than limits, only the first n klines will return. I
 | ---- | ----------- | ------ |
 | 200 | OK | [AtomicSwapVo](#atomicswapvo) |
 
+### /api/v1/timelock/{account_addr}?(id={recordid})
+---
+##### ***GET***
+**Summary:** Get timelock records of an address.
+
+**Description:** Get the timelock history of an address.
+
+**Rate Limit:** 60 requests per IP per minute.
+
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| address | path | The account address to query | Yes | string |
+| id | query | the record id of timelock to query | No | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [TimeLocks](#timelocks) |
+| 400 | Bad Request | [Error](#error) |
+| 404 | Not Found |  |
+| 500 | internal server error | [Error](#error) |
+
 ### Models
 ---
 
@@ -1225,3 +1251,12 @@ varies with msg type, if you query with --format=json.
 | txHash | string |  |  |
 | txType | string |  |  |
 | value | string |  |  |
+
+### TimeLocks
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | long | The record id of the timelock transaction |  |
+| description | string | The description of the timelock transaction |  |
+| amount | [  ] |  |  |
+| locktime | string | The available unlock time |  |
