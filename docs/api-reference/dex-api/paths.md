@@ -670,7 +670,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | side | query | transaction side. Allowed value: [ RECEIVE, SEND] | No | enum string |
 | startTime | query | start time in Milliseconds | No | long |
 | txAsset | query | txAsset | No | string |
-| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG] | No | enum string |
+| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | No | enum string |
 
 **Responses**
 
@@ -686,7 +686,7 @@ If the time window is larger than limits, only the first n klines will return. I
 ##### ***GET***
 **Summary:** Get transactions in the specific block.
 
-**Description:** Get transactions in a specific block. Currently 'confirmBlocks' and 'txAge' are not supported.
+**Description:** Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
 
 **Rate Limit:** 60 requests per IP per minute.
 
@@ -701,10 +701,73 @@ If the time window is larger than limits, only the first n klines will return. I
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | OK | [BlockTxVo](#blocktxvo) |
+| 200 | OK | [BlockTx](#blocktx) |
 | 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
+
+### /api/v2/transactions-in-block/{blockHeight}
+---
+##### ***GET***
+**Summary:** transactions in Block
+
+**Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| blockHeight | path | blockHeight | Yes | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [BlockTxV2](#blocktxv2) |
+| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+
+### /api/v1/atomic-swaps
+---
+##### ***GET***
+**Summary:** AtomicSwap
+
+**Description:** Get atomic swaps by address.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| endTime | query | end time | No | long |
+| fromAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+| limit | query | limit | No | integer |
+| offset | query | offset | No | integer |
+| startTime | query | start time; The maximum start - end query window is 3 months; Default query window is the latest 30 days. | No | long |
+| toAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [AtomicSwapPageVo](#atomicswappagevo) |
+
+### /api/v1/atomic-swaps/{id}
+---
+##### ***GET***
+**Summary:** AtomicSwap
+
+**Description:** Get an AtomicSwap by swap id
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path | swap id | Yes | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [AtomicSwapVo](#atomicswapvo) |
 
 ### Models
 ---
@@ -1022,12 +1085,19 @@ varies with msg type, if you query with --format=json.
 | total | long | total sum of transactions |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
-### BlockTxVo
+### BlockTx
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | blockHeight | long | block height |  |
 | tx | [ [Tx](#tx) ] |  |  |
+
+### BlockTxV2
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long | block height |  |
+| tx | [ [TxV2](#txv2) ] |  |  |
 
 ### Tx
 
@@ -1049,6 +1119,7 @@ varies with msg type, if you query with --format=json.
 | value | string | value of transaction |  |
 | source | long |  |  |
 | sequence | long |  |  |
+| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
 | proposalId | string |  |  |
 
 ### ExchangeRate
@@ -1103,3 +1174,54 @@ varies with msg type, if you query with --format=json.
 | address | string | hex address |  |
 | pub_key | string | hex-encoded |  |
 | voting_power | long |  |  |
+
+### AtomicSwapPageVo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| atomicSwaps | [ [AtomicSwapVo](#atomicswapvo) ] |  |  |
+| total | long |  |  |
+
+### AtomicSwapVo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| closedTime | dateTime |  |  |
+| createTime | dateTime |  |  |
+| crossChain | integer |  |  |
+| expectedIncome | string |  |  |
+| expireHeight | long |  |  |
+| fromAddr | string |  |  |
+| inAmount | string |  |  |
+| outAmount | string |  |  |
+| randomNumber | string |  |  |
+| randomNumberHash | string |  |  |
+| recipientOtherChain | string |  |  |
+| status | integer |  |  |
+| swapId | string |  |  |
+| timestamp | dateTime |  |  |
+| toAddr | string |  |  |
+| updateTime | dateTime |  |  |
+
+### TxV2
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long |  |  |
+| code | integer |  | 0 |
+| data | string |  |  |
+| fromAddr | string |  |  |
+| memo | string |  |  |
+| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
+| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
+| sequence | long |  |  |
+| source | long |  |  |
+| subTransactions | [ [SubTxVo](#subtxvo) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
+| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| timeStamp | dateTime |  |  |
+| toAddr | string |  |  |
+| txAsset | string |  |  |
+| txFee | string |  |  |
+| txHash | string |  |  |
+| txType | string |  |  |
+| value | string |  |  |

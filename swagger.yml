@@ -1221,7 +1221,7 @@ paths:
         type: string
       - name: txType
         in: query
-        description: "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG]"
+        description: "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL]"
         required: false
         type: enum string
         allowEmptyValue: false
@@ -1238,6 +1238,16 @@ paths:
         - VOTE
         - MINT
         - DEPOSIT
+        - CREATE_VALIDATOR
+        - REMOVE_VALIDATOR
+        - TIME_LOCK
+        - TIME_UNLOCK
+        - TIME_RELOCK
+        - SET_ACCOUNT_FLAG
+        - HTL_TRANSFER
+        - CLAIM_HTL
+        - DEPOSIT_HTL
+        - REFUND_HTL
       responses:
         '200':
           description: OK
@@ -1259,7 +1269,7 @@ paths:
         - transaction in block
       summary: Get transactions in the specific block.
       description: |
-        Get transactions in a specific block. Currently 'confirmBlocks' and 'txAge' are not supported.
+        Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
 
         **Rate Limit:** 60 requests per IP per minute.
       operationId: getTransactionsInBlock
@@ -1275,7 +1285,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/BlockTxVo'
+            $ref: '#/definitions/BlockTx'
         '400':
           description: 'Bad Request. The block to query is higher than current highest block.'
           schema:
@@ -1286,6 +1296,115 @@ paths:
           description: Generic error response
           schema:
             $ref: "#/definitions/Error"
+      deprecated: true
+  '/api/v2/transactions-in-block/{blockHeight}':
+    get:
+      tags:
+        - transaction
+      summary: transactions in Block
+      description: Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+      operationId: getTransactionsInBlockV2
+      produces:
+        - application/json
+      parameters:
+        - name: blockHeight
+          in: path
+          description: blockHeight
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BlockTxV2'
+        '400':
+          description: 'Bad Request. The block to query is higher than current highest block.'
+          schema:
+            $ref: "#/definitions/Error"
+          '404':
+            description: 'Not Found'
+          default:
+            description: Generic error response
+            schema:
+              $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/atomic-swaps:
+    get:
+      tags:
+        - atomicSwap
+      summary: AtomicSwap
+      description: Get atomic swaps by address.
+      operationId: getAtomicSwapsByAddrUsingGET
+      produces:
+        - '*/*'
+        - application/json
+      parameters:
+        - name: endTime
+          in: query
+          description: end time
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: fromAddress
+          in: query
+          description: At least one of toAddress and fromAddress should be provided as parameter
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: startTime
+          in: query
+          description: start time; The maximum start - end query window is 3 months; Default query window is the latest 30 days.
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: toAddress
+          in: query
+          description: At least one of toAddress and fromAddress should be provided as parameter
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AtomicSwapPageVo'
+  '/api/v1/atomic-swaps/{id}':
+    get:
+      tags:
+        - atomicSwap
+      summary: AtomicSwap
+      description: Get an AtomicSwap by swap id
+      operationId: getAtomicSwapUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: swap id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AtomicSwapVo'
 
 definitions:
   Error:
@@ -1975,7 +2094,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Tx'
-  BlockTxVo:
+  BlockTx:
     type: object
     properties:
       blockHeight:
@@ -1986,6 +2105,17 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Tx'
+  BlockTxV2:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      tx:
+        type: array
+        items:
+          $ref: '#/definitions/TxV2'
   Tx:
     type: object
     properties:
@@ -2038,6 +2168,9 @@ definitions:
       sequence:
         type: integer
         format: int64
+      swapId:
+        type: string
+        description: Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL
       proposalId:
         type: string
     title: Tx
@@ -2123,3 +2256,111 @@ definitions:
           voting_power:
             type: integer
             format: int64
+
+  AtomicSwapPageVo:
+        type: object
+        properties:
+          atomicSwaps:
+            type: array
+            items:
+              $ref: '#/definitions/AtomicSwapVo'
+          total:
+            type: integer
+            format: int64
+        title: AtomicSwapPageVo
+  AtomicSwapVo:
+        type: object
+        properties:
+          closedTime:
+            type: string
+            format: date-time
+          createTime:
+            type: string
+            format: date-time
+          crossChain:
+            type: integer
+            format: int32
+          expectedIncome:
+            type: string
+          expireHeight:
+            type: integer
+            format: int64
+          fromAddr:
+            type: string
+          inAmount:
+            type: string
+          outAmount:
+            type: string
+          randomNumber:
+            type: string
+          randomNumberHash:
+            type: string
+          recipientOtherChain:
+            type: string
+          status:
+            type: integer
+            format: int32
+          swapId:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+          toAddr:
+            type: string
+          updateTime:
+            type: string
+            format: date-time
+        title: AtomicSwapVo
+  TxV2:
+    type: object
+    required: [blockHeight,code,data,fromAddr,memo,sequence,source,timeStamp,toAddr,txAsset,txFee, txHash,txType,value]
+    properties:
+      blockHeight:
+        type: integer
+        format: int64
+      code:
+        type: integer
+        format: int32
+        example: 0
+      data:
+        type: string
+      fromAddr:
+        type: string
+      memo:
+        type: string
+      orderId:
+        type: string
+        description: Optional. Available when the transaction type is NEW_ORDER
+      proposalId:
+        type: string
+        description: Optional. Available when the transaction type is PROPOSAL
+      sequence:
+        type: integer
+        format: int64
+      source:
+        type: integer
+        format: int64
+      subTransactions:
+        type: array
+        items:
+          $ref: '#/definitions/SubTxVo'
+        description: Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets
+      swapId:
+        type: string
+        description: Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL
+      timeStamp:
+        type: string
+        format: date-time
+      toAddr:
+        type: string
+      txAsset:
+        type: string
+      txFee:
+        type: string
+      txHash:
+        type: string
+      txType:
+        type: string
+      value:
+        type: string
+    title: TxV2
