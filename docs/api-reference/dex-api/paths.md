@@ -731,7 +731,6 @@ If the time window is larger than limits, only the first n klines will return. I
 | 400 | Bad Request | [Error](#error) |
 | 404 | Not Found |  |
 | 500 | internal server error | [Error](#error) |
-| default | Generic error response | [Error](#error) |
 
 ### Models
 ---

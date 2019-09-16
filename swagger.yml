@@ -1325,10 +1325,6 @@ paths:
             description: 'internal server error'
             schema:
               $ref: "#/definitions/Error"
-          default:
-            description: Generic error response
-            schema:
-              $ref: "#/definitions/Error"
 
 definitions:
   Error:
