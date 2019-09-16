@@ -142,14 +142,20 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 > Please note that this feature is still expreimental.
 
 In Binance Chain network, almost every fullnode operator will first enable `state-sync` to get synced with peers. After downloading all the state machine changes, the fullnode will go back to `fast -sync` mode and eventually in consensus mode.  In fast-sync mode, the fullnode will have high delay because it needs to be aware of peers’ heights. It downloads all the blocks in parallel and verifying their commits. On the other hand, it will consume a lot of bandwidth and CPU resources because it receives a lot of redundant messages for consensus engine and writes more WAL.
-To increase the efficiency for fullnodes, the hot-sync protocol is introduced. A fullnode under hot-sync protocol will pull the blocks from its peers and it will subscribe these blocks in advance. It will skip the message for prevotes and only subscribe to maj23 precommit and block proposal messages. At the same time, it will put its peers in different buckets and subscribe to peers in active buckets. Hot-sync protocol will benefit fullnodes who have enough trust and do not need consensus by saving network and CPU resources.
+To increase the efficiency for fullnodes, the hot-sync protocol is introduced. A fullnode under hot-sync protocol will pull the blocks from its peers and it will subscribe these blocks in advance. It will skip the message for prevotes and only subscribe to maj23 precommit and block proposal messages. At the same time, it will put its peers in different buckets and subscribe to peers in active buckets. Hot-sync protocol will benefit fullnodes who have enough trust in their peers and do not need consensus by saving network and CPU resources.
+
+The state transition of a hot sync reactor can be of three part:
+
 ```
-                                Hot --> Consensus
+                              Hot --> Consensus
                                  ^    ^
                                  |   /
                                  |  /
                                 Mute
 ```
+1. `Mute`: will only answer subscribe requests from others, will not sync from others or from consensus reactor. The Hot Sync reactor stays in `Mute` when it is fast syncing.
+2. `Hot`:  handle subscribe requests from other peers as a publisher, also subscribe block messages from other peers as a subscriber. A non-validators will stay in `Hot` when the peer have catch up after fast syncing.
+3. `Consensus`: handle subscribes requests from other peers as a publisher, but get block/commit message from consensus reactor. A sentry node should stay in `Consensus`. Or a non-validator should switch from `Hot` to `Consensus` when it become a validator.
 
 Configuration is located in `$BNCHOME/config/config.toml`:
 
