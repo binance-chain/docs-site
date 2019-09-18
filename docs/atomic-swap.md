@@ -40,7 +40,7 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 * On *testnet*:
 
 ```
-./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income 10000:TEST-599 --height-span 10000 --from <from-addr> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income <expectedIncome> --height-span <span> --from <from-addr> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 **Example output:**
@@ -54,6 +54,23 @@ Password to sign with 'guest':
 Committed at block 39984169 (tx hash: B5A3DD92A40E98745BBE9F608944FE5511B81071B34E9947A754A04A5F378A85, response: {Code:0 Data:[77 137 139 200 85 141 170 77 129 116 134 215 169 59 119 178 200 47 206 194 18 58 191 74 30 183 210 82 18 55 236 205] Log:Msg 0: swapID: 4d898bc8558daa4d817486d7a93b77b2c82fcec2123abf4a1eb7d2521237eccd Info: GasWanted:0 GasUsed:0 Tags:[{Key:[115 101 110 100 101 114] Value:[116 98 110 98 49 103 57 114 122 99 48 101 50 106 102 56 101 102 51 113 112 57 97 120 56 104 48 112 109 112 109 118 106 122 119 109 116 113 52 106 120 102 114] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0} {Key:[114 101 99 105 112 105 101 110 116] Value:[116 98 110 98 49 119 120 101 112 108 121 119 55 120 56 97 97 104 121 57 51 119 57 54 121 104 119 109 55 120 99 113 51 107 101 52 102 102 97 115 112 51 100] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0} {Key:[97 99 116 105 111 110] Value:[72 84 76 84] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}] Codespace: XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0})
 ```
 
+2. Swap from Binance Chain to Ethereum
+
+* On *testnet*:
+
+
+```
+./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <recipient-addr>  --recipient-other-chain Ethereum  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+3. Swap from Ethereum to Binance Chain
+
+* On *testnet*:
+
+
+```
+./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome>  --sender-other-chain Ethereum  --recipient-addr <bep2-address> --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
 
 ### Deposit HTLT
 
@@ -236,16 +253,16 @@ refundHTLT | N/A |  0.000375 BNB | Y
 
 
 ### Swap Tokens from Ethereum to Binance Chain
-![image-20190918193751444](/Users/huangsuyu/Library/Application Support/typora-user-images/image-20190918193751444.png)
+![image-20190918193751444](assets/eth2bnc.png)
 
 ### Swap Tokens from Binance Chain to Ethereum
-![image-20190918193910521](/Users/huangsuyu/Library/Application Support/typora-user-images/image-20190918193910521.png)
+![image-20190918193910521](assets/bnc2eth.png)
 
 ### Swap between Several BEP2 tokens
 
-![image-20190918193422062](/Users/huangsuyu/Library/Application Support/typora-user-images/image-20190918193422062.png)
+![image-20190918193422062](assets/same-chain.png)
 
 ### Swap between Several BEP2 tokens fails
 
-![image-20190918193518929](/Users/huangsuyu/Library/Application Support/typora-user-images/image-20190918193518929.png)
+![image-20190918193518929](assets/samechain-fail.png)
 
