@@ -181,6 +181,10 @@ Submit Delist Proposal | N/A | 1000 BNB | N
 Deposit | N/A | 0.000625 BNB | N
 Enable Memo Check | N/A | 1 BNB | N
 Disable Memo Check | N/A | 1 BNB | N
+depositHTLT | N/A |  0.000375 BNB | Y
+claimHTLT | N/A |  0.000375 BNB | Y
+refundHTLT | N/A |  0.000375 BNB | Y
+
 
 ### Testnet Fees API
 
