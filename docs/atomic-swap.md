@@ -2,8 +2,7 @@
 
 ## Introduction
 As explained in [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Binance Chain and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
-The related fund will transfer locked tokens to a purely-code-controlled escrow account and before the swap time expires. The account for mainnet is: *bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u* and the account for testnet is: *tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d*
-
+During the swap process, the related fund will be locked to a purely-code-controlled escrow account. The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transfered from the purely-code-controlled escrow account to client accounts.
 ## Commands
 
 ### Hash Timer Locked Transfer
@@ -60,16 +59,18 @@ Committed at block 39984169 (tx hash: B5A3DD92A40E98745BBE9F608944FE5511B81071B3
 
 
 ```
-./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <recipient-addr>  --recipient-other-chain Ethereum  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <recipient-addr>  --recipient-other-chain [client ethereum address]  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 3. Swap from Ethereum to Binance Chain
+
+> Note: Once cross-chain is true, --recipient-other-chain must not be empty
 
 * On *testnet*:
 
 
 ```
-./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome>  --sender-other-chain Ethereum  --recipient-addr <bep2-address> --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --from  <from-addr> --chain-id Binance-Chain-Nile --height-span  <heightSpan>  --amount  <amount> --expected-income <expectedIncome> --recipient-other-chain [deputy ethereum address] --sender-other-chain [client ethereum address] --recipient-addr --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 ### Deposit HTLT
