@@ -27,9 +27,9 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 #### Outputs
 | Name | Type | Description |
 | -----| ---- | ----------- |
-|Random number|int64||
+|Random number|32 bytes||
 |Timestamp|int64||
-|Random number hash|int64||
+|Random number hash|32 bytes||
 |Swap ID|32 bytes||
 
 #### Examples
@@ -38,7 +38,7 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 
 * On *testnet*:
 
-```
+```shell
 ./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income <expectedIncome> --height-span <span> --from <from-addr> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
@@ -58,7 +58,7 @@ Committed at block 39984169 (tx hash: B5A3DD92A40E98745BBE9F608944FE5511B81071B3
 * On *testnet*:
 
 
-```
+```shell
 ./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <recipient-addr>  --recipient-other-chain [client ethereum address]  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
@@ -69,7 +69,7 @@ Committed at block 39984169 (tx hash: B5A3DD92A40E98745BBE9F608944FE5511B81071B3
 * On *testnet*:
 
 
-```
+```shell
 ./tbnbcli token HTLT --from  <from-addr> --chain-id Binance-Chain-Nile --height-span  <heightSpan>  --amount  <amount> --expected-income <expectedIncome> --recipient-other-chain [deputy ethereum address] --sender-other-chain [client ethereum address] --recipient-addr --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
@@ -89,9 +89,8 @@ Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT 
 
 * On testnet:
 
-```
+```shell
 ./tbnbcli token deposit --swap-id <swap-id>  --amount 10000:TEST-599 --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
-
 ```
 
 Example output
@@ -117,9 +116,8 @@ Claim Hash Timer Locked Transfer is to claim the locked asset by showing the ran
 
 * On testnet:
 
-```
+```shell
 ./tbnbcli token claim --swap-id  <swap-id> --random-number <random-number> --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
-
 ```
 
 Example output:
@@ -142,18 +140,18 @@ Refund Hash Timer Locked Transfer is to refund the locked asset after timelock i
 
 * On testnet:
 
-```
+```shell
 ./tbnbcli token refund --swap-id <swap-id> --from <from-key>  --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Common error:
 
 * Already complete
-```
+```shell
 ERROR: {"codespace":8,"code":12,"abci_code":524300,"message":"Expected swap status is Open, actually it is Completed"}
 ```
 * Not expired
-```
+```json
 ERROR: {"codespace":8,"code":8,"abci_code":524296,"message":"Current block height is 40003412, the expire height (40013236) is still not reached"}
 ```
 
