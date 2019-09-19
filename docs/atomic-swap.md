@@ -173,7 +173,32 @@ Query atomic swap allows you to search swap information by `swap-ID`
 ```
 Expected output
 ```json
-{"from":"tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr","to":"tbnb1nkx994qvqmqgk57vguqh6zjlacqzxdkue5zjyx","out_amount":[{"denom":"BNB","amount":"100"}],"in_amount":[{"denom":"TEST-599","amount":"10000"}],"expected_income":"10000:TEST-599","recipient_other_chain":"","random_number_hash":"5768702259ee55983378d7b8207890c666648264524b9dada551386f832ba6b1","random_number":"927c1ac33100bdbb001de19c626a05a7c3c11304fc825f5eabb22e741507711b","timestamp":"1568792486","cross_chain":false,"expire_height":"39994169","index":"53","closed_time":"1568792927","status":"Completed"}
+{
+  "from": "tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr",
+  "to": "tbnb1nkx994qvqmqgk57vguqh6zjlacqzxdkue5zjyx",
+  "out_amount": [
+    {
+      "denom": "BNB",
+      "amount": "100"
+    }
+  ],
+  "in_amount": [
+    {
+      "denom": "TEST-599",
+      "amount": "10000"
+    }
+  ],
+  "expected_income": "10000:TEST-599",
+  "recipient_other_chain": "",
+  "random_number_hash": "5768702259ee55983378d7b8207890c666648264524b9dada551386f832ba6b1",
+  "random_number": "927c1ac33100bdbb001de19c626a05a7c3c11304fc825f5eabb22e741507711b",
+  "timestamp": "1568792486",
+  "cross_chain": false,
+  "expire_height": "39994169",
+  "index": "53",
+  "closed_time": "1568792927",
+  "status": "Completed"
+}
 ```
 ### Query Atomic Swap ID By Recipient
 
