@@ -291,7 +291,7 @@ message TokenBurn {
 #### List
 List is used to add a new trading pair.
 ```go
-message DexList {
+message DexList{
   0xB41DE13F // hardcoded, object type prefix in 4 bytes
   bytes From // sender's address
   int64 ProposalId // id of corresponding proposal
@@ -304,7 +304,7 @@ message DexList {
 #### Submit Proposal
 Submit proposal is used to create a proposal for validators about adding trading pairs
 ```go
-message {
+message Submit{
   0xB42D614E // hardcoded, object type prefix in 4 bytes
   string Title // Title of the proposal
   string Description // Description of the proposal
@@ -336,7 +336,7 @@ message Deposit{
 #### Time-lock
 You can only lock tokens on your own account for a certain period of time.
 ```go
-message Deposit{
+message Timerelock{
   0x07921531 // hardcoded, object type prefix in 4 bytes
   bytes From // sender's address
   string Description // Description of the lock
@@ -352,7 +352,7 @@ message Deposit{
 #### Time-unlock
 You can  unlock tokens on your own account after a certain period of time.
 ```go
-message Deposit{
+message Timeunlock{
   0xC4050C6C   // hardcoded, object type prefix in 4 bytes
   bytes From // sender's address
   int64 Id // lock time id
@@ -362,7 +362,7 @@ message Deposit{
 #### Time-relock
 You can  relock tokens on your own account after a certain period of time.
 ```go
-message Deposit{
+message Timerelock{
   0x504711DA // hardcoded, object type prefix in 4 bytes
   bytes From // sender's address
   int64 Id // lock time id
@@ -374,5 +374,61 @@ message Deposit{
   int64 LockTime // lock time
 }
 ```
+#### HTLT
 
+Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to serve as HTLC in the first step of Atomic Swap
 
+```go
+message HTLT{
+  0xB33F9A24 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  bytes To // receiver's address
+  string RecipientOtherChain string
+  string SenderOtherChain
+  bytes RandomNumberHash
+  int64  Timestamp
+  message Coin {
+    string denom
+    int64 amount
+  }
+  string ExpectedIncome
+  int64 HeightSpan
+  bool CrossChain
+}
+```
+
+#### Deposit HTLT
+Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT which is for single chain atomic swap.
+
+```go
+message DepositHTLT{
+  0x63986496 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  message Coin {
+    string denom
+    int64 amount
+  }
+  bytes SwapID
+}
+```
+#### Claim HTLT
+Claim Hash Timer Locked Transfer is to claim the locked asset by showing the random number value that matches the hash. Each HTLT locked asset is guaranteed to be release once.
+
+```go
+message ClaimHTLTMsg{
+  0xC1665300 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  bytes SwapID
+  bytes RandomNumber
+}
+```
+#### Refund HTLT
+
+Refund Hash Timer Locked Transfer is to refund the locked asset after timelock is expired.
+```go
+message RefundHTLTMsg{
+  0x3454A27C // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  bytes SwapID
+}
+```
