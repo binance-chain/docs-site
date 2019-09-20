@@ -258,11 +258,11 @@ Issue (create) new asset on Binance chain.
 ```go
 message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
-  bytes  From  // issuer's address
-  string Name // token name
-  string Symbol // token symbol
-  string TotalSupply // total supply
-  bool Mintable // is mintable
+  bytes  from  // issuer's address
+  string name // token name
+  string symbol // token symbol
+  string total_supply // total supply
+  bool mintable // is mintable
 }
 ```
 
@@ -271,9 +271,9 @@ Mint is used to increase the total supply of a token.
 ```go
 message Mint {
   0x467E0829 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  string Symbol string // token symbol
-  int64 Amount // increase amount
+  bytes from // sender's address
+  string symbol string // token symbol
+  int64 amount // increase amount
 }
 ```
 
@@ -282,9 +282,9 @@ Burn is used to decrease the total supply of a token.
 ```go
 message TokenBurn {
   0x7ED2D2A0 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  string Symbol string // token symbol
-  int64 Amount // increase amount
+  bytes from // sender's address
+  string symbol string // token symbol
+  int64 amount // increase amount
 }
 ```
 
@@ -293,11 +293,11 @@ List is used to add a new trading pair.
 ```go
 message DexList{
   0xB41DE13F // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  int64 ProposalId // id of corresponding proposal
-  string BaseAssetSymbol // token symbol of base asset
-  string QuoteAssetSymbol // token symbol of quote asset
-  int64 InitPrice // init price of the new token
+  bytes from // sender's address
+  int64 proposal_id // id of corresponding proposal
+  string base_asset_symbol // token symbol of base asset
+  string quote_asset_symbol // token symbol of quote asset
+  int64 init_price // init price of the new token
 }
 ```
 
@@ -306,10 +306,10 @@ Submit proposal is used to create a proposal for validators about adding trading
 ```go
 message Submit{
   0xB42D614E // hardcoded, object type prefix in 4 bytes
-  string Title // Title of the proposal
-  string Description // Description of the proposal
-  byte ProposalType // Type of proposal. Initial set {PlainTextProposal, SoftwareUpgradeProposal,ListTradingPair, FixedFeeParams}
-  bytes Proposer // Address of the proposer
+  string title // Title of the proposal
+  string description // Description of the proposal
+  byte proposal_type // Type of proposal. Initial set {PlainTextProposal, SoftwareUpgradeProposal,ListTradingPair, FixedFeeParams}
+  bytes proposer // Address of the proposer
   message Coin {
     string denom
     int64 amount
@@ -336,8 +336,8 @@ You can set the flag value of your account.
 ```go
 message SetAccountFlags{
   0xBEA6E301 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  int64 Flag // account flag
+  bytes from // sender's address
+  int64 flag // account flag
 }
 ```
 
@@ -346,13 +346,14 @@ You can only lock tokens on your own account for a certain period of time.
 ```go
 message Timerelock{
   0x07921531 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  string Description // Description of the lock
+  bytes from // sender's address
+  string description // Description of the lock
   message Coin {
     string denom
     int64 amount
   }
-  int64 LockTime // lock time
+  repeated Coin amount
+  int64 lock_time // lock time
 }
 ```
 
@@ -362,8 +363,8 @@ You can  unlock tokens on your own account after a certain period of time.
 ```go
 message Timeunlock{
   0xC4050C6C   // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  int64 Id // lock time id
+  bytes from // sender's address
+  int64 id // lock time id
 }
 ```
 
@@ -372,13 +373,14 @@ You can  relock tokens on your own account after a certain period of time.
 ```go
 message Timerelock{
   0x504711DA // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
+  bytes from // sender's address
   int64 Id // lock time id
-  string Description // Description of the lock
+  string description // Description of the lock
   message Coin {
     string denom
     int64 amount
   }
+  repeated Coin amount
   int64 LockTime // lock time
 }
 ```
@@ -390,19 +392,20 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 ```go
 message HTLT{
   0xB33F9A24 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  bytes To // receiver's address
-  string RecipientOtherChain string
-  string SenderOtherChain
-  bytes RandomNumberHash
-  int64  Timestamp
+  bytes from // sender's address
+  bytes to // receiver's address
+  string recipient_other_chain
+  string sender_other_chain
+  bytes random_number_hash
+  int64  timestamp
   message Coin {
     string denom
     int64 amount
   }
-  string ExpectedIncome
-  int64 HeightSpan
-  bool CrossChain
+  repeated Coin amount
+  string expected_income
+  int64 height_span
+  bool cross_chain
 }
 ```
 
@@ -412,12 +415,13 @@ Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT 
 ```go
 message DepositHTLT{
   0x63986496 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
+  bytes from // sender's address
   message Coin {
     string denom
     int64 amount
   }
-  bytes SwapID
+  repeated Coin amount
+  bytes swap_id
 }
 ```
 #### Claim HTLT
@@ -426,9 +430,9 @@ Claim Hash Timer Locked Transfer is to claim the locked asset by showing the ran
 ```go
 message ClaimHTLTMsg{
   0xC1665300 // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  bytes SwapID
-  bytes RandomNumber
+  bytes from // sender's address
+  bytes swap_id
+  bytes random_number
 }
 ```
 #### Refund HTLT
@@ -437,7 +441,7 @@ Refund Hash Timer Locked Transfer is to refund the locked asset after timelock i
 ```go
 message RefundHTLTMsg{
   0x3454A27C // hardcoded, object type prefix in 4 bytes
-  bytes From // sender's address
-  bytes SwapID
+  bytes from // sender's address
+  bytes swap_id
 ```
 
