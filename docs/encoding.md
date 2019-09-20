@@ -381,7 +381,7 @@ message Timerelock{
     int64 amount
   }
   repeated Coin amount
-  int64 LockTime // lock time
+  int64 lock_time // lock time
 }
 ```
 
