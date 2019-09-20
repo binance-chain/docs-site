@@ -285,7 +285,7 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 500; max 1000. | No | integer |
+| limit | query | default 100. | No | integer |
 | offset | query | start with 0; default 0. | No | integer |
 
 **Responses**
@@ -490,7 +490,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | offset | query | start with 0; default 0. | No | integer |
 | side | query | order side. 1 for buy and 2 for sell. | No | integer |
 | start | query | start time in Milliseconds | No | long |
-| status | query | order status list. Allowed value: [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
+| status | query | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
 | symbol | query | symbol | No | string |
 | total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
 
@@ -651,7 +651,7 @@ If the time window is larger than limits, only the first n klines will return. I
 ##### ***GET***
 **Summary:** Get transactions.
 
-**Description:** Gets a list of transactions. Multisend transaction is not available in this API.
+**Description:** Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
 
 **Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.
 
@@ -670,7 +670,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | side | query | transaction side. Allowed value: [ RECEIVE, SEND] | No | enum string |
 | startTime | query | start time in Milliseconds | No | long |
 | txAsset | query | txAsset | No | string |
-| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT] | No | enum string |
+| txType | query | transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | No | enum string |
 
 **Responses**
 
@@ -680,6 +680,120 @@ If the time window is larger than limits, only the first n klines will return. I
 | 400 | Bad Request | [Error](#error) |
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
+
+### /api/v1/transactions-in-block/{blockHeight}
+---
+##### ***GET***
+**Summary:** Get transactions in the specific block.
+
+**Description:** Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
+
+**Rate Limit:** 60 requests per IP per minute.
+
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| blockHeight | path | block height | Yes | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [BlockTx](#blocktx) |
+| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+| 404 | Not Found |  |
+| default | Generic error response | [Error](#error) |
+
+### /api/v2/transactions-in-block/{blockHeight}
+---
+##### ***GET***
+**Summary:** transactions in Block
+
+**Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| blockHeight | path | blockHeight | Yes | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [BlockTxV2](#blocktxv2) |
+| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+
+### /api/v1/atomic-swaps
+---
+##### ***GET***
+**Summary:** AtomicSwap
+
+**Description:** Get atomic swaps by address.
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| endTime | query | end time | No | long |
+| fromAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+| limit | query | limit | No | integer |
+| offset | query | offset | No | integer |
+| startTime | query | start time; The maximum start - end query window is 3 months; Default query window is the latest 30 days. | No | long |
+| toAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [AtomicSwapPageVo](#atomicswappagevo) |
+
+### /api/v1/atomic-swaps/{id}
+---
+##### ***GET***
+**Summary:** AtomicSwap
+
+**Description:** Get an AtomicSwap by swap id
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path | swap id | Yes | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [AtomicSwapVo](#atomicswapvo) |
+
+### /api/v1/timelock/{account_addr}?(id={recordid})
+---
+##### ***GET***
+**Summary:** Get timelock records of an address.
+
+**Description:** Get the timelock history of an address.
+
+**Rate Limit:** 60 requests per IP per minute.
+
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| address | path | The account address to query | Yes | string |
+| id | query | the record id of timelock to query | No | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [TimeLocks](#timelocks) |
+| 400 | Bad Request | [Error](#error) |
+| 404 | Not Found |  |
+| 500 | internal server error | [Error](#error) |
 
 ### Models
 ---
@@ -711,8 +825,8 @@ If the time window is larger than limits, only the first n klines will return. I
 | ---- | ---- | ----------- | ------- |
 | address | string (hex address) | Address |  |
 | pub_key | [ integer ] | Public key bytes |  |
-| voting_power | integer |  |  |
-| accum | integer |  |  |
+| voting_power | integer | validator's voting power |  |
+| accum | integer | validator's accumulated voting power |  |
 
 ### Peer
 
@@ -880,14 +994,14 @@ varies with msg type, if you query with --format=json.
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | close | number | closing price |  |
-| closeTime | long |  |  |
+| closeTime | long | time of closing trade |  |
 | high | number | the highest price |  |
 | low | number | the lowest price |  |
-| numberOfTrades | integer |  |  |
+| numberOfTrades | integer | total trades |  |
 | open | number | open price |  |
 | openTime | long | time of open trade |  |
-| quoteAssetVolume | number |  |  |
-| volume | number |  |  |
+| quoteAssetVolume | number | the total trading volume in quote asset |  |
+| volume | number | the total trading volume |  |
 
 ### OrderList
 
@@ -900,8 +1014,8 @@ varies with msg type, if you query with --format=json.
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| cumulateQuantity | string |  |  |
-| fee | string | trading fee on the block of this order |  |
+| cumulateQuantity | string | total amount of trades that have made |  |
+| fee | string | trading fee on the latest updated block of this order. Multiple assets are split by semicolon. |  |
 | lastExecutedPrice | string | price of last execution |  |
 | lastExecutedQuantity | string | quantity of last execution |  |
 | orderCreateTime | dateTime | time of order creation |  |
@@ -910,65 +1024,64 @@ varies with msg type, if you query with --format=json.
 | price | string | order price |  |
 | quantity | string | order quantity |  |
 | side | integer | 1 for buy and 2 for sell |  |
-| singleFee | string | trading fee of this order |  |
 | status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
-| symbol | string |  |  |
+| symbol | string | trading pair symbol |  |
 | timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
 | tradeId | string | trade ID |  |
-| transactionHash | string |  |  |
-| transactionTime | dateTime | time of transaction |  |
+| transactionHash | string | hash of transaction |  |
+| transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
 ### TickerStatistics
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| askPrice | string | ask price |  |
-| askQuantity | string | ask quantity |  |
-| bidPrice | string | bid price |  |
-| bidQuantity | string | bid quantity |  |
+| askPrice | string | sell price |  |
+| askQuantity | string | sell quantity |  |
+| bidPrice | string | buy price |  |
+| bidQuantity | string | buy quantity |  |
 | closeTime | long | time of closing |  |
-| count | long | total count |  |
-| firstId | string |  |  |
-| highPrice | string |  |  |
-| lastId | string |  |  |
-| lastPrice | string |  |  |
-| lastQuantity | string |  |  |
-| lowPrice | string |  |  |
-| openPrice | string |  |  |
-| openTime | long |  |  |
-| prevClosePrice | string |  |  |
-| priceChange | string |  |  |
-| priceChangePercent | string |  |  |
-| quoteVolume | string |  |  |
-| symbol | string |  |  |
-| volume | string |  |  |
-| weightedAvgPrice | string |  |  |
+| count | long | total trade count |  |
+| firstId | string | ID of first trade |  |
+| highPrice | string | highest price |  |
+| lastId | string | ID of last trade |  |
+| lastPrice | string | last price |  |
+| lastQuantity | string | last quantity |  |
+| lowPrice | string | lowest price |  |
+| openPrice | string | open price |  |
+| openTime | long | open time |  |
+| prevClosePrice | string | last close price |  |
+| priceChange | string | change of price |  |
+| priceChangePercent | string | change of price in percentage |  |
+| quoteVolume | string | trading volume in quote asset |  |
+| symbol | string | trading symbol |  |
+| volume | string | trading volume |  |
+| weightedAvgPrice | string | weighted average price |  |
 
 ### TradePage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| total | long |  |  |
+| total | long | total number of trades |  |
 | trade | [ [Trade](#trade) ] |  |  |
 
 ### Trade
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| baseAsset | string | base asset |  |
+| baseAsset | string | base asset symbol |  |
 | blockHeight | long | block height |  |
 | buyFee | string | trading fee for the buyer address on the block of this trade |  |
 | buyerId | string | id of buyer |  |
 | buyerOrderId | string | order id for buyer |  |
-| buySingleFee | string | trading fee for the buyer address on this single trade |  |
+| buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
 | price | string | trade price |  |
 | quantity | string | trade quantity |  |
-| quoteAsset | string | quote asset |  |
+| quoteAsset | string | quote asset symbol |  |
 | sellFee | string | trading fee for the seller address on the block of this trade |  |
 | sellerId | string | seller ID |  |
 | sellerOrderId | string | seller order ID |  |
-| sellSingleFee | string | trading fee for the seller address on this single trade |  |
+| sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
 | symbol | string | asset symbol |  |
 | tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
 | time | long | trade time |  |
@@ -988,7 +1101,7 @@ varies with msg type, if you query with --format=json.
 | address | string |  |  |
 | blockHeight | long |  |  |
 | blockTime | long | timestamp of a block |  |
-| fee | string | total fee collected |  |
+| fee | string | total fee collected. Multiple assets are split by semicolon. |  |
 | tradeCount | long | trade count of the address on the block |  |
 
 ### TxPage
@@ -997,6 +1110,20 @@ varies with msg type, if you query with --format=json.
 | ---- | ---- | ----------- | ------- |
 | total | long | total sum of transactions |  |
 | tx | [ [Tx](#tx) ] |  |  |
+
+### BlockTx
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long | block height |  |
+| tx | [ [Tx](#tx) ] |  |  |
+
+### BlockTxV2
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long | block height |  |
+| tx | [ [TxV2](#txv2) ] |  |  |
 
 ### Tx
 
@@ -1016,6 +1143,10 @@ varies with msg type, if you query with --format=json.
 | txHash | string | hash of transaction |  |
 | txType | string | type of transaction |  |
 | value | string | value of transaction |  |
+| source | long |  |  |
+| sequence | long |  |  |
+| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| proposalId | string |  |  |
 
 ### ExchangeRate
 
@@ -1069,3 +1200,63 @@ varies with msg type, if you query with --format=json.
 | address | string | hex address |  |
 | pub_key | string | hex-encoded |  |
 | voting_power | long |  |  |
+
+### AtomicSwapPageVo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| atomicSwaps | [ [AtomicSwapVo](#atomicswapvo) ] |  |  |
+| total | long |  |  |
+
+### AtomicSwapVo
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| closedTime | dateTime |  |  |
+| createTime | dateTime |  |  |
+| crossChain | integer |  |  |
+| expectedIncome | string |  |  |
+| expireHeight | long |  |  |
+| fromAddr | string |  |  |
+| inAmount | string |  |  |
+| outAmount | string |  |  |
+| randomNumber | string |  |  |
+| randomNumberHash | string |  |  |
+| recipientOtherChain | string |  |  |
+| status | integer |  |  |
+| swapId | string |  |  |
+| timestamp | dateTime |  |  |
+| toAddr | string |  |  |
+| updateTime | dateTime |  |  |
+
+### TxV2
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long |  |  |
+| code | integer |  | 0 |
+| data | string |  |  |
+| fromAddr | string |  |  |
+| memo | string |  |  |
+| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
+| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
+| sequence | long |  |  |
+| source | long |  |  |
+| subTransactions | [ [SubTxVo](#subtxvo) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
+| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| timeStamp | dateTime |  |  |
+| toAddr | string |  |  |
+| txAsset | string |  |  |
+| txFee | string |  |  |
+| txHash | string |  |  |
+| txType | string |  |  |
+| value | string |  |  |
+
+### TimeLocks
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | long | The record id of the timelock transaction |  |
+| description | string | The description of the timelock transaction |  |
+| amount | [  ] |  |  |
+| locktime | string | The available unlock time |  |

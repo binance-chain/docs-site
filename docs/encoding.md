@@ -179,7 +179,7 @@ message NewOrder {
   int64 ordertype // only accept 2 for now, meaning limit order
   int64 side // 1 for buy and 2 fory sell
   int64 price // price of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
-  int64 quantity // quantity of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
+  int64 quantity // quantity of the order, which is the real quantity multiplied by 1e8 (10^8) and rounded to integer
   int64 timeinforce // 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)
 }
 ```
@@ -331,7 +331,15 @@ message Deposit{
   }
 }
 ```
-
+#### Set Account Flags
+You can set the flag value of your account.
+```go
+message SetAccountFlags{
+  0xBEA6E301 // hardcoded, object type prefix in 4 bytes
+  bytes From // sender's address
+  int64 Flag // account flag
+}
+```
 
 #### Time-lock
 You can only lock tokens on your own account for a certain period of time.
@@ -374,6 +382,7 @@ message Timerelock{
   int64 LockTime // lock time
 }
 ```
+
 #### HTLT
 
 Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to serve as HTLC in the first step of Atomic Swap
@@ -430,5 +439,5 @@ message RefundHTLTMsg{
   0x3454A27C // hardcoded, object type prefix in 4 bytes
   bytes From // sender's address
   bytes SwapID
-}
 ```
+

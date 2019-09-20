@@ -6,9 +6,10 @@ In Equal wallet, you can browse through hundreds of DAPPs and see what’s bubbl
 
 ## Instruction
 
-* Downloads: <https://atomicwallet.io/#download>
+* Downloads: <https://chrome.google.com/webstore/detail/equal-wallet-the-metamask/blnieiiffboillknjnepogjhkgnoapac?hl=en>
 * Create: <https://youtu.be/HTNa_iEPal8>
 * Restore: <https://youtu.be/IUefengJ9zA>
+* Trading: <https://www.youtube.com/watch?v=QuDaY7bFESA>
 
 ## Resource
 
