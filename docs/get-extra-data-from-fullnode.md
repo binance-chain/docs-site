@@ -584,15 +584,15 @@ Their schemas are shown below:<br/>
 - **BlockFeeSchema**:
 ```
 {
-            "type": "record",
-            "name": "BlockFee",
-            "namespace": "com.company",
-            "fields": [
-                { "name": "height", "type": "long"},
-                { "name": "fee", "type": "string"},
-                { "name": "validators", "type": { "type": "array", "items": "string" }}
-            ]
-        }
+    "type": "record",
+    "name": "BlockFee",
+    "namespace": "com.company",
+    "fields": [
+        { "name": "height", "type": "long"},
+        { "name": "fee", "type": "string"},
+        { "name": "validators", "type": { "type": "array", "items": "string" }}
+    ]
+}
 ```
 
 - **TransfersSchema**:
