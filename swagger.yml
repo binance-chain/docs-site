@@ -1405,7 +1405,42 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/AtomicSwapVo'
-
+  /api/v1/timelocks/{address}:
+    get:
+      summary: 'Gets time lock records given an address'
+      operationId: getTimeLocks
+      produces:
+        - application/json
+      tags:
+        - node
+        - account
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TimeLocks'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '500':
+          description: 'internal server error'
+          schema:
+            $ref: "#/definitions/Error"
+      parameters:
+        -
+          name: address
+          in: path
+          type: string
+          description: 'The account address to query'
+          required: true
+        -
+          in: query
+          name: id
+          description: "the record id of timelock to query"
+          required: false
+          type: integer
+          format: int64
   /api/v1/timelock/{account_addr}?(id={recordid}):
     get:
       tags:

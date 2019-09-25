@@ -769,6 +769,26 @@ If the time window is larger than limits, only the first n klines will return. I
 | ---- | ----------- | ------ |
 | 200 | OK | [AtomicSwapVo](#atomicswapvo) |
 
+### /api/v1/timelocks/{address}
+---
+##### ***GET***
+**Summary:** Gets time lock records given an address
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| address | path | The account address to query | Yes | string |
+| id | query | the record id of timelock to query | No | long |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Success | [TimeLocks](#timelocks) |
+| 400 | Bad Request | [Error](#error) |
+| 500 | internal server error | [Error](#error) |
+
 ### /api/v1/timelock/{account_addr}?(id={recordid})
 ---
 ##### ***GET***

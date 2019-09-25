@@ -1,6 +1,7 @@
 - [Upcoming Changes in Binance Chain API v0.6.2](#upcoming-changes-in-binance-chain-api-v062)
   * [HTTP API](#http-api)
     + [/api/v2/transactions-in-block/{blockHeight}](#-api-v2-transactions-in-block--blockheight-)
+    + [/api/v1/timelock/{account_addr}](#-api-v1-timelock--account-addr)
     + [/api/v1/timelock/{account_addr}?(id={recordid})](#-api-v1-timelock--account-addr---id--recordid--)
 - [Upcoming Changes in Binance Chain API v0.6.1](#upcoming-changes-in-binance-chain-api-v061)
   * [HTTP API](#http-api)
@@ -48,11 +49,26 @@ This endpoint is used for getting all transactions in the block. Multi-send and 
 | txType | string |  |  |
 | value | string |  |  |
 
+### /api/v1/timelocks/{account_addr}
+
+##### ***Changes***
+
+This new function is for getting the whole timelock history of an address.
+
+### TimeLocks
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | long | The record id of the timelock transaction |  |
+| description | string | The description of the timelock transaction |  |
+| amount | [  ] |  |  |
+| locktime | string | The available unlock time |  |
+
 ### /api/v1/timelock/{account_addr}?(id={recordid})
 
 ##### ***Changes***
 
-This new function is for getting the timelock history of an address.
+This new function is for getting the timelock history of an address by id.
 
 ### TimeLocks
 
