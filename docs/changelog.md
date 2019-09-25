@@ -62,7 +62,6 @@ This new function is for getting the timelock history of an address.
 | description | string | The description of the timelock transaction |  |
 | amount | [  ] |  |  |
 | locktime | string | The available unlock time |  |
->>>>>>> master
 
 # Upcoming Changes in Binance Chain API v0.6.1
 
@@ -73,7 +72,6 @@ As you know, There are some accelerate nodes which provides some advanced API se
 In the latest update of HTTP API for testnet, there are the following changes:
 
 ### /api/v1/account/{address}
----
 
 ##### ***Changes***
 In the `Account` data structure, a new field `flags` is added to indicate the constrains for this address.
@@ -91,10 +89,7 @@ In the `Account` data structure, a new field `flags` is added to indicate the co
 | flags | integer | indicate additional check for this account|  |
 | sequence | long | sequence is for preventing replay attack |  |
 
-
 # Upcoming Changes in Binance Chain API v0.6.0
-
-
 
 ## HTTP API
 
