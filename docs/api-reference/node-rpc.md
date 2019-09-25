@@ -124,6 +124,14 @@ CORS (Cross-Origin Resource Sharing) can be enabled by setting `cors_allowed_ori
 
 Arguments which expect strings or byte arrays may be passed as quoted strings, like `"abc"` or as `0x`-prefixed strings, like `0x616263`.
 
+You can generate the transacion hex output by adding `--dry` flag in your command. For example:
+
+```
+bnbcli send --from XXX --to bnb1XXXXXXXXXXXXXXXX --amount 1:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --json --memo "Test transfer" --dry --offline
+Password to sign with 'guest':
+Transaction hash: 3592BB385569BBFE346907365CFAED9341B85BAD2920B5E0B174484ECA3CD16C, Transaction hex: c701f0625dee0a462a2c87fa0a1f0a1441462c3f2a924f94c4012f4c7bbc3b0ed9213b6b12070a03424e421002121f0a14ade844d9f3a577086211bc93c0c306540b94bb4a12070a03424e421002126a0a26eb5ae987210381a2a87abf9fdd30512b9f40e9ed88516f2ef96a00ed02754a78793bf73f97b81240c926d1d93ea89730836f186a88fbe3b3719d516b8f849d414c38fc9d906ac77b7bb460f2f36564b74317aa0e3e6d9570db07763760effec15a5c600e5fb671041a0d54657374207472616e73666572
+```
+
 ### 4.1 URI/HTTP
 
 ```bash

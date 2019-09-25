@@ -1,17 +1,68 @@
-- [Upcoming Changes in Binance Chain API v0.6.1](#upcoming-changes-in-binance-chain-api-v061)
-- [Upcoming Changes in Binance Chain API v0.6.0](#upcoming-changes-in-binance-chain-api-v060)
+- [Upcoming Changes in Binance Chain API v0.6.2](#upcoming-changes-in-binance-chain-api-v062)
   * [HTTP API](#http-api)
-    + [/api/v1/trades](#-api-v1-trades)
-        * [***Changes***](#---changes---)
-        * [***GET***](#---get---)
-    + [TradePage](#tradepage)
-    + [Trade](#trade)
-  * [Websocket](#websocket)
-    + [Trades](#trades)
+    + [/api/v2/transactions-in-block/{blockHeight}](#-api-v2-transactions-in-block--blockheight-)
+    + [/api/v1/timelock/{account_addr}?(id={recordid})](#-api-v1-timelock--account-addr---id--recordid--)
+- [Upcoming Changes in Binance Chain API v0.6.1](#upcoming-changes-in-binance-chain-api-v061)
+  * [HTTP API](#http-api)
+    + [/api/v1/account/{address}](#apiv1accountaddress)
+    + [Account](#account)
+- [Upcoming Changes in Binance Chain API v0.6.0](#upcoming-changes-in-binance-chain-api-v060)
+  * [HTTP API](#http-api_1)
+    + [/api/v1/trades](#apiv1trades)
       - [Changes](#changes)
   * [Extra data from your fullnode](#extra-data-from-your-fullnode)
     + [Changes](#changes-1)
+  * [Extra data from your fullnode](#extra-data-from-your-fullnode)
+    + [Changes](#changes_3)
 
+# Upcoming Changes in Binance Chain API v0.6.2
+
+## HTTP API
+
+### /api/v2/transactions-in-block/{blockHeight}
+
+##### ***Changes***
+
+This endpoint is used for getting all transactions in the block. Multi-send and multi-coin transactions are flattend as sub-transactions.
+
+### TxV2
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long |  |  |
+| code | integer |  | 0 |
+| data | string |  |  |
+| fromAddr | string |  |  |
+| memo | string |  |  |
+| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
+| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
+| sequence | long |  |  |
+| source | long |  |  |
+| subTransactions | [ [SubTxVo](#subtxvo) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
+| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| timeStamp | dateTime |  |  |
+| toAddr | string |  |  |
+| txAsset | string |  |  |
+| txFee | string |  |  |
+| txHash | string |  |  |
+| txType | string |  |  |
+| value | string |  |  |
+
+### /api/v1/timelock/{account_addr}?(id={recordid})
+
+##### ***Changes***
+
+This new function is for getting the timelock history of an address.
+
+### TimeLocks
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | long | The record id of the timelock transaction |  |
+| description | string | The description of the timelock transaction |  |
+| amount | [  ] |  |  |
+| locktime | string | The available unlock time |  |
+>>>>>>> master
 
 # Upcoming Changes in Binance Chain API v0.6.1
 

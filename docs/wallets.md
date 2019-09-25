@@ -23,7 +23,10 @@
 | 17     | [Equal Wallet](wallets/equal.md)                       | <https://equal.tech/>            |True|
 | 18     | [Pundi X Wallet](wallets/pundi.md)                     | <https://pundix.com/>            |False|
 | 19     | [Arax Wallet](wallets/arax.md)                         | <https://arax.io>                |False|
-| 20     | [SafePal Wallet](wallets/safepal.md) (Hardware Wallet) | <https://www.safepal.io/index.html> |True|
-| 21     | [Zengo Wallet](wallets/zengo.md)                       | <https://zengo.com/>              |False|
-
+| 20     | [SafePal Wallet](wallets/safepal.md) (Hardware Wallet) | <https://www.safepal.io>         |True|
+| 21     | [Zengo Wallet](wallets/zengo.md)                       | <https://zengo.com/>             |False|
+| 22     | [TokenPocket Wallet](wallets/tokenpocket.md)           | <https://www.tokenpocket.pro/>   |False|
+| 23     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |False|
+| 24     | [X Wallet](wallets/xwallet.md)                         | <https://xwallet.pundix.com>     |False|
+| 25    | [Midas Wallet](wallets/midas-wallet.md)                         | <https://www.midasprotocol.io>     |False|
 

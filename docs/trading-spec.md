@@ -110,6 +110,8 @@ List Asset | N/A | 1000 BNB | N
 Submit List Proposal | N/A | 5 BNB | N
 Submit Delist Proposal | N/A | 1000 BNB | N
 Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
 
 
 ### Mainnet Fees API
@@ -157,7 +159,7 @@ Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=
 
 ### Current Fees Table on Testnet
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Tetnet as of **2019-04-17** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2019-04-17** is as follows:
 
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
@@ -177,6 +179,12 @@ List Asset | N/A | 1000 BNB | N
 Submit List Proposal | N/A | 5 BNB | N
 Submit Delist Proposal | N/A | 1000 BNB | N
 Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
+depositHTLT | N/A |  0.000375 BNB | Y
+claimHTLT | N/A |  0.000375 BNB | Y
+refundHTLT | N/A |  0.000375 BNB | Y
+
 
 ### Testnet Fees API
 

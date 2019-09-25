@@ -6,7 +6,7 @@ Please refer to [Running Full Node](fullnode.md), if you still haven't deployed 
 ## Publish Different Messages to Local Files
 
 You can set the `publishLocal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-The full node will append the messages each block published to `{fullnode home}/marketdata/marketdata.json` (each line is a json object for a topic and height), and you can consume them in your own apps. The messages types are explained below. 
+The full node will append the messages each block published to `{fullnode home}/marketdata/marketdata.json` (each line is a json object for a topic and height), and you can consume them in your own apps. The messages types are explained below.
 
 Note: only block messages after this option get turned on can be saved. This function won't make up messages for already saved blocks.
 
@@ -35,104 +35,230 @@ For example:
 
 
 ```json
-"Height":3154,
-   "Timestamp":1560927932877738000,
-   "NumOfMsgs":4,
-   "Trades":{
-      "NumOfMsgs":1,
-      "Trades":[
-         {
-            "Id":"3154-0",
-            "Symbol":"NNB-811_BNB",
-            "Price":1200000000,
-            "Qty":1200000000,
-            "Sid":"8FEC97AB9B3F52A30B860CFBB8E41B72E9EB02C1-11",
-            "Bid":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
-            "Sfee":"BNB:5760000",
-            "Bfee":"BNB:5760000",
-            "SSrc":0,
-            "BSrc":0,
-            "SSingleFee":"",
-            "BSingleFee":"",
-            "TickType":0,
-            "SAddr":"bnb13lkf02um8af2xzuxpnam3eqmwt57kqkp3hcvyp",
-            "BAddr":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch"
-         }
-      ]
-   },
-   "Orders":{
-      "NumOfMsgs":3,
-      "Orders":[
-         {
-            "Symbol":"NNB-811_BNB",
-            "Status":0,
-            "OrderId":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
-            "TradeId":"",
-            "Owner":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch",
-            "Side":1,
-            "OrderType":2,
-            "Price":1300000000,
-            "Qty":1300000000,
-            "LastExecutedPrice":0,
-            "LastExecutedQty":0,
-            "CumQty":1200000000,
-            "Fee":"",
-            "OrderCreationTime":1560927932877738000,
-            "TransactionTime":1560927932877738000,
-            "TimeInForce":1,
-            "CurrentExecutionType":0,
-            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865"
-         },
-         {
-            "Symbol":"NNB-811_BNB",
-            "Status":5,
-            "OrderId":"01C93F3512BCAA7E1DDD490B69B85E53A76C79B9-2",
-            "TradeId":"3154-0",
-            "Owner":"bnb1q8yn7dgjhj48u8wafy9knwz72wnkc7dehf39ch",
-            "Side":1,
-            "OrderType":2,
-            "Price":1300000000,
-            "Qty":1300000000,
-            "LastExecutedPrice":1200000000,
-            "LastExecutedQty":1200000000,
-            "CumQty":1200000000,
-            "Fee":"BNB:5760000",
-            "OrderCreationTime":1560927932877738000,
-            "TransactionTime":1560927932877738000,
-            "TimeInForce":1,
-            "CurrentExecutionType":0,
-            "TxHash":"A120FAA19A3448119E7F32B986540B21A5927616C73F95ACD1626FB54A74A865"
-         },
-         {
-            "Symbol":"NNB-811_BNB",
-            "Status":6,
-            "OrderId":"8FEC97AB9B3F52A30B860CFBB8E41B72E9EB02C1-11",
-            "TradeId":"3154-0",
-            "Owner":"bnb13lkf02um8af2xzuxpnam3eqmwt57kqkp3hcvyp",
-            "Side":2,
-            "OrderType":2,
-            "Price":1200000000,
-            "Qty":1200000000,
-            "LastExecutedPrice":1200000000,
-            "LastExecutedQty":1200000000,
-            "CumQty":1200000000,
-            "Fee":"BNB:5760000",
-            "OrderCreationTime":1560927931834863000,
-            "TransactionTime":1560927932877738000,
-            "TimeInForce":1,
-            "CurrentExecutionType":0,
-            "TxHash":"617565ECA6464E1B7435819A8154BCF5FC773FE1C5982A833DBEEDBE78E660C6"
-         }
-      ]
-   },
-   "Proposals":{
-      "NumOfMsgs":0,
-      "Proposals":null
-   },
-   "StakeUpdates":{
-      "NumOfMsgs":0,
-      "CompletedUnbondingDelegations":null
-   }
+{
+  "Height": 36384232,
+  "Timestamp": 1569196830136718300,
+  "NumOfMsgs": 10,
+  "Trades": {
+    "NumOfMsgs": 2,
+    "Trades": [
+      {
+        "Id": "36384232-0",
+        "Symbol": "DEFI-FA5_BNB",
+        "Price": 345282,
+        "Qty": 23200000000,
+        "Sid": "5F511BE6120CE2F92877F3A1E92D408CE56A5CCC-62632",
+        "Bid": "4C28D006CF8061E05EEE50D17D8B2375CE09E7EC-71967",
+        "Sfee": "BNB:32042",
+        "Bfee": "BNB:32042",
+        "SSrc": 0,
+        "BSrc": 0,
+        "SSingleFee": "BNB:32042",
+        "BSingleFee": "BNB:32042",
+        "TickType": 5,
+        "SAddr": "bnb1tag3hesjpn30j2rh7ws7jt2q3njk5hxvsx023c",
+        "BAddr": "bnb1fs5dqpk0sps7qhhw2rghmzerwh8qnelv7tyat8"
+      },
+      {
+        "Id": "36384232-1",
+        "Symbol": "EQL-586_BNB",
+        "Price": 4798,
+        "Qty": 110000000000,
+        "Sid": "610BFE81695EFD89B19D27D1E8C17D57C0239C66-6367",
+        "Bid": "B3CEA961E95C4F104A791F6C33DB83458577BA76-5471",
+        "Sfee": "BNB:2111",
+        "Bfee": "BNB:2111",
+        "SSrc": 0,
+        "BSrc": 0,
+        "SSingleFee": "BNB:2111",
+        "BSingleFee": "BNB:2111",
+        "TickType": 2,
+        "SAddr": "bnb1vy9laqtftm7cnvvaylg73sta2lqz88rxs72mx7",
+        "BAddr": "bnb1k082jc0ft383qjnerakr8kurgkzh0wnk8gulnj"
+      }
+    ]
+  },
+  "Orders": {
+    "NumOfMsgs": 8,
+    "Orders": [
+      {
+        "Symbol": "DEFI-FA5_BNB",
+        "Status": 0,
+        "OrderId": "37D9383E6AD9AFEF6C5D8066ABA3ACA8C75D9F39-1724193",
+        "TradeId": "",
+        "Owner": "bnb1xlvns0n2mxh77mzaspn2hgav4rr4m8eerfju38",
+        "Side": 1,
+        "OrderType": 2,
+        "Price": 344271,
+        "Qty": 89600000000,
+        "LastExecutedPrice": 0,
+        "LastExecutedQty": 0,
+        "CumQty": 0,
+        "Fee": "",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "D74A96022A2F090D7D739C1C6716481A215E0F7F10C430C28290758E9DC4EF73",
+        "SingleFee": ""
+      },
+      {
+        "Symbol": "EQL-586_BNB",
+        "Status": 0,
+        "OrderId": "B3CEA961E95C4F104A791F6C33DB83458577BA76-5471",
+        "TradeId": "",
+        "Owner": "bnb1k082jc0ft383qjnerakr8kurgkzh0wnk8gulnj",
+        "Side": 1,
+        "OrderType": 2,
+        "Price": 4798,
+        "Qty": 110000000000,
+        "LastExecutedPrice": 0,
+        "LastExecutedQty": 0,
+        "CumQty": 110000000000,
+        "Fee": "",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "792BA5F932813F9C006075EAA090D82305AD049DDC570271FA8515339A874E97",
+        "SingleFee": ""
+      },
+      {
+        "Symbol": "DEFI-FA5_BNB",
+        "Status": 0,
+        "OrderId": "4C28D006CF8061E05EEE50D17D8B2375CE09E7EC-71967",
+        "TradeId": "",
+        "Owner": "bnb1fs5dqpk0sps7qhhw2rghmzerwh8qnelv7tyat8",
+        "Side": 1,
+        "OrderType": 2,
+        "Price": 345283,
+        "Qty": 23200000000,
+        "LastExecutedPrice": 0,
+        "LastExecutedQty": 0,
+        "CumQty": 23200000000,
+        "Fee": "",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "574CB6DAF26C5D1A465A8D86760FFDFF3DA5946F9C02EB5B89051A8120844523",
+        "SingleFee": ""
+      },
+      {
+        "Symbol": "DEFI-FA5_BNB",
+        "Status": 0,
+        "OrderId": "5F511BE6120CE2F92877F3A1E92D408CE56A5CCC-62632",
+        "TradeId": "",
+        "Owner": "bnb1tag3hesjpn30j2rh7ws7jt2q3njk5hxvsx023c",
+        "Side": 2,
+        "OrderType": 2,
+        "Price": 345282,
+        "Qty": 23200000000,
+        "LastExecutedPrice": 0,
+        "LastExecutedQty": 0,
+        "CumQty": 23200000000,
+        "Fee": "",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "9D8EF7CEAE5D2CDC4026F6306296D57764BB80099B3A65865971D8D71399B6EA",
+        "SingleFee": ""
+      },
+      {
+        "Symbol": "EQL-586_BNB",
+        "Status": 5,
+        "OrderId": "610BFE81695EFD89B19D27D1E8C17D57C0239C66-6367",
+        "TradeId": "36384232-1",
+        "Owner": "bnb1vy9laqtftm7cnvvaylg73sta2lqz88rxs72mx7",
+        "Side": 2,
+        "OrderType": 2,
+        "Price": 4798,
+        "Qty": 230000000000,
+        "LastExecutedPrice": 4798,
+        "LastExecutedQty": 110000000000,
+        "CumQty": 110000000000,
+        "Fee": "BNB:2111",
+        "OrderCreationTime": 1569196786802324000,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "EDF132EBDA03382D2BFF7EF58CDE574D4E3FB9622BD8BCF12BA6ABECD692BA5C",
+        "SingleFee": "BNB:2111"
+      },
+      {
+        "Symbol": "DEFI-FA5_BNB",
+        "Status": 6,
+        "OrderId": "4C28D006CF8061E05EEE50D17D8B2375CE09E7EC-71967",
+        "TradeId": "36384232-0",
+        "Owner": "bnb1fs5dqpk0sps7qhhw2rghmzerwh8qnelv7tyat8",
+        "Side": 1,
+        "OrderType": 2,
+        "Price": 345283,
+        "Qty": 23200000000,
+        "LastExecutedPrice": 345282,
+        "LastExecutedQty": 23200000000,
+        "CumQty": 23200000000,
+        "Fee": "BNB:32042",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "574CB6DAF26C5D1A465A8D86760FFDFF3DA5946F9C02EB5B89051A8120844523",
+        "SingleFee": "BNB:32042"
+      },
+      {
+        "Symbol": "DEFI-FA5_BNB",
+        "Status": 6,
+        "OrderId": "5F511BE6120CE2F92877F3A1E92D408CE56A5CCC-62632",
+        "TradeId": "36384232-0",
+        "Owner": "bnb1tag3hesjpn30j2rh7ws7jt2q3njk5hxvsx023c",
+        "Side": 2,
+        "OrderType": 2,
+        "Price": 345282,
+        "Qty": 23200000000,
+        "LastExecutedPrice": 345282,
+        "LastExecutedQty": 23200000000,
+        "CumQty": 23200000000,
+        "Fee": "BNB:32042",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "9D8EF7CEAE5D2CDC4026F6306296D57764BB80099B3A65865971D8D71399B6EA",
+        "SingleFee": "BNB:32042"
+      },
+      {
+        "Symbol": "EQL-586_BNB",
+        "Status": 6,
+        "OrderId": "B3CEA961E95C4F104A791F6C33DB83458577BA76-5471",
+        "TradeId": "36384232-1",
+        "Owner": "bnb1k082jc0ft383qjnerakr8kurgkzh0wnk8gulnj",
+        "Side": 1,
+        "OrderType": 2,
+        "Price": 4798,
+        "Qty": 110000000000,
+        "LastExecutedPrice": 4798,
+        "LastExecutedQty": 110000000000,
+        "CumQty": 110000000000,
+        "Fee": "BNB:2111",
+        "OrderCreationTime": 1569196830136718300,
+        "TransactionTime": 1569196830136718300,
+        "TimeInForce": 1,
+        "CurrentExecutionType": 0,
+        "TxHash": "792BA5F932813F9C006075EAA090D82305AD049DDC570271FA8515339A874E97",
+        "SingleFee": "BNB:2111"
+      }
+    ]
+  },
+  "Proposals": {
+    "NumOfMsgs": 0,
+    "Proposals": null
+  },
+  "StakeUpdates": {
+    "NumOfMsgs": 0,
+    "CompletedUnbondingDelegations": null
+  }
 }
 ```
 
@@ -212,6 +338,8 @@ Then, the full node will save all the transfer transactions.
 	Num:       int,
 	Timestamp: int64,
 	Transfers: []{
+        TxHash: string,
+        Memo: string,
 	    From: string,
         To:   []{
             Addr:  string,
@@ -257,7 +385,7 @@ Their schemas are shown below:<br/>
                                 { "name": "symbol", "type": "string" },
                                 { "name": "id", "type": "string" },
                                 { "name": "price", "type": "long" },
-                                { "name": "qty", "type": "long"	},
+                                { "name": "qty", "type": "long" },
                                 { "name": "sid", "type": "string" },
                                 { "name": "bid", "type": "string" },
                                 { "name": "sfee", "type": "string" },
@@ -329,6 +457,38 @@ Their schemas are shown below:<br/>
                    }
                 }
             ]
+        }], "default": null },
+        { "name": "stakeUpdates", "type": ["null", {
+            "type": "record",
+            "name": "StakeUpdates",
+            "namespace": "org.binance.dex.model.avro",
+            "fields": [
+                { "name": "numOfMsgs", "type": "int" },
+                { "name": "completedUnbondingDelegations", "type": {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "record",
+                        "name": "CompletedUnbondingDelegation",
+                        "namespace": "org.binance.dex.model.avro",
+                        "fields": [
+                            { "name": "validator", "type": "string" },
+                            { "name": "delegator", "type": "string" },
+                            { "name": "amount", "type": {
+                                    "type": "record",
+                                    "name": "Coin",
+                                    "namespace": "org.binance.dex.model.avro",
+                                    "fields": [
+                                        { "name": "denom", "type": "string" },
+                                        { "name": "amount", "type": "long" }
+                                    ]
+                                }
+                            }
+                        ]
+                     }
+                   }
+                }
+            ]
         }], "default": null }
     ]
 }
@@ -380,43 +540,43 @@ Their schemas are shown below:<br/>
 - **AccountBalanceSchema**:
 ```
 {
-    "type": "record",
-    "name": "Accounts",
-    "namespace": "com.company",
-    "fields": [
-        { "name": "height", "type": "long" },
-        { "name": "numOfMsgs", "type": "int" },
-        { "name": "accounts", "type": {
-            "type": "array",
-            "items":
-                {
-                    "type": "record",
-                    "name": "Account",
-                    "namespace": "com.company",
-                    "fields": [
-                        { "name": "owner", "type": "string" },
-                        { "name": "fee", "type": "string" },
-                        { "name": "balances", "type": {
-                                "type": "array",
-                                "items": {
-                                    "type": "record",
-                                    "name": "AssetBalance",
-                                    "namespace": "com.company",
-                                    "fields": [
-                                        { "name": "asset", "type": "string" },
-                                        { "name": "free", "type": "long" },
-                                        { "name": "frozen", "type": "long" },
-                                        { "name": "locked", "type": "long" }
-                                    ]
+            "type": "record",
+            "name": "Accounts",
+            "namespace": "com.company",
+            "fields": [
+                { "name": "height", "type": "long" },
+                { "name": "numOfMsgs", "type": "int" },
+                { "name": "accounts", "type": {
+                    "type": "array",
+                    "items":
+                        {
+                            "type": "record",
+                            "name": "Account",
+                            "namespace": "com.company",
+                            "fields": [
+                                { "name": "owner", "type": "string" },
+                                { "name": "fee", "type": "string" },
+                                { "name": "balances", "type": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "record",
+                                            "name": "AssetBalance",
+                                            "namespace": "com.company",
+                                            "fields": [
+                                                { "name": "asset", "type": "string" },
+                                                { "name": "free", "type": "long" },
+                                                { "name": "frozen", "type": "long" },
+                                                { "name": "locked", "type": "long" }
+                                            ]
+                                        }
+                                    }
                                 }
-                            }
+                            ]
                         }
-                    ]
+                   }, "default": []
                 }
-           }, "default": []
+            ]
         }
-    ]
-}
 
 ```
 
@@ -453,7 +613,8 @@ Their schemas are shown below:<br/>
                 "name": "Transfer",
                 "namespace": "com.company",
                 "fields": [
-                    { "name": "from", "type": "string"},
+                    { "name": "txhash", "type": "string" },
+                    { "name": "from", "type": "string" },
                     { "name": "to",
                         "type": {
                             "type": "array",

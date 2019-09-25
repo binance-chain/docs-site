@@ -34,6 +34,9 @@ func memoValiation(addr, tx) error {
     if  tx.memo.length == 0 {
         return err(“tx memo is empty”)
     }
+    if  tx.memo.length > 100 {
+        return err(“tx memo is too long”)
+    }
     if !isAllDigital(tx.memo) {
         return err(“tx memo contains non digital character”)
     }
@@ -42,8 +45,7 @@ func memoValiation(addr, tx) error {
 ```
 ### Fee
 
-1 BNB will be charged on memo validation transactions.
-
+1 BNB will be charged on enabling  memo validation of transactions.
 
 ## Command Line
 
@@ -66,6 +68,13 @@ This transaction is aimed to set account flags to any hex value.
 | :------------ | :-------- | :------------------------------------------------------------ |
 | account-flags  | string   | account flags, must be hex encoding string with prefix 0x |
 
+* Example on mainnet:
+
+```
+./bnbcli token account_flags set-account-flags --from <your-key-name> --account-flags 0x01  --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --trust-node
+```
+
+
 * Example on testnet:
 
 ```
@@ -77,6 +86,12 @@ This transaction is aimed to set account flags to any hex value.
 This transaction is aimed to aimed to enable transfer memo checker scripts.
 
 
+* Example on mainnet:
+
+```
+./bnbcli account_flag enable-memo-checker --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --trust-node
+```
+
 * Example on testnet:
 
 ```
@@ -86,6 +101,12 @@ This transaction is aimed to aimed to enable transfer memo checker scripts.
 ### Disable-memo-checker
 
 This transaction is aimed to disable transfer memo checker.
+
+* Example on mainnet:
+
+```
+./bnbcli account_flag disable-memo-checker --chain-id Binance-Chain-Tigris --node  https://dataseed5.defibit.io:443 --trust-node
+```
 
 
 * Example on testnet:

@@ -11,6 +11,7 @@
         - [Start your node](#start-your-node)
         - [Sync Data](#sync-data)
             * [Fast Sync](#fast-sync)
+            * [Hot Sync](#hot-sync)
             * [State Sync](#state-sync)
             * [Monitor Syncing Process](#monitor-syncing-process)
   * [Upgrading Full Node](#upgrading-full-node)
@@ -118,11 +119,12 @@ Only after catching up with Binance Chain, the full node can handle requests cor
 
 #### Sync Data
 
-There are two ways for you to get synced with other peers in blockchain network:
+There are three ways for you to get synced with other peers in blockchain network:
 * Fast Sync
 * State Sync
+* Hot Sync
 
-These two method can be used together.
+These methods can be used together.
 
 ##### Fast Sync
 The default way for syncing with other data seed node is fast sync.<br/>
@@ -135,12 +137,37 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 * `state_sync_reactor` Can be set to `false` or `true`
 * `state_sync` Can be set to `false` or `true`
 
+##### Hot Sync
+
+> Please note that this feature is still expreimental.
+
+In Binance Chain network, almost every fullnode operator will first enable `state-sync` to get synced with peers. After downloading all the state machine changes, the fullnode will go back to `fast-sync` mode and eventually in `consensus` mode.  In fast-sync mode, the fullnode will have high delay because it needs to be aware of peers’ heights. It downloads all the blocks in parallel and verifying their commits. On the other hand, when a fullnode is under `consensus` state, it will consume a lot of bandwidth and CPU resources because it receives a lot of redundant messages for consensus engine and writes more WAL.
+To increase the efficiency for fullnodes, the `hot-sync` protocol is introduced. A fullnode under `hot-sync` protocol will pull the blocks from its peers and it will subscribe these blocks in advance. It will skip the message for prevotes and only subscribe to maj23 precommit and block proposal messages. At the same time, it will put its peers in different buckets and subscribe to peers in active buckets. `Hot-Sync` can help fullnodes gossip blocks in low latency, while cost less network, memory, cpu and disk resources than Tendermint consensus protocol. Even cheap hardware can easily run a fullnode, and a  fullnode can connect with more peers than before by saving network and CPU resources.
+
+The state transition of a hot sync reactor can be of three part:
+
+```
+                              Hot --> Consensus
+                                 ^    ^
+                                 |   /
+                                 |  /
+                                Mute
+```
+1. `Mute`: will only answer subscribe requests from others, will not sync from others or from consensus reactor. The Hot Sync reactor stays in `Mute` when it is fast syncing.
+2. `Hot`:  handle subscribe requests from other peers as a publisher, also subscribe block messages from other peers as a subscriber. A non-validators will stay in `Hot` when the peer have catch up after fast syncing.
+3. `Consensus`: handle subscribes requests from other peers as a publisher, but get block/commit message from consensus reactor. A sentry node should stay in `Consensus`. Or a non-validator should switch from `Hot` to `Consensus` when it become a validator.
+
+Configuration is located in `$BNCHOME/config/config.toml`:
+
+* `hot_sync_reactor` Must be set to `true`
+* `hot_sync` Can be set to `false` or `true`
+* `hot_sync_timeout` is the max wait time for subscribe a block. It only takes effect when hot_sync is true
+
+
 ##### State Sync
 
-`Caution: this function is under refactoring.`
-
-State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
-But, you need to allocate more than `16 GB memory` to your full node for this feature to work.
+As explained in [BEP18](https://github.com/binance-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
+Now you do not need to allocate more memories to your full node for this feature to work.
 
 Configuration is located in `$BNCHOME/config/config.toml`:
 
@@ -153,6 +180,11 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in binance chain testnet can be synced in around 45 minutes) so that you can receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync DOES NOT download historical blocks before state sync height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
 
 If full node has already started, suggested way is to delete the (after backup) `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before enabling state sync.
+
+State sync will run only once after you start your full node. Once state sync succeeds, later fullnode restart would not state sync anymore. But if you do want state sync again, you need to delete `$BNCHOME/data/STATESYNC.LOCK`.
+
+
+If you turn on the `state_sync_reactor`, the snapshots of heights will be saved at `$HOME/data/snapshot/<height>` automatically. To save disk space, you can delete the directory or turn off the  `state_sync_reactor`.
 
 ##### Monitor Syncing Process
 

@@ -75,10 +75,11 @@ In testnet, only validators can make a delist proposal. To add a new delist pair
 
 Please note:<br/>
 + `--quote-asset-symbol`: the base asset symbol
-+  `--base-asset-symbol`: the asset symbol you want to delist
++ `--base-asset-symbol`: the asset symbol you want to delist
 + `--from`: put your key name for the address key, you can only list with the owners address of your token.
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
 + `--justification`: reason for proposal
++ `--depodit`: this field will indicate how much tokens will be used as deposit for this proposal. Governance module will transfer deposit tokens to a purely-code-controlled escrow account and before the lock time expires. The account for mainnet is:*bnb1vu5max8wqn997ayhrrys0drpll2rlz4dh39s3h*  and the account for testnet is: *tbnb1vu5max8wqn997ayhrrys0drpll2rlz4deyv53x* 
 
 Example on **mainnet**:
 
@@ -310,7 +311,7 @@ For options in `tally result`:
 
 We can calculate proportion of each vote option easily.<br/>
 In this case, total voting power is 1100000000000 and voting power of `Yes` is 1100000000000,
-so the proportion of `Yes` is 100% and the proposal should be passed and and 2000 BNB will be returned.
+so the proportion of `Yes` is 100% and the proposal should be passed and and your deposit will be returned.
 
 **Note:** Trying to query proposal that didn't enter the voting period will result in `error`.
 

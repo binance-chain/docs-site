@@ -26,7 +26,8 @@ As explained in [BEP9](https://github.com/binance-chain/BEPs/blob/master/BEP9.md
 
 ## TimeLock
 
-You can only lock tokens on your own account. TimeLock will transfer locked tokens to a purely-code-controlled escrow account and before the lock time expires, the specific user will not be able to claim them back, including restrictions where they cannot use, transfer or spend these tokens.
+You can only lock tokens on your own account. TimeLock will transfer locked tokens to a purely-code-controlled escrow account and before the lock time expires. The account for mainnet is: *bnb1hn8ym9xht925jkncjpf7lhjnax6z8nv24fv2yq* and the account for testnet is: *tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3* 
+The specific user will not be able to claim them back, including restrictions where they cannot use, transfer or spend these tokens.
 
 ### Command line
 
@@ -186,12 +187,12 @@ QueryTimeLocks will query all lock records of a given address.
 On testnet, you can query lock history by address:
 
 ```
-./tbnbcli token query-time-lock --address <your-address> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 On mainnet, you can query lock history by address:
 
 ```
-./bnbcli token query-time-lock --address <your-address> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.binance.org:80
+./bnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.binance.org:80
 ```
 Example output:
 
