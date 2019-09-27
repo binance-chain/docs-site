@@ -372,10 +372,11 @@ Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTL
 Random number: 4811959406ea3e69721d944d308880ec41323b7f89e51a78df3693348779315e
 Timestamp: 1569578936
 Random number hash: b03f256c9efdb97b9815faa1417e1da4cca7672e0bb26e4e7d9bfc82d0f1f15e
+Committed at block 634510 (tx hash: 9DEF124E12DE123BA1CC75AA6E68F20CC48EBBE9D7693CE4D0416267C6C0F159, response: {Code:0 Data:[229 50 241 60 76 91 112 146 93 68 100 222 83 84 180 133 181 151 241 174 93 125 132 82 245 198 5 66 0 123 32 113] Log:Msg 0: swapID: f85dd907df0a5897927b949c0f9e2563d453ba698ff9941fed1ce91f8057afc2 Info: GasWanted:0 GasUsed:0 Events:[{Type: Attributes:[{Key:[115 101 110 100 101 114] Value:[116 98 110 98 49 108 54 118 103 107 53 121 121 120 99 97 108 109 48 54 103 100 115 103 53 53 97 121 52 112 106 107 102 117 101 97 122 107 118 119 104 53 56] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0} {Key:[114 101 99 105 112 105 101 110 116] Value:[116 98 110 98 49 119 120 101 112 108 121 119 55 120 56 97 97 104 121 57 51 119 57 54 121 104 119 109 55 120 99 113 51 107 101 52 102 102 97 115 112 51 100] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0} {Key:[97 99 116 105 111 110] Value:[72 84 76 84] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}] Codespace: XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0})
 ```
 > Note: the swap amount should be more than one.
 
-Please write down the `secret` and `secret hash` for next steps.
+Please write down the `secret`, `secret hash`, `swapID` and `timestamp` for next steps.
 
 Example is here: <https://testnet-explorer.binance.org/tx/9ECECE9E0F08EE78583CFA37FD4C3F03521289F0F229A612886B8B21B9C62D7F>
 
@@ -403,7 +404,7 @@ You should see that **Deputy** has already approved enough tokens and
 In its event log, you should see the `Swap-ID`. Then, you can call the `claim` function:
  * Function: *claim*
  * Prameters:
-    * _swapID: this is get from event, you can also calculate it from `calSwapID` function
+    * _swapID: this is get from event, you can also calculate it from `calSwapID` function. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
     * _randomNumber: reveal your secret
 
 Example: https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b
