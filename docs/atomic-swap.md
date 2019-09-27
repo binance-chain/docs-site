@@ -316,7 +316,7 @@ Example of approve 1000 PPC: <https://ropsten.etherscan.io/tx/0xfa640b382d3842cf
 Go to: https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract and call `HTLT` function
  * Function: *htlt*
  * Prameters:
-      * _randomNumberHash: SHA256(secret), your secret should be 32 bytes,
+      * _randomNumberHash: SHA256(secret||timestamp), your secret should be 32 bytes,
       * _timestamp: it should be about 10 mins span around current timestamp
       * _heightSpan: it's a customized filed for deputy operator. it should be more than 200 for this deputy.
       * _recipientAddr: deputy address on Ethereum, it's `0x1C002969Fe201975eD8F054916b071672326858e` for this one
@@ -326,6 +326,8 @@ Go to: https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89
       * _bep2Amount: _outAmount * exchange rate, the default rate is 1
 
 Example of `htlt`: <https://ropsten.etherscan.io/tx/0xa2444cc1e52e09027ec68bf8955e7084235255f9f18d9b837a12fd63e6f0145c>
+
+Then, Deputy will send `HTLT` transaction here: <https://testnet-explorer.binance.org/tx/99CBC2896F0CF14DDAB0684BDA0A3E9FF2271056E68EC3559AB7FB24E0EE97DE>
 
 #### 3. Claim HTLT on Binance Chain
 * Confirm the HTLT from Deputy
@@ -345,11 +347,50 @@ Please use this ID and the secrect you used for generating secret hash to claim 
 Example of `claim` tx on testnet: <https://testnet-dex.binance.org/api/v1/tx/6BA714E6D107F1D9634DDC159F560A1FB61393B8E15723EFD70B9EA8B0B1AA9A?format=json>
 
 
-### Swap Tokens from Ethereum to Binance Chain
-![image-20190918193751444](assets/eth2bnc.png)
+Deputy will claim ERC20 tokens afterwards: <https://ropsten.etherscan.io/tx/0x3a422bdb273d4eb4d112ae8e51e8acd3ad706b2af67af20a5f15a18e4acc70fc>
 
 ### Swap Tokens from Binance Chain to Ethereum
 ![image-20190918193910521](assets/bnc2eth.png)
+
+#### 1. Send `HTLT` Transaction from Binance Chain
+
+Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTLT` transaction. Please write down the `secret` and `secret hash`.
+```
+./tbnbcli token HTLT --from atomic --recipient-addr tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr  --chain-id Binance-Chain-Nile  --height-span 10000 --amount  9900000000:PPC-00A  --expected-income 9900000000:PPC  --recipient-other-chain 0x133D144F52705cEb3f5801B63b9EBcCF4102f5Ed  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+Random number: 4811959406ea3e69721d944d308880ec41323b7f89e51a78df3693348779315e
+Timestamp: 1569578936
+Random number hash: b03f256c9efdb97b9815faa1417e1da4cca7672e0bb26e4e7d9bfc82d0f1f15e
+```
+> Note: the swap amount should be more than one.
+
+Please write down the `secret` and `secret hash` for next steps.
+
+Example is here: <https://testnet-explorer.binance.org/tx/9ECECE9E0F08EE78583CFA37FD4C3F03521289F0F229A612886B8B21B9C62D7F>
+
+Then, you can query the `Swap-ID`:
+```
+./tbnbcli token query-swapIDs-by-creator --creator-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --trust-node --node https://seed-pre-s3.binance.org:443 --chain-id Binance-Chain-Nile --limit 10
+[
+"f85dd907df0a5897927b949c0f9e2563d453ba698ff9941fed1ce91f8057afc2"
+]
+```
+
+You can use this `Swap-ID` for refund.
+
+#### 2. Claim ERC20 Tokens on Ethereum
+
+You should see that **Deputy** has already approved enough tokens and sent the `htlt` transaction afterwards: <https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a028678e36595fc8aea03858672288fcac8e4494>
+
+In its event log, you should see the `Swap-ID`. Then, you can call the `claim` function:
+ * Function: *claim*
+ * Prameters:
+    * _swapID: this is get from event, you can also calculate it from `calSwapID` function
+    * _randomNumber: reveal your secret
+
+Example: https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b
+
+
+`HTLT Claim` transaction from **Deputy** is sent afterwards: <https://testnet-explorer.binance.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48>
 
 ### Swap between Several BEP2 tokens
 
