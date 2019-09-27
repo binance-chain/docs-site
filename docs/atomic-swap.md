@@ -327,9 +327,10 @@ Go to: https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89
 
 Example of `htlt`: <https://ropsten.etherscan.io/tx/0xa2444cc1e52e09027ec68bf8955e7084235255f9f18d9b837a12fd63e6f0145c>
 
+#### 3. Deputy Call HTLT on Binance Chain
 Then, Deputy will send `HTLT` transaction here: <https://testnet-explorer.binance.org/tx/99CBC2896F0CF14DDAB0684BDA0A3E9FF2271056E68EC3559AB7FB24E0EE97DE>
 
-#### 3. Claim HTLT on Binance Chain
+#### 4. Claim HTLT on Binance Chain
 * Confirm the HTLT from Deputy
 ```
 ./tbnbcli token query-swapIDs-by-recipient  --recipient-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
@@ -346,6 +347,7 @@ Please use this ID and the secrect you used for generating secret hash to claim 
 
 Example of `claim` tx on testnet: <https://testnet-dex.binance.org/api/v1/tx/6BA714E6D107F1D9634DDC159F560A1FB61393B8E15723EFD70B9EA8B0B1AA9A?format=json>
 
+#### 5. Deputy Claim ERC20 Token
 
 Deputy will claim ERC20 tokens afterwards: <https://ropsten.etherscan.io/tx/0x3a422bdb273d4eb4d112ae8e51e8acd3ad706b2af67af20a5f15a18e4acc70fc>
 
@@ -374,12 +376,19 @@ Then, you can query the `Swap-ID`:
 "f85dd907df0a5897927b949c0f9e2563d453ba698ff9941fed1ce91f8057afc2"
 ]
 ```
+#### 2.  Deputy Approve Tokens
+
+You should see that **Deputy** has approve enough amount of tokens for atomic swap.
+
+#### 3. Deputy Send HTLT on Ethereum
+
+You should see that **Deputy** has sent the `htlt` transaction afterwards: <https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a028678e36595fc8aea03858672288fcac8e4494>
 
 You can use this `Swap-ID` for refund.
 
-#### 2. Claim ERC20 Tokens on Ethereum
+#### 4. Claim ERC20 Tokens on Ethereum
 
-You should see that **Deputy** has already approved enough tokens and sent the `htlt` transaction afterwards: <https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a028678e36595fc8aea03858672288fcac8e4494>
+You should see that **Deputy** has already approved enough tokens and
 
 In its event log, you should see the `Swap-ID`. Then, you can call the `claim` function:
  * Function: *claim*
@@ -389,6 +398,7 @@ In its event log, you should see the `Swap-ID`. Then, you can call the `claim` f
 
 Example: https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b
 
+#### 5. Deputy Claim on Binance Chain
 
 `HTLT Claim` transaction from **Deputy** is sent afterwards: <https://testnet-explorer.binance.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48>
 
