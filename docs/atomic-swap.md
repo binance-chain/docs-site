@@ -16,7 +16,7 @@
     + [Swap Tokens from Binance Chain to Ethereum](#swap-tokens-from-binance-chain-to-ethereum)
     + [Swap between Several BEP2 tokens](#swap-between-several-bep2-tokens)
     + [Swap between Several BEP2 tokens fails](#swap-between-several-bep2-tokens-fails)
-    
+
 ## Introduction
 As explained in [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Binance Chain and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
 During the swap process, the related fund will be locked to a purely-code-controlled escrow account. The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transfered from the purely-code-controlled escrow account to client accounts.
@@ -291,6 +291,58 @@ refundHTLT | N/A |  0.000375 BNB | Y
 2. Deploy `deputy` process for handling swap activities by token owners, there is an existing open-source solution here: <https://github.com/binance-chain/bep3-deputy>
 3. Issue and transfer enough tokens
 
+### Testnet Deployment
+
+* ERC20 contract has been deployed here: <https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098>
+* Token Symbol: **PPC**
+* SmartContract has been deployed here:  <https://ropsten.etherscan.io/address/0x12dcbf79be178479870a473a99d91f535ed960ad>
+* Its corresponding address on testnet is: `tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr`on Binance Chain and `0xD93395B2771914E1679155F3EA58C41d89D96098` on Ethereum testnet
+
+### Swap Tokens from Ethereum to Binance Chain
+![image-20190918193751444](assets/eth2bnc.png)
+#### 1.  Approve Swap Transaction
+
+Go to: https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract and approve some amount of tokens.
+ * Function: *Approve*
+ * Prameters:
+     * _spender: address of smartcontract, which is `0x12DCBf79BE178479870A473A99d91f535ed960AD`
+     * _value: approved amount, should be bumped by e^10
+
+> Note: Please approve more than 1token.  In the following example, 100 PPC token was approved:
+
+Example of approve 1000 PPC: <https://ropsten.etherscan.io/tx/0xfa640b382d3842cf508ac347090d2550e35e2193804d2a9318fbbdcdd54c846b>
+#### 2. Call `HTLT` function From Ethereum
+
+Go to: https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract and call `HTLT` function
+ * Function: *htlt*
+ * Prameters:
+      * _randomNumberHash: SHA256(secret), your secret should be 32 bytes,
+      * _timestamp: it should be about 10 mins span around current timestamp
+      * _heightSpan: it's a customized filed for deputy operator. it should be more than 200 for this deputy.
+      * _recipientAddr: deputy address on Ethereum, it's `0x1C002969Fe201975eD8F054916b071672326858e` for this one
+      * _bep2SenderAddr: omit this field with `0x0`
+      * _bep2RecipientAddr: Decode your testnet address from bech32 encoded to hex, for example: 0xc41f2a85e1d3629637de1222017dce46c6c8e4b9
+      * _outAmount:  approved amount, should be bumped by e^10
+      * _bep2Amount: _outAmount * exchange rate, the default rate is 1
+
+Example of `htlt`: <https://ropsten.etherscan.io/tx/0xa2444cc1e52e09027ec68bf8955e7084235255f9f18d9b837a12fd63e6f0145c>
+
+#### 3. Claim HTLT on Binance Chain
+* Confirm the HTLT from Deputy
+```
+./tbnbcli token query-swapIDs-by-recipient  --recipient-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+[
+  "12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128"
+]
+```
+
+Please use this ID and the secrect you used for generating secret hash to claim BEP2 tokens.
+
+```
+./tbnbcli token claim --swap-id  12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128  --random-number <random-number> --from <from-key>  --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Example of `claim` tx on testnet: <https://testnet-dex.binance.org/api/v1/tx/6BA714E6D107F1D9634DDC159F560A1FB61393B8E15723EFD70B9EA8B0B1AA9A?format=json>
 
 
 ### Swap Tokens from Ethereum to Binance Chain
