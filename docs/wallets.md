@@ -28,5 +28,6 @@
 | 22     | [TokenPocket Wallet](wallets/tokenpocket.md)           | <https://www.tokenpocket.pro/>   |False|
 | 23     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |False|
 | 24     | [X Wallet](wallets/xwallet.md)                         | <https://xwallet.pundix.com>     |False|
-| 25    | [Midas Wallet](wallets/midas-wallet.md)                         | <https://www.midasprotocol.io>     |False|
+| 25     | [Midas Wallet](wallets/midas-wallet.md)                | <https://www.midasprotocol.io>   |False|
+| 26     | [Cosmostation Wallet](wallets/cosmostation.md)         | <https://www.cosmostation.io/>   |False|
 
