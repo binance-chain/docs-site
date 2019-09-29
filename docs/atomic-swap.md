@@ -345,7 +345,7 @@ Go to [smartcontract](https://ropsten.etherscan.io/address/0xd93395b2771914e1679
 
  * Function: *htlt*
  * Prameters:
-      * _randomNumberHash: SHA256(secret||timestamp), your secret should be 32 bytes,
+      * _randomNumberHash: SHA256(randomNumber||timestamp), randomNumber is 32-length random byte array
       * _timestamp: it should be about 10 mins span around current timestamp
       * _heightSpan: it's a customized filed for deputy operator. it should be more than 200 for this deputy.
       * _recipientAddr: deputy address on Ethereum, it's `0x1C002969Fe201975eD8F054916b071672326858e` for this one
@@ -369,6 +369,14 @@ Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binanc
   "12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128"
 ]
 ```
+
+You can also get swapID by [calculateSwapID in javascript-sdk](https://github.com/binance-chain/javascript-sdk/blob/91b4d39e96e6433c16a3a1288931f84923075543/src/utils/index.js#L266). It requires three parameters:
+
+| Name | Type | Description | Example |
+|-- | -- | -- | -- |
+|randomNumberHash | string  | randomNumberHash in client HTLT transaction on Ethereum | 5a3728a8f4ecb8b4cb0b983a9441b7d69f95229c4aa531e6e3827d7c19beac82 |
+|sender | string  | deputy bep2 address | tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr |
+|senderOtherChain | string  | client ethereum address  | 0x133d144f52705ceb3f5801b63b9ebccf4102f5ed |
 
 * Query the swap by `swapID`
 
@@ -421,7 +429,7 @@ Deputy will claim ERC20 tokens afterwards: <https://ropsten.etherscan.io/tx/0x3a
 
 #### 1. Send `HTLT` Transaction from Binance Chain
 
-Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTLT` transaction. Please write down the `secret` and `secret hash`.
+Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTLT` transaction. Please write down the `randomNumber` and `randomNumberHash`.
 
 ```
 ./tbnbcli token HTLT --from atomic --recipient-addr tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr  --chain-id Binance-Chain-Nile  --height-span 10000 --amount  9900000000:PPC-00A  --expected-income 9900000000:PPC  --recipient-other-chain 0x133D144F52705cEb3f5801B63b9EBcCF4102f5Ed  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
@@ -477,8 +485,8 @@ Then, you can call the `claim` function:
 
  * Function: *claim*
  * Prameters:
-    * _swapID: this is get from event, you can also calculate it from `calSwapID` function. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
-    * _randomNumber: reveal your secret
+    * _swapID: this is get from event, you can also calculate it from `calSwapID` function in the contract. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
+    * _randomNumber: reveal your randomNumber
 
 Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b)
 
