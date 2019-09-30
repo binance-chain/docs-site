@@ -15,6 +15,8 @@
     + [Changes](#changes-1)
   * [Extra data from your fullnode](#extra-data-from-your-fullnode)
     + [Changes](#changes_3)
+- [Tendermint Changes](#tendermint-changes)
+  * [Upcoming Changes in v0.6.2](#upcoming-changes-in-v062)
 
 # Upcoming Changes in Binance Chain API v0.6.2
 
