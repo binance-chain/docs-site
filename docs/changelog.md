@@ -362,4 +362,46 @@ For example:
 }
 ```
 
+# Tendermint Changes
+
+## Upcoming Changes in v0.6.2
+### 1. Better Handle Index database
+
+Now Tendermint will recover index data from restart or crash. You can see the latest indexed height from status:
+```
+{
+"jsonrpc": "2.0",
+"id": "",
+"result": {
+...
+"sync_info": {
+      "latest_block_hash": "F51538DA498299F4C57AC8162AAFA0254CE08286",
+      "latest_app_hash": "0000000000000000",
+      "latest_block_height": "18",
+      "latest_block_time": "2018-09-17T11:42:19.149920551Z",
+      "catching_up": false,
+      "index_height": "18"
+    },
+...
+}
+```
+### 2. More configuration in config file
+
+A new field is added: ` skip_tx_from_persistent` under mempool part. If you set this to be True, your node will not broadcast transactions to its persistent peers.
+
+### 3. Change of Monitoring Metrics
+
+* Add the following metrics:
+   * IndexHegiht：This metric will show the latest indexed height.
+   * Height: This metric will show the latest  height of the blockchain
+   * BlockIntervalSeconds: This metric will show the Time between this and the last block
+   * NumTxs: This metric will show the total  number of transactions in the current block
+   * BlockSizeBytes: This metric will show the size of the block
+   * TotalTxs: This metric will show the total  number of transactions in history
+   * CommittedHeight: This metric will show the latest block height
+   * PermanentPeerSetSize: This metric will show the number of peers considered as good
+   * PermanentPeers: This metric will show the details of peers considered as good
+   * DecayPeerSetSize:  This metric will show the number of peers considered as bad
+* Remove metrics of ReceivedTx, PeerSendBytesTotal, PeerReceiveBytesTotal
+
 
