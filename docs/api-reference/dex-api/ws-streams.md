@@ -334,9 +334,13 @@ Order book price and quantity depth updates used to locally keep an order book.
 
 ### 6. Book Depth Streams
 
-Top 20 levels of bids and asks.
+Top 20 (could extend to 100, 500, 1000) levels of bids and asks.
+
+If you want subscribe topic marketDepth1000,your client must enable [compression](https://tools.ietf.org/html/rfc7692).
 
 **Topic Name:** marketDepth | Stream: \<symbol\>@marketDepth
+
+**Extension:** marketDepth100, marketDepth500, marketDepth1000 | Stream: \<symbol\>@marketDepth100, \<symbol\>@marketDepth500, \<symbol\>@marketDepth1000
 
 **Mainnet Connection Example:**
 
