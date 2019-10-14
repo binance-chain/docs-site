@@ -623,9 +623,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** Trading fee of the address grouped by block
 
 **Description:** Get historical trading fees of the address, including fees of trade/canceled order/expired order. Transfer and other transaction fees are not included. Order by block height DESC.
-
 **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
-
 **Rate Limit:** 5 requests per IP per second.
 
 
@@ -712,7 +710,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** transactions in Block
 
 **Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
-
+**Rate Limit:** 5 request per IP per second.
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
@@ -732,6 +730,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** AtomicSwap
 
 **Description:** Get atomic swaps by address.
+**Rate Limit:** 5 request per IP per second.
 
 **Parameters**
 
@@ -756,7 +755,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** AtomicSwap
 
 **Description:** Get an AtomicSwap by swap id
-
+**Rate Limit:** 5 request per IP per second.
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
@@ -795,10 +794,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** Get timelock records of an address.
 
 **Description:** Get the timelock history of an address.
-
 **Rate Limit:** 60 requests per IP per minute.
-
-
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |

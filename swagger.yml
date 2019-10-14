@@ -1093,9 +1093,7 @@ paths:
       summary: Trading fee of the address grouped by block
       description: |
         Get historical trading fees of the address, including fees of trade/canceled order/expired order. Transfer and other transaction fees are not included. Order by block height DESC.
-
         **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
-
         **Rate Limit:** 5 requests per IP per second.
       operationId: getBlockExchangeFee
       produces:
@@ -1302,7 +1300,9 @@ paths:
       tags:
         - transaction
       summary: transactions in Block
-      description: Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+      description: |
+         Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+         **Rate Limit:** 5 request per IP per second.
       operationId: getTransactionsInBlockV2
       produces:
         - application/json
@@ -1334,7 +1334,9 @@ paths:
       tags:
         - atomicSwap
       summary: AtomicSwap
-      description: Get atomic swaps by address.
+      description: |
+         Get atomic swaps by address.
+         **Rate Limit:** 5 request per IP per second.
       operationId: getAtomicSwapsByAddrUsingGET
       produces:
         - '*/*'
@@ -1385,12 +1387,14 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/AtomicSwapPageVo'
-  '/api/v1/atomic-swaps/{id}':
+  /api/v1/atomic-swaps/{id}:
     get:
       tags:
         - atomicSwap
       summary: AtomicSwap
-      description: Get an AtomicSwap by swap id
+      description: |
+       Get an AtomicSwap by swap id
+       **Rate Limit:** 5 request per IP per second.
       operationId: getAtomicSwapUsingGET
       produces:
         - application/json
@@ -1448,7 +1452,6 @@ paths:
       summary: Get timelock records of an address.
       description: |
           Get the timelock history of an address.
-
           **Rate Limit:** 60 requests per IP per minute.
       operationId: getTimeLocks
       produces:
