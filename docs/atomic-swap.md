@@ -526,7 +526,7 @@ Deputy will claim ERC20 tokens afterwards with [claim transaction](https://ropst
 
 #### 6. Demo for Client APP: swap erc20 to bep2
 
-This is a javascript implementation for client app to swap erc20 to bep2 with deputy:
+This is a javascript implementation for client app to swap [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) to [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) with deputy.
 
 ```javascript
   const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"
@@ -604,7 +604,7 @@ This is a javascript implementation for client app to swap erc20 to bep2 with de
   await wait(20000)
 
   //----------------------------------------------------------------------------
-  //Step3 query swap on Binance Chain and verify parameters
+  //Step3 query swap created by deputy on Binance Chain and verify swap parameters
   //----------------------------------------------------------------------------
   const swapID = calculateSwapID(randomNumberHash.replace("0x", ""), deputyBNBWalletAddr, clientEthWalletAddr).toString()
   console.log(swapID)
@@ -619,7 +619,7 @@ This is a javascript implementation for client app to swap erc20 to bep2 with de
   const status = await bnbRPC.status()
   expect(atomicSwap.result.toAddr).toBe(clientBnbWalletAddr)
   expect(atomicSwap.result.randomNumberHash).toBe(randomNumberHash.replace("0x", ""))
-  //expect(atomicSwap.result.timestamp).toBe(timestamp)
+  expect(atomicSwap.result.timestamp).toBe(timestamp)
   expect(atomicSwap.result.outAmount).toBe("99999000:PPC-00A")
   expect(Number(atomicSwap.result.expireHeight)).toBeGreaterThan(Number(status.sync_info.latest_block_height)+100)
 
@@ -706,7 +706,7 @@ Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b49
 
 #### 6. Demo for Client APP: swap bep2 to erc20
 
-This is a javascript implementation for client app to swap bep2 to erc20 with deputy:
+This is a javascript implementation for client app to swap  [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) to [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) with deputy.
 
 ```javascript
   const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"
@@ -749,7 +749,7 @@ This is a javascript implementation for client app to swap bep2 to erc20 with de
   await wait(1000)
 
   //----------------------------------------------------------------------------
-  //Step2 query swap on Ethereum and verify parameters
+  //Step2 query swap created by deputy on Ethereum and verify swap parameters
   //----------------------------------------------------------------------------
   const hexEncodingClientBNBaddr = '0x'+crypto.decodeAddress(clientBnbWalletAddr).toString("hex")
   const swapID = await swapContract.methods.calSwapID("0x"+randomNumberHash, deputyEthWalletAddr, hexEncodingClientBNBaddr).call()
