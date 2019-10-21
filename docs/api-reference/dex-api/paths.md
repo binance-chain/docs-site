@@ -712,8 +712,8 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** transactions in Block
 
 **Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
-**Rate Limit:** 5 request per IP per second.
 
+**Rate Limit:** 5 request per IP per second.
 
 **Parameters**
 
@@ -734,6 +734,7 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** AtomicSwap
 
 **Description:** Get atomic swaps by address.
+**Rate Limit:** 5 request per IP per second.
 
 **Rate Limit:** 5 request per IP per second.
 

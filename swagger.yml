@@ -1404,7 +1404,6 @@ paths:
        **Rate Limit:** 5 request per IP per second.
 
        **Rate Limit:** 60 request per IP per minute.
-
       operationId: getAtomicSwapUsingGET
       produces:
         - application/json
