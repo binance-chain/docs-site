@@ -18,12 +18,14 @@
       - [3. Deputy Call HTLT on Binance Chain](#3-deputy-call-htlt-on-binance-chain)
       - [4. Claim HTLT on Binance Chain](#4-claim-htlt-on-binance-chain)
       - [5. Deputy Claim ERC20 Token](#5-deputy-claim-erc20-token)
+      - [6. Client Javascript demo: swap erc20 to bep2](#6-demo-for-client-app-swap-erc20-to-bep2)
     + [Swap Tokens from Binance Chain to Ethereum](#swap-tokens-from-binance-chain-to-ethereum)
       - [1. Send `HTLT` Transaction from Binance Chain](#1-send--htlt--transaction-from-binance-chain)
       - [2.  Deputy Approve Tokens](#2--deputy-approve-tokens)
       - [3. Deputy Send HTLT on Ethereum](#3-deputy-send-htlt-on-ethereum)
       - [4. Claim ERC20 Tokens on Ethereum](#4-claim-erc20-tokens-on-ethereum)
       - [5. Deputy Claim on Binance Chain](#5-deputy-claim-on-binance-chain)
+      - [6. Client Javascript demo: swap bep2 to erc20](#6-demo-for-client-app-swap-bep2-to-erc20)
     + [Swap between Several BEP2 tokens](#swap-between-several-bep2-tokens)
     + [Swap between Several BEP2 tokens fails](#swap-between-several-bep2-tokens-fails)
 
@@ -65,8 +67,28 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 
 * On *testnet*:
 
+Command line
 ```shell
 ./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income <expectedIncome> --height-span <heightSpan> --from <from-addr> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const from = "tbnb1hgm0p7khfk85zpz5v0j8wnej3a90w709zzlffd"// sender address
+  const recipient = "tbnb1prrujx8kkukrcrppklggadhuvegfnx8pemsq77"// recipient address
+  const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3"// 32 bytes random number
+  const timestamp = Math.floor(Date.now()/1000)// take the current timestamp
+  const randomNumberHash = calculateRandomNumberHash(randomNumber, timestamp)
+  const amount = [{
+    denom: "BNB",
+    amount: 100
+  }]
+  const expectedIncome = "100:BNB"// expected income
+  const heightSpan = 400// height span
+  const res = client.swap.HTLT(from, recipient, "", "", randomNumberHash, timestamp, amount, expectedIncome, heightSpan, false)
 ```
 
 **Example output:**
@@ -101,8 +123,29 @@ swapID: 4d898bc8558daa4d817486d7a93b77b2c82fcec2123abf4a1eb7d2521237eccd
 
 * Clients send HTLT on Binance Chain on *testnet*:
 
+Command line:
 ```shell
 ./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <deputy-bep2-addr>  --recipient-other-chain <client ethereum address>  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript:
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const from = "tbnb1hgm0p7khfk85zpz5v0j8wnej3a90w709zzlffd"// sender address
+  const recipient = "tbnb1prrujx8kkukrcrppklggadhuvegfnx8pemsq77"// recipient address
+  const recipientOtherChain="0x37B8516a0F88E65D677229b402ec6C1e0E333004"//client ethereum address
+  const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3"// 32 bytes random number
+  const timestamp = Math.floor(Date.now()/1000)// take the current timestamp
+  const randomNumberHash = calculateRandomNumberHash(randomNumber, timestamp)
+  const amount = [{
+    denom: "BNB",
+    amount: 100
+  }] // swap out token amount
+  const expectedIncome = "100:BNB"// expected income
+  const heightSpan = 400 // height span
+  const res = client.swap.HTLT(from, recipient, recipientOtherChain, "", randomNumberHash, timestamp, amount, expectedIncome, heightSpan, true)
 ```
 
 3. Swap from Ethereum to Binance Chain
@@ -111,8 +154,29 @@ swapID: 4d898bc8558daa4d817486d7a93b77b2c82fcec2123abf4a1eb7d2521237eccd
 
 * Deputy send HTLT on Binance Chain on *testnet*:
 
+Command line:
 ```shell
 ./tbnbcli token HTLT --from  <from-addr> --chain-id Binance-Chain-Nile --height-span  <heightSpan>  --amount <amount> --expected-income <expectedIncome> --recipient-other-chain <deputy ethereum address> --sender-other-chain <client ethereum address> --recipient-addr <client bep2 address> --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript:
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const from = "tbnb1hgm0p7khfk85zpz5v0j8wnej3a90w709zzlffd"// sender address
+  const recipient = "tbnb1prrujx8kkukrcrppklggadhuvegfnx8pemsq77"// recipient address
+  const recipientOtherChain="0xfA5E36a04EeF3152092099F352DDbe88953bB540"//client ethereum address
+  const senderOtherChain="0x37B8516a0F88E65D677229b402ec6C1e0E333004" //client ethereum address
+  const randomNumberHash = "6632eda86c4f19190c8a986e188526eee865e1ce2758ba59c8bf45e20ffa3bb5" //deputy get this value from the event log of swap contract
+  const timestamp = 1571383800 //deputy get this value from the event log of swap contract
+  const amount = [{
+    denom: "BNB",
+    amount: 100
+  }] // swap out token amount
+  const expectedIncome = "100:BNB"// expected income
+  const heightSpan = 400 // height span
+  const res = client.swap.HTLT(from, recipient, recipientOtherChain, senderOtherChain, randomNumberHash, timestamp, amount, expectedIncome, heightSpan, true)
 ```
 
 ### Deposit HTLT
@@ -131,8 +195,23 @@ Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT 
 
 * On testnet:
 
+Command line:
 ```shell
 ./tbnbcli token deposit --swap-id <swapID>  --amount 10000:TEST-599 --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript:
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const from = "tbnb1hgm0p7khfk85zpz5v0j8wnej3a90w709zzlffd"// sender address
+  const swapID = "61daf59e977c5f718f5aaedeaf69ccbea1c376db5274a84bca88848696164ffe" // the ID of an existing swap
+  const amount = [{
+    denom: "TEST-599",
+    amount: 10000
+  }]
+  const res = client.swap.depositHTLT(from, swapID, amount)
 ```
 
 Example output
@@ -159,8 +238,19 @@ Claim Hash Timer Locked Transfer is to claim the locked asset by showing the ran
 
 * On testnet:
 
+Command line:
 ```shell
 ./tbnbcli token claim --swap-id  <swapID> --random-number <random-number> --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript:
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const swapID = "61daf59e977c5f718f5aaedeaf69ccbea1c376db5274a84bca88848696164ffe" // the ID of an existing swap
+  const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3" // the random number generated in htlt
+  const res = client.swap.claimHTLT(from, swapID, randomNumber)
 ```
 
 Example output:
@@ -184,8 +274,18 @@ Refund Hash Timer Locked Transfer is to refund the locked asset after timelock i
 
 * On testnet:
 
+Command line:
 ```shell
 ./tbnbcli token refund --swap-id <swapID> --from <from-key>  --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+```
+
+Javascript:
+```javascript
+  const client = new BncClient("https://testnet-dex.binance.org")
+  const privateKey = crypto.getPrivateKeyFromMnemonic(mnemonic)
+  client.setPrivateKey(privateKey)
+  const swapID = "61daf59e977c5f718f5aaedeaf69ccbea1c376db5274a84bca88848696164ffe" // the ID of an existing swap
+  const res = client.swap.refundHTLT(from, swapID, randomNumber)
 ```
 
 Common error:
@@ -424,6 +524,116 @@ Example of `claim` tx on [testnet](https://testnet-dex.binance.org/api/v1/tx/6BA
 
 Deputy will claim ERC20 tokens afterwards with [claim transaction](https://ropsten.etherscan.io/tx/0x3a422bdb273d4eb4d112ae8e51e8acd3ad706b2af67af20a5f15a18e4acc70fc)
 
+#### 6. Demo for Client APP: swap erc20 to bep2
+
+This is a javascript implementation for client app to swap erc20 to bep2 with deputy:
+
+```javascript
+  const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"
+  const swapContractAddr = "0x12DCBf79BE178479870A473A99d91f535ed960AD"
+
+  const deputyEthWalletAddr = "0x1C002969Fe201975eD8F054916b071672326858e"
+  const deputyBNBWalletAddr = "tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr"
+
+  const clientEthWalletAddr = "0xfA5E36a04EeF3152092099F352DDbe88953bB540"
+  const clientEthWalletKey = new Buffer("89A0F0E0732ACAA7AD37C9E6D7A9798ECCE6940C63FF0290A58B1C1C1697486A", "hex")
+
+  const clientBnbWalletAddr = "tbnb17vwyu8npjj5pywh3keq2lm7d4v76n434pwd8av"
+  const clientBnbWalletMnemonic = "lawsuit margin siege phrase fabric matrix like picnic day thrive correct velvet stool type broom upon flee fee ten senior install wrestle soap sick"
+
+  const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1c5b38a27f92410cb5feb13b6efb2e14"))
+  const bnbClient = new BncClient("https://testnet-dex.binance.org")
+  await bnbClient.initChain()
+  bnbClient.setPrivateKey(crypto.getPrivateKeyFromMnemonic(clientBnbWalletMnemonic))
+  bnbClient.useDefaultSigningDelegate()
+  bnbClient.useDefaultBroadcastDelegate()
+  const bnbRPC = new rpcClient("https://seed-pre-s3.binance.org", "testnet")
+
+  const erc20Contract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_evilUser","type":"address"}],"name":"addBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"isPauser","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_maker","type":"address"}],"name":"getBlackListStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"renouncePauser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"renounceOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"}],"name":"addPauser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"issue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"redeem","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isBlackListed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_clearedUser","type":"address"}],"name":"removeBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_blackListedUser","type":"address"}],"name":"destroyBlackFunds","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"_initialSupply","type":"uint256"},{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_decimals","type":"uint8"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Issue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Redeem","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_blackListedUser","type":"address"},{"indexed":false,"name":"_balance","type":"uint256"}],"name":"DestroyedBlackFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_user","type":"address"}],"name":"AddedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_user","type":"address"}],"name":"RemovedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"account","type":"address"}],"name":"Paused","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"account","type":"address"}],"name":"Unpaused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"account","type":"address"}],"name":"PauserAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"account","type":"address"}],"name":"PauserRemoved","type":"event"}],erc20ContractAddr)
+  const swapContract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"ERC20ContractAddr","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"isSwapExist","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refund","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_swapSender","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"}],"name":"calSwapID","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"},{"name":"_randomNumber","type":"bytes32"}],"name":"claim","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_heightSpan","type":"uint256"},{"name":"_recipientAddr","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"},{"name":"_bep2RecipientAddr","type":"bytes20"},{"name":"_outAmount","type":"uint256"},{"name":"_bep2Amount","type":"uint256"}],"name":"htlt","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"claimable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refundable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"queryOpenSwap","outputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_expireHeight","type":"uint256"},{"name":"_outAmount","type":"uint256"},{"name":"_sender","type":"address"},{"name":"_recipient","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_erc20Contract","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_timestamp","type":"uint64"},{"indexed":false,"name":"_bep2Addr","type":"bytes20"},{"indexed":false,"name":"_expireHeight","type":"uint256"},{"indexed":false,"name":"_outAmount","type":"uint256"},{"indexed":false,"name":"_bep2Amount","type":"uint256"}],"name":"HTLT","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"}],"name":"Refunded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_randomNumber","type":"bytes32"}],"name":"Claimed","type":"event"}], swapContractAddr)
+
+  //--------------------------------------------
+  //Step1 approve erc20 to swap contract address
+  //--------------------------------------------
+  const approveData = erc20Contract.methods.increaseAllowance(swapContractAddr, 10000000000).encodeABI()
+  let nonce = await web3.eth.getTransactionCount(clientEthWalletAddr, 'pending')
+  let gasPrice = await web3.eth.getGasPrice()
+  let gasLimit = 3000000
+  let rawTx = {
+    nonce: web3.utils.toHex(nonce),
+    gasPrice: web3.utils.toHex(gasPrice),
+    gasLimit: web3.utils.toHex(gasLimit),
+    to: erc20ContractAddr,
+    value: '0x00',
+    data: approveData
+  }
+  var ethereumjs = require('ethereumjs-tx')
+  var signTx = new ethereumjs(rawTx)
+  signTx.sign(clientEthWalletKey)
+  var serializedTx = signTx.serialize();
+  web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).on('receipt', console.log)
+  await wait(20000)
+  //----------------------------------------------------------------------------
+  //Step2 call swap contract to send htlt transaction on Ethereum
+  //----------------------------------------------------------------------------
+  const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3"
+  const timestamp = Math.floor(Date.now()/1000)
+  const randomNumberHash = calculateRandomNumberHash(randomNumber, timestamp).toString("hex")
+  const heightSpan = 1000
+  const hexEncodingClientBNBaddr = '0x'+crypto.decodeAddress(clientBnbWalletAddr).toString("hex")
+  const amount = 10000000000 // 10000000000:PPC， decimal is 10
+  const expectedIncome = 99999000 //"99999000:PPC-00A", decimal is 8, deputy will deduct swap fee, the swap fee is 1000:PPC-00A
+
+  const htltData = swapContract.methods.htlt("0x"+randomNumberHash, timestamp, heightSpan, deputyEthWalletAddr, "0x0", hexEncodingClientBNBaddr, amount, expectedIncome).encodeABI()
+  nonce = await web3.eth.getTransactionCount(clientEthWalletAddr, 'pending')
+  gasPrice = await web3.eth.getGasPrice()
+  gasLimit = 3000000
+  rawTx = {
+    nonce: web3.utils.toHex(nonce),
+    gasPrice: web3.utils.toHex(gasPrice),
+    gasLimit: web3.utils.toHex(gasLimit),
+    to: swapContractAddr,
+    value: '0x00',
+    data: htltData
+  }
+  ethereumjs = require('ethereumjs-tx')
+  signTx = new ethereumjs(rawTx)
+  signTx.sign(clientEthWalletKey)
+  serializedTx = signTx.serialize();
+  web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).on('receipt', console.log)
+  await wait(20000)
+
+  //----------------------------------------------------------------------------
+  //Step3 query swap on Binance Chain and verify parameters
+  //----------------------------------------------------------------------------
+  const swapID = calculateSwapID(randomNumberHash.replace("0x", ""), deputyBNBWalletAddr, clientEthWalletAddr).toString()
+  console.log(swapID)
+  let atomicSwapList = await bnbClient.getSwapByRecipient(clientBnbWalletAddr,1000, 0)
+  while (atomicSwapList.result.atomicSwaps[0].swapId != swapID) {
+    console.log("Waiting for the atomic swap created by deputy")
+    await wait(5000)
+    atomicSwapList = await bnbClient.getSwapByRecipient(clientBnbWalletAddr,1000, 0)
+  }
+  const atomicSwap = await bnbClient.getSwapByID(swapID)
+  console.log(atomicSwap)
+  const status = await bnbRPC.status()
+  expect(atomicSwap.result.toAddr).toBe(clientBnbWalletAddr)
+  expect(atomicSwap.result.randomNumberHash).toBe(randomNumberHash.replace("0x", ""))
+  //expect(atomicSwap.result.timestamp).toBe(timestamp)
+  expect(atomicSwap.result.outAmount).toBe("99999000:PPC-00A")
+  expect(Number(atomicSwap.result.expireHeight)).toBeGreaterThan(Number(status.sync_info.latest_block_height)+100)
+
+  //----------------------------------------------------------------------------
+  //Step4 claim on Binance chain
+  //----------------------------------------------------------------------------
+  const res = await bnbClient.swap.claimHTLT(clientBnbWalletAddr, swapID, randomNumber)
+  console.log(res)
+
+  //----------------------------------------------------------------------------
+  //If step3 or step4 are failed and the expire height on Ethereum is passed, try to call refund method on Ethereum
+  //----------------------------------------------------------------------------
+```
+
 ### Swap Tokens from Binance Chain to Ethereum
 ![image-20190918193910521](assets/bnc2eth.png)
 
@@ -493,6 +703,98 @@ Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b49
 #### 5. Deputy Claim on Binance Chain
 
 `Claim HTLT` transaction from **Deputy** is [sent](https://testnet-explorer.binance.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48) afterwards:
+
+#### 6. Demo for Client APP: swap bep2 to erc20
+
+This is a javascript implementation for client app to swap bep2 to erc20 with deputy:
+
+```javascript
+  const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"
+  const swapContractAddr = "0x12DCBf79BE178479870A473A99d91f535ed960AD"
+
+  const deputyEthWalletAddr = "0x1C002969Fe201975eD8F054916b071672326858e"
+  const deputyBNBWalletAddr = "tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr"
+
+  const clientEthWalletAddr = "0xfA5E36a04EeF3152092099F352DDbe88953bB540"
+  const clientEthWalletKey = new Buffer("89A0F0E0732ACAA7AD37C9E6D7A9798ECCE6940C63FF0290A58B1C1C1697486A", "hex")
+
+  const clientBnbWalletAddr = "tbnb17vwyu8npjj5pywh3keq2lm7d4v76n434pwd8av"
+  const clientBnbWalletMnemonic = "lawsuit margin siege phrase fabric matrix like picnic day thrive correct velvet stool type broom upon flee fee ten senior install wrestle soap sick"
+
+  const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1c5b38a27f92410cb5feb13b6efb2e14"))
+  const bnbClient = new BncClient("https://testnet-dex.binance.org")
+  await bnbClient.initChain()
+  bnbClient.setPrivateKey(crypto.getPrivateKeyFromMnemonic(clientBnbWalletMnemonic))
+  bnbClient.useDefaultSigningDelegate()
+  bnbClient.useDefaultBroadcastDelegate()
+  const bnbRPC = new rpcClient("https://seed-pre-s3.binance.org", "testnet")
+
+  const erc20Contract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_evilUser","type":"address"}],"name":"addBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"isPauser","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_maker","type":"address"}],"name":"getBlackListStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"renouncePauser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"renounceOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"}],"name":"addPauser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"issue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"redeem","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isBlackListed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_clearedUser","type":"address"}],"name":"removeBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_blackListedUser","type":"address"}],"name":"destroyBlackFunds","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"_initialSupply","type":"uint256"},{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_decimals","type":"uint8"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Issue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Redeem","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_blackListedUser","type":"address"},{"indexed":false,"name":"_balance","type":"uint256"}],"name":"DestroyedBlackFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_user","type":"address"}],"name":"AddedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_user","type":"address"}],"name":"RemovedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"account","type":"address"}],"name":"Paused","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"account","type":"address"}],"name":"Unpaused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"account","type":"address"}],"name":"PauserAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"account","type":"address"}],"name":"PauserRemoved","type":"event"}],erc20ContractAddr)
+  const swapContract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"ERC20ContractAddr","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"isSwapExist","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refund","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_swapSender","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"}],"name":"calSwapID","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"},{"name":"_randomNumber","type":"bytes32"}],"name":"claim","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_heightSpan","type":"uint256"},{"name":"_recipientAddr","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"},{"name":"_bep2RecipientAddr","type":"bytes20"},{"name":"_outAmount","type":"uint256"},{"name":"_bep2Amount","type":"uint256"}],"name":"htlt","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"claimable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refundable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"queryOpenSwap","outputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_expireHeight","type":"uint256"},{"name":"_outAmount","type":"uint256"},{"name":"_sender","type":"address"},{"name":"_recipient","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_erc20Contract","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_timestamp","type":"uint64"},{"indexed":false,"name":"_bep2Addr","type":"bytes20"},{"indexed":false,"name":"_expireHeight","type":"uint256"},{"indexed":false,"name":"_outAmount","type":"uint256"},{"indexed":false,"name":"_bep2Amount","type":"uint256"}],"name":"HTLT","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"}],"name":"Refunded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_randomNumber","type":"bytes32"}],"name":"Claimed","type":"event"}], swapContractAddr)
+
+  //--------------------------------------------
+  //Step1 send htlt on Binance Chain
+  //--------------------------------------------
+  const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3"
+  const timestamp = Math.floor(Date.now()/1000)
+  const randomNumberHash = calculateRandomNumberHash(randomNumber, timestamp).toString("hex")
+  const heightSpan = 10000
+  const amount = [{
+    denom: "PPC-00A",
+    amount: 100000000
+  }]
+  const expectedIncome = "9999990000:PPC" //"9999990000:PPC", decimal is 10, deputy will deduct swap fee, the swap fee is 10000:PPC
+
+  bnbClient.swap.HTLT(clientBnbWalletAddr, deputyBNBWalletAddr, clientEthWalletAddr, "", randomNumberHash, timestamp, amount, expectedIncome, heightSpan, true)
+  await wait(1000)
+
+  //----------------------------------------------------------------------------
+  //Step2 query swap on Ethereum and verify parameters
+  //----------------------------------------------------------------------------
+  const hexEncodingClientBNBaddr = '0x'+crypto.decodeAddress(clientBnbWalletAddr).toString("hex")
+  const swapID = await swapContract.methods.calSwapID("0x"+randomNumberHash, deputyEthWalletAddr, hexEncodingClientBNBaddr).call()
+  console.log(swapID)
+
+  let openSwap = await swapContract.methods.queryOpenSwap(swapID).call()
+  while (openSwap._randomNumberHash == '0x0000000000000000000000000000000000000000000000000000000000000000') {
+    console.log("Waiting for the atomic swap created by deputy")
+    await wait(5000)
+    openSwap = await swapContract.methods.queryOpenSwap(swapID).call()
+  }
+  let ethBlock = await web3.eth.getBlock('latest')
+  let ethLatestHeight = ethBlock.number
+  expect(openSwap._randomNumberHash).toBe("0x"+randomNumberHash)
+  expect(Number(openSwap._timestamp)).toBe(timestamp)
+  expect(Number(openSwap._outAmount)).toBe(9999990000)
+  expect(openSwap._recipient).toBe(clientEthWalletAddr)
+  expect(Number(openSwap._expireHeight)).toBeGreaterThan(Number(ethLatestHeight)+20)
+
+  //----------------------------------------------------------------------------
+  //Step3 claim on Ethereum
+  //----------------------------------------------------------------------------
+  const claimData = swapContract.methods.claim(swapID, "0x"+randomNumber).encodeABI()
+  let nonce = await web3.eth.getTransactionCount(clientEthWalletAddr, 'pending')
+  let gasPrice = await web3.eth.getGasPrice()
+  let gasLimit = 3000000
+  let rawTx = {
+    nonce: web3.utils.toHex(nonce),
+    gasPrice: web3.utils.toHex(gasPrice),
+    gasLimit: web3.utils.toHex(gasLimit),
+    to: swapContractAddr,
+    value: '0x00',
+    data: claimData
+  }
+  var ethereumjs = require('ethereumjs-tx')
+  var signTx = new ethereumjs(rawTx)
+  signTx.sign(clientEthWalletKey)
+  var serializedTx = signTx.serialize();
+  web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).on('receipt', console.log)
+  await wait(20000)
+
+  //----------------------------------------------------------------------------
+  //If step2 or step3 are failed and the expire height on Binance Chain is passed, try to send refundHTLT transaction on Binance Chain
+  //----------------------------------------------------------------------------
+```
 
 ### Swap between Several BEP2 tokens
 
