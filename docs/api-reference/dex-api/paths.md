@@ -686,6 +686,8 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Description:** Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
 
+**Rate Limit:** 5 requests per IP per second.
+
 **Rate Limit:** 60 requests per IP per minute.
 
 
@@ -711,6 +713,8 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
 **Rate Limit:** 5 request per IP per second.
+
+
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
@@ -730,7 +734,10 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** AtomicSwap
 
 **Description:** Get atomic swaps by address.
+
 **Rate Limit:** 5 request per IP per second.
+
+**Rate Limit:** 60 requests per IP per minute.
 
 **Parameters**
 
@@ -755,7 +762,11 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** AtomicSwap
 
 **Description:** Get an AtomicSwap by swap id
+
 **Rate Limit:** 5 request per IP per second.
+
+**Rate Limit:** 60 request per IP per minute.
+
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
@@ -794,7 +805,9 @@ If the time window is larger than limits, only the first n klines will return. I
 **Summary:** Get timelock records of an address.
 
 **Description:** Get the timelock history of an address.
+
 **Rate Limit:** 60 requests per IP per minute.
+
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |

@@ -1269,6 +1269,8 @@ paths:
       description: |
         Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
 
+        **Rate Limit:** 5 requests per IP per second.
+
         **Rate Limit:** 60 requests per IP per minute.
       operationId: getTransactionsInBlock
       produces:
@@ -1336,7 +1338,11 @@ paths:
       summary: AtomicSwap
       description: |
          Get atomic swaps by address.
+
          **Rate Limit:** 5 request per IP per second.
+
+         **Rate Limit:** 60 requests per IP per minute.
+
       operationId: getAtomicSwapsByAddrUsingGET
       produces:
         - '*/*'
@@ -1394,7 +1400,11 @@ paths:
       summary: AtomicSwap
       description: |
        Get an AtomicSwap by swap id
+
        **Rate Limit:** 5 request per IP per second.
+
+       **Rate Limit:** 60 request per IP per minute.
+
       operationId: getAtomicSwapUsingGET
       produces:
         - application/json
