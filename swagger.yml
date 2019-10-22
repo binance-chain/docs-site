@@ -1350,7 +1350,7 @@ paths:
       parameters:
         - name: endTime
           in: query
-          description: end time
+          description: end time of blockTimestamp
           required: false
           type: integer
           format: int64
@@ -1363,21 +1363,21 @@ paths:
           allowEmptyValue: false
         - name: limit
           in: query
-          description: limit
+          description: default 25; max 1000.
           required: false
           type: integer
           default: 25
           format: int32
         - name: offset
           in: query
-          description: offset
+          description: start with 0; default 0.
           required: false
           type: integer
           default: 0
           format: int32
         - name: startTime
           in: query
-          description: start time; The maximum start - end query window is 3 months; Default query window is the latest 30 days.
+          description: start time of blockTimestamp; The maximum start - end query window is 3 months; Default query window is the latest 30 days.
           required: false
           type: integer
           format: int64
@@ -2358,12 +2358,13 @@ definitions:
   AtomicSwapVo:
         type: object
         properties:
+          blockTimestamp:
+            type: string
+            format: int64
+            description: Timestamp of block in which the swap is initiated. The unit is millisecond.
           closedTime:
             type: string
-            format: date-time
-          createTime:
-            type: string
-            format: date-time
+            format: int64
           crossChain:
             type: integer
             format: int32
@@ -2391,12 +2392,10 @@ definitions:
             type: string
           timestamp:
             type: string
-            format: date-time
+            format: int64
+            description: The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second.
           toAddr:
             type: string
-          updateTime:
-            type: string
-            format: date-time
         title: AtomicSwapVo
   TxV2:
     type: object
