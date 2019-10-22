@@ -26,12 +26,9 @@ Combining TSS feature  with Binance Chain client will help users manage their fu
 ## Security Audit
 
 
-The implementation of a multi-party threshold ECDSA [library](https://github.com/binance-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors are hired to validate the security of the cryptography in TSS solution.
+The implementation of a multi-party threshold ECDSA [library](https://github.com/binance-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors from [Kudelski Security](https://www.kudelskisecurity.com/)  are hired to validate the security of the cryptography in TSS solution. The latest report in October by can be found [here](./assets/audit-binance-tss-lib-final.pdf).
 
 Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to Binance Chain community.
-
-Tha latest report in October by [Kudelski Security](https://www.kudelskisecurity.com/) can be found [here](./assets/audit-binance-tss-lib-final.pdf).
-
 
 ## Workflow
 Let’s take a look at the major steps in TSS:
