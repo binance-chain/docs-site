@@ -30,7 +30,7 @@ The implementation of a multi-party threshold ECDSA [library](https://github.com
 
 Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to Binance Chain community.
 
-Tha latest report in October by [Kudelski Security](https://www.kudelskisecurity.com/) can be found [here](../assets/audit-binance-tss-lib-final.pdf).
+Tha latest report in October by [Kudelski Security](https://www.kudelskisecurity.com/) can be found [here](./assets/audit-binance-tss-lib-final.pdf).
 
 
 ## Workflow
