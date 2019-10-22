@@ -1392,7 +1392,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AtomicSwapPageVo'
+            $ref: '#/definitions/AtomicSwapPage'
   /api/v1/atomic-swaps/{id}:
     get:
       tags:
@@ -1417,7 +1417,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AtomicSwapVo'
+            $ref: '#/definitions/AtomicSwap'
   /api/v1/timelocks/{address}:
     get:
       summary: 'Gets time lock records given an address'
@@ -2000,6 +2000,27 @@ definitions:
         enum:
         - LIMIT
     title: Order
+  SubTx:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        format: int64
+      fromAddr:
+        type: string
+      toAddr:
+        type: string
+      txAsset:
+        type: string
+      txFee:
+        type: string
+      txHash:
+        type: string
+      txType:
+        type: string
+      value:
+        type: string
+    title: SubTx
   TickerStatistics:
     type: object
     properties:
@@ -2344,18 +2365,18 @@ definitions:
             type: integer
             format: int64
 
-  AtomicSwapPageVo:
+  AtomicSwapPage:
         type: object
         properties:
           atomicSwaps:
             type: array
             items:
-              $ref: '#/definitions/AtomicSwapVo'
+              $ref: '#/definitions/AtomicSwap'
           total:
             type: integer
             format: int64
-        title: AtomicSwapPageVo
-  AtomicSwapVo:
+        title: AtomicSwapPage
+  AtomicSwap:
         type: object
         properties:
           blockTimestamp:
@@ -2396,7 +2417,7 @@ definitions:
             description: The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second.
           toAddr:
             type: string
-        title: AtomicSwapVo
+        title: AtomicSwap
   TxV2:
     type: object
     required: [blockHeight,code,data,fromAddr,memo,sequence,source,timeStamp,toAddr,txAsset,txFee, txHash,txType,value]
@@ -2429,7 +2450,7 @@ definitions:
       subTransactions:
         type: array
         items:
-          $ref: '#/definitions/SubTxVo'
+          $ref: '#/definitions/SubTx'
         description: Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets
       swapId:
         type: string

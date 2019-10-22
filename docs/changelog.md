@@ -1,3 +1,6 @@
+- [Upcoming Changes in Binance Chain API v0.6.3](#upcoming-changes-in-binance-chain-api-v063)
+  * [HTTP API](#http-api)
+    + [/api/v1/atomic-swaps](#-api-v1-atomic-swaps-)
 - [Upcoming Changes in Binance Chain API v0.6.2](#upcoming-changes-in-binance-chain-api-v062)
   * [HTTP API](#http-api)
     + [/api/v2/transactions-in-block/{blockHeight}](#-api-v2-transactions-in-block--blockheight-)
@@ -18,6 +21,43 @@
 - [Tendermint Changes](#tendermint-changes)
   * [Upcoming Changes in v0.6.2](#upcoming-changes-in-v062)
 
+# Upcoming Changes in Binance Chain API v0.6.3
+
+## HTTP API
+
+### /api/v1/atomic-swaps
+### /api/v1/atomic-swaps/{id}
+
+##### ***Changes***
+The API is used to query atomic-swaps by id or by address.
+In the `AtomicSwap` data structure:
+* A new field `blockTimestamp` is added to indicate the block time in millisecond
+* The original `timestamp` is changed to indicate the timestamp for randomNumberHash calculation. Its unit is second.
+* `createTime` and `updateTime` are removed from `AtomicSwap`.
+
+
+### AtomicSwap
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockTimestamp | string (int64) | Timestamp of block in which the swap is initiated. The unit is millisecond. |  |
+| closedTime | string (int64) |  |  |
+| crossChain | integer |  |  |
+| expectedIncome | string |  |  |
+| expireHeight | long |  |  |
+| fromAddr | string |  |  |
+| inAmount | string |  |  |
+| outAmount | string |  |  |
+| randomNumber | string |  |  |
+| randomNumberHash | string |  |  |
+| recipientOtherChain | string |  |  |
+| status | integer |  |  |
+| swapId | string |  |  |
+| timestamp | string (int64) | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |  |
+| toAddr | string |  |  |
+
+
+
 # Upcoming Changes in Binance Chain API v0.6.2
 
 ## HTTP API
@@ -26,7 +66,7 @@
 
 ##### ***Changes***
 
-This endpoint is used for getting all transactions in the block. Multi-send and multi-coin transactions are flattend as sub-transactions.
+This endpoint is used for getting all transactions in the block. Multi-send and multi-coin transactions are flattened as sub-transactions.
 
 ### TxV2
 
@@ -41,7 +81,7 @@ This endpoint is used for getting all transactions in the block. Multi-send and 
 | proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
 | sequence | long |  |  |
 | source | long |  |  |
-| subTransactions | [ [SubTxVo](#subtxvo) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
+| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
 | swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
 | timeStamp | dateTime |  |  |
 | toAddr | string |  |  |

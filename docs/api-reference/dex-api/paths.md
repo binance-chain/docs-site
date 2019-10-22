@@ -755,7 +755,7 @@ If the time window is larger than limits, only the first n klines will return. I
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | OK | [AtomicSwapPageVo](#atomicswappagevo) |
+| 200 | OK | [AtomicSwapPage](#atomicswappage) |
 
 ### /api/v1/atomic-swaps/{id}
 ---
@@ -779,7 +779,7 @@ If the time window is larger than limits, only the first n klines will return. I
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | OK | [AtomicSwapVo](#atomicswapvo) |
+| 200 | OK | [AtomicSwap](#atomicswap) |
 
 ### /api/v1/timelocks/{address}
 ---
@@ -1063,6 +1063,19 @@ varies with msg type, if you query with --format=json.
 | transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
 | type | integer | only 2 is available for now, meaning limit order |  |
 
+### SubTx
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| blockHeight | long |  |  |
+| fromAddr | string |  |  |
+| toAddr | string |  |  |
+| txAsset | string |  |  |
+| txFee | string |  |  |
+| txHash | string |  |  |
+| txType | string |  |  |
+| value | string |  |  |
+
 ### TickerStatistics
 
 | Name | Type | Description | Example |
@@ -1232,14 +1245,14 @@ varies with msg type, if you query with --format=json.
 | pub_key | string | hex-encoded |  |
 | voting_power | long |  |  |
 
-### AtomicSwapPageVo
+### AtomicSwapPage
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| atomicSwaps | [ [AtomicSwapVo](#atomicswapvo) ] |  |  |
+| atomicSwaps | [ [AtomicSwap](#atomicswap) ] |  |  |
 | total | long |  |  |
 
-### AtomicSwapVo
+### AtomicSwap
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -1272,7 +1285,7 @@ varies with msg type, if you query with --format=json.
 | proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
 | sequence | long |  |  |
 | source | long |  |  |
-| subTransactions | [ [SubTxVo](#subtxvo) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
+| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
 | swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
 | timeStamp | dateTime |  |  |
 | toAddr | string |  |  |
