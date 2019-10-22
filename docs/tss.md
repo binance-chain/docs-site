@@ -3,12 +3,13 @@
 - [User Guide of Threshold Signature Scheme (TSS) in Binance Chain](#user-guide-of-threshold-signature-scheme--tss--in-binance-chain)
   * [Introduction](#introduction)
   * [Motivation](#motivation)
+  * [Security Audit](#security-audit)
   * [Workflow](#workflow)
   * [Where can I download the Binance TSS CLI?](#where-can-i-download-the-binance-tss-cli-)
   * [How to Use](#how-to-use)
   * [Changes to `bnbcli/tbnbcli`](#changes-to--bnbcli-tbnbcli-)
   * [Example](#example)
-    
+
 ## Introduction
 
 **Threshold Signature Scheme (TSS)** is a cryptographic protocol for distributed key generation and signing. TSS allows constructing a signature that is distributed among different parties (for example three users), and each user receives a share of the private signing key. To sign a transaction, at least two of these three users need to join. For individuals, threshold signatures allow for two-factor security or splitting the ability to sign between two devices so that a single compromised device won’t put the money at risk. For businesses, threshold signatures allow for the realization of access control policies that prevent both insiders and outsiders from stealing corporate funds. TSS technology allows us to replace all signing commands with distributed computations.The private key is no longer a single point of failure.
@@ -21,6 +22,16 @@ Traditional **MultiSig (multi-signature)** is a more refined unlocking system th
 With **Threshold Signatures**, all of the parties must forge the vault’s lock together, in a modular way, where each party owns a share of the key. A TSS vault is indistinguishable from a regular vault and is hence universal, and it has the same privacy and verification cost of a regular vault. Even if only a subset of the keys is available, the vault may still be unlocked (this is known as meeting a threshold of participation).
 
 Combining TSS feature  with Binance Chain client will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
+
+## Security Audit
+
+
+The implementation of a multi-party threshold ECDSA [library](https://github.com/binance-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors are hired to validate the security of the cryptography in TSS solution.
+
+Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to Binance Chain community.
+
+Tha latest report in October by [Kudelski Security](https://www.kudelskisecurity.com/) can be found [here](../assets/audit-binance-tss-lib-final.pdf).
+
 
 ## Workflow
 Let’s take a look at the major steps in TSS:
