@@ -1,6 +1,7 @@
 - [Upcoming Changes in Binance Chain API v0.6.3](#upcoming-changes-in-binance-chain-api-v063)
   * [HTTP API](#http-api)
     + [/api/v1/atomic-swaps](#-api-v1-atomic-swaps-)
+  * [WebSocket](#websocket)
 - [Upcoming Changes in Binance Chain API v0.6.2](#upcoming-changes-in-binance-chain-api-v062)
   * [HTTP API](#http-api)
     + [/api/v2/transactions-in-block/{blockHeight}](#-api-v2-transactions-in-block--blockheight-)
@@ -56,6 +57,18 @@ In the `AtomicSwap` data structure:
 | timestamp | long | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |  |
 | toAddr | string |  |  |
 
+## WebSocket
+
+As described in https://docs.binance.org/api-reference/dex-api/ws-streams.html#6-book-depth-streams, you can now customize the returned level from orderbook. The default level is 20 and you can extend the level to 100, 500, or 1000 with compression enabled.
+
+* Example on mainnet:
+```
+var  marketDepth = new WebSocket("wss://dex-atlantic.binance.org/api/ws/NEXO-A84_BNB@marketDepth100");
+```
+* Example on testnet:
+```
+var  marketDepth = new WebSocket("wss://testnet-de.binance.org/api/ws/ALT-3B6_BNB@marketDepth100");
+```
 
 
 # Upcoming Changes in Binance Chain API v0.6.2
