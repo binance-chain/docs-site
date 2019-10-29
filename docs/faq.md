@@ -1,4 +1,4 @@
-# Binance Chain FAQ v0.4
+# Binance Chain FAQ v0.5
 - [Binance Chain and Binance DEX](#what-is-binance-chain-or-binance-dex)
 - [Design Principles](#what-is-the-design-principle-of-binance-chain)
 - [Current Features](#what-can-you-do-on-binance-chain)
@@ -80,7 +80,7 @@ Binance Chain native coins will be sent to their new wallets.
 ## How can I register on Binance Chain/DEX and start trading?
 
 There is no need to register. All you need is a Binance Chain address, which can be generated with
-any wallet that supports Binance Chain. Then you can trade BNB or other assets stored on that address.
+any [wallet](./wallets.md) that supports Binance Chain. Then you can trade BNB or other assets stored on that address.
 
 ## How can I send orders on Binance DEX?
 ### Order
@@ -157,7 +157,7 @@ in order to pay for the network usage and prevent abuse and attack. Since all us
 include transfer, new order, cancel etc, they are all recorded in blocks and chain state, the fee will be
 shared among different transactions. New orders are exempt from fees to encourage usage and larger
 trades will be charged more for their benefits from the liquidity provided in the network.
-Order Expire and Cancel are also charged with a fee if they fail to provide any liquidity.
+Order Expire and Cancel are also charged with a fee if they fail to provide any liquidity. The current fee table is [here](./trading-spec.md)
 
 Besides the fees, **no other gas will be charged.**
 
@@ -165,7 +165,7 @@ Fees can be paid in any asset, but the network will charge BNB first and apply a
 address has BNB balance.
 
 The fee is subject to periodical review and adjustment, after agreement from validators, via a
-proposal-vote procedure.
+proposal-vote procedure. See a fee-change proposal [here](https://explorer.binance.org/tx/B1E78D8275598CB0538C716997EEDD2F1198B82F4D73959C5BF69CBAF4281240)
 
 - Trade fee is calculated based on trade notional value, while fees for other transactions are fixed.
 - It is free to send a new GET order, cancel a partially filled order, or expire a partially filled order.
@@ -271,23 +271,17 @@ Feel free to talk to Binance community.
 
 ## How can I transfer tokens, such as Bitcoin, from other block chains onto Binance Chain?
 
-Native inter-chain mechanism is not supported in Binance Chain in the initial version, i.e. you cannot transfer coins between Binance Chain and other chains, such as Bitcoin or Ethereum network directly, but it may come in the future.<br/>
-Binance.com may serve as a bridge to trade across tokens between Binance Chain and other chains.<br/>
-"Pegged Token" may be issued on Binance Chain to facilitate trading digital asset from other block chains.
+Right now, there can be 2 ways to transfer tokens cross-chain:
 
-For example, on the Binance Chain testnet, you can see `BTC.B`, which is a pegged (tethered) token for the real BTC running on Bitcoin network.
-`BTC.B` runs on Binance Chain, and cannot be directly transferred/deposited/withdrawn to Bitcoin network directly.
+1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Binance Chain and also to define the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains now. Binance Chain development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
+*  [smart-contract solution](https://github.com/binance-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
+* [deputy process](https://github.com/binance-chain/bep3-deputy) written in GoLang that handles swap activities
 
-When the real mainnet comes in, there can be 2 ways for these pegged tokens to be deposited/withdrawn:
+Any developer is welcomed to test the solutions in testnet and use in mainnet.
 
-1. via interoperability among different chains. This would be done via Atomic Swap, which may be very slow, so users may have to deposit onto/withdraw into Binance Chain. Both Binance Chain and Cosmos plan to build the cross-chain bridging part. But right now they are still under development.
-2. via Binance.com, a number of crypto-pegged tokens on Binance Chain (BEP2 token format) will be issued on Binance Chain. This has a higher degree of ease-of-use to most traders. This is the current solution for Binance Chain.
+2. via Binance.com. [Binance](binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Binance Chain (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in reserve. The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use to most traders. More swap channel will be provided on partner wallets soon.
 
-Pegged tokens such as BTCB, are 100% backed by the native coin in reserve. The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. A trading pair will be created on Binance.com between the pegged token and the native coin, e.g., [BTCB/BTC](https://www.binance.com/en/trade/BTCB_BTC).
-
-Large buy orders will be maintained on the trading pair on Binance.com. Anyone can convert between the pegged token and the native coin on Binance.com. If a buy order is filled, a new order will be placed while an equal amount of funds will be deposited from the reserve address into Binance.com. All BTCB supply is 100% backed by BTC.
-
-This centralized approach is not exclusive to cross-chain atomic swaps or other decentralized approaches, which can also be implemented in parallel. There are many atomic swap solutions being developed and we are very interested in those.
+Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in those.
 
 Please do __NOT__ try to transfer anything on existing network to Binance Chain testnet, you may experience loss by doing so, because testnet doesn't run with real coins.
 
