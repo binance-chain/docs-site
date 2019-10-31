@@ -29,7 +29,8 @@
 - [Consensus Algorithm](#what-is-the-consensus-algorithm-used-on-binance-chain)
 - [Full Node](#can-i-run-a-full-node-for-binance-chain)
 - [Smart Contracts](#does-binance-chain-support-smart-contracts)
-- [Cross-Chain Transfers](#how-can-i-transfer-tokens-such-as-bitcoin-from-other-block-chains-onto-binance-chain)
+- [Cross-Chain Transfers](#how-can-i-transfer-tokens-such-as-
+-from-other-block-chains-onto-binance-chain)
 - [Trading Pair Creation](#how-is-a-trading-pair-created-on-binance-dex)
 - [Third Party Integration](#how-would-a-third-party-integrate-with-binance-chain-and-binance-dex)
 
@@ -279,7 +280,7 @@ Right now, there can be 2 ways to transfer tokens cross-chain:
 
 Any developer is welcomed to test the solutions in testnet and use in mainnet.
 
-2. via Binance.com. [Binance](binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Binance Chain (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in reserve. The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use to most traders. More swap channel will be provided on partner wallets soon.
+2. via Binance.com. [Binance](binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Binance Chain (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use to most traders. More swap channel will be provided on partner wallets soon.
 
 Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in those.
 
