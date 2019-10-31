@@ -29,8 +29,7 @@
 - [Consensus Algorithm](#what-is-the-consensus-algorithm-used-on-binance-chain)
 - [Full Node](#can-i-run-a-full-node-for-binance-chain)
 - [Smart Contracts](#does-binance-chain-support-smart-contracts)
-- [Cross-Chain Transfers](#how-can-i-transfer-tokens-such-as-
--from-other-block-chains-onto-binance-chain)
+- [Cross-Chain Transfers](#how-can-i-transfer-tokens-such-as-bitcoin-from-other-block-chains-onto-binance-chain)
 - [Trading Pair Creation](#how-is-a-trading-pair-created-on-binance-dex)
 - [Third Party Integration](#how-would-a-third-party-integrate-with-binance-chain-and-binance-dex)
 
