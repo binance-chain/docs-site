@@ -124,7 +124,7 @@ CORS (Cross-Origin Resource Sharing) can be enabled by setting `cors_allowed_ori
 
 Arguments which expect strings or byte arrays may be passed as quoted strings, like `"abc"` or as `0x`-prefixed strings, like `0x616263`.
 
-You can generate the transacion hex output by adding `--dry` flag in your command. For example:
+If you plan to call You can generate the transacion hex output by adding `--dry` flag in your command. For example:
 
 ```
 bnbcli send --from XXX --to bnb1XXXXXXXXXXXXXXXX --amount 1:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --json --memo "Test transfer" --dry --offline
@@ -2472,7 +2472,7 @@ This method just return transaction hash right away and there is no return from 
 
 | Parameter | Type | Default | Required | Description     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info bytes in hex|
+| tx        | Tx   | nil     | true     | The transaction info|
 
 **Return Parameters**
 
@@ -2486,7 +2486,7 @@ type ResultBroadcastTx struct {
 	Hash cmn.HexBytes
 }
 ```
-**Example**
+**Example of Calling REST**
 
 1. Query the account number and sequence of your address
 ```
@@ -2567,7 +2567,7 @@ will contain a non-OK ABCI code.
 
 | Parameter | Type | Default | Required | Description     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info bytes in hex|
+| tx        | Tx   | nil     | true     | The transaction info|
 
 **Return Parameters**
 
@@ -2581,7 +2581,7 @@ type ResultBroadcastTxCommit struct {
 	Height    int64
 }
 ```
-**Example**
+**Example of Calling REST**
 
 1. Query the account number and sequence of your address
 ```
@@ -2663,7 +2663,7 @@ The transaction will be broadcasted and returns with the response from CheckTx.
 
 | Parameter | Type | Default | Required | Description     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info bytes in hex|
+| tx        | Tx   | nil     | true     | The transaction info|
 
 **Return Parameters**
 
@@ -2677,7 +2677,7 @@ type ResultBroadcastTx struct {
 	Hash cmn.HexBytes
 }
 ```
-**Example**
+**Example of Calling REST**
 1. Query the account number and sequence of your address
 ```
 bnbcli account your-address  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
