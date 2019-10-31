@@ -124,7 +124,7 @@ CORS (Cross-Origin Resource Sharing) can be enabled by setting `cors_allowed_ori
 
 Arguments which expect strings or byte arrays may be passed as quoted strings, like `"abc"` or as `0x`-prefixed strings, like `0x616263`.
 
-If you plan to call You can generate the transacion hex output by adding `--dry` flag in your command. For example:
+If you plan to call `broadcast` functions with rest, you can generate the transacion hex output by adding `--dry` flag in your command. For example:
 
 ```
 bnbcli send --from XXX --to bnb1XXXXXXXXXXXXXXXX --amount 1:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --json --memo "Test transfer" --dry --offline
