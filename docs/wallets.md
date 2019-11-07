@@ -30,3 +30,4 @@
 | 24     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |No|
 | 25     | [Midas Wallet](wallets/midas-wallet.md)                | <https://www.midasprotocol.io>   |No|
 | 26     | [Cosmostation Wallet](wallets/cosmostation.md)         | <https://www.cosmostation.io/>   |No|
+| 27     | [Trezor](wallets/trezor.md)                            | <https://trezor.io/>             |No|
