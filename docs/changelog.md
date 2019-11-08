@@ -70,6 +70,121 @@ var  marketDepth = new WebSocket("wss://dex-atlantic.binance.org/api/ws/NEXO-A84
 var  marketDepth = new WebSocket("wss://testnet-de.binance.org/api/ws/ALT-3B6_BNB@marketDepth100");
 ```
 
+## Node RPC
+
+Due to changes of underling Tendermint library, `ResponseCheckTx`, `ResponseDeliverTx`, `ResponseBeginBlock`, and `ResponseEndBlock` now include `Events` instead of `Tags`. Each `Event` contains a type and a list of attributes (list of key-value pairs) allowing for inclusion of multiple distinct events in each response.
+
+### Events
+
+Some methods (`CheckTx, BeginBlock, DeliverTx, EndBlock`)
+include an `Events` field in their `Response*`. Each event contains a type and a
+list of attributes, which are key-value pairs denoting something about what happened
+during the method's execution.
+
+Events can be used to index transactions and blocks according to what happened
+during their execution. Note that the set of events returned for a block from
+`BeginBlock` and `EndBlock` are merged. In case both methods return the same
+tag, only the value defined in `EndBlock` is used.
+
+Each event has a `type` which is meant to categorize the event for a particular
+`Response*` or tx. A `Response*` or tx may contain multiple events with duplicate
+`type` values, where each distinct entry is meant to categorize attributes for a
+particular event. Every key and value in an event's attributes must be UTF-8
+encoded strings along with the event type itself.
+
+Example:
+
+```go
+ abci.ResponseDeliverTx{
+  // ...
+  Events: []abci.Event{
+    {
+      Type: "validator.provisions",
+      Attributes: cmn.KVPairs{
+        cmn.KVPair{Key: []byte("address"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("amount"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("balance"), Value: []byte("...")},
+      },
+    },
+    {
+      Type: "validator.provisions",
+      Attributes: cmn.KVPairs{
+        cmn.KVPair{Key: []byte("address"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("amount"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("balance"), Value: []byte("...")},
+      },
+    },
+    {
+      Type: "validator.slashed",
+      Attributes: cmn.KVPairs{
+        cmn.KVPair{Key: []byte("address"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("amount"), Value: []byte("...")},
+        cmn.KVPair{Key: []byte("reason"), Value: []byte("...")},
+      },
+    },
+    // ...
+  },
+}
+```
+
+* ResponseCheckTx
+
+```
+type ResponseCheckTx struct {
+  Code                 uint32   `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+  Data                 []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+  Log                  string   `protobuf:"bytes,3,opt,name=log,proto3" json:"log,omitempty"`
+  Info                 string   `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+  GasWanted            int64    `protobuf:"varint,5,opt,name=gas_wanted,json=gasWanted,proto3" json:"gas_wanted,omitempty"`
+  GasUsed              int64    `protobuf:"varint,6,opt,name=gas_used,json=gasUsed,proto3" json:"gas_used,omitempty"`
+  Events               []Event  `protobuf:"bytes,7,rep,name=events,proto3" json:"events,omitempty"`
+  Codespace            string   `protobuf:"bytes,8,opt,name=codespace,proto3" json:"codespace,omitempty"`
+  XXX_NoUnkeyedLiteral struct{} `json:"-"`
+  XXX_unrecognized     []byte   `json:"-"`
+  XXX_sizecache        int32    `json:"-"`
+}
+```
+
+* ResponseDeliverTx
+
+```
+type ResponseDeliverTx struct {
+  Code                 uint32   `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+  Data                 []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+  Log                  string   `protobuf:"bytes,3,opt,name=log,proto3" json:"log,omitempty"`
+  Info                 string   `protobuf:"bytes,4,opt,name=info,proto3" json:"info,omitempty"`
+  GasWanted            int64    `protobuf:"varint,5,opt,name=gas_wanted,json=gasWanted,proto3" json:"gas_wanted,omitempty"`
+  GasUsed              int64    `protobuf:"varint,6,opt,name=gas_used,json=gasUsed,proto3" json:"gas_used,omitempty"`
+  Events               []Event  `protobuf:"bytes,7,rep,name=events,proto3" json:"events,omitempty"`
+  Codespace            string   `protobuf:"bytes,8,opt,name=codespace,proto3" json:"codespace,omitempty"`
+  XXX_NoUnkeyedLiteral struct{} `json:"-"`
+  XXX_unrecognized     []byte   `json:"-"`
+  XXX_sizecache        int32    `json:"-"`
+}
+```
+
+* ResponseBeginBlock
+
+```
+type ResponseBeginBlock struct {
+  Events               []Event  `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+  XXX_NoUnkeyedLiteral struct{} `json:"-"`
+  XXX_unrecognized     []byte   `json:"-"`
+  XXX_sizecache        int32    `json:"-"`
+}
+```
+
+* ResponseEndBlock
+```
+type ResponseEndBlock struct {
+  ValidatorUpdates      []ValidatorUpdate `protobuf:"bytes,1,rep,name=validator_updates,json=validatorUpdates,proto3" json:"validator_updates"`
+  ConsensusParamUpdates *ConsensusParams  `protobuf:"bytes,2,opt,name=consensus_param_updates,json=consensusParamUpdates,proto3" json:"consensus_param_updates,omitempty"`
+  Events                []Event           `protobuf:"bytes,3,rep,name=events,proto3" json:"events,omitempty"`
+  XXX_NoUnkeyedLiteral  struct{}          `json:"-"`
+  XXX_unrecognized      []byte            `json:"-"`
+  XXX_sizecache         int32             `json:"-"`
+}
+```
 
 # Upcoming Changes in Binance Chain API v0.6.2
 
