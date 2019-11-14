@@ -1,3 +1,6 @@
+- [Upcoming Changes in Binance Chain API v0.6.4](#upcoming-changes-in-binance-chain-api-v064)
+  * [HTTP API](#http-api)
+    + [/api/v1/trades](#-api-v1-trades-)
 - [Upcoming Changes in Binance Chain API v0.6.3](#upcoming-changes-in-binance-chain-api-v063)
   * [Node RPC](#node-rpc)
   * [HTTP API](#http-api)
@@ -22,6 +25,38 @@
     + [Changes](#changes_3)
 - [Tendermint Changes](#tendermint-changes)
   * [Upcoming Changes in v0.6.2](#upcoming-changes-in-v062)
+  
+# Upcoming Changes in Binance Chain API v0.6.4
+
+## HTTP API
+
+### /api/v1/trades
+
+##### ***Changes***
+Add `buyerSource` and `sellerSource` in the response Trade data structure. The Source Id reference can be found in https://github.com/binance-chain/BEPs/blob/master/BEP10.md.
+
+### Trade
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| baseAsset | string | base asset symbol |  |
+| blockHeight | long | block height |  |
+| buyFee | string | trading fee for the buyer address on the block of this trade |  |
+| buyerId | string | id of buyer |  |
+| buyerOrderId | string | order id for buyer |  |
+| buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
+| buyerSource | long | tx source of buy order | 1 |
+| price | string | trade price |  |
+| quantity | string | trade quantity |  |
+| quoteAsset | string | quote asset symbol |  |
+| sellFee | string | trading fee for the seller address on the block of this trade |  |
+| sellerId | string | seller ID |  |
+| sellerOrderId | string | seller order ID |  |
+| sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
+| sellerSource | long | tx source of sell order | 1 |
+| symbol | string | asset symbol |  |
+| tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
+| time | long | trade time |  |
+| tradeId | string | trade ID |  |
 
 # Upcoming Changes in Binance Chain API v0.6.3
 

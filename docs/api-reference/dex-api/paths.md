@@ -1127,7 +1127,7 @@ varies with msg type, if you query with --format=json.
 | sellerId | string | seller ID |  |
 | sellerOrderId | string | seller order ID |  |
 | sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
-| sellerSource | long | tx source of buy order | 1 |
+| sellerSource | long | tx source of sell order | 1 |
 | symbol | string | asset symbol |  |
 | tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
 | time | long | trade time |  |

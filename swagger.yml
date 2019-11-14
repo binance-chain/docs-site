@@ -2153,7 +2153,7 @@ definitions:
         example: "BNB:0.00000216;"
       sellerSource:
         type: long
-        description: tx source of buy order
+        description: tx source of sell order
         example: 1
       symbol:
         type: string
