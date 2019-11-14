@@ -939,7 +939,7 @@ paths:
       - market
       summary: Get a market ticker.
       description: |
-        Gets 24 hour price change statistics for a market pair symbol.
+        Gets 24 hour price change statistics for a market pair symbol. Updated every second.
 
         **Rate Limit:** 5 requests per IP per second.
       operationId: get24HrPriceStatistics
@@ -2125,6 +2125,10 @@ definitions:
         type: string
         description: trading fee for the buyer address on this single trade
         example: "BNB:0.00000172;"
+      buyerSource:
+        type: long
+        description: tx source of buy order
+        example: 1
       price:
         type: string
         description: trade price
@@ -2147,6 +2151,10 @@ definitions:
         type: string
         description: trading fee for the seller address on this single trade
         example: "BNB:0.00000216;"
+      sellerSource:
+        type: long
+        description: tx source of buy order
+        example: 1
       symbol:
         type: string
         description: asset symbol

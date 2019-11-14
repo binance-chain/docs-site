@@ -559,7 +559,7 @@ If the time window is larger than limits, only the first n klines will return. I
 ##### ***GET***
 **Summary:** Get a market ticker.
 
-**Description:** Gets 24 hour price change statistics for a market pair symbol.
+**Description:** Gets 24 hour price change statistics for a market pair symbol. Updated every second.
 
 **Rate Limit:** 5 requests per IP per second.
 
@@ -1119,6 +1119,7 @@ varies with msg type, if you query with --format=json.
 | buyerId | string | id of buyer |  |
 | buyerOrderId | string | order id for buyer |  |
 | buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
+| buyerSource | long | tx source of buy order | 1 |
 | price | string | trade price |  |
 | quantity | string | trade quantity |  |
 | quoteAsset | string | quote asset symbol |  |
@@ -1126,6 +1127,7 @@ varies with msg type, if you query with --format=json.
 | sellerId | string | seller ID |  |
 | sellerOrderId | string | seller order ID |  |
 | sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
+| sellerSource | long | tx source of buy order | 1 |
 | symbol | string | asset symbol |  |
 | tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
 | time | long | trade time |  |
