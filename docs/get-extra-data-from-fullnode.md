@@ -10,6 +10,15 @@ The full node will append the messages each block published to `{fullnode home}/
 
 Note: only block messages after this option get turned on can be saved. This function won't make up messages for already saved blocks.
 
+## Set Kafka Broker Version
+
+You can customize the version of `kafka broker` in `app.toml`. The default value is `v2.1.0`:
+
+```
+kafkaVersion = "2.1.0"
+```
+If you are using another version of Kafka, please test the compatibility first.
+
 ### 1. OrderUpdates
 You can set  the `publishOrderUpdates` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
 Then, the full node will save all the trades that have been filled, orders that changed and proposals that been submitted.
