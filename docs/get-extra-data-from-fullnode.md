@@ -14,6 +14,8 @@ Note: only block messages after this option get turned on can be saved. This fun
 
 You can customize the version of `kafka broker` in `app.toml`. The default value is `v2.1.0`:
 
+> The recommended version 2.1.0 and the minimal version is 0.8.2.0
+
 ```
 kafkaVersion = "2.1.0"
 ```
