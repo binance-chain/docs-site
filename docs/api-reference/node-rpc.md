@@ -1706,9 +1706,9 @@ Query the application for some information.
 *  `/dex/orderbook`
 *  `/param/fees`
 *  `/account/`
-*  `dex/openorders`
-*  `custom/gov/proposals`
-*  `custom/gov/proposal`
+*  `/dex/openorders`
+*  `/custom/gov/proposals`
+*  `/custom/gov/proposal`
 
 **Return Type**
 
