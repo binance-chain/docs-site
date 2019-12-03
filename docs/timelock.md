@@ -30,7 +30,7 @@ You can only lock tokens on your own account. TimeLock will transfer locked toke
 ```
 TimeLockCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainTimeLockCoins")))
 ```
-The account for mainnet is: *bnb1hn8ym9xht925jkncjpf7lhjnax6z8nv24fv2yq* and the account for testnet is: *tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3*
+The account for mainnet is: **bnb1hn8ym9xht925jkncjpf7lhjnax6z8nv24fv2yq** and the account for testnet is: **tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3**
 The specific user will not be able to claim them back, including restrictions where they cannot use, transfer or spend these tokens.
 
 ### Command line
