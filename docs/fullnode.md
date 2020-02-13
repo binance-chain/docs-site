@@ -74,6 +74,8 @@ Replace the `network` variable with `testnet` or `prod` in the following command
 cd node-binary/fullnode/{network}/{version}
 ```
 
+3. Copy the executables (i.e.`bnbchaind` or `bnbcli`) to `/usr/local/bin`
+
 ### Initialize Home Folder
 
 First you need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Binance Chain.<br/>
@@ -108,7 +110,7 @@ If you want to add seed nodes, please feel free to edit the field `seeds` of `$B
 
 ### Config Syncing
 
-Binance Chain is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to **[fast-sync](#####Fast-Sync)** (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called **[state-sync](#####State-Sync)**. **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
+Binance Chain is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to **[fast-sync](#fast-sync)** (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called **[state-sync](#state-sync)**. **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
 
 #### Additional Configuration
 
@@ -121,10 +123,10 @@ Make sure these two ports are open before starting a full node, unless the full 
 
 ### Start your node
 
-Start the full node according to the platform.<br/>
+Start the full node according to the place of your executables.<br/>
 
 ```bash
-./bnbchaind start --home $BNCHOME&
+bnbchaind start --home $BNCHOME&
 ```
 
 Only after catching up with Binance Chain, the fullnode can handle requests correctly.
