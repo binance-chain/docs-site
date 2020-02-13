@@ -4,14 +4,14 @@ Within the ecosystem of Binance Chain, there are several accelerated nodes which
 
 For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.
 
-* <testnet-dex-atlantic.binance.org>
-* <testnet-dex-asiapacific.binance.org>
+* testnet-dex-atlantic.binance.org
+* testnet-dex-asiapacific.binance.org
 
 For mainnet, there are more accelerated nodes.
 
-* <dex-atlantic.binance.org>
-* <dex-asiapacific.binance.org>
-* <dex-european.binance.org>
+* dex-atlantic.binance.org
+* dex-asiapacific.binance.org
+* dex-european.binance.org
 
 **Version:** 1.0.0
 
