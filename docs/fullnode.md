@@ -7,6 +7,7 @@
     + [Initialize Home Folder](#initialize-home-folder)
     + [Setup Configuration](#setup-configuration)
     + [Add Seed Nodes](#add-seed-nodes)
+    + [Config Syncing](#config-syncing)
   * [Upgrading Full Node](#upgrading-full-node)
   * [Monitoring](#monitoring)
   * [Get Extra Data From Your Full Node](#get-extra-data-from-your-full-node)
@@ -47,9 +48,6 @@ We have a community-maintained installer script (`install.sh`) that takes care o
 # One-line install
 sh <(wget -qO- https://raw.githubusercontent.com/binance-chain/node-binary/master/install.sh)
 ```
-
-> In the future, we may release an official installer script
-> e.g. `sh <(wget -qO- https://get.binance.org)`
 
 ### Option Two: Manual Installation
 
@@ -108,9 +106,9 @@ print (seeds)
 
 If you want to add seed nodes, please feel free to edit the field `seeds` of `$BNCHOME/config/config.yaml` with returned seed node info from previous request.
 
-### Choose a way for syncing
+### Config Syncing
 
-Binance Chain is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to [fast-sync](##### Fast Sync) (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called [state-sync](##### State Sync). **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
+Binance Chain is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to **[fast-sync](#####Fast-Sync)** (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called **[state-sync](#####State-Sync)**. **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
 
 #### Additional Configuration
 
@@ -121,18 +119,17 @@ To make sure you have sufficient disk space to keep the log files, we strongly r
 Make sure these two ports are open before starting a full node, unless the full node has to listen on other ports.
 - Store: All the state and block data will store under `$BNCHOME/data`, do not delete or edit any of these files.
 
-#### Start your node
+### Start your node
 
 Start the full node according to the platform.<br/>
-Replace the `platform` variable with `mac` `windows` or `linux` in the following command:
 
 ```bash
-./{{platform}}/bnbchaind start --home $BNCHOME&
+./bnbchaind start --home $BNCHOME&
 ```
 
-Only after catching up with Binance Chain, the full node can handle requests correctly.
+Only after catching up with Binance Chain, the fullnode can handle requests correctly.
 
-#### Sync Data
+#### Details on Sync Mode
 
 There are three ways for you to get synced with other peers in blockchain network:
 
@@ -144,7 +141,7 @@ These methods can be used together.
 
 ##### Fast Sync
 The default way for syncing with other data seed node is fast sync.<br/>
-In fast sync, you need to download all the blocks from your peers and execute all the transaction in every block.<br/>
+In fast sync, you need to download all the blocks from the genesis block and execute all the transaction in every block until it is synced with its peers.<br/>
 The sync speed is about 20 blocks/s, which is slower than state sync.
 
 Configuration is located in `$BNCHOME/config/config.toml`:
