@@ -45,10 +45,10 @@ We have a community-maintained installer script (`install.sh`) that takes care o
 
 ```shell
 # One-line install
-sh <(wget -qO- https://raw.githubusercontent.com/binance-chain/node-binary/compress/install.sh)
+sh <(wget -qO- https://raw.githubusercontent.com/binance-chain/node-binary/master/install.sh)
 ```
 
-> In the future, we may release an official installer script  
+> In the future, we may release an official installer script
 > e.g. `sh <(wget -qO- https://get.binance.org)`
 
 ### Option Two: Manual Installation
@@ -108,6 +108,10 @@ print (seeds)
 
 If you want to add seed nodes, please feel free to edit the field `seeds` of `$BNCHOME/config/config.yaml` with returned seed node info from previous request.
 
+### Choose a way for syncing
+
+Binance Chain is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to [fast-sync](##### Fast Sync) (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called [state-sync](##### State Sync). **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
+
 #### Additional Configuration
 
 - Log: The log file is under `home`- the directory specified when starting `bnbchaind`.<br/>
@@ -148,6 +152,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 * `fast_sync` Must be set to `true`
 * `state_sync_reactor` Can be set to `false` or `true`
 * `state_sync` Can be set to `false` or `true`
+* `state_sync_height` should be less than 0, like `-1`
 
 ##### State Sync
 
@@ -160,7 +165,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 * `recv_rate` Must set to `102428800`
 * `ping_interval` Recommendation is set to `10m30s`
 * `pong_timeout` Recommendation is set to `450s`
-* `state_sync_height` Recommendation is set to `0`, so it allows to state sync from the peers's latest height.
+* `state_sync_height` Recommendation is set to `0`, so it allows to state sync from the peers's latest height. Please do not change the height to other number, unless you are doing some debug.
 
 State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in binance chain testnet can be synced in around 45 minutes) so that you can receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync DOES NOT download historical blocks before state sync height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
 
