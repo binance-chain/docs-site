@@ -211,6 +211,8 @@ paths:
             $ref: "#/definitions/Error"
         '404':
           description: 'Not Found'
+          schema:
+            $ref: "#/definitions/Error"
         default:
           description: Generic error response
           schema:
