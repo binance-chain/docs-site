@@ -25,11 +25,26 @@
     + [Changes](#changes_3)
 - [Tendermint Changes](#tendermint-changes)
   * [Upcoming Changes in v0.6.2](#upcoming-changes-in-v062)
-  
+
 # Upcoming Changes in Binance Chain API v0.6.4
 
 ## HTTP API
 
+### Add Error Message for Newly Created Address
+
+You will get `{"code":404,"message":"account not found"}` for newly created account:
+
+**Example**
+```
+https://testnet-dex-asiapacific.binance.org/api/v1/account/tbnb10qpmrlsr4mq65xwgjd39xypkkpw3wm9c5e58xm
+```
+Return:
+```
+{
+code: 404,
+message: "account not found"
+}
+```
 ### /api/v1/trades
 
 ##### ***Changes***
