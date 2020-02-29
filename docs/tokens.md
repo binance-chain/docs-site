@@ -17,7 +17,7 @@ An issuance transaction contains:
 
 * Source Address: the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
 * Token Name: it is the long official name, such as "Binance Coin". It is limited to 32 characters.
-* Symbol: identifier of the token, limited to 8 alphanumeric characters and is case insensitive, for example, "BNB".<br/>
+* Symbol: identifier of the token, limited to alphanumeric characters and is case insensitive, for example, "BNB". The length of symbol should be between 3 and 8. <br/>
 "B" suffixed symbol is also allowed for migrating tokens that already exist on other chains.<br/>
 The symbol doesn't have to be unique, "-" followed by random 3 letters will be appended to the provided symbol to avoid uniqueness constraint.<br/>
 Those 3 letters are the first three letters of tx hash of the `issue` transaction.<br/>
