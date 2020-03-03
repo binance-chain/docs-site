@@ -128,7 +128,7 @@ View system fees updated in real time [here](https://dex.binance.org/api/v1/fees
 
 
 ### Multi-send Fees
-`bnbcli`  offers you a multi-send command to transfer multiple tokens to multiple people. 20% discount is available for `multi-send` transactions. For now, `multi-send` transaction will send some tokens from one address to multiple output addresses. If the count of output address is bigger than the threshold, currently it's 2, then the total transaction fee is  0.001 BNB per token per address.
+`bnbcli`  offers you a multi-send command to transfer multiple tokens to multiple people. 20% discount is available for `multi-send` transactions. For now, `multi-send` transaction will send some tokens from one address to multiple output addresses. If the count of output address is bigger than the threshold, currently it's 2, then the total transaction fee is  0.0003 BNB per token per address.
 For example, if you send 3 ABC token,1 SAT token and 1 ABC to 3 different addresses.
 
 ```json
