@@ -110,7 +110,7 @@ Burn Asset | N/A | 0.5 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
 Lock/unlock/relock Asset | N/A | 0.01 BNB | N
 List Asset | N/A | 1000 BNB | N
-Submit List Proposal | N/A | 5 BNB | N
+Submit Proposal | N/A | 5 BNB | N
 Deposit | N/A | 0.000625 BNB | N
 Enable Memo Check | N/A | 1 BNB | N
 Disable Memo Check | N/A | 1 BNB | N
@@ -183,7 +183,7 @@ Burn Asset | N/A | 0.5 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
 Lock/unlock/relock Asset | N/A | 0.01 BNB | N
 List Asset | N/A | 1000 BNB | N
-Submit List Proposal | N/A | 5 BNB | N
+Submit Proposal | N/A | 5 BNB | N
 Deposit | N/A | 0.000625 BNB | N
 Enable Memo Check | N/A | 1 BNB | N
 Disable Memo Check | N/A | 1 BNB | N
