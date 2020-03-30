@@ -1,10 +1,7 @@
-# Community Channels
+# More Help
 
-Please find a few suggested ways to connect with the community below:
+You can always post your question in [Online Forum](https://community.binance.org): this is the main portal to get community support.
 
-- [Online Forum](https://community.binance.org): this is the main portal to get community support.
-- The Binance Chain Telegram Group [English](https://t.me/BinanceDEXchange) [Chinese](https://t.me/BinanceDEXchangeCN)
-- [Twitter](https://twitter.com/binance_dex)
-- [Telegram Announcement Channel English](https://t.me/Binance_DEX_Announcement)
-- [币安链公告频道](https://t.me/Binance_DEX_ChineseAnnouncements)
+To keep track of the latest news in Binance Chain/DEX, you can read our weekly updates. It will be published on [Online Forum](https://community.binance.org) too.
 
+Binance DEX does not have Customer Support Service on Telegram!

@@ -1,20 +1,7 @@
 # Run Full Node to Join Binance Chain
-  * [Supported Platforms](#supported-platforms)
-  * [Minimum System Requirements](#minimum-system-requirements)
-  * [Steps to Run a Full Node](#steps-to-run-a-full-node)
-    + [Option One: Installation Script](#option-one--installation-script)
-    + [Option Two: Manual Installation](#option-two--manual-installation)
-    + [Initialize Home Folder](#initialize-home-folder)
-    + [Setup Configuration](#setup-configuration)
-    + [Add Seed Nodes](#add-seed-nodes)
-    + [Config Syncing](#config-syncing)
-  * [Upgrading Full Node](#upgrading-full-node)
-  * [Monitoring](#monitoring)
-  * [Get Extra Data From Your Full Node](#get-extra-data-from-your-full-node)
-  * [Common Issues and Solutions](#common-issues-and-solutions)
 
->Note: Please take a note that this is a pre-alpha version and the software is not stabilized.<br/>
-Many changes and upgrades are expected to come.
+!!! Tip
+       Please take a note that this software is not stabilized. Many changes and upgrades are expected to come.
 
 A `full node` of Binance Chain is a `witness`, which observes the consensus messaging, <br/>
 downloads blocks from `data seed nodes` and executes business logic to achieve the consistent state as `validator node` (and other `full node`).<br/>

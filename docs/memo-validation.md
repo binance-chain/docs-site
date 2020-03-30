@@ -1,15 +1,5 @@
 #  Customized Scripts and Transfer Memo Validation
 
-* [Memo Validation](#memo-validation)
-  * [What is a customized script?](#what-is-a-customized-script)
-    + [Fee](#fee)
-  * [Command Line](#command-line)
-    + [Global Parameters](#global-parameters)
-    + [Set-account-flags](#set-account-flags)
-    + [Parameters](#parameters)
-    + [Enable-memo-checker](#enable-memo-checker)
-    + [Disable-memo-checker](#disable-memo-checker)
-
 ## Memo Validation
 As explained in [BEP12](https://github.com/binance-chain/BEPs/blob/master/BEP12.md), In some circumstances, users may want to specify additional functions or/and validations on some transactions. With BEP12, exchanges can reject deposits that have no valid digits-only memo.
 
