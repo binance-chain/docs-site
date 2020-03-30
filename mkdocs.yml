@@ -8,6 +8,8 @@ use_directory_urls: false
 
 theme:
   name: 'material'
+  include_search_page: false
+  search_index_only: true
   font:
     text: Roboto
     code: Roboto Mono
@@ -91,7 +93,6 @@ nav:
   - Exchange Integration: exchange-integration.md
   - List Instructions: list_instruction.md
   - Wallets: wallets.md
-  - More Help: resources.md
   - Chain Explorer Mainnet: https://explorer.binance.org
   - Binance Chain Forum: https://community.binance.org/
   - Binance DEX Testnet: https://testnet.binance.org
@@ -104,6 +105,7 @@ nav:
   - 币安链公告频道: https://t.me/Binance_DEX_ChineseAnnouncements)
   - FAQ:
     - v0.5: faq/faq.md
+  - More Help: resources.md
   - Contributing: CONTRIBUTING.md
 
 
@@ -116,8 +118,7 @@ markdown_extensions:
 
 
 plugins:
-  - search:
-      prebuild_index: true
+  - search
 
 repo_name: 'binance-chain/docs-site'
 repo_url: 'https://github.com/binance-chain/docs-site'
