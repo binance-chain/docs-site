@@ -36,12 +36,12 @@ For mainnet, there are some witness nodes.
 - `https://dataseed4.binance.org/`
 
 For testnet, there are some witness nodes.
+
 - `https://data-seed-pre-0-s3.binance.org/`
 - `https://data-seed-pre-1-s3.binance.org/`
 - `https://data-seed-pre-2-s3.binance.org/`
 
-To see the existing RPC endpoints provided by witness node, check the list here!
-
+To see the existing RPC endpoints provided by witness node, check the list  [here](../../api-reference/node-rpc.md)!
 
 ### What is an Accelerated Node?
 
@@ -65,5 +65,5 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 - `testnet-dex-atlantic.binance.org`
 - `testnet-dex-asiapacific.binance.org`
 
-To see the existing endpoints provided by Accelerated node, check the list here!
+To see the existing endpoints provided by Accelerated node, check the list [here](../../api-reference/dex-api/paths.md)!
 
