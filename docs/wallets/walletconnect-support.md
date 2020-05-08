@@ -13,3 +13,4 @@
 | 6      | [CoolWallet](cool-wallet.md)                   | Mainnet                          |
 | 7      | [XWallet](xwallet.md)                          | Mainnet                          |
 | 8      | [Atomic Wallet](atomic-wallet.md)              | Mainnet                          |
+| 9      | [Cosmostation Wallet](cosmostation.md)         | Mainnet&Testnet                  |
