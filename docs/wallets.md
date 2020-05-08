@@ -29,7 +29,7 @@
 | 23     | [TokenPocket Wallet](wallets/tokenpocket.md)           | <https://www.tokenpocket.pro/>   |No|No| Yes|
 | 24     | [Cobo Wallet](wallets/cobo.md)                         | <https://cobo.com/>              |No|No| Yes|
 | 25     | [Midas Wallet](wallets/midas-wallet.md)                | <https://www.midasprotocol.io>   |No|No|  No|
-| 26     | [Cosmostation Wallet](wallets/cosmostation.md)         | <https://www.cosmostation.io/>   |No|No|  No|
+| 26     | [Cosmostation Wallet](wallets/cosmostation.md)         | <https://www.cosmostation.io/>   |No|Yes| Yes|
 | 27     | [Trezor](wallets/trezor.md)                            | <https://trezor.io/>             |No|No| Yes|
 | 28     | [Mixin](wallets/mixin.md)                              | <https://mixin.one>              |No|No|  No|
 | 29     | [Ownbit](wallets/ownbit.md)                            | <https://ownbit.io>              |No|No|  No|
