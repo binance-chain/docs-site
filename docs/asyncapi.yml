@@ -150,7 +150,7 @@ components:
     orderMessage:
       schemaFormat: 'application/schema+yaml;version=draft-07'
       summary: >-
-        A message represents an individual order transacion
+        A message represents an individual order transaction
       payload:
         type: object
         properties:

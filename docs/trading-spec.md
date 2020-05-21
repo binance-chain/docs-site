@@ -69,7 +69,7 @@ must be larger than and rounded to 1 lot size, otherwise orders would be rejecte
 
 Tick size and lot size can be queried from DEX API, and they would be reviewed and changed
 by DEX match engine automatically according to the trading price every UTC mid-night. Once
-the tick size or/and lot size is changed, new orders must stick to the new vaules while the
+the tick size or/and lot size is changed, new orders must stick to the new values while the
 existing orders on the order book can still be traded.
 
 ## Fees

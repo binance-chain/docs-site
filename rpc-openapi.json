@@ -24,7 +24,7 @@
     "description" : "ABCI APIs"
   }, {
     "name" : "Info",
-    "description" : "Informations about the node APIs"
+    "description" : "Information about the node APIs"
   }, {
     "name" : "Tx",
     "description" : "Transactions broadcast APIs"
@@ -69,7 +69,7 @@
     "/net_info" : {
       "get" : {
         "tags" : [ "Info" ],
-        "summary" : "Network informations",
+        "summary" : "Network information",
         "description" : "Get network info.\n",
         "operationId" : "net_info",
         "responses" : {
@@ -200,7 +200,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "Block informations.",
+            "description" : "Block information.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -231,7 +231,7 @@
         "parameters" : [ {
           "name" : "height",
           "in" : "query",
-          "description" : "height to return. If no height is provided, it will fetch informations regarding the latest block.",
+          "description" : "height to return. If no height is provided, it will fetch information regarding the latest block.",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -274,7 +274,7 @@
         "parameters" : [ {
           "name" : "height",
           "in" : "query",
-          "description" : "height to return. If no height is provided, it will fetch commit informations regarding the latest block.",
+          "description" : "height to return. If no height is provided, it will fetch commit information regarding the latest block.",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -474,7 +474,7 @@
         "parameters" : [ {
           "name" : "height",
           "in" : "query",
-          "description" : "height to return. If no height is provided, it will fetch commit informations regarding the latest block.",
+          "description" : "height to return. If no height is provided, it will fetch commit information regarding the latest block.",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -667,7 +667,7 @@
         "parameters" : [ {
           "name" : "hash",
           "in" : "query",
-          "description" : "transaction Hash to retrive",
+          "description" : "transaction Hash to retrieve",
           "required" : true,
           "style" : "form",
           "explode" : true,

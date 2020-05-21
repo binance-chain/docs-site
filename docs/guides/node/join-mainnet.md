@@ -56,11 +56,11 @@ To verify the correctness of the configuration run:
 bnbchaind start &
 ```
 
-If you encounter any issue when runnning a Full Node, you can read the FAQ list here.
+If you encounter any issue when running a Full Node, you can read the FAQ list here.
 
 
 ### Add Seed Nodes
-Your Full Node needs to know how to find peers in blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommanded `config.toml` already contains links to some seed nodes.
+Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
 
 If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
 

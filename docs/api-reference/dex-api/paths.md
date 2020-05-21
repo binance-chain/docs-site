@@ -1,6 +1,6 @@
 HTTP API
 ========
-Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain and DEX data service including HTTp API.
+Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain and DEX data service including HTTP API.
 For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.
   * testnet-dex-atlantic.binance.org
   * testnet-dex-asiapacific.binance.org

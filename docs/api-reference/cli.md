@@ -96,20 +96,20 @@ Here we support two types of key: local key and leder key
 ```
 bnbcli keys add test_key
 ```
-The new created local key will be encrypted and saved to local keystore.
-* Sign transation with a local key
+The newly created local key will be encrypted and saved to the local keystore.
+* Sign transaction with a local key
 ```
 bnbcli send --chain-id=<chain-id> --from=test_key --amount=100:BNB --to=<address>
 ```
-For instance, if you want to send a token transfer transaction, you can use the above command. The flag --from is used to specify which key to sign the transaction.
+For instance, if you want to send a token transfer transaction, you can use the above command. The flag `--from` is used to specify which key should be used to sign the transaction.
 
 ###  Ledger key
 * Create a local key
 
-Before creating a new ledger key, make sure you have done these steps:
+Before creating a new ledger key, make sure you have performed these steps:
 1. Ledger device is installed binance ledger app and the version should be later or equal to **v1.1.3**.
 2. Connect your ledger device to your machine and input pin code to unlock it.
-3. Open binanche ledger app on your ledger device.
+3. Open the binance ledger app on your ledger device.
 ```
 bnbcli keys add test_ledger_key --ledger
 ```
@@ -119,7 +119,7 @@ bnbcli keys add test_ledger_key_new --ledger --index 0 --account 0
 ```
 You can also specify --account and --index to generate more keys.
 
-* Sign transation with a ledger key
+* Sign transaction with a ledger key
 
 Taking transfer transaction for example, please follow these steps:
 1. Execute command in your console:
@@ -132,8 +132,8 @@ Please confirm if address displayed on ledger is identical to bnb15339dcwlq5nza4
 ```
 3. User can click confirm button on ledger device and input yes to continue following steps.
 4. Then user can preview the transaction data on ledger screen.
-5. After preview all transaction data, user can select `sign transaction` or` reject`.
-6. After user select `sign transaction`, `bnbcli` will get signature and broadcast the signed transaction to blockchain nodes.
+5. After going through all transaction data, user can select `sign transaction` or` reject`.
+6. After user selects `sign transaction`, `bnbcli` will get the signature and broadcast the signed transaction to blockchain nodes.
 
 ## How to use
 
@@ -202,7 +202,7 @@ For detailed usage, you can refer to:
 
 ## Use CLI for Different Blockchains
 
-`bnbcli` will save data about validatorset changes at home of `bnbcli`. Once you want to use `bnbcli` for different blockchains, for example, you want to change from testnet to mainnet, the data will be stale. In order to swtich between blockchains, you need clean data folder `rm -rf ~/.bnbcli/.bnblite/`  or create a new home folder for bnbcli with `--home` flag.
-If you forget to specify different home folder path, then you will not be able to make queries with `bnbcli`.
+`bnbcli` will save data about validatorset changes at home of `bnbcli`. If you want to use `bnbcli` for different blockchains, for example, you want to change from testnet to mainnet, the data will be stale. In order to switch between blockchains, you need clean the data folder with `rm -rf ~/.bnbcli/.bnblite/`  or create a new home folder for bnbcli with `--home` flag.
+If you forget to specify a different home folder path, then you will not be able to make queries with `bnbcli`.
 
 The same logic applies to `tbnbcli`.

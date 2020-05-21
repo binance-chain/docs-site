@@ -7,8 +7,8 @@ in a programming way.
 There are 3 ways to read and write data from Binance chain:
 
 ## Web API
-The `Accelerated Node` infrastructure provide easy access via http REST API and WebSocket
-push APIs. There are mulitple endpoints from different validator infrastructures. Please
+The `Accelerated Node` infrastructure provides easy access via http REST APIs and WebSocket
+push APIs. There are multiple endpoints from different validator's infrastructure. Please
 check the [Web API Reference](api-reference/dex-api/paths.md)
 
 ## Node RPC

@@ -80,14 +80,14 @@ See it here: <a href="https://github.com/tendermint/tendermint/tree/master/rpc/l
 
 RPC can be configured by tuning parameters under `[rpc]` table in the `$TMHOME/config/config.toml` file or by using the `--rpc.X` command-line flags.
 
-Default rpc listen address is `tcp://0.0.0.0:27147`. To set another address,  set the `laddr` config parameter to desired value.
-CORS (Cross-Origin Resource Sharing) can be enabled by setting `cors_allowed_origins`, `cors_allowed_methods`, `cors_allowed_headers` config parameters.
+Default rpc listen address is `tcp://0.0.0.0:27147`. To set another address, set the `laddr` config parameter to a desired value.
+CORS (Cross-Origin Resource Sharing) can be enabled by setting the `cors_allowed_origins`, `cors_allowed_methods`, `cors_allowed_headers` config parameters.
 
 ## 4. Arguments
 
 Arguments which expect strings or byte arrays may be passed as quoted strings, like `"abc"` or as `0x`-prefixed strings, like `0x616263`.
 
-If you plan to call `broadcast` functions with rest, you can generate the transacion hex output by adding `--dry` flag in your command. For example:
+If you plan to call `broadcast` functions with rest, you can generate the transaction hex output by adding a `--dry` flag to your command. For example:
 
 ```
 bnbcli send --from XXX --to bnb1XXXXXXXXXXXXXXXX --amount 1:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --json --memo "Test transfer" --dry --offline
@@ -2369,7 +2369,7 @@ Right now, you can only query by transaction height: `tx.height`. Please note th
 
 **Example**
 
-For example, if you want to search all the transations happened on height 10000.
+For example, if you want to search all the transactions that happened on height 10000.
 
 ```shell
 curl "localhost:27147/tx_search?query=\"tx.height=10000\"&prove=true"

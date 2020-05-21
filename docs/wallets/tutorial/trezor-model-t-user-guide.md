@@ -38,7 +38,7 @@ Please make sure that you have seed phrase backed up.
 
 ![img](https://lh3.googleusercontent.com/SHsBGqNHNfRqPO85GCQbC84lEq-5f0tkTLp3xMa2sg10FT8leiHe0i5rk9h0luegET3CUXODO2jTBP7I5AwrmoERZg7k61EWLeHToJhXVYqz-r2Kat1q7BtwFOBmAGifLjR1_p0U)
 
-2. Allow  access of your devide:
+2. Allow  access to your device:
 
 ![img](https://lh6.googleusercontent.com/NUPkk08poavyTwzMvo9h_ig0VEJQkqDKHt1MQT5MnocqAsZjKvWjwfExFl5-BkRzLKjSJH_bKgRr6B8f3dE0UNsF114mRA1DCkpmySvxjUqZKVpxVmUFUgsj9ZjcYS5p-5hL2gpg)
 

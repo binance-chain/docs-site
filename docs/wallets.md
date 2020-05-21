@@ -2,7 +2,7 @@
 
 * List of Wallets Supporting Binance Chain Mainnet
 
-| Number | Wallet Name                                            | Website                          |DEX Feature Available|Testnet Support|WalletConnect Supprt|
+| Number | Wallet Name                                            | Website                          |DEX Feature Available|Testnet Support|WalletConnect Support|
 | ------ | ------------------------------------------------------ | -------------------------------- |-----| -----|-----|
 | 1      | [Trust Wallet](wallets/trust-wallet.md)                | <https://trustwallet.com/>       |Yes  | Yes|Yes|
 | 2      | [Trubi Wallet](wallets/trubi.md)                       | <https://trubi.io/>              |Yes| No|Yes|

@@ -3,7 +3,7 @@ API Server
 
 API server daemon
 
-> Before starting `api-server`, please make sure that you have created an address locally. Otherwise, your wil see the following error:
+> Before starting `api-server`, please make sure that you have created an address locally. Otherwise, your will see the following error:
 ```
 panic: stat /Users/user/.bnbcli/keys/keys.db: no such file or directory
 

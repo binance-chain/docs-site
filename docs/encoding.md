@@ -23,7 +23,7 @@ Amino supports JSON encoding natively, which is the same as other usual json mar
 
 **[Please note the below binary encoding logic is subjected to future changes. Please watch out for the community news](resources.md).**
 
-Binary encoding is a variant of Google protocol buffer. The bytes are layed out in the below sequence:
+Binary encoding is a variant of Google's protobuf. The bytes are laid out in the below sequence:
 
 1. a [varint](https://developers.google.com/protocol-buffers/docs/encoding#varints) encoded integer - it contains the length of the encoded bytes for the object, which is displayed as `SIZE-OF-ENCODED` in the below structs. Please note that it contains the length of encoded bytes and also the type prefix (below), but not itself, e.g. if the encoded msg is 20 bytes, then the length would be 20 + 4 = 24, while 4 is used for the type prefix bytes.
 2. an object type prefix of 4-8 bytes - For different type of objects, there will be different type prefixes, and they are displayed as in the specific objects below (data structures).
@@ -69,9 +69,9 @@ type StdSignDoc struct {
 
 ### Canonical Bytes for Signing
 
-A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical represenation of the transaction is generated in JSON format for signing.
+A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical representation of the transaction is generated in JSON format for signing.
 
-This would allow for clients to sign a transaction off-chain, for example, a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. For example an external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
+This would allow for clients to sign a transaction off-chain, for example, with a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. An external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
 
 The canonical bytes for signing are generated from the StdSignBytes method. It produces a JSON string similar to the format below (formatted for clarity):
 
@@ -133,17 +133,17 @@ message StdSignature {
     bytes // no name or field id, just encode the bytes
   }
   PubKey pub_key // public key bytes of the signer address
-  bytes signature // signature bytes, please check chain access section for signature generation
+  bytes signature // signature bytes, please check the chain access section for signature generation
   int64 account_number // another identifier of signer, which can be read from chain by account REST API or RPC
-  int64 sequence // sequence number for the next transaction of the client, which can be read from the chain by account REST API or RPC. Please check chain acces section for details.
+  int64 sequence // sequence number for the next transaction of the client, which can be read from the chain by account REST API or RPC. Please check the chain access section for details.
 }
 ```
 
 ### Message Types
-Messages represent the individual operations possible on Binance Chain, and these can be inserted into `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
+Messages represent the individual operations possible on Binance Chain, and these can be inserted into the `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangebly in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
 
 #### Transfer
-Transfer is the transaction for transfering funds to different addresses.
+Transfer is the transaction used for transferring funds to different addresses.
 
 ```go
 // please note the field name is the JSON name.

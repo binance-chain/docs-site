@@ -1699,7 +1699,7 @@
             }
           },
           "400": {
-            "description": "Bad Request. The block to query is higher than current highest bloc.",
+            "description": "Bad Request. The block queried is higher than current highest block.",
             "content": {
               "application/json": {
                 "schema": {

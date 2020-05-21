@@ -19,8 +19,8 @@ $ bnbcli dex order  --symbol ZEBRA-16D_BNB  --side 1 --price 1000000 --qty 1000 
 
 For `side`, you need to put 1 as buy or 2 as sell.
 
-Please note that quantity should be rounded to `lotSize`. Otherwise your order could not be valid.
-The return output is the folllowing:
+Please note that the quantity should be rounded to `lotSize`. Otherwise your order could be invalid.
+The returned output is the following:
 
 ```
 Committed at block 1616083 (tx hash: C550F348B3A62880062F9DCF67794F08889234D0360B26CF31E68F8D3105C58F, response: {Code:0 Data:[123 34 111 114 100 101 114 95 105 100 34 58 34 56 49 51 69 52 57 51 57 70 49 53 54 55 66 50 49 57 55 48 52 70 70 67 50 65 68 52 68 70 53 56 66 68 69 48 49 48 56 55 57 45 51 48 34 125] Log:Msg 0:  Info: GasWanted:0 GasUsed:0 Tags:[{Key:[97 99 116 105 111 110] Value:[111 114 100 101 114 78 101 119] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}] Codespace: XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0})

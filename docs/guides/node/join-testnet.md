@@ -57,13 +57,13 @@ To verify the correctness of the configuration run:
 bnbchaind start &
 ```
 
-If you encounter any issue when runnning a Full Node, you can read the FAQ list here.
+If you encounter any issue when runing a Full Node, you should read the FAQ provided here.
 
 
 ### Add Seed Nodes
-Your Full Node needs to know how to find peers in blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommanded `config.toml` already contains links to some seed nodes.
+Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
 
-If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://testnet-dex.binance.org/api/v1/peers
+If those seeds aren't working, you can find more seeds and persistent peers in the HTTP API endpoints: https://testnet-dex.binance.org/api/v1/peers
 
 #### Additional Configuration
 - Sync type: by default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](./synctypes.md)

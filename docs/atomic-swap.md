@@ -1,11 +1,11 @@
 ## Introduction
 As explained in [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Binance Chain and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
 During the swap process, the related fund will be locked to a purely-code-controlled escrow account.
-A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in binance chain protocol. This kind of account has no its own private key and it's only controled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
+A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in binance chain protocol. This kind of account doesn't have its own private key and it's only controlled by code of the protocol. The code for calculating escrow account is the same that is used in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```
 AtomicSwapCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainAtomicSwapCoins")))
 ```
-The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transfered from the purely-code-controlled escrow account to client accounts.
+The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transferred from the purely-code-controlled escrow account to client accounts.
 
 ## Commands
 
@@ -407,11 +407,11 @@ refundHTLT | N/A |  0.000375 BNB | Y
 Go to [this page](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract) and approve some amount of tokens.
 
  * Function: *Approve*
- * Prameters:
-     * _spender: address of smartcontract, which is `0x12DCBf79BE178479870A473A99d91f535ed960AD`
+ * Parameters:
+     * _spender: address of the smartcontract, which is `0x12DCBf79BE178479870A473A99d91f535ed960AD`
      * _value: approved amount, should be bumped by e^10
 
-> Note: Please approve more than 1token.  In the following example, 100 PPC token was approved:
+> Note: Please approve more than 1 token.  In the following example, 100 PPC token was approved:
 
 Example of approve 100 PPC on [ropsten testnet](https://ropsten.etherscan.io/tx/0xfa640b382d3842cf508ac347090d2550e35e2193804d2a9318fbbdcdd54c846b)
 #### 2. Call `HTLT` function From Ethereum
@@ -419,7 +419,7 @@ Example of approve 100 PPC on [ropsten testnet](https://ropsten.etherscan.io/tx/
 Go to [smartcontract](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract) and call `HTLT` function
 
  * Function: *htlt*
- * Prameters:
+ * Parameters:
       * _randomNumberHash: SHA256(randomNumber||timestamp), randomNumber is 32-length random byte array
       * _timestamp: it should be about 10 mins span around current timestamp
       * _heightSpan: it's a customized filed for deputy operator. it should be more than 200 for this deputy.
@@ -669,8 +669,8 @@ In its [event log](https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a02
 Then, you can call the `claim` function:
 
  * Function: *claim*
- * Prameters:
-    * _swapID: this is get from event, you can also calculate it from `calSwapID` function in the contract. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
+ * Parameters:
+    * _swapID: this has been obtained from event, you can also calculate it from `calSwapID` function in the contract. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
     * _randomNumber: reveal your randomNumber
 
 Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b)
@@ -681,7 +681,7 @@ Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b49
 
 #### 6. Demo for Client APP: swap bep2 to erc20
 
-This is a javascript implementation for client app to swap  [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) to [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) with deputy.
+This is a javascript implementation of client app to swap  [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) to [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) with deputy.
 
 ```javascript
   const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"

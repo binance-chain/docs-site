@@ -32,7 +32,7 @@ Trading pairs can be ordered by two “Volume” or “Price Change”. The list
 
 ![img](../assets/trading-interface/tv.png)
 At the center of the trading page, there is the TradingView chart. The TradingView displays information about your selected trading pair. The chart allows you to display indicators such as the RSI, moving average, Bollinger Bands and many more. The chart also allows you to draw on the chart using the tools within the TradingView charts. More information on how to use TradingView charts can be found on the TradingView Wiki.
-Click on Depth button to swith to Depth View
+Click on Depth button to switch to Depth View.
 Market depth is the market's ability to sustain relatively large market orders without impacting the price of the security. Market depth considers the overall level and breadth of open orders and usually refers to trading within individual trading pairs. The number of levels can be zoomed in and out.
 The key indicator of market depth is the spread. The spread is the gap between the bid and the ask prices. If the bid price for a stock is $19 and the ask price for the same stock is $20, then the spread for the stock in question is $1 divided by the lowest ask price) to yield a bid-ask spread of 5% ($1 / $20 x 100). Market with thinner spread is much liquid than others.
 ![img](../assets/trading-interface/depth.png)
