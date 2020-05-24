@@ -24,7 +24,7 @@ We investigated some popular implementations of PoA consensus and find out that 
 2. **BSC validators**. Validators are responsible for validating transactions and generating blocks, ensuring the network’s security and the consistency of the ledger. In return, they receive rewards from the gas consumption of transactions.
 3. **Staking dApps on BSC(also named as system contract)**. There are several genesis contracts to help implement staking on BSC. Five classification groups of them:
     - **Light client contracts**. It is a watcher of distributed consensus process implemented by contract that only validates the consensus algorithm of Binance Chain.
-    - **BSCValidatorSet contracts**. It is a watcher of validators change of BSC on Binance Chain. It will interact with light client contracts to verify the interchain transaction, and apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute it to validators when receiving cross chain package of validatorSet change.
+    - **BSCValidatorSet contracts**. It is a watcher of validators change of BSC on Binance Chain. It will interact with light client contracts to verify the interchain transaction, and apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute revenue to validators when receiving cross chain package of validatorSet change.
     - **System Reward contract**. The incentive mechanism for relayers to maintain system contracts. They will get rewards from system reward contract.
     - **Liveness Slash Contract**. The liveness of BSC relies on validator set can produce blocks timely when it is their turn. Validators can miss their turns due to any reason. This instability of the operation will hurt the performance of the network and introduce more non-deterministic into the system. This contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators.
     - **Other contract**. The BSC may take advantage of powerful governance of Binance Chain in future, for example, propose to change a parameter of genesis. We will take this part into consideration to make it extensible.
@@ -82,15 +82,15 @@ It is a watcher of validators change of BSC on Binance chain. It implement the f
 
 **Actions validators update**:
 
-        1. Do distribue the incoming of validators:
-        if the incoming is large than 0.1 BNB, will do cross chain transfer to its account on BC, otherwise will transfer to its address on BSC.
+        1. Do distribue the revenue of validators:
+        if the revenue is large than 0.1 BNB, will do cross chain transfer to its account on BC, otherwise will transfer to its address on BSC.
         2. Update the latest validatorSet.
         3. Clean the metrics record on slash contract.
-        4. Reward the msg sender by call sytem reward contract.
+        4. Reward the msg sender by calling sytem reward contract.
 
 **CurrentValidator() returns ([]address)**
 
-    returns the validators that is not jailed.
+    returns the the consensus address of not jailed validators.
 
 **deposit(address valAddr) external**
 
@@ -101,7 +101,7 @@ It is a watcher of validators change of BSC on Binance chain. It implement the f
 
 **Actions**:
 
-        1. Add the incoming of the validator.
+        1. Increase the revenue of the validator.
 
 ### [System Reward contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001002/contracts)
 For now, only **Light Client contract**, **BSCValidatorSet contract** and **TokenHub contract** are permitted to call system reward contract. It implement the following interfaces:
@@ -130,8 +130,8 @@ If a validator failed to produce a block, will record it and finally slash it. I
     **Actions**:
 
         1. increase the missing blocks metrics of the validator by one.
-        2. if the missing blocks metrics is times of 50, will call misdemeanor func of BSCValidatorSet contract to trigger a misdemeanor event and distribute the incoming of the validator to others.
-        3. if the missing blocks metrics is times of 150, will call felony func of BSCValidatorSet contract to trigger a felony event, not only slash the incoming, but also kick the validator out of validatorset.
+        2. if the missing blocks metrics is times of 50, will call misdemeanor func of BSCValidatorSet contract to trigger a misdemeanor event and distribute the revenue of the validator to others.
+        3. if the missing blocks metrics is times of 150, will call felony func of BSCValidatorSet contract to trigger a felony event, not only slash the revenue, but also kick the validator out of validatorset.
 
 
 ## Consensus Protocol
@@ -159,8 +159,9 @@ The consensus engine may invoke system contracts, such transactions are called s
 
 #### Step 1: Prepare
 A validator node prepares the block header of next block.
+
 * Load snapshot from cache or database,
-		* If (height % epoch)==0, should fetch ValidatorSet from `BSCValidatorSet` [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001000/transactions).
+* If (height % epoch)==0, should fetch ValidatorSet from `BSCValidatorSet` [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001000/transactions).
 *  Every epoch block, will store validators set message in `extraData` field of block header to facilitate the implement of light client.
 * The coinbase is the address of the validator
 
@@ -171,6 +172,7 @@ A validator node prepares the block header of next block.
 
 #### Step3: Seal
 The final step before a validator broadcast the new block.
+
 * Sign all things in block header and append the signature to extraData.
 * If it is out of turn for validators to sign blocks, an honest validator it will wait for a random reasonable time.
 
