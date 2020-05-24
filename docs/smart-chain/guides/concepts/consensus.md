@@ -37,7 +37,7 @@ This doc only focus on the **BSC validators** and **Staking dApps** on BSC parts
 The system reward structure in BSC is highly configurable. We may adjust the parameters through governance.
 
 The rewards comes from transaction fees,  rewards are distributed based on several(configurable) rules:
-1. Validator that generate the block will receives 15/16 of the gas fee..
+1. Validator that generate the block will receives 15/16 of the gas fee.
 2. System reward contract receive 1/16 of the gas fee.
 
 If the balance of System reward contract is above 100BNB, will not distribute any BNB to it.
@@ -131,7 +131,7 @@ If a validator failed to produce a block, will record it and finally slash it. I
 
         1. increase the missing blocks metrics of the validator by one.
         2. if the missing blocks metrics is times of 50, will call misdemeanor func of BSCValidatorSet contract to trigger a misdemeanor event and distribute the revenue of the validator to others.
-        3. if the missing blocks metrics is times of 150, will call felony func of BSCValidatorSet contract to trigger a felony event, not only slash the revenue, but also kick the validator out of validatorset.
+        3. if the missing blocks metrics is times of 150, will call felony func of BSCValidatorSet contract to trigger a felony event, not only distribute the revenue of the validator to others, but also kick the validator out of validatorset.
 
 
 ## Consensus Protocol
@@ -141,7 +141,7 @@ The implement of the consensus engine is named as **Parlia** which is similar to
 Before introducing, we would like to clarify some terms:
 
 1. Epoch block. Consensus engine will update validatorSet from BSCValidatorSet contract periodly.  For now the period is 200 blocks, a block is called epoch block if the height of it is times of 200.
-2. Snapshot.  Snapshot is an assistant object that help to store the validators and recent signers of a block.
+2. Snapshot.  Snapshot is an assistant object that help to store the validators and recent signers of blocks.
 
 
 ### Key features
