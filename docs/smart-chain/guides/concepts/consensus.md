@@ -33,7 +33,7 @@ Staking and Governance on Binance chain is at a higher layer upon consensus. As 
 
 This doc only focus on the **BSC validators** and **Staking dApps** on BSC parts which are more closely to consensus engine.
 
-## [System Reward Distribution](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001002/contracts)
+## System Reward Distribution
 The system reward structure in BSC is highly configurable. We may adjust the parameters through governance.
 
 The rewards comes from transaction fees,  rewards are distributed based on several(configurable) rules:
@@ -117,7 +117,7 @@ For now, only **Light Client contract**, **BSCValidatorSet contract** and **Toke
 
         1. Transfer amount of BNB to specified address
 
-### Liveness Slash contract
+### [Liveness Slash contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001001)
 If a validator failed to produce a block, will record it and finally slash it. It implement the following interfaces:
 
 - **Slash(validator address) external**
