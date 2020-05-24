@@ -75,10 +75,13 @@ INFO [05-19|14:53:17.524] Writing custom genesis block
 INFO [05-19|14:53:17.525] Persisted trie from memory database      nodes=21 size=56.84KiB time=638.396µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-574.00B
 INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=lightchaindata hash=7d79cc…fb0d1e
 ```
-4.Start your fullnode
+4.Start your fullnode or a validator node
 
 ```bash
-geth --rpc --rpcport 8545  --rpcaddr 127.0.0.1 --rpccorsdomain 127.0.0.1 --config ./config.toml --datadir ./node -unlock {validator-address} --mine --allow-insecure-unlock  --rpcapi "eth,web3,miner,net,admin,personal,debug" --pprofaddr 0.0.0.0 --metrics --pprof
+## start a full node
+geth --config ./config.toml --datadir ./node --pprofaddr 0.0.0.0 --metrics --pprof
+## start a validator node
+geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --mine --allow-insecure-unlock  --pprofaddr 0.0.0.0 --metrics --pprof
  ```
 
 5.Monitor node status
