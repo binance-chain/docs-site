@@ -140,7 +140,7 @@ The implement of the consensus engine is named as **Parlia** which is similar to
 
 Before introducing, we would like to clarify some terms:
 
-1. Epoch block. Consensus engine will update validatorSet from BSCValidatorSet contract periodly.  For now the period is 100 blocks, a block is called epoch block if the height of it is times of 100.
+1. Epoch block. Consensus engine will update validatorSet from BSCValidatorSet contract periodly.  For now the period is 200 blocks, a block is called epoch block if the height of it is times of 200.
 2. Snapshot.  Snapshot is an assistant object that help to store the validators and recent signers of a block.
 
 
