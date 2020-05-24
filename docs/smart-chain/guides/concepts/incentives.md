@@ -25,6 +25,10 @@ Definitions:
 5. *Wi* is the reward weight of Relayer i.
 6. *Ri* is the rewards of Relayer i.
 
+We have the following reward formula:
+
+![formula](../../../assets/formula.png)
+
 We consider to set these parameters a reasonable value:
 
 1. S to be 1000. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit. 
@@ -37,14 +41,14 @@ We consider to set these parameters a reasonable value:
 We have three reward source: 
 
 1. Users paid reward: Users who send `bind` or `cross chain transfer` transactions need to pay extra fee as bsc-relayer rewards.
-2. System reward: Rewards comes from `SytemReward` contract.
+2. System reward: Rewards comes from `SystemReward` contract.
 
 The role of relayers and their rewards comes from:
 
 |Relayer Behavior|Rewards come from|follow the distribution formula?|
 |---|---|---|
 |Deliver token `bind` or `transfer` package | Users who send `bind` or `cross chain transfer` transactions |Yes.|
-|Sync Binance Chain Header| First-part: if the Header contract Binance Chain validatorSet changes, <br>`SytemReward` will pay some reward to relayers. <br>Second-part: if the header is referenced in delivering other packages, <br>part of package reward will be distributed to this header relayer. | The first part is not, <br>the second part is yes |
+|Sync Binance Chain Header| First-part: if the Header contract Binance Chain validatorSet changes, <br>`SystemReward` will pay some reward to relayers. <br>Second-part: if the header is referenced in delivering other packages, <br>part of package reward will be distributed to this header relayer. | The first part is not, <br>the second part is yes |
 |Delivering BSC staking package |System reward|No|
 |Delivering refund package |System reward|No|
 
