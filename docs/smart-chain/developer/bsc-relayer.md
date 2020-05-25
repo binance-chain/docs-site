@@ -46,6 +46,6 @@ Edit`config.json` and fill your BSC private key to bsc_config.private_key, examp
     * Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: https://github.com/binance-chain/bsc-relayer-config.git
     * Start relayer service
     
-```shell script
-./bsc-relayer --config-type local --config-path config.json
-```
+    ```shell script
+    ./bsc-relayer --config-type local --config-path config.json
+    ```
