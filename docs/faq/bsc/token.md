@@ -26,7 +26,7 @@ The [minimum delegated amount](../../smart-chain/validator/Parameters.md) is **1
 
 ## Which wallets can be used to stake BNB?
 
-You can only use [command line tool](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bc/cli)
+You can only use [command line tool](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
 
 ## Where can I find out more about staking economics and rewards?
 
