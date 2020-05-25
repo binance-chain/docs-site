@@ -25,7 +25,7 @@ cd bsc-relayer
 make build
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bsc)
+or you can download the pre-build binaries from [release page](https://github.com/binance-chain/smart-chain-binary/tree/master/bsc)
 
 ## Get Example Config File
 Get example config from this url: <https://github.com/binance-chain/bsc-relayer-config/blob/master/bsc/testnet/config.json>
