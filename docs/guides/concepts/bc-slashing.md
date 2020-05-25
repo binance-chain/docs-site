@@ -51,7 +51,7 @@ The malicious validators who are slashed by the previous cases will be set to `j
 
 ### Download Binary
 
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bc/cli)
+Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
 
 ### Submit BSC evidence
 
