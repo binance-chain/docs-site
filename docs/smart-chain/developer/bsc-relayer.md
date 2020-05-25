@@ -28,7 +28,7 @@ make build
 or you can download the pre-build binaries from [release page](https://github.com/binance-chain/smart-chain-binary/tree/master/bsc)
 
 ## Get Example Config File
-Get example config from this url: <https://github.com/binance-chain/bsc-relayer-config/blob/master/bsc/testnet/config.json>
+Get example config from this url: <https://github.com/binance-chain/bsc-relayer/blob/master/config/config.json>
 
 Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
@@ -45,6 +45,7 @@ Edit`config.json` and fill your BSC private key to bsc_config.private_key, examp
 
     * Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: https://github.com/binance-chain/bsc-relayer-config.git
     * Start relayer service
-    ```shell script
-   ./bsc-relayer --config-type local --config-path config.json
-    ````
+    
+```shell script
+./bsc-relayer --config-type local --config-path config.json
+```
