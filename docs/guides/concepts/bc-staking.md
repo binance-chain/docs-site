@@ -53,7 +53,7 @@ After that, it would trigger several interchain transfer to transfer the fees th
 ## Commands
 
 ### Download
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bc/cli)
+Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
 
 ### Create BSC Validator
 
