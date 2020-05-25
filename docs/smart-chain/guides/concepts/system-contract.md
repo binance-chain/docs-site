@@ -31,8 +31,7 @@ Unlike Proof-of-Work, the light-client protocol does not need to download and ch
 
 Ethereum platform supports stateless precompiled contract implemented with golang and normal contract implemented with solidity. Comparing with normal contract, precompiled contracts are more efficient and costs less gas, but they are stateless. However, on-chain light client must be stateful. So here we will try to a mixed approach: precompiled implemented contract(stateless calculation, such as signature verification) and normal contract (store validator set and trusted appHash).
 
-
-![img](https://lh5.googleusercontent.com/NgjBCXKChSKMrFWWWF2DGWLu32h_SAivQZabZqaiD68JOuynFDG7U5FHPwj6VXlMCwYpX6tWBqRtIAhJmP6bt9Htes5bxJQTw6dHD5R6n_P2BCB04Yh-ZAnzJm-aD8fydBYr2V88)
+![img](../../../assets/lightclient.png)
 
 ### Precompile Contract
 
@@ -91,7 +90,7 @@ function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] pr
 
 **verifyMerkleProof** reassembles user parameters and call the the above precompiled contract to validate the proof.
 
-### Other Build-in System Contract
+## Other Build-in System Contract
 
 * **TokenHub Contract**
 
