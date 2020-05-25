@@ -10,7 +10,7 @@ A genesis file is a JSON file which defines the initial state of your blockchain
 
 The state defined in the genesis file contains all the necessary information, like initial token allocation, genesis time, default parameters, and more. Let us break down these information.
 
-Genesis Link fot Rialto Testnet: <https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bsc>
+Genesis Link fot Rialto Testnet: <https://github.com/binance-chain/smart-chain-binary/blob/pre-release/bsc/fullnode/config/genesis.json>
 
 ## Explaination
 
