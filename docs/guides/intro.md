@@ -3,13 +3,13 @@
 
 ## Intro
 
-[Binance Chain]() is a blockchain developed by [Binance]() and its community that implements a vision of a decentralized exchange (DEX) for digital assets.
+[Binance Chain](https://www.binance.org) is a blockchain developed by [Binance](https://www.binance.com) and its community that implements a vision of a decentralized exchange (DEX) for digital assets.
 
-At the heart of Binance Chain is a highly performant [matching engine]() built on [distributed consensus]() that aims to replicate the <1 second trading efficiency of current centralized exchanges.
+At the heart of Binance Chain is a highly performant [matching engine](./concepts/matching-engine.md) built on [distributed consensus](./concepts/architecture.md) that aims to replicate the <1 second trading efficiency of current centralized exchanges.
 
-Binance Chain transactions burns [BNB]() (the native token of the Binance ecosystem), according to a fee schedule.
+Binance Chain transactions burns BNB (the native token of the Binance ecosystem), according to a fee schedule.
 
-Binance Chain also includes efforts to implement [listing assets from other chains](cross-chain-atomic-swaps), and cryptographic primitives such as [threshold signatures](threshold-signature-scheme).
+Binance Chain also includes efforts to implement [listing assets from other chains](../atomic-swap.md), and cryptographic primitives such as [threshold signatures](./concepts/threshold-signature-scheme.md).
 
 ## Functionality
 
