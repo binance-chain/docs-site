@@ -49,6 +49,10 @@ The malicious validators who are slashed by the previous cases will be set to `j
 
 ## Commands
 
+### Download Binary
+
+Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bc/cli)
+
 ### Submit BSC evidence
 
 Slashing validators of BSC for the malicious behavior of **double-sign** by submitting evidence consisting of two block headers with same height but signed by one signer
