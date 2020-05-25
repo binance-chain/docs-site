@@ -1,6 +1,6 @@
 # Ledger
 
-BNB and tokens on Binance Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to and use
+BNB and coins on Binance Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to BSC
 
 ## Requirements
 * A Ledger Nano S hardware wallet with latest firmware.
