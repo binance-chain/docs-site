@@ -13,6 +13,9 @@ The account for mainnet is: **bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj** and t
 
 ## Commands
 
+### Download
+Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/pre-release/bc/cli)
+
 ### Bind
 
 #### Parameters for bridge bind
