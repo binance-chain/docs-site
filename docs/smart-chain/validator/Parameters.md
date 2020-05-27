@@ -11,7 +11,7 @@ BNB
 
 ## Validator Candidate
 
-* Minimiun Self-delegate Amounnt: 50000BNB
+* Minimiun Self-delegate Amount: 50000BNB
 * Claim reward frequency: everyday at 0:00 UTC
 * Unbonding Period: 7 days
 

@@ -47,6 +47,14 @@ The malicious validators who are slashed by the previous cases will be set to `j
 * already passed the duration set when ‘jailed’ happened
 
 
+## Fee Table
+
+Transaction Type  | Pay in BNB |
+-- | -- |
+Unjail A Smart Chain Validator | 1 |
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | 10 |
+
+
 ## Commands
 
 ### Download Binary

@@ -4,8 +4,9 @@
 
 1. Make sure that you have enough BNB in your account. You can get from [faucet](https://testnet.binance.org/faucet-smart)
 
-> If you haven't created your account yet, please follow these [guides](../wallet/metamask.md) to create one first.
-* 100:BNB for relayer register
+If you haven't created your account yet, please follow these [guides](../wallet/metamask.md) to create one first.
+
+* **100BNB** for relayer register
 * More than 50BNB for transaction fee
 
 !!! Tip
@@ -32,20 +33,52 @@ Get example config from this url: <https://github.com/binance-chain/bsc-relayer/
 
 Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
+* Binance Chain Configuration:
+	* `mnemonic`: Paste the recovery phrase here. Since bsc-relayer will automaticly submit `double-sign` evidence, if it's committed, the reward will be sent to this address
+* Binance Smart Chain Configuration:
+*
 
 ## Start Relayer
 
-1. Start Locally
+You can start Locally
 
-    ```shell script
-    ./bsc-relayer --config-type local --config-path config.json
-    ```
+```shell
+./bsc-relayer --config-type local --config-path config.json
+```
 
-2. Dynamic Sync Cross Chain Protocol Configuration from <https://github.com/binance-chain/bsc-relayer-config.git>
+Output:
 
-    * Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: https://github.com/binance-chain/bsc-relayer-config.git
-    * Start relayer service
-    
-    ```shell script
-    ./bsc-relayer --config-type local --config-path config.json
-    ```
+```
+(base) huangsuyudeMacBook-Pro:mac huangsuyu$ bsc-relayer --config-type local --config-path config.json
+2020-05-27 17:01:16 INFO main Start relayer
+2020-05-27 17:01:16 INFO SyncProtocol Sync cross chain protocol from https://github.com/binance-chain/bsc-relayer-config.git
+2020-05-27 17:01:18 INFO RegisterRelayerHub This relayer has already been registered
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 1, next deliver sequence 55 on BSC, next sequence 55 on BC
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 2, next deliver sequence 1273 on BSC, next sequence 1273 on BC
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 3, next deliver sequence 6 on BSC, next sequence 6 on BC
+2020-05-27 17:01:19 INFO CleanPreviousPackages channelID: 8, next deliver sequence 5 on BSC, next sequence 5 on BC
+2020-05-27 17:01:19 INFO RelayerDaemon Start relayer daemon
+2020-05-27 17:01:19 INFO Serve start admin server at 0.0.0.0:8080
+```
+
+Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/binance-chain/bsc-relayer-config>
+
+* Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: <https://github.com/binance-chain/bsc-relayer-config>
+* Start relayer service
+
+```shell
+./bsc-relayer --config-type local --config-path config.json
+```
+
+
+## Relayer Rewards
+
+
+1. You can witness the distribution of relayer rewards in the log of system contract:  <https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/logs>. According to the design of [Relayer Incentive](../guides/concepts/incentives.md), the rewards will be distributed every 1000 data packages. The total accumulated rewards can be read from [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/read_contract)the value of `_collectedRewardForHeaderRelayer` and `_collectedRewardForTransferRelayer`.
+
+2. Query your relayer's status
+
+The total accumulated relayed count can be read from [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/read_contract)the value of `_transferRelayersSubmitCount`
+
+
+

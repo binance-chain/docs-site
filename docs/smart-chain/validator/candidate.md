@@ -13,13 +13,18 @@ geth account new
 
 This command will return the public address and the path to your private key. BACKUP of keyfile is necessory!
 
+If you already have an account, use the seed phrase to recover it:
+
+```bash
+geth account import
+```
 ## Get some testnet fund from faucet
 
 Go to this faucet page: <https://testnet.binance.org/faucet-smart>
 
 ## Start Fullnode on BSC Testnet
 
-Please run this command to run a fullnode
+Please run this command to run a fullnode as validator candidate
 
 ```bash
 geth --config ./config.toml --datadir ./node -unlock {validator-address} --mine --allow-insecure-unlock  --rpcapi "eth,web3,miner,net,admin,personal,debug" --metrics
