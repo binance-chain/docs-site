@@ -11,6 +11,16 @@ AtomicSwapCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainP
 The account for mainnet is: **bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj** and the account for testnet is: **tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr**. Once the swap is claimed or refunded, the fund will be transfered from the purely-code-controlled escrow account to client accounts.
 
 
+## Fee Table
+
+Transaction Type  | Pay in BNB |
+-- | -- |
+Bridge Bind | 0.01 |
+Transfer Out| 0.01 |
+Bridge Bind Relayer Fee| 0.01 |
+Transfer Out Relayer Fee| 0.01 |
+
+
 ## Commands
 
 ### Download
