@@ -89,6 +89,6 @@ The total accumulated relayed count can be read from [contract](https://explorer
 To get your locked **100BNB** back, you need to call [RelayerHub Contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001006) to unregister your relayer. The fee is **0.1BNB**
 
 * Go to MyEtherWallet and [interact with contract](https://www.myetherwallet.com/interface/interact-with-contract)
-* Fill in the contract addresss: **0x0000000000000000000000000000000000001006**
+* Fill in the contract addresss: **0x0000000000000000000000000000000000001006** with [abi](../system-smart-contract/relayerhub.abi) interface
 * Call **unregister** function and leave value in ETH as 0
 * sign your transaction in **MetaMask**
