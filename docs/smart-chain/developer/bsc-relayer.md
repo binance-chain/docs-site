@@ -70,9 +70,12 @@ Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bin
 ./bsc-relayer --config-type local --config-path config.json
 ```
 
+### Veryfy Status
+
+You could call [RelayerHub Contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001006) to verify that your relayer is registered. Go to [read contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001006/read_contract) and call **isRelayer** function. If it returns **true**, then your relayer is working properly.
+
 
 ## Relayer Rewards
-
 
 1. You can witness the distribution of relayer rewards in the log of system contract:  <https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/logs>. According to the design of [Relayer Incentive](../guides/concepts/incentives.md), the rewards will be distributed every 1000 data packages. The total accumulated rewards can be read from [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/read_contract)the value of `_collectedRewardForHeaderRelayer` and `_collectedRewardForTransferRelayer`.
 
@@ -81,4 +84,11 @@ Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bin
 The total accumulated relayed count can be read from [contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001005/read_contract)the value of `_transferRelayersSubmitCount`
 
 
+## Stop Relayer
 
+To get your locked **100BNB** back, you need to call [RelayerHub Contract](https://explorer.binance.org/smart-testnet/address/0x0000000000000000000000000000000000001006) to unregister your relayer. The fee is **0.1BNB**
+
+* Go to MyEtherWallet and [interact with contract](https://www.myetherwallet.com/interface/interact-with-contract)
+* Fill in the contract addresss: **0x0000000000000000000000000000000000001006**
+* Call **unregister** function and leave value in ETH as 0
+* sign your transaction in **MetaMask**
