@@ -38,8 +38,28 @@ So the main idea is we transfer all the rewards from BSC to BC once every day an
 ### Details
 
 1. even if validator set or any their voting powers are not changed on that day, we still transmit the validator set info to BSC.
-2. the validator set contract maintains a map like `ValidatorFeeMap` recording the fees value that every validators collected after the previous period(We define the **period** as the time between two contract calls of validator set changes). The actual fees are collected on the contract address.
+2. the validator set contract maintains the history of the fees that every validators collected after the previous period(We define the **period** as the time between two contract calls of validator set changes). The actual fees are collected on the contract address.
 3. the interchain transfer to send fees from the contract address to each validator’s distribution address on BC. Note the distribution address is **auto generated** on BC when handling the create-validator tx, so no private key is corresponded to that address and no one except the distribution module can move the tokens on that address. This address is displayed as **Distribution Addr** in validator info.
+```bash
+Validator
+Fee Address: tbnb15mgzha93ny878kuvjl0pnqmjygwccdadpw5dxf
+Operator Address: bva15mgzha93ny878kuvjl0pnqmjygwccdad08uecu
+Validator Consensus Pubkey:
+Jailed: false
+Status: Bonded
+Tokens: 5000000000000
+Delegator Shares: 5000000000000
+Description: {Elbrus "" www.binance.org This is Elbrus org on rialto network.}
+Bond Height: 74158
+Unbonding Height: 0
+Minimum Unbonding Time: 1970-01-01 00:00:00 +0000 UTC
+Commission: {rate: 75000000, maxRate: 90000000, maxChangeRate: 3000000, updateTime: 2020-05-22 12:24:19.478568234 +0000 UTC}
+Distribution Addr: tbnb1srkkfjk8qctvvy4s3cllhpnkz9679jphr30t2c
+Side Chain Id: rialto
+Consensus Addr on Side Chain: 0xF474Cf03ccEfF28aBc65C9cbaE594F725c80e12d
+Fee Addr on Side Chain: 0xe61a183325A18a173319dD8E19c8d069459E2175
+```
+
 4. we have a lower limit of the value of interchain transfer, at least the value can cover the transfer fee. Also, interchain transfer will only allow max 8 decimals for the amount. The tiny left part would be kept in the contract or put into the system reward pool.
 5. the reward: (totalfees \* commissionRate) would be distributed in proportion to the delegations, the left part would be sent to the validator fee address.
 

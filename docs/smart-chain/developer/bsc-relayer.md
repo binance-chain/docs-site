@@ -91,4 +91,4 @@ To get your locked **100BNB** back, you need to call [RelayerHub Contract](https
 * Go to MyEtherWallet and [interact with contract](https://www.myetherwallet.com/interface/interact-with-contract)
 * Fill in the contract addresss: **0x0000000000000000000000000000000000001006** with [abi](../system-smart-contract/relayerhub.abi) interface
 * Call **unregister** function and leave value in ETH as 0
-* sign your transaction in **MetaMask**
+* Sign your transaction in **MetaMask**
