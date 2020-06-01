@@ -1672,6 +1672,9 @@ Query the application for some information.
 *  `/dex/openorders`
 *  `/custom/gov/proposals`
 *  `/custom/gov/proposal`
+*  `/mini-tokens/info`
+*  `/mini-tokens/list`
+*  `/dex-mini/pairs`
 
 **Return Type**
 
