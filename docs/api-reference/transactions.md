@@ -50,6 +50,40 @@ type Msg struct {
 }
 ```
 
+### IssueTiny/IssueMini Msg
+
+```go
+type Msg struct {
+  From        sdk.AccAddress `json:"from"`
+  Name        string         `json:"name"`
+  Symbol      string         `json:"symbol"`
+  TotalSupply int64          `json:"total_supply"`
+  Mintable    bool           `json:"mintable"`
+  TokenURI    string         `json:"token_uri"`
+}
+```
+
+### SetURI Msg
+
+```go
+type Msg struct {
+  From     sdk.AccAddress `json:"from"`
+  Symbol   string         `json:"symbol"`
+  TokenURI string         `json:"token_uri"`
+}
+```
+
+### ListMini Msg
+
+```go
+type Msg struct {
+  From             sdk.AccAddress `json:"from"`
+  BaseAssetSymbol  string         `json:"base_asset_symbol"`
+  QuoteAssetSymbol string         `json:"quote_asset_symbol"`
+  InitPrice        int64          `json:"init_price"`
+}
+```
+
 ## Amino Types
 
 Amino uses 4-byte type prefixes to encode type information. This list was obtained through `cdc.PrintTypes(os.Stdout)`.
@@ -99,5 +133,10 @@ Binance Chain JavaScript SDK Amino API [example](https://github.com/binance-chai
 | FixedFeeParams | params/FixedFeeParams | 0xC2A96FA3 | variable |  |
 | TransferFeeParam | params/TransferFeeParams | 0x9A3D2769 | variable |  |
 | DexFeeParam | params/DexFeeParam | 0x495A5044 | variable |  |
+| MiniToken | bnbchain/MiniToken | 0xE0051C20 | variable | |
+| ListMiniMsg | dex/ListMiniMsg | 0x4C264019 | variable | |
+| IssueMiniMsg | tokens/IssueMiniMsg | 0xA3F16C41 | variable | |
+| IssueTinyMsg | tokens/IssueTinyMsg | 0xED2832D4 | variable | |
+| SetURIMsg | tokens/SetURIMsg | 0x7B1D34E7 | variable | |
 
 
