@@ -1,3 +1,145 @@
+# Upcoming Changes in Binance Chain API v0.7.0
+
+## Node RPC
+
+Extra pathes are available for querying information about `BEP8` tokens and trading pairs.
+
+**New Query Path**
+
+*  `/mini-tokens/info`
+*  `/mini-tokens/list`
+*  `/dex-mini/pairs`
+
+
+## HTTP API
+
+### /api/v1/mini/tokens
+
+##### ***Changes***
+
+Gets a list of available mini tokens.
+
+### MiniTokens
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| name | string |  | Binance Chain Mini Token |
+| symbol | string |  | BTC-000 |
+| original_symbol | string |  | BTC |
+| total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
+| token_type | integer | Type of the mini token |  |
+| owner | string (address) | Address |  |
+| mintable | boolean | mintable |  |
+| token_uri | string | URI for token description |  |
+
+### /api/v1/mini/markets:
+
+##### ***Changes***
+
+Gets a list of available mini tokens trading pairs.
+
+### Market
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| base_asset_symbol | string (currency) | symbol of base asset | BNB |
+| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
+| list_price | string (fixed8) | In decimal form | 1.00000000 |
+| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
+| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
+
+### /api/v1/mini/kline
+
+##### ***Changes***
+
+Get mini-token candlestick bars.
+
+### Candlestick
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| close | number | closing price |  |
+| closeTime | long | time of closing trade |  |
+| high | number | the highest price |  |
+| low | number | the lowest price |  |
+| numberOfTrades | integer | total trades |  |
+| open | number | open price |  |
+| openTime | long | time of open trade |  |
+| quoteAssetVolume | number | the total trading volume in quote asset |  |
+| volume | number | the total trading volume |  |
+
+### /api/v1/mini/orders/closed
+
+##### ***Changes***
+
+Get closed orders of mini-token pairs.
+
+### OrderList
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| order | [ [Order]() ] | list of orders |  |
+| total | long |  |  |
+
+### /api/v1/mini/orders/open
+
+##### ***Changes***
+
+Get open orders of mini-token pairs.
+
+### OrderList
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| order | [ [Order]() ] | list of orders |  |
+| total | long |  |  |
+
+### /api/v1/mini/ticker/24hr
+
+##### ***Changes***
+
+Get a market ticker of mini-token pairs.
+
+### TickerStatistics
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| askPrice | string | sell price |  |
+| askQuantity | string | sell quantity |  |
+| bidPrice | string | buy price |  |
+| bidQuantity | string | buy quantity |  |
+| closeTime | long | time of closing |  |
+| count | long | total trade count |  |
+| firstId | string | ID of first trade |  |
+| highPrice | string | highest price |  |
+| lastId | string | ID of last trade |  |
+| lastPrice | string | last price |  |
+| lastQuantity | string | last quantity |  |
+| lowPrice | string | lowest price |  |
+| openPrice | string | open price |  |
+| openTime | long | open time |  |
+| prevClosePrice | string | last close price |  |
+| priceChange | string | change of price |  |
+| priceChangePercent | string | change of price in percentage |  |
+| quoteVolume | string | trading volume in quote asset |  |
+| symbol | string | trading symbol |  |
+| volume | string | trading volume |  |
+| weightedAvgPrice | string | weighted average price |  |
+
+
+### /api/v1/mini/trades
+
+##### ***Changes***
+
+Get market trades of mini-token pairs.
+
+### TradePage
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| total | long | total number of trades |  |
+| trade | [ [Trade]() ] |  |  |
+
 # Upcoming Changes in Binance Chain API v0.6.4
 
 ## HTTP API

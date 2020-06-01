@@ -103,8 +103,9 @@ nav:
       - C++: https://github.com/binance-chain/cplusplus-sdk/wiki
       - C#: https://github.com/binance-chain/csharp-sdk
     - Binance Chain API Reference:
-      - Accelerated Node HTTP API - Paths and Models: api-reference/dex-api/paths.md
+      - Accelerated Node HTTP API Mainnet - Paths and Models: api-reference/dex-api/paths.md
       - Accelerated Node HTTP API Swagger: api-swagger/index.html
+      - Accelerated Node HTTP API Testnet- Paths and Models: api-reference/dex-api/paths.md
       - WebSockets - Connecting: api-reference/dex-api/ws-connection.md
       - WebSockets - Streams: api-reference/dex-api/ws-streams.md
       - Node RPC - Paths and Models: api-reference/node-rpc.md

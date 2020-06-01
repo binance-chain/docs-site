@@ -37,6 +37,8 @@ serve: build-markdown-http-docs
 build-markdown-http-docs:
 	@echo "--> Generating markdown from swagger.yml"
 	npx binance-chain/swagger-markdown -i swagger.yml -o docs/api-reference/dex-api/paths.md
+	npx binance-chain/swagger-markdown -i swagger_testnet.yml -o docs/api-reference/dex-api/paths-testnet.md
+
 
 build-swagger2markup: submodules
 	@echo "--> Building swagger2markup-cli"
