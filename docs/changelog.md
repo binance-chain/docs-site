@@ -12,6 +12,19 @@ Extra pathes are available for querying information about `BEP8` tokens and trad
 
 
 ## HTTP API
+### /api/v1/depth
+##### ***Changes***
+
+Add pending_match flag in response to indicate that current block has not run matching process for the new orders incoming in this block.
+In detail, if there are new orders created in current block, but the matching process has not run for the block, then pending_math=true. As a result, there could be orders with cross prices - price of ask is lower than price of bid. Client can ignore the response with pending_match=true and query the depth API until pending_match=false.
+
+### MarketDepth  
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
 
 ### /api/v1/mini/tokens
 
@@ -52,7 +65,7 @@ Gets a list of available mini tokens trading pairs.
 
 ##### ***Changes***
 
-Get mini-token candlestick bars.
+Get mini-token candlestick bars. Interval allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]
 
 ### Candlestick
 
