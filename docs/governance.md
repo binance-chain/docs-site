@@ -38,6 +38,9 @@ Please note:<br/>
 + `--expire-time`: expire time is the deadline after which you will no longer be able to list your token though your proposal is passed.
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.
 + `--title`: title of proposal
++ `--quote-asset-symbol`: the quote asset symbol. When you first list a BEP2 token on Binance DEX, it has to be put in BNB market first. Thus, you should set `quote-asset-symbol` to **BNB** in your first proposal, then your BEP2 asset can be list against [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1) and other stablecoins.
++ `--base-asset-symbol`: the asset symbol you want to list
+
 Please note that the deposit and init-price are boosted by **1e8** for decimal part.
 
 Example on **mainnet**:
@@ -55,14 +58,15 @@ Example on **testnet**:
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
 ```
-
+!!! Tip
+        As discussed in [BEP-70](https://github.com/binance-chain/BEPs/blob/master/BEP70.md), BUSD is one of the most influential stable coins worldwide and the most dominant stable coin on Binance Chain. BEP2 token issuers can list their assets against [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1) without the requirement of creating BNB pair first. Listing and trading BUSD pairs on Binance Chain will facilitate token owners and exchange traders, making the markets more liquid and healthier.  BEP70 is already implemented and has been activated after Testnet Nightingale Upgrade. Binance Chain Mainnet will be upgraded to support BEP-70 soon.
 
 #### Submit a Delist Proposal
 In testnet, only validators can make a delist proposal. To add a new delist pairs, a validator can run the following command:<br/>
 
 Please note:
 
-+ `--quote-asset-symbol`: the base asset symbol
++ `--quote-asset-symbol`: the quote asset symbol
 + `--base-asset-symbol`: the asset symbol you want to delist
 + `--from`: put your key name for the address key, you can only list with the owners address of your token.
 + `--voting-period`: The voting period is for validators to vote. The unit is in seconds and the default voting period is one week. The max voting period is two weeks. The votes from validators will be tallied after the voting period ends.

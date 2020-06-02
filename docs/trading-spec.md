@@ -55,7 +55,11 @@ For IOC order, if an IOC order executes against another order immediately as a w
 For GTE order, if a GTE order can execute against another order as a whole, the order is considered **FullyFill**. Any part of the order not filled immediately, will be considered open. Orders will stay in the open until it's canceled or subsequently filled by new orders. Canceled GTE orders are in the **Canceled** state. Orders that are no longer eligible for matching are in the **Expired** state.
 
 ### Order Expire
+
 Order would expire after 72 hours once it is booked on a block. A whole order book scan would happen every UTC mid-night to filter out all the expired orders. After the scan, all the expired orders would be removed from the order book, the locked quantity in the account would be unlocked. Before this action all the existing orders in the order book is subject to matching.
+
+!!! Tip
+        As discussed in [BEP-67](https://github.com/binance-chain/BEPs/blob/master/BEP67.md), those orders in the best 500 price levels on both ask and bid side will be expired after **30 days** instead of 72 hours. Meanwhile, the expiration fee is unchanged. BEP67 is already implemented and has been activated after Testnet Nightingale Upgrade. Binance Chain Mainnet will be upgraded to support BEP-67 soon.
 
 ## Precision
 

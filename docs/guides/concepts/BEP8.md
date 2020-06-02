@@ -145,4 +145,14 @@ The listing process is different from BEP2 token list. BEP8 token issuer can lis
 The minimum amount of the Mini-BEP2 token should be larger than or equal to **1**, which is presented as 1e8 with the 8 digit decimal rule internally. The only exceptional case is that the user sells the total amount of the free BEP8 token in his account
 
 ### Delist
-Delist a trading pair of Mini-BEP2 token is the same as BEP2 delist.
+Delist a trading pair of Mini-BEP2 token is the same as BEP2 [delist](). It needs the agreement of Binance Chain validators.
+
+## Fee Table
+
+Transaction Type  | Pay in BNB |
+-- | -- |
+TinyIssueFee | 2 |
+MiniIssueFee | 4 |
+SetUri| 0.000375 |
+List BEP8| 10 |
+

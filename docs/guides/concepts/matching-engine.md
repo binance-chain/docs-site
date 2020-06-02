@@ -3,8 +3,6 @@ id: matching-engine
 title: Matching Engine
 ---
 
-- [ ] https://docs.binance.org/anti-frontrun.html
-
 Binance DEX is the native marketplace on Binance Chain, allowing you to exchange digital assets issued and listed on it.
 The matching happens within the blockchain nodes and all of the transactions are recorded on-chain, therefore forming a complete, auditable ledger of activity.
 
