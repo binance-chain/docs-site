@@ -1,8 +1,8 @@
-# Upcoming Changes in Binance Chain API v0.7.0
+# Upcoming Changes in Binance Chain API v0.6.4
 
 ## Node RPC
 
-Extra pathes are available for querying information about `BEP8` tokens and trading pairs.
+Extra paths are available for querying information about `BEP8` tokens and trading pairs.
 
 **New Query Path**
 
@@ -18,7 +18,40 @@ Extra pathes are available for querying information about `BEP8` tokens and trad
 Add pending_match flag in response to indicate that current block has not run matching process for the new orders incoming in this block.
 In detail, if there are new orders created in current block, but the matching process has not run for the block, then pending_math=true. As a result, there could be orders with cross prices - price of ask is lower than price of bid. Client can ignore the response with pending_match=true and query the depth API until pending_match=false.
 
-### MarketDepth  
+
+*  /api/v1/depth
+---
+***GET***
+**Summary:** Get the order book.
+
+**Description:** Gets the order book depth data for a given pair symbol.
+
+The given _limit_ must be one of the allowed limits below.
+
+**Destination:** Validator node.
+
+**Rate Limit:** 10 requests per IP per second.
+
+**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
+| limit | query | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No | integer |
+
+**Responses**
+
+### MarketDepth
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+
+### MarketDepth
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
