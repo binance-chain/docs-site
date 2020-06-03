@@ -1,4 +1,4 @@
-# Upcoming Changes in Binance Chain API v0.6.4
+# Upcoming Changes in Binance Chain API v0.7.0
 
 ## Node RPC
 
