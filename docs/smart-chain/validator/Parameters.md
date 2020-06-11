@@ -1,4 +1,4 @@
-# Binance Smart Chain Staking Parameters
+# Binance Smart Chain  Testnet Staking Parameters
 
 ## Staking Token
 
@@ -6,7 +6,7 @@ BNB
 
 ## Max Validator Count
 
-11
+11, which is different from 21 validators in Mainnet
 
 
 ## Validator Candidate
