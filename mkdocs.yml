@@ -54,6 +54,7 @@ nav:
          - Threshold Signature Scheme: guides/concepts/threshold-signature-scheme.md
          - Atomic Swap: atomic-swap.md
          - WalletConnect: guides/concepts/walletconnect.md
+         - BEP8 Token Protocol: guides/concepts/BEP8.md
   - Binance Smart Chain:
     - Introduction: smart-chain/guides/bsc-intro.md
     - Concepts:
@@ -80,6 +81,8 @@ nav:
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Ledger: smart-chain/wallet/ledger.md
       - MEW: smart-chain/wallet/myetherwallet.md
+      - Math Wallet: smart-chain/wallet/math.md
+
   - Developers:
     - Binance Chain Fullnode:
       - Install: guides/node/install.md
