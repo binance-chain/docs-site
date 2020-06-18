@@ -33,3 +33,5 @@
 | 27     | [Trezor](wallets/trezor.md)                            | <https://trezor.io/>             |No|No| Yes|
 | 28     | [Mixin](wallets/mixin.md)                              | <https://mixin.one>              |No|No|  No|
 | 29     | [Ownbit](wallets/ownbit.md)                            | <https://ownbit.io>              |No|No|  No|
+| 30     | [Frontier](wallets/frontier.md)                        | <https://frontierwallet.com/>    |No|Yes|  No|
+
