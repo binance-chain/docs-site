@@ -3,50 +3,46 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
+				"internalType": "bytes",
+				"name": "message",
+				"type": "bytes"
 			}
 		],
-		"name": "receiveDeposit",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [],
-		"name": "rewardEmpty",
+		"name": "failReasonWithBytes",
 		"type": "event"
 	},
 	{
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "message",
+				"type": "string"
 			}
 		],
-		"name": "rewardTo",
+		"name": "failReasonWithStr",
 		"type": "event"
 	},
 	{
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "fallback"
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "key",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "value",
+				"type": "bytes"
+			}
+		],
+		"name": "paramChange",
+		"type": "event"
 	},
 	{
 		"constant": true,
@@ -97,6 +93,36 @@
 		"constant": true,
 		"inputs": [],
 		"name": "ERROR_FAIL_DECODE",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ERROR_TARGET_CONTRACT_FAIL",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ERROR_TARGET_NOT_CONTRACT",
 		"outputs": [
 			{
 				"internalType": "uint32",
@@ -171,12 +197,12 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "MAX_REWARDS",
+		"name": "PARAM_UPDATE_MESSAGE_TYPE",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "uint8",
 				"name": "",
-				"type": "uint256"
+				"type": "uint8"
 			}
 		],
 		"payable": false,
@@ -367,62 +393,66 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address payable",
-				"name": "to",
-				"type": "address"
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
 			},
 			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "claimRewards",
-		"outputs": [
-			{
-				"internalType": "uint256",
+				"internalType": "bytes",
 				"name": "",
-				"type": "uint256"
+				"type": "bytes"
 			}
 		],
+		"name": "handleAckPackage",
+		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "addr",
-				"type": "address"
-			}
-		],
-		"name": "isOperator",
-		"outputs": [
-			{
-				"internalType": "bool",
+				"internalType": "uint8",
 				"name": "",
-				"type": "bool"
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
 			}
 		],
+		"name": "handleFailAckPackage",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "numOperator",
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes",
+				"name": "msgBytes",
+				"type": "bytes"
+			}
+		],
+		"name": "handleSynPackage",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
+				"internalType": "bytes",
+				"name": "responsePayload",
+				"type": "bytes"
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
