@@ -22,18 +22,18 @@ An issuance transaction contains:
 * TokenType: **1** for `tiny token` and **2** for `Mini token`. Total supply range of tiny token is [1-10K] and mini-token is [1, 1 milllion]. Mini-token will charge more than tiny-token for issue.
 * TotalSupply: The total supply for this token can have a maximum of 8 digits of decimal and is boosted by 1e8 in order to store as int64. The amount before boosting should not exceed upper bound of supply range.
 * Owner: The initial issuer of this token, the BNB balance of issuer should be more than the fee for issuing tokens
-* Mintable: Whether this token could be minted(increased) after the initial issuing
+* Mintable: Whether this token could be minted(increased) after the initial issuing, `--mintable` means the token can be inflationary.
 
 #### Commands
 
 Example on **mainnet**:
 
 ```bash
-./bnbcli token issue-tiny --home $home -s $symbol --token-name $token_name -n 10000 --mintable $mintable --from $from --token-uri http://www.example.com --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
+./bnbcli token issue-tiny --home $home -s $symbol --token-name $token_name -n 10000 --mintable --from $from --token-uri http://www.example.com --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
 ```
 
 ```bash
-./bnbcli token issue-mini --home $home -s $symbol --token-name $token_name -n 1000000 --mintable $mintable --from $from --token-uri http://www.example.com --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
+./bnbcli token issue-mini --home $home -s $symbol --token-name $token_name -n 1000000 --mintable --from $from --token-uri http://www.example.com --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
 ```
 
 ### Transfer
