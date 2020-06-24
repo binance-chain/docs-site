@@ -150,12 +150,14 @@ The minimum amount of the Mini-BEP2 token should be larger than or equal to **1*
 ### Delist
 Delist a trading pair of Mini-BEP2 token is the same as BEP2 [delist](). It needs the agreement of Binance Chain validators.
 
-## Fee Table
+## Fee Table for Testnet
+
+API URL: <https://testnet-dex.binance.org/api/v1/fees?format=amino>
 
 Transaction Type  | Pay in BNB |
 -- | -- |
 TinyIssueFee | 2 |
-MiniIssueFee | 4 |
+MiniIssueFee | 3 |
 SetUri| 0.000375 |
-List BEP8| 10 |
+List BEP8| 8 |
 
