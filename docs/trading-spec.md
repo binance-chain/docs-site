@@ -189,10 +189,10 @@ Deposit | N/A | 0.000625 BNB | N
 Enable Memo Check | N/A | 1 BNB | N
 Disable Memo Check | N/A | 1 BNB | N
 HTLT | N/A | 0.000375 BNB | N
-depositHTLT | N/A |  0.000375 BNB | Y
-claimHTLT | N/A |  0.000375 BNB | Y
-refundHTLT | N/A |  0.000375 BNB | Y
-refundHTLT | N/A |  0.000375 BNB | Y
+depositHTLT | N/A |  0.000375 BNB | N
+claimHTLT | N/A |  0.000375 BNB | N
+refundHTLT | N/A |  0.000375 BNB | N
+refundHTLT | N/A |  0.000375 BNB | N
 TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
 SetTokenUri | N/A| 0.000375 BNB | N
