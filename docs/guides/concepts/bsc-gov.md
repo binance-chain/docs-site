@@ -6,7 +6,7 @@ There are many system parameters to control the behavior of the BSC:
 
 - params of Staking/Slash/Oracle/IBC modules on BC
 
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such the process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication if needed.
+All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
 
 ## Fee Table
 
