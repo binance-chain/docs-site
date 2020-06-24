@@ -178,9 +178,9 @@ Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
 IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
 Transfer | N/A | 0.000375 BNB | N
 Multi-send | N/A | 0.0003 BNB | N
-Issue Asset | N/A | 500 BNB | N
-Mint Asset | N/A | 5 BNB | N
-Burn Asset | N/A | 0.5 BNB | N
+Issue Asset | N/A | 100 BNB | N
+Mint Asset | N/A | 0.01 BNB | N
+Burn Asset | N/A | 0.01 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
 Lock/unlock/relock Asset | N/A | 0.01 BNB | N
 List Asset | N/A | 1000 BNB | N
