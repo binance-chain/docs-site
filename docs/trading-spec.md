@@ -167,7 +167,7 @@ Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=
 
 ### Current Fees Table on Testnet
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2019-04-17** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2020-06-24** is as follows:
 
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
@@ -192,6 +192,11 @@ HTLT | N/A | 0.000375 BNB | N
 depositHTLT | N/A |  0.000375 BNB | Y
 claimHTLT | N/A |  0.000375 BNB | Y
 refundHTLT | N/A |  0.000375 BNB | Y
+refundHTLT | N/A |  0.000375 BNB | Y
+TinyIssueFee | N/A | 2 BNB | N
+MiniIssueFee | N/A | 3 BNB | N
+SetTokenUri | N/A| 0.000375 BNB | N
+List BEP8 Token| N/A| 8 BNB | N
 
 
 ### Testnet Fees API
