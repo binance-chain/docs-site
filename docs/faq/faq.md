@@ -144,6 +144,66 @@ be used, otherwise, non-BNB fee structure will be used instead.
 - If the whole order value and free balance for the receiving asset are not enough to pay the fee,
 all the receiving asset and its residual balance will be charged.
 
+## What is the current Fee Table on Binance Chain Mainnet?
+
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** is as follows:
+
+Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
+-- | -- | -- | --
+New Order | 0 | 0 | Y
+Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
+Transfer | N/A | 0.000375 BNB | N
+Multi-send | N/A | 0.0003 BNB | N
+Issue Asset | N/A | 500 BNB | N
+Mint Asset | N/A | 5 BNB | N
+Burn Asset | N/A | 0.5 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
+Lock/unlock/relock Asset | N/A | 0.01 BNB | N
+List Asset | N/A | 1000 BNB | N
+Submit Proposal | N/A | 5 BNB | N
+Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
+HTLT | N/A | 0.000375 BNB | N
+depositHTLT | N/A | 0.000375 BNB | N
+claimHTLT | N/A | 0.000375 BNB | N
+refundHTLT | N/A | 0.000375 BNB | N
+
+## What is the current Fee Table on Binance Chain Testnet?
+
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2020-06-24** is as follows:
+
+
+Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
+-- | -- | -- | --
+New Order | 0 | 0 | Y
+Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
+IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
+Transfer | N/A | 0.000375 BNB | N
+Multi-send | N/A | 0.0003 BNB | N
+Issue Asset | N/A | 100 BNB | N
+Mint Asset | N/A | 0.01 BNB | N
+Burn Asset | N/A | 0.01 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
+Lock/unlock/relock Asset | N/A | 0.01 BNB | N
+List Asset | N/A | 1000 BNB | N
+Submit Proposal | N/A | 5 BNB | N
+Deposit | N/A | 0.000625 BNB | N
+Enable Memo Check | N/A | 1 BNB | N
+Disable Memo Check | N/A | 1 BNB | N
+HTLT | N/A | 0.000375 BNB | N
+depositHTLT | N/A |  0.000375 BNB | N
+claimHTLT | N/A |  0.000375 BNB | N
+refundHTLT | N/A |  0.000375 BNB | N
+refundHTLT | N/A |  0.000375 BNB | N
+TinyIssueFee | N/A | 2 BNB | N
+MiniIssueFee | N/A | 3 BNB | N
+SetTokenUri | N/A| 0.000375 BNB | N
+List BEP8 Token| N/A| 8 BNB | N
+
 ## Can I see orders/balances of others or can other people see my orders/balances?
 
 Yes, anyone can see anyone's orders and balances if they know the corresponding addresses.

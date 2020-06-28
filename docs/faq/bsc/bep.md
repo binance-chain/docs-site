@@ -14,4 +14,7 @@ A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.e
 
 It is proposed to accommodate the small or micro projects, intellectual properties, and other small token economies. Similar to SME board in the traditional stock markets, BEP8 tokens markets will increase the liquidity of utility tokens of startups or Intellectual Property (IP) tokens by removing the capital requirements for listing. Besides, any BEP8 token issuer can choose to directly list against BNB and BUSD without the voting process of validators.
 
-Details: <https://github.com/binance-chain/BEPs/pull/69>
+Details:
+
+* [BEP8 Proposal](https://github.com/binance-chain/BEPs/BEP8.md)
+* [Commandline Instructions](../../guides/concepts/BEP8.md)

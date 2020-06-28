@@ -27,7 +27,7 @@ The account for mainnet is: **bnb1vu5max8wqn997ayhrrys0drpll2rlz4dh39s3h** and t
 
 Please use this [tool](<https://github.com/binance-chain/node-binary/tree/master/tools>) for generating
 
-If you are using a MacBook, you can also use this [desktop GUI](https://github.com/binance-chain/chain-tooling/tree/airdrop/token-app) for token management operations.
+You can also use [Web Wallet](https://community.binance.org/topic/2487/how-to-manage-your-bep2-token-on-binance-chain-in-web-wallet) for token management operations.
 
 #### Submit a List Proposal
 To add a new trading pairs, you can run the following command:<br/>

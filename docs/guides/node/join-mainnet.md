@@ -56,7 +56,7 @@ To verify the correctness of the configuration run:
 bnbchaind start &
 ```
 
-If you encounter any issue when running a Full Node, you can read the FAQ list here.
+If you encounter any issue when running a Full Node, you can read the FAQ list [here](../../fullnodeissue.md).
 
 
 ### Add Seed Nodes
