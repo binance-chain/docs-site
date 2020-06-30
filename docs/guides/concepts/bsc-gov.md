@@ -77,6 +77,24 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  rialto  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Kongo 
 ```
 
+### Submit cross chain channel management proposal.
+
+| **parameter name** | **example**                                                        | **comments**                                                              | **required** |
+|:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --side-chain-id    | rialto                                                             | the id of side chain, default is native chain                             | Yes          |
+| --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
+| --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
+| --channel-id       | 1                                                                  | the the channel id that want to manage                                    | Yes          |
+| --enable           | true                                                               | enable the channel or not (default true)                                  | Yes          |
+| --title            | "test csc change"                                                  | title of proposal                                                         | Yes          |
+| --voting-period    | 604800                                                             | voting period in seconds (default 604800)                                 | No           |
+
+* Testnet
+```bash
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  rialto  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Kongo 
+```
+
 ### Submit side chain module param change proposal.
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
