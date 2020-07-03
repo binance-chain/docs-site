@@ -81,7 +81,7 @@ And do following step:
 | MsgSideChainSubmitProposal | 10 BNBs     | Proposer                     |
 | MsgSideChainDeposit        | 0.00125 BNB | Proposer                     |
 | MsgSideChainVote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.05 BNB    | come from system reward pool |
+| Relayer reward             | 0.01 BNB    | come from system reward pool |
 
 
 
