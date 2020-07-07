@@ -19,8 +19,7 @@ The hardware must meet certain requirements to run a full node.
 
 - VPS running recent versions of Mac OS X or Linux.
 - 500 GB of free disk space
-- 8 cores of CPU and 16 gigabytes of memory (RAM) for mainnet.
-- 4 cores of CPU and 8 gigabytes of memory (RAM) for testnet.
+- 4 cores of CPU and 8 gigabytes of memory (RAM).
 - A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
 
 ## Settings
@@ -87,8 +86,10 @@ geth --config ./config.toml --datadir ./node --pprofaddr 0.0.0.0 --metrics --ppr
 start a validator node
 
 ```bash
-
-geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --mine --allow-insecure-unlock  --pprofaddr 0.0.0.0 --metrics --pprof
+## generate the consensus key and input the password
+geth account new --datadir ./node 
+echo {your-password} > password.txt 
+geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --password password.txt  --mine --allow-insecure-unlock  --pprofaddr 0.0.0.0 --metrics --pprof
 ```
 
 5.Monitor node status
