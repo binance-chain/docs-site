@@ -94,6 +94,7 @@ nav:
       - Upgrade: guides/node/upgrade.md
       - Local Network: guides/node/localnetwork.md
       - Common Issues: fullnodeissue.md
+      - Snapshot: guides/node/snapshot.md
     - Binance Chain Client: api-reference/cli.md
     - Light Client: light-client.md
     - Simple API Server: api-reference/api-server.md
