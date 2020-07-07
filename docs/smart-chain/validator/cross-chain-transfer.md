@@ -1,13 +1,13 @@
 # Cross-Chain Transfer
 
-Cross-chain transfers only support binded BEP2 tokens on BC and BEP2E tokens on BSC.
+Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP2E tokens on BSC.
 
 ## Verify Token Info
 
-First, you should make sure that it's already bonded. For example, you could see the binding info of **BNB**:
+First, you should make sure that it's already bound. For example, you could see the binding info of **BNB**:
 
 
-```bash
+```shell script
 tbnbcli token info --symbol BNB --trust-node --node http://data-seed-prealpha-2-s1.binance.org:80
 ```
 ```json
@@ -31,7 +31,7 @@ As BNB is the native token on both chains, so we use `0x000000000000000000000000
 
 ## Transfer BNB from BC to BSC
 **Example:**
-```bash
+```shell script
 tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Kongo --from owner --amount 100000000:BNB --node http://data-seed-prealpha-2-s1.binance.org:80
 ```
 Result:
@@ -51,50 +51,39 @@ Call **transferOut** of TokenHub contract in MyEtherWallet:
 
 | Parameter Name | Type    | Description                                                  |
 | -------------- | ------- | ------------------------------------------------------------ |
-| contractAddr   | address | for BNB, the value  must be 0x0000000000000000000000000000000000000000 |
+| contractAddr   | address | for BNB, the value must be 0x0000000000000000000000000000000000000000 |
 | recipient      | address | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
-| amount         | uint256 | The BNB decimals on  BSC is 18. If you want to transfer one BNB, then the value should be 1e18.  Besides, the value must be N * 1e10 |
+| amount         | uint256 | The BNB decimals on  BSC is 18. If you want to transfer one BNB, then the value should be 1e18. Besides, the value must be N * 1e10 |
 | expireTime     | uint256 | Timestamp, counted by  second                                |
-| relayFee       | uint256 | The relayFee should be  no less than miniRelayFee. The initial miniRelayFee is 1e16. It can be  changed by on-chain governance. |
-
-The value here must follow this equation:
+The value here should follow this equation:
 
 ```
-
-txValue = (amount + relayerFee)/1e18
-
+txValue = (amount + miniRelayFee)/1e18
 ```
+
+The initial miniRelayFee is 1e16. It can be changed by on-chain governance
 
 After all the above parameters have been set to proper values, users can click the transact button to build transactions, and metamask plugin will be ejected. Then users can click the confirm button in metamask to sign and broadcast transactions.
 
 
-### batchTransferOut
+### batchTransferOutBNB
 
-Call **batchTransferOut** of TokenHub contract in MyEtherWallet:
+Call **batchTransferOutBNB** of TokenHub contract in MyEtherWallet:
 
-![img](https://lh6.googleusercontent.com/kuEr0fCOv9kRtVZgEiyUtvKL_ixkuHKYy0J9hECGNWSdjNHpZKjKSioE6kLVK-WsGDl5xQvtZPR-YLJpJIw-z1P6qiwHXpMSYQ95esODXW8CzJgnUVbj-Qq1pgn4jKmoTX-kF1VS)
-
-
-
-
+![img](../../assets/batchTransferOutBNB.png)
 
 | Parameter Name | Type      | Description                                                  |
 | -------------- | --------- | ------------------------------------------------------------ |
 | recipientAddrs | address[] | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/0 |
 | amounts        | uint256[] | amount for each  recipient, should be N * 1e10               |
 | refundAddrs    | address[] | sender can specify  some address as the refund address if the cross chain transfer is failed. |
-| contractAddr   | address   | 0x0000000000000000000000000000000000000000                   |
 | expireTime     | uint256   | Timestamp, counted by  second                                |
-| relayFee       | uint256   | The relayFee should be  no less than miniRelayFee * lengthOf(amounts). The initial miniRelayFee is  1e16. It can be changed by on-chain governance. |
 
 
-
-The value here must follow this equation:
+The value here should follow this equation:
 
 ```
-
-txValue = (sumOfAmounts + relayerFee)/1e18
-
+txValue = (sumOfAmounts + miniRelayFee * batchSize)/1e18
 ```
 
 ## Transfer BEP2 to BSC
@@ -109,37 +98,14 @@ Before calling **transferOut** or **batchTransferOut**, users need to call **app
 
 ![img](https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m)
 
-| contractAddr | address | BEP2E contract address                                       |
-| ------------ | ------- | ------------------------------------------------------------ |
-| recipient    | address | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
-| amount       | uint256 | BEP2E token amount.  Here the decimals is 18, so the amount must be N * 1e10. |
-| expireTime   | uint256 | Timestamp, counted by  second                                |
-| relayFee     | uint256 | The relayFee should be  no less than miniRelayFee. The initial miniRelayFee is 1e16. It can be  changed by  on-chain governance. |
+| Parameter Name | Type    | Description                                                  |
+| ------------   | ------- | ------------------------------------------------------------ |
+| contractAddr   | address | BEP2E contract address                                       |
+| recipient      | address | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
+| amount         | uint256 | BEP2E token amount.  Here the decimals is 18, so the amount must be N * 1e10. |
+| expireTime     | uint256 | Timestamp, counted by  second                                |
 
-The value here should be relayerFee/1e18.
-
-
-
-### batchTransferOut
-
-![img](https://lh6.googleusercontent.com/kuEr0fCOv9kRtVZgEiyUtvKL_ixkuHKYy0J9hECGNWSdjNHpZKjKSioE6kLVK-WsGDl5xQvtZPR-YLJpJIw-z1P6qiwHXpMSYQ95esODXW8CzJgnUVbj-Qq1pgn4jKmoTX-kF1VS)
-
-
-
-
-
-| Parameter Name | Type      | Description                                                  |
-| -------------- | --------- | ------------------------------------------------------------ |
-| recipientAddrs | address[] | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/0 |
-| amounts        | uint256[] | Here the decimals is  18, so each amount should be N * 1e10  |
-| refundAddrs    | address[] | sender can specify  some address as the refund address if the cross chain transfer is failed. |
-| contractAddr   | address   | BEP2E contract address                                       |
-| expireTime     | uint256   | Timestamp, counted by  second                                |
-| relayFee       | uint256   | The relayFee should be  no less than miniRelayFee * lengthOf(amounts). The initial miniRelayFee is  1e16. It can be changed by on-chain governance. |
-
- The value here should be relayFee/1e18.
-
-
+The value here should be miniRelayFee/1e18.
 
 ### Mint
 

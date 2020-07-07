@@ -12,9 +12,8 @@ As a BSC relayer, it must have proper configurations on the following three item
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-|srcCrossChainID  |uint16   |      CrossChainID of BC, the value is 1 for testnet       |
-|destCrossChainID|uint16|CrossChainID of BSC, the value is 2 for testnet|
-|destChainName|string|name of targe chain, for Binance Smart Chain, the value should be “bsc”|
+|srcCrossChainID | uint16 | CrossChainID of BC, the value is 1 for testnet |
+|destCrossChainID| uint16 | CrossChainID of BSC, the value is 96 for testnet |
 
 A BSC relayer is required to parse all block results and pick out all events with event type “IBCPackage” from endBlock event table. This is an cross chain package event example:
 
@@ -25,7 +24,7 @@ A BSC relayer is required to parse all block results and pick out all events wit
   [
     {
       "key": "IBCPackageInfo",
-      "value": "bsc::2::8::19"
+      "value": "96::8::19"
     }
   ]
 }
@@ -38,12 +37,11 @@ BSC relayer should iterate all the attributes and parse the attribute value:
 
 | Index | Description                       | Type    | Example Value |
 | ------| --------------------------------- | ------- | ------------- |
-| 0     | destination chain name            | string  | bsc |
-| 1     | CrossChainID of destination chain | int16   | 2   |
-| 2     | channel id                        | int8    | 8   |
-| 3     | sequence                          | int64   | 19  |
+| 0     | CrossChainID of destination chain | int16   | 96   |
+| 1     | channel id                        | int8    | 8   |
+| 2     | sequence                          | int64   | 19  |
 
-3. Filter out attributes with mismatched destination chain CrossChainID or destination chain name.
+3. Filter out attributes with mismatched destination chain CrossChainID.
 
 ## Build Tendermint Header and Query Cross Chain Package
 
@@ -119,16 +117,8 @@ func EncodeHeader(h *Header) ([]byte, error) {
     Call **syncTendermintHeader** of TendermintLightClient contract to sync BC header. The contract address is 0x0000000000000000000000000000000000001003. The “header” is the encoding result of **Header** and the height should be **H+1**
 
 ### Deliver Cross Chain Package
-Follow this table to get build-in system contract address and method name:
 
-|ChannelID|Desription|contract address|Methods|
-| ---- | ---- | ----------- |----|
-|1|bind channel|0x0000000000000000000000000000000000001004|handleBindPackage|
-|2|transfer channel|0x0000000000000000000000000000000000001004|handleTransferInPackage|
-|3|refund channel|0x0000000000000000000000000000000000001004|handleRefundPackage|
-|8|staking channel|0x0000000000000000000000000000000000001000|handlePackage|
-
-All above methods shares the same parameter table:
+Call **handlePackage** of crosschain contract(0x0000000000000000000000000000000000002000) to deliver the cross chain packages:
 
 |Parameter Name|Type|Value|
 | ---- | ---- | ----------- |
@@ -136,6 +126,7 @@ All above methods shares the same parameter table:
 |proof|[]byte|merkle proof bytes|
 |height|uint64|**H+1**|
 |packageSequence|uint64|sequence from attribution value|
+|channelId|uint64|channle id|
 
 ## Incentives Mechanism
 

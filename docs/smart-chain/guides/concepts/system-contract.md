@@ -21,7 +21,9 @@ GitHub Implementation link: <https://github.com/binance-chain/bsc-genesis-contra
 | TokenHub Manager | 0x0000000000000000000000000000000000001008 | [tokenmanager](../../system-smart-contract/tokenmanager.abi)|
 | RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](../../system-smart-contract/relayerincentivize.abi)|
 | RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](../../system-smart-contract/relayerhub.abi) |
-| GovHub                |0x0000000000000000000000000000000000001007 | [govhub](../../system-smart-contract/govhub.abi)                               |
+| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](../../system-smart-contract/govhub.abi)                               |
+| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](../../system-smart-contract/tokenmanager.abi) |
+| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](../../system-smart-contract/crosschain.abi) |
 
 ## On-Chain Light Client
 
@@ -100,7 +102,7 @@ function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] pr
 
 * **TokenManager Contract**
 
-    This contract focuses on token binding across two chains.
+    This contract focuses on binding and unbinding tokens on two chains.
 
 * **BSCValidatorSet Contract**
 
@@ -125,4 +127,8 @@ function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] pr
 * **Governance Contract**
 
     This contract handles governance package from BC. A governance package contains target contract address, parameter name and new parameter value. Once the package is verified, this contract will call the parameter update method of the target contract to update the parameter to new value.
+
+* **Cross Chain Contract**
+
+    This contract focuses on cross chain packages pretreatment and sending cross chain packages to BC by emit event. The packages pretreatment includes sequence validation and the merkle proof verification. Once they are passed, the package will be routed to application build-in system contract, such as tokenhub or bscvalidator. Besides, if tokenhub or bscvalidator want to send packages to BC, they need to encode their packages with rlp and call this contract to send them.
 
