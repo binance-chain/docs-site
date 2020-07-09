@@ -24,14 +24,14 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
 | --chan-id           | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id     | rialto                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
 | --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
 
 
 * Testnet
 ```bash
-./tbnbcli gov  query-proposals --side-chain-id  rialto --trust-node --chain-id Binance-Chain-Kongo
+./tbnbcli gov  query-proposals --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain proposal
@@ -39,23 +39,23 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
 | --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | rialto                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 
 * Testnet
 ```bash
-./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  rialto --trust-node --chain-id Binance-Chain-Kongo
+./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain parameters
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --side-chain-id    | rialto                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 
 * Testnet
 ```bash
- ./tbnbcli params side-params --side-chain-id rialto  --trust-node  
+ ./tbnbcli params side-params --side-chain-id chapel  --trust-node  
 ```
 
 ### Submit cross chain param change proposal.
@@ -63,7 +63,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
 | --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | rialto                                                             | the id of side chain, default is native chain                             | Yes          |
+| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
 | --key              | felonyThreshold                                                    | the parameter name on the side chain                                      | Yes          |
@@ -74,7 +74,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  rialto  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Kongo 
+./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges 
 ```
 
 ### Submit cross chain channel management proposal.
@@ -82,7 +82,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
 | --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | rialto                                                             | the id of side chain, default is native chain                             | Yes          |
+| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
 | --channel-id       | 1                                                                  | the the channel id that want to manage                                    | Yes          |
@@ -92,7 +92,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  rialto  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Kongo 
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges 
 ```
 
 ### Submit side chain module param change proposal.
@@ -100,7 +100,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
 | --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | rialto                                                             | the id of side chain, default is native chain                             | Yes          |
+| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
 | --title            | "test csc change"                                                  | title of proposal                                                         | Yes          |
@@ -109,7 +109,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  rialto  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Kongo 
+./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges 
 ```
 
 ### Vote for side chain proposal
@@ -117,13 +117,13 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
 | --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | rialto                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
 
 * Testnet
 ```bash
- ./tbnbcli gov vote --from alice   --side-chain-id  rialto    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Kongo 
+ ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges 
 ```
 
 ### Deposit for side chain proposal
@@ -132,11 +132,11 @@ All these parameters will be determined by BSC Validator Set together through a 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
 | --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | rialto                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --deposit          | Yes                                        | amount of deposit                                    | Yes          |
 
 * Testnet
 ```bash
- ./tbnbcli gov deposit --from alice   --side-chain-id  rialto    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Kongo 
+ ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges 
 ```

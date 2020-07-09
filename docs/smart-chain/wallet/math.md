@@ -50,7 +50,7 @@ You can also get pegged BTC, ETH, and XRP from the faucet.
 
 ## Transfer BNB from BSC to BC
 
-### 1. Create your Binance Chain Kongo Testnet address with tbnbcli
+### 1. Create your Binance Chain Ganges Testnet address with tbnbcli
 * Download the binary [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
 > If you already have a backup of your recovery phrase from Binance Chain Nile Testnet, it can be reused here. 
 ```
@@ -72,7 +72,7 @@ Link: <https://explorer.binance.org/testnet>
 
 ## Transfer BEP2E from BSC to BC
 
-One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP2E tokens together. In Binance Chain Kongo Testnet, there are several pegged tokens:
+One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP2E tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
 
 * Pegged BTC on [Binance Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [Binance Smart Chain Testnet](https://explorer.binance.org/smart-testnet/address/0x4EfDF3235e9e6eD26221C18c4D7D2c3931544274/read_contract)
 * Pegged ETH on  [Binance Chain Testnet](
