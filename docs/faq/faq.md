@@ -146,7 +146,7 @@ all the receiving asset and its residual balance will be charged.
 
 ## What is the current Fee Table on Binance Chain Mainnet?
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-07-09** is as follows:
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
@@ -170,6 +170,10 @@ HTLT | N/A | 0.000375 BNB | N
 depositHTLT | N/A | 0.000375 BNB | N
 claimHTLT | N/A | 0.000375 BNB | N
 refundHTLT | N/A | 0.000375 BNB | N
+TinyIssueFee | N/A | 2 BNB | N
+MiniIssueFee | N/A | 3 BNB | N
+SetTokenUri | N/A| 0.000375 BNB | N
+List BEP8 Token| N/A| 8 BNB | N
 
 ## What is the current Fee Table on Binance Chain Testnet?
 
