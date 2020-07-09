@@ -54,7 +54,7 @@ or you can download the pre-build binaries from [release page](https://github.co
 
 2.Download the config files
 
-You need to have [genesis.json](https://github.com/binance-chain/smart-chain-binary/blob/master/bsc/fullnode/config/genesis.json) and [config.toml](https://github.com/binance-chain/smart-chain-binary/blob/master/bsc/fullnode/config/config.toml)
+You need to have [genesis.json](https://github.com/binance-chain/bsc/releases/download/v1.0.0-beta.0/genesis.json) and [config.toml](https://github.com/binance-chain/bsc/releases/download/v1.0.0-beta.0/config.toml)
 
 
 3.Write genesis state locally

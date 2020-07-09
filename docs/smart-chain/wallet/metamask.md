@@ -42,7 +42,7 @@ Congratulations! you have create your MetaMask account!
 
     * Network name: Binance Smart Chain Testnet
     * RPC URL: https://data-seed-prebsc-1-s1.binance.org:8545
-    * ChainID: 96
+    * ChainID: 97
     * Symbol: BNB 
     * Block Explorer: https://explorer.binance.org/smart-testnet 
 
