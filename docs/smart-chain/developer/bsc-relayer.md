@@ -19,7 +19,7 @@ If you haven't created your account yet, please follow these [guides](../wallet/
 Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
 ```bash
-git clone -b v1.0.0-alpha.0 https://github.com/binance-chain/bsc-relayer
+git clone https://github.com/binance-chain/bsc-relayer
 # Enter the folder bsc was cloned into
 cd bsc-relayer
 # Comile and install bsc
