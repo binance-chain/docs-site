@@ -34,4 +34,4 @@
 | 28     | [Mixin](wallets/mixin.md)                              | <https://mixin.one>              |No|No|  No|
 | 29     | [Ownbit](wallets/ownbit.md)                            | <https://ownbit.io>              |No|No|  No|
 | 30     | [Frontier](wallets/frontier.md)                        | <https://frontierwallet.com/>    |No|Yes|  No|
-| 30     | [D'CENT Wallet](wallets/dcent-wallet.md)               | <https://dcentwallet.com/>       |No|Yes|  No|
+| 31     | [D'CENT Wallet](wallets/dcent-wallet.md)               | <https://dcentwallet.com/>       |No|Yes|  No|
