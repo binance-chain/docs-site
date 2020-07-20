@@ -2,7 +2,11 @@
 
 A snapshot is a recording of the state of Binance Chain at a particular block height.
 
-Latest snapshot of June 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_back_20200601.zip?AWSAccessKeyId=AKIAYINE6SBQLLLS7OXI&Signature=BQlfX3ATfs%2Fj55qwi5q75feqga4%3D&Expires=1617016400)
+Latest snapshot of July 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_20200717.tgz?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1621148533&Signature=BQCDLF9UwALesZwGiW6mCfK5Kiw%3D)
+
+Size: 353 GB
+
+Snapshot of June 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_back_20200601.zip?AWSAccessKeyId=AKIAYINE6SBQLLLS7OXI&Signature=BQlfX3ATfs%2Fj55qwi5q75feqga4%3D&Expires=1617016400)
 
 Size: 309 GB
 
@@ -18,13 +22,13 @@ This snapshot can be used for jumpstarting a newly setup fullnode to avoid waiti
 1. Download Archive
 ```
 
-nohup curl -s https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_back_20200601.zip\?AWSAccessKeyId=\AKIAYINE6SBQLLLS7OXI\&Signature=\BQlfX3ATfs%2Fj55qwi5q75feqga4%3D\&Expires=\1617016400 > data.zip &
+nohup curl -s https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_20200717.tgz\?AWSAccessKeyId=\AKIAYINE6SBQPUZDDRRO\&Expires=\1621148533\&Signature=\BQCDLF9UwALesZwGiW6mCfK5Kiw%3D > data_20200717.tgz &
 
 ```
 
 2. Extract File to replace the contents under data folder of home directory
 ```
-unzip data.zip -d $HOME/data
+tar -xzf data_20200717.tgz -d $HOME/data
 ```
 
 3. Start your node
