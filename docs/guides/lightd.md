@@ -64,7 +64,7 @@ lightd --chain-id "{chain-id}" --node tcp://{full node addr}:80 > node.log  &
 ```
 <!--Testnet-->
 ```bash
-./lightd --chain-id "Binance-Chain-Nile" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
+./lightd --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 

@@ -2116,7 +2116,7 @@ definitions:
         type: string
         description: 'Chain ID'
         required: true
-        example: Binance-Chain-Nile
+        example: Binance-Chain-Ganges
       version:
         type: string
         description: 'Version'

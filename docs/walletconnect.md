@@ -51,7 +51,7 @@ We have two custom call request formats, here are examples of them:
   "params": [
     {
       "account_number": "34",
-      "chain_id": "Binance-Chain-Nile",
+      "chain_id": "Binance-Chain-Ganges",
       "data": null,
       "memo": "test",
       "msgs": [

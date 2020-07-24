@@ -95,7 +95,7 @@ print (seeds)
 
 ### Example for Testnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Nile" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
+./lightd --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
 ```
 
 

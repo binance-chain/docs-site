@@ -44,7 +44,7 @@ Please download `tbnbcli` binary from [here](https://github.com/binance-chain/sm
 
 * Mainnet
 ```bash
-bnbcli bridge bind --symbol DEF-0F9 --amount 6000000000000000 --expire-time 1594715271 --contract-decimals 18 --from alice --chain-id Binance-Chain-Nile --contract-address 0x6aade9709155a8386c63c1d2e5939525b960b4e7 --home ~/home_cli
+bnbcli bridge bind --symbol DEF-0F9 --amount 6000000000000000 --expire-time 1594715271 --contract-decimals 18 --from alice --chain-id Binance-Chain-Ganges --contract-address 0x6aade9709155a8386c63c1d2e5939525b960b4e7 --home ~/home_cli
 ```
 
 ###  Unbind
@@ -60,7 +60,7 @@ bnbcli bridge bind --symbol DEF-0F9 --amount 6000000000000000 --expire-time 1594
 #### For example**
 * Mainnet
 ```bash
-bnbcli bridge unbind --symbol DEF-0F9 --from alice --chain-id Binance-Chain-Nile --home ~/home_cli
+bnbcli bridge unbind --symbol DEF-0F9 --from alice --chain-id Binance-Chain-Ganges --home ~/home_cli
 ```
 
 ### Transfer out
@@ -79,5 +79,5 @@ bnbcli bridge unbind --symbol DEF-0F9 --from alice --chain-id Binance-Chain-Nile
 
 * Mainnet
 ```bash
-bnbcli bridge transfer-out --to 0xf9f609f9f4309f191654aa1fd691a6be6aefa7ac --expire-time 1594715271 --chain-id Binance-Chain-Nile --from alice --amount 100000000:DEF-0F9 --home ~/home_cli
+bnbcli bridge transfer-out --to 0xf9f609f9f4309f191654aa1fd691a6be6aefa7ac --expire-time 1594715271 --chain-id Binance-Chain-Ganges --from alice --amount 100000000:DEF-0F9 --home ~/home_cli
 ```

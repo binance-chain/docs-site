@@ -11,7 +11,7 @@ First step is that you need to generate your unsigned transaction and save it in
 
 You can generate an unsigned transfer transaction on testnet:
 ```
-./tbnbcli send --from <your-key-name> --account-number <your-sccount-number> --to <destination-address> --amount 200000000:BNB --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --generate-only --offline >> unsigned.json
+./tbnbcli send --from <your-key-name> --account-number <your-sccount-number> --to <destination-address> --amount 200000000:BNB --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --generate-only --offline >> unsigned.json
 ```
 You can generate an unsigned transfer transaction on mainnet:
 ```
@@ -25,7 +25,7 @@ You can view the unsigned.json to verify that all the info about this transactio
 
 You can sign an unsigned transfer transaction on testnet:
 ```
-./tbnbcli sign unsigned.json --account-number <address-account-number> --sequence <address-sequence> --chain-id Binance-Chain-Nile --offline --name <your-key-name> >> signed.json
+./tbnbcli sign unsigned.json --account-number <address-account-number> --sequence <address-sequence> --chain-id Binance-Chain-Ganges --offline --name <your-key-name> >> signed.json
 ```
 
 You can sign an unsigned transfer transaction on mainnet:

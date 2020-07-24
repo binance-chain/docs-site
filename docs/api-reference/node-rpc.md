@@ -31,7 +31,7 @@ Here is an example of a node that is available for RPC access. The following is 
       },
       "id": "7156d461742e2a1e569fd68426009c4194830c93",
       "listen_addr": "aa841c226243a11e9a951063f6065739-eee556e439dc6a3b.elb.ap-northeast-1.amazonaws.com:27146",
-      "network": "Binance-Chain-Nile",
+      "network": "Binance-Chain-Ganges",
       "version": "0.30.1",
       "channels": "354020212223303800",
       "moniker": "data-seed-2",
@@ -62,7 +62,7 @@ Here is an example of a node that is available for RPC access. The following is 
 So, using this node, we are able to use raw RPC commands below or the `bnbcli` tool to make a query:
 
 ```bash
-$ bnbcli dex show -l NNB-0AB_BNB --chain-id Binance-Chain-Nile --node data-seed-pre-2-s1.binance.org:80
+$ bnbcli dex show -l NNB-0AB_BNB --chain-id Binance-Chain-Ganges --node data-seed-pre-2-s1.binance.org:80
 ```
 
 ## 2. Protocols
@@ -506,7 +506,7 @@ info, err := client.NetInfo()
           },
           "id": "9612b570bffebecca4776cb4512d08e252119005",
           "listen_addr": "a0b88b324243a11e994280efee3352a7-96b6996626c6481d.elb.ap-northeast-1.amazonaws.com:27146",
-          "network": "Binance-Chain-Nile",
+          "network": "Binance-Chain-Ganges",
           "version": "0.30.1",
           "channels": "354020212223303800",
           "moniker": "data-seed-0",
@@ -666,7 +666,7 @@ genesis, err := client.Genesis()
   "result": {
     "genesis": {
       "genesis_time": "2019-03-07T01:52:07.500913003Z",
-      "chain_id": "Binance-Chain-Nile",
+      "chain_id": "Binance-Chain-Ganges",
       "consensus_params": {
         "block_size": {
           "max_bytes": "1048576",
@@ -1618,7 +1618,7 @@ result, err := client.Status()
       },
       "id": "7156d461742e2a1e569fd68426009c4194830c93",
       "listen_addr": "aa841c226243a11e9a951063f6065739-eee556e439dc6a3b.elb.ap-northeast-1.amazonaws.com:27146",
-      "network": "Binance-Chain-Nile",
+      "network": "Binance-Chain-Ganges",
       "version": "0.30.1",
       "channels": "354020212223303800",
       "moniker": "data-seed-2",
@@ -1840,7 +1840,7 @@ info, err := client.Block(10)
                         "block": "10",
                         "app": "0"
                     },
-                    "chain_id": "Binance-Chain-Nile",
+                    "chain_id": "Binance-Chain-Ganges",
                     "height": "10",
                     "time": "2019-03-07T01:57:22.135103158Z",
                     "num_txs": "0",
@@ -1996,7 +1996,7 @@ info, err := client.BlockchainInfo(10, 10)
                   "block": "10",
                   "app": "0"
                },
-               "chain_id": "Binance-Chain-Nile",
+               "chain_id": "Binance-Chain-Ganges",
                "height": "10",
                "time": "2019-03-07T01:57:22.135103158Z",
                "num_txs": "0",
@@ -2074,7 +2074,7 @@ info, err := client.Commit(100)
           "block": "10",
           "app": "0"
         },
-        "chain_id": "Binance-Chain-Nile",
+        "chain_id": "Binance-Chain-Ganges",
         "height": "10",
         "time": "2019-03-07T01:57:22.135103158Z",
         "num_txs": "0",
@@ -2462,11 +2462,11 @@ type ResultBroadcastTx struct {
 
 1. Query the account number and sequence of your address
 ```
-tbnbcli account your-address  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```
@@ -2474,7 +2474,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json
@@ -2516,7 +2516,7 @@ The above command returns JSON structured like this:
 ```
 Please note that the returned data contains no confirmation about whether this transaction has been committed or not. You will be able to verify the transaction status on blockchain with the following query:
 ```
-tbnbcli tx 721B67C1772EA5FC7E80D70DEAA3C52034204FC60C057FF1117EE45468C1A980  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli tx 721B67C1772EA5FC7E80D70DEAA3C52034204FC60C057FF1117EE45468C1A980  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 It returns the height which it was committed:
 ```json
@@ -2557,11 +2557,11 @@ type ResultBroadcastTxCommit struct {
 
 1. Query the account number and sequence of your address
 ```
-tbnbcli account your-address  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```json
@@ -2569,7 +2569,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json
@@ -2652,11 +2652,11 @@ type ResultBroadcastTx struct {
 **Example of Calling REST**
 1. Query the account number and sequence of your address
 ```
-bnbcli account your-address  --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+bnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```
@@ -2664,7 +2664,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json

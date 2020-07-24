@@ -7,7 +7,7 @@ The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of 
 
 **Please note:** Before you run any command examples on this page, and if you have not done so already, you must [generate or add a key to bnbcli](./keys.md).
 
-**Also remember:** The `chain-id` and `node` parameters passed to bnbcli may vary, and the`chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. To find the latest list of  endpoints for the mainnet, please check [the peers list](https://dex.binance.org/api/v1/peers). To find the latest endpoints for the testnet, please check [the peers list](https://testnet-dex.binance.org/api/v1/peers).
+**Also remember:** The `chain-id` and `node` parameters passed to bnbcli may vary, and the`chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Ganges` for testnet. To find the latest list of  endpoints for the mainnet, please check [the peers list](https://dex.binance.org/api/v1/peers). To find the latest endpoints for the testnet, please check [the peers list](https://testnet-dex.binance.org/api/v1/peers).
 
 ## Issue
 
@@ -39,14 +39,14 @@ Example on **testnet**:
 
 ```bash
 # To issue a NNB mintable token with total-supply 1 billion on testnet
-> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --mintable --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --mintable --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 
 Committed at block 1887 (tx hash: B90A055DDD570AE42A7050182993A0B4DBC81A0D, ... Issued NNB-B90...)
 ```
 
 ```bash
 # To issue a NNB non-mintable token with total-supply 1 billion on testnet
-> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 
 Committed at block 1887 (tx hash: B90A055DDD570AE42A7050182993A0B4DBC81A0D, ... Issued NNB-B90...)
 ```
@@ -62,7 +62,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
- > ./tbnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+ > ./tbnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```
 
 ## Burn
@@ -77,7 +77,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
- > ./tbnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+ > ./tbnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```
 
 ## Freeze & Unfreeze
@@ -99,9 +99,9 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
-> ./tbnbcli token freeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token freeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```
 
 ```bash
-> ./tbnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```

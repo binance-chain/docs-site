@@ -56,7 +56,7 @@ Example on **testnet**:
 ```shell
 ./tbnbcli gov submit-list-proposal --from test --deposit 200000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
---description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
+--description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
 ```
 !!! Tip
         As discussed in [BEP-70](https://github.com/binance-chain/BEPs/blob/master/BEP70.md), BUSD is one of the most influential stable coins worldwide and the most dominant stable coin on Binance Chain. BEP2 token issuers can list their assets against [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1) without the requirement of creating BNB pair first. Listing and trading BUSD pairs on Binance Chain will facilitate token owners and exchange traders, making the markets more liquid and healthier.  BEP70 is already implemented and has been activated after Testnet Nightingale Upgrade. Binance Chain Mainnet will be upgraded to support BEP-70 soon.
@@ -83,7 +83,7 @@ bnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 
 Example on **testnet**:
 
 ```shell
-tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Nile --trust-node --node https://seed-pre-s3.binance.org:443
+tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Ganges --trust-node --node https://seed-pre-s3.binance.org:443
 ```
 
 #### Add deposit for a Proposal (Optional)
@@ -100,7 +100,7 @@ bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB
 Example on **testnet**:
 
 ```shell
-tbnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 
 #### Query Information of a Proposal
@@ -115,7 +115,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```shell
-./tbnbcli gov query-proposal --proposal-id <proposal-ID> --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+./tbnbcli gov query-proposal --proposal-id <proposal-ID> --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 
 Example output:
@@ -159,7 +159,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```shell
-./tbnbcli gov query-votes --proposal-id 272 --chain-id=Binance-Chain-Nile --node=data-seed-pre-2-s1.binance.org:80
+./tbnbcli gov query-votes --proposal-id 272 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
 
 Example output:
@@ -262,7 +262,7 @@ If the proportion of `NoWithVeto` votes is inferior to 1/3 and the proportion of
 You can query a proposal via `bnbcli`.
 
 ```bash
-$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Nile --node=tcp://data-seed-pre-1-s3.binance.org:80 --proposal-id 370
+$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Ganges --node=tcp://data-seed-pre-1-s3.binance.org:80 --proposal-id 370
 {
   "type": "gov/TextProposal",
   "value": {

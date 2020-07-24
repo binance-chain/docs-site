@@ -1191,7 +1191,7 @@
           },
           "network" : {
             "type" : "string",
-            "example" : "Binance-Chain-Nile"
+            "example" : "Binance-Chain-Ganges"
           },
           "version" : {
             "type" : "string",

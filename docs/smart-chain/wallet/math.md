@@ -52,7 +52,7 @@ You can also get pegged BTC, ETH, and XRP from the faucet.
 
 ### 1. Create your Binance Chain Ganges Testnet address with tbnbcli
 * Download the binary [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
-> If you already have a backup of your recovery phrase from Binance Chain Nile Testnet, it can be reused here. 
+> If you already have a backup of your recovery phrase from Binance Chain Ganges Testnet, it can be reused here. 
 ```
 tbnbcli keys add {wallet-alias} 
 ```

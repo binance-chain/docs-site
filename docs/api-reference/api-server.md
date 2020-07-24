@@ -34,7 +34,7 @@ Replace the `platform` variable with `mac`, `windows` or `linux` in the followin
 ### Example for Testnet:
 
 ```bash
-./tbnbcli api-server --chain-id "Binance-Chain-Nile" --node tcp://data-seed-pre-0-s1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
+./tbnbcli api-server --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
 ```
 
 ### /version

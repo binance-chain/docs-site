@@ -66,7 +66,7 @@ Please note that there are two types of nodes that offer RPC services. Some supp
 
 ## Which Chain-ID to use
 
-`chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Nile` for testnet. Please choose the correct one in your case.
+`chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Ganges` for testnet. Please choose the correct one in your case.
 ## Which Private Key To Use
 
 There are two ways for you to sign transaction：

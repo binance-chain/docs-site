@@ -1107,7 +1107,7 @@ If the time window is larger than limits, only the first n klines will return. I
 | listen_addr | string (RemoteAddr) | Listen address |  |
 | access_addr | string (RemoteAddr) | Access address (HTTP) |  |
 | stream_addr | string (RemoteAddr) | Stream address (WS) |  |
-| network | string | Chain ID | Binance-Chain-Nile |
+| network | string | Chain ID | Binance-Chain-Ganges |
 | version | string | Version | 0.30.1 |
 | moniker | string | Moniker (Name) | data-seed-1 |
 | capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |

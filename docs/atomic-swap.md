@@ -44,7 +44,7 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to
 
 Command line
 ```shell
-./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income <expectedIncome> --height-span <heightSpan> --from <from-addr> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --recipient-addr <recipient-addr> --amount 100:BNB --expected-income <expectedIncome> --height-span <heightSpan> --from <from-addr> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript
@@ -100,7 +100,7 @@ swapID: 4d898bc8558daa4d817486d7a93b77b2c82fcec2123abf4a1eb7d2521237eccd
 
 Command line:
 ```shell
-./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Nile  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <deputy-bep2-addr>  --recipient-other-chain <client ethereum address>  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --from <from-addr> --chain-id Binance-Chain-Ganges  --height-span <heightSpan> --amount <amount> --expected-income <expectedIncome> --recipient-addr <deputy-bep2-addr>  --recipient-other-chain <client ethereum address>  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript:
@@ -131,7 +131,7 @@ Javascript:
 
 Command line:
 ```shell
-./tbnbcli token HTLT --from  <from-addr> --chain-id Binance-Chain-Nile --height-span  <heightSpan>  --amount <amount> --expected-income <expectedIncome> --recipient-other-chain <deputy ethereum address> --sender-other-chain <client ethereum address> --recipient-addr <client bep2 address> --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --from  <from-addr> --chain-id Binance-Chain-Ganges --height-span  <heightSpan>  --amount <amount> --expected-income <expectedIncome> --recipient-other-chain <deputy ethereum address> --sender-other-chain <client ethereum address> --recipient-addr <client bep2 address> --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript:
@@ -172,7 +172,7 @@ Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT 
 
 Command line:
 ```shell
-./tbnbcli token deposit --swap-id <swapID>  --amount 10000:TEST-599 --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token deposit --swap-id <swapID>  --amount 10000:TEST-599 --from <from-key> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript:
@@ -215,7 +215,7 @@ Claim Hash Timer Locked Transfer is to claim the locked asset by showing the ran
 
 Command line:
 ```shell
-./tbnbcli token claim --swap-id  <swapID> --random-number <random-number> --from <from-key> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token claim --swap-id  <swapID> --random-number <random-number> --from <from-key> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript:
@@ -251,7 +251,7 @@ Refund Hash Timer Locked Transfer is to refund the locked asset after timelock i
 
 Command line:
 ```shell
-./tbnbcli token refund --swap-id <swapID> --from <from-key>  --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token refund --swap-id <swapID> --from <from-key>  --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Javascript:
@@ -288,7 +288,7 @@ Query atomic swap allows you to search swap information by `swapID`
 
 * On testnet:
 ```
-./tbnbcli token query-swap --swap-id <swapID> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-swap --swap-id <swapID> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 Expected output
 ```json
@@ -333,7 +333,7 @@ Query atomic swap ID allows you to search swap history of an recipient. As this 
 
 * On testnet:
 ```
-./tbnbcli token query-swapIDs-by-recipient  --recipient-addr <address> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-swapIDs-by-recipient  --recipient-addr <address> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Example output:
@@ -358,7 +358,7 @@ Query atomic swap ID allows you to search swap history of an initiator. As this 
 
 * On testnet:
 ```
-./tbnbcli token query-swapIDs-by-creator  --creator-addr <address> --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-swapIDs-by-creator  --creator-addr <address> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Example output:
@@ -439,7 +439,7 @@ Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binanc
 * Get the `swapID` on Binance Chain
 
 ```
-./tbnbcli token query-swapIDs-by-recipient  --recipient-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-swapIDs-by-recipient  --recipient-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 [
   "12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128"
 ]
@@ -490,7 +490,7 @@ You can also get swapID by [calculateSwapID in javascript-sdk](https://github.co
 * Send claim transaction on Binance Chain
 
 ```
-./tbnbcli token claim --swap-id  12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128  --random-number <random-number> --from <from-key>  --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token claim --swap-id  12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128  --random-number <random-number> --from <from-key>  --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 Example of `claim` tx on [testnet](https://testnet-dex.binance.org/api/v1/tx/6BA714E6D107F1D9634DDC159F560A1FB61393B8E15723EFD70B9EA8B0B1AA9A?format=json)
@@ -617,7 +617,7 @@ This is a javascript implementation for client app to swap [PPC](https://ropsten
 Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTLT` transaction. Please write down the `randomNumber` and `randomNumberHash`.
 
 ```
-./tbnbcli token HTLT --from atomic --recipient-addr tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr  --chain-id Binance-Chain-Nile  --height-span 10000 --amount  9900000000:PPC-00A  --expected-income 9900000000:PPC  --recipient-other-chain 0x133D144F52705cEb3f5801B63b9EBcCF4102f5Ed  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token HTLT --from atomic --recipient-addr tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr  --chain-id Binance-Chain-Ganges  --height-span 10000 --amount  9900000000:PPC-00A  --expected-income 9900000000:PPC  --recipient-other-chain 0x133D144F52705cEb3f5801B63b9EBcCF4102f5Ed  --cross-chain --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 Random number: 4811959406ea3e69721d944d308880ec41323b7f89e51a78df3693348779315e
 Timestamp: 1569578936
 Random number hash: b03f256c9efdb97b9815faa1417e1da4cca7672e0bb26e4e7d9bfc82d0f1f15e
@@ -638,7 +638,7 @@ Example is [here](https://testnet-explorer.binance.org/tx/9ECECE9E0F08EE78583CFA
 Then, you can query the the swap by `SwapID`:
 
 ```
-./tbnbcli token query-swap --swap-id f85dd907df0a5897927b949c0f9e2563d453ba698ff9941fed1ce91f8057afc2 --chain-id Binance-Chain-Nile --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-swap --swap-id f85dd907df0a5897927b949c0f9e2563d453ba698ff9941fed1ce91f8057afc2 --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
 ```
 
 You can use this `swapID` for refund if the deputy doesn't send htlt transaction on ethereum with proper parameters.
