@@ -13,9 +13,11 @@ BSC RPC:
 
 BC RPC:
 
-* http://data-seed-prealpha-1-s1.binance.org/
-* http://data-seed-prealpha-2-s1.binance.org/
-
+*  http://data-seed-pre-0-s3.binance.org:80
+*  http://data-seed-pre-1-s1.binance.org:80
+*  http://data-seed-pre-2-s1.binance.org:80
+*  http://data-seed-pre-0-s3.binance.org:80
+*  http://data-seed-pre-1-s3.binance.org:80
 ## Start
 
 You can start the HTTP JSON-RPC with the --rpc flag

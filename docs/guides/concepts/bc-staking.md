@@ -148,7 +148,7 @@ b. both validator operator(--from) and self-delegator(--address-delegator) use �
 * Online Mode
 
 ```bash
-./tbnbcli sign unsigned.json --from {delegator-address} --node data-seed-prealpha-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges >> delegator-signed.json
+./tbnbcli sign unsigned.json --from {delegator-address} --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges >> delegator-signed.json
 ```
 
 * Offline Mode
@@ -162,7 +162,7 @@ Then, **validator** operator addres will sign it later.
 * Online Mode
 
 ```bash
-./tbnbcli sign delegator-signed.json --from {validator-address} --node data-seed-prealpha-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges >> both-signed.json
+./tbnbcli sign delegator-signed.json --from {validator-address} --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges >> both-signed.json
 ```
 
 * Offline Mode
@@ -174,7 +174,7 @@ Then, **validator** operator addres will sign it later.
 c. use “**bnbcli broadcast**” to send the transaction from above to the blockchain nodes.
 
 ```bash
-./tbnbcli broadcast both-signed.json  --node data-seed-prealpha-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges
+./tbnbcli broadcast both-signed.json  --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 Verify your transaction in [explorer](https://explorer.binance.org/testnet)
