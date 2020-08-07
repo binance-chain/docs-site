@@ -126,6 +126,7 @@ nav:
           - Bind Token: smart-chain/developer/bind-tokens.md
           - Cross-chain Transfer: smart-chain/validator/cross-chain-transfer.md
       - RPC: smart-chain/developer/rpc.md
+      - Band Protocol Integration: smart-chain/developer/band.md
   - Wallets:
     - Binance Chain Walletsupport: wallets/wallets.md
     - Wallet Tutorial:
