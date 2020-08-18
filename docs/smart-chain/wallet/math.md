@@ -36,8 +36,10 @@ It’s ready, and now you can get some testnet BNB from the faucet.
 <img src="https://lh3.googleusercontent.com/1WquPDgLagkXcni9u9yPXzgaagCRd0nzm49cZ516XZSRB_rlOuybVG48C4R2ozhiSlIizxEMI_J7GexZz64E4vUpH362rrAn74GP1ALLOFOZusF8qjM1Xk71cTo5-EWcFvvqpIRL" alt="img" style="zoom:33%;" />
 
 ### 2. Go to <https://testnet.binance.org/faucet-smart/>
-You can also get pegged BTC, ETH, and XRP from the faucet.
-![img](https://lh5.googleusercontent.com/6zi0THWWpOguhM169w8lMHKFwNqxOFYc1iB4yWCSaHlQK3tdhg31O2uDgBBKvnQDXOchfvxY8zyviwxF2jmiGemjRlq-49Hu-tXifWyv6AmrLAQ8q9DoUu--hQwG5t9L0yF1Q2uM)Go to explorer to verify BNB is sent: https://explorer.binance.org/smart-testnet
+
+To request testnet BNB via Twitter, make a tweet with your BSC address pasted into the contents (surrounding text doesn't matter).
+
+Go to explorer to verify BNB is sent: https://explorer.binance.org/smart-testnet
 
 ## Transfer BNB from BSC to BC
 

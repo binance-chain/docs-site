@@ -42,7 +42,7 @@ Synchronizes a full node starting at genesis, verifying all blocks and executing
 Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
 ```bash
-git clone -b v1.0.0-beta.1 https://github.com/binance-chain/bsc
+git clone -b v1.0.0-beta.2 https://github.com/binance-chain/bsc
 # Enter the folder bsc was cloned into
 cd bsc
 # Comile and install bsc
@@ -87,8 +87,8 @@ start a validator node
 
 ```bash
 ## generate the consensus key and input the password
-geth account new --datadir ./node 
-echo {your-password} > password.txt 
+geth account new --datadir ./node
+echo {your-password} > password.txt
 geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --password password.txt  --mine --allow-insecure-unlock  --pprofaddr 0.0.0.0 --metrics --pprof
 ```
 
