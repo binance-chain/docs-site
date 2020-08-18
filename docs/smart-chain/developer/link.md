@@ -4,7 +4,7 @@
 
 ##Introduction to Price Feeds
 
-Chainlink Price Feeds are the quickest way to connect your smart contracts to the real-world market prices of assets. They enable smart contracts to retrieve the latest price of an asset in a single call.
+Chainlink Pr ice Feeds are the quickest way to connect your smart contracts to the real-world market prices of assets. They enable smart contracts to retrieve the latest price of an asset in a single call.
 
 Often, smart contracts need to act upon prices of assets in real-time. This is especially true in [DeFi](https://defi.chain.link/). For example, [Synthetix](https://www.synthetix.io/) use Price Feeds to determine prices on their derivatives platform. Lending and Borrowing platforms like [AAVE](https://aave.com/) use Price Feeds to ensure the total value of the collateral.
 
@@ -85,7 +85,7 @@ contract PriceConsumer {
 
 **Javascript Web3**
 
-```
+```javascript
 
 const Web3 = require("web3");
 
@@ -111,7 +111,7 @@ priceFeed.methods.latestAnswer().call()
 
 **Python Web3**
 
-```
+```python
 from web3 import Web3
 
 web3 = Web3(Web3.HTTPProvider('https://data-seed-prebsc-1-s1.binance.org:8545'))
@@ -209,7 +209,7 @@ contract PriceConsumer {
 ```
 **Javascript Web3**
 
-```
+```javascript
 
 const Web3 = require("web3");
 
@@ -244,7 +244,7 @@ priceFeed.methods.latestRound().call()
 
 **Python Web3**
 
-```
+```python
 from web3 import Web3
 
 web3 = Web3(Web3.HTTPProvider('https://data-seed-prebsc-1-s1.binance.org:8545'))
@@ -257,7 +257,7 @@ contract = web3.eth.contract(address=addr, abi=abi)
 
 latestRound = contract.functions.latestRound().call()
 
-\# Go 5 rounds back
+# Go 5 rounds back
 
 historicalRoundId = latestRound - 5
 
