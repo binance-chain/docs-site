@@ -62,7 +62,7 @@ The value here should follow this equation:
 txValue = (amount + RelayFee)/1e18
 ```
 
-The current `RelayFee` is 0.01BNB.
+The current `RelayFee` is at least 0.01BNB.
 
 The initial miniRelayFee is 1e16. It can be changed by on-chain governance
 
