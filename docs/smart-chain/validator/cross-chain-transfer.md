@@ -62,7 +62,7 @@ The value here should follow this equation:
 txValue = (amount + RelayFee)/1e18
 ```
 
-`RelayFee`should be no less than 0.01BNB and it can be updated by on-chain governance. For example, if you transfer 1BNB from BSC to BC, the value should be at least 1.01BNB.
+`RelayFee`should be 0.01BNB and it can be updated by on-chain governance. For example, if you transfer 1BNB from BSC to BC, the value should be at least 1.01BNB.
 
 After all the above parameters have been set to proper values, users can click the transact button to build transactions, and metamask plugin will be ejected. Then users can click the confirm button in metamask to sign and broadcast transactions.
 
