@@ -49,7 +49,7 @@ cd bsc
 make geth
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/binance-chain/smart-chain-binary/tree/master/bsc)
+or you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/tag/v1.0.1-beta.2)
 
 2.Download the config files
 
