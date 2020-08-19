@@ -43,10 +43,9 @@ Committed at block 465899 (tx hash: 68FFF82197E27A3EC14AFF8C99A035FA9CA7120312AA
 
 ### transferOut
 
-Call **transferOut** of TokenHub contract in MyEtherWallet:
+Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi)) in [MyEtherWallet](https://www.myetherwallet.com/):
 
 ![img](https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m)
-
 
 
 | Parameter Name | Type    | Description                                                  |
@@ -55,10 +54,11 @@ Call **transferOut** of TokenHub contract in MyEtherWallet:
 | recipient      | address | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
 | amount         | uint256 | The BNB decimals on  BSC is 18. If you want to transfer one BNB, then the value should be 1e18. Besides, the value must be N * 1e10 |
 | expireTime     | uint256 | Timestamp, counted by  second                                |
+
 The value here should follow this equation:
 
 ```
-txValue = (amount + miniRelayFee)/1e18
+txValue = amount / 1e18
 ```
 
 The initial miniRelayFee is 1e16. It can be changed by on-chain governance
