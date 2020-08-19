@@ -23,7 +23,7 @@ BC RPC:
 
 You can start the HTTP JSON-RPC with the --rpc flag
 ```
-geth --rpc
+geth attach https://data-seed-prebsc-1-s1.binance.org:8545/
 ```
 
 ## JSON-RPC methods
