@@ -812,7 +812,7 @@ Then, the full node will save all the messages about reward distribution.
 
 ### 8. Slashing
 
-You can set the `publishSlashing` option to `true` in nodebinary/fullnode/{network}/node/app.toml.
+You can set the `publishSlashing` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
 Then, the full node will save all the messages about slashing.
 
 * Example
@@ -889,7 +889,7 @@ Then, the full node will save all the messages about slashing.
 
 ### 9. CrossTransfer
 
-You can set the publishCrossTransfer option to true in nodebinary/fullnode/{network}/node/app.toml.
+You can set the `publishCrossTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
 Then, the full node will save all the messages about cross transfer.
 
 * Example
@@ -967,7 +967,7 @@ Then, the full node will save all the messages about cross transfer.
 
 ### 10. SideProposal
 
-You can set the publishSideProposal option to true in nodebinary/fullnode/{network}/node/app.toml.
+You can set the `publishSideProposal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
 Then, the full node will save all the messages about side proposals.
 
 * Example
@@ -1017,7 +1017,7 @@ Then, the full node will save all the messages about side proposals.
 
 ### 11. BreatheBlock
 
-You can set the `publichBreatheBlock` option to true in nodebinary/fullnode/{network}/node/app.toml. Then, the full node will save all the messages about side proposals.
+You can set the `publichBreatheBlock` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`. Then, the full node will save all the messages about side proposals.
 
 * Example
 
