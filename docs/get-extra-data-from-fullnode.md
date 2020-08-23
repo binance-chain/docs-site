@@ -512,7 +512,7 @@ Then, the full node will save all the messages about staking.
 
 * Schema
 
-```
+```json
 {
     "type": "record",
     "name": "Staking",
@@ -841,7 +841,7 @@ Then, the full node will save all the messages about slashing.
 
 * Schema
 
-```
+```json
 {
     "type": "record",
     "name": "Slashing",
@@ -918,7 +918,7 @@ Then, the full node will save all the messages about cross transfer.
 
 * Schema
 
-```
+```json
 {
     "type": "record",
     "name": "CrossTransfers",
@@ -987,7 +987,7 @@ Then, the full node will save all the messages about side proposals.
 
 * Schema
 
-```
+```json
 {
     "type": "record",
     "name": "SideProposals",
@@ -1030,7 +1030,7 @@ You can set the `publichBreatheBlock` option to true in nodebinary/fullnode/{net
 
 * Schema
 
-```
+```json
 {
     "type": "record",
     "name": "BreatheBlock",
@@ -1050,7 +1050,8 @@ The message is encoded based on `Avro` serialization system.<br/>
 Their schemas are shown below:<br/>
 
 - **OrderUpdates**:
-```
+
+```json
 {
     "type": "record",
     "name": "ExecutionResults",
@@ -1229,7 +1230,8 @@ Their schemas are shown below:<br/>
 ```
 
 - **AccountBalanceSchema**:
-```
+
+```json
 {
             "type": "record",
             "name": "Accounts",
@@ -1273,7 +1275,8 @@ Their schemas are shown below:<br/>
 
 
 - **BlockFeeSchema**:
-```
+
+```json
 {
     "type": "record",
     "name": "BlockFee",
@@ -1287,7 +1290,8 @@ Their schemas are shown below:<br/>
 ```
 
 - **TransfersSchema**:
-```
+
+```json
 {
     "type": "record",
     "name": "Transfers",
