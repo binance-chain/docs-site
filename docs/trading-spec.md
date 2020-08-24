@@ -95,7 +95,7 @@ DEX would always calculate and collect the fees based on the latest balance and 
 
 ### Current Fees Table on Mainnet
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-07-09** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-08-21** is as follows:
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
@@ -105,9 +105,9 @@ Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
 IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
 Transfer | N/A | 0.000375 BNB | N
 Multi-send | N/A | 0.0003 BNB | N
-Issue Asset | N/A | 500 BNB | N
-Mint Asset | N/A | 5 BNB | N
-Burn Asset | N/A | 0.5 BNB | N
+Issue Asset | N/A | 100 BNB | N
+Mint Asset | N/A | 0.01 BNB | N
+Burn Asset | N/A | 0.01 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
 Lock/unlock/relock Asset | N/A | 0.01 BNB | N
 List Asset | N/A | 1000 BNB | N
@@ -123,6 +123,17 @@ TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
 SetTokenUri | N/A| 0.000375 BNB | N
 List BEP8 Token| N/A| 8 BNB | N
+Create A New Smart Chain Validator | N/A |10 BNB |N
+Edit Smart Chain Validator Information|N/A| 1 |N
+Delegate Smart Chain Validator |N/A| 0.001 |N
+Redelegate Smart Chain Validator | N/A|0.003 |N
+Undelegate Smart Chain Validator | N/A|0.002 |N
+Unjail A Smart Chain Validator | N/A| 1 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
+Submit Smart Chain Proposal | N/A| 10 BNBs     | N
+Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
+Smart Chain Proposal Vote   | N/A| 1 BNB   | N
+Relayer reward   | N/A| 0.01 BNB    | N
 
 
 ### Mainnet Fees API
@@ -170,7 +181,7 @@ Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=
 
 ### Current Fees Table on Testnet
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2020-06-24** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2020-08-21** is as follows:
 
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
@@ -200,6 +211,17 @@ TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
 SetTokenUri | N/A| 0.000375 BNB | N
 List BEP8 Token| N/A| 8 BNB | N
+Create A New Smart Chain Validator | N/A |10 BNB |N
+Edit Smart Chain Validator Information|N/A| 1 |N
+Delegate Smart Chain Validator |N/A| 0.001 BNB |N
+Redelegate Smart Chain Validator | N/A|0.003 BNB |N
+Undelegate Smart Chain Validator | N/A|0.002 BNB |N
+Unjail A Smart Chain Validator | N/A| 1 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
+Submit Smart Chain Proposal | N/A| 10 BNBs     | N
+Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
+Smart Chain Proposal Vote   | N/A| 1 BNB   | N
+Relayer reward   | N/A| 0.01 BNB    | N
 
 
 ### Testnet Fees API
