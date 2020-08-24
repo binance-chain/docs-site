@@ -74,14 +74,6 @@ And do following step:
 - Claim reward for the relayer and increase sequence.
 
 
-### Fee Table
+## Workflow
 
-| Msg type                   | Fee         | Fee For                      |
-| -------------------------- | ----------- | ---------------------------- |
-| MsgSideChainSubmitProposal | 10 BNBs     | Proposer                     |
-| MsgSideChainDeposit        | 0.00125 BNB | Proposer                     |
-| MsgSideChainVote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.01 BNB    | come from system reward pool |
-
-
-
+Please read this [doc](../../../guides/concepts/bsc-gov.md) to learn how to send transactions on Binance Chain

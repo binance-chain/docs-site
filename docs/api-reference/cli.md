@@ -202,6 +202,7 @@ For detailed usage, you can refer to:
 - [staking](../guides/concepts/bc-staking.md)
 - [slashing](../guides/concepts/bc-slashing.md)
 - [bridge](../guides/concepts/bc-bridge.md)
+- [Binance Smart Chain Governance](../guides/concepts/bsc-gov.md)
 
 
 

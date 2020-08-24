@@ -73,9 +73,9 @@ Transaction Type  | Pay in BNB |
 -- | -- |
 Create A New Smart Chain Validator | 10 |
 Edit Smart Chain Validator Information| 1 |
-Delegate Smart Chain Validator | 1 |
-Redelegate Smart Chain Validator | 3 |
-Undelegate Smart Chain Validator | 2 |
+Delegate Smart Chain Validator | 0.001 |
+Redelegate Smart Chain Validator | 0.003 |
+Undelegate Smart Chain Validator | 0.002 |
 
 
 ## Commands

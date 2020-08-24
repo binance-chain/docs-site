@@ -10,12 +10,17 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ## Fee Table
 
-| Msg type                   | Fee         | Fee For                      |
+| Transaction Type                   | Fee         | Fee For                      |
 | -------------------------- | ----------- | ---------------------------- |
-| MsgSideChainSubmitProposal | 10 BNBs     | Proposer                     |
-| MsgSideChainDeposit        | 0.00125 BNB | Proposer                     |
-| MsgSideChainVote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.01 BNB    | come from system reward pool |
+| Submit Smart Chain Proposal | 10 BNBs     | Proposer                     |
+| Smart Chain Proposal Deposit        | 0.00125 BNB | Proposer                     |
+| Smart Chain Proposal Vote           | 1 BNB       | Proposer                     |
+| Relayer reward             | 0.01 BNB    | system reward pool |
+
+### Global Parameters
+
+* `min-deposit`: The threshold for submitting a proposal on mainnet is **1000BNB**, and the threshold for submitting a proposal on testnet is **2000BNB**
+
 
 ## Commands
 
@@ -55,7 +60,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
- ./tbnbcli params side-params --side-chain-id chapel  --trust-node  
+ ./tbnbcli params side-params --side-chain-id chapel  --trust-node
 ```
 
 ### Submit cross chain param change proposal.
@@ -74,7 +79,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges 
+./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
 ```
 
 ### Submit cross chain channel management proposal.
@@ -92,7 +97,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges 
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
 ```
 
 ### Submit side chain module param change proposal.
@@ -109,7 +114,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
-./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges 
+./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges
 ```
 
 ### Vote for side chain proposal
@@ -123,7 +128,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
- ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges 
+ ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges
 ```
 
 ### Deposit for side chain proposal
@@ -138,5 +143,5 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 * Testnet
 ```bash
- ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges 
+ ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges
 ```

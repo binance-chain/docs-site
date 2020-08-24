@@ -146,7 +146,7 @@ all the receiving asset and its residual balance will be charged.
 
 ## What is the current Fee Table on Binance Chain Mainnet?
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-07-09** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-08-21** is as follows:
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
@@ -174,6 +174,18 @@ TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
 SetTokenUri | N/A| 0.000375 BNB | N
 List BEP8 Token| N/A| 8 BNB | N
+Create A New Smart Chain Validator | N/A |10 BNB |N
+Edit Smart Chain Validator Information|N/A| 1 |N
+Delegate Smart Chain Validator |N/A| 0.001 |N
+Redelegate Smart Chain Validator | N/A|0.003 |N
+Undelegate Smart Chain Validator | N/A|0.002 |N
+Unjail A Smart Chain Validator | N/A| 1 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
+Submit Smart Chain Proposal | N/A| 10 BNBs     | N
+Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
+Smart Chain Proposal Vote   | N/A| 1 BNB   | N
+Relayer reward   | N/A| 0.01 BNB    | N
+
 
 ## What is the current Fee Table on Binance Chain Testnet?
 
@@ -207,6 +219,17 @@ TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
 SetTokenUri | N/A| 0.000375 BNB | N
 List BEP8 Token| N/A| 8 BNB | N
+Create A New Smart Chain Validator | N/A |10 BNB |N
+Edit Smart Chain Validator Information|N/A| 1 |N
+Delegate Smart Chain Validator |N/A| 0.001 BNB |N
+Redelegate Smart Chain Validator | N/A|0.003 BNB |N
+Undelegate Smart Chain Validator | N/A|0.002 BNB |N
+Unjail A Smart Chain Validator | N/A| 1 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
+Submit Smart Chain Proposal | N/A| 10 BNBs     | N
+Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
+Smart Chain Proposal Vote   | N/A| 1 BNB   | N
+Relayer reward   | N/A| 0.01 BNB    | N
 
 ## Can I see orders/balances of others or can other people see my orders/balances?
 
