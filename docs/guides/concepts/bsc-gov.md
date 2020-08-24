@@ -15,7 +15,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 | Submit Smart Chain Proposal | 10 BNBs     | Proposer                     |
 | Smart Chain Proposal Deposit        | 0.00125 BNB | Proposer                     |
 | Smart Chain Proposal Vote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.01 BNB    | system reward pool |
+| Relayer reward             | 0.001 BNB    | system reward pool |
 
 ### Global Parameters
 

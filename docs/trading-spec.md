@@ -133,7 +133,7 @@ Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
 Submit Smart Chain Proposal | N/A| 10 BNBs     | N
 Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
 Smart Chain Proposal Vote   | N/A| 1 BNB   | N
-Relayer reward   | N/A| 0.01 BNB    | N
+Relayer reward   | N/A| 0.001 BNB    | N
 
 
 ### Mainnet Fees API
@@ -221,7 +221,7 @@ Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
 Submit Smart Chain Proposal | N/A| 10 BNBs     | N
 Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
 Smart Chain Proposal Vote   | N/A| 1 BNB   | N
-Relayer reward   | N/A| 0.01 BNB    | N
+Relayer reward   | N/A| 0.001 BNB    | N
 
 
 ### Testnet Fees API
