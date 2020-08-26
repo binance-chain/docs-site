@@ -85,7 +85,7 @@ After the transfer transaction is sent, you will see an increase of your balance
 Verify your transaction in Explorer:
 ![img](https://lh4.googleusercontent.com/BOOwJeG2f0LYGZrud8rtD4fyGTMXWZO_EVcHE8Iiwo3VWHGCDPll6lEtp-aquCG6A_naVQbhYoHZm-mkSf0PIQdKjlyYzC-OXkHIncvryftHbSRjQxq0rg7CaORFskxSs2zhzDKG)
 
-## Add BEP2E Tokens
+## Add BEP20 Tokens
 1. Deploy an ERC20 contract at https://remix.ethereum.org/
 You can create a new file or import a sample contract: <https://gist.github.com/HaoyangLiu/3c4dc081b7b5250877e40b82667c8508></br>
 <img src="https://lh4.googleusercontent.com/Kzs4VR0Xq8JPnRUKasYl01i0bllJNPcTLjhDpzKAHrzsHUm3789-sXs3m0UQZxjk8E4MOugCdga2_7JemvdGcxl_yqhK1Jc4vRan6ZxCo8CUv2BxmIrBPsTcBMEsNrHqfNpkxyU2" alt="img" style="zoom:33%;" /></br><img src="https://lh5.googleusercontent.com/Jgip5Dl46QEEiDo1Gpy9Oc4tuPhqyV9QTwI_72PmJOTG8Fd2K_6BG5K8X-U_OvE2u6fjfXUKvVuxL-hITWweD2aX5GUP4nggR4qwTILRdXyM1tZDSxcYf1DDc0PmQYJK5D24WSVC" alt="img" style="zoom:50%;" />

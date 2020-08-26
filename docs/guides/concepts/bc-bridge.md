@@ -2,7 +2,7 @@
 
 ## What is token bridge
 
-BC <-> BSC bridge for self transfers of BEP2 tokens to BEP2E (ERC20 representation). The bridge connects two chains (BC and BSC). When a user deposits BEP2 into the bridge contract contract on BC they get the same amount of BEP2E tokens on BSC, and they can convert them back as well.
+BC <-> BSC bridge for self transfers of BEP2 tokens to BEP20 (ERC20 representation). The bridge connects two chains (BC and BSC). When a user deposits BEP2 into the bridge contract contract on BC they get the same amount of BEP20 tokens on BSC, and they can convert them back as well.
 
 A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in binance chain protocol. This kind of account doesn't have its own private key and it's only controlled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```

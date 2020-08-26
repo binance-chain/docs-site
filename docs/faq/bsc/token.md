@@ -6,15 +6,15 @@ BNB is the token used to prevent `nothing-at-stake` problem.
 
 ## What are tokens on Binance Smart Chain?
 
-BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP2E.
+BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
 ## How to issue BEP2 tokens?
 
 Please follow the guide [here](https://community.binance.org/topic/2487/)
 
-## How to issue BEP2E tokens?
+## How to issue BEP20 tokens?
 
-Please follow the guide [here](../../smart-chain/developer/issue-BEP2E.md)
+Please follow the guide [here](../../smart-chain/developer/issue-BEP20.md)
 
 ## How can I stake my BNB?
 

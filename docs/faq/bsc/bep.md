@@ -6,7 +6,7 @@ A simple token protocol for easy management of asset on Binance chain <https://g
 
 BNB is BEP2
 
-## What is BEP2E?
+## What is BEP20?
 
 A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`.
 

@@ -1,6 +1,6 @@
-# BEP2E Token
+# BEP20 Token
 
-A BEP2E token must implement the interface `IBEP2E` in [IBEP2E.sol](IBEP2E.sol). This is a template contract [BEP2EToken.template](BEP2EToken.template). Users just need to fill in `_name`, `_symbol`, `_decimals` and `_totalSupply` according to their own requirements:
+A BEP20 token must implement the interface `IBEP20` in [IBEP20.sol](IBEP20.sol). This is a template contract [BEP20Token.template](BEP20Token.template). Users just need to fill in `_name`, `_symbol`, `_decimals` and `_totalSupply` according to their own requirements:
 ```
   constructor() public {
     _name = {{TOKEN_NAME}};
@@ -13,7 +13,7 @@ A BEP2E token must implement the interface `IBEP2E` in [IBEP2E.sol](IBEP2E.sol).
   }
 ```
 
-Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](../wallet/metamask.md) to compile and deploy the BEP2E contract to BSC.
+Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](../wallet/metamask.md) to compile and deploy the BEP20 contract to BSC.
 
 ## Interact with Contract with [Web3](https://www.npmjs.com/package/web3) and NodeJS.
 

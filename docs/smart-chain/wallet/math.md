@@ -63,9 +63,9 @@ Please note the fees are also deducted for paying gas and cross-chain transfer.
 ### 4. Confirm Reception in explorer
 Link: <https://explorer.binance.org/testnet>
 
-## Transfer BEP2E from BSC to BC
+## Transfer BEP20 from BSC to BC
 
-One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP2E tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
+One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
 
 * Pegged BTC on [Binance Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [Binance Smart Chain Testnet](https://explorer.binance.org/smart-testnet/address/0x4EfDF3235e9e6eD26221C18c4D7D2c3931544274/read_contract)
 * Pegged ETH on  [Binance Chain Testnet](
@@ -77,4 +77,4 @@ You can get some of these pegged tokens from faucet and transfer them back to Bi
 
 ### 1. Approve this transaction![img](https://lh3.googleusercontent.com/bYfuPLKjeTopR_VUzr6MBEHZWy6UkJ10hlXICxbHh7LvoKi5Hdr2aW7Z_nSDgKphaCc9iOijoignzydzmYU1BGOyN6IRHJPHLKia1XD59651hS-EMU9vboqblgBSziivtZGdQ05e)
 
-### 2. Send BEP2E To BC![img](https://lh5.googleusercontent.com/_RKYU23BD2xhw-g63K8O3RRF1sEKGAC5zyTOIpWUJl9scDyn1kbjwEO6gjFPkVCeFMoG-8D0xvqNH17sJSlZP_FxCrduCqEKZqHfk8DtTnBk6XKHnHDLPAaR8VjVcNNWZsAw74FB)
+### 2. Send BEP20 To BC![img](https://lh5.googleusercontent.com/_RKYU23BD2xhw-g63K8O3RRF1sEKGAC5zyTOIpWUJl9scDyn1kbjwEO6gjFPkVCeFMoG-8D0xvqNH17sJSlZP_FxCrduCqEKZqHfk8DtTnBk6XKHnHDLPAaR8VjVcNNWZsAw74FB)

@@ -1,6 +1,6 @@
 # Cross-Chain Transfer
 
-Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP2E tokens on BSC.
+Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and bep20 tokens on BSC.
 
 ## Verify Token Info
 
@@ -97,7 +97,7 @@ Execute the following command to transfer ABC-A64 token to BSC:
 ```bash
 tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 10000000000:ABC-A64 --node http://data-seed-pre-0-s3.binance.org:80
 ```
-## Transfer BEP2E to BC
+## Transfer bep20 to BC
 Before calling **transferOut** or **batchTransferOut**, users need to call **approve** method to grant enough allowance to TokenHub contract. For **transferOut** method, the allowance should equal the transfer amount. For **batchTransferOut**, the allowance should be the sum of the amount array.
 
 ### transferOut
@@ -106,16 +106,16 @@ Before calling **transferOut** or **batchTransferOut**, users need to call **app
 
 | Parameter Name | Type    | Description                                                  |
 | ------------   | ------- | ------------------------------------------------------------ |
-| contractAddr   | address | BEP2E contract address                                       |
+| contractAddr   | address | bep20 contract address                                       |
 | recipient      | address | decode bech32 address  to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
-| amount         | uint256 | BEP2E token amount.  Here the decimals is 18, so the amount must be N * 1e10. |
+| amount         | uint256 | bep20 token amount.  Here the decimals is 18, so the amount must be N * 1e10. |
 | expireTime     | uint256 | Timestamp, counted by  second                                |
 
 The value here should be RelayFee.
 
 ### Mint
 
-If both the bep2e token and bep2 token are mintable, then token owners can still mint their tokens even after token binding. Besides, token owners need to ensure the total supply and the locked amount on both chains are still matched, otherwise, users might can’t transfer their tokens to another chain.
+If both the bep20 token and bep2 token are mintable, then token owners can still mint their tokens even after token binding. Besides, token owners need to ensure the total supply and the locked amount on both chains are still matched, otherwise, users might can’t transfer their tokens to another chain.
 
 #### Mint token on BC
 
@@ -125,12 +125,12 @@ tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-
 ```
 
 2. Mint token on BSC and lock the new minted token:
-* Call **mint** method of bep2e contract, the mint amount should be 1e22.
+* Call **mint** method of bep20 contract, the mint amount should be 1e22.
 * Transfer all minted ABC token to tokenHub contract: `0x0000000000000000000000000000000000001004`
 
 #### Mint token on BSC
 
-1. Call **mint** of BEP2E contract to mint 10000 ABC, the mint amount should be 1e22(18 decimals).
+1. Call **mint** of bep20 contract to mint 10000 ABC, the mint amount should be 1e22(18 decimals).
 2. Mint token on BC and lock the new minted token:
 
 * Execute the following command to mint 10000 ABC-A64:

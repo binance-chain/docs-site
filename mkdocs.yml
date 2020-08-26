@@ -118,11 +118,11 @@ nav:
     - Binance Smart Chain:
       - Binance Smart Chain Fullnode: smart-chain/developer/fullnode.md
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
-      - BEP2E Tokens: smart-chain/developer/BEP2E.md
+      - BEP20 Tokens: smart-chain/developer/BEP20.md
       - General:
         - Create Wallet: smart-chain/developer/create-wallet.md
-        - BEP2E:
-          - Issue Token: smart-chain/developer/issue-BEP2E.md
+        - BEP20:
+          - Issue Token: smart-chain/developer/issue-BEP20.md
           - Bind Token: smart-chain/developer/bind-tokens.md
           - Cross-chain Transfer: smart-chain/validator/cross-chain-transfer.md
       - RPC: smart-chain/developer/rpc.md
