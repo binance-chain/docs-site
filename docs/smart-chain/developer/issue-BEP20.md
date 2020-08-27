@@ -13,7 +13,7 @@
 
 4. Modify “name”, “symbol”, “decimals” and “totalSupply” according to your requirements.
 
-![img](https://lh3.googleusercontent.com/eRrCyCEp4d-jRs53osxiEssFtpC42ZeOBXF4R78WU8cYRd-gbhHahhoMH0e2LW3jj2paRc12VqC6aSxO_HnZ29ZyQgrXGfYeaCV8BRSFJ93T77sTXirBQwz3LfhkK3KWW7w2Thfm)
+![img](https://lh4.googleusercontent.com/hgxDh_hXCFKwwlkAYG6h9qfxvzyeeD3k-t3tNBD-VSvwTtM4AnaFylZ6SjSmfTKCuIqhs66Z9vi7mRplIfN5ER7n1yMz0EKpO_RDOcTQTrsh5R1DC0doVC7FT05Hu2bboM2o57Qg)
 
 5. Compile the BEP20 token contract
 
@@ -25,7 +25,7 @@ c. Step3: Enable “Auto compile” and “optimization”
 
 d. Step4: Click “ABI” to copy the contract abi and save it.
 
-<img src="https://lh6.googleusercontent.com/HcL4dfyprGMRdC0McGFRvL-sjzn4kTeubuMR0XIxtaZGO61MD6cO1Nvi592tY9ZvBYrBIdu463fioiiO2o3NOkOn8G-nYIwHCIuWTkTeOlOKgEQJDOgm-UdXyad2QnSeD-wojzhj" alt="img" style="zoom:50%;" />
+<img src="https://lh6.googleusercontent.com/qY_5g3ZMnJca6n84W2JxIoBvd8iHRQ0qkOQuJ60pRIcKvgZB5-bXcGq6gS7dFwA5rYXbiS2NyaUQ1Qptcagqa0pb7kmq_S-Dh8drA4R-hDg9_NVp1zPl-tmqIDanlcgLibaR3CV7" alt="img" style="zoom:50%;" />
 
 6. Depoy the contract to BSC
 
@@ -37,7 +37,7 @@ c. Step3: Select “BEP20Token”
 
 d. Step4: Client “Deploy” button and Metamask will pop up
 
-<img src="https://lh5.googleusercontent.com/eRFqXwjs3HGPIldy8mnZQLeQii-E-kVmlXnGlTrFa0Q6OGsTKcLC4QY3f9DaWwv9xeVNpGTYpoTCbtMFxMafzWY3N9B2RYJITjRaOBdn72DkW_jgucIhH1MJXz9gHN0Kt-2dvuBv" alt="img" style="zoom:50%;" />
+<img src="https://lh5.googleusercontent.com/lsWXpUN12iRTzMSJZpb8HFBL2ycH7JVPlrMqlK7aLOl4zLanqlp-3UHbranHk__tugeqWfnjg1k_2_0VnZlzJkJucJw3R-JDoxP84rAPWOJc1Oi5dgJZA3wRzyjwxKiy_6BdcBMb" alt="img" style="zoom:50%;" />
 
 e.   Client “confirm” button to sign and broadcast transaction to BSC.
 
