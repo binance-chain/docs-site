@@ -1,4 +1,4 @@
-**Compile and Deploy BEP2E Contract**
+**Compile and Deploy BEP70 Contract**
 
 1. Open Remix IDE: [https://remix.ethereum.org](https://remix.ethereum.org/)
 

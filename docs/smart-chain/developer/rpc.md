@@ -1,6 +1,6 @@
 # JSON-RPC Endpoint
 
-## Available Resources
+## Binance Smart Chain Testnet Available Resources
 
 BSC RPC:
 
