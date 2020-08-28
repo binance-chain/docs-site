@@ -9,6 +9,62 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contractAddr",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "bep2Symbol",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint32",
+				"name": "failedReason",
+				"type": "uint32"
+			}
+		],
+		"name": "bindFailure",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contractAddr",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "bep2Symbol",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalSupply",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "peggyAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "bindSuccess",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": false,
 				"internalType": "uint8",
 				"name": "channelId",
@@ -133,6 +189,21 @@
 		"constant": true,
 		"inputs": [],
 		"name": "BIND_STATUS_TIMEOUT",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "BIND_STATUS_TOO_MUCH_TOKENHUB_BALANCE",
 		"outputs": [
 			{
 				"internalType": "uint8",
@@ -372,6 +443,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "TEN_DECIMALS",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "TOKEN_HUB_ADDR",
 		"outputs": [
 			{
@@ -475,32 +561,6 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "contractAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "bep2Symbol",
-				"type": "string"
-			}
-		],
-		"name": "approveBind",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -570,21 +630,26 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "bep2Symbol",
-				"type": "string"
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes",
+				"name": "msgBytes",
+				"type": "bytes"
 			}
 		],
-		"name": "expireBind",
+		"name": "handleSynPackage",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "bytes",
 				"name": "",
-				"type": "bool"
+				"type": "bytes"
 			}
 		],
-		"payable": true,
-		"stateMutability": "payable",
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -631,26 +696,26 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint8",
-				"name": "",
-				"type": "uint8"
+				"internalType": "address",
+				"name": "contractAddr",
+				"type": "address"
 			},
 			{
-				"internalType": "bytes",
-				"name": "msgBytes",
-				"type": "bytes"
+				"internalType": "string",
+				"name": "bep2Symbol",
+				"type": "string"
 			}
 		],
-		"name": "handleSynPackage",
+		"name": "approveBind",
 		"outputs": [
 			{
-				"internalType": "bytes",
+				"internalType": "bool",
 				"name": "",
-				"type": "bytes"
+				"type": "bool"
 			}
 		],
-		"payable": false,
-		"stateMutability": "nonpayable",
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -677,6 +742,48 @@
 		],
 		"payable": true,
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "bep2Symbol",
+				"type": "string"
+			}
+		],
+		"name": "expireBind",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "symbol",
+				"type": "string"
+			}
+		],
+		"name": "queryRequiredLockAmountForBind",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]

@@ -59,6 +59,25 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "uint8",
+				"name": "channelId",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isEnable",
+				"type": "bool"
+			}
+		],
+		"name": "enableOrDisableChannel",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": false,
 				"internalType": "string",
 				"name": "key",
@@ -72,6 +91,31 @@
 			}
 		],
 		"name": "paramChange",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint8",
+				"name": "packageType",
+				"type": "uint8"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint64",
+				"name": "packageSequence",
+				"type": "uint64"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint8",
+				"name": "channelId",
+				"type": "uint8"
+			}
+		],
+		"name": "receivedPackage",
 		"type": "event"
 	},
 	{
@@ -610,6 +654,107 @@
 		"inputs": [
 			{
 				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"name": "isRelayRewardFromSystemReward",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "oracleSequence",
+		"outputs": [
+			{
+				"internalType": "int64",
+				"name": "",
+				"type": "int64"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "previousTxHeight",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"name": "registeredContractChannelMap",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "txCounter",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "init",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint8",
 				"name": "packageType",
 				"type": "uint8"
 			},
@@ -673,87 +818,6 @@
 	},
 	{
 		"constant": false,
-		"inputs": [],
-		"name": "init",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint8",
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"name": "isRelayRewardFromSystemReward",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "oracleSequence",
-		"outputs": [
-			{
-				"internalType": "int64",
-				"name": "",
-				"type": "int64"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "previousTxHeight",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "registeredContractMap",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
 		"inputs": [
 			{
 				"internalType": "uint8",
@@ -772,30 +836,9 @@
 			}
 		],
 		"name": "sendSynPackage",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "txCounter",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
