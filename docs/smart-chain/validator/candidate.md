@@ -19,14 +19,14 @@ If you already have an account, use the seed phrase to recover it:
 geth account import --datadir ./node
 ```
 
-## For mainnet
+## For Mainnet
 ### Get Genesis file and Config file
 ```bash
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4) 
-unzip mainnet.zip 
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+unzip mainnet.zip
 ```
 
-## Start Fullnode on BSC
+### Start Fullnode on Binance Smart Chain
 
 Please run this command to run a fullnode as validator candidate
 
@@ -55,11 +55,11 @@ Please refer to this [guide](../validator/cross-chain-transfer.md)
 
 ### Get Genesis file and Config file
 ```bash
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4) 
-unzip testnet.zip 
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+unzip testnet.zip
 ```
 
-## Start Fullnode on BSC Testnet
+### Start Fullnode on BSC Testnet
 
 Please run this command to run a fullnode as validator candidate
 

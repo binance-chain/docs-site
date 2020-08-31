@@ -46,7 +46,14 @@ cd bsc
 make geth
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest)
+or you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions below:
+
+```bash
+# Linux
+wget https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_linux -O bsc
+# MacOS
+wget https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_mac -O bsc
+```
 
 2.Download the config files
 
@@ -57,7 +64,7 @@ Download `genesis.json` and `config.toml` by:
 wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 
-## testnet 
+## testnet
 wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
 unzip testnet.zip
 ```
