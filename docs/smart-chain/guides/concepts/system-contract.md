@@ -18,7 +18,6 @@ GitHub Implementation link: <https://github.com/binance-chain/bsc-genesis-contra
 | SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](../../system-smart-contract/systemreward.abi)|
 | TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](../../system-smart-contract/tendermintlightclient.abi) |
 | TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](../../system-smart-contract/tokenhub.abi)|
-| TokenHub Manager | 0x0000000000000000000000000000000000001008 | [tokenmanager](../../system-smart-contract/tokenmanager.abi)|
 | RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](../../system-smart-contract/relayerincentivize.abi)|
 | RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](../../system-smart-contract/relayerhub.abi) |
 | GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](../../system-smart-contract/govhub.abi)                               |
