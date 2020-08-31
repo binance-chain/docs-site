@@ -129,6 +129,7 @@ nav:
       - Oracles:
         - Band Protocol Integration: smart-chain/developer/band.md
         - Chainlink Protocol Integration: smart-chain/developer/link.md
+      - Wallet API: smart-chain/wallet/wallet_api.md
   - Wallets:
     - Binance Chain Walletsupport: wallets/wallets.md
     - Wallet Tutorial:
