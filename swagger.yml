@@ -2307,11 +2307,11 @@ definitions:
       contract_address:
         type: string
         description: "smart contract address for this token"
-        x-omitempty: false
+        x-omitempty: true
       contract_decimals:
         type: int
         description: "the token decimals"
-        x-omitempty: false
+        x-omitempty: true
   Market:
     type: object
     properties:
@@ -3086,8 +3086,8 @@ definitions:
         contract_address:
           type: string
           description: "smart contract address for this token"
-          x-omitempty: false
+          x-omitempty: true
         contract_decimals:
           type: int
           description: "the token decimals"
-          x-omitempty: false
+          x-omitempty: true
