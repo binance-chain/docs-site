@@ -2278,6 +2278,14 @@ definitions:
         description: Address which issue the token
         format: address
         required: true
+      contract_address:
+        type: string
+        description: "smart contract address for this token"
+        x-omitempty: false
+      contract_decimals:
+        type: int
+        description: "the token decimals"
+        x-omitempty: false
   Market:
     type: object
     properties:
@@ -3048,4 +3056,12 @@ definitions:
         token_uri:
           type: string
           description: "URI for token description"
+          x-omitempty: false
+        contract_address:
+          type: string
+          description: "smart contract address for this token"
+          x-omitempty: false
+        contract_decimals:
+          type: int
+          description: "the token decimals"
           x-omitempty: false

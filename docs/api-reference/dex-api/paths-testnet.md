@@ -1188,6 +1188,8 @@ varies with msg type, if you query with --format=json.
 | original_symbol | string | token symbol | BTC |
 | total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
 | owner | string (address) | Address which issue the token |  |
+| contract_address | string | smart contract address for this token |  |
+| contract_decimals | int | the token decimals |  |
 
 ### Market  
 
@@ -1532,3 +1534,5 @@ varies with msg type, if you query with --format=json.
 | owner | string (address) | Address |  |
 | mintable | boolean | mintable |  |
 | token_uri | string | URI for token description |  |
+| contract_address | string | smart contract address for this token |  |
+| contract_decimals | int | the token decimals |  |

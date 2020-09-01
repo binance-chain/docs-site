@@ -2304,6 +2304,14 @@ definitions:
         description: Address which issue the token
         format: address
         required: true
+      contract_address:
+        type: string
+        description: "smart contract address for this token"
+        x-omitempty: false
+      contract_decimals:
+        type: int
+        description: "the token decimals"
+        x-omitempty: false
   Market:
     type: object
     properties:
@@ -3035,4 +3043,51 @@ definitions:
           type: string
           description: "The available unlock time"
           title: LockTime
+          x-omitempty: false
+  MiniTokens:
+      type: array
+      properties:
+        name:
+          type: string
+          example: Binance Chain Mini Token
+          x-omitempty: false
+        symbol:
+          type: string
+          example: BTC-000
+          x-omitempty: false
+        original_symbol:
+          type: string
+          example: BTC
+          x-omitempty: false
+        total_supply:
+          type: string
+          description: "In decimal form, e.g. 1.00000000"
+          example: "0.00000000"
+          format: fixed8
+          x-omitempty: false
+        token_type:
+          type: integer
+          description: "Type of the mini token"
+          format: int32
+          x-omitempty: false
+        owner:
+          type: string
+          description: Address
+          format: address
+          x-omitempty: false
+        mintable:
+          type: boolean
+          description: mintable
+          x-omitempty: false
+        token_uri:
+          type: string
+          description: "URI for token description"
+          x-omitempty: false
+        contract_address:
+          type: string
+          description: "smart contract address for this token"
+          x-omitempty: false
+        contract_decimals:
+          type: int
+          description: "the token decimals"
           x-omitempty: false
