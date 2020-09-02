@@ -13,13 +13,11 @@ The API this extension wallet provides includes API specified by [EIP-1193](http
 
     Important Information
 
-    On **November 16, 2020**, we are making changes to our provider API that will be breaking for some web3 sites.
+    On **November 16, 2020**, MetaMask is making changes to their provider API that will be breaking for some web3 sites.
     These changes are _upcoming_, but you can prepare for them today.
     Follow [this GitHub issue](https://github.com/MetaMask/metamask-extension/issues/8077) for updates.
 
-    All consumers of MetaMask's provider may be affected by the `eth_chainId` bug (see [next subsection](#window-ethereum-api-changes)).
-    Other than that, if you are new to using the provider, you do not have to worry about these changes, and can skip ahead [to the next section](#api).
-
+    In this implementation, some APIs will be supported as [Legacy API](#legacy-api) (For example we will still implement the `chainIdChanged` on BinanceChain object until MetaMask formally deprecate it).
 
 ## Basic Usage
 
@@ -29,7 +27,6 @@ For any non-trivial Binance Smart Chain web application — a.k.a. web3 site —
 - Detect which Binance Smart Chain network the user is connected to
 - Get the user's Binance Smart Chain account(s)
 
-The snippet at the top of this page is sufficient for detecting the provider.
 You can learn how to accomplish the other two by reviewing the snippet in the [Using the Provider section](#using-the-provider).
 
 The provider API is all you need to create a full-featured web3 application.
@@ -299,10 +296,82 @@ For the complete list of errors, please see [EIP-1193](https://eips.ethereum.org
 
 This snippet explains how to accomplish the three most common requirements for web3 sites:
 
-- Detect the BinanceChain provider (`window.BinanceChain`)
 - Detect which BinanceChain network the user is connected to
 - Get the user's BinanceChain account(s)
 
+```
+/**********************************************************/
+/* Handle chain (network) and chainChanged (per EIP-1193) */
+/**********************************************************/
+
+// Normally, we would recommend the 'eth_chainId' RPC method, but it currently
+// returns incorrectly formatted chain ID values.
+let currentChainId = BinanceChain.chainId;
+
+BinanceChain.on('chainChanged', handleChainChanged);
+
+function handleChainChanged(_chainId) {
+  // We recommend reloading the page, unless you must do otherwise
+  window.location.reload();
+}
+
+/***********************************************************/
+/* Handle user accounts and accountsChanged (per EIP-1193) */
+/***********************************************************/
+
+let currentAccount = null;
+BinanceChain
+  .request({ method: 'eth_accounts' })
+  .then(handleAccountsChanged)
+  .catch((err) => {
+    // Some unexpected error.
+    // For backwards compatibility reasons, if no accounts are available,
+    // eth_accounts will return an empty array.
+    console.error(err);
+  });
+
+// Note that this event is emitted on page load.
+// If the array of accounts is non-empty, you're already
+// connected.
+BinanceChain.on('accountsChanged', handleAccountsChanged);
+
+// For now, 'eth_accounts' will continue to always return an array
+function handleAccountsChanged(accounts) {
+  if (accounts.length === 0) {
+    // Binance Chain Wallet is locked or the user has not connected any accounts
+    console.log('Please connect to Binance Chain Wallet.');
+  } else if (accounts[0] !== currentAccount) {
+    currentAccount = accounts[0];
+    // Do any other work!
+  }
+}
+
+/*********************************************/
+/* Access the user's accounts (per EIP-1102) */
+/*********************************************/
+
+// You should only attempt to request the user's accounts in response to user
+// interaction, such as a button click.
+// Otherwise, you popup-spam the user like it's 1999.
+// If you fail to retrieve the user's account(s), you should encourage the user
+// to initiate the attempt.
+document.getElementById('connectButton', connect);
+
+function connect() {
+  BinanceChain
+    .request({ method: 'eth_requestAccounts' })
+    .then(handleAccountsChanged)
+    .catch((err) => {
+      if (err.code === 4001) {
+        // EIP-1193 userRejectedRequest error
+        // If this happens, the user rejected the connection request.
+        console.log('Please connect to MetaMask.');
+      } else {
+        console.error(err);
+      }
+    });
+}
+```
 
 ## Legacy API
 
