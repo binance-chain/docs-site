@@ -50,9 +50,9 @@ or you can download the pre-build binaries from [release page](https://github.co
 
 ```bash
 # Linux
-wget https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_linux -O bsc
+wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_linux
 # MacOS
-wget https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_mac -O bsc
+wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.2/geth_mac
 ```
 
 2.Download the config files
