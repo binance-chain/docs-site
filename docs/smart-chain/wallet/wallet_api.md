@@ -1,7 +1,7 @@
 Binance Chain Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
 
-This API borrowed heavily from API metamask provided considered the massive adoption. So web3 site developer could easily connect their app with the Binance Chain Wallet. It allows websites to request users' Binance Smart Chain accounts, read data from the blockchain the user is connected to, and suggest that the user sign messages and transactions.
-The presence of the provider object indicates an Binance Chain user.
+This API borrowed heavily from API metamask provided considered the massive adoption. So web3 site developers could easily connect their app with the Binance Chain Wallet. It allows websites to request users' Binance Smart Chain accounts, read data from the blockchain the user is connected to, and suggest that the user sign messages and transactions.
+The presence of the provider object indicates a Binance Chain user.
 
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied legacy ones).
 
@@ -17,7 +17,7 @@ The API this extension wallet provides includes API specified by [EIP-1193](http
     These changes are _upcoming_, but you can prepare for them today.
     Follow [this GitHub issue](https://github.com/MetaMask/metamask-extension/issues/8077) for updates.
 
-    In this implementation, some APIs will be supported as [Legacy API](#legacy-api) (For example we will still implement the `chainIdChanged` on BinanceChain object until MetaMask formally deprecate it).
+    In this implementation, some APIs will be supported as [Legacy API](#legacy-api) (For example we will still implement the `chainIdChanged` on BinanceChain object until MetaMask formally deprecates it).
 
 ## Basic Usage
 
@@ -68,16 +68,10 @@ A hexadecimal string representing the current chain ID.
 
 ### BinanceChain.autoRefreshOnNetworkChange
 
-As the consumer of this API, it is your responsbility to handle chain changes using the [`chainChanged` event](#chainChanged).
-We recommend reloading the page on `chainChange` unless you have good reason not to.
+As the consumer of this API, it is your responsibility to handle chain changes using the [`chainChanged` event](#chainChanged).
+We recommend reloading the page on `chainChange` unless you have a good reason not to.
 
-
-By default, this property is `true`.
-
-If this property is truthy, Binance Chain Wallet will reload the page in the following cases:
-
-- When the connected chain (network) changes, if `window.BinanceChain` has been accessed during the page lifecycle
-- When `window.BinanceChain` is accessed, if the connected chain (network) has changed during the page lifecycle
+Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-autorefreshonnetworkchange), the only difference is we injected a different object.
 
 To disable this behavior, set this property to `false` immediately after detecting the provider:
 
@@ -110,7 +104,7 @@ BinanceChain.request(args: RequestArguments): Promise<unknown>;
 
 #### Example
 
-The code snippet below is as same as [MetaMask's example](https://docs.metamask.io/guide/ethereum-provider.html#example), only difference is we injected a different object.
+The code snippet below is as same as [MetaMask's example](https://docs.metamask.io/guide/ethereum-provider.html#example), the only difference is we injected a different object.
 
 ```javascript
 params: [
@@ -153,7 +147,7 @@ BinanceChain.on('accountsChanged', (accounts) => {
 BinanceChain.on('chainChanged', (chainId) => {
   // Handle the new chain.
   // Correctly handling chain changes can be complicated.
-  // We recommend reloading the page unless you have a very good reason not to.
+  // We recommend reloading the page unless you have a very a good reason not to.
   window.location.reload();
 });
 ```
