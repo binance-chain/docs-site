@@ -77,13 +77,13 @@ nav:
         - Staking parameters: smart-chain/validator/Parameters.md
       - Delegator Guide: smart-chain/delegator/del-guide.md
     - Binance Smart Chain Mainnet Explorer:
-      - Mainnet1: https://bscscan.com/
-      - Mainnet2: https://explorer.binance.org/smart
-      - Mainnet3: https://explorer.bitquery.io/bsc
-     - Binance Smart Chain Testnet Explorer:
-      - Testnet1: https://testnet.bscscan.com/
-      - Testnet2: https://explorer.binance.org/smart-testnet
-      - Testnet3: https://explorer.bitquery.io/bsc_testnet
+      - bscscan: https://bscscan.com/
+      - binance: https://explorer.binance.org/smart
+      - bitquery: https://explorer.bitquery.io/bsc
+    - Binance Smart Chain Testnet Explorer:
+      - bscscan: https://testnet.bscscan.com/
+      - binance: https://explorer.binance.org/smart-testnet
+      - bitquery: https://explorer.bitquery.io/bsc_testnet
     - Wallet:
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Ledger: smart-chain/wallet/ledger.md
