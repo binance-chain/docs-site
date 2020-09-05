@@ -1,7 +1,8 @@
 Binance Chain Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
 
-This API borrowed heavily from API metamask provided considered the massive adoption. So web3 site developers could easily connect their app with the Binance Chain Wallet. It allows websites to request users' Binance Smart Chain accounts, read data from the blockchain the user is connected to, and suggest that the user sign messages and transactions.
-The presence of the provider object indicates a Binance Chain user.
+This API specification borrows heavily from API MetaMask provided, considering the massive adoption. So Web3 site developers can easily connect their dApps with the Binance Chain Wallet. The APIs allow websites to request users' Binance Smart Chain addresses, read data from the blockchain the user is connected to, and prompt the users to sign messages and transactions.
+
+The presence of the provider object indicates a Binance Chain/Binance Smart Chain user.
 
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied legacy ones).
 
@@ -23,11 +24,11 @@ The API this extension wallet provides includes API specified by [EIP-1193](http
 
 For any non-trivial Binance Smart Chain web application — a.k.a. web3 site — to work, you will have to:
 
-- Detect the Binance Smart Chain provider (`window.BinanceChain`)
-- Detect which Binance Smart Chain network the user is connected to
-- Get the user's Binance Smart Chain account(s)
+1. Detect the Binance Smart Chain provider (`window.BinanceChain`)
+2. Detect which Binance Smart Chain network the user is connected to
+3. Get the user's Binance Smart Chain account(s)
 
-You can learn how to accomplish the other two by reviewing the snippet in the [Using the Provider section](#using-the-provider).
+You can learn how to accomplish the `2` and `3` from above list by reviewing the snippet in the [Using the Provider section](#using-the-provider).
 
 The provider API is all you need to create a full-featured web3 application.
 
@@ -36,15 +37,15 @@ If you are in need of higher-level abstractions than those provided by this API,
 
 ## Chain IDs
 
-::: warning
-At the moment, the [`BinanceChain.chainId`](#ethereum-chainid) property and the [`chainChanged`](#chainchanged) event should be preferred over the `eth_chainId` RPC method.
-Their chain ID values are correctly formatted, per the table below.
+!!! warning
 
-`eth_chainId` returns an incorrectly formatted (0-padded) chain ID for the chains in the table below, e.g. `0x01` instead of `0x1`.
-See the [Upcoming Breaking Changes section](#upcoming-breaking-changes) for details on when the `eth_chainId` RPC method will be fixed.
+    At the moment, the [`BinanceChain.chainId`](#ethereum-chainid) property and the [`chainChanged`](#chainchanged) event should be preferred over the `eth_chainId` RPC method.
 
-Custom RPC endpoints are not affected; they always return the chain ID specified by the user.
-:::
+    Their chain ID values are correctly formatted, per the table below.
+
+    `eth_chainId` returns an incorrectly formatted (0-padded) chain ID for the chains in the table below, e.g. `0x01` instead of `0x1`. See the [Upcoming Breaking Changes section](#upcoming-breaking-changes) for details on when the `eth_chainId` RPC method will be fixed.
+
+    Custom RPC endpoints are not affected; they always return the chain ID specified by the user.
 
 These are the IDs of the Binance Smart chains that Binance Chain Wallet supports by default.
 
@@ -92,6 +93,16 @@ BinanceChain.isConnected(): boolean;
 ### BinanceChain.request(args)
 
 Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-request-args), the only difference is we injected a different object.
+
+We uses this method to wrap an RPC API, Please see [the Ethereum wiki](https://eth.wiki/json-rpc/API#json-rpc-methods).
+
+Important methods from this API include:
+
+- [`eth_accounts`](https://eth.wiki/json-rpc/API#eth_accounts)
+- [`eth_call`](https://eth.wiki/json-rpc/API#eth_call)
+- [`eth_getBalance`](https://eth.wiki/json-rpc/API#eth_getBalance)
+- [`eth_sendTransaction`](https://eth.wiki/json-rpc/API#eth_sendTransaction)
+- [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign)
 
 ```typescript
 interface RequestArguments {
