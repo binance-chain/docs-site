@@ -125,13 +125,18 @@ nav:
     - Binance Smart Chain:
       - Binance Smart Chain Fullnode: smart-chain/developer/fullnode.md
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
-      - BEP20 Tokens: smart-chain/developer/BEP20.md
-      - General:
-        - Create Wallet: smart-chain/developer/create-wallet.md
-        - BEP20:
+      - BEP20 Tokens:
+          - Introduction: smart-chain/developer/BEP20.md
           - Issue Token: smart-chain/developer/issue-BEP20.md
           - Bind Token: smart-chain/developer/bind-tokens.md
           - Cross-chain Transfer: smart-chain/validator/cross-chain-transfer.md
+          - Bind Token Tool: https://github.com/binance-chain/token-bind-tool
+      - General:
+        - Create Wallet: smart-chain/developer/create-wallet.md
+        - Smart Contract: https://solidity.readthedocs.io/en/v0.7.1/
+        - Remix : https://remix.ethereum.org/
+        - Web3JS: https://web3js.readthedocs.io/en/v1.2.11/
+        - Truffle: https://www.trufflesuite.com/docs/teams/quickstart
       - RPC: smart-chain/developer/rpc.md
       - Oracles:
         - Band Protocol Integration: smart-chain/developer/band.md
