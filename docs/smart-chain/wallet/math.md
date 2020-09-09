@@ -37,11 +37,9 @@ It’s ready, and now you can get some testnet BNB from the faucet.
 
 ### 2. Go to <https://testnet.binance.org/faucet-smart/>
 
-To request testnet BNB via Twitter, make a tweet with your BSC address pasted into the contents (surrounding text doesn't matter).
-
 Go to explorer to verify BNB is sent: https://explorer.binance.org/smart-testnet
 
-## Transfer BNB from BSC to BC
+## Transfer BNB from BSC to BC in Testnet
 
 ### 1. Create your Binance Chain Ganges Testnet address with tbnbcli
 * Download the binary [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
@@ -49,7 +47,7 @@ Go to explorer to verify BNB is sent: https://explorer.binance.org/smart-testnet
 ```
 tbnbcli keys add {wallet-alias}
 ```
-### 2. Go to this page: <https://developer.mathwallet.org/bsc01/>
+### 2. Go to this page: <https://developer.mathwallet.org/bsc02/>
 
 Paste your testnet address to `Recipient` and fill the transfer amount.
 ![img](https://lh6.googleusercontent.com/jBLdydCWQEKJ-ksWfixIUH8qrFC9JEaLw4SbGRWngKCWXAjQDzl0ZCKs3Ajn2ZILcnd2XJzZxK6x62DHNb7_VHaJFm78qvU6zD-fhp5p7KGyDesNz5q6hilLLRbuv1Ygw-46JoBq)
@@ -63,7 +61,7 @@ Please note the fees are also deducted for paying gas and cross-chain transfer.
 ### 4. Confirm Reception in explorer
 Link: <https://explorer.binance.org/testnet>
 
-## Transfer BEP20 from BSC to BC
+## Transfer BEP20 from BSC to BC in Testnet
 
 One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
 

@@ -85,6 +85,7 @@ nav:
       - Binance: https://explorer.binance.org/smart-testnet
       - BitQuery: https://explorer.bitquery.io/bsc_testnet
     - Wallet:
+      - Binance Extension Wallet Guides: smart-chain/wallet/binance.md
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Ledger: smart-chain/wallet/ledger.md
       - MEW: smart-chain/wallet/myetherwallet.md
@@ -148,7 +149,10 @@ nav:
       - Trust Wallet User Guide: wallets/tutorial/how-to-create-a-wallet-on-trustwallet.md
       - Ledger Wallet Guide: wallets/tutorial/ledger-nano-s-usage-guide.md
       - Trezor Wallet Guide: wallets/tutorial/trezor-model-t-user-guide.md
+      - How to manage BEP8 token with Web Wallet: wallets/tutorial/bep8.md
     - WalletConnectSupport: wallets/walletconnect-support.md
+    - Binance Smart Chain Wallet Tutorial:
+      - Math Wallet User Guide: smart-chain/wallet/math-resource.md
   - Exchange Integration: exchange-integration.md
   - List Instructions: list_instruction.md
   - Wallets: wallets.md
