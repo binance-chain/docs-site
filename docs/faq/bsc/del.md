@@ -1,4 +1,4 @@
-# Binance Smart Chain Delegatotr
+# Binance Smart Chain Delegator
 
 ## What's the role of a delegator?
 
