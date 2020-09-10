@@ -38,7 +38,7 @@ Directly facing internet (public IP, no NAT)
 
 ## How many BNB are required to create a validator?
 
-Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a percentage of their relative total bonded stake.
+Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a predefined amount of bonded stake.
 
 The [minimum self-delegated amount](../../smart-chain/validator/Parameters.md) is **10000BNB**.
 
