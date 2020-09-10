@@ -72,4 +72,4 @@ bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binan
 
 * Double-sign slashing amount: 10000BNB
 
-* Cross-chain relay fee: 0.01 BNB
+* Cross-chain relay fee: 0.004 BNB
