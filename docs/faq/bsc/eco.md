@@ -25,7 +25,7 @@ Current list:
 * BAND: <https://bscscan.com/token/0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18>
 * LTC: <https://bscscan.com/token/0x4338665cbb7b2485a8855a139b75d5e34ab0db94>
 * EOS: <https://bscscan.com/token/0x56b6fb708fc5732dec1afc8d8556423a2edccbd6>
-* BCH: >https://bscscan.com/token/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf>
+* BCH: <https://bscscan.com/token/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf>
 * XTZ: <https://bscscan.com/token/0x16939ef78684453bfdfb47825f8a5f714f12623a>
 * ONT: <https://bscscan.com/token/0xfd7b3a77848f1c2d67e05e54d78d174a0c850335>
 * ADA: <https://bscscan.com/token/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47>
