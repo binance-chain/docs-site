@@ -38,7 +38,9 @@ Directly facing internet (public IP, no NAT)
 
 ## How many BNB are required to create a validator?
 
-The [minimum self-delegated amount](../../smart-chain/validator/Parameters.md) is **50000BNB**.
+Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a percentage of their relative total bonded stake.
+
+The [minimum self-delegated amount](../../smart-chain/validator/Parameters.md) is **10000BNB**.
 
 ## When are rewards paid out?
 
@@ -47,3 +49,21 @@ The rewards will not be sent to validator right away, instead, they will be dist
 ## What's the potential loss for validators?
 
 Validators can suffer from “Slashing”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will be shared by their delegators as well.
+
+Slashing is a punitive function that is triggered by a validator ’s bad actions. Getting slashed is losing self delegation of a validator. Validators will be slashed for the actions below:
+
+* Going offline or unable to communicate with the network.
+* Double signing. If a validator node tries to split the network by signing two different blocks and broadcasting them, it will be removed from validator set definitely.
+
+
+* [minimum self-delegated amount](../../smart-chain/validator/Parameters.md): **10000BNB**
+
+* Unbonding time: 3 days
+
+* offline Unjail fee:  1BNB
+
+* offline * Jailed time: 2 days. A validator can only unjail 2 days later after it has been jailed
+
+* offline slashing amount: 50BNB
+
+* Double-sign slashing amount: 10000BNB

@@ -30,9 +30,9 @@ Binance Chain opens the gate for users to take advantage of the fast transferrin
 
 ## How many assets are issued on Binance chain?
 
-There are already [110 assets](https://explorer.binance.org/assets) on Binance Chain
+There are already [140 assets](https://explorer.binance.org/assets) on Binance Chain
 
-The introduction of [BEP8](https://github.com/binance-chain/BEPs/pull/69) will be an innovative way for tokenization of properties
+The introduction of [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) will be an innovative way for tokenization of properties
 
 ## What make Binance Smart Chain different?
 
@@ -52,3 +52,24 @@ EVM means Ethereum Virtual Machine. Any smart-contract written to run in EVM can
 
 Yes, with the help of native cross-chain functions
 
+## How to query the current system parameters
+
+```
+bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binance.org:80   --chain-id=Binance-Chain-Tigris --trust-node --output=json
+```
+
+* [minimum self-delegated amount](../../smart-chain/validator/Parameters.md): **10000BNB**
+
+* minimium delegate amount: **1BNB**
+
+* Unbonding time: 3 days
+
+* offline Unjail fee:  1BNB
+
+* offline jail time: 2 day
+
+* offline slashing amount: 50BNB
+
+* Double-sign slashing amount: 10000BNB
+
+* Cross-chain relay fee: 0.01 BNB
