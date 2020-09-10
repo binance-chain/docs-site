@@ -62,7 +62,7 @@ bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binan
 
 * minimium delegate amount: **1BNB**
 
-* Unbonding time: 3 days
+* Unbonding time: 7 days
 
 * offline Unjail fee:  1BNB
 

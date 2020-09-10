@@ -58,11 +58,11 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 
 * [minimum self-delegated amount](../../smart-chain/validator/Parameters.md): **10000BNB**
 
-* Unbonding time: 3 days
+* Unbonding time: 7 days
 
 * offline Unjail fee:  1BNB
 
-* offline * Jailed time: 2 days. A validator can only unjail 2 days later after it has been jailed
+* offline Jailed time: 2 days. A validator can only unjail 2 days later after it has been jailed
 
 * offline slashing amount: 50BNB
 
