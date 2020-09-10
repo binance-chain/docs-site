@@ -1,13 +1,18 @@
 # Bind Token
 
-BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases. Token Binding can happen at any time after BEP2 and BEP20 are ready. The token owners of either BEP2 or BEP20 only need to complete the **Binding** process when a cross-chain feature is necessory.
+BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases. Token Binding can happen at any time after BEP2/BEP8 and BEP20 are ready. The token owners of either BEP2/BEP8 or BEP20 only need to complete the **Binding** process when a cross-chain feature is necessory.
 
-## Issue BEP2 Token
+You can use this [tool](https://github.com/binance-chain/token-bind-tool).
 
-Please refer to this [doc](../../tokens.md)
+## Issue BEP2 or BEP8 Token
+
+Please refer to this [doc](../../tokens.md) to issue BEP2
+
+Please refer to this [doc](../../wallets/tutorial/bep8.md) to issue BEP8
+
 
 **Example**
-Let's issue a new token `ABC`
+Let's issue a new BEP2 token `ABC`
 ```bash
 ## mainnet
 bnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-supply 10000000000000000 --from owner --chain-id Binance-Chain-Tigris --node http://dataseed4.org:80
@@ -35,19 +40,19 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
 1. Grant allowance:
 
     In [myetherwallet](../wallet/myetherwallet.md), call the **approve** of the BEP20 to grant a 40 million allowance to TokenManager contract. The spender value should be `0x0000000000000000000000000000000000001008`, and the amount value should be 4e25. The transaction sender should be the BEP20 owner.
-    
+
     ![img](https://lh6.googleusercontent.com/p-HctNRPwXg0VD1yfE3j4OJ3BrMHPZpiGGCtp7XUJX34z_LT53nvZqgTzY58Ab1EsybJipwjsnwL2uJ-CPH8gntDpcw7LW7aFPK1_KRxxnNq-xErwGpaPTlg5UbfKoVNjd4YT0xU)
 
 2. Approve Bind
-    
-    In [myetherwallet](../wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract to approve the bind request from the BEP20 owner address. 
-    
+
+    In [myetherwallet](../wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract to approve the bind request from the BEP20 owner address.
+
     ![img](https://lh6.googleusercontent.com/nFIbDxpA8bTVYH0Rt4UD-SYYz62TmYKjOsgK1CXxFRHHJlz6gOyXnq5p3GesM_zrQES4ixmojvN_Srk4CIf1MPxBXbia-K2DNiL23Hao1HiUgdNe4S2BmPe6yn5XJz7ajlwVVCti)
 
     The value here should be no less than `miniRelayFee/1e18`. The initial `miniRelayFee` is 1e16. So `miniRelayFee/1e18` equals to `0.01`. Besides, `miniRelayFee` can be changed by on-chain governance
-    
+
 3. Confirm bind result on BC
-    
+
     Wait for about 20 seconds and execute this command:
     ```bash
     ## mainnet
@@ -55,7 +60,7 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
     ## testnet
     tbnbcli token info --symbol ABC-A64 --trust-node --node http://data-seed-pre-0-s3.binance.org:80
     ```
-    
+
     ```json
     {
       "type": "bnbchain/Token",
@@ -72,9 +77,9 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
     }
     ```
     If the bind was successful, then in the above response, "contract_address" and "contract_decimals" should not be empty.
-    
-    
-    
+
+
+
 
 ## Use Cases
 
@@ -88,7 +93,7 @@ Suppose you have 20 million on your treasure, you decide to lock some tokens via
 
 ### Case 2: Lock zero in bind transaction
 
-Suppose you choose not to touch your 20 million in treasure at all: 
+Suppose you choose not to touch your 20 million in treasure at all:
 1. When you have 20 million on your treasure, you can choose to lock ZERO when you run the bind tx.
 2. Suppose Your BEP20 has 100 million supplies, you need to run the `approve` to grant 100 million allowance to the tokenHub contract, then you run `approveBind`.
 3. If your approveBind runs successfully, the bind is done. Your 20 million treasures stay at BC in your treasure address, nothing happens to it, and this is your CHOICE. Meanwhile, on BSC, no one has any BEP20 tokens, except the tokenHub. However, because the bind is done, ANYONE, including yourself, can get BEP20 whenever they want by a simple cross-chain transfer.
