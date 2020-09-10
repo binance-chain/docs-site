@@ -284,14 +284,14 @@ Then, the full node will save all the changed accounts.
 
 ```
 {
-	Owner:    string,
-	Fee:      string,
-	Balances: []{
-	    Asset:  string,
+    Owner:    string,
+    Fee:      string,
+    Balances: []{
+        Asset:  string,
         Free:   int64,
         Frozen: int64,
         Locked: int64
-	}
+    }
 
 }
 ```
@@ -346,13 +346,13 @@ Then, the full node will save all the transfer transactions.
 
 ```
 {
-	Height:    int64,
-	Num:       int,
-	Timestamp: int64,
-	Transfers: []{
+    Height:    int64,
+    Num:       int,
+    Timestamp: int64,
+    Transfers: []{
         TxHash: string,
         Memo: string,
-	    From: string,
+        From: string,
         To:   []{
             Addr:  string,
             Coins: []{
@@ -360,7 +360,686 @@ Then, the full node will save all the transfer transactions.
                 Amount: int64
             }
         }
-	}
+    }
+}
+```
+### 6. Staking Record
+
+You can set the `publishStaking` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
+Then, the full node will save all the messages about staking.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64,
+    "numOfMsgs":  int,
+       "validators": []{
+        "feeAddr":      string,
+        "operatorAddr": string,
+        "consAddr":     string,
+        "jailed":       bool,
+        "status":       string,
+        "tokens":       int64,
+        "delegatorShares":int64,
+        "description":{
+          "moniker":  string,
+          "identity": string,
+          "website":  string,
+          "details":  string,
+        },
+        "bondHeight": int64,
+        "bondIntraTxCounter": int,
+        "commission":{
+            "rate":      int64,
+            "maxRate":   int64,
+            "maxChangeRate": int64,
+            "updateTime": int64,
+        },
+        "distributionAddr":string,
+        "sideChainId": string,
+        "sideConsAddr": string,
+        "sideFeeAddr": string
+      },
+      "removedValidators": map[string][]string, //key: chain id, value: operatorAddr
+      "delegatioins": map[string][]{
+        "delegator": string,
+        "validator": string,
+        "shares":    int64
+    }, // map key: chain-id
+    "unBondingDelegations": map[string][]{
+        "delegator": string,
+        "validator": string,
+        "creationHeight": int64,
+        "minTime": int64,
+        "initialBalance": {
+            "denom":  string,
+            "amount": int64
+        },
+        "balance": {
+            "denom":  string,
+            "amount": int64
+        }
+    }, // map key: chain id
+    "reDelegations": map[string][]{
+        "delegator": string,
+        "srcValidator": string,
+        "dstValidator": string,
+        "creationHeight": int64,
+        "sharesSrc": int64,
+        "sharesDst": int64,
+        "initialBalance": {
+            "denom":  string,
+            "amount": int64
+        },
+        "balance": {
+            "denom":  string,
+            "amount": int64
+        },
+        "minTime": int64
+    }, // map key: chain id
+    "completedUBDs": map[string][]{
+        "validator": string,
+        "delegator": string,
+        "amount":  {
+            "denom":  string,
+            "amount": int64
+        }
+    },
+    "completedREDs": map[string][]{
+        "delegator": string,
+        "srcValidator": string,
+        "dstValidator": string
+    },
+    "delegateEvents": map[string][]{
+        "validator": string,
+        "delegator": string,
+        "amount":  {
+            "denom":  string,
+            "amount": int64
+        },
+        "txHash": string
+    },
+    "unDelegateEvents": map[string][]{
+        "validator": string,
+        "delegator": string,
+        "amount":  {
+            "denom":  string,
+            "amount": int64
+        },
+        "txHash": string
+    },
+    "reDelegateEvents": map[string][]{
+        "delegator": string,
+        "srcValidator": string,
+        "dstValidator": string,
+        "amount":  {
+            "denom":  string,
+            "amount": int64
+        },
+        "txHash": string
+    },
+    "electedValidators": map[string][]{
+        "feeAddr":      string,
+        "operatorAddr": string,
+        "consAddr":     string,
+        "jailed":       bool,
+        "status":       string,
+        "tokens":       int64,
+        "delegatorShares":int64,
+        "description":{
+          "moniker":  string,
+          "identity": string,
+          "website":  string,
+          "details":  string,
+},
+        "bondHeight": int64,
+        "bondIntraTxCounter": int,
+        "commission":{
+            "rate":      int64,
+            "maxRate":   int64,
+            "maxChangeRate": int64,
+            "updateTime": int64,
+        },
+        "distributionAddr":string,
+        "sideChainId": string,
+        "sideConsAddr": string,
+        "sideFeeAddr": string
+    }
+}
+
+```
+
+* Schema
+
+```json
+{
+    "type": "record",
+    "name": "Staking",
+    "namespace": "org.binance.dex.model.avro",
+    "fields": [
+        {"name": "height", "type": "long"},
+        {"name": "timestamp", "type": "long" },
+        {"name": "numOfMsgs", "type": "int" },
+        {"name": "validators", "type": ["null", {
+            "type": "array",
+            "items": {
+                "type": "record",
+                "name": "Validator",
+                "namespace": "org.binance.dex.model.avro",
+                "fields": [
+                    {"name": "feeAddr", "type": "string"},
+                    {"name": "operatorAddr", "type": "string"},
+                    {"name": "consAddr", "type": ["null","string"], "default": "null"},
+                    {"name": "jailed", "type": "boolean"},
+                    {"name": "status", "type": "string"},
+                    {"name": "tokens", "type": "long"},
+                    {"name": "delegatorShares", "type": "long"},
+                    {"name": "description", "type": {
+                        "type": "record",
+                        "name": "Description",
+                        "namespace": "org.binance.dex.model.avro",
+                        "fields": [
+                            {"name": "moniker", "type": "string"},
+                            {"name": "identity", "type": "string"},
+                            {"name": "website", "type": "string"},
+                            {"name": "details", "type": "string"}
+                        ]
+                    }},
+                    {"name": "bondHeight", "type": "long"},
+                    {"name": "bondIntraTxCounter", "type": "int"},
+                    {"name": "commission", "type": {
+                        "type": "record",
+                        "name": "Commission",
+                        "namespace": "org.binance.dex.model.avro",
+                        "fields": [
+                            {"name": "rate", "type": "long"},
+                            {"name": "maxRate", "type": "long"},
+                            {"name": "maxChangeRate", "type": "long"},
+                            {"name": "updateTime", "type": "long"}
+                        ]
+                    }},
+                    {"name": "distributionAddr", "type": "string"},
+                    {"name": "sideChainId", "type": "string"},
+                    {"name": "sideConsAddr", "type": "string"},
+                    {"name": "sideFeeAddr", "type": "string"}
+                ]
+            }
+        }], "default": "null"},
+        {"name": "removedValidators", "type": ["null", {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {"type": "string"}
+            }
+        }], "default": null},
+        {"name": "delegations", "type": ["null",{
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "Delegation",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "validator", "type": "string"},
+                        {"name": "shares", "type": "long"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "unBondingDelegations", "type": ["null",{
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "UnBondingDelgation",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "validator", "type": "string"},
+                        {"name": "creationHeight", "type": "long"},
+                        {"name": "minTime", "type": "long"},
+                        {"name": "initialBalance", "type": {
+                            "type": "record",
+                            "name": "Coin",
+                            "namespace": "org.binance.dex.model.avro",
+                            "fields": [
+                                { "name": "denom", "type": "string" },
+                                { "name": "amount", "type": "long" }
+                            ]
+                        }},
+                        {"name": "balance", "type": "org.binance.dex.model.avro.Coin"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "reDelegations", "type": ["null",{
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "ReDelegation",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "srcValidator", "type": "string"},
+                        {"name": "dstValidator", "type": "string"},
+                        {"name": "creationHeight", "type": "long"},
+                        {"name": "sharesSrc", "type": "long"},
+                        {"name": "sharesDst", "type": "long"},
+                        {"name": "initialBalance", "type": "org.binance.dex.model.avro.Coin" },
+                        {"name": "balance", "type": "org.binance.dex.model.avro.Coin" },
+                        {"name": "minTime", "type": "long"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "completedUBDs", "type": ["null",{
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "CompletedUnbondingDelegation",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        { "name": "validator", "type": "string" },
+                        { "name": "delegator", "type": "string" },
+                        { "name": "amount", "type": "org.binance.dex.model.avro.Coin"}
+                    ]
+                }
+            }
+        }],  "default": null},
+        {"name": "completedREDs", "type": ["null",{
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "CompletedReDelegation",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        { "name": "delegator", "type": "string" },
+                        { "name": "srcValidator", "type": "string" },
+                        { "name": "dstValidator", "type": "string" }
+                    ]
+                }
+            }
+        }],  "default": null},
+        {"name": "delegateEvents", "type": ["null", {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "DelegateEvent",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "validator", "type": "string"},
+                        {"name": "amount", "type": "org.binance.dex.model.avro.Coin"},
+                        {"name": "txHash", "type": "string"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "unDelegateEvents", "type": ["null", {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "UndelegateEvent",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "validator", "type": "string"},
+                        {"name": "amount", "type": "org.binance.dex.model.avro.Coin"},
+                        {"name": "txHash", "type": "string"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "reDelegateEvents", "type": ["null", {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "RedelegateEvent",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "delegator", "type": "string"},
+                        {"name": "srcValidator", "type": "string"},
+                        {"name": "dstValidator", "type": "string"},
+                        {"name": "amount", "type": "org.binance.dex.model.avro.Coin"},
+                        {"name": "txHash", "type": "string"}
+                    ]
+                }
+            }
+        }], "default": null},
+        {"name": "electedValidators", "type": ["null", {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": "org.binance.dex.model.avro.Validator"
+            }
+        }], "default": null}
+    ]
+}
+```
+
+
+### 7. Reward Distribution
+
+You can set the `publishDistributeReward` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
+Then, the full node will save all the messages about reward distribution.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64,
+    "numOfMsgs":  int,
+    "distributions" : map[string][]{
+        "validator": string,
+        "selfDelegator": string,
+        "distributeAddr": string,
+        "valTokens": int64,
+        "totalReward": int64,
+        "commission": int64,
+        "rewards": []{
+            "delegator": string,
+            "delegationTokens": int64,
+            "reward": int64
+        }
+    } // map key: chain id
+}
+```
+
+* Schema
+
+```
+{
+    "type": "record",
+    "name": "Distribution",
+    "namespace": "org.binance.dex.model.avro",
+    "fields": [
+        { "name": "height", "type": "long" },
+        { "name": "timestamp", "type": "long" },
+        { "name": "numOfMsgs", "type": "int" },
+        { "name": "distributions", "type": {
+                "type": "map",
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "record",
+                        "name": "DistributionData",
+                        "namespace": "org.binance.dex.model.avro",
+                        "fields": [
+                            {"name": "validator", "type": "string"},
+                            {"name": "selfDelegator","type": "string"},
+                            {"name": "distributeAddr","type": "string"},
+                            {"name": "valTokens", "type": "long"},
+                            {"name": "totalReward", "type": "long"},
+                            {"name": "commission", "type": "long"},
+                            {"name": "rewards", "type":{
+                                "type": "array",
+                                "items": {
+                                    "type": "record",
+                                    "name": "Reward",
+                                    "namespace": "org.binance.dex.model.avro",
+                                    "fields":[
+                                        {"name": "delegator", "type": "string"},
+                                        {"name": "delegationTokens", "type": "long"},
+                                        {"name": "reward", "type": "long"}
+                                    ]
+                                }
+                            }}
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
+```
+
+### 8. Slashing
+
+You can set the `publishSlashing` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
+Then, the full node will save all the messages about slashing.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64,
+    "numOfMsgs":  int,
+    "slashData":  map[string][]{
+        "validator": string,
+        "infractionType": int,
+        "infractionHeight": int64,
+        "jailUtil": int64,
+        "slashAmount": int64,
+        "toFeePool": int64,
+        "submitter": string,
+        "submitterReward": int64,
+        "validatorsCompensation": []{
+            "address": string,
+            "amount": int64
+        }
+    }
+}
+```
+
+* Schema
+
+```json
+{
+    "type": "record",
+    "name": "Slashing",
+    "namespace": "org.binance.dex.model.avro",
+    "fields": [
+        { "name": "height", "type": "long" },
+        { "name": "timestamp", "type": "long" },
+        { "name": "numOfMsgs", "type": "int" },
+        { "name": "slashData", "type": {
+            "type": "map",
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "SlashData",
+                    "namespace": "org.binance.dex.model.avro",
+                    "fields": [
+                        {"name": "validator", "type": "string"},
+                        {"name": "infractionType", "type": "int"},
+                        {"name": "infractionHeight", "type": "long"},
+                        {"name": "jailUtil", "type": "long"},
+                        {"name": "slashAmount", "type": "long"},
+                        {"name": "toFeePool", "type": "long"},
+                        {"name": "submitter", "type": "string"},
+                        {"name": "submitterReward", "type": "long"},
+                        {"name": "validatorsCompensation", "type":{
+                            "type": "array",
+                            "items": {
+                                "type": "record",
+                                "name": "AllocatedAmt",
+                                "namespace": "org.binance.dex.model.avro",
+                                "fields":[
+                                    {"name": "address", "type": "string"},
+                                    {"name": "amount", "type": "long"}
+                                ]
+                            }
+                        }}
+                    ]
+                }
+            }
+        }}
+    ]
+}
+```
+
+### 9. CrossTransfer
+
+You can set the `publishCrossTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
+Then, the full node will save all the messages about cross transfer.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64,
+    "num":        int,
+    "transfers":  []{
+        "txhash": string,
+        "type": string,
+        "relayerFee": int64,
+        "chainid": string,
+        "from": "string",
+        "denom": string,
+        "contract": string,
+        "decimals": int,
+        "to": []{
+            "addr": string,
+            "amount": int64
+        }
+    }
+}
+```
+
+* Schema
+
+```json
+{
+    "type": "record",
+    "name": "CrossTransfers",
+    "namespace": "com.company",
+    "fields": [
+        { "name": "height", "type": "long"},
+        { "name": "num", "type": "int" },
+        { "name": "timestamp", "type": "long" },
+        { "name": "transfers",
+          "type": {
+            "type": "array",
+            "items": {
+                "type": "record",
+                "name": "Transfer",
+                "namespace": "com.company",
+                "fields": [
+                    { "name": "txhash", "type": "string" },
+                    { "name": "type", "type": "string" },
+                    { "name": "relayerFee", "type": "long" },
+                    { "name": "chainid", "type": "string" },
+                    { "name": "from", "type": "string" },
+                    { "name": "denom", "type": "string" },
+                    { "name": "contract", "type": "string" },
+                    { "name": "decimals", "type": "int" },
+                    { "name": "to",
+                          "type": {
+                             "type": "array",
+                            "items": {
+                                "type": "record",
+                                "name": "Receiver",
+                                "namespace": "com.company",
+                                "fields": [
+                                    { "name": "addr", "type": "string" },
+                                    { "name": "amount", "type": "long" }
+                                ]
+                            }
+                          }
+                    }
+                ]
+            }
+          }
+        }
+    ]
+}
+```
+
+### 10. SideProposal
+
+You can set the `publishSideProposal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
+Then, the full node will save all the messages about side proposals.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64,
+    "numOfMsgs":  int,
+    "proposals":  []{
+        "id": int64,
+        "chainid": string,
+        "status": string
+    }
+}
+```
+
+* Schema
+
+```json
+{
+    "type": "record",
+    "name": "SideProposals",
+    "namespace": "com.company",
+    "fields": [
+        { "name": "height", "type": "long" },
+        { "name": "timestamp", "type": "long" },
+        { "name": "numOfMsgs", "type": "int" },
+        { "name": "proposals", "type": {
+            "type": "array",
+            "items":
+            {
+                "type": "record",
+                "name": "Proposal",
+                "namespace": "org.binance.dex.model.avro",
+                "fields": [
+                    { "name": "id", "type": "long" },
+                    { "name": "chainid", "type": "string" },
+                    { "name": "status", "type": "string" }
+                ]
+            }
+           }
+        }
+    ]
+}
+```
+
+### 11. BreatheBlock
+
+You can set the `publichBreatheBlock` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`. Then, the full node will save all the messages about side proposals.
+
+* Example
+
+```
+{
+    "height":     int64,
+    "timestamp":  int64
+}
+```
+
+* Schema
+
+```json
+{
+    "type": "record",
+    "name": "BreatheBlock",
+    "namespace": "org.binance.dex.model.avro",
+    "fields": [
+        {"name": "height", "type": "long"},
+        {"name": "timestamp", "type": "long"}
+    ]
 }
 ```
 
