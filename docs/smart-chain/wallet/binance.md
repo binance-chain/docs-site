@@ -1,4 +1,4 @@
-# Use Binance Chain Extension Wallet for Testnet
+# Use Binance Chain Extension Wallet
 ## What is it?
 Binance Chain Wallet is a Crypto Wallet for Binance Chain, Binance Smart Chain, and Ethereum. You can send and receive funds on Binance Chain, Binance Smart Chain, and Ethereum, and cross-chain transfers between both of Binance’s blockchains.
 

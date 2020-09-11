@@ -26,3 +26,11 @@ The codebase of BSC is open-sourced here:
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
 * Twitter: <https://twitter.com/Binance_DEX>
 * Binance Chain Forum: <https://community.binance.org>
+
+## Wallet support for Binance Smart Chain
+
+  - [Binance Extension Wallet ](../../smart-chain/wallet/binance.md)
+  - [MetaMask](../../smart-chain/wallet/metamask.md)
+  - [Math Wallet](../../smart-chain/wallet/math.md)
+  - [Ledger](../../smart-chain/wallet/ledger.md)
+  - [MEW](../../smart-chain/wallet/myetherwallet.md)
