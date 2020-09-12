@@ -1,5 +1,5 @@
-# 使用币安链插件钱包
-## What is it?
+# 币安链插件钱包指南
+## 币安链插件钱包是什么?
 币安链插件钱包支持币安链和币安智能链。用户也可以完成跨链转账。
 
 币安链插件钱包将很快支持以太坊。同时，也会很快支持与Dapps的交互。
@@ -15,7 +15,7 @@
 
 **以火狐浏览器为例**
 
-* 打开火狐浏览器市场: < https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
+* 打开火狐浏览器市场: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
 * 搜索"Binance Chain"
 

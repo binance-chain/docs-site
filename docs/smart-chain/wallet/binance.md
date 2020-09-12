@@ -15,7 +15,7 @@ It’s supported in Firefox and Chrome browsers.
 
 **Example: Install Binance Chain Wallet in Firefox browser**
 
-* Open Extension in Firefox: < https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
+* Open Extension in Firefox: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
 * Search for Binance Chain
 
