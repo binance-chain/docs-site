@@ -4,7 +4,7 @@ Binance Chain Extension Wallet is a Crypto Wallet for Binance Chain, Binance Sma
 
 In the future, Binance Chain Extension Wallet will add support for Ethereum blockchain and enable access for distributed applications, or "Dapps" in your browser!
 
-It’s supported in Firefox and Chrome browsers. 
+It’s supported in Firefox and Chrome browsers.
 
 !!! Tip
 		Firefox users are more likely to access the latest version timely
@@ -52,6 +52,20 @@ The workflow is the same for all browsers
 
 Congratulations! you have created your account!
 
+
+## Recover your account with Mnemonic Phrase
+
+* Install Binance Chain extension 
+* firstClick on “I own a wallet”
+<img src="https://lh5.googleusercontent.com/WvqszPDj6yhnt4KhB9VNHQrpR3C4lcIvOnBvZE4BslWsl0fmFbjM0f8dcK1sBFPI8OSt-8RGbk7X7pEdbci7P4RCl0rOoN4_5ce-qbfXj0BnGjSj160oDZ4ObvhljeTn8c4hZmnm" alt="img" style="zoom:33%;" />
+
+* Type your recovery phrase and choose a strong password
+<img src="https://lh3.googleusercontent.com/VQbiCEcUSQyyHxcP0rR1FodhZcYBqaXMRpYsFy11NCJFzbtgpdewW6FCoazF1f7KiGaqMnOhL2LoEFvep5HXsJrh7VXjFuu6Qo3s1kI_3feKbOfudQS8q1GjfWSJJygTSsxGmBx5" alt="img" style="zoom:33%;" /> 
+
+* Click on “Get started” 
+
+Now you are all set!
+
 ## Get Testnet BNB from Faucet
 
 * Go to <https://testnet.binance.org/faucet-smart/>
@@ -93,3 +107,80 @@ After the transfer transaction is sent, you will see an increase in your balance
 * Switch back to BC testnet to confirm this cross-chain transfer
 
 ![img](https://lh3.googleusercontent.com/4PMk41qA7tXxRes-0Oc12A28U_W7JZHQAlJ9WW5njdGcozY8njSVEuPeZzTRt1xfRpiXPUZiea6ES74DQyjnyZNzjPw9NJhL_QNXvSMPich2o54MlbXVgoMJHaMx66xVpqm-2XAu)
+
+
+## Transfer Testnet BNB from BC to BSC
+
+* Switch to Binance Smart Chain testnet and copy your address, start with `0x`
+
+<img src="https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O" alt="img" style="zoom:33%;" />
+
+* Click on the “+” and add “BNB” token
+
+
+* Switch to Binance Chain testnet and click on “Send”
+
+<img src="https://lh3.googleusercontent.com/JuCCpF4-U2FBHIZEIcwf7DNsCBA_RavVtmSX1dRe-thAL3FSm__Maf27aVkEIxaCQ28hl17NEYthBKyAWLJT72NMZ0Lkxzt7AIcVEuej2KDaKzT6ElR-wv_DTy1ip6MKfQk0-U7-" alt="img" style="zoom:33%;" />
+
+* Click on “Send” when you have filled in other information. You have to confirm it too
+
+<img src="https://lh4.googleusercontent.com/Ab98BfFApDok7qZdHAerglPc-vEYAKdEa2K-04CBdNfaQy8fE2CiJ_1sRjophAqsAt8p9c3CxA5IAGuhnPjJuZqotCq8zPRUkoEpB2tQir1nneBopVGNSNKlzq4wRVmSrfuQEZFw" alt="img" style="zoom:33%;" />
+
+* Switch back to BSC testnet to confirm this cross-chain transfer
+
+## Swap Testnet BEP2 token to its BEP20 equivalent
+
+* Follow the instructions above to Install Binance Chain extension wallet if not ready
+* Follow the instructions above to create or Recover your account
+* Switch to Binance Chain testnet and Click at “+” to add your BEP2 token if necessary
+
+<img src="https://lh5.googleusercontent.com/P9NrmUZF4yC0_G_KgSuqCtLq3Q0GLw6ZBfyYwBn6f6HFqTxOcER2wChJJtZvAkF8QsEJz9AxN6Ixi2oqlJEHKsig-KTz3qUIAi8Kt7TfhyPalMMzO7Yh3btfyVLMm9MNCcA1bXYL" alt="img" style="zoom:33%;" />
+
+**Verify your balance**
+
+* Switch to Binance Smart Chain testnet and copy your address, start with `0x`
+
+<img src="https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O" alt="img" style="zoom:33%;" />
+
+Click at “+” to add your BEP20 token if necessary
+
+<img src="https://lh5.googleusercontent.com/fW06aH1A5_7P93r8zSp4kgs5Us1AqYHvnfs6sRxg6aCLsQ7u9Ht_z6zLSExGjbr6J-D0vOmDWXghw544WhaNnkTP-nDAO3TFou5g_WYVvp7nOSrNX7w15PmvmZLyHkhBzLW_i-xi" alt="img" style="zoom:33%;" />
+
+* Switch to Binance Chain testnet and click on “Send”
+
+<img src="https://lh5.googleusercontent.com/OHYhS0DdJsg6Jt_E-qRrPOxgDi_VMwXlRYVD8OVTrr1w5kwubse2boOfffWpl8PjP15j_h0atYB4O1GEQqNGCFzoKcoRSgmdMgAYQPazoe_I7X6gilZazMqqIGntSz9rz6j47DGk" alt="img" style="zoom:33%;" />
+
+* Click on “Send” when you have filled in other information. You have to confirm it too
+
+<img src="https://lh6.googleusercontent.com/gcaynPouCk8R0cRFo10i6tXUp8yVO3N1MB9ihJvo-NmO0i8PWae1Vz83O5i8cAIbuoZ1PIO_8de6PrxtUA3mix3FdxWZePH4KZt4_-Uwr64CZWyJog5d1iYcNgwHp_RumNOGc7B4" alt="img" style="zoom:33%;" />
+
+* Switch to Binance Smart Chain testnet, you should see your BEP20 token balance change
+
+<img src="https://lh5.googleusercontent.com/ThOnhoHRzITPpIqfYOj6_Q0NHGSmVXMqmJ11SPjcvVqEzHZ6vcWpxyb9jILtnJ9GxAFDz527jCapq64-8N8l_aqMU1phv2MoAmTIKb1Nse7NjzhFRhdiyObk1mZBb7YQbq7ZkqTV" alt="img" style="zoom:33%;" />
+
+## Swap Testnet BEP20 token to its BEP2 equivalent
+
+* Follow the instructions above to Install Binance Chain extension wallet if not ready
+* Create or Recover your accountSwitch to Binance Smart Chain testnet and Click at “+” to add your BEP20 token if necessary
+
+<img src="https://lh5.googleusercontent.com/fW06aH1A5_7P93r8zSp4kgs5Us1AqYHvnfs6sRxg6aCLsQ7u9Ht_z6zLSExGjbr6J-D0vOmDWXghw544WhaNnkTP-nDAO3TFou5g_WYVvp7nOSrNX7w15PmvmZLyHkhBzLW_i-xi" alt="img" style="zoom:33%;" />
+
+**Verify your balance**
+
+* Switch to Binance Chain testnet and copy your address, start with `tbnb1`
+
+Note: for mainnet, the address starts with `bnb1`
+
+<img src="https://lh4.googleusercontent.com/kJnKr2dRtAvvMjjQIaMMq3JN9-ljqXjTaLq00u66UgisISIayIUsv1N01GjCbk9Z07WQUruToHX6pCb_dnYGDeP2NKTLbScnFFC317voNd6RTV-MDHAfMHorm8VCMyPKIK8YAEwS" alt="img" style="zoom:33%;" />
+
+* Click at “+” to add your BEP2 token if necessary
+
+<img src="https://lh5.googleusercontent.com/P9NrmUZF4yC0_G_KgSuqCtLq3Q0GLw6ZBfyYwBn6f6HFqTxOcER2wChJJtZvAkF8QsEJz9AxN6Ixi2oqlJEHKsig-KTz3qUIAi8Kt7TfhyPalMMzO7Yh3btfyVLMm9MNCcA1bXYL" alt="img" style="zoom:33%;" />
+
+
+* Switch to Binance Smart Chain testnet and click on “Send”
+
+<img src="https://lh6.googleusercontent.com/m-lXjzWHuiVteM0n0ukSmMCxHm7XSQtO8wJ0LMXMUYL6spDObSmgbN7zoBVuc0hrhBL2mQ1C3GhBvzHpnHYoP_mbOcKSYtZZojQ46R5-2QA_ULXMPlmHyqXcg1Ht_M8Ix0xdUxJb" alt="img" style="zoom:33%;" />
+
+
+* Confirm your transaction and verify your balance change

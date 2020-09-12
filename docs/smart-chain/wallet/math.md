@@ -49,6 +49,9 @@ tbnbcli keys add {wallet-alias}
 ```
 ### 2. Go to this page: <https://developer.mathwallet.org/bsc02/>
 
+Go to this page for mainnet: <https://developer.mathwallet.org/bsc01/>
+
+
 Paste your testnet address to `Recipient` and fill the transfer amount.
 ![img](https://lh6.googleusercontent.com/jBLdydCWQEKJ-ksWfixIUH8qrFC9JEaLw4SbGRWngKCWXAjQDzl0ZCKs3Ajn2ZILcnd2XJzZxK6x62DHNb7_VHaJFm78qvU6zD-fhp5p7KGyDesNz5q6hilLLRbuv1Ygw-46JoBq)
 
