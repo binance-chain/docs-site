@@ -51,13 +51,13 @@ The biggest difference between Binance Chain Wallet and MetaMask is we inject `B
 
 We haven't supported the full complex [signing data](https://docs.metamask.io/guide/signing-data.html#signing-data-with-metamask) APIs MetaMask provided, while we only provide standard [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign) JSON-RPC call. 
 
-The `message` item in params for this request on MetaMask has to be hex encoded keccak256 hash (otherwise the API would slient failure for dapp https://www.reddit.com/r/Metamask/comments/9wp7kj/eth_sign_not_working/). In contrast, web3 developer could pass any message in plaintext to this method, and our UI would render it as it is to wallet user.
+The `message` item in params for this request on MetaMask has to be hex-encoded keccak256 hash (otherwise the API would silent failure for dapp https://www.reddit.com/r/Metamask/comments/9wp7kj/eth_sign_not_working/). In contrast, web3 developers could pass any message in plaintext to this method, and our UI would render it as it is to the wallet users.
 
 ### BinanceChain.request({method: "eth_accounts"})
 
-When this API is invoked without user's approval, MetaMask would return empty array.
+When this API is invoked without the user's approval, MetaMask would return an empty array.
 
-In contrast, we would ask user unlock his wallet and return the address user connected to.
+In contrast, we would ask the user to unlock his wallet and return the address user connected to.
 
 ## Upcoming Breaking Changes
 
