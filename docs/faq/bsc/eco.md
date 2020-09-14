@@ -34,6 +34,9 @@ Current list:
 * XTZ: <https://bscscan.com/token/0x16939ef78684453bfdfb47825f8a5f714f12623a>
 * ONT: <https://bscscan.com/token/0xfd7b3a77848f1c2d67e05e54d78d174a0c850335>
 * ADA: <https://bscscan.com/token/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47>
+* ATOM: <https://bscscan.com/token/0x0eb3a705fc54725037cc9e008bdede697f62f335>
+* YFII: <https://bscscan.com/token/0x7f70642d88cf1c4a3a7abb072b53b929b653eda5>
+* ZEC: <https://bscscan.com/token/0x1ba42e5193dfa8b03d15dd1b86a3113bbbef8eeb>
 
 Details are [here](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/)
 
