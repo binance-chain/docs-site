@@ -52,13 +52,13 @@ Congratulations! you have create your MetaMask account!
         * [RPC URLs](../developer/rpc.md)
         * ChainID: 97
         * Symbol: BNB
-        * Block Explorer: https://explorer.binance.org/smart-testnet
+        * Block Explorer: https://testnet.bscscan.com
 
       * Mainnet
         * [RPC URLs](../developer/rpc.md)
         * ChainID: 56
         * Symbol: BNB
-        * Block Explorer: https://explorer.binance.org/smart
+        * Block Explorer: https://bscscan.com
 
 3. Claim some testnet token to your account
 Click on your address for copy
