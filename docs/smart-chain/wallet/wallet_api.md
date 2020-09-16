@@ -414,6 +414,7 @@ Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.
 
 Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-sendasync-deprecated), the only difference is we injected a different object.
 
+This API will be available soon considered it is widely adopted.
 
 ```typescript
 interface JsonRpcRequest {
@@ -440,6 +441,8 @@ BinanceChain.sendAsync(payload: JsonRpcRequest, callback: JsonRpcCallback): void
 ### BinanceChain.send() (DEPRECATED)
 
 Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-send-deprecated), the only difference is we injected a different object.
+
+This API will be available soon considered it is widely adopted.
 
 ```typescript
 BinanceChain.send(
