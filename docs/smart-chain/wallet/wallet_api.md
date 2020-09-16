@@ -2,7 +2,7 @@ Binance Chain Wallet injects a global API into websites visited by its users at 
 
 This API specification borrows heavily from API MetaMask provided, considering the massive adoption. So Web3 site developers can easily connect their dApps with the Binance Chain Wallet. The APIs allow websites to request users' Binance Smart Chain addresses, read data from the blockchain the user is connected to, and prompt the users to sign messages and transactions.
 
-The presence of the provider object indicates a Binance Chain/Binance Smart Chain user.
+The presence of the provider object `window.BinanceChain` indicates a Binance Chain/Binance Smart Chain user.
 
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied legacy ones).
 
@@ -83,8 +83,7 @@ You can learn how to accomplish the `2` and `3` from above list by reviewing the
 
 The provider API is all you need to create a full-featured web3 application.
 
-That said, many developers use a convenience library, such as [ethers](https://www.npmjs.com/package/ethers) and [web3.js](https://www.npmjs.com/package/web3), instead of using the provider directly.
-If you are in need of higher-level abstractions than those provided by this API, we recommend that you use a convenience library.
+We recommend developer keep DApp's capability to interact with `window.ethereum` object, in case the user wants to switch back to MetaMask (or other web3 standard injected wallet). 
 
 ## Chain IDs
 
