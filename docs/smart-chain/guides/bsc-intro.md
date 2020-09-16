@@ -16,3 +16,5 @@ As the native token, BNB will serve as both the gas of smart contract execution 
 
 ## Resources:
 * [White Paper](http://binance.org/en#smartChain)
+* [Forum](https://community.binance.org/)
+* [Blog](https://www.binance.org/en/blog/)
