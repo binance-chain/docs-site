@@ -13,6 +13,7 @@ Binance Side Chain is welcoming everyone.
 * [Burgerswap](http://burgerswap.org)
 * [Bounce.finance](http://bsc.bounce.finance/)
 * [BSCswap](https://bscswap.com)
+* [StakeCow](https://stakecow.com)
 
 ## What are Pegged tokens on Binance Smart chain?
 
