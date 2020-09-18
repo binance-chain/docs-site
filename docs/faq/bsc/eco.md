@@ -10,7 +10,7 @@ Binance Side Chain is welcoming everyone.
 
 **Disclaimer about dApps on Binance Smart Chain**
 
-!!! warning
+!!! disclaimer
 	These mining projects developed by the community was deployed on the Binance Smart Chain yesterday. Please note that all projects and dApp applications running on the Binance Smart Chain are independently developed by third-party developers. They are not audited by Binance official team.
 	Binance Smart Chain is an entirely open-source and open community, which means everyone and all project parties can participate. All opportunities and risks also exist at the same time. You need to identify and prevent risks carefully. This is also the charm of the DeFi world.
 
