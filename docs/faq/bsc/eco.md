@@ -8,12 +8,20 @@ Future coding competitions; Hackathons
 
 Binance Side Chain is welcoming everyone.
 
+**Disclaimer about dApps on Binance Smart Chain**
+
+!!! disclaimer
+	These mining projects developed by the community was deployed on the Binance Smart Chain yesterday. Please note that all projects and dApp applications running on the Binance Smart Chain are independently developed by third-party developers. They are not audited by Binance official team.
+	Binance Smart Chain is an entirely open-source and open community, which means everyone and all project parties can participate. All opportunities and risks also exist at the same time. You need to identify and prevent risks carefully. This is also the charm of the DeFi world.
+
 * [ForTube](https://docs.for.tube/)
 * [Spartanswap](https://spartanswap.com/)
 * [Burgerswap](http://burgerswap.org)
 * [Bounce.finance](http://bsc.bounce.finance/)
 * [BSCswap](https://bscswap.com)
 * [StakeCow](https://stakecow.com)
+* [CREAM](http://app.cream.finance)
+* [DeBank](https://debank.com/projects?type=bsc)
 
 ## What are Pegged tokens on Binance Smart chain?
 
