@@ -7,7 +7,7 @@ The presence of the provider object `window.BinanceChain` indicates a Binance Ch
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied legacy ones).
 
 ## Development Progress
-Currently (version 1.91.2) this API and its corresponding UI are in actively development. Only a subset of most important json-rpc has been implemented including for `request`:
+Currently (version 1.96.1) this API and its corresponding UI are in actively development. Only a subset of most important json-rpc has been implemented including for `request`:
 ```
   eth_accounts
   eth_blockNumber
@@ -20,6 +20,7 @@ Currently (version 1.91.2) this API and its corresponding UI are in actively dev
   eth_requestAccounts
   eth_sendTranscation
   eth_sign
+  net_version
 ```
 
 Other MetaMask properties and method implemented includes:
@@ -413,8 +414,6 @@ Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.
 
 Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-sendasync-deprecated), the only difference is we injected a different object.
 
-This API will be available soon considered it is widely adopted.
-
 ```typescript
 interface JsonRpcRequest {
   id: string | undefined;
@@ -436,12 +435,9 @@ type JsonRpcCallback = (error: Error, response: JsonRpcResponse) => unknown;
 BinanceChain.sendAsync(payload: JsonRpcRequest, callback: JsonRpcCallback): void;
 ```
 
-
 ### BinanceChain.send() (DEPRECATED)
 
 Please refer to [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-send-deprecated), the only difference is we injected a different object.
-
-This API will be available soon considered it is widely adopted.
 
 ```typescript
 BinanceChain.send(
