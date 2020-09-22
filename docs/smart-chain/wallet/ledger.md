@@ -11,7 +11,7 @@ BNB and coins on Binance Smart Chain are supported by the Ledger Nano S hardware
 ## App Installation Instructions
 
 !!! Tip
-		The existing Ethereum App is compatible with Binance Smart Chain 
+		The existing Ethereum App is compatible with Binance Smart Chain
 
 1) Plug in and unlock your Ledger device, open Ledger Live on your computer, then open the "Manager" panel.
 
@@ -34,32 +34,30 @@ Binance Smart Chain is compatible with MetaMask. Users can use MetaMask as a bri
 1) Connect [MetaMask](./metamask.md) to BSC Testnet by following this guide to add a custom network
 
  * Testnet
- 
-        * [RPC URLs](../developer/rpc.md)
-        * ChainID: 97
-        * Symbol: BNB
-        * Block Explorer: https://explorer.binance.org/smart-testnet
+    * [RPC URLs](../developer/rpc.md)
+    * ChainID: 97
+    * Symbol: BNB
+    * [Block Explorer](https://testnet.bscscan.com)
 
  * Mainnet
- 
-        * [RPC URLs](../developer/rpc.md)
-        * ChainID: 56
-        * Symbol: BNB
-        * Block Explorer: https://explorer.binance.org/smart
+    * [RPC URLs](../developer/rpc.md)
+    * ChainID: 56
+    * Symbol: BNB
+    * Block Explorer](https://bscscan.com)
 
-2) Unlock your Metamask
+### Unlock your Metamask
 
 <img src="https://lh5.googleusercontent.com/EpbHPRV-ycTSYYNdDi67wqB5GKpiYUj4AOSLr0dTNV3vbTBP377YM75f5iYFeKzHu_6ykJr7UEZ81xds2czCXe4qOtBgekIJGdAwdnh_UGPggujVHxHHrTqHTLgmgLh0HFgiAJgp" alt="img" style="zoom:33%;" />
 
-3) Click on “Connect Hardware Wallet”
+### Click on “Connect Hardware Wallet”
 
-<img src="https://lh6.googleusercontent.com/1gb3-LE3KVM-rnFBHr3MMrdYrtsknZ3LqRFOanx_LHPyi6wTFpi7qwyIfH0ftwrE8zTN0ossizTk7ddBBGLod-r3JR948XgSFJuIDGzXvMUh-Wp4jLrGdmVGcadhynrv-YFdPuNd" alt="img" style="zoom:25%;" />
+<img src="https://lh6.googleusercontent.com/1gb3-LE3KVM-rnFBHr3MMrdYrtsknZ3LqRFOanx_LHPyi6wTFpi7qwyIfH0ftwrE8zTN0ossizTk7ddBBGLod-r3JR948XgSFJuIDGzXvMUh-Wp4jLrGdmVGcadhynrv-YFdPuNd" alt="img" style="zoom:33%;" />
 
-4) Choose “Ledger”
+### Choose “Ledger”
 
 <img src="https://lh5.googleusercontent.com/TCPL_nMhLOTeS1TGRULD_4mMXVx_EhlVqOopfizYK8TiMVQXd0CxDwuefnuAoq_x2ESislvm3z-XZLStw_GJ4pOS1kxSjUZU4-SbZitGrIrFvVbCoVd1qzanzjRBiCTw-hb00f57" alt="img" style="zoom:33%;" />
 
-5) Choose your address
+### Choose your address
 
 ![img](https://lh3.googleusercontent.com/FlMY9pjEboYDskkLYu2tZ3QZL6RAaTD-gOUGrSV5F53uFRqVfzvo7znZL_EqU117enWTFaC_1Zx26b-BEneX9ivxo2_-1xjBSBZ-uHZlp0ySTZJ4Rgd5SLhpRP2WZLv7jDZc9Oek)
 
@@ -67,6 +65,26 @@ You should see a new account
 
 <img src="https://lh5.googleusercontent.com/7Uo7dvi4PVqPiYnVcUEFkVsGNemyIgB0hAq2y244NhM_pNXVwFZi9zU1aYwmqf1koc-bC3BLthA-phkKD8_hr1hd9RkxTCJohbmwTcJiHscPOCzVn5O-Xs6Z2-ci17pVr2Lj1ljr" alt="img" style="zoom:33%;" />
 
-7) Please read this [doc](metamask.md) to learn about how to interact with blockchain. 
+### Please read this [doc](metamask.md) to learn about how to interact with blockchain.
 
-With Ledger, you need to approve your transaction in your device. 
+With Ledger, you need to approve your transaction in your device.
+
+### Initiate a transfer transaction, then click on next
+
+<img src="https://lh4.googleusercontent.com/vuylKsIqqTMl1SORH1gd7QbAiL6fywTwIOT40asaYjDnYAArTL7cZZon3ozzSylgqwmySun-pBEq__jVaML-Y_mEu5kaSuoZM5i2d7M9utoCCtUmQogW2vQ4wY7GRjN-ACu4Yqxc" alt="img" style="zoom:33%;" />
+
+### Review the transaction details, then confirm the same info on Ledger device
+
+<img src="https://lh5.googleusercontent.com/hICFx-MRkPsAHGtEuSNh5tGAZheKNrm3YjVmw-QcLVV90910YwxccP9bBpH7_o2VBDcYwZ8skZkgLdG5jATXgUhK035urAnr8aUzSexrdqHfi1CXnk3LjPx8dpcE668qzDoHLQEc" alt="img" style="zoom:33%;" />
+
+### You can view the transaction info and confirm it on Ledger:
+
+<img src="https://lh5.googleusercontent.com/x2hiegyGjwWzUkWJ1NknXw7TiWyhJ1M-FT1-2nzfSxHVcYF48AjE73vcEpiSsKiriZTYtOq_l6_SjrWFuNNzbhRDX6vN5sCfQA9vtGLqtJotmS6j5CTOrPK6YGUw2gmfY8HUo6iK" alt="img" style="zoom:33%;" />
+
+11) Once the transaction is ready to get signed, your Ledger device will display this screen. Click on both buttons for broadcasting this transaction.
+
+<img src="https://lh5.googleusercontent.com/8QvlXBQst1p87Y8Ot1PHHnsxN0DjsdRuJeD03uLR9WPtChcuhVbbZ6xmB_e27LL2F7zIgdcK84mL6qzOJEl-HDpeGIndH91t1Mb9B6_Ix9OqlFdzVbSKiR-Nv1m-Dv4ggtVOY3Tk" alt="img" style="zoom: 33%;" />
+
+12) Track the transaction stsatus in “Activity” tab
+
+<img src="https://lh4.googleusercontent.com/ejb2jVBsYnFHctelQtR9gS36Z96td60sQ1yVFYdSbLr_jCTkyv2Im2P1wkHxS3JGAYHRXQTiac3FO9dUH1GX0eKHG1Vwk764tSMERGza_vmQcxxm32S66-kFi18wTifSrF-uD9tL" alt="img" style="zoom:33%;" />
