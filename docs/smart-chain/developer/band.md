@@ -203,3 +203,6 @@ For each pair, the following information will be returned:
 - `rawRate`: This object consists of two parts.
 - `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
 - `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
+
+
+Original Link: <https://hackmd.io/@tansawit/aggregator-ecosystem-guide-bsc>
