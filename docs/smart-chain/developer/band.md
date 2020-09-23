@@ -1,14 +1,12 @@
-# Band Standard Dataset (BSC)
+# Band Protocol Price Feed on Binance Smart Chain
 
 ## Introduction
 
-We have implemented a new interface for developers to integrate price data from Band’s oracle into their application. Now, instead of making the requests to BandChain themselves, dApps and the developers can more easily access price data through our new
+Developers building on Binance Smart Chain can now leverage Band’s decentralized oracle infrastructure. With Band’s oracle, they now have access to various cryptocurrency price data to integrate into their applications.
 
-These price rate values was calculated using the latest result values from BandChain’s [price](https://guanyu-poa.cosmoscan.io/oracle-script/8) and [ForEx](https://guanyu-poa.cosmoscan.io/oracle-script/9) oracle scripts on our proof-of-authority mainnet, and are currently being updated every 20 minutes.
+## Supported Tokens
 
-The data standard currently support the following symbols:
-
-### Cryptocurrencies:
+Currently, the following token symbols are supported. Going forward, this list will continue to expand based on developer needs and community feedback.
 
 |              Token Name               | Symbol |
 | :-----------------------------------: | :----: |
@@ -33,26 +31,22 @@ The data standard currently support the following symbols:
 |                Monero                 |  XMR   |
 |                  OKB                  |  OKB   |
 
-### Foreign Currencies:
+### Price Pairs
 
-*Coming Soon*
-
-### Commodities
-
-*Coming Soon*
-
-# Supported Price Pairs
-
-Band Standard Dataset supports price query with any denomination as long as the base and quote symbols are supported in the list above.
+The method provided below supports price query with any denomination as long as the base and quote symbols are supported in the list above.
 
 For example, you can use the APIs in Javascripts and Solidity to query the following price pairs:
 
 - `BTC/USD`
 - `BNB/ETH`
 
-# Using the Reference Prices in Smart Contracts
+## Querying Prices
 
-For EVM-compatible chains, we’ve deployed a new `StdReference` contract. This contract exposes `getReferenceData` and `getRefenceDataBulk` functions.
+Currently, there are two methods for developers to query prices from Band’s oracle: through Band’s `StdReference` smart contract on Binance Smart Chain and through their [`bandchain.js`](https://www.npmjs.com/package/%40bandprotocol%2Fbandchain.js) JavaScript helper library.
+
+### Solidity Smart Contract
+
+To query prices from Band’s oracle through smart contracts, the contract looking to use the price values should reference Band’s `StdReference` contract. This contract exposes `getReferenceData` and `getRefenceDataBulk` functions.
 
 `getReferenceData` takes two strings as the inputs, the base and quote symbol, respectively. It then queries the `StdReference` contract for the latest rates for those two tokens, and returns a `ReferenceData` struct, shown below.
 
@@ -72,7 +66,7 @@ For example, if we call `getReferenceDataBulk` with `['BTC','BTC','ETH']` and `[
 - `BTC/ETH`
 - `ETH/BNB`
 
-### Example Usage
+#### Example Usage
 
 The contract code below demonstrates a simple usage of the new `StdReference` contract and the `getReferenceData` function.
 
@@ -139,22 +133,18 @@ contract DemoOracle {
 }
 ```
 
-## Contract Addresses
-
-Due to the high transaction fees & potential network congestions, the price feeds on the blockchains are updated at different frequencies depending on the network.
-
-### Supported Networks
+#### Contract Addresses
 
 | Blockchain    |         Aggregator Contract Address          | Update Every |                           Explorer                           |
 | :------------ | :------------------------------------------: | :----------: | :----------------------------------------------------------: |
-| BSC (Testnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |   20 mins    | [link](https://testnet.bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
-| BSC (Mainnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |   20 mins    | [link](https://bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
+| BSC (Testnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |    5 mins    | [link](https://testnet.bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
+| BSC (Mainnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |    5 mins    | [link](https://bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
 
-# Using the Reference Prices in JavaScript
+### BandChain.JS
 
-Our node helper library [`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js) also now supports a new function, `getReferenceData`. This function takes one argument, a list of token pairs to query the result of. It then returns a list of corresponding rate values.
+Band’s node helper library [`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js) also supports a similar `getReferenceData` function. This function takes one argument, a list of token pairs to query the result of. It then returns a list of corresponding rate values.
 
-### Example Usage
+#### Example Usage
 
 The code below shows an example usage of the function
 
@@ -165,8 +155,8 @@ const BandChain = require('@bandprotocol/bandchain.js');
   const endpoint = 'https://poa-api.bandchain.org';
 
   const bandchain = new BandChain(endpoint);
-  const rates = await bandchain.getReferenceData(['BTC/USD', 'BTC/ETH', 'EUR/USD', 'EUR/BTC']);
-  console.log(rates);
+  const price = await bandchain.getReferenceData(['BAND/USD', 'BTC/ETH', 'EUR/USD', 'EUR/BTC']);
+  console.log(price);
 })();
 ```
 
@@ -176,24 +166,28 @@ The corresponding result will then be similar to
 $ node index.js
 [
   {
-    pair: 'BTC/USD',
-    rate: 11886.605,
-    rawRate: { value: 11886605000000n, decimals: 9 }
+    pair: 'BAND/USD',
+    rate: 6.49,
+    updated: { base: 1600676205, quote: 0 },
+    rawRate: { value: 6490000000n, decimals: 9 }
   },
   {
     pair: 'BTC/ETH',
-    rate: 25.848312529900404,
-    rawRate: { value: 25848312529n, decimals: 9 }
+    rate: 29.574702955490906,
+    updated: { base: 1600676187, quote: 1600676187 },
+    rawRate: { value: 29574702955n, decimals: 9 }
   },
   {
     pair: 'EUR/USD',
-    rate: 1.197215344,
-    rawRate: { value: 1197215344n, decimals: 9 }
+    rate: 1.185569204,
+    updated: { base: 1600676032, quote: 0 },
+    rawRate: { value: 1185569204n, decimals: 9 }
   },
   {
     pair: 'EUR/BTC',
-    rate: 0.00010071970457502374,
-    rawRate: { value: 100719n, decimals: 9 }
+    rate: 0.00010899500647220628,
+    updated: { base: 1600676032, quote: 1600676187 },
+    rawRate: { value: 108995n, decimals: 9 }
   }
 ]
 ```
@@ -204,9 +198,8 @@ For each pair, the following information will be returned:
 
 - `rate`: The resulting rate of the given pair
 
-- `rawRate` This object consists of two parts.
+- `updated`: The timestamp at which the base and quote symbols was last updated on BandChain. For `USD`, this will be the current timestamp
 
-  - `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
-  - `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
-
-### Original Link: <https://hackmd.io/@tansawit/aggregator-ecosystem-guide-bsc>
+- `rawRate`: This object consists of two parts.
+- `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
+- `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
