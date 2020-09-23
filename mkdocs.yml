@@ -70,6 +70,7 @@ nav:
         - Relayer Incentives: smart-chain/guides/concepts/incentives.md
       - System Contract: smart-chain/guides/concepts/system-contract.md
       - Governance: smart-chain/guides/concepts/bsc-gov.md
+    - Panama: smart-chain/guides/panama.md
     - Staking:
       - Validator:
         - Guides: smart-chain/validator/guideline.md
