@@ -42,6 +42,9 @@ Current list:
 - Pegged BTC Token URL:
 	- [Binance Chain](https://explorer.binance.org/asset/BTCB-1DE)
 	- [Binance Smart Chain](https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c)
+- Pegged ETH Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/ETH-1C9)
+	- [Binance Smart Chain](https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8)
 
 Many more assets are coming soon ~
 
@@ -92,11 +95,11 @@ Recently, Binance.com [announced](https://www.binance.com/en/support/articles/da
 ### Reminder
 
 !!! warning
-	Please try a small amount before swap a large amount. 
+	Please try a small amount before swap a large amount.
 
-* If your deposit transaction is sent shortly before the closing deadline, there is a great chance that the transaction will not be confirmed before closing time. 
-* The deposit address will be allocated for every swap, please don’t reuse it in the future. 
-* If your deposit was already closed, please don’t transfer any tokens. 
+* If your deposit transaction is sent shortly before the closing deadline, there is a great chance that the transaction will not be confirmed before closing time.
+* The deposit address will be allocated for every swap, please don’t reuse it in the future.
+* If your deposit was already closed, please don’t transfer any tokens.
 * If your deposit transaction value is not enough, you cannot complete your deposit with multiple transactions.  Please wait for this swap to expire, and start a new one
 
 
@@ -132,7 +135,7 @@ A fixed network fee will be charged according to different networks. The amount 
 
 * Can I reuse the deposit address?
 
-The deposit address will be allocated for every swap, please don’t reuse it in the future. 
+The deposit address will be allocated for every swap, please don’t reuse it in the future.
 
 * Can I complete my deposit with multiple transfers?
 
