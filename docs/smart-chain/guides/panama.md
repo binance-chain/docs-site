@@ -97,6 +97,7 @@ Recently, Binance.com [announced](https://www.binance.com/en/support/articles/da
 * If your deposit transaction is sent shortly before the closing deadline, there is a great chance that the transaction will not be confirmed before closing time. 
 * The deposit address will be allocated for every swap, please don’t reuse it in the future. 
 * If your deposit was already closed, please don’t transfer any tokens. 
+* If your deposit transaction value is not enough, you cannot complete your deposit with multiple transactions. 
 
 
 ## FAQ
