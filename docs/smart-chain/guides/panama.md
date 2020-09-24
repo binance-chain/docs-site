@@ -128,3 +128,7 @@ The address of Binance Chain and Binance Smart Chain has different formats. In c
 ![img](https://lh6.googleusercontent.com/D7dFQqiirD0h2l4NcwbNv8mX_wlcRnyHII9wzBbjBmKMT09Kth-_uS1h4ALkxQ7XqfY783hJIdhy-aRAuMBKLsYXT8a53O6c9BwKjd5TW4fVD-glq-j7E4WTaR5gV4xNru2b7eVe)
 
 A fixed network fee will be charged according to different networks. The amount differs within different blockchains.
+
+* Can I reuse the deposit address?
+
+The deposit address will be allocated for every swap, please don’t reuse it in the future. 
