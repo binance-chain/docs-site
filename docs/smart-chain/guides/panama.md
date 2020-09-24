@@ -2,7 +2,7 @@
 ![img](https://lh4.googleusercontent.com/7v7l76quCKeXrt-rQJcq5JP3mg_iO6PXtIHmSaCjPpEM5wFRuFD6M9M7rPYwAep3vSrTunvi4axybqkx3WPrWNdgyt9OL1lr2M6l0XeczpER5UJjTYAkzLW9NzQp42FbKY2uz-0W)</b>
 Introducing Panama Swap, a bridge service providing access to inter-blockchain liquidity for Binance Chain, Binance Smart Chain decentralized applications, and bring valuable assets to Binance Chain ecosystems.
 ## Peg-In Procedure</b>
-The following steps are taken:</b>
+Peg-in procedure allows users to swap the native tokens to the equivalent of pegged tokens on Binance Chain or Binance Smart Chain. The following steps are taken:</b>
 
 1. The user creates a Swap Request to Panama Service Provider
 2. Panama Service Provider allocates a deposit address
@@ -14,7 +14,7 @@ The following steps are taken:</b>
 ![img](https://lh4.googleusercontent.com/zSzSvzq0t03ilZV2V6TueETlMpEGSFVf0wuRrUWvtKZxnZLfYD02Qe9QmLICKHDUZRB_r7iKJRZ-0XhNhsBqLFTlz8x5nd-ZIPvG6oAyhob462Hm6RDHLLOZ1u7e3lWB5vWsLaVV)
 </b>
 ## Peg-Out Procedure</b>
-The following steps are taken:</b>
+Peg-out procedure allows users to swap the equivalent of pegged tokens on Binance Chain or Binance Smart Chain to the native tokens. The following steps are taken:</b>
 
 1. The user creates a Swap Request to Panama Service Provider
 
@@ -50,35 +50,54 @@ Many more assets are coming soon ~
 1. [Install Binance Extension Wallet](https://docs.binance.org/smart-chain/wallet/binance.html)
 2. Go to [Panama page](https://www.binance.org/en/panama), Click on “Connect Wallet”
 </b>
+
 ![img](https://lh4.googleusercontent.com/CG2TacU20SWX0unlZwSRT-vQrkVR1F9nvH3Ymg-idXpqQBs6T5hwDob-ctTbs2zJwL-WWTiFuTO_ED_xkqzRKWwAMEEwdveqT4h50jh-Om306ZWVtM9cbTOxNXbkk4jr1gX0FhUI)</b>
 3. Unlock your Binance Extension wallet to choose your destination address
 </b>
-<img src="https://lh3.googleusercontent.com/F1QEiWBtw1oN1q9w_JrHOkiARM79UtgqQfQGNrDT2zyHZFD0M967gpUx37lLEo1jTFpwOYlnC4QLeaYSkcgNhibRDv1rLMn_ybEJl2AXuXnojQ9aWhbB1mmGs4BMqY_fdzWniNk5" alt="img" style="zoom:75%;" /></b>
+
+<img src="https://lh3.googleusercontent.com/1x6ngsLr0Zkl4rsbcCIWvEUQIMBPqm95fctrcvpdQQY4HWDgfeFT-lLkJoOUROxC3yzPbjxsOUOOfhuDZMV41CxrT_kaYU6fWiNHqZ-B089QgL_ZPRf8ozzlQr_2CKF5O7Z5Kmnl" alt="img" style="zoom:33%;" /></b>
 4. Enter Swap Info
 </b>
 
-<img src="https://lh5.googleusercontent.com/VFnBLVxteODlwOfbt7qZUdlS_94Y_phvG6yYRc-woPj07vKra0E98SAKRWJyE7GbnDctKIA-Cxrfo3rCphO_dmmqLEJRmYfni-zwDKYBWHbFsNH7pHFesCpFqVHl1vZs3gv9nyb2" alt="img" style="zoom:75%;" /></b>
+
+
+<img src="https://lh3.googleusercontent.com/Yrw8OJMjB8M-8Sqkw-5uzzlEwxLjk07-l1PnrK8j44n4p-hqBQ4wqvjIooM7mS6BdcX0_x5a4TcjoRrCwU4O-myse9IjyiEAy7gcI_m8V-wA02vEyGMgiarx-8hiMqiBeofplYfP" alt="img" style="zoom:33%;" />
 
 - Wait for the deposit to finish
 </b>
 
-<img src="https://lh6.googleusercontent.com/YcwdYO9Wz3yuxAdTE9jGiKJ2nAyccvWdjtOUbb2Quk1209uSNl-4Z2EDOBlmObaMVlbj3awMAaFUS_PTDZVKFW-MemzhMD9WEd9yIypc4Hud9YaTiOFrpvvTxd4zzF-FkE_9snU8" alt="img" style="zoom: 75%;" /></b>
+<img src="https://lh4.googleusercontent.com/GJWebNZ1XJymwNmHNItrvLeNbAddXGkTRoVqktwHjohJ19FtnUjf0gOHejyMr5Cy__AegelpejZDvdO5qoJv56--sb0noJ95GYdBYFGgths851ocvLuErK4XzHWJS5lJ1PeAolpk" alt="img" style="zoom:33%;" />
+
+</b>
 
 - Transaction Result</b>
 
-![img](https://lh4.googleusercontent.com/YtgJLrWj9OwZyM1EXNr9uMw5H-zezxo8Dzca9x_GtjlhtkdbNt0yqYW3dJGhNN87j8KZ_I0K0WlnVAZzrH5y1ZEKEqbmaw1D0chYc60xuqoA-zd5n48isCFyEfWDQes9jVpppgxe)
+Successful
+
+<img src="https://lh5.googleusercontent.com/J6QntuppqCeTFqm2YhWr5GD-v39Ttp2pGrQcJPb42W8ih68XYhNbEz09Ml1zeWhjlf8m2moPkWRLITM-yvUxQT-z6c11wVPcQ1vEMvouqx9no_OfwGFeMt2H1_yS5HT3GJgSsdsw" alt="img" style="zoom:33%;" />
+
+
+
+Failed
+
+<img src="https://lh5.googleusercontent.com/WjdNRvOirZgFC_i9dwrlRT2KkALJz_ilJ75Mpm7JaNJYa227zAftDLBsDEQqredCLj8OvQ2WY4xiVBzBnWCqILsICUgPXK7PhDL_JHq2EDLQisHfu-d5n-t3B2HBA3n2Kv44Ajei" alt="img" style="zoom:33%;" />
 
 
 ## In Conclude
 Recently, Binance.com [announced](https://www.binance.com/en/support/articles/daca7c991d5f4c45a4d1083f70912515) [Project Token Canal](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/), which is a new initiative, similar to many existing ‘wrapped coins’ in the crypto community. As the largest crypto token vault and exchange, Binance.com will issue and bind more token assets on Binance Chain and Binance Smart Chain, and guarantee the conversion from and to the original tokens with credibility and infrastructure.
 
-[Project Token Canal](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/) is a great option for users of Binance.com, while Panama Swap is the powerful alternative for non-Binance.com users and more. These two channels will work together to provide more liquidity to Binance Chain ecosystem.
+[Project Token Canal](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/) is a great option for users of Binance.com, while Panama Swap is the powerful alternative for non-Binance.com users and more. These two channels will work together to provide more liquidity to Binance Chain ecosystem. Peg-out feature will be available soon.
 
 
 ### Reminder
 
 !!! warning
-	Please try a small amount before swap a large amount. Peg-out feature will be available soon.
+	Please try a small amount before swap a large amount. 
+
+* If your deposit transaction is sent shortly before the closing deadline, there is a great chance that the transaction will not be confirmed before closing time. 
+* The deposit address will be allocated for every swap, please don’t reuse it in the future. 
+* If your deposit was already closed, please don’t transfer any tokens. 
+
 
 ## FAQ
 
