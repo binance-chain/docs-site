@@ -86,39 +86,56 @@ Failed
 ![img](https://lh4.googleusercontent.com/th-GRLjqonK0Otx8rmxW3PlSK78GeipNPqJtc128XjmD3WP3ox_sGFr-vcMbJxvPVuukLuek5Qs2Dv-odoOeBX2r1XCrX75gnF3c14hD9ZC5-FcnFao2bDhXj7SdFkqmUDzTUl9Z)
 
 - Unlock your Binance Extension wallet to choose your source address.
-Please note that you can only exchange your assets on **Binance Smart Chain** to their equivalents.
+Please note that you can only exchange your assets on **Binance Smart Chain** to their equivalents. Make sure that you have switched to Binance Smart Chain network. 
 
 ![img](https://lh3.googleusercontent.com/Zx3y-32vst38jNDAWvdkoaXeKS_avITTXwKh1GlBsQ1RzVvIO7NJxfPoSye-JCtg935PslLTEGSULekZwdyCVVETfAeX8mzBAB-r93YZAG9S-umQF7CvtI9SCbUGRRNQr9jAweZq)
 
 - Enter Swap Info
 
+Please make sure that:
+
+* The address is the one you control in the destinatioin blockchain. 
+* The amount is above the minimium requirement
+
 <img src="https://lh5.googleusercontent.com/ihIwK_QBDhupvPnUp57wvr62DgfQy7nSKh2hR3ZU5maAb-4Af3VhBeMHhD1q4jEqnKYcle6fq8YJ8yoWvSg-wUe2xz8tPnE4DA3qpUw2YJvGyqqqZrjnBSNUYNEogE4bXXOyd4eW" alt="img" style="zoom:33%;" />.
 
-- Confirm the swap amount. Please note that the fixed amount of network fee will be charged for now
+- Confirm the swap amount. 
+
+Please note that the fixed amount of network fee will be charged for now. The actual amount you will receive is shown in the box. 
 
 <img src="https://lh5.googleusercontent.com/EityY8Jvy4n0IHfe2QpLzzRIIr0_nZJoRWqpMbuGzfuf72z6-imty1-HS7ZbFME7wCrWAASz9qjtjFoeJe_nWN2uYXo86vKWZcN9xkEW7kZC8J8bmVrVjtXSBQCduI3mLp3NtDkR" alt="img" style="zoom:33%;" />
 
-- You will have to transfer the exact amount of BEP20 tokens to an allocated address. Please complete your transfer before the close time.
+- You will have to transfer the exact amount of BEP20 tokens to an allocated address. 
+
+Please complete your deposit before the close time in a single transfer transaction.
 
 <img src="https://lh6.googleusercontent.com/qXeOIU_fMT7IdSBAjHMPCGoxKTx6MnZqQdNg1SPR9j8ofrcgiKCrasP0Ys1Vgn-TxgP2WC18OHD4PvvKD6mfgcvR3dmWC4aIZ43FO7rZFwJ6oO2g1Dc9VT7C3DNgb2Pf4Vgh9o-q" alt="img" style="zoom:33%;" />
 
-- Binance Chain Extension wallet will pop up a window for your approval. Please double-confirm the destination address and amount.
+- Binance Chain Extension wallet will pop up a window for your approval. 
+
+Please double-confirm the destination address and amount.
+
+To pay for the deposit transfer, you have to have enough BNB to pay for the **network fee**. 
 
 <img src="https://lh4.googleusercontent.com/cJGqhY58pPQcs5eiAYxR9k5MlqPQwItiRW63rntKxkRyNoNc6CXu87-3TWi5jrehOUZn1SbR7ea4daQ6YCxJXGg438GNq2sbxG0BaNjplWhxPS7JQwCHkKRgGa6ERu7Z8BRFTkXF" alt="img" style="zoom:33%;" />
 
 - Wait for the network to confirm the transaction
 
+As Binance Smart Chain's average block time is about 3s, you should see the confirmation very soon. 
+
 <img src="https://lh6.googleusercontent.com/Vo8duJyvjVqDPsKez8DZrYOs7ad30UHX7JCZLh5MiHbeK3_L3uA6rmzUlsaJ-_U09sw6gwlJMGYNV-p6QbY14WFQeJyLp02RDvEVZNSZr4EB1j1MUHMFuBI_R7XuvK0eOMRUa6hF" alt="img" style="zoom: 33%;" />
 
-- Mark your confirmation info, you can verify the transaction in Binance Smart Chain explorer
+- Mark your transaction hash in confirmation info, you can query the transaction in [Binance Smart Chain explorer](https://bscscan.com/) with the transaction hash. 
 
 <img src="https://lh5.googleusercontent.com/XK3iDws6HATs61qCog8ztmbF-OIBxhw9yLK7OmRk-rS5cUeix4R00sXjQzdnnM_yLnSaEJkni8gHcR2rzYmGDVcPCfz_fXxomp_RAtgwsnNOmNJonp8pZnoVhZe-avvjlS1XQtjg" alt="img" style="zoom:33%;" />
 
 - Wait for Panama Bridge Service to transfer native tokens to your address
 
+Please note that this process can take some time according to different blockchains. 
+
 <img src="https://lh3.googleusercontent.com/YLwYcxxhNvhteUkR4RJ-ICQWjNkxwzSE6OjUW76nzVBwjfDwQDpOVH4jFiJ4LD-seoSCeh2-q7yuDgPHyFHuZHjd-TyrPseDSOFhntJUuOK4FP4M0fSDpheLSgzQ2VATp93C1AKK" alt="img" style="zoom:33%;" />
 
-- Double-check your balance after the transaction is confirmed on the blockchain
+- Double-check the balance of your destination address after the transaction is confirmed on the blockchain
 
 <img src="https://lh5.googleusercontent.com/Xvf1xHeDvYmvJBdeXLBMjPOsREWkI-ocYnpVoKqWl9c5IqbHCZUvwlaX4QDj07ENoXswFrEFEAU8R8GMz1W2CzC6p4RPAYSc7sZRH-f70cykdVmaTLfhzkAdbr8swhbGLHlSxfuW" alt="img" style="zoom:33%;" />
 
