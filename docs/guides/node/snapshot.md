@@ -6,6 +6,8 @@ Latest snapshot of Sep 1st: [download](https://s3.ap-northeast-1.amazonaws.com/d
 
 Size: 409 GB
 
+sha256sum: 194cbad7e1adcaafc16df94576f0a3b4a26245e4019cef93c51a3183bef71d73
+
 Latest snapshot of July 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_20200717.tgz?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1621148533&Signature=BQCDLF9UwALesZwGiW6mCfK5Kiw%3D)
 
 Size: 353 GB

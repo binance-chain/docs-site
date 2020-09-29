@@ -1,6 +1,7 @@
 # Circulation Model
 
 BC and BSC share the same token universe for BNB and BEP8/BEP2/BEP20 tokens. This defines:
+
 - The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism. 
 - The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the token’s total effective supply on both BSC and BC.
 - The tokens can be initially created on BSC as a BEP20, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
@@ -51,6 +52,7 @@ When one token transfer from the native chain to the parallel chain, the process
 When a user burns a certain amount of token on the native chain, there is no need to burn on the parallel chain.
 
 Let's walk through an example:
+
 1. The circulation on BC is 5 BTC, and 5 BTC on BSC.
 2. User burns 2 BTC on BC.
 3. Now circulation on BC is 3 BTC, and 5 BTC on BSC. 
@@ -63,12 +65,14 @@ When user mint token on the native chain, but do not mint on the parallel chain,
 native chain to parallel chain.
 
 Let's walk through an example:
+
 1. The circulation on BC is 5 BTC, and the locked token is 5 BTC.
 2. The circulation on BSC is 5 BTC, and the locked token is 5 BTC.
 3. User mint 2 BTC on BC.
 4. It will fail if the user tries to transfer 7 BTC from BC to BSC, because the balance of `Peg Account` on BSC is 5 BTC and can’t afford to unlock 7 BTC.
 
 The best practice for mint is:
+
 1. Mint token on the native chain.
 2. Mint token on the parallel chain.
 3. Transfer the mint token to `Peg Account` on the parallel chain.   
