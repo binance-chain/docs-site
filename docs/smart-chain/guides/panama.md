@@ -139,7 +139,7 @@ Please note that this process can take some time according to different blockcha
 
 <img src="https://lh5.googleusercontent.com/Xvf1xHeDvYmvJBdeXLBMjPOsREWkI-ocYnpVoKqWl9c5IqbHCZUvwlaX4QDj07ENoXswFrEFEAU8R8GMz1W2CzC6p4RPAYSc7sZRH-f70cykdVmaTLfhzkAdbr8swhbGLHlSxfuW" alt="img" style="zoom:33%;" />
 
-## In Conclude
+## In Conclusion
 Recently, Binance.com [announced](https://www.binance.com/en/support/articles/daca7c991d5f4c45a4d1083f70912515) [Project Token Canal](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/), which is a new initiative, similar to many existing ‘wrapped coins’ in the crypto community. As the largest crypto token vault and exchange, Binance.com will issue and bind more token assets on Binance Chain and Binance Smart Chain, and guarantee the conversion from and to the original tokens with credibility and infrastructure.
 
 [Project Token Canal](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/) is a great option for users of Binance.com, while Panama Swap is the powerful alternative for non-Binance.com users and more. These two channels will work together to provide more liquidity to Binance Chain ecosystem. Peg-out feature will be available soon.
