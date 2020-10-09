@@ -45,6 +45,21 @@ Current list:
 - Pegged ETH Token URL:
 	- [Binance Chain](https://explorer.binance.org/asset/ETH-1C9)
 	- [Binance Smart Chain](https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8)
+- Pegged LINK Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/LINK-AAD)
+	- [Binance Smart Chain](https://bscscan.com/token/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd)
+- Pegged BCH Token URL:
+	- [Binance Chain]( https://explorer.binance.org/asset/BCH-1FD)
+	- [Binance Smart Chain](https://bscscan.com/token/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf)
+- Pegged ONT Token URL:
+	- [Binance Chain]( https://explorer.binance.org/asset/ONT-33D)
+	- [Binance Smart Chain](https://bscscan.com/token/0xfd7b3a77848f1c2d67e05e54d78d174a0c850335)
+- Pegged LTC Token URL:
+	- [Binance Chain]( https://explorer.binance.org/asset/LTC-F07)
+	- [Binance Smart Chain](https://bscscan.com/token/0x4338665cbb7b2485a8855a139b75d5e34ab0db94)
+- Pegged ATOM Token URL:
+	- [Binance Chain]( https://explorer.binance.org/asset/ATOM-596)
+	- [Binance Smart Chain](https://bscscan.com/token/0x0eb3a705fc54725037cc9e008bdede697f62f335)
 
 Many more assets are coming soon ~
 
