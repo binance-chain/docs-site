@@ -30,6 +30,7 @@ Currently, the following token symbols are supported. Going forward, this list w
 |                Cosmos                 |  ATOM  |
 |                Monero                 |  XMR   |
 |                  OKB                  |  OKB   |
+|                 Swipe                 |  SXP   |
 
 ### Price Pairs
 
@@ -46,7 +47,7 @@ Currently, there are two methods for developers to query prices from Band’s or
 
 ### Solidity Smart Contract
 
-To query prices from Band’s oracle through smart contracts, the contract looking to use the price values should reference Band’s `StdReference` contract. This contract exposes `getReferenceData` and `getRefenceDataBulk` functions.
+To query prices from Band’s oracle through smart contracts, the contract looking to use the price values should reference Band’s `StdReference` contract. This contract exposes `getReferenceData` and `getReferenceDataBulk` functions.
 
 `getReferenceData` takes two strings as the inputs, the base and quote symbol, respectively. It then queries the `StdReference` contract for the latest rates for those two tokens, and returns a `ReferenceData` struct, shown below.
 
@@ -89,7 +90,7 @@ interface IStdReference {
         returns (ReferenceData memory);
 
     /// Similar to getReferenceData, but with multiple base/quote pairs at once.
-    function getRefenceDataBulk(string[] memory _bases, string[] memory _quotes)
+    function getReferenceDataBulk(string[] memory _bases, string[] memory _quotes)
         external
         view
         returns (ReferenceData[] memory);
@@ -97,35 +98,35 @@ interface IStdReference {
 
 contract DemoOracle {
     IStdReference ref;
-
+    
     uint256 public price;
-
+    
     constructor(IStdReference _ref) public {
         ref = _ref;
     }
-
+    
     function getPrice() external view returns (uint256){
         IStdReference.ReferenceData memory data = ref.getReferenceData("BTC","USD");
         return data.rate;
     }
-
+    
     function getMultiPrices() external view returns (uint256[] memory){
         string[] memory baseSymbols = new string[](2);
         baseSymbols[0] = "BTC";
         baseSymbols[1] = "ETH";
-
+         
         string[] memory quoteSymbols = new string[](2);
         quoteSymbols[0] = "USD";
         quoteSymbols[1] = "USD";
-        IStdReference.ReferenceData[] memory data = ref.getRefenceDataBulk(baseSymbols,quoteSymbols);
-
+        IStdReference.ReferenceData[] memory data = ref.getReferenceDataBulk(baseSymbols,quoteSymbols);
+        
         uint256[] memory prices = new uint256[](2);
         prices[0] = data[0].rate;
         prices[1] = data[1].rate;
-
+        
         return prices;
     }
-
+    
     function savePrice(string memory base, string memory quote) external {
         IStdReference.ReferenceData memory data = ref.getReferenceData(base,quote);
         price = data.rate;
@@ -137,8 +138,8 @@ contract DemoOracle {
 
 | Blockchain    |         Aggregator Contract Address          | Update Every |                           Explorer                           |
 | :------------ | :------------------------------------------: | :----------: | :----------------------------------------------------------: |
-| BSC (Testnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |    5 mins    | [link](https://testnet.bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
-| BSC (Mainnet) | `0x2d12c12d17fbc9185d75baf216164130fc269ff1` |    5 mins    | [link](https://bscscan.com/address/0x2d12c12d17fbc9185d75baf216164130fc269ff1) |
+| BSC (Testnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://testnet.bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
+| BSC (Mainnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
 
 ### BandChain.JS
 
@@ -201,8 +202,5 @@ For each pair, the following information will be returned:
 - `updated`: The timestamp at which the base and quote symbols was last updated on BandChain. For `USD`, this will be the current timestamp
 
 - `rawRate`: This object consists of two parts.
-- `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
-- `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
-
-
-Original Link: <https://hackmd.io/@tansawit/aggregator-ecosystem-guide-bsc>
+	- `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
+	- `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
