@@ -96,6 +96,7 @@ nav:
       - Math Wallet: smart-chain/wallet/math.md
       - Trust Wallet: smart-chain/wallet/trustwallet.md
       - 币安链插件钱包指南: smart-chain/wallet/binance-cn.md
+      - Black Wallet: smart-chain/wallet/blackwallet.md
       - Tutorial:
         - How to use Trust Wallet in Binance Smart Chain : https://community.trustwallet.com/t/trust-wallet-now-supports-binance-smart-chain-bsc/67250
         - How to Send and Receive BNB on Smart Chain with Trust Wallet: https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430

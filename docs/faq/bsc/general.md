@@ -34,3 +34,4 @@ The codebase of BSC is open-sourced here:
   - [Math Wallet](../../smart-chain/wallet/math.md)
   - [Ledger](../../smart-chain/wallet/ledger.md)
   - [MEW](../../smart-chain/wallet/myetherwallet.md)
+  - [Black Wallet](../../smart-chain/wallet/blackwallet.md)
