@@ -57,9 +57,27 @@ Current list:
 - Pegged LTC Token URL:
 	- [Binance Chain]( https://explorer.binance.org/asset/LTC-F07)
 	- [Binance Smart Chain](https://bscscan.com/token/0x4338665cbb7b2485a8855a139b75d5e34ab0db94)
-- Pegged ATOM Token URL:
-	- [Binance Chain]( https://explorer.binance.org/asset/ATOM-596)
-	- [Binance Smart Chain](https://bscscan.com/token/0x0eb3a705fc54725037cc9e008bdede697f62f335)
+- Pegged DOT Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/DOT-64C)
+	- [Binance Smart Chain](https://bscscan.com/token/0x7083609fce4d1d8dc0c979aab8c869ea2c873402)
+- Pegged ADA Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/ADA-9F4)
+	- [Binance Smart Chain](https://bscscan.com/token/0x3ee2200efb3400fabb9aacf31297cbdd1d435d47)
+- Pegged DAI Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/DAI-D75)
+	- [Binance Smart Chain](https://bscscan.com/token/0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3)
+- Pegged EOS Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/EOS-CDD)
+	- [Binance Smart Chain](https://bscscan.com/token/0x56b6fb708fc5732dec1afc8d8556423a2edccbd6)
+- Pegged BAND Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/BAND-34B)
+	- [Binance Smart Chain](https://bscscan.com/token/0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18)
+- Pegged XRP Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/XRP-BF2)
+	- [Binance Smart Chain](https://bscscan.com/token/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe)
+- Pegged XTZ Token URL:
+	- [Binance Chain](https://explorer.binance.org/asset/XTZ-F7A )
+	- [Binance Smart Chain](https://bscscan.com/token/0x16939ef78684453bfdfb47825f8a5f714f12623a)
 
 Many more assets are coming soon ~
 
@@ -101,7 +119,7 @@ Failed
 ![img](https://lh4.googleusercontent.com/th-GRLjqonK0Otx8rmxW3PlSK78GeipNPqJtc128XjmD3WP3ox_sGFr-vcMbJxvPVuukLuek5Qs2Dv-odoOeBX2r1XCrX75gnF3c14hD9ZC5-FcnFao2bDhXj7SdFkqmUDzTUl9Z)
 
 - Unlock your Binance Extension wallet to choose your source address.
-Please note that you can only exchange your assets on **Binance Smart Chain** to their equivalents. Make sure that you have switched to Binance Smart Chain network. 
+Please note that you can only exchange your assets on **Binance Smart Chain** to their equivalents. Make sure that you have switched to Binance Smart Chain network.
 
 ![img](https://lh3.googleusercontent.com/Zx3y-32vst38jNDAWvdkoaXeKS_avITTXwKh1GlBsQ1RzVvIO7NJxfPoSye-JCtg935PslLTEGSULekZwdyCVVETfAeX8mzBAB-r93YZAG9S-umQF7CvtI9SCbUGRRNQr9jAweZq)
 
@@ -109,44 +127,44 @@ Please note that you can only exchange your assets on **Binance Smart Chain** to
 
 Please make sure that:
 
-* The address is the one you control in the destinatioin blockchain. 
+* The address is the one you control in the destinatioin blockchain.
 * The amount is above the minimium requirement
 
 <img src="https://lh5.googleusercontent.com/ihIwK_QBDhupvPnUp57wvr62DgfQy7nSKh2hR3ZU5maAb-4Af3VhBeMHhD1q4jEqnKYcle6fq8YJ8yoWvSg-wUe2xz8tPnE4DA3qpUw2YJvGyqqqZrjnBSNUYNEogE4bXXOyd4eW" alt="img" style="zoom:33%;" />.
 
-- Confirm the swap amount. 
+- Confirm the swap amount.
 
-Please note that the fixed amount of network fee will be charged for now. The actual amount you will receive is shown in the box. 
+Please note that the fixed amount of network fee will be charged for now. The actual amount you will receive is shown in the box.
 
 <img src="https://lh5.googleusercontent.com/EityY8Jvy4n0IHfe2QpLzzRIIr0_nZJoRWqpMbuGzfuf72z6-imty1-HS7ZbFME7wCrWAASz9qjtjFoeJe_nWN2uYXo86vKWZcN9xkEW7kZC8J8bmVrVjtXSBQCduI3mLp3NtDkR" alt="img" style="zoom:33%;" />
 
-- You will have to transfer the exact amount of BEP20 tokens to an allocated address. 
+- You will have to transfer the exact amount of BEP20 tokens to an allocated address.
 
 Please complete your deposit before the close time in a single transfer transaction.
 
 <img src="https://lh6.googleusercontent.com/qXeOIU_fMT7IdSBAjHMPCGoxKTx6MnZqQdNg1SPR9j8ofrcgiKCrasP0Ys1Vgn-TxgP2WC18OHD4PvvKD6mfgcvR3dmWC4aIZ43FO7rZFwJ6oO2g1Dc9VT7C3DNgb2Pf4Vgh9o-q" alt="img" style="zoom:33%;" />
 
-- Binance Chain Extension wallet will pop up a window for your approval. 
+- Binance Chain Extension wallet will pop up a window for your approval.
 
 Please double-confirm the destination address and amount.
 
-To pay for the deposit transfer, you have to have enough BNB to pay for the **network fee**. 
+To pay for the deposit transfer, you have to have enough BNB to pay for the **network fee**.
 
 <img src="https://lh4.googleusercontent.com/cJGqhY58pPQcs5eiAYxR9k5MlqPQwItiRW63rntKxkRyNoNc6CXu87-3TWi5jrehOUZn1SbR7ea4daQ6YCxJXGg438GNq2sbxG0BaNjplWhxPS7JQwCHkKRgGa6ERu7Z8BRFTkXF" alt="img" style="zoom:33%;" />
 
 - Wait for the network to confirm the transaction
 
-As Binance Smart Chain's average block time is about 3s, you should see the confirmation very soon. 
+As Binance Smart Chain's average block time is about 3s, you should see the confirmation very soon.
 
 <img src="https://lh6.googleusercontent.com/Vo8duJyvjVqDPsKez8DZrYOs7ad30UHX7JCZLh5MiHbeK3_L3uA6rmzUlsaJ-_U09sw6gwlJMGYNV-p6QbY14WFQeJyLp02RDvEVZNSZr4EB1j1MUHMFuBI_R7XuvK0eOMRUa6hF" alt="img" style="zoom: 33%;" />
 
-- Mark your transaction hash in confirmation info, you can query the transaction in [Binance Smart Chain explorer](https://bscscan.com/) with the transaction hash. 
+- Mark your transaction hash in confirmation info, you can query the transaction in [Binance Smart Chain explorer](https://bscscan.com/) with the transaction hash.
 
 <img src="https://lh5.googleusercontent.com/XK3iDws6HATs61qCog8ztmbF-OIBxhw9yLK7OmRk-rS5cUeix4R00sXjQzdnnM_yLnSaEJkni8gHcR2rzYmGDVcPCfz_fXxomp_RAtgwsnNOmNJonp8pZnoVhZe-avvjlS1XQtjg" alt="img" style="zoom:33%;" />
 
 - Wait for Panama Bridge Service to transfer native tokens to your address
 
-Please note that this process can take some time according to different blockchains. 
+Please note that this process can take some time according to different blockchains.
 
 <img src="https://lh3.googleusercontent.com/YLwYcxxhNvhteUkR4RJ-ICQWjNkxwzSE6OjUW76nzVBwjfDwQDpOVH4jFiJ4LD-seoSCeh2-q7yuDgPHyFHuZHjd-TyrPseDSOFhntJUuOK4FP4M0fSDpheLSgzQ2VATp93C1AKK" alt="img" style="zoom:33%;" />
 
