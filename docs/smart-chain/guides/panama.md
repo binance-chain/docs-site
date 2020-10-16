@@ -57,6 +57,9 @@ Current list:
 - Pegged LTC Token URL:
 	- [Binance Chain]( https://explorer.binance.org/asset/LTC-F07)
 	- [Binance Smart Chain](https://bscscan.com/token/0x4338665cbb7b2485a8855a139b75d5e34ab0db94)
+- Pegged ATOM Token URL:
+	- [Binance Chain]( https://explorer.binance.org/asset/ATOM-596)
+	- [Binance Smart Chain](https://bscscan.com/token/0x0eb3a705fc54725037cc9e008bdede697f62f335)
 - Pegged DOT Token URL:
 	- [Binance Chain](https://explorer.binance.org/asset/DOT-64C)
 	- [Binance Smart Chain](https://bscscan.com/token/0x7083609fce4d1d8dc0c979aab8c869ea2c873402)
