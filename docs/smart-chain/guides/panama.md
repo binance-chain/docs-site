@@ -99,15 +99,6 @@ Current list:
 - Pegged NEAR Token URL:
 	- [Binance Chain](https://explorer.binance.org/asset/NEAR-4FD )
 	- [Binance Smart Chain](https://bscscan.com/token/0x1Fa4a73a3F0133f0025378af00236f3aBDEE5D63)
-- Pegged PAX Token URL:
-	- [Binance Chain](https://explorer.binance.org/asset/PAX-F25 )
-	- [Binance Smart Chain](https://bscscan.com/token/0xb7f8cd00c5a06c0537e2abff0b58033d02e5e094)
-- Pegged USDC Token URL:
-	- [Binance Chain](https://explorer.binance.org/asset/USDC-CD2 )
-	- [Binance Smart Chain](https://bscscan.com/token/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d)
-- Pegged INJ Token URL:
-	- [Binance Chain](https://explorer.binance.org/asset/INJ-FAE )
-	- [Binance Smart Chain](https://bscscan.com/token/0xa2B726B1145A4773F68593CF171187d8EBe4d495)
 
 Many more assets are coming soon ~
 
