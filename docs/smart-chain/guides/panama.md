@@ -111,7 +111,6 @@ Current list:
 
 Many more assets are coming soon ~
 
-
 ## Peg-in User Guide
 
 - [Install Binance Extension Wallet](https://docs.binance.org/smart-chain/wallet/binance.html)
