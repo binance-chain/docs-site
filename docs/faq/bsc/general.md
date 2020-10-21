@@ -34,3 +34,9 @@ The codebase of BSC is open-sourced here:
   - [Math Wallet](../../smart-chain/wallet/math.md)
   - [Ledger](../../smart-chain/wallet/ledger.md)
   - [MEW](../../smart-chain/wallet/myetherwallet.md)
+
+##  How to recover if you choose the wrong network type?
+
+Please read this [guide](./withdraw-en.md)
+
+清阅读以下[说明](./withdraw-cn.md)
