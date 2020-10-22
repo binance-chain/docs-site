@@ -73,6 +73,7 @@ nav:
     - Panama:
       - User Guide: smart-chain/guides/panama.md
       - API doc: api-reference/dex-api/panama.md
+      - Widget: api-reference/dex-api/panama-widget.md
     - Staking:
       - Validator:
         - Guides: smart-chain/validator/guideline.md
