@@ -1,6 +1,6 @@
 # Introduction
 
-Currently, users can't perform any actions with Panama unless their wallets are connected. This widget is meant to be used client-side to improve the flow of connect wallets.
+Currently, users can't perform any actions with Panama unless their wallets are connected. This widget is meant to be used client-side to improve the flow of connecting wallets.
 
 
 ## Connect
@@ -24,7 +24,7 @@ Example request
 https://www.binance.org/en/panama?wallet=metamask
 ```
 
-This url support both MathWallet and MetaMask. Open the link in wallet browser.
+This URL support both MathWallet and MetaMask. Open the link in the wallet browser.
 
 Note: please make sure the wallet is connected to Binance Smart Chain mainnet.
 
