@@ -122,7 +122,7 @@ The SetURI transaction is to change the value of `TokenURI`. Only **token issuer
 Example on **mainnet**:
 
 ```bash
-.bnbcli token set-uri-mini --symbol $mini-token-symbol --token-uri http://www.efg.com --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
+./bnbcli token set-uri-mini --symbol $mini-token-symbol --token-uri http://www.efg.com --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
 ```
 
 ### List BEP8 Tokens on Binance DEX
