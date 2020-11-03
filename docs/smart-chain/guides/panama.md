@@ -99,7 +99,40 @@ Current list:
 - Pegged NEAR Token URL:
 	- [Binance Chain](https://explorer.binance.org/asset/NEAR-4FD )
 	- [Binance Smart Chain](https://bscscan.com/token/0x1Fa4a73a3F0133f0025378af00236f3aBDEE5D63)
-
+- Pegged ZEC Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/ZEC-93E )
+    - [Binance Smart Chain](https://bscscan.com/token/0x1ba42e5193dfa8b03d15dd1b86a3113bbbef8eeb)
+- Pegged COMP Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/COMP-DEE)
+    - [Binance Smart Chain](https://bscscan.com/token/0x52ce071bd9b1c4b00a0b92d298c512478cad67e8)
+- Pegged MKR Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/MKR-F04)
+    - [Binance Smart Chain](https://bscscan.com/token/0x5f0da599bb2cccfcf6fdfd7d81743b6020864350)
+- Pegged TCT Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/TCT-826)
+    - [Binance Smart Chain](https://bscscan.com/token/0xca0a9df6a8cad800046c1ddc5755810718b65c44)
+- Pegged IOTX Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/IOTX-0ED)
+    - [Binance Smart Chain](https://bscscan.com/token/0x9678e42cebeb63f23197d726b29b1cb20d0064e5)
+- Pegged BEL Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/BEL-D85)
+    - [Binance Smart Chain](https://bscscan.com/token/0x8443f091997f06a61670b735ed92734f5628692f)
+- Pegged ELF Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/ELF-D72)
+    - [Binance Smart Chain](https://bscscan.com/token/0xa3f020a5c92e15be13caf0ee5c95cf79585eecc9)
+- Pegged PAX Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/PAX-F25 )
+    - [Binance Smart Chain](https://bscscan.com/token/0xb7f8cd00c5a06c0537e2abff0b58033d02e5e094)
+- Pegged USDC Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/USDC-CD2 )
+    - [Binance Smart Chain](https://bscscan.com/token/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d)
+- Pegged INJ Token URL:
+    - [Binance Chain](https://explorer.binance.org/asset/INJ-FAE )
+    - [Binance Smart Chain](https://bscscan.com/token/0xa2B726B1145A4773F68593CF171187d8EBe4d495)
+- SXP Token URL:
+    - [BEP2](https://explorer.binance.org/asset/SXP-CCC)
+    - [BEP20](https://bscscan.com/token/0xa2B726B1145A4773F68593CF171187d8EBe4d495)
+    
 Many more assets are coming soon ~
 
 ## Peg-in User Guide
