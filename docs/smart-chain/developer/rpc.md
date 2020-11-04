@@ -2,7 +2,7 @@
 
 ## Available Resources
 
-### Mainnet(ChainID 56)
+### Mainnet(ChainID 0x38, 56 in decimal)
 
 BSC RPC Endpoints:
 
@@ -48,7 +48,7 @@ BC RPC Endpoints:
 * https://dataseed4.ninicoin.io/
 
 
-### Testnet(ChainID 97)
+### Testnet(ChainID 0x61, 97 in decimal)
 
 BSC RPC Endpoints:
 
