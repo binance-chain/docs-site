@@ -50,13 +50,13 @@ Congratulations! you have create your MetaMask account!
 
       * Testnet
         * [RPC URLs](../developer/rpc.md)
-        * ChainID: 0x61, 97 in decimal
+        * ChainID: 0x61, 97 in decimal (if 97 doesn’t work, try 0x61)
         * Symbol: BNB
         * Block Explorer: https://testnet.bscscan.com
 
       * Mainnet
         * [RPC URLs](../developer/rpc.md)
-        * ChainID: 0x38, 56 in decimal
+        * ChainID: 0x38, 56 in decimal (if 56 doesn’t work, try 0x38)
         * Symbol: BNB
         * Block Explorer: https://bscscan.com
 
