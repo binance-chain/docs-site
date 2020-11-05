@@ -44,7 +44,7 @@ bnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Tigris   --n
 
 ## View Orders
 
-To veryfy that your commands are executed as expected, you could query the orderbook of testnet.
+To verify that your commands are executed as expected, you could query the orderbook of testnet.
 
 ```
 tbnbcli dex show -l ZEBRA-16D_BNB   --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80

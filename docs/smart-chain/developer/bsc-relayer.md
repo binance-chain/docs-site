@@ -70,7 +70,7 @@ Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bin
 ./bsc-relayer --config-type local --config-path config.json
 ```
 
-### Veryfy Status
+### Verify Status
 
 You could call [RelayerHub Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006) to verify that your relayer is registered. Go to [read contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006#readContract) and call **isRelayer** function. If it returns **true**, then your relayer is working properly.
 
