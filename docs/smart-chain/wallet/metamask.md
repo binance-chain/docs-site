@@ -1,4 +1,10 @@
 # Use Metamask For Binance Smart Chain
+
+
+!!! Tip
+    You may encounter a network configuration issue in recent release of MetaMask, Please go to "Upgrade" section for solution
+
+
 ## What is it?
 
 MetaMask was created out of the needs of creating more secure and usable Ethereum-based web sites. In particular, it handles account management and connecting the user to the blockchain.
@@ -46,7 +52,7 @@ Congratulations! you have create your MetaMask account!
 
 <img src="https://lh5.googleusercontent.com/NqWPIv1MrMJ-W2wDKjxtdxcdFhDwiqhsZ6G6MY6FQnhxPTCCPfPHBJ59vBl1ddxpbfV11ufETWAolV1s9YjCYHPeJCKW1S-sr8gfjcFt3swXM-p3IgafNBqPZ86DvThK-I9gKbrw" alt="img" style="zoom:33%;" />
 
-2. Add a new network</br><img src="https://lh6.googleusercontent.com/jrq511YshO6rPPx4i-ePRy2gs-66b465c_JFXEW8Cm5CSNTM7CXgCPuFmIh_Im3JlEhxpAqEDDjmUqfskq2m5rG-FKhwZ4_jIenOTdAVs_rMMTjTvZlM6iOpQeivrz_V1liSvuB5" alt="img" style="zoom:33%;" /></br>
+2. Add a new network</br><img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style="zoom:50%;" /></br>
 
       * Testnet
         * [RPC URLs](../developer/rpc.md)
@@ -136,3 +142,16 @@ Then you can see change of your balance</br>
 
 3. Then you can see a new account is created!</br>
 <img src="https://lh5.googleusercontent.com/uhVQO7NLq_x9y8oBSfmT0PB4SohfUKUSZwN5qxxF6xA_6vNgU-QRpAQENdLQRk8hyc_gSukrAUqosIv_OUcJv5AviDn2TQ_6U8QWXx02HgigXO7w5BRL3If3Mrx3KOHRWw7ay3U8" alt="img" style="zoom:33%;" />
+
+## Upgrade
+
+Since the release of v8.1.3, Metamask sometimes pop up a window for warning "Invalid Custom Network".  
+
+<img src="https://lh6.googleusercontent.com/AbMd49RFlERw1E_OpmURgZxqYHqHOXpPJLtT-ysIB2oAwmVf054jzQndDxJOfqj-FFCR_Beb1LTXvw6T7TvO03aVlHGmEaE1N2J5mg5kUm-dbcaXnlLH-0RLM-SGV0brrlweEyrQ" alt="img" style="zoom:33%;" />
+
+To solve this issue, click on "'Settings" and enter Chain ID of Binance Smart Chain network again. If **56** doesn’t work, try **0x38**. 
+
+<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style="zoom:33%;" />
+
+
+<img src="https://lh6.googleusercontent.com/vKWf01WY7u0bFp1Iww2VgFzqnk_Zw2yhBQfBCfG2UAE5aHJOZouYGNGGS1C1w5yvEMzmynwRcE1gwZS9VZ1akfyQItzF6-2Sw5I9M33w4caHqnKoAN2GhajkqqQYBnc-IiOkGrMg" alt="img" style="zoom:33%;" />
