@@ -24,7 +24,7 @@ The codebase of BSC is open-sourced here:
 ## Which are Binance Smart Chain's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
-* Twitter: <https://twitter.com/Binance_DEX>
+* Twitter: <https://twitter.com/binancechain>
 * Binance Chain Forum: <https://community.binance.org>
 
 ## Wallet support for Binance Smart Chain
