@@ -38,14 +38,14 @@ network for the assets
 
 - [Propose to create trading pairs](list_instruction.md) between two different tokens
 - [Send orders](./guides/trading-interface.md) to buy or sell assets through trading pairs created on the chain with[SDK](exchange-integration.md#sdks)
-- [Watch the DEX market](./api-reference/dex-api/path.md#apiv1markets) to confirm price and market activity of certain assets
+- [Watch the DEX market](./api-reference/dex-api/paths.md#apiv1markets) to confirm price and market activity of certain assets
 
 **For developers**, you can also:
 
-- Explore the transaction history and blocks on the chain, via [Binance Chain Explore](https://explorer.binance.org), [API](./api-reference/dex-api/path.md)
+- Explore the transaction history and blocks on the chain, via [Binance Chain Explore](https://explorer.binance.org), [API](./api-reference/dex-api/paths.md)
 and [node RPC](./api-reference/node-rpc.md) interfaces.
 - Run a [full node](fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Extract other data of Binance Chain via full node or [APIs](./api-reference/dex-api/path.md#apiv1markets)
+- Extract other data of Binance Chain via full node or [APIs](./api-reference/dex-api/paths.md#apiv1markets)
 - [Develop tools](exchange-integration.md#sdks) and application to help users use Binance Chain and Binance DEX
 
 ## What can I do with Binance Smart Chain?
