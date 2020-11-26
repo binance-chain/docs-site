@@ -127,7 +127,7 @@ nav:
     - Blockchain Details:
       - Binance Smart Chain Fullnode: smart-chain/developer/fullnode.md
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
-      - Peggeg Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
+      - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
     - Oracles:
       - Band Protocol Integration: smart-chain/developer/band.md
