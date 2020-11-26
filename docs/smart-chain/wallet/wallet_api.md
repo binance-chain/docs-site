@@ -301,11 +301,11 @@ For example:
 ]
 ```
 
-### BinanceChain.transfer({fromAddress:string, toAddress:string, asset:string, amount:number, accountId:string, networkId:string})>
+### BinanceChain.transfer({fromAddress:string, toAddress:string, asset:string, amount:number, memo?: string, sequence?: number, accountId:string, networkId:string})>
 
 Transfer certain `amount` of `asset` (BNB or BEP2) on Binance Chain.
 
-`accountId` could be retrieved from the `BinanceChain.requestAccounts` API
+`accountId` could be retrieved from the `BinanceChain.requestAccounts` API (`id` field of each account)
 
 `networkId` could be `bbc-mainnet` or `bbc-testnet`
 
