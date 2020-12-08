@@ -72,6 +72,7 @@ nav:
       - SafePal: https://blog.safepal.io/binance-smart-chain-x-safepal/
       - TokenPocket: https://community.binance.org/topic/3374
       - 币安链插件钱包指南: smart-chain/wallet/binance-cn.md
+      - ezDeFi: smart-chain/wallet/ezdefi.md
   - Binance Chain:
     - Introduction: guides/intro.md
     - Create Address: guides/create-address.md
@@ -183,6 +184,7 @@ nav:
       - How to Send and Receive BNB on Smart Chain with Trust Wallet: https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430
       - Staking with extension wallet: smart-chain/wallet/staking.md
       - How to install Binance Extension Wallet Manually: smart-chain/wallet/manual.md
+      - How to use ezDeFi Wallet for Binance Smart Chain: smart-chain/wallet/ezdefi.md
     - Binance Chain Wallet Tutorial:
       - Trust Wallet User Guide: wallets/tutorial/how-to-create-a-wallet-on-trustwallet.md
       - Ledger Wallet Guide: wallets/tutorial/ledger-nano-s-usage-guide.md
