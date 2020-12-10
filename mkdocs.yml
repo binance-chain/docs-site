@@ -62,7 +62,7 @@ nav:
         - How to add account: smart-chain/wallet/extension/add-account.md
         - How to reset password or import account: smart-chain/wallet/extension/reset.md
         - How to reveal your seed phrase: smart-chain/wallet/extension/seed.md
-        - How to usd Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
+        - How to use Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
         - How to stay safe: smart-chain/wallet/extension/safe.md
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Ledger: smart-chain/wallet/ledger.md
