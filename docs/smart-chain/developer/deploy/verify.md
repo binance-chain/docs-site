@@ -1,6 +1,6 @@
 # How to Verify Your Contract on bscscan.com
 
-## Setp 1: Deploy your contract on Binance Smart Chain
+## Step 1: Deploy your contract on Binance Smart Chain
 
 ## Step 2: Go to [BSC Explorer](https://bscscan.com/) or [Testnet Explorer](https://testnet.bscscan.com/)
 
