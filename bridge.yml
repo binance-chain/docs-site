@@ -225,6 +225,178 @@ paths:
         '404':
           description: Not Found
       deprecated: false
+  '/api/v1/swaps/quota/24hour':
+    get:
+      tags:
+        - API for swap
+      summary: getQuota
+      operationId: getQuotaUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: symbol
+          in: query
+          description: symbol
+          required: true
+          type: string
+        - name: walletAddress
+          in: query
+          description: walletAddress
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseStatusBodyQuota'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/api/v2/swaps':
+    get:
+      tags:
+        - API for swap V2
+      summary: findV2
+      operationId: findV2UsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: endTime
+          in: query
+          description: endTime
+          required: false
+          type: integer
+          format: int64
+        - name: limit
+          in: query
+          description: limit
+          required: false
+          type: integer
+          default: 20
+          format: int64
+        - name: offset
+          in: query
+          description: offset
+          required: false
+          type: integer
+          default: 0
+          format: int64
+        - name: startTime
+          in: query
+          description: startTime
+          required: false
+          type: integer
+          format: int64
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        - name: symbol
+          in: query
+          description: symbol
+          required: false
+          type: string
+        - name: walletAddress
+          in: query
+          description: walletAddress
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseStatusBodySwapList'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    post:
+      tags:
+        - API for swap V2
+      summary: createV2
+      operationId: createV2UsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: payload
+          description: payload
+          required: true
+          schema:
+            $ref: '#/definitions/SwapCreationRequestV2'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseStatusBodySwapCreation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/api/v2/tokens':
+    get:
+      tags:
+        - API for swap V2
+      summary: getQuota
+      operationId: getTokensGET
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TokenListV2'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/api/v2/tokens/{symbol}/networks':
+      get:
+        tags:
+          - API for swap V2
+        summary: get
+        operationId: gettokensnetworkUsingGETV2
+        produces:
+          - application/json
+        parameters:
+          - name: symbol
+            in: path
+            description: token symbol
+            required: true
+            type: string
+        responses:
+          '200':
+            description: OK
+            schema:
+              $ref: '#/definitions/NetworkListV2'
+          '401':
+            description: Unauthorized
+          '403':
+            description: Forbidden
+          '404':
+            description: Not Found
+        deprecated: false
 definitions:
   EmailUpdateRequest:
     type: object
@@ -430,6 +602,17 @@ definitions:
         type: integer
         format: int64
     title: TokenList
+  TokenListV2:
+    type: object
+    properties:
+      swaps:
+        type: array
+        items:
+          $ref: '#/definitions/TokenDetailV2'
+      total:
+        type: integer
+        format: int64
+    title: TokenListV2
   TokenDetail:
     type: object
     properties:
@@ -452,6 +635,37 @@ definitions:
       bscContractAddress:
         type: string
       bscContractDecimal:
+        type: integer
+        format: int32
+  TokenDetailV2:
+    type: object
+    properties:
+      name:
+        type: string
+      symbol:
+        type: string
+      bcSymbol:
+        type: string
+      ethSymbol:
+        type: string
+      icon:
+        type: string
+      minAmount:
+        type: number
+      maxAmount:
+        type: number
+      promotion:
+        type: boolean
+      enabled:
+        type: boolean
+      bscContractAddress:
+        type: string
+      bscContractDecimal:
+        type: integer
+        format: int32
+      ethContractAddress:
+        type: string
+      ethContractDecimal:
         type: integer
         format: int32
   NetworkList:
@@ -486,3 +700,91 @@ definitions:
         format: int32
       tokenStandard:
         type: string
+  NetworkListV2:
+    type: object
+    properties:
+      from:
+        type: array
+        items:
+          $ref: '#/definitions/NetworkDetailV2'
+      to:
+        type: array
+        items:
+          $ref: '#/definitions/NetworkDetailV2'
+    title: TokenList
+  NetworkDetailV2:
+    type: object
+    properties:
+      name:
+        type: string
+      symbol:
+        type: string
+      swapFeeRate:
+        type: number
+      networkFee:
+        type: number
+      supportLabel:
+        type: boolean
+      labelName:
+        type: string
+      labelRegex:
+        type: string
+      txUrl:
+        type: number
+      depositEnabled:
+        type: boolean
+      withdrawEnabled:
+        type: boolean
+      withdrawAmountUnit:
+        type: number
+      addressRegex:
+        type: string
+      tokenStandard:
+        type: string
+      requiredConfirms:
+        type: integer
+        format: int32
+  ResponseStatusBodyQuota:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      data:
+        $ref: '#/definitions/Quota'
+      message:
+        type: string
+    title: ResponseStatusBodyQuota
+  Quota:
+    type: object
+    properties:
+      left:
+        type: number
+      total:
+        type: number
+      used:
+        type: number
+    title: Quota
+  SwapCreationRequestV2:
+    type: object
+    properties:
+      amount:
+        type: number
+      fromNetwork:
+        type: string
+      source:
+        type: integer
+        format: int32
+      symbol:
+        type: string
+      toAddress:
+        type: string
+      toAddressLabel:
+        type: string
+      toNetwork:
+        type: string
+      walletAddress:
+        type: string
+      walletNetwork:
+        type: string
+    title: SwapCreationRequestV2
