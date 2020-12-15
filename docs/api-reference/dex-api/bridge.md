@@ -7,9 +7,9 @@ API description for swap service
 **Contact information:**
 Binance Chain
 
-**Base URL:** <api.binance.org/bridge>
+**Base URL:** api.binance.org/bridge
 
-**Rate Limit:**: 2000 request per IP per 5 mins.
+**Rate Limit:** 2000 request per IP per 5 mins.
 
 ### /api/v1/tokens
 ---
