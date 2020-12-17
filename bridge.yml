@@ -6,7 +6,7 @@ info:
   contact:
     name: Binance Chain
 host: api.binance.org
-basePath: /panama
+basePath: /bridge
 tags:
   - name: API for panama swap
     description: API for panama swap
