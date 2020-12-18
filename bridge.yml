@@ -355,7 +355,7 @@ paths:
     get:
       tags:
         - API for swap V2
-      summary: getQuota
+      summary: getTokens
       operationId: getTokensGET
       produces:
         - application/json
