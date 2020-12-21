@@ -41,7 +41,8 @@ nav:
       - System Contract: smart-chain/guides/concepts/system-contract.md
       - Governance: smart-chain/guides/concepts/bsc-gov.md
     - Binance Bridge:
-      - User Guide: smart-chain/guides/panama.md
+      - User Guide V1: smart-chain/guides/panama.md
+      - User Guide V2: smart-chain/guides/bridge-v2.md
       - API doc: api-reference/dex-api/bridge.md
       - Widget: api-reference/dex-api/bridge-widget.md
     - Staking:
