@@ -1,8 +1,8 @@
-# Use Metamask For Binance Smart Chain
+# Use MetaMask For Binance Smart Chain
 
 
 !!! Tip
-    You may encounter a network configuration issue in recent release of MetaMask, Please go to "Upgrade" section for solution
+    You may encounter a network configuration issue in recent releases of MetaMask, Please go to "Upgrade" section for solution
 
 
 ## What is it?
@@ -46,7 +46,7 @@ That’s it! You have successfully installed MetaMask extension in Brave!
 
 Congratulations! you have create your MetaMask account!
 
-## Connect Your MetakMast With Binance Smart Chain
+## Connect Your MetaMask With Binance Smart Chain
 
 1. Go to setting page</br>
 
@@ -91,7 +91,7 @@ After the transfer transaction is sent, you will see an increase of your balance
 5. Go to Advanced Options to modify default gas price when necessary </br>
 <img src="https://lh6.googleusercontent.com/ffcVo2g2uczLTxksHa0wsZamfdPqtFWjsixSyQQPwWESztE1-didrWM8hdwhGCNOuf2qgmAujKywpB8Xr8ENd_awP8bVLoOjkzVrLhZnxOrperDAYd1fNJtS9_6_88cS2vDa-dGS" alt="img" style="zoom:33%;" />
 
-6. Confirm your transaction then click Next</br><img src="https://lh4.googleusercontent.com/vEK49MvskI51rOeENZsdh3hkdLWDCIGnPXdUAgIvcnMubfKGuyEvbcpBDDNCtxOyAKYDcQqerxpQae4WWuuTOhOYbHZWPRfJUZSwubYtejvDeLcYpLYOCU9pf7UexaOOC3ctP1fe" alt="img" style="zoom:33%;" />
+6. Confirm your transaction, then click Next</br><img src="https://lh4.googleusercontent.com/vEK49MvskI51rOeENZsdh3hkdLWDCIGnPXdUAgIvcnMubfKGuyEvbcpBDDNCtxOyAKYDcQqerxpQae4WWuuTOhOYbHZWPRfJUZSwubYtejvDeLcYpLYOCU9pf7UexaOOC3ctP1fe" alt="img" style="zoom:33%;" />
 
 7. Click Confirm to send your transaction</br>
 <img src="https://lh6.googleusercontent.com/6zke1TXCT9l8uzT1RkUbOFyijv2xR8GwXVqNhVN1KRVzAONn-5h-jG0ffxxDWrXXPgbyJzpiAHUU56ADomzmac_Tkpt_zx2LGTpDrobcZDE-_Z8vF-IVgxPNW3cQIj-x8dfkeEQ2" alt="img" style="zoom:33%;" />
@@ -134,7 +134,7 @@ Then you can see change of your balance</br>
 
 ## Create Multiple Accounts
 
-1. To create multiple accounts, you click on Profile icon on Metamask and then click on Create Account</br>
+1. To create multiple accounts, you click on Profile icon on MetaMask and then click on Create Account</br>
 <img src="https://lh6.googleusercontent.com/2Xza8K_NtkE63R1j3NwBH7rxsay9zOKu_v-3fawtt86On_vGavW87c1qUP0JpfIaWRc5QPTk6ZqC6bmm_-6-829WnU5woMXKh7BM0-0OkraO55LKYMwuZxEZ3R2k0-SsyNnh4cNc" alt="img" style="zoom:33%;" />
 
 2. You can then add an account name and click on Create.</br>
@@ -145,7 +145,7 @@ Then you can see change of your balance</br>
 
 ## Upgrade
 
-Since the release of v8.1.3, Metamask sometimes pop up a window for warning "Invalid Custom Network".  
+Since the release of v8.1.3, MetaMask sometimes displays the warning message "Invalid Custom Network".  
 
 <img src="https://lh6.googleusercontent.com/AbMd49RFlERw1E_OpmURgZxqYHqHOXpPJLtT-ysIB2oAwmVf054jzQndDxJOfqj-FFCR_Beb1LTXvw6T7TvO03aVlHGmEaE1N2J5mg5kUm-dbcaXnlLH-0RLM-SGV0brrlweEyrQ" alt="img" style="zoom:33%;" />
 
