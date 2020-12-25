@@ -2,7 +2,7 @@
 
 ## What is BC <-> BSC  bridge
 
-BC <-> BSC relayer bridge for self transfers of BEP2 tokens to BEP20 (ERC20 representation). The relayer bridge connects two chains (BC and BSC). When a user deposits BEP2 into the relayer bridge contract contract on BC they get the same amount of BEP20 tokens on BSC, and they can convert them back as well.
+BC <-> BSC relayer bridge for self transfers of BEP2 tokens to BEP20 (ERC20 representation). The BC <-> BSC  bridge connects two chains (BC and BSC). When a user deposits BEP2 into the BC <-> BSC bridge contract contract on BC they get the same amount of BEP20 tokens on BSC, and they can convert them back as well.
 
 A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in binance chain protocol. This kind of account doesn't have its own private key and it's only controlled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```
@@ -15,7 +15,7 @@ The account for mainnet is: **bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj** and t
 
 Transaction Type  | Pay in BNB |
 -- | -- |
-Relayer Bridge Bind | 0.01 |
+BC <-> BSC Bridge Bind | 0.01 |
 Transfer Out| 0.01 |
 Relayer Bridge Bind Relayer Fee| 0.01 |
 Transfer Out Relayer Fee| 0.01 |
@@ -28,7 +28,7 @@ Please download `tbnbcli` binary from [here](https://github.com/binance-chain/sm
 
 ### Bind
 
-#### Parameters for relayer bridge bind
+#### Parameters for BC <-> BSC  bridge bind
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
@@ -49,7 +49,7 @@ bnbcli bridge bind --symbol DEF-0F9 --amount 6000000000000000 --expire-time 1594
 
 ###  Unbind
 
-#### Parameters for relayer bridge unbind
+#### Parameters for BC <-> BSC  bridge unbind
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | ------------------ | ------------------------------------------ | ---------------------------------------------------- | ------------ |
@@ -66,7 +66,7 @@ bnbcli bridge unbind --symbol DEF-0F9 --from alice --chain-id Binance-Chain-Tigr
 
 ### Transfer out
 
-#### Parameters for relayer bridge transfer-out
+#### Parameters for BC <-> BSC bridge transfer-out
 
 | **parameter name** | **example**                                | **comments**                           | **required** |
 | ------------------ | ------------------------------------------ | -------------------------------------- | ------------ |
