@@ -20,7 +20,7 @@ Transaction Type  | Pay in BNB |
 -- | -- |
 BC <-> BSC Bridge Bind | 0.01 |
 Transfer Out| 0.01 |
-Relayer Bridge Bind Relayer Fee| 0.01 |
+BC <-> BSC Bridge Bind Relayer Fee| 0.01 |
 Transfer Out Relayer Fee| 0.01 |
 
 
