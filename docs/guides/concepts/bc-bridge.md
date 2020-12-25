@@ -1,8 +1,11 @@
-# BC <-> BSC Relayer  Bridge
+# BC <-> BSC Token Bridge
+
+!!! Note
+	Please note that *BC <-> BSC Token Bridge* is a background service to facilitate cross-chain transfer between Binance Chain and Binance Smart Chain, while  [Binance Bridge](https://www.binance.org/bridge), a bridge service providing access to inter-blockchain liquidity for Binance Chain, Binance Smart Chain decentralized applications, and bring valuable assets to Binance Chain ecosystems.
 
 ## What is BC <-> BSC  bridge
 
-BC <-> BSC relayer bridge for self transfers of BEP2 tokens to BEP20 (ERC20 representation). The BC <-> BSC  bridge connects two chains (BC and BSC). When a user deposits BEP2 into the BC <-> BSC bridge contract contract on BC they get the same amount of BEP20 tokens on BSC, and they can convert them back as well.
+BC <-> BSC token bridge for self transfers of BEP2 tokens to BEP20 (ERC20 representation). The BC <-> BSC  bridge connects two chains (BC and BSC). When a user deposits BEP2 into the BC <-> BSC bridge contract contract on BC they get the same amount of BEP20 tokens on BSC, and they can convert them back as well.
 
 A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in binance chain protocol. This kind of account doesn't have its own private key and it's only controlled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```
