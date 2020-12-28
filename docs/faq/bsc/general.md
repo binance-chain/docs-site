@@ -32,6 +32,7 @@ The codebase of BSC is open-sourced here:
   - [Binance Extension Wallet ](../../smart-chain/wallet/binance.md)
   - [MetaMask](../../smart-chain/wallet/metamask.md)
   - [Math Wallet](../../smart-chain/wallet/math.md)
+  - [Arkane](../../smart-chain/wallet/arkane.md)
   - [Ledger](../../smart-chain/wallet/ledger.md)
   - [MEW](../../smart-chain/wallet/myetherwallet.md)
 

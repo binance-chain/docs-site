@@ -66,6 +66,7 @@ nav:
         - How to use Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
         - How to stay safe: smart-chain/wallet/extension/safe.md
       - MetaMask Guides: smart-chain/wallet/metamask.md
+      - Arkane: smart-chain/wallet/arkane.md
       - Ledger: smart-chain/wallet/ledger.md
       - Trezor: smart-chain/wallet/trezor.md
       - MEW: smart-chain/wallet/myetherwallet.md
@@ -121,6 +122,7 @@ nav:
     - Tools:
       - Faucet: https://testnet.binance.org/faucet-smart
       - Gas Price: https://bscscan.com/chart/gasprice
+      - Wallet Provider for DApps: smart-chain/wallet/arkane-developer.md
     - BEP20 Tokens:
       - Introduction: smart-chain/developer/BEP20.md
       - Issue Token: smart-chain/developer/issue-BEP20.md
@@ -181,6 +183,7 @@ nav:
     - Binance Smart Chain Wallet Support: wallets/bsc-wallets.md
     - Binance Chain Wallet Support: wallets/wallets.md
     - Binance Smart Chain Wallet Tutorial:
+      - How to create a BSC wallet: smart-chain/wallet/arkane.md
       - Math Wallet User Guide: smart-chain/wallet/math-resource.md
       - How to use Trust Wallet in Binance Smart Chain : https://community.trustwallet.com/t/trust-wallet-now-supports-binance-smart-chain-bsc/67250
       - How to Send and Receive BNB on Smart Chain with Trust Wallet: https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430
