@@ -1,7 +1,7 @@
 # BC <-> BSC Token Bridge
 
 !!! Note
-	Please note that *BC <-> BSC Token Bridge* is a module of Binance Chain fullnode to facilitate cross-chain transfer between Binance Chain and Binance Smart Chain, while  [Binance Bridge](https://www.binance.org/bridge), a bridge service providing access to inter-blockchain liquidity for Binance Chain, Binance Smart Chain decentralized applications, and bring valuable assets to Binance Chain ecosystems.
+	Please note that *BC <-> BSC Token Bridge* is a module of Binance Chain fullnode to facilitate cross-chain transfer between Binance Chain and Binance Smart Chain, while  [Binance Bridge](https://www.binance.org/en/bridge), a bridge service providing access to inter-blockchain liquidity for Binance Chain, Binance Smart Chain decentralized applications, and bring valuable assets to Binance Chain ecosystems.
 
 ## What is BC <-> BSC  bridge
 
