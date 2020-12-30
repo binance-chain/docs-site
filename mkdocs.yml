@@ -65,6 +65,7 @@ nav:
         - How to reveal your seed phrase: smart-chain/wallet/extension/seed.md
         - How to use Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
         - How to stay safe: smart-chain/wallet/extension/safe.md
+        - Wallet Direct:  smart-chain/wallet/extension/direct.md
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Ledger: smart-chain/wallet/ledger.md
       - Trezor: smart-chain/wallet/trezor.md
