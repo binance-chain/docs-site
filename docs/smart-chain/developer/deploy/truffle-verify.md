@@ -10,7 +10,7 @@ GitHub Project: <https://github.com/huangsuyu/verify-example>
 
 ## Truffle
 
-Truffle has an BscScan plugin: [truffle-plugin-verify 10](https://github.com/rkalis/truffle-plugin-verify)
+Truffle has an BscScan plugin: [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify)
 
 You need to deploy with Truffle to verify with the Truffle verify plugin.
 
@@ -41,7 +41,7 @@ module.exports = {
 
     testnet: {
         provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
-        network_id: 97,   
+        network_id: 97,
         timeoutBlocks: 200,
         confirmations: 5,
         production: true    // Treats this network as if it was a public net. (default: false)
