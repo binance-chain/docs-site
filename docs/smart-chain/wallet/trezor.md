@@ -4,8 +4,8 @@ BNB and coins on Binance Smart Chain are supported by the Trezor hardware wallet
 
 ## Requirements
 * Visit <https://wallet.trezor.io> and initialize your Trezor
-* Trezor Model T firmware version **2.3.0** and earlier.
-* Trezor Model One firmware version **1.9.3** and earlier.
+* Trezor Model T firmware version **2.3.0** and later.
+* Trezor Model One firmware version **1.9.3** and later.
 * An internet connection and an available USB port. Use an adapter for USB-C ports
 * U2F compatible browsers: Google Chrome, Opera, FireFox, Brave
 
