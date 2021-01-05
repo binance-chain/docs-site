@@ -61,6 +61,7 @@ nav:
       - Binance Extension Wallet Guides:
         - Introduction: smart-chain/wallet/binance.md
         - How to add account: smart-chain/wallet/extension/add-account.md
+        - How to add asset: smart-chain/wallet/extension/add-asset.md
         - How to reset password or import account: smart-chain/wallet/extension/reset.md
         - How to reveal your seed phrase: smart-chain/wallet/extension/seed.md
         - How to use Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
