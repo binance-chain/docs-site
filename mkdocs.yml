@@ -120,6 +120,7 @@ nav:
     - Deploy:
       - Truffle: smart-chain/developer/deploy/truffle.md
       - Verify Contract: smart-chain/developer/deploy/truffle-verify.md
+      - Verify Proxy Contract: smart-chain/developer/upgrade/verify-proxy.md
       - Remix: smart-chain/developer/deploy/remix.md
     - Tools:
       - Faucet: https://testnet.binance.org/faucet-smart
@@ -142,6 +143,7 @@ nav:
       - Deploy NFT:  smart-chain/developer/ERC721.md
       - Verify Contract on bscscan.com: smart-chain/developer/deploy/verify.md
       - Local BSC Network: smart-chain/developer/deploy/local.md
+      - Proxy Contract: smart-chain/developer/upgrade/proxy.md
     - Wallet:
       - Binance Chain Extension Wallet API: smart-chain/wallet/wallet_api.md
       - Math Wallet Cross-chain Transfer Tool: http://blog.mathwallet.org/?p=2052
