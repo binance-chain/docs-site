@@ -1,12 +1,16 @@
-# How to Verify  Proxy Contract 
+# How to Verify Proxy Contract
+
+*Please learn how to deploy an upgradable BEP20 contract [here](./proxy.md)*
+
 ## Flatten your contract
+
 ### Install flattener
 ```
 npm install truffle-flattener -g
 ```
 Run the following command:
 ```
-$ truffle-flattener BEP20TokenImplementation.sol > BEP20TokenImplementationFlattened.sol 
+$ truffle-flattener BEP20TokenImplementation.sol > BEP20TokenImplementationFlattened.sol
 $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.sol"
 ```
 ## Compile and deploy your contract with Remix
@@ -30,7 +34,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 
 <img src="https://lh3.googleusercontent.com/SjMHLYY9A1LtFXJFc2gtIOL_lEzZk--eiJyNspL-8qfDvkfNYGAgGKvodCo0-Pfp3UhmrPGUc4oOpFFuDBzYhLxqN3-LIAW7BRKdeoiPdYuJMep0hT67ifNw0i33DzVXNfzPjwZi" alt="img" style="zoom:50%;" />
 
-> Note: `Owner` should be the address who send the deploy transaction before. 
+> Note: `Owner` should be the address who send the deploy transaction before.
 
 - Click on the “Copy” icon to save the initializatioin data: Like the following: ```
 
@@ -40,7 +44,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 ```
 
 - Confirm your transaction in MetaMask
-  
+
 
 <img src="https://lh5.googleusercontent.com/kPAo0FyEgt0vNDkBMxIHNIFqdq0mP4BhFT21vXvusa8-wlP-BXr4FcHjYV-NZEuQZrgwq74fV2oXAKIrAovpXi7KHChXtowSI3sbu5wTQL-_3-x8Qd-6-z7xRDkRXzJZLcakxrR3" alt="img" style="zoom:25%;" />
 
@@ -66,7 +70,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 - Click the “confirm” button to sign and broadcast transaction to BSC.
 
 ## Verify Proxy Contract on BscScan
-Note: The way to verify the BEP20TokenImplementation contract is the same as before. 
+Note: The way to verify the BEP20TokenImplementation contract is the same as before.
 
 - Go to your contact page and click on “Verify and Publish”
 
@@ -90,8 +94,8 @@ That’s it! You have verified your proxy contract.
 
   <img src="https://lh4.googleusercontent.com/MgaUVOq6GdeA374T6DYsRPbphwSG4WNsfm-fJunGif4sFU4ILDQN_XcJ6O-qh8I6SuILbu2O9oriSQii6RcCYQY09_T1qoNvK6JxFkydM9u9zDWMUrybam1Zu_YiFAoa-3T867ea" alt="img" style="zoom:33%;" />
 
-## Link these two contracts 
-- Click on “More Options” and choose “is this a proxy”. 
+## Link these two contracts
+- Click on “More Options” and choose “is this a proxy”.
 
 <img src="https://lh3.googleusercontent.com/2_dq4WNMba2_RWJzLSRehjDjMWx8SgcUkU5d88lNzllt6QViM1uEW49e-H0nUbhjIc9iFCsXx3iavTsUFahjTR4Gocdf_jw_IhK_QvETb-G9CFgCb1LIlZvsGor37g8dKVxDnj7I" alt="img" style="zoom:33%;" />
 
