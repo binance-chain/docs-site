@@ -1,6 +1,6 @@
 # Upgradeable BEP20 Contracts on BSC
 
-##  are Upgradeable Contracts?
+## What are Upgradeable Contracts?
 Smart contracts in EVM are designed to be immutable. Once you create them there is no way to modify them, effectively acting as an unbreakable contract among participants.What do I do if I want to expand the functionality of my contracts? What if there is a bug in the contract that leads to a loss of funds? What if a vulnerability in the Solidity compiler is discovered?
 Here’s what you’d need to do to fix a bug in a contract you cannot upgrade:
 
