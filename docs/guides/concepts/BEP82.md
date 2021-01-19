@@ -18,7 +18,6 @@ BEP82 introduce the following changes:
 
 - Token issuers can renounce their ownership and promote others
 - Allows token holders to burn their tokens
-- Anyone can propose to list token
 
 ## New Transaction Type
 
