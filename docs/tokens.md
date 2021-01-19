@@ -15,7 +15,7 @@ The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of 
 
 An issuance transaction contains:
 
-> Note: BEP87 is implemented after Lagrange Upgrade. It changes the minimal symbol length to **two**
+> Note: [BEP87](https://github.com/binance-chain/BEPs/pull/87) is implemented after Lagrange Upgrade. It changes the minimal symbol length to **two**
 
 * Source Address: the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
 * Token Name: it is the long official name, such as "Binance Coin". It is limited to 32 characters.
