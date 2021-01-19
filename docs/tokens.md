@@ -107,3 +107,21 @@ Example on **testnet**:
 ```bash
 > ./tbnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
 ```
+
+## TransferOwnership
+
+> Note: [BEP82](https://github.com/binance-chain/BEPs/pull/82) is implemented after Lagrange Upgrade to add this new transactionn type.
+
+**0.01 BNB** will be charged on **TransferOwnership** transactions.
+
+
+Example on **mainnet**:
+
+```bash
+./bnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner  --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443 --trust-node
+```
+Example on **testnet**:
+
+```bash
+./tbnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner --chain-id Binance-Chain-Nile  --node=data-seed-pre-2-s1.binance.org:80--trust-node
+```
