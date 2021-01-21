@@ -1,4 +1,4 @@
-# Bind Token
+# Bind BEP2 and BEP20 Tokens
 
 BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases. Token Binding can happen at any time after BEP2/BEP8 and BEP20 are ready. The token owners of either BEP2/BEP8 or BEP20 only need to complete the **Binding** process when a cross-chain feature is necessory.
 
@@ -6,9 +6,9 @@ You can use this [tool](https://github.com/binance-chain/token-bind-tool).
 
 ## Issue BEP2 or BEP8 Token
 
-Please refer to this [doc](../../tokens.md) to issue BEP2
+Please refer to this [doc](../../../tokens.md) to issue BEP2
 
-Please refer to this [doc](../../wallets/tutorial/bep8.md) to issue BEP8
+Please refer to this [doc](../../../wallets/tutorial/bep8.md) to issue BEP8
 
 
 **Example**
@@ -22,7 +22,7 @@ tbnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-sup
 ```
 
 ## Deploy BEP20 Token
-Please refer to this [doc](issue-BEP20.md)
+Please refer to this [doc](../issue-BEP20.md)
 
 The symbol of the BEP20 token must be exactly identical to the prefix of the bep2 token(case sensitive).
 
@@ -39,13 +39,13 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
 ### Approve Bind Request
 1. Grant allowance:
 
-    In [myetherwallet](../wallet/myetherwallet.md), call the **approve** of the BEP20 to grant a 40 million allowance to TokenManager contract. The spender value should be `0x0000000000000000000000000000000000001008`, and the amount value should be 4e25. The transaction sender should be the BEP20 owner.
+    In [myetherwallet](../../wallet/myetherwallet.md), call the **approve** of the BEP20 to grant a 40 million allowance to TokenManager contract. The spender value should be `0x0000000000000000000000000000000000001008`, and the amount value should be 4e25. The transaction sender should be the BEP20 owner.
 
     ![img](https://lh6.googleusercontent.com/p-HctNRPwXg0VD1yfE3j4OJ3BrMHPZpiGGCtp7XUJX34z_LT53nvZqgTzY58Ab1EsybJipwjsnwL2uJ-CPH8gntDpcw7LW7aFPK1_KRxxnNq-xErwGpaPTlg5UbfKoVNjd4YT0xU)
 
 2. Approve Bind
 
-    In [myetherwallet](../wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract to approve the bind request from the BEP20 owner address.
+    In [myetherwallet](../../wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract to approve the bind request from the BEP20 owner address.
 
     ![img](https://lh6.googleusercontent.com/nFIbDxpA8bTVYH0Rt4UD-SYYz62TmYKjOsgK1CXxFRHHJlz6gOyXnq5p3GesM_zrQES4ixmojvN_Srk4CIf1MPxBXbia-K2DNiL23Hao1HiUgdNe4S2BmPe6yn5XJz7ajlwVVCti)
 

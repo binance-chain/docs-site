@@ -128,7 +128,9 @@ nav:
     - BEP20 Tokens:
       - Introduction: smart-chain/developer/BEP20.md
       - Issue Token: smart-chain/developer/issue-BEP20.md
-      - Bind Token: smart-chain/developer/bind-tokens.md
+      - Bind Token: smart-chain/developer/bind/bind-tokens.md
+      - Mirror Token: smart-chain/developer/bind/mirror.md
+      - Mirror Token: smart-chain/developer/bind/tokens-cross-chain.md
       - Cross-chain Transfer: smart-chain/validator/cross-chain-transfer.md
       - Bind Token Tool: https://github.com/binance-chain/token-bind-tool
     - Blockchain Details:
@@ -137,8 +139,8 @@ nav:
       - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
     - Oracles:
-      - Band Protocol Integration: smart-chain/developer/band.md
-      - Chainlink Protocol Integration: smart-chain/developer/link.md
+      - Band Protocol Integration: smart-chain/developer/oracle/band.md
+      - Chainlink Protocol Integration: smart-chain/developer/oracle/link.md
     - Tutorial:
       - Deploy NFT:  smart-chain/developer/ERC721.md
       - Verify Contract on bscscan.com: smart-chain/developer/deploy/verify.md

@@ -12,7 +12,7 @@ This new BEP will introduce a new agovernable parameter `dynamicExtraIncentiveAm
 
 ## Claim Extra Rewards
 
-Try to claim `dynamicExtraIncentiveAmount` from the SystemReward contract.
+1. laim `dynamicExtraIncentiveAmount` from the SystemReward contract.
 2. Add the new claimed reward to the existing reward.
 3. Add the total reward to the relayer reward pool.
 
