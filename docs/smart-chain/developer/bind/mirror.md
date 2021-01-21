@@ -25,14 +25,22 @@ After binding, the liquid circulation is all on BSC.
 
 Transaction Type  | Pay in BNB |
 -- | -- |
-mirror| 10 |
-Transfer Out Relayer Fee|0.01|
+mirror|it's 10 BNB in testnet now |
+Relayer Fee|it's 0.01BNB in testnet now |
 
 To query 	`mirrorFee` from system contract;
 
 - Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
 - Query `mirrorFee` function
+
+Fee= result/1e18
+
+To query 	`relayerFee` from system contract;
+
+- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
+
+- Query `getMiniRelayFee` function
 
 Fee= result/1e18
 

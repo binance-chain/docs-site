@@ -25,14 +25,22 @@ After syncing, the total circulation is the same.
 
 Transaction Type  | Pay in BNB |
 -- | -- |
-sync| 1 |
-Transfer Out Relayer Fee|0.01|
+sync| it's 1BNB in testnet now |
+relayerFee| it's 0.01BNB in testnet now|
 
 To query 	`syncFee` from system contract;
 
 - Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
 - Query `syncFee` function
+
+Fee= result/1e18
+
+To query 	`relayerFee` from system contract;
+
+- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
+
+- Query `getMiniRelayFee` function
 
 Fee= result/1e18
 
