@@ -5,7 +5,7 @@
 
 ## Motivations
 
-When different nodes end up on different chains either unintentionally or as a result of an attack, it may lead to a consensus fork or a chain split. By far the vast majority of changes to the Binance Smart Chain codebase have no impact on consensus rules. Note that this type of fork is very different than a codebase fork (usually done by cloning someone else’s repository).
+Binance Smart Chain will have some hard forks inevitably in the long run. When different valdiator nodes use different version of Binance Smart Chains codebase either unintentionally or as a result of an attack, it may lead to a consensus fork or a chain split. By far the vast majority of changes to the Binance Smart Chain codebase have no impact on consensus rules. Note that this type of fork is very different than a codebase fork (usually done by cloning someone else’s repository).
 
 When a change is proposed that affects compatibility with other nodes, a BEP (Binance Evolution Proposal) is typically required. A brief description of the BEP process along with a list of existing BEPs can be found [here](https://github.com/binance-chain/BEPs).
 
