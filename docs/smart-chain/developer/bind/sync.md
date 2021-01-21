@@ -54,7 +54,7 @@ Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/
 
 - Select `sync` function and fill-in with your BEP20 address
 
-The value here should be no less than  `syncFee`+ `Transfer Out Relayer Fee`. Besides, `syncFee` can be changed by on-chain governance
+The value here should be no less than  `syncFee`+ `Relayer Fee`. Besides, `syncFee` can be changed by on-chain governance
 
 Time stamp should be greater than `unix_timestamp(now())`. The difference is between 120 and 86400. It's recommended to use `unix_timestamp(now())+1000`
 

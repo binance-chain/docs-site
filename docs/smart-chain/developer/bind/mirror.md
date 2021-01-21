@@ -54,7 +54,7 @@ Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/
 
 - Select `mirror` function and fill-in with your BEP20 address
 
-The value here should be no less than  `mirrorFee`+ `Transfer Out Relayer Fee`. Besides, `mirrorFee` can be changed by on-chain governance
+The value here should be no less than  `mirrorFee`+ `Relayer Fee`. Besides, `mirrorFee` can be changed by on-chain governance
 
 Time stamp should be greater than `unix_timestamp(now())`. The difference is between 120 and 86400. It's recommended to use `unix_timestamp(now())+1000`
 
