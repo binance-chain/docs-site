@@ -1,5 +1,8 @@
 # BEP89
 
+> Note: this feature is only available in Testnet after Lagrange Upgrade.
+
+
 ## Motivations
 
 Peer-to-peer networking is a mess. Generally only a small fraction of nodes have publicly routed addresses and P2P networks rely mainly on these for forwarding data for everyone else. The best way to maximize the utility of the public nodes is to ensure their resources aren’t wasted on tasks that are worthless to the network.

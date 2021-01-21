@@ -1,5 +1,7 @@
 # BEP89
 
+> Note: this feature is only available in Testnet after Lagrange Upgrade.
+
 ## Motivations
 
 This BEP is designed to increase the rewards for relayer operators.

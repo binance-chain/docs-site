@@ -27,7 +27,8 @@ Transfer Out Relayer Fee| 0.01 |
 ## Commands
 
 ### Download
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
+
+Please download `tbnbcli` binary from [here](https://github.com/binance-chain/node/releases/tag/v0.8.1)
 
 ### Bind
 

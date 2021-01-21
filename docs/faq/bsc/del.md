@@ -13,7 +13,7 @@ Please read the guide [here](../../smart-chain/delegator/del-guide.md)
 
 You can use:
 
-* [command line tool](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
+* [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
 * [Binance Chain extension wallet](../../smart-chain/wallet/binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 
