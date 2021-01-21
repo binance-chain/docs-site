@@ -5,16 +5,20 @@
 
 ## Motivations
 
-Peer-to-peer networking is a mess. Generally only a small fraction of nodes have publicly routed addresses and P2P networks rely mainly on these for forwarding data for everyone else. The best way to maximize the utility of the public nodes is to ensure their resources aren’t wasted on tasks that are worthless to the network.
+When different nodes end up on different chains either unintentionally or as a result of an attack, it may lead to a consensus fork or a chain split. By far the vast majority of changes to the Binance Smart Chain codebase have no impact on consensus rules. Note that this type of fork is very different than a codebase fork (usually done by cloning someone else’s repository).
+
+When a change is proposed that affects compatibility with other nodes, a BEP (Binance Evolution Proposal) is typically required. A brief description of the BEP process along with a list of existing BEPs can be found [here](https://github.com/binance-chain/BEPs).
+
+[BEP89](https://github.com/binance-chain/BEPs/blob/master/BEP89.md) is introduced to enable the chain to display the whole view of validators that on different upcoming forks. Any nodes/validators can decide to upgrade/fork or not accordingly. Binance Smart Chain full nodes are able to display the whole view of validators that on different upcoming forks.
 
 
-By aggressively cutting off incompatible nodes from each other we can extract a lot more value from the public nodes, making the entire P2P network much more robust and reliable. Supporting this network partitioning at a discovery layer can further enhance performance as we avoid the costly crypto and latency/bandwidth hit associated with establishing a stream connection in the first place.
 
 ## Implementatiion
 
-Introducing BEP89 to allow nodes to signal different chains, which will help with peering efficiency. Binance Smart Chain full nodes are able to display the whole view of validators that on different upcoming forks.
 
-The proposal `FORK_HASH` takes an "IEEE CRC32 checksum ([4]byte) of the genesis hash + fork blocks numbers that already passed. By aggressively cutting  off incompatible nodes, we avoid the costly crypto and latencyor bandwidth issues when  establishing a stream connection.
+The proposal `FORK_HASH` takes an "IEEE CRC32 checksum ([4]byte) of the genesis hash + fork blocks numbers that already passed. Validator nodes will fill in `Header.Extra` with `NEXT_FORK_HASH` during preparing block header.
+
+The fullnodes will log a warning message if the majority `NEXT_FORK_HASH` is different from local.
 
 Example log of warning:
 
