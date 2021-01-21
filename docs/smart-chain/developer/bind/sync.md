@@ -28,6 +28,14 @@ Transaction Type  | Pay in BNB |
 sync| 1 |
 Transfer Out Relayer Fee|0.01|
 
+To query 	`syncFee` from system contract;
+
+- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+
+- Query `syncFee` function
+
+Fee= result/1e18
+
 ## Mirror With MyEtherWallet
 
 - Call `Tokenmanager` Contract

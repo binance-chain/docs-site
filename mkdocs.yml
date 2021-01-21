@@ -128,9 +128,11 @@ nav:
     - BEP20 Tokens:
       - Introduction: smart-chain/developer/BEP20.md
       - Issue Token: smart-chain/developer/issue-BEP20.md
-      - Bind Token: smart-chain/developer/bind/bind-tokens.md
-      - Mirror Token: smart-chain/developer/bind/mirror.md
-      - Mirror Token: smart-chain/developer/bind/tokens-cross-chain.md
+      - Bind Token:
+        - Introduction: smart-chain/developer/bind/tokens-cross-chain.md
+        - Bind Token: smart-chain/developer/bind/bind-tokens.md
+        - Mirror Token: smart-chain/developer/bind/mirror.md
+        - Sync Supply: smart-chain/developer/bind/sync.md
       - Cross-chain Transfer: smart-chain/validator/cross-chain-transfer.md
       - Bind Token Tool: https://github.com/binance-chain/token-bind-tool
     - Blockchain Details:

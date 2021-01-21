@@ -28,7 +28,13 @@ Transaction Type  | Pay in BNB |
 mirror| 10 |
 Transfer Out Relayer Fee|0.01|
 
+To query 	`mirrorFee` from system contract;
 
+- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+
+- Query `mirrorFee` function
+
+Fee= result/1e18
 
 ## Mirror With MyEtherWallet
 
