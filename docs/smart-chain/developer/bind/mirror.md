@@ -32,7 +32,7 @@ Transfer Out Relayer Fee|0.01|
 
 ## Mirror With MyEtherWallet
 
-- Call Tok`enmanager` Contract
+- Call `Tokenmanager` Contract
 
 Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
@@ -42,6 +42,8 @@ Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/
 
 The value here should be no less than  `mirrorFee`+ `Transfer Out Relayer Fee`. Besides, `mirrorFee` can be changed by on-chain governance
 
+Time stamp should be greater than `unix_timestamp(now())`. The difference is between 120 and 86400. It's recommended to use `unix_timestamp(now())+1000`
+
 <img src="https://lh3.googleusercontent.com/_DpAMjJwZeujn5bud485SPV014Gf4W8DRIcN9Y9FQyPxt3bveWPK8BImBbKF8pNHlE33a88I3aFLfP04uDZ8iFDvnUHtIj8cTuk_uEmImhsOmDU01UxtkNiHYNKxPGQ5jzLMpTzm" alt="img" style="zoom:75%;" />
 
 All set!
@@ -50,12 +52,12 @@ All set!
 
 ## Query BEP2 Token Symbol
 
-You can query BEP2 Token symbol from `tokenhub` contract. 
+You can query BEP2 Token symbol from `tokenhub` contract.
 
 Use the latest [ABI](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
 
 Select `getBoundBep2Symbol` function
 
-Then, you can see the tolen symbol in the result.  
+Then, you can see the tolen symbol in the result.
 
 <img src="https://lh6.googleusercontent.com/i1NSu3t9lWEo5lRmsNw7moE_okqZe7VOto1vjGl3MXhQIoNJUJ0wMEwx-68LYRfMKbTs8TfCXzPGWJ7Oj9nSdtF3vo4wVnb_QFCeeC6RQk6kweQOe61_isnt8BOQs7mGmPpz7PKP" alt="img" style="zoom:67%;" />
