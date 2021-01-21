@@ -1,4 +1,4 @@
-# BEP89
+# BEP86
 
 > Note: this feature is only available in Testnet after Lagrange Upgrade.
 
