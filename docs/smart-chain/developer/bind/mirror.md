@@ -18,7 +18,7 @@ Anyone can call the `mirror` [method](https://github.com/binance-chain/bsc-genes
 - The newly created BEP2 token is locked until token holder send cross-chain transfer
 
 
-After binding, the liquid circulation is all on BSC.
+After binding, all liquid circulation is on BSC.
 
 
 ## Fee Table
