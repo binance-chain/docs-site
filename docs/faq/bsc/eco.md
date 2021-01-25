@@ -8,6 +8,9 @@
 
 Future coding competitions; Hackathons
 
+* Gitcoin: https://gitcoin.co/binancex
+* Dorahacks: https://hackerlink.io/en/grant/1
+
 ## Who is already using Binance Side Chain?
 
 Binance Side Chain is welcoming everyone.

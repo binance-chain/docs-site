@@ -1270,6 +1270,8 @@ paths:
             $ref: "#/definitions/Error"
         '404':
           description: 'Not Found'
+        '403':
+          description: 'Tx is not within 24h query window'
         default:
           description: Generic error response
           schema:
