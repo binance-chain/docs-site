@@ -189,7 +189,7 @@ Relayer reward   | N/A| 0.001 BNB    | N
 
 ## What is the current Fee Table on Binance Chain Testnet?
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2020-08-21** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2021-01-21** is as follows:
 
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
@@ -201,6 +201,7 @@ IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
 Transfer | N/A | 0.000375 BNB | N
 Multi-send | N/A | 0.0003 BNB | N
 Issue Asset | N/A | 100 BNB | N
+Change Asset Owner | N/A | 0.01 BNB | N
 Mint Asset | N/A | 0.01 BNB | N
 Burn Asset | N/A | 0.01 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
