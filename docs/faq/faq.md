@@ -230,6 +230,8 @@ Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
 Submit Smart Chain Proposal | N/A| 10 BNBs     | N
 Smart Chain Proposal Deposit | N/A|0.00125 BNB | N
 Smart Chain Proposal Vote   | N/A| 1 BNB   | N
+Smart Chain Mirror  | N/A| 10 BNB   | N
+Smart Chain Sync  | N/A| 10 BNB   | N
 Relayer reward   | N/A| 0.001 BNB    | N
 
 ## Can I see orders/balances of others or can other people see my orders/balances?
