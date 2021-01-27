@@ -57,7 +57,7 @@ Binance Smart Chain is compatible with MetaMask. Users can use MetaMask as a bri
     * [RPC URLs](../developer/rpc.md)
     * ChainID: 0x38 (56 in decimal)
     * Symbol: BNB
-    * Block Explorer](https://bscscan.com)
+    * [Block Explorer](https://bscscan.com)
 
 ### Unlock your Metamask
 
