@@ -44,6 +44,7 @@ nav:
     - Binance Bridge:
       - User Guide V1: smart-chain/guides/panama.md
       - User Guide V2: smart-chain/guides/bridge-v2.md
+      - Buy BNB as Gas: smart-chain/guides/bnb-gas.md
       - API doc: api-reference/dex-api/bridge.md
       - Widget: api-reference/dex-api/bridge-widget.md
     - Staking:
