@@ -23,7 +23,7 @@ Go to register and get API key: <https://bscscan.com/myapikey>
 
 ```js
 // hardhat.config.js
-const { infuraProjectId, mnemonic, etherscanApiKey } = require('./secrets.json');
+const { mnemonic, bscscanApiKey } = require('./secrets.json');
 
 require('@nomiclabs/hardhat-ethers');
 require("@nomiclabs/hardhat-etherscan");
