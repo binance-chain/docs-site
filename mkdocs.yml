@@ -121,10 +121,12 @@ nav:
       - Truffle: https://www.trufflesuite.com/docs/teams/quickstart
     - Ecosystem: https://github.com/binance-chain/bsc-develop-ecosystem
     - Deploy:
-      - Truffle: smart-chain/developer/deploy/truffle.md
-      - Verify Contract: smart-chain/developer/deploy/truffle-verify.md
-      - Verify Proxy Contract: smart-chain/developer/upgrade/verify-proxy.md
       - Remix: smart-chain/developer/deploy/remix.md
+      - Truffle: smart-chain/developer/deploy/truffle.md
+      - Truffle Verify: smart-chain/developer/deploy/truffle-verify.md
+      - HardHat: smart-chain/developer/deploy/hardhat.md
+      - HardHat Verify: smart-chain/developer/deploy/hardhat-verify.md
+      - Verify Proxy Contract: smart-chain/developer/upgrade/verify-proxy.md
     - Tools:
       - Faucet: https://testnet.binance.org/faucet-smart
       - Gas Price: https://bscscan.com/chart/gasprice

@@ -14,6 +14,8 @@ Truffle has an BscScan plugin: [truffle-plugin-verify](https://github.com/rkalis
 
 You need to deploy with Truffle to verify with the Truffle verify plugin.
 
+Get API key: https://bscscan.com/myapikey
+
 - Install the plugin
 
 ```bash
