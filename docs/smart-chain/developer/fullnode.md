@@ -113,13 +113,6 @@ geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --
 
 you can monitor the log from `/node/bsc.log` by default.
 
-6.Blockchain Snapshot
-
-A snapshot is a recording of the state of Binance Smart Chain at a particular block height.
-
-Latest snapshot of February 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/geth.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1638282849&Signature=vJUkiTIkPL9YQy6DcNHcDwqDOVs%3D)
-
-
 ### Upgrade Geth
 
 Please read [this guide](./upgrade-fullnode.md)
