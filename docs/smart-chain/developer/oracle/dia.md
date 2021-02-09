@@ -17,6 +17,9 @@ DIA supports assets from various categories to be included into the oracle. A se
 |                  XRP                  |  Crypto price   |
 |              Barnbridge Protocol      |  Farming Pool Data |
 |              yearn.finance            |  Farming Pool Data |
+|              CREX on Crex            |  Chart Point on Exchange |
+|              DAI on CurveFi            |  Chart Point on Exchange |
+|              WBNB on PancakeSwap           |  Chart Point on Exchange |
 
 ## Data Access
 
@@ -117,3 +120,4 @@ contract DiaAssetBtcOracle {
 | :------------ | :------------------------------------------: | :----------: |
 | BSC: Testnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |    1/day    |
 
+The full documentation of the DIA oracle is located [here](https://docs.diadata.org/documentation/oracle-documentation).
