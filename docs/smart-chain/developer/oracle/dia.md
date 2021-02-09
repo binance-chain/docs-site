@@ -17,8 +17,6 @@ DIA supports assets from various categories to be included into the oracle. A se
 |                  XRP                  |  Crypto price   |
 |              Barnbridge Protocol      |  Farming Pool Data |
 |              yearn.finance            |  Farming Pool Data |
-|                 Euro                  |  Fiat Exchange Rate |
-|                 Yen                   |  Fiat Exchange Rate |
 
 ## Data Access
 
@@ -41,75 +39,76 @@ struct CoinInfo {
 }
 ```
 
-The following snippet shows how to retrieve the EUR/USD price using a smart contract.
+The following snippet shows how to retrieve the BNB/BTC price using a smart contract.
 
+```
 pragma solidity ^0.4.24;
 
 contract DiaOracle {
-            address owner;
+	address owner;
 
-        struct CoinInfo {
-                uint256 price;
-                uint256 supply;
-                uint256 lastUpdateTimestamp;
-                string symbol;
-        }
+	struct CoinInfo {
+		uint256 price;
+		uint256 supply;
+		uint256 lastUpdateTimestamp;
+		string symbol;
+	}
 
-        mapping(string => CoinInfo) diaOracles;
+	mapping(string => CoinInfo) diaOracles;
 
-        event newCoinInfo(
-                string name,
-                string symbol,
-                uint256 price,
-                uint256 supply,
-                uint256 lastUpdateTimestamp
-        );
-    
-        constructor() public {
-                owner = msg.sender;
-        }
+	event newCoinInfo(
+		string name,
+		string symbol,
+		uint256 price,
+		uint256 supply,
+		uint256 lastUpdateTimestamp
+	);
 
-        function changeOwner(address newOwner) public {
-                require(msg.sender == owner);
-                owner = newOwner;
-        }
-    
-        function updateCoinInfo(string name, string symbol, uint256 newPrice, uint256 newSupply, uint256 newTimestamp) public {
-                require(msg.sender == owner);
-                diaOracles[name] = (CoinInfo(newPrice, newSupply, newTimestamp, symbol));
-                emit newCoinInfo(name, symbol, newPrice, newSupply, newTimestamp);
-        }
-    
-        function getCoinInfo(string name) public view returns (uint256, uint256, uint256, string) {
-                return (
-                        diaOracles[name].price,
-                        diaOracles[name].supply,
-                        diaOracles[name].lastUpdateTimestamp,
-                        diaOracles[name].symbol
-                );
-        }
+	constructor() public {
+		owner = msg.sender;
+	}
+
+	function changeOwner(address newOwner) public {
+		require(msg.sender == owner);
+		owner = newOwner;
+	}
+
+	function updateCoinInfo(string name, string symbol, uint256 newPrice, uint256 newSupply, uint256 newTimestamp) public {
+		require(msg.sender == owner);
+		diaOracles[name] = (CoinInfo(newPrice, newSupply, newTimestamp, symbol));
+		emit newCoinInfo(name, symbol, newPrice, newSupply, newTimestamp);
+	}
+
+	function getCoinInfo(string name) public view returns (uint256, uint256, uint256, string) {
+		return (
+			diaOracles[name].price,
+			diaOracles[name].supply,
+			diaOracles[name].lastUpdateTimestamp,
+			diaOracles[name].symbol
+		);
+	}
 }
 
-contract DiaAssetEurOracle {
-    DiaOracle oracle;
-    address owner;
+contract DiaAssetBtcOracle {
+	DiaOracle oracle;
+	address owner;
     
-    constructor() public {
-        owner = msg.sender;
-    }
+	constructor() public {
+		owner = msg.sender;
+	}
     
-    function setOracleAddress(address _address) public {
-        require(msg.sender == owner);
-        oracle = DiaOracle(_address);
-    }
+	function setOracleAddress(address _address) public {
+		require(msg.sender == owner);
+		oracle = DiaOracle(_address);
+	}
     
-    function getAssetEurRate(string asset) constant public returns (uint256) {
-        (uint ethPrice,,,) = oracle.getCoinInfo(asset);
-        (uint eurPrice,,,) = oracle.getCoinInfo("EUR");
-        return (ethPrice * 100000 / eurPrice);
-    }
+	function getAssetEurRate(string asset) constant public returns (uint256) {
+		(uint assetPrice,,,) = oracle.getCoinInfo(asset);
+		(uint btcPrice,,,) = oracle.getCoinInfo("BTC");
+		return (assetPrice * 100000 / btcPrice);
+	}
     
-}```
+}
 ```
 
 #### Deployed Addresses
