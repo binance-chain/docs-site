@@ -119,5 +119,6 @@ contract DiaAssetBtcOracle {
 | Chain name    |        Oracle Contract Address          | Update Frequency |
 | :------------ | :------------------------------------------: | :----------: |
 | BSC: Testnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |    1/day    |
+| BSC: Mainnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |    1/day    |
 
 The full documentation of the DIA oracle is located [here](https://docs.diadata.org/documentation/oracle-documentation).
