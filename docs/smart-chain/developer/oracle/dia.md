@@ -31,7 +31,7 @@ The query in the smart contract is realized with the symbol of the asset.
 
 DIA data is published in the `DIAOracle` smart contract. By querying the `getCoinInfo()` function you can retrieve the requested data.
 
-It takes the symbol of the asset as input, e.g., `BTC` for Bitcoin and returns this struct of data:
+It takes the name of the asset as input, e.g., `Bitcoin` and returns this struct of data:
 
 ```
 struct CoinInfo {
@@ -42,7 +42,7 @@ struct CoinInfo {
 }
 ```
 
-The following snippet shows how to retrieve the BNB/BTC price using a smart contract.
+The following snippet shows how to retrieve the BTC price of an asset (e.g. `Binance Coin`) using a smart contract.
 
 ```
 pragma solidity ^0.4.24;
@@ -107,7 +107,7 @@ contract DiaAssetBtcOracle {
     
 	function getAssetEurRate(string asset) constant public returns (uint256) {
 		(uint assetPrice,,,) = oracle.getCoinInfo(asset);
-		(uint btcPrice,,,) = oracle.getCoinInfo("BTC");
+		(uint btcPrice,,,) = oracle.getCoinInfo("Bitcoin");
 		return (assetPrice * 100000 / btcPrice);
 	}
     
