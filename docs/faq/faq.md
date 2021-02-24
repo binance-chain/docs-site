@@ -146,7 +146,7 @@ all the receiving asset and its residual balance will be charged.
 
 ## What is the current Fee Table on Binance Chain Mainnet?
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2020-08-21** is as follows:
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2021-02-23** is as follows:
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
@@ -157,6 +157,7 @@ IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
 Transfer | N/A | 0.000375 BNB | N
 Multi-send | N/A | 0.0003 BNB | N
 Issue Asset | N/A | 100 BNB | N
+Change Asset Owner | N/A | 0.01 BNB | N
 Mint Asset | N/A | 0.01 BNB | N
 Burn Asset | N/A | 0.01 BNB | N
 Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
@@ -176,9 +177,9 @@ SetTokenUri | N/A| 0.000375 BNB | N
 List BEP8 Token| N/A| 8 BNB | N
 Create A New Smart Chain Validator | N/A |10 BNB |N
 Edit Smart Chain Validator Information|N/A| 1 |N
-Delegate Smart Chain Validator |N/A| 0.001 |N
-Redelegate Smart Chain Validator | N/A|0.003 |N
-Undelegate Smart Chain Validator | N/A|0.002 |N
+Delegate Smart Chain Validator |N/A| 0.001 BNB|N
+Redelegate Smart Chain Validator | N/A|0.003 BNB|N
+Undelegate Smart Chain Validator | N/A|0.002 BNB|N
 Unjail A Smart Chain Validator | N/A| 1 BNB | N
 Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 10 BNB| N
 Submit Smart Chain Proposal | N/A| 10 BNBs     | N
@@ -214,7 +215,6 @@ Disable Memo Check | N/A | 1 BNB | N
 HTLT | N/A | 0.000375 BNB | N
 depositHTLT | N/A |  0.000375 BNB | N
 claimHTLT | N/A |  0.000375 BNB | N
-refundHTLT | N/A |  0.000375 BNB | N
 refundHTLT | N/A |  0.000375 BNB | N
 TinyIssueFee | N/A | 2 BNB | N
 MiniIssueFee | N/A | 3 BNB | N
