@@ -39,6 +39,8 @@ If a validator missed more than 50 blocks in 24h, the blocking reward for valida
 ## Unjail
 The malicious validators who are slashed by the previous cases will be set to `jailed` along with a duration setting as well due to the malicious or negative behaviors. We can set it to ‘unjailed’ by sending a side-unjail transaction if the validation passed.
 
+When your validator is `unjailed` on binance chain, it must wait for the next UTC 0:00 to join validatorsest again.
+
 ### Transaction Validation
 * validator address must not be empty
 * side chain id exists

@@ -6,14 +6,14 @@ Binance Smart Chain is an innovative solution to bring programmability and inter
 
 ## What is Validator?
 
-Binance Smart Chain relies on a set of validators who are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by signing blocks which contain cryptographic signatures signed by each validator's private key.  The validator set is determined by a staking module built on Binance Chain for Binance Smart Chain, and propagated every day UTC 00:00 from BC to BSC via Cross-Chain communication.
+Binance Smart Chain relies on a set of validators who are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by signing blocks that contain cryptographic signatures signed by each validator's private key.  The validator set is determined by a staking module built on Binance Chain for Binance Smart Chain, and propagated every day UTC 00:00 from BC to BSC via Cross-Chain communication.
 
 
-## Ecomonics
+## Economics
 
-Validators rewards come from transaction fees and commission fees from delegators.
+Validator's rewards come from transaction fees and commission fees from delegators.
 
-Let us also assume that the reward for a block is 100 BNB and that a certaiin validator has 20% of self-bonded BNB and set its commission rate to 20%. These tokens do not go directly to the proposer. Instead, they are shared  among validator and delegators.  These 100 BNB will be distributed according to each participant's stake:
+Let us also assume that the reward for a block is 100 BNB and that a certain validator has 20% of self-bonded BNB and sets its commission rate to 20%. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These 100 BNB will be distributed according to each participant's stake:
 
 Commission: 80*20%= 16 BNB
 Validator gets: 100\*20% + Commission = 36 BNB
@@ -21,7 +21,7 @@ All delegators get: 100\*80% - Commission = 64 BNB
 
 If validators double sign, are frequently offline, their staked BNB ( not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
 
-You can learn see the revenue hiiistory from BitQuery's [chart](https://explorer.bitquery.io/bsc/miners) or a table of [BscScan](https://bscscan.com/validatorset)
+You can learn to see the revenue history from BitQuery's [chart](https://explorer.bitquery.io/bsc/miners) or a table of [BscScan](https://bscscan.com/validatorset)
 
 ### Slashing conditions
 
@@ -62,12 +62,12 @@ It's recommended to run BSC software in VPS Servers (both with firewall):
 
 ## Steps to Be a Validator Candidate
 
-### 1. Configure your VPSnetwork ports, ssl, firewall
+### 1. Configure your VPS network ports, ssl, firewall
 
 !!! Note
 	If you are running a node in Testnet, 2CPU/8GB of RAM is sufficient.
 
-We recommend using popular cloud providers as there reliability and uptime are close to 100%. These servers would be a good starting point:
+We recommend using popular cloud providers as their reliability and uptime are close to 100%. These servers would be a good starting point:
 * DigitalOcean: CPU optimized droplet 32GB/16CPU
 * Amazon EC2: C5 instance
 * Google Cloud Engine: n1-highcpu-16

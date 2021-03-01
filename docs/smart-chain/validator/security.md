@@ -34,7 +34,7 @@ Update `config.toml` file of validator node
 # make node invisible
 NoDiscovery = true
 # connect only to sentry
-BootstrapNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0"]
+BootstrapNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306?discport=0"]
 ```
 This will return true if successful, but that doesn’t mean the node was added successfully.
 

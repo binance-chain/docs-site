@@ -2,9 +2,9 @@
 
 ## Introduction
 
-First deployed in early 2017, Gnosis multi-signature wallet became foundational infrastructure for storing funds on Ethereum. The Gnosis Safe is the most secure way to manage your crypto funds. 
+First deployed in early 2017, Gnosis multi-signature wallet became the foundational infrastructure for storing funds on Ethereum. The Gnosis Safe is the most secure way to manage your crypto funds.
 
-Today, you can set up the Gnosis Safe Multisig on Binance Smart chain in less than 60 seconds, and you can use wallets including Ledger, Trezor,  Wallet Connect, Torus, and browser wallets like Metamask as signing keys, so that you can manage your crypto collectively and inter-operably.
+Today, you can set up the Gnosis Safe Multisig on Binance Smart chain in less than 60 seconds, and you can use wallets including Ledger, Trezor,  Wallet Connect, Torus, and browser wallets like Metamask as signing keys so that you can manage your crypto collectively and inter-operably.
 
 ## Advantages of Gnosis Safe contracts
 
@@ -16,7 +16,7 @@ The Gnosis Safe is a smart contract wallet with multi-signature functionality at
 
 * Advanced access management
 
-## [Set up your own Gnosis Safe Multisig Now](https://gnosis.binance.org/#/welcome )
+## [Set up your own Gnosis Safe Multisig Now](https://gnosis-safe.binance.org/)
 
 ## Projects building with the Gnosis Safe
 
@@ -25,7 +25,7 @@ Please read the list [here](https://docs.gnosis.io/safe/docs/intro_projects/)
 ## User Guides
 
 ### Create Gnosis Safe
-- Go to welcome page [here]( https://gnosis.binance.org/#/welcome )
+- Go to the welcome page [here]( https://gnosis.binance.org/#/welcome )
 
 <img src="https://lh6.googleusercontent.com/VuFAY4gELmeqK7Ad5nZJhk7O3_E3vPSvWv3DXDLjkRoIHIy_xQOGNmNERIHXwPtolfxVLE0DqnzuhBK4e9WpAKAWD5Y0yaWeoShPZ5_VbV9uYqcJWuZ53iRXXySYhgHKe68CD5i8" alt="img" style="zoom:50%;" />
 
@@ -52,13 +52,13 @@ Please read the list [here](https://docs.gnosis.io/safe/docs/intro_projects/)
 
 <img src="https://lh3.googleusercontent.com/CiT5DFQgDoOpWI_DoUYkkqAXcx5ibhaXInFzs7tJXJFsfKOWLNl0uFpOJyCHIx2zi7jSQ58hLrFOJQSGnDiKPNQ2nRO-QNJDQ28UTW4iL_xMd9GcYVbl1abJjudC8MKDNZKlApzr" alt="img" style="zoom:50%;" />
 
-Great! You have created a Gnosis safe. 
+Great! You have created a Gnosis safe.
 
 <img src="https://lh5.googleusercontent.com/GrpTqYIU-ZkJCNOAxtcTpy8GA7W3btjYDiuMZfdZgZqAlOR4cy4klqr8HvoBW8YL817n46UdmCEFk2khYSAZo7rQZa08Bpf1MQhO60lDkxlO_Ghguwh19KyYUtcE-gd7yl7EMYWG" alt="img" style="zoom:50%;" />
 
 ### Receive Funds for Multi-sig Wallet
 
-- Go to home page
+- Go to the home page
 
 <img src="https://lh6.googleusercontent.com/uiv8jNyUJwllReKV4lwelewBkrgPGB3IcD-pn67wa9EaWC0Q4qp_jcltfA8kOolK9pYxR-tyaEa7F2YY3DnwUYcaLYJJSaXdoa2wbja2a9fL2fEwL9mskp1gmdazp8c5F2B5_g8W" alt="img" style="zoom:50%;" />
 
@@ -70,7 +70,7 @@ Great! You have created a Gnosis safe.
 
 ### Send Funds from Multi-sig Wallet
 
-- Go to home page
+- Go to the home page
 
 <img src="https://lh6.googleusercontent.com/uiv8jNyUJwllReKV4lwelewBkrgPGB3IcD-pn67wa9EaWC0Q4qp_jcltfA8kOolK9pYxR-tyaEa7F2YY3DnwUYcaLYJJSaXdoa2wbja2a9fL2fEwL9mskp1gmdazp8c5F2B5_g8W" alt="img" style="zoom:50%;" />
 
@@ -124,3 +124,29 @@ Great! You have created a Gnosis safe.
 
 
 <img src="https://lh6.googleusercontent.com/dtRFFmHa6jWGFTk-Xw2dYEZQNvg_j8GmpyJ0E_0uD3kQGVM00YD0KUbhQYdBA2Iz5DYebpLwvwQpCFd8sijvRAF4WthKI_ZqkbZjDVL7Qu-x4yRD6I7QEHj0GECzjELi1J1Fw84Q" alt="img" style="zoom:50%;" />
+
+### Load existing Safe
+
+- Select "Load Existing Safe"
+
+<img src="https://lh4.googleusercontent.com/DYaHT6oyXmvoHIg4jl9XHI1wIWPwvwKQe2aWszProoaTaFu0W1Zoosfw_1hMBiJeRXbJjoIeLiznp5lUxYLV5EtsgptGfD8DVyXLoFsNZn19D4crxXljyOlmvhfr3hIxkkR2_xHI" alt="img" style="zoom:50%;" />
+
+- Input address
+
+<img src="https://lh5.googleusercontent.com/lNSIVde-IGWoW7fxcWsR0RblUIo9ppM8uXBvWOxtEfES4vS7bzvszkseNuXp9mx2p583keqMM3KkmZysy1Q4kSO9lgJohM1a5zxbptcX3V2A8ntXCLJhcJwW8PlAV-Hr5FqACZtJ" alt="img" style="zoom:50%;" />
+
+
+
+- Verify owner
+
+<img src="https://lh6.googleusercontent.com/Icn9N2ZtYIwm1EOCXVnzuOYld3qSOPzwFZOnWaHA6NuZk31jJphtuF5nq4wVD3VeTPBHFmBM2gbT1h5oMs2TdXzvGWdm8NGhlkuV4411TTiSuNsod2qGuuitsCMLfQx7zQpEKanW" alt="img" style="zoom:50%;" />
+
+- Click load
+
+<img src="https://lh5.googleusercontent.com/eGvKq7b3MPL0S4YfIXHhB1uidBBuUmn3An9NkzD2-4-jlUFszNldraZ5rSrCFT0Y7chMr_Lm58aFlpWOCYoe27v6Xkcvjv9F_QGsZaEMt2qf4el_BU9KC9NRLV8w0aB7fLBwfTB1" alt="img" style="zoom:50%;" />
+
+- Load Transactions
+
+
+
+<img src="https://lh3.googleusercontent.com/RQTNMMjYOnet-VSM4v34kBbK7VWaOFvi91ZNFKRfugofd-qasqLbaB-NV9icbdjGXcISsUAJI48QnoF1av5Cq2bcEMBxOftC4veGS59wSP1v9fT6Hu0-S0VD-S-5BMsTsSMHApkE" alt="img" style="zoom:50%;" />
