@@ -177,6 +177,66 @@ Congratulations! You've now successfully joined a network as a full node operato
 
 If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch. Learn more [here](snapshot.md)
 
+### 5. Declare Candidacy
+
+You can use `bnbcli` or`tbnbcli` binaryto declare your candidacy by self-stake some of BNB
+
+
+Staking On Binance Chain
+
+* Download `bnbcli` from [GitHub](https://github.com/binance-chain/node-binary/tree/master/cli/prod/0.8.2)
+* Download `tbnbcli `from [GitHub](https://github.com/binance-chain/node-binary/tree/master/cli/testnet/0.8.1)
+
+Use `bnbcli` to create an account or recover an account, make sure the account get more than 100 BNB. You can get BNB from https://testnet.binance.org/faucet-smart, but the BNB is on Binance Smart Chain, you can follow the guide to transfer BNB from BSC to BC.
+
+Before sending `create-validator` transaction, make sure your bsc validator have already catched up. Command for create validator:
+
+Example on mainnet
+
+```
+bnbcli staking bsc-create-validator \
+-side-cons-addr {validator address} \
+--side-fee-addr {wallet address on BSC} \
+--address-delegator {wallet address on BC} \
+--side-chain-id bsc \
+--amount 10000000000:BNB \
+--commission-rate {10000000 represent 10%} \
+--commission-max-rate {20000000 represent 20%} \
+--commission-max-change-rate {500000000 represent 5%} \
+--moniker {validator name} \
+--details {validator detailed description} \
+--identity {keybase identity} \
+--website {website for validator} \
+--from {key name} \
+--chain-id Binance-Chain-Tigris \
+--node https://dataseed5.defibit.io:443
+```
+Example on testnet
+
+```
+tbnbcli staking bsc-create-validator \
+--side-cons-addr {validator address} \
+--side-fee-addr {wallet address on BSC} \
+--address-delegator {wallet address on BC} \
+--side-chain-id chapel \
+--amount 10000000000:BNB \
+--commission-rate {10000000 represent 10%} \
+--commission-max-rate {20000000 represent 20%} \
+--commission-max-change-rate {10000000 represent 1%} \
+--moniker {validator name} \
+--details {validator detailed description} \
+--identity {keybase identity} \
+--website {website for validator} \
+--from {key name} \
+--chain-id Binance-Chain-Ganges \
+--node=http://data-seed-pre-1-s3.binance.org:80
+```
+
+Especially now that the side-cons-addr is the address you unlock when start the bsc node.
+
+Read the detailed manual [here](../../guides/concepts/bc-staking.md)
+
+Go to [explorer](https://explorer.binance.org/) to verify your transactions.
 
 ### 5.Monitor node status
 

@@ -103,11 +103,11 @@ Please download `tbnbcli` binary from [here](https://github.com/binance-chain/no
 | --website                    | www.example.com                      | optional website                                             | No           |
 | --details                    | some details                         | optional details                                             | No           |
 | --commission-rate            | 80000000(that means 0.8  or 80%)     | The initial commission  rate percentage, it has 8 decimal places. | Yes          |
-| --commission-max-rate        | 95000000  (0.95 or 95%)              | The maximum commission  rate percentage, it has 8 decimal places. | Yes          |
-| --commission-max-change-rate | 3000000   (0.03 or 3%)               | The maximum commission  change rate percentage (per day)     | Yes          |
+| --commission-max-rate        | 95000000  (0.95 or 95%)              | The maximum commission  rate percentage, it has 8 decimal places. You can not update this rate.| Yes          |
+| --commission-max-change-rate | 3000000   (0.03 or 3%)               | The maximum commission  change rate percentage (per day). You can not update this rate.     | Yes          |
 | --side-chain-id              | chapel                               | chain-id of the side  chain the validator belongs to         | Yes          |
 | --side-cons-addr             | 0x1234abcd                           | consensus address of the  validator on side chain, please use hex format prefixed with 0x | Yes          |
-| --side-fee-addr              | 0xabcd1234                           | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x | Yes          |
+| --side-fee-addr              | 0xabcd1234                           | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x. | Yes          |
 | --home                       | /path/to/cli_home                    | home directory of bnbcli  data and config, default to “~/.bnbcli” | No           |
 
 Some address parameters we need to highlight here:
@@ -117,7 +117,7 @@ Some address parameters we need to highlight here:
 | DelegatorAddr | Self  delegator address. For BC, this address also used to collect fees. |
 | ValidatorAddr | validator  operator’s address, used in governance ops like voting. |
 | SideConsAddr  | block  producer’s address on side chain, i.e. consensus address. BC has another  parameter named `PubKey`, here SideConsAddr replaced that for BSC.  Only  BSC validators need this parameter. |
-| SideFeeAddr   | fees  are collected in this address on BSC,   Only  BSC validators need this parameter. |
+| SideFeeAddr   | fees  are collected in this address on BSC,   Only  BSC validators need this parameter. Due to different token units, there are some BNB left as dust when sending block rewards from Binance Smart Chain to Binance Chain. Those BNB will be sent to fee address.|
 
 
 
