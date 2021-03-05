@@ -16,7 +16,7 @@ The Gnosis Safe is a smart contract wallet with multi-signature functionality at
 
 * Advanced access management
 
-## [Set up your own Gnosis Safe Multisig Now](https://gnosis-safe.binance.org/)
+## [Set up your own Gnosis Safe Multisig Now](https://gnosis-safe.binance.org/#/welcome)
 
 ## Projects building with the Gnosis Safe
 
@@ -25,7 +25,7 @@ Please read the list [here](https://docs.gnosis.io/safe/docs/intro_projects/)
 ## User Guides
 
 ### Create Gnosis Safe
-- Go to the welcome page [here]( https://gnosis.binance.org/#/welcome )
+- Go to the welcome page [here]( https://gnosis-safe.binance.org/#/welcome)
 
 <img src="https://lh6.googleusercontent.com/VuFAY4gELmeqK7Ad5nZJhk7O3_E3vPSvWv3DXDLjkRoIHIy_xQOGNmNERIHXwPtolfxVLE0DqnzuhBK4e9WpAKAWD5Y0yaWeoShPZ5_VbV9uYqcJWuZ53iRXXySYhgHKe68CD5i8" alt="img" style="zoom:50%;" />
 
