@@ -11,22 +11,6 @@ Future coding competitions; Hackathons
 * Gitcoin: https://gitcoin.co/binancex
 * Dorahacks: https://hackerlink.io/en/grant/1
 
-## Who is already using Binance Side Chain?
-
-Binance Side Chain is welcoming everyone.
-
-**Disclaimer about dApps on Binance Smart Chain**
-
-!!! disclaimer
-	Please note that all projects and dApp applications running on the Binance Smart Chain are independently developed by third-party developers. They are **NOT** audited by Binance official team.
-	Binance Smart Chain is an entirely open-source and open community, which means everyone and all project parties can participate. All opportunities and risks also exist at the same time. You need to identify and prevent risks carefully. This is also the charm of the DeFi world.
-
-These websites provide lists of projects they collect:
-
-* https://debank.com/projects?type=bsc
-* https://bscscan.com/yieldfarms
-* https://community.binance.org/category/48/cn-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E9%87%91%E8%9E%8D-defi
-
 ## What are Pegged tokens on Binance Smart chain?
 
 Soon after the launch of Binance Chain, Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses, and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Binance Chain.
