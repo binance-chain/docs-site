@@ -171,7 +171,9 @@ Your node should now be catching up with the network by replaying all the transa
 
 View the status of the network with [https://bscscan.com/](https://bscscan.com/).
 
-Congratulations! You've now successfully joined a network as a full node operator.
+You can monitor the status from log: `/node/bsc.log` by default. 
+
+Congratulations! You've now successfully joined a network as a [full node](../developer/fullnode.md) operator.
 
 ### Using a data backup (recommended for the mainnet)
 
