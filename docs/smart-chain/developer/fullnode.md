@@ -42,7 +42,7 @@ Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and
 git clone https://github.com/binance-chain/bsc
 # Enter the folder bsc was cloned into
 cd bsc
-# Comile and install bsc
+# Compile and install bsc
 make geth
 ```
 
