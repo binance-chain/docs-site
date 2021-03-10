@@ -17,7 +17,7 @@ BNB and coins on Binance Smart Chain are supported by the Ledger Nano S hardware
 
 ![img](https://lh4.googleusercontent.com/3IYxS3SPr--yBE7OSuw-i7BkKNk7WR_3PxOdq2PMx_xZl3prBrslPvFbUTEY9keZ-g1XOV4WTpJ_9wM32mPVQ_gNh8A5lSigGb1qRTgkOz6wlZa9LzTjBl0QMCVv5LIouGcJOwwn)
 
-2) Within the "Manager" pane, type in "Ethereum" in the search field.Locate "Binance Chain", then click on "Install".
+2) Within the "Manager" pane, type in "Ethereum" in the search field. Locate "Ethereum", then click on "Install". (Note: Do not use the "Binance Chain" App)
 
 ![img](https://lh5.googleusercontent.com/q2SEjHGNgiCZMMdvZ3dvH96o67MqPm4Otj70XGnmsmZT3NekLUXo-FlJlnBpuIPiZRnCstEgOYq3Vmip0gMd7tD7gV_J4oECFBKDYmSe1Euph3ST1e5TeRrZyqZWL_AEAiL3aVer)
 
