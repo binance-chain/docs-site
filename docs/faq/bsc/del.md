@@ -13,9 +13,11 @@ Please read the guide [here](../../smart-chain/delegator/del-guide.md)
 
 You can use:
 
-* [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
 * [Binance Chain extension wallet](../../smart-chain/wallet/binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
+* [Trust Wallet](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
+* [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
+
 
 
 ## How to undelegate my BNB?
@@ -37,3 +39,11 @@ The [minimum delegated amount](../../smart-chain/validator/Parameters.md) is **1
 The rewards will be distributed to every delegators from `bscvalidator` [smart contract](https://bscscan.com/address/0x0000000000000000000000000000000000001000) everyday.
 
 You can read about the details [here](../../guides/concepts/bc-staking.md)
+
+## When can I receive my staking rewards?
+
+Since validatorset info is updated every day UTC 00:00, to make some room for the error handling, we distribute the fees of day N-1 in the next breathe block (day N+1). Thus, after you sent delegate transaction, you will receive your first staking rewards at the second UTC 00:00. Afterwards, you will receive your rewards everyday at UTC 00:00.
+
+## When can I receive my undelegated BNB?
+
+Since Unbonding Period is 7 days. Thus, after you sent undelegate transaction, your staked BNB will not  receive any rewards since the next UTC 00:00. After 7 days start from the next UTC 00:00, you will receive your BNB .

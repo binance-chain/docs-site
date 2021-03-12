@@ -67,3 +67,19 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 * offline slashing amount: 50BNB
 
 * Double-sign slashing amount: 10000BNB
+
+
+## Does an inactive validator receive any rewards?
+
+No, they will not.
+
+## Can I receive my staking rewards if my chosen validator is inactive?
+
+No, you cannot.
+
+## When can I receive my unstaked BNB?
+
+After you sent `undelegate` transaction, you have to wait 7 days. This period starts at UTC 00:00 next day
+
+
+
