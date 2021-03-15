@@ -76,6 +76,10 @@ BC RPC Endpoints:
 
 The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
 
+### 3rd Party Provider
+
+🚀 QuikNode also supports BSC. Devs can get their own custom endpoint for DApps or other needs: <https://quiknode.io>
+
 ## Start
 
 You can start the HTTP JSON-RPC with the --rpc flag
