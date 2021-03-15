@@ -150,3 +150,9 @@ Great! You have created a Gnosis safe.
 
 
 <img src="https://lh3.googleusercontent.com/RQTNMMjYOnet-VSM4v34kBbK7VWaOFvi91ZNFKRfugofd-qasqLbaB-NV9icbdjGXcISsUAJI48QnoF1av5Cq2bcEMBxOftC4veGS59wSP1v9fT6Hu0-S0VD-S-5BMsTsSMHApkE" alt="img" style="zoom:50%;" />
+
+### API 
+
+API to keep track of transactions sent via Gnosis Safe smart contracts
+
+<https://safe-transaction.gnosis.io/>
