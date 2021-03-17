@@ -4,12 +4,8 @@ API description for swap service
 
 **Version:** V1.0
 
-**Contact information:**
-Binance Chain
-
-**Base URL:** api.binance.org/bridge
-
-**Rate Limit:** 2000 request per IP per 5 mins.
+**Contact information:**  
+Binance Chain  
 
 ### /api/v1/tokens
 ---
@@ -208,7 +204,7 @@ Binance Chain
 ### /api/v2/tokens
 ---
 ##### ***GET***
-**Summary:** getQuota
+**Summary:** getTokens
 
 **Responses**
 
@@ -242,21 +238,21 @@ Binance Chain
 ### Models
 ---
 
-### EmailUpdateRequest
+### EmailUpdateRequest  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | email | string |  |  |
 | walletAddress | string |  |  |
 
-### ResponseStatus
+### ResponseStatus  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | message | string |  |  |
 
-### ResponseStatusBodySwapCreation
+### ResponseStatusBodySwapCreation  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -264,7 +260,7 @@ Binance Chain
 | data | [SwapCreation](#swapcreation) |  |  |
 | message | string |  |  |
 
-### ResponseStatusBodySwapDetail
+### ResponseStatusBodySwapDetail  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -272,7 +268,7 @@ Binance Chain
 | data | [SwapDetail](#swapdetail) |  |  |
 | message | string |  |  |
 
-### SwapCreation
+### SwapCreation  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -295,7 +291,7 @@ Binance Chain
 | toNetwork | string |  |  |
 | walletAddress | string |  |  |
 
-### SwapCreationRequest
+### SwapCreationRequest  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -309,7 +305,7 @@ Binance Chain
 | toNetwork | string |  |  |
 | walletAddress | string |  |  |
 
-### SwapDetail
+### SwapDetail  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -343,7 +339,7 @@ Binance Chain
 | updateTime | dateTime |  |  |
 | walletAddress | string |  |  |
 
-### ResponseStatusBodySwapList
+### ResponseStatusBodySwapList  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -351,28 +347,28 @@ Binance Chain
 | data | [SwapList](#swaplist) |  |  |
 | message | string |  |  |
 
-### SwapList
+### SwapList  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [SwapDetail](#swapdetail) ] |  |  |
 | total | long |  |  |
 
-### TokenList
+### TokenList  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [TokenDetail](#tokendetail) ] |  |  |
 | total | long |  |  |
 
-### TokenListV2
+### TokenListV2  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [TokenDetailV2](#tokendetailv2) ] |  |  |
 | total | long |  |  |
 
-### TokenDetail
+### TokenDetail  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -387,7 +383,7 @@ Binance Chain
 | bscContractAddress | string |  |  |
 | bscContractDecimal | integer |  |  |
 
-### TokenDetailV2
+### TokenDetailV2  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -404,15 +400,17 @@ Binance Chain
 | bscContractDecimal | integer |  |  |
 | ethContractAddress | string |  |  |
 | ethContractDecimal | integer |  |  |
+| bscGasExchangeEnabled | boolean |  |  |
+| bscGasExchangeNetworkFee | integer |  |  |
 
-### NetworkList
+### NetworkList  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | from | [ [NetworkDetail](#networkdetail) ] |  |  |
 | to | [ [NetworkDetail](#networkdetail) ] |  |  |
 
-### NetworkDetail
+### NetworkDetail  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -425,14 +423,14 @@ Binance Chain
 | requiredConfirms | integer |  |  |
 | tokenStandard | string |  |  |
 
-### NetworkListV2
+### NetworkListV2  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | from | [ [NetworkDetailV2](#networkdetailv2) ] |  |  |
 | to | [ [NetworkDetailV2](#networkdetailv2) ] |  |  |
 
-### NetworkDetailV2
+### NetworkDetailV2  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -451,7 +449,7 @@ Binance Chain
 | tokenStandard | string |  |  |
 | requiredConfirms | integer |  |  |
 
-### ResponseStatusBodyQuota
+### ResponseStatusBodyQuota  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -459,7 +457,7 @@ Binance Chain
 | data | [Quota](#quota) |  |  |
 | message | string |  |  |
 
-### Quota
+### Quota  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -467,11 +465,12 @@ Binance Chain
 | total | number |  |  |
 | used | number |  |  |
 
-### SwapCreationRequestV2
+### SwapCreationRequestV2  
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
+| exchangeGasAmount | number |  |  |
 | fromNetwork | string |  |  |
 | source | integer |  |  |
 | symbol | string |  |  |

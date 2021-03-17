@@ -668,6 +668,11 @@ definitions:
       ethContractDecimal:
         type: integer
         format: int32
+      bscGasExchangeEnabled:
+        type: boolean
+      bscGasExchangeNetworkFee:
+        type: integer
+        format: int32
   NetworkList:
     type: object
     properties:
@@ -769,6 +774,8 @@ definitions:
     type: object
     properties:
       amount:
+        type: number
+      exchangeGasAmount:
         type: number
       fromNetwork:
         type: string
