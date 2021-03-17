@@ -470,7 +470,7 @@ Binance Chain
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
-| exchangeGasAmount | number |  |  |
+| exchangeGasAmount | number |  | 0.5,1,2 |
 | fromNetwork | string |  |  |
 | source | integer |  |  |
 | symbol | string |  |  |
