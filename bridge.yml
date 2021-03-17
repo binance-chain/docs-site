@@ -671,8 +671,8 @@ definitions:
       bscGasExchangeEnabled:
         type: boolean
       bscGasExchangeNetworkFee:
-        type: integer
-        format: int32
+        type: number
+
   NetworkList:
     type: object
     properties:

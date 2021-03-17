@@ -401,7 +401,7 @@ Binance Chain
 | ethContractAddress | string |  |  |
 | ethContractDecimal | integer |  |  |
 | bscGasExchangeEnabled | boolean |  |  |
-| bscGasExchangeNetworkFee | integer |  |  |
+| bscGasExchangeNetworkFee | number |  |  |
 
 ### NetworkList
 
