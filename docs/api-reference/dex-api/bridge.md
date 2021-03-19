@@ -331,7 +331,7 @@ Binance Chain
 | id | string |  |  |
 | networkFee | number |  |  |
 | networkFeePromoted | boolean |  |  |
-| status | string |  |  |
+| status | string |  | [WaitingForDeposit,DepositInProgress,WithdrawInProgress,Completed,Failed,Cancelled] |
 | swapFee | number |  |  |
 | swapFeeRate | number |  |  |
 | swapTxId | string |  |  |
