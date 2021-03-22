@@ -48,7 +48,7 @@ The rewards will not be sent to validator right away, instead, they will be dist
 
 ## What's the potential loss for validators?
 
-Validators can suffer from “Slashing”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will be shared by their delegators as well.
+Validators can suffer from “Slashing”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will not be shared by their delegators.
 
 Slashing is a punitive function that is triggered by a validator ’s bad actions. Getting slashed is losing self delegation of a validator. Validators will be slashed for the actions below:
 
