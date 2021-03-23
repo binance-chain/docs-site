@@ -1,0 +1,1118 @@
+swagger: '2.0'
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation
+  termsOfService: 'urn:tos'
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+host: 'api.binance.org'
+basePath: /
+tags:
+  - name: API for staking
+    description: Staking Controller
+  - name: Internal API for staking
+    description: Staking Internal Controller
+  - name: basic-error-controller
+    description: Basic Error Controller
+  - name: operation-handler
+    description: Operation Handler
+  - name: web-mvc-links-handler
+    description: Web Mvc Links Handler
+paths:
+  '/v1/staking/accounts/{address}/balance':
+    get:
+      tags:
+        - API for staking
+      summary: getBalance
+      operationId: getBalanceUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: address
+          in: path
+          description: address
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BalanceVo'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/allowed-dst-validators':
+    get:
+      tags:
+        - API for staking
+      summary: getAllowedDstValidators
+      operationId: getAllowedDstValidatorsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+        - name: src-validator
+          in: query
+          description: src-validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AllowedDstValidatorsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/delegations':
+    get:
+      tags:
+        - API for staking
+      summary: getDelegationsValByDelegator
+      operationId: getDelegationsValByDelegatorUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DelegationValsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/operations':
+    get:
+      tags:
+        - API for staking
+      summary: getOperationsByDelegator
+      operationId: getOperationsByDelegatorUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OperationsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/reds':
+    get:
+      tags:
+        - API for staking
+      summary: getDelREDs
+      operationId: getDelREDsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: isCompleted
+          in: query
+          description: isCompleted
+          required: false
+          type: integer
+          format: int32
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RedsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/rewards':
+    get:
+      tags:
+        - API for staking
+      summary: getDelRewards
+      operationId: getDelRewardsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: endTime
+          in: query
+          description: endTime
+          required: false
+          type: integer
+          format: int64
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+        - name: startTime
+          in: query
+          description: startTime
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RewardsDetailVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/delegators/{delegator}/ubds':
+    get:
+      tags:
+        - API for staking
+      summary: getDelUBDs
+      operationId: getDelUBDsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: delegator
+          in: path
+          description: delegator
+          required: true
+          type: string
+        - name: isCompleted
+          in: query
+          description: isCompleted
+          required: false
+          type: integer
+          format: int32
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+        - name: validator
+          in: query
+          description: validator
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UbdsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/next-reward-time':
+    get:
+      tags:
+        - API for staking
+      summary: getNextRewardTime
+      operationId: getNextRewardTimeUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: string
+              format: date-time
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/summary':
+    get:
+      tags:
+        - API for staking
+      summary: getSum
+      operationId: getSumUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/StakingSumVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators':
+    get:
+      tags:
+        - API for staking
+      summary: getValidators
+      operationId: getValidatorsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: consensus-address
+          in: query
+          description: consensus-address
+          required: false
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ValidatorsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators/{validator}':
+    get:
+      tags:
+        - API for staking
+      summary: getValidator
+      operationId: getValidatorUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: validator
+          in: path
+          description: validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ValidatorDetailVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators/{validator}/delegations':
+    get:
+      tags:
+        - API for staking
+      summary: getDelegationsByValidator
+      operationId: getDelegationsByValidatorUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+        - name: validator
+          in: path
+          description: validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DelegationsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators/{validator}/operations':
+    get:
+      tags:
+        - API for staking
+      summary: getOperationsByValidator
+      operationId: getOperationsByValidatorUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: limit
+          required: true
+          type: integer
+          format: int32
+        - name: offset
+          in: query
+          description: offset
+          required: true
+          type: integer
+          format: int32
+        - name: validator
+          in: path
+          description: validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OperationsVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators/{validator}/powers':
+    get:
+      tags:
+        - API for staking
+      summary: getVotingPower
+      operationId: getVotingPowerUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: endTime
+          in: query
+          description: endTime
+          required: true
+          type: integer
+          format: int64
+        - name: startTime
+          in: query
+          description: startTime
+          required: true
+          type: integer
+          format: int64
+        - name: validator
+          in: path
+          description: validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/VotingPowerVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/v1/staking/chains/{chain-id}/validators/{validator}/rewards':
+    get:
+      tags:
+        - API for staking
+      summary: getValRewards
+      operationId: getValRewardsUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: chain-id
+          in: path
+          description: chain-id
+          required: true
+          type: string
+        - name: endTime
+          in: query
+          description: endTime
+          required: true
+          type: integer
+          format: int64
+        - name: startTime
+          in: query
+          description: startTime
+          required: true
+          type: integer
+          format: int64
+        - name: validator
+          in: path
+          description: validator
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RewardVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+definitions:
+  AllowedDstValidatorsVO:
+    type: object
+    properties:
+      earliestCompleteTime:
+        type: string
+        format: date-time
+      total:
+        type: integer
+        format: int64
+      validators:
+        type: array
+        items:
+          $ref: '#/definitions/ValidatorVO'
+    title: AllowedDstValidatorsVO
+  BalanceVo:
+    type: object
+    properties:
+      asset:
+        type: string
+      delegated:
+        type: number
+      unbonding:
+        type: number
+    title: BalanceVo
+  DelegationVO:
+    type: object
+    properties:
+      amount:
+        type: number
+      delegator:
+        type: string
+      initialTime:
+        type: string
+        format: date-time
+      validator:
+        type: string
+    title: DelegationVO
+  DelegationValVO:
+    type: object
+    properties:
+      amount:
+        type: number
+      delegator:
+        type: string
+      initialTime:
+        type: string
+        format: date-time
+      validator:
+        type: string
+      validatorName:
+        type: string
+      validatorStatus:
+        type: integer
+        format: int32
+        description: '0: active 1: inactive 2: inJail'
+    title: DelegationValVO
+  DelegationValsVO:
+    type: object
+    properties:
+      delegations:
+        type: array
+        items:
+          $ref: '#/definitions/DelegationValVO'
+      total:
+        type: integer
+        format: int64
+    title: DelegationValsVO
+  DelegationsVO:
+    type: object
+    properties:
+      delegations:
+        type: array
+        items:
+          $ref: '#/definitions/DelegationVO'
+      total:
+        type: integer
+        format: int64
+    title: DelegationsVO
+  Link:
+    type: object
+    properties:
+      href:
+        type: string
+      templated:
+        type: boolean
+    title: Link
+  'Map«string,Link»':
+    type: object
+    title: 'Map«string,Link»'
+    additionalProperties:
+      $ref: '#/definitions/Link'
+  ModelAndView:
+    type: object
+    properties:
+      empty:
+        type: boolean
+      model:
+        type: object
+      modelMap:
+        type: object
+        additionalProperties:
+          type: object
+      reference:
+        type: boolean
+      status:
+        type: string
+        enum:
+          - 100 CONTINUE
+          - 101 SWITCHING_PROTOCOLS
+          - 102 PROCESSING
+          - 103 CHECKPOINT
+          - 200 OK
+          - 201 CREATED
+          - 202 ACCEPTED
+          - 203 NON_AUTHORITATIVE_INFORMATION
+          - 204 NO_CONTENT
+          - 205 RESET_CONTENT
+          - 206 PARTIAL_CONTENT
+          - 207 MULTI_STATUS
+          - 208 ALREADY_REPORTED
+          - 226 IM_USED
+          - 300 MULTIPLE_CHOICES
+          - 301 MOVED_PERMANENTLY
+          - 302 FOUND
+          - 302 MOVED_TEMPORARILY
+          - 303 SEE_OTHER
+          - 304 NOT_MODIFIED
+          - 305 USE_PROXY
+          - 307 TEMPORARY_REDIRECT
+          - 308 PERMANENT_REDIRECT
+          - 400 BAD_REQUEST
+          - 401 UNAUTHORIZED
+          - 402 PAYMENT_REQUIRED
+          - 403 FORBIDDEN
+          - 404 NOT_FOUND
+          - 405 METHOD_NOT_ALLOWED
+          - 406 NOT_ACCEPTABLE
+          - 407 PROXY_AUTHENTICATION_REQUIRED
+          - 408 REQUEST_TIMEOUT
+          - 409 CONFLICT
+          - 410 GONE
+          - 411 LENGTH_REQUIRED
+          - 412 PRECONDITION_FAILED
+          - 413 PAYLOAD_TOO_LARGE
+          - 413 REQUEST_ENTITY_TOO_LARGE
+          - 414 URI_TOO_LONG
+          - 414 REQUEST_URI_TOO_LONG
+          - 415 UNSUPPORTED_MEDIA_TYPE
+          - 416 REQUESTED_RANGE_NOT_SATISFIABLE
+          - 417 EXPECTATION_FAILED
+          - 418 I_AM_A_TEAPOT
+          - 419 INSUFFICIENT_SPACE_ON_RESOURCE
+          - 420 METHOD_FAILURE
+          - 421 DESTINATION_LOCKED
+          - 422 UNPROCESSABLE_ENTITY
+          - 423 LOCKED
+          - 424 FAILED_DEPENDENCY
+          - 425 TOO_EARLY
+          - 426 UPGRADE_REQUIRED
+          - 428 PRECONDITION_REQUIRED
+          - 429 TOO_MANY_REQUESTS
+          - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
+          - 451 UNAVAILABLE_FOR_LEGAL_REASONS
+          - 500 INTERNAL_SERVER_ERROR
+          - 501 NOT_IMPLEMENTED
+          - 502 BAD_GATEWAY
+          - 503 SERVICE_UNAVAILABLE
+          - 504 GATEWAY_TIMEOUT
+          - 505 HTTP_VERSION_NOT_SUPPORTED
+          - 506 VARIANT_ALSO_NEGOTIATES
+          - 507 INSUFFICIENT_STORAGE
+          - 508 LOOP_DETECTED
+          - 509 BANDWIDTH_LIMIT_EXCEEDED
+          - 510 NOT_EXTENDED
+          - 511 NETWORK_AUTHENTICATION_REQUIRED
+      view:
+        $ref: '#/definitions/View'
+      viewName:
+        type: string
+    title: ModelAndView
+  OperationVO:
+    type: object
+    properties:
+      amount:
+        type: number
+      delegator:
+        type: string
+      operationType:
+        type: integer
+        format: int32
+        description: '0: delegate; 1: undelegate; 2: redelegate'
+      srcValidator:
+        type: string
+      time:
+        type: string
+        format: date-time
+      txHash:
+        type: string
+      valName:
+        type: string
+      validator:
+        type: string
+    title: OperationVO
+  OperationsVO:
+    type: object
+    properties:
+      operations:
+        type: array
+        items:
+          $ref: '#/definitions/OperationVO'
+      total:
+        type: integer
+        format: int64
+    title: OperationsVO
+  RedVO:
+    type: object
+    properties:
+      balance:
+        type: number
+      completeHeight:
+        type: integer
+        format: int64
+      completeTime:
+        type: string
+        format: date-time
+      creationHeight:
+        type: integer
+        format: int64
+      delegator:
+        type: string
+      denom:
+        type: string
+      dstShares:
+        type: integer
+        format: int64
+      dstValidator:
+        type: string
+      initialBalance:
+        type: number
+      srcShares:
+        type: integer
+        format: int64
+      srcValidator:
+        type: string
+    title: RedVO
+  RedsVO:
+    type: object
+    properties:
+      redelegations:
+        type: array
+        items:
+          $ref: '#/definitions/RedVO'
+      total:
+        type: integer
+        format: int64
+    title: RedsVO
+  RewardDetailVO:
+    type: object
+    properties:
+      chainId:
+        type: string
+      delegator:
+        type: string
+      height:
+        type: integer
+        format: int64
+      reward:
+        type: number
+      rewardTime:
+        type: string
+        format: date-time
+      valName:
+        type: string
+      validator:
+        type: string
+    title: RewardDetailVO
+  RewardVO:
+    type: object
+    properties:
+      chainId:
+        type: string
+      commission:
+        type: number
+      height:
+        type: integer
+        format: int64
+      rewardTime:
+        type: string
+        format: date-time
+      selfDelegator:
+        type: string
+      totalReward:
+        type: number
+      valTokens:
+        type: number
+      validator:
+        type: string
+    title: RewardVO
+  RewardWithDistributionAddrVO:
+    type: object
+    properties:
+      chainId:
+        type: string
+      commission:
+        type: number
+      distributionAddr:
+        type: string
+      height:
+        type: integer
+        format: int64
+      rewardTime:
+        type: string
+        format: date-time
+      selfDelegator:
+        type: string
+      totalReward:
+        type: number
+      valTokens:
+        type: number
+      validator:
+        type: string
+    title: RewardWithDistributionAddrVO
+  RewardsDetailVO:
+    type: object
+    properties:
+      rewardDetails:
+        type: array
+        items:
+          $ref: '#/definitions/RewardDetailVO'
+      total:
+        type: integer
+        format: int64
+    title: RewardsDetailVO
+  RewardsWithDistributionAddrVO:
+    type: object
+    properties:
+      rewards:
+        type: array
+        items:
+          $ref: '#/definitions/RewardWithDistributionAddrVO'
+      total:
+        type: integer
+        format: int64
+    title: RewardsWithDistributionAddrVO
+  StakingSumVO:
+    type: object
+    properties:
+      reward:
+        type: number
+      votingPower:
+        type: number
+    title: StakingSumVO
+  UbdVO:
+    type: object
+    properties:
+      balance:
+        type: number
+      completeHeight:
+        type: integer
+        format: int64
+      completeTime:
+        type: string
+        format: date-time
+      creationHeight:
+        type: integer
+        format: int64
+      delegator:
+        type: string
+      denom:
+        type: string
+      initialBalance:
+        type: number
+      validator:
+        type: string
+    title: UbdVO
+  UbdsVO:
+    type: object
+    properties:
+      total:
+        type: integer
+        format: int64
+      unbondingDelegations:
+        type: array
+        items:
+          $ref: '#/definitions/UbdVO'
+    title: UbdsVO
+  ValidatorDetailVO:
+    type: object
+    properties:
+      apr:
+        type: number
+      commissionMaxChangeRate:
+        type: number
+      commissionMaxRate:
+        type: number
+      commissionRate:
+        type: number
+      detail:
+        type: string
+      distributionAddr:
+        type: string
+      identity:
+        type: string
+      selfDelegator:
+        type: string
+      selfStake:
+        type: number
+      sideConsAddr:
+        type: string
+      sideFeeAddr:
+        type: string
+      status:
+        type: integer
+        format: int32
+      valName:
+        type: string
+      validator:
+        type: string
+      votingPower:
+        type: number
+      votingPowerProportion:
+        type: number
+      website:
+        type: string
+    title: ValidatorDetailVO
+  ValidatorVO:
+    type: object
+    properties:
+      apr:
+        type: number
+      commissionRate:
+        type: number
+      status:
+        type: integer
+        format: int32
+      valName:
+        type: string
+      validator:
+        type: string
+      votingPower:
+        type: number
+      votingPowerProportion:
+        type: number
+    title: ValidatorVO
+  ValidatorsVO:
+    type: object
+    properties:
+      total:
+        type: integer
+        format: int64
+      validators:
+        type: array
+        items:
+          $ref: '#/definitions/ValidatorVO'
+    title: ValidatorsVO
+  View:
+    type: object
+    properties:
+      contentType:
+        type: string
+    title: View
+  VotingPowerVO:
+    type: object
+    properties:
+      snapshotTime:
+        type: string
+        format: date-time
+      votingPower:
+        type: number
+    title: VotingPowerVO

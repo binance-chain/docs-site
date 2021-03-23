@@ -147,6 +147,7 @@ nav:
       - Bind Token Tool: https://github.com/binance-chain/token-bind-tool
     - Blockchain Details:
       - Binance Smart Chain Fullnode: smart-chain/developer/fullnode.md
+      - Chaindata Snapshot: smart-chain/validator/snapshot.md
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
       - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
@@ -173,6 +174,7 @@ nav:
       - Upgrade: guides/node/upgrade.md
       - Local Network: guides/node/localnetwork.md
       - Common Issues: fullnodeissue.md
+      - Staking: api-reference/dex-api/staking.md
       - Snapshot: guides/node/snapshot.md
     - Binance Chain Client: api-reference/cli.md
     - Light Client: light-client.md
