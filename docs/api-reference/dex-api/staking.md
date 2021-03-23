@@ -6,9 +6,10 @@ Api Documentation
 
 **Terms of service:**
 
-**License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
 * Base URL: api.binance.org/
+
+
+**License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### /v1/staking/accounts/{address}/balance
 ---
