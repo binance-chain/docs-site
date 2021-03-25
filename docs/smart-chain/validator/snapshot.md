@@ -15,10 +15,15 @@ Basically, a compressed version of the last-known "good" chaindata is downloaded
 
 Note: Ensure there is enough disk space for both the zip file AND its uncompressed contents. Double the space or more.
 
+Download March Snapshot from CLI using wget
+
+```
+wget --no-check-certificate --no-proxy 'https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202103.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1641450253&Signature=hOC8I8HSpCOytlYMVQwKRc5oUaI%3D'
+```
 
 > Tip: extract the data in background
 
-In case you can not wait for the extraction finish, you can run it in the background
+In case you can not wait for the extraction to finish, you can run it in the background
 
 ```
 # Extract the data
