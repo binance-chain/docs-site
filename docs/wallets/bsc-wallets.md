@@ -12,3 +12,4 @@
 | 6      | TokenPocket              | <https://www.tokenpocket.pro/en/>       |[Link](https://tokenpocket-gm.medium.com/how-to-create-or-import-a-bsc-account-to-tokenpocket-faaad2f2989c)|
 | 7      | Trust Wallet              | <https://trustwallet.com/>       |[Link](../smart-chain/wallet/trustwallet.md)|
 | 8      | ezDeFi              | <https://ezdefi.com/>       |[Link](../smart-chain/wallet/ezdefi.md)|
+| 9      | D'CENT Wallet              | <https://dcentwallet.com/>       |[Link](https://userguide.dcentwallet.com/coin-send-receive/how-to-use-coin-account/how-to-use-binance-smart-chain-account)|
