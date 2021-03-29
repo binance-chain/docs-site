@@ -92,9 +92,9 @@ or you can download the pre-build binaries from [release page](https://github.co
 
 ```bash
 # Linux
-wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.6/geth_linux
+wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.7/geth_linux
 # MacOS
-wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.6/geth_mac
+wget --no-check-certificate https://github.com/binance-chain/bsc/releases/download/v1.0.7/geth_mac
 ```
 
 **Download the config files**
@@ -171,7 +171,7 @@ Your node should now be catching up with the network by replaying all the transa
 
 View the status of the network with [https://bscscan.com/](https://bscscan.com/).
 
-You can monitor the status from log: `$HOME/node/bsc.log` by default. 
+You can monitor the status from log: `$HOME/node/bsc.log` by default.
 
 Congratulations! You've now successfully joined a network as a [full node](../developer/fullnode.md) operator.
 
@@ -251,5 +251,9 @@ docker run -it -d -p 9090:9090 \
 ```
 
 ![](https://grafana.com/api/dashboards/6976/images/4471/image)
+
+### 6. Update validator prodile
+
+You can submit a PullRequest to this repository to update your information: <https://github.com/binance-chain/validator-directory>
 
 Reference: <https://grafana.com/grafana/dashboards/6976>
