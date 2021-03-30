@@ -80,6 +80,9 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
 
 🚀 QuikNode also supports BSC. Devs can get their own custom endpoint for DApps or other needs: <https://quiknode.io>
 
+ANKR: <https://docs.ankr.com/enteprise-solutions/binance-smart-chain>
+
+
 ## Start
 
 You can start the HTTP JSON-RPC with the --rpc flag

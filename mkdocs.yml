@@ -151,9 +151,15 @@ nav:
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
       - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
+    - Cross Chain Technology:
+      - Poly.network: https://medium.com/poly-network/poly-network-now-supports-cross-chain-transfer-of-eth-neo-heco-assets-to-bsc-fed6880d5681
+      - multichain.xyz: https://multichain.xyz/
+      - pNetwork: https://www.binance.org/en/blog/pnetworks-ethereum-bsc-bridge-now-live-on-the-binance-smart-chain/
+      - curvegrid: https://www.curvegrid.com/
     - Oracles:
       - Band Protocol Integration: smart-chain/developer/oracle/band.md
       - Chainlink Protocol Integration: smart-chain/developer/oracle/link.md
+      - Chainlink Protocol VRF: https://docs.chain.link/docs/chainlink-vrf
     - Tutorial:
       - Deploy NFT:  smart-chain/developer/ERC721.md
       - Verify Contract on bscscan.com: smart-chain/developer/deploy/verify.md
