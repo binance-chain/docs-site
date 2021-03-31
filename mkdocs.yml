@@ -31,7 +31,7 @@ nav:
       - Consensus: smart-chain/guides/concepts/consensus.md
       - Comparison: smart-chain/guides/general.md
       - Genesis File: smart-chain/guides/concepts/genesis.md
-      - Cross-chain:
+      - BC & BSC Cross-chain:
         - Cross-chain Mechanism: smart-chain/guides/concepts/cross-chain.md
         - Cross-chain Guide: smart-chain/developer/cross-chain-transfer.md
         - BSC Relayer: smart-chain/guides/concepts/bsc-relayer.md
@@ -57,6 +57,7 @@ nav:
         - Testnet : smart-chain/validator/testnet.md
         - Validator FAQ: faq/bsc/val.md
       - Delegator Guide: smart-chain/delegator/del-guide.md
+    - Cross Chain Apps: smart-chain/guides/cross-chain.md
     - Binance Smart Chain Mainnet Explorer:
       - BscScan: https://bscscan.com/
       - BitQuery: https://explorer.bitquery.io/bsc
@@ -151,11 +152,6 @@ nav:
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
       - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
-    - Cross Chain Technology:
-      - Poly.network: https://medium.com/poly-network/poly-network-now-supports-cross-chain-transfer-of-eth-neo-heco-assets-to-bsc-fed6880d5681
-      - multichain.xyz: https://multichain.xyz/
-      - pNetwork: https://www.binance.org/en/blog/pnetworks-ethereum-bsc-bridge-now-live-on-the-binance-smart-chain/
-      - curvegrid: https://www.curvegrid.com/
     - Oracles:
       - Band Protocol Integration: smart-chain/developer/oracle/band.md
       - Chainlink Protocol Integration: smart-chain/developer/oracle/link.md
