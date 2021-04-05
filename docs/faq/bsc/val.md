@@ -14,7 +14,7 @@ The proposal will decide: slash amount, cross-chain transfer fees
 
 ## How to join testnet as a validator?
 
-1. Chooe your own server/PC
+1. Choose your own server/PC
 2. Install software:
 3. Create a wallet and get some BNB
 4. Run your fullnode and keep it synced
@@ -22,7 +22,7 @@ The proposal will decide: slash amount, cross-chain transfer fees
 
 ## How to join mainnet as a validator?
 
-1. Chooe your own server/PC
+1. Choose your own server/PC
 2. Install software:
 3. Create a wallet and get some BNB
 4. Run your fullnode and keep it synced
