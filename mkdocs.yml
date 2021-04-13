@@ -42,12 +42,7 @@ nav:
       - Governance: smart-chain/guides/concepts/bsc-gov.md
     - Ecosystem: https://github.com/binance-chain/bsc-ecosystem
     - Gnosis: smart-chain/developer/gnosis.md
-    - Binance Bridge:
-      - User Guide V1: smart-chain/guides/panama.md
-      - User Guide V2: smart-chain/guides/bridge-v2.md
-      - Buy BNB as Gas: smart-chain/guides/bnb-gas.md
-      - API doc: api-reference/dex-api/bridge.md
-      - Widget: api-reference/dex-api/bridge-widget.md
+    - Binance Bridge: https://binance-wallet.gitbook.io/binance-bridge/
     - Staking:
       - Validator:
         - Guides: smart-chain/validator/guideline.md
@@ -65,15 +60,7 @@ nav:
       - BscScan: https://testnet.bscscan.com/
       - BitQuery: https://explorer.bitquery.io/bsc_testnet
     - Wallet:
-      - Binance Extension Wallet Guides:
-        - Introduction: smart-chain/wallet/binance.md
-        - How to add account: smart-chain/wallet/extension/add-account.md
-        - How to add asset: smart-chain/wallet/extension/add-asset.md
-        - How to reset password or import account: smart-chain/wallet/extension/reset.md
-        - How to reveal your seed phrase: smart-chain/wallet/extension/seed.md
-        - How to use Ledger with Binance Extension Wallet: smart-chain/wallet/extension/ledger.md
-        - How to stay safe: smart-chain/wallet/extension/safe.md
-        - Wallet Direct:  smart-chain/wallet/extension/direct.md
+      - Binance Extension Wallet Guides: https://binance-wallet.gitbook.io/binance-chain-extension-wallet
       - MetaMask Guides: smart-chain/wallet/metamask.md
       - Arkane: smart-chain/wallet/arkane.md
       - Ledger: smart-chain/wallet/ledger.md
@@ -82,7 +69,7 @@ nav:
       - Math Wallet: smart-chain/wallet/math.md
       - Trust Wallet: smart-chain/wallet/trustwallet.md
       - SafePal: https://blog.safepal.io/binance-smart-chain-x-safepal/
-      - TokenPocket: https://community.binance.org/topic/3374
+      - TokenPocket: https://tokenpocket-gm.medium.com/defi-with-tokenpocket-how-to-use-binance-smart-chain-swap-with-tokenpocket-e76d6cd7986
       - 币安链插件钱包指南: smart-chain/wallet/binance-cn.md
       - ezDeFi: smart-chain/wallet/ezdefi.md
   - Binance Chain:
