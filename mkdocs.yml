@@ -47,7 +47,7 @@ nav:
       - Validator:
         - Guides: smart-chain/validator/guideline.md
         - Validator Security: smart-chain/validator/security.md
-        - Chaindata Snapshot: smart-chain/validator/snapshot.md
+        - Chaindata Snapshot: smart-chain/developer/snapshot.md
         - Best Pratice: smart-chain/validator/best-practice.md
         - Testnet : smart-chain/validator/testnet.md
         - Validator FAQ: faq/bsc/val.md
@@ -135,7 +135,7 @@ nav:
       - Bind Token Tool: https://github.com/binance-chain/token-bind-tool
     - Blockchain Details:
       - Binance Smart Chain Fullnode: smart-chain/developer/fullnode.md
-      - Chaindata Snapshot: smart-chain/validator/snapshot.md
+      - Chaindata Snapshot: smart-chain/developer/snapshot.md
       - BSC Relayer: smart-chain/developer/bsc-relayer.md
       - Pegged Tokens: https://docs.binance.org/faq/bsc/eco.html#what-are-pegged-tokens-on-binance-smart-chain
       - RPC: smart-chain/developer/rpc.md
