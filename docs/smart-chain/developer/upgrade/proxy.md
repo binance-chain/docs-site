@@ -114,14 +114,14 @@ contract('Upgradeable BEP20 token', (accounts) => {  it('Create Token', async ()
   });
 ```
 ### Transfer Control
-You cann change the proxy owner to another address.
+You can change the proxy owner to another address.
 ```js
 let event = await bep20proxy.methods.changeAdmin(newAdmin).send({from: proxyAdmin});
 bep20proxy.getPastEvents("AdminChanged", {fromBlock: 0, toBlock: "latest"}).then(console.log)
 
 ```
 ### Transfer Owner
-You cann change the BEP20 token owner to another address.
+You can change the BEP20 token owner to another address.
 ```js
     await bep20.methods.transferOwnership(accounts[5]).send({from: accounts[1]});
     const owner = await bep20.methods.getOwner().call({from: accounts[5]});
