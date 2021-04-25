@@ -16,6 +16,19 @@ The Gnosis Safe is a smart contract wallet with multi-signature functionality at
 
 * Advanced access management
 
+## Mainnet Deployment Address
+
+| Name                   | Address                                                      |
+| ---------------------- | ------------------------------------------------------------ |
+| GnosisSafeProxyFactory | https://bscscan.com/tx/0x73481bbd5a80aa4510869877aa385be63d32b80a2931c663f137604840646e62 |
+| GnosisSafe             | https://bscscan.com/address/0x2bb001433cf04c1f7d71e3c40fed66b2b563065e#code |
+| CreateAndAddModules    | https://bscscan.com/address/0x2e133d504f011019135cba146b2154438e214530 |
+|MultiSend   |https://bscscan.com/address/0x663a65a0523103846a1761ab90a1a4731156c453 |
+|StateChannelModule   |https://bscscan.com/address/0x5503e23e8298841cb0c3612ba9f5eb306202557d|
+|DailyLimitModule |https://bscscan.com/address/0x1bc46962bced5c37b27531a222a0599d9daf0e41|
+|SocialRecoveryModule |https://bscscan.com/address/0x8630b088c3060caae3fa9c0a76606c8402c60881|
+|WhitelistModule |https://bscscan.com/address/0x62256a26611842ee95622076223e7065159b82af|
+
 ## [Set up your own Gnosis Safe Multisig Now](https://gnosis-safe.binance.org/#/welcome)
 
 ## Projects building with the Gnosis Safe
