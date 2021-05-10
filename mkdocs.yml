@@ -252,7 +252,7 @@ repo_url: 'https://github.com/binance-chain/docs-site'
 extra:
   social:
     - type: 'github'
-      link: 'binance-chain/docs-site'
+      link: 'https://github.com/binance-chain/docs-site'
     - type: 'twitter'
       link: 'https://twitter.com/binancechain'
     - type: 'website'
