@@ -125,11 +125,11 @@ Download `genesis.json` and `config.toml` by:
 
 ```bash
 ## mainet
-wget https://github.com/binance-chain/bsc/releases/download/v1.1.0-beta/mainnet.zip
+wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 
 ## testnet
-wget https://github.com/binance-chain/bsc/releases/download/v1.1.0-beta/testnet.zip
+wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
 unzip testnet.zip
 ```
 
