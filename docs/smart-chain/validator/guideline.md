@@ -159,7 +159,7 @@ geth account import --datadir ./node
 ## generate the consensus key and input the password
 geth account new --datadir ./node
 echo {your-password} > password.txt
-geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --password password.txt  --mine  --allow-insecure-unlock --cache 18000
+geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-validator-address} --password password.txt  --mine  --allow-insecure-unlock --cache 18000
 ```
 
 !!! Note

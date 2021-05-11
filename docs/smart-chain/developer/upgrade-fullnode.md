@@ -30,5 +30,5 @@ $ kill  $pid
 
 ```bash
 ## start a full node
-geth --config ./config.toml --datadir ./node 
+geth --config ./config.toml --datadir ./node --syncmode snap
 ```

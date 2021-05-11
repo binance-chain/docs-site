@@ -37,5 +37,5 @@ In case you can not wait for the extraction to finish, you can run it in the bac
 # Extract the data
 nohup unzip  /NAME_OF_YOUR_HOME/node/geth/ -f chaindata_202102.zip &
 # Start your node back
-geth --config ./config.toml --datadir ./node 
+geth --config ./config.toml --datadir ./node --syncmode snap
 ```

@@ -157,7 +157,7 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 ```bash
 ## start a full node
-geth --config ./config.toml --datadir ./node 
+geth --config ./config.toml --datadir ./node --syncmode snap
 ```
 
 
@@ -167,7 +167,7 @@ Start a validator node
 ## generate the consensus key and input the password
 geth account new --datadir ./node
 echo {your-password} > password.txt
-geth --config ./config.toml --datadir ./node -unlock {your-validator-address} --password password.txt  --mine  --allow-insecure-unlock  --cache 18000
+geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-validator-address} --password password.txt  --mine  --allow-insecure-unlock  --cache 18000
 ```
 
 !!! Note
