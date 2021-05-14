@@ -12,8 +12,8 @@
 |6 | [Arkane](./wallet/arkane.md)|<https://arkane.network/>|No|
 |7|[MetaMask](./wallet/metamask.md)|<https://metamask.zendesk.com/hc/en-us>|No|
 |8|[Ledger](./wallet/ledger.md)|<https://www.ledger.com/>|Yes|
-|9|[Trezor](./wallet/trezor.md)|<https://wallet.trezor.io >|No|
+|9|[Trezor](./wallet/trezor.md)|<https://wallet.trezor.io>|No|
 |10|[MEW](./wallet/myetherwallet.md)|<https://www.myetherwallet.com/>|No|
-|11|[ezDeFi]( ./wallet/ezdefi.md)|<http://ezdefi.com >|No|
-|12|[1inch wallet](https://www.youtube.com/watch?v=BXFvPMxJ4_Q)|<https://1inch.io/wallet/ >|No|
+|11|[ezDeFi]( ./wallet/ezdefi.md)|<http://ezdefi.com>|No|
+|12|[1inch wallet](https://www.youtube.com/watch?v=BXFvPMxJ4_Q)|<https://1inch.io/wallet/>|No|
 |13|[Infinity wallet](./wallet/infinitywallet.md)| <https://infinitywallet.io/download/> |No|
