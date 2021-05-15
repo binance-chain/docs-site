@@ -20,9 +20,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/451f7b5952bed14719d168ee3d512cf8.png" width="640">
 
 
-### Launch the Infinity Wallet to create your local account and wallet
-In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
-
+## Launch the Infinity Wallet to create your local account and wallet
 
 * Create a local account, you can name this anything as the account name is only used locally within your own device
 
@@ -72,3 +70,25 @@ In the future we look to make it a lot faster for users to onboard with a fast o
 * Congratulations you have sucessfully created your Infinity Wallet and can now access the vast amount of features the Infinity Wallet has to offer
 
 <img src="https://i.gyazo.com/2a64e2946fc9c058f7b40b0b5ab1a92a.png" width="640">
+
+
+## Using Binance Smart Chain
+
+* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet including Binance Smart Chain BNB
+
+<img src="https://i.gyazo.com/814d36df8afb29864b27df93ee50f095.png" width="640">
+
+
+### Receive BNB on the Binance Smart Chain
+
+* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)
+**
+
+<img src="https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png" width="640">
+
+
+
+
+NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
+
+
