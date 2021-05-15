@@ -111,6 +111,19 @@ If you select to use the drag and scan qr technology then all you need to do is 
 
 <img src="https://i.gyazo.com/225474fb4ab42238460c062f41c182de.png" width="640">
 
+
+* Enter the amount you want to send of the coin 
+
+<img src="https://i.gyazo.com/98cc4f09e4fe2be389f8a3053164b254.png" width="640">
+
+
+* Confirm the details of your send
+
+<img src="https://i.gyazo.com/1e2230d022867e8665dcbec7e43db5b4.png" width="640">
+
+
+
+
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
 
 
