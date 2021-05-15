@@ -47,3 +47,13 @@ We are currently working on a full re-design of the onboarding process to allow 
 * If you would like to have additional security you can create an individual pin for each of your wallets which is seperate from your local account password providing additional security. **(this is optional)**
 
 <img src="https://i.gyazo.com/f0bc58cecf6a33d3a75b925b96999485.png" width="640">
+
+
+* Select if you want to use a 12 or 24 word seed 
+
+<img src="https://i.gyazo.com/0f1c65a5c55101cdb47bb412c714467b.png" width="640">
+
+
+* You will now need to confirm that you understand that you have to backup your 12 or 24 word seed, we recommend keeping your seed phrases offline and some where safe since the 12 or 24 word seed can be used to recover your wallet. *(Never share your seed with anyone, this includes the Infinity Wallet team or support)**
+
+<img src="https://i.gyazo.com/7290d9aa729b957494a37f9c709a774e.png" width="640">
