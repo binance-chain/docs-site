@@ -21,6 +21,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 
 ### Launch the Infinity Wallet to create your local account and wallet
+We are currently working on a full re-design of the onboarding process to allow users to access the wallet easier and then configure more later.
 
 
 * Create a local account, you can name this anything as the account name is only used locally within your own device
@@ -31,3 +32,13 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 * Create a password for your local account and confirm your password
 
 <img src="https://i.gyazo.com/444cf58ffe8bcadf09b0a0cd01fcb528.png" width="640">
+
+
+* Select to either create a new wallet or recover an existing wallet (You can import most other wallets 12 or 24 seed words into the Infinity Wallet as we follow the standards)
+
+<img src="https://i.gyazo.com/c8ade6560a84a969d70416bf9f652f6b.png" width="640">
+
+
+* Give your wallet a name so you can easily identify it within your local account
+
+<img src="https://i.gyazo.com/1ce4f88c5851c9400a180cac1af25494.png" width="640">
