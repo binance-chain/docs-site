@@ -36,4 +36,4 @@
 | 30     | [Ownbit](wallets/ownbit.md)                            | <https://ownbit.io>              |No|No|  No|
 | 31     | [Frontier](wallets/frontier.md)                        | <https://frontierwallet.com/>    |No|Yes|  No|
 | 32     | [D'CENT Wallet](wallets/dcent-wallet.md)               | <https://dcentwallet.com/>       |No|Yes|  No|
-| 33     | [Infinity Wallet](wallets/infinity-wallet.md) (Desktop & Mobile Wallet) | <https://infinitywallet.io/>     |Yes  | No|Yes|
+| 33     | [Infinity Wallet](wallets/infinitywallet.md) (Desktop & Mobile Wallet) | <https://infinitywallet.io/>     |Yes  | No|Yes|
