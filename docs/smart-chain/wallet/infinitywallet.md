@@ -148,6 +148,29 @@ To connect your wallet make sure the platform you are connecting to supports *Wa
 <img src="https://i.gyazo.com/28408ddda804f576356faf2317c88aaa.png" width="640">
 
 
+ * On sucessfully approving the connection between the Infinity Wallet and the DeFi or Dapp platform you will see in the bottom left of the Infinity Wallet that the **Wallet Connect** icon will be green and you will also now be connected/logged-in with your wallet to the DeFi or Dapp platform.
+
+<img src="https://i.gyazo.com/ac9aba3b686b771c37daa3d604f76eed.png" width="640">
+
+<img src="https://i.gyazo.com/cd7d911a85e9b5b3ecc5599ec57364ce.png" width="640">
+
+
+ * Congratulations you can now start interacting with the DeFi or Dapp platform and confirming all transactions securley from the saftey of your Infinity Wallet.
+ 
+<img src="https://i.gyazo.com/6baf460684f5963333b981343134e3be.png" width="640">
+
+
+ * On creating a transaction on the DeFi or Dapp platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it.
+ 
+<img src="https://i.gyazo.com/6476ea6c59b42f3bf7a5389b5db6a518.png" width="640">
+
+
+ * On accepting to proceed with the transaction the Infinity Wallet will sign the transaction and push it over the network without ever revealing your key to the platform you are interacting with. Within the Infinity Wallet and on the Platform you should see a sucess message that the transaction was signed and pushed
+
+<img src="https://i.gyazo.com/f964f8520c7ffd1826d02a55908a7940.png" width="640">
+
+
+
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
 
 
