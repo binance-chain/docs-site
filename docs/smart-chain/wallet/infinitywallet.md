@@ -127,6 +127,25 @@ If you select to use the drag and scan qr technology then all you need to do is 
 <img src="https://i.gyazo.com/8980d97ec24d52aec7f970ae29ea3b8b.png" width="640">
 
 
+## Connect to DeFi Platforms and Dapps
+
+The Infinity Wallet supports the ability for users to connect their Infinity Wallet securley to decentralized application on the Binance Smart Chain, Binance Chain and Ethereum. 
+
+To connect your wallet make sure the platform you are connecting to supports *Wallet Connect**, then go to your Infinity Wallet and click in the bottom left corner **Wallet Connect**
+
+ * In the popup that will show you can select one of 3 options to connect, the recomended and easiest option will be to use the 3rd option "**Desktop Scan**" which uses our drag and scan desktop technology.
+
+<img src="https://i.gyazo.com/2f9448b036c0639ae33b277cbc3b048f.png" width="640">
+
+
+ * Drag and resize the desktop qr scanner over the QR you want to scan, in this case we will be connecting to Infinity Crypto (https://infinitycrypto.com/)
+
+<img src="https://i.gyazo.com/f68ed47e92a546f1f58973fbb390757a.png" width="640">
+
+
+ * Approve the connection between the platform and the wallet, this does not share access to your wallet and will require you to confirm every transaction on the platform within your Infinity Wallet. All transactions on the platform will be pushed to be signed within the Infinity Wallet ensuring your keys are never shared and maximum security while interacting with DeFi and Dapps.
+
+<img src="https://i.gyazo.com/28408ddda804f576356faf2317c88aaa.png" width="640">
 
 
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
