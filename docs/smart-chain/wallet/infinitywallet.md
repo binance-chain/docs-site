@@ -54,6 +54,21 @@ We are currently working on a full re-design of the onboarding process to allow 
 <img src="https://i.gyazo.com/0f1c65a5c55101cdb47bb412c714467b.png" width="640">
 
 
-* You will now need to confirm that you understand that you have to backup your 12 or 24 word seed, we recommend keeping your seed phrases offline and some where safe since the 12 or 24 word seed can be used to recover your wallet. *(Never share your seed with anyone, this includes the Infinity Wallet team or support)**
+* You will now need to confirm that you understand that you have to backup your 12 or 24 word seed, we recommend keeping your seed phrases offline and some where safe since the 12 or 24 word seed can be used to recover your wallet. **(Never share your seed with anyone, this includes the Infinity Wallet team or support)**
 
 <img src="https://i.gyazo.com/7290d9aa729b957494a37f9c709a774e.png" width="640">
+
+
+* Make a backup of the words on the screen, we recommend making a paper backup and not an online backup, if you ever lose access to your pc or forget your password you will need your 12 or 24 word seed to recover your wallet **(Keep these words secure and never share with anyone since with these words anyone would be able to access your wallet)**
+
+<img src="https://i.gyazo.com/e09729151f6fe79877b6756677b49e17.png" width="640">
+
+
+* Confirm 4 of the words in the correct order as request to generate your wallet
+
+<img src="https://i.gyazo.com/3d27eed8dd5080ae457d9b04e49613fa.png" width="640">
+
+
+* Congratulations you have sucessfully created your Infinity Wallet
+
+<img src="https://i.gyazo.com/2a64e2946fc9c058f7b40b0b5ab1a92a.png" width="640">
