@@ -98,9 +98,18 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ### Send BNB on the Binance Smart Chain
 
+* To send go to **My Wallet** and then **Binance Coin (BSC)** and then click on the send button.
+
+<img src="https://i.gyazo.com/ef440462eab964b639d2f94724cdd0be.png" width="640">
 
 
+* Enter the address of the person or wallet you are wanting to send to, you can also select someone from your contacts or scan a qr by either importing, scaning with a webcam or using our drag and scan desktop technology we created to allow users to scan qr codes on the desktop.
 
+<img src="https://i.gyazo.com/bd7b2b02d7904cd5e1a3c0c47b9a0632.png" width="640">
+
+If you select to use the drag and scan qr technology then all you need to do is drag the window over a qr code you have been shared and it will automatically detect the address and fill it in for you as the send address.
+
+<img src="https://i.gyazo.com/225474fb4ab42238460c062f41c182de.png" width="640">
 
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
 
