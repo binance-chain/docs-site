@@ -14,4 +14,4 @@
 | 7      | [XWallet](wallets/xwallet.md)                          | Mainnet                          |
 | 8      | [Atomic Wallet](wallets/atomic-wallet.md)              | Mainnet                          |
 | 9      | [Cosmostation Wallet](wallets/cosmostation.md)         | Mainnet&Testnet                  |
-| 10     | [Infinity Wallet](wallets/infinity-wallet.md)          | Mainnet&Testnet                  |
+| 10     | [Infinity Wallet](wallets/infinitywallet.md)           | Mainnet&Testnet                  |
