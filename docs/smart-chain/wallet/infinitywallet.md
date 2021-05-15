@@ -86,6 +86,20 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png" width="640">
 
 
+* Now that **Binance Coin (BSC)** is enabled go back to **My Wallet** and then **Binance Coin (BSC)**, to get your recieve adddress click on the receive button.
+
+<img src="https://i.gyazo.com/ef440462eab964b639d2f94724cdd0be.png" width="640">
+
+
+* Copy your receive address by clicking on it or select one of the options to print, share or request an amount which will generate a decentralize link to receive funds
+
+<img src="https://i.gyazo.com/e4bdf9d357925d72b433d84f2bf76808.png" width="640">
+
+
+### Send BNB on the Binance Smart Chain
+
+
+
 
 
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
