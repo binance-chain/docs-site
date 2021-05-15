@@ -81,7 +81,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ### Receive BNB on the Binance Smart Chain
 
-* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**, all **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**. 
+* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**. All **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**. 
 
 <img src="https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png" width="640">
 
