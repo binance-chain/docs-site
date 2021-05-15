@@ -171,6 +171,4 @@ To connect your wallet make sure the platform you are connecting to supports *Wa
 
 
 
-NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
-
-
+The Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements in the roadmap to further allow easier global adoption of cryptocurrency along with it partner platform Infinity Crypto which is revolutionising the DeFi and exchange space on the Binance Smart Chain and Ethereum.
