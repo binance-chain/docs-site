@@ -42,3 +42,8 @@ We are currently working on a full re-design of the onboarding process to allow 
 * Give your wallet a name so you can easily identify it within your local account
 
 <img src="https://i.gyazo.com/1ce4f88c5851c9400a180cac1af25494.png" width="640">
+
+
+* If you would like to have additional security you can create an individual pin for each of your wallets which is seperate from your local account password providing additional security. **(this is optional)**
+
+<img src="https://i.gyazo.com/f0bc58cecf6a33d3a75b925b96999485.png" width="640">
