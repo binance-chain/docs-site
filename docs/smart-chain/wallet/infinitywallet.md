@@ -18,3 +18,16 @@ Connect to DeFi protocols and Dapps directly on desktop or mobile from within th
 The **Infinity Wallet** is currently available to be downloaded for desktop devices on **Windows**, **macOS** and **Linux**. In the coming months there will be a mobile wallet released to accompany our revolutionary desktop wallet.
 
 <img src="https://i.gyazo.com/451f7b5952bed14719d168ee3d512cf8.png" width="640">
+
+
+### Launch the Infinity Wallet to create your local account and wallet
+
+
+* Create a local account, you can name this anything as the account name is only used locally within your own device
+
+<img src="https://i.gyazo.com/c2eebe293504a7c0ed4cdcff634832a8.png" width="640">
+
+
+* Create a password for your local account and confirm your password
+
+<img src="https://i.gyazo.com/444cf58ffe8bcadf09b0a0cd01fcb528.png" width="640">
