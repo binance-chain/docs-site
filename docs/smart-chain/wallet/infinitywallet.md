@@ -69,6 +69,6 @@ We are currently working on a full re-design of the onboarding process to allow 
 <img src="https://i.gyazo.com/3d27eed8dd5080ae457d9b04e49613fa.png" width="640">
 
 
-* Congratulations you have sucessfully created your Infinity Wallet
+* Congratulations you have sucessfully created your Infinity Wallet and can now access the vast amount of features the Infinity Wallet has to offer
 
 <img src="https://i.gyazo.com/2a64e2946fc9c058f7b40b0b5ab1a92a.png" width="640">
