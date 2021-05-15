@@ -7,7 +7,7 @@ Advancing the world of decentralized finance with an all-in-one digital wallet e
 
 Connect to DeFi protocols and Dapps directly on desktop or mobile from within the Infinity Wallet, to securely use decentralized platforms without compromising your assets. Providing enhanced ease of use and security, as well as support for multiple chains.
 
-<img src="https://i.gyazo.com/3fdcb211d93b7d7657aa1766f84fbe9d.png" width="280">
+<img src="https://i.gyazo.com/3fdcb211d93b7d7657aa1766f84fbe9d.png" width="900">
 
 ## Instruction
 
