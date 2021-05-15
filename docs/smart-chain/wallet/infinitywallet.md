@@ -122,6 +122,11 @@ If you select to use the drag and scan qr technology then all you need to do is 
 <img src="https://i.gyazo.com/1e2230d022867e8665dcbec7e43db5b4.png" width="640">
 
 
+* Congratulations you have successfully sent
+
+<img src="https://i.gyazo.com/8980d97ec24d52aec7f970ae29ea3b8b.png" width="640">
+
+
 
 
 NOTE: In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
