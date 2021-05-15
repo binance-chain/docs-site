@@ -21,7 +21,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 
 ### Launch the Infinity Wallet to create your local account and wallet
-We are currently working on a full re-design of the onboarding process to allow users to access the wallet easier and then configure more later.
+In the future we look to make it a lot faster for users to onboard with a fast onboarding option allowing to get into the application within 2 clicks, we are also working on the Infinity Wallet for mobile focusing more on day to day use with further features and advancements. We also look to provide in the future new ways for users to create different type of wallets such as cloud wallets, online wallets and social wallets, as well as support for hardware wallets.
 
 
 * Create a local account, you can name this anything as the account name is only used locally within your own device
