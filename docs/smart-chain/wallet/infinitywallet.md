@@ -81,7 +81,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ### Receive BNB on the Binance Smart Chain
 
-* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**. All **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**. 
+* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**. All **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**
 
 <img src="https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png" width="640">
 
@@ -167,9 +167,9 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/6476ea6c59b42f3bf7a5389b5db6a518.png" width="640">
 
 
- * After confirming an interaction, the Infinity Wallet will sign the transaction and push it over the network, without revealing your key to the platform you are interacting with. Within the Infinity Wallet and on the Platform you should see a success message that the transaction was signed and pushed.
+ * After confirming an interaction, the Infinity Wallet will sign the transaction and push it over the network, without revealing your key to the platform you are interacting with. Within the Infinity Wallet and on the Platform you should see a success message that the transaction was signed and pushed
 
 <img src="https://i.gyazo.com/f964f8520c7ffd1826d02a55908a7940.png" width="640">
 
 
-Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum
+Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum.
