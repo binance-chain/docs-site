@@ -74,7 +74,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ## Using Binance Smart Chain
 
-* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet including Binance Smart Chain BNB
+* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet including Binance Smart Chain BNB and other Binance Smart Chain Tokens.
 
 <img src="https://i.gyazo.com/814d36df8afb29864b27df93ee50f095.png" width="640">
 
