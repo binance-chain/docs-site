@@ -8,7 +8,6 @@
 - 2T GB of free disk space, NVMe drive.
 - 8 cores of CPU and 32 gigabytes of memory (RAM)
 - A broadband Internet connection with upload/download speeds of 10 megabyte per second
-- Chaindata should be on XFS
 
 ### Setup a Validator Node at Testnet
 
