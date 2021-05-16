@@ -32,7 +32,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/444cf58ffe8bcadf09b0a0cd01fcb528.png" width="640">
 
 
-* Select to either create a new wallet or recover an existing wallet (You can import most other wallets 12 or 24 seed words into the Infinity Wallet as we follow the standards)
+* Select to either create a new wallet or recover an existing wallet (You can import your 12 or 24 word seed phrase from most other wallets into the Infinity Wallet as we follow the standard)
 
 <img src="https://i.gyazo.com/c8ade6560a84a969d70416bf9f652f6b.png" width="640">
 
@@ -42,7 +42,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/1ce4f88c5851c9400a180cac1af25494.png" width="640">
 
 
-* If you would like to have additional security you can create an individual pin for each of your wallets which is seperate from your local account password providing additional security. **(this is optional)**
+* If you would like to have additional security, you can create an individual pin for each of your wallets **(This is optional)**
 
 <img src="https://i.gyazo.com/f0bc58cecf6a33d3a75b925b96999485.png" width="640">
 
@@ -52,17 +52,17 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/0f1c65a5c55101cdb47bb412c714467b.png" width="640">
 
 
-* You will now need to confirm that you understand that you have to backup your 12 or 24 word seed, we recommend keeping your seed phrases offline and some where safe since the 12 or 24 word seed can be used to recover your wallet. **(Never share your seed with anyone, this includes the Infinity Wallet team or support)**
-
+* You will now need to confirm that you understand that you have to backup your 12 or 24 word seed to be able to recover your wallet. We recommend keeping your seed phrase offline and somewhere secure **(Never share your seed with anyone, including the Infinity Wallet support team)**
+ 
 <img src="https://i.gyazo.com/7290d9aa729b957494a37f9c709a774e.png" width="640">
 
 
-* Make a backup of the words on the screen, we recommend making a paper backup and not an online backup, if you ever lose access to your pc or forget your password you will need your 12 or 24 word seed to recover your wallet **(Keep these words secure and never share with anyone since with these words anyone would be able to access your wallet)**
+* **Make a backup of the words** on the screen, we recommend making a paper backup and not an online backup. If you ever lose access to your computer or forget your password, you will need your 12 or 24 word seed to recover your wallet **(Keep these words secure and never share them with anyone, as these words grant full access to your wallet)**
 
 <img src="https://i.gyazo.com/e09729151f6fe79877b6756677b49e17.png" width="640">
 
 
-* Confirm 4 of the words in the correct order as request to generate your wallet
+* Confirm 4 of the words in the correct order as requested, to generate your wallet
 
 <img src="https://i.gyazo.com/3d27eed8dd5080ae457d9b04e49613fa.png" width="640">
 
@@ -86,33 +86,34 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png" width="640">
 
 
-* Now that **Binance Coin (BSC)** is enabled go back to **My Wallet** and then **Binance Coin (BSC)**, to get your recieve adddress click on the receive button.
+* Now that **Binance Coin (BSC)** is enabled go back to **My Wallet** and select **Binance Coin (BSC)**, to get your receive adddress click on the receive button
 
 <img src="https://i.gyazo.com/ef440462eab964b639d2f94724cdd0be.png" width="640">
 
 
-* Copy your receive address by clicking on it or select one of the options to print, share or request an amount which will generate a decentralize link to receive funds
+* Copy your receive address by clicking on it, or select one of the options to print, share or request an amount to generate a decentralized link to request funds
 
 <img src="https://i.gyazo.com/e4bdf9d357925d72b433d84f2bf76808.png" width="640">
 
 
 ### Send BNB on the Binance Smart Chain
 
-* To send go to **My Wallet** and then **Binance Coin (BSC)** and then click on the send button.
+* To send go to **My Wallet**, select **Binance Coin (BSC)** and then click on the send button
 
 <img src="https://i.gyazo.com/ef440462eab964b639d2f94724cdd0be.png" width="640">
 
 
-* Enter the address of the person or wallet you are wanting to send to, you can also select someone from your contacts or scan a qr by either importing, scaning with a webcam or using our drag and scan desktop technology we created to allow users to scan qr codes on the desktop.
+* Either enter an address to send to, select from your contact list, or scan a qr request by importing, scanning with a webcam, or using our drag and scan desktop technology
 
 <img src="https://i.gyazo.com/bd7b2b02d7904cd5e1a3c0c47b9a0632.png" width="640">
 
-If you select to use the drag and scan qr technology then all you need to do is drag the window over a qr code you have been shared and it will automatically detect the address and fill it in for you as the send address.
+
+* If you select to use the drag and scan qr technology, then all you need to do is drag the window over a qr code you have been shared and it will automatically detect the address and fill it in for you as the send address
 
 <img src="https://i.gyazo.com/225474fb4ab42238460c062f41c182de.png" width="640">
 
 
-* Enter the amount you want to send of the coin 
+* Enter the amount of the coin you want to send
 
 <img src="https://i.gyazo.com/98cc4f09e4fe2be389f8a3053164b254.png" width="640">
 
@@ -127,48 +128,48 @@ If you select to use the drag and scan qr technology then all you need to do is 
 <img src="https://i.gyazo.com/8980d97ec24d52aec7f970ae29ea3b8b.png" width="640">
 
 
+
 ## Connect to DeFi Platforms and Dapps
 
-The Infinity Wallet supports the ability for users to connect their Infinity Wallet securley to decentralized application on the Binance Smart Chain, Binance Chain and Ethereum. 
+Infinity Wallet supports the ability for users to connect securely to decentralized application on the Binance Smart Chain, Binance Chain and Ethereum.
 
-To connect your wallet make sure the platform you are connecting to supports *Wallet Connect**, then go to your Infinity Wallet and click in the bottom left corner **Wallet Connect**
+To connect your wallet make sure the platform you are connecting to supports Wallet Connect, then go to your Infinity Wallet and click **WalletConnect** in the bottom left corner.
 
- * In the popup that will show you can select one of 3 options to connect, the recomended and easiest option will be to use the 3rd option "**Desktop Scan**" which uses our drag and scan desktop technology.
+ * In the popup that will show you can select one of 3 options to connect, the recommended and easiest option will be to use the "**Desktop Scan**" which uses our drag and scan desktop technology
 
 <img src="https://i.gyazo.com/2f9448b036c0639ae33b277cbc3b048f.png" width="640">
 
 
- * Drag and resize the desktop qr scanner over the QR you want to scan, in this case we will be connecting to Infinity Crypto (https://infinitycrypto.com/)
+ * Drag and resize the desktop QR scanner over the QR you want to scan, in this case we will be connecting to Infinity Crypto (https://infinitycrypto.com/)
 
 <img src="https://i.gyazo.com/f68ed47e92a546f1f58973fbb390757a.png" width="640">
 
 
- * Approve the connection between the platform and the wallet, this does not share access to your wallet and will require you to confirm every transaction on the platform within your Infinity Wallet. All transactions on the platform will be pushed to be signed within the Infinity Wallet ensuring your keys are never shared and maximum security while interacting with DeFi and Dapps.
+ * Approve the connection between the platform and your wallet. All transactions on the platform will be pushed to be confirmed and signed within the Infinity Wallet, ensuring your keys are never shared and providing maximum security while interacting with DeFi and Dapps
 
 <img src="https://i.gyazo.com/28408ddda804f576356faf2317c88aaa.png" width="640">
 
 
- * On sucessfully approving the connection between the Infinity Wallet and the DeFi or Dapp platform you will see in the bottom left of the Infinity Wallet that the **Wallet Connect** icon will be green and you will also now be connected/logged-in with your wallet to the DeFi or Dapp platform.
+ * After sucessfully approving the connection between the Infinity Wallet and the DeFi or Dapp platform, you will see that the WalletConnect icon in the bottom left of the Infinity Wallet will be green, signifying that your wallet is now connected to the DeFi or Dapp platform
 
 <img src="https://i.gyazo.com/ac9aba3b686b771c37daa3d604f76eed.png" width="640">
 
 <img src="https://i.gyazo.com/cd7d911a85e9b5b3ecc5599ec57364ce.png" width="640">
 
 
- * Congratulations you can now start interacting with the DeFi or Dapp platform and confirming all transactions securley from the saftey of your Infinity Wallet.
+ * Congratulations you can now start interacting with the DeFi or Dapp platform and confirming all transactions securely from the safety of your Infinity Wallet
  
 <img src="https://i.gyazo.com/6baf460684f5963333b981343134e3be.png" width="640">
 
 
- * On creating a transaction on the DeFi or Dapp platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it.
- 
+ * On creating a transaction on the DeFi or Dapp platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it
+
 <img src="https://i.gyazo.com/6476ea6c59b42f3bf7a5389b5db6a518.png" width="640">
 
 
- * On accepting to proceed with the transaction the Infinity Wallet will sign the transaction and push it over the network without ever revealing your key to the platform you are interacting with. Within the Infinity Wallet and on the Platform you should see a sucess message that the transaction was signed and pushed
+ * After confirming an interaction, the Infinity Wallet will sign the transaction and push it over the network, without revealing your key to the platform you are interacting with. Within the Infinity Wallet and on the Platform you should see a success message that the transaction was signed and pushed.
 
 <img src="https://i.gyazo.com/f964f8520c7ffd1826d02a55908a7940.png" width="640">
 
 
-
-The Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements in the roadmap to further allow easier global adoption of cryptocurrency along with it partner platform Infinity Crypto which is revolutionising the DeFi and exchange space on the Binance Smart Chain and Ethereum.
+Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum
