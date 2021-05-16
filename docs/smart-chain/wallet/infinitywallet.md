@@ -172,4 +172,4 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/f964f8520c7ffd1826d02a55908a7940.png" width="640">
 
 
-Infinity Wallet is pushing innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum.
+The Infinity Wallet is aiming to push crypto innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum.
