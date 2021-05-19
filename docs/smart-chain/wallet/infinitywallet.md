@@ -157,7 +157,7 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/cd7d911a85e9b5b3ecc5599ec57364ce.png" width="640">
 
 
- * Congratulations you can now start interacting with the Dapp or DeFi platforms and confirming all transactions securely from the safety of your Infinity Wallet
+ * Congratulations you can now start interacting with the Dapp or DeFi platform and confirming all transactions securely from the safety of your Infinity Wallet
  
 <img src="https://i.gyazo.com/6baf460684f5963333b981343134e3be.png" width="640">
 
