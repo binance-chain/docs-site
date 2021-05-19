@@ -150,7 +150,7 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/28408ddda804f576356faf2317c88aaa.png" width="640">
 
 
- * After sucessfully approving the connection between the Infinity Wallet and the DeFi or Dapp platform, you will see that the WalletConnect icon in the bottom left of the Infinity Wallet will be green, signifying that your wallet is now connected to the DeFi or Dapp platform
+ * After sucessfully approving the connection between the Infinity Wallet and the Dapp or DeFi platform, you will see that the WalletConnect icon in the bottom left of the Infinity Wallet will be green, signifying that your wallet is now connected to the Dapp or DeFi platform
 
 <img src="https://i.gyazo.com/ac9aba3b686b771c37daa3d604f76eed.png" width="640">
 
@@ -162,7 +162,7 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/6baf460684f5963333b981343134e3be.png" width="640">
 
 
- * On creating a transaction on the Dapps or DeFi platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it
+ * On creating a transaction on the Dapp or DeFi platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it
 
 <img src="https://i.gyazo.com/6476ea6c59b42f3bf7a5389b5db6a518.png" width="640">
 
