@@ -62,19 +62,19 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/e09729151f6fe79877b6756677b49e17.png" width="640">
 
 
-* Confirm 4 of the words in the correct order as requested, to generate your wallet
+* Confirm a selection of the words in the correct order as requested, to generate your wallet
 
 <img src="https://i.gyazo.com/3d27eed8dd5080ae457d9b04e49613fa.png" width="640">
 
 
-* Congratulations you have sucessfully created your Infinity Wallet and can now access the vast amount of features the Infinity Wallet has to offer
+* Congratulations you have successfully created your Infinity Wallet and can now access the vast array of features it has to offer
 
 <img src="https://i.gyazo.com/2a64e2946fc9c058f7b40b0b5ab1a92a.png" width="640">
 
 
 ## Using Binance Smart Chain
 
-* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet including Binance Smart Chain BNB and other Binance Smart Chain Tokens.
+* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet, including BNB and Binance Smart Chain Tokens
 
 <img src="https://i.gyazo.com/814d36df8afb29864b27df93ee50f095.png" width="640">
 
@@ -103,12 +103,12 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 <img src="https://i.gyazo.com/ef440462eab964b639d2f94724cdd0be.png" width="640">
 
 
-* Either enter an address to send to, select from your contact list, or scan a qr request by importing, scanning with a webcam, or using our drag and scan desktop technology
+* Either enter an address to send to, select from your contact list, or scan a QR request by importing, scanning with a webcam, or using our drag and scan desktop technology
 
 <img src="https://i.gyazo.com/bd7b2b02d7904cd5e1a3c0c47b9a0632.png" width="640">
 
 
-* If you select to use the drag and scan qr technology, then all you need to do is drag the window over a qr code you have been shared and it will automatically detect the address and fill it in for you as the send address
+* If you select to use the drag and scan QR technology, then all you need to do is drag the window over a QR code you have been shared and it will automatically detect the address and fill it in for you as the send address
 
 <img src="https://i.gyazo.com/225474fb4ab42238460c062f41c182de.png" width="640">
 
@@ -145,7 +145,7 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/f68ed47e92a546f1f58973fbb390757a.png" width="640">
 
 
- * Approve the connection between the platform and your wallet. All transactions on the platform will be pushed to be confirmed and signed within the Infinity Wallet, ensuring your keys are never shared and providing maximum security while interacting with DeFi and Dapps
+ * Approve the connection between the platform and your wallet. All transactions on the platform will be pushed to be confirmed and signed within the Infinity Wallet, ensuring your keys are never shared and providing maximum security while interacting with Dapps and DeFi
 
 <img src="https://i.gyazo.com/28408ddda804f576356faf2317c88aaa.png" width="640">
 
@@ -157,12 +157,12 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 <img src="https://i.gyazo.com/cd7d911a85e9b5b3ecc5599ec57364ce.png" width="640">
 
 
- * Congratulations you can now start interacting with the DeFi or Dapp platform and confirming all transactions securely from the safety of your Infinity Wallet
+ * Congratulations you can now start interacting with the Dapp or DeFi platforms and confirming all transactions securely from the safety of your Infinity Wallet
  
 <img src="https://i.gyazo.com/6baf460684f5963333b981343134e3be.png" width="640">
 
 
- * On creating a transaction on the DeFi or Dapp platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it
+ * On creating a transaction on the Dapps or DeFi platform you will receive a popup request within your Infinity Wallet to send, sign or approve a transaction. You can review the information of the transaction and either accept or decline it
 
 <img src="https://i.gyazo.com/6476ea6c59b42f3bf7a5389b5db6a518.png" width="640">
 
