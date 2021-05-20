@@ -85,6 +85,8 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
 * [GetBlock.io](https://getblock.io/): <https://getblock.io/nodes/bsc>
 
 
+[ANKR endpoint](https://docs.ankr.com/enteprise-solutions/binance-smart-chain/ankr-endpoint)
+
 ## Start
 
 You can start the HTTP JSON-RPC with the --rpc flag
