@@ -4,10 +4,9 @@
 
 ### Choose Your Validator hardware
 
-- VPS running recent versions of Mac OS X or Linux.
-- 2T GB of free disk space, solid-state drive(SSD).
+- VDS running recent versions of Mac OS X or Linux.
+- 2T GB of free disk space, NVMe drive.
 - 8 cores of CPU and 32 gigabytes of memory (RAM)
-- Suggest m5zn.2xlarge instance type on AWS, or c2-standard-8 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 10 megabyte per second
 
 ### Setup a Validator Node at Testnet
