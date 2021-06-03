@@ -178,7 +178,7 @@ The current fee for trades, applied on the settled amounts, is as follows:
 
 Transaction Type | Pay in non-BNB Asset | Pay in BNB
 -- | -- | --
-Trade | 0.1% | 0.04%
+Trade | 0.1% | 0.05%
 
 Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=amino). It's under the "params/DexFeeParam/".  "FeeRate" and "FeeRateNative" are both under unit of 10^-6.
 
