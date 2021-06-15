@@ -173,7 +173,7 @@ Binance Chain
 | limit | query | limit | No | long |
 | offset | query | offset | No | long |
 | startTime | query | startTime | No | long |
-| status | query | status | No | [ string ] |
+| status | query | status | No | string |
 | symbol | query | symbol | No | string |
 | walletAddress | query | walletAddress | Yes | string |
 
@@ -367,7 +367,7 @@ Binance Chain
 | id | string |  |  |
 | networkFee | number |  |  |
 | networkFeePromoted | boolean |  |  |
-| status | string |  |  |
+| status | string |  | [WaitingForDeposit,DepositInProgress,WithdrawInProgress,Completed,Failed,Cancelled] |
 | swapFee | number |  |  |
 | swapFeeRate | number |  |  |
 | swapTxId | string |  |  |
@@ -510,7 +510,7 @@ Binance Chain
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
-| exchangeGasAmount | number |  |  |
+| exchangeGasAmount | number |  | 0.5,1,2 |
 | fromNetwork | string |  |  |
 | source | integer |  |  |
 | symbol | string |  |  |

@@ -295,10 +295,14 @@ paths:
           in: query
           description: status
           required: false
-          type: array
-          items:
-            type: string
-          collectionFormat: multi
+          type: string
+          enum:
+            - WaitingForDeposit
+            - DepositInProgress
+            - WithdrawInProgress
+            - Completed
+            - Failed
+            - Cancelled
         - name: symbol
           in: query
           description: symbol
