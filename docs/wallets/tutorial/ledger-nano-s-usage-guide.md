@@ -44,15 +44,9 @@ If it is, the installation has been successful.
 
 ## Setup/Login Instructions
 
-6) Visit the binance.org website and click on the "Unlock Wallet" link on the top right part of the page.
+6) Go to [www.binance.org](http://www.binance.org/)
 
-Go to [www.binance.org](http://www.binance.org/), click on "Start Trading".
-
-![img](assets/ledger-nano-s-usage-guide/start.png)
-
-Click "Unlock wallet" on the top right navigation bar.
-
-![img](assets/ledger-nano-s-usage-guide/unlock.png)
+Go to "Unlock wallet" [page](https://www.binance.org/en/unlock).
 
 Choose "Ledger Device" and verify your address.
 
