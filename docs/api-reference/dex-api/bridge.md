@@ -173,7 +173,7 @@ Binance Chain
 | limit | query | limit | No | long |
 | offset | query | offset | No | long |
 | startTime | query | startTime | No | long |
-| status | query | status | No | [ string ] |
+| status | query | status | No | string |
 | symbol | query | symbol | No | string |
 | walletAddress | query | walletAddress | Yes | string |
 
@@ -235,6 +235,42 @@ Binance Chain
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
 | 200 | OK | [NetworkListV2](#networklistv2) |
+| 401 | Unauthorized |  |
+| 403 | Forbidden |  |
+| 404 | Not Found |  |
+
+### /api/v1/unknown-deposits
+---
+##### ***GET***
+**Summary:** getUnknownDeposits
+
+**Parameters**
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| limit | query | limit | No | long |
+| offset | query | offset | No | long |
+| walletAddress | query | walletAddress | Yes | string |
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [ResponseStatusBodyDepositList](#responsestatusbodydepositlist) |
+| 401 | Unauthorized |  |
+| 403 | Forbidden |  |
+| 404 | Not Found |  |
+
+### /api/v2/swaps/validation/ip
+---
+##### ***GET***
+**Summary:** validateIP
+
+**Responses**
+
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | OK | [ResponseStatusBodyboolean](#responsestatusbodyboolean) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
 | 404 | Not Found |  |
@@ -483,3 +519,48 @@ Binance Chain
 | toNetwork | string |  |  |
 | walletAddress | string |  |  |
 | walletNetwork | string |  |  |
+
+### ResponseStatusBodyDepositList
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| code | integer |  |  |
+| data | [DepositList](#depositlist) |  |  |
+| message | string |  |  |
+
+### Deposit
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| amount | number |  |  |
+| confirmTimes | integer |  |  |
+| depositTime | long |  |  |
+| depositTxUrl | string |  |  |
+| fromAddress | string |  |  |
+| label | string |  |  |
+| network | string |  |  |
+| refundId | string |  |  |
+| refundMessage | string |  |  |
+| refundStatus | string |  |  |
+| refundTx | string |  |  |
+| refundTxUrl | string |  |  |
+| status | string |  |  |
+| swapId | string |  |  |
+| toAddress | string |  |  |
+| tokenSymbol | string |  |  |
+| txId | string |  |  |
+
+### DepositList
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| deposits | [ [Deposit](#deposit) ] |  |  |
+| total | long |  |  |
+
+### ResponseStatusBodyboolean
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| code | integer |  |  |
+| data | boolean |  |  |
+| message | string |  |  |

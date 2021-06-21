@@ -1237,6 +1237,7 @@ paths:
         type: enum string
         allowEmptyValue: false
         enum:
+        - TRANSFER
         - NEW_ORDER
         - ISSUE_TOKEN
         - BURN_TOKEN

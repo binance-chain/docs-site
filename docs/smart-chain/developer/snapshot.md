@@ -2,6 +2,8 @@
 
 For v1.1.0:
 
+* [Latest Snapshot](https://github.com/binance-chain/bsc-snapshots)
+
 * [2021-05-15 snapshot](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/geth-20210515.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1623905351&Signature=w1hPMeDxB68aJ2qUM74YbUufCPo%3D) (size 220GB)
 
 checksum: 39e311c37a9844b4dd7fb218553cc99f
