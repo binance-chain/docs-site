@@ -78,13 +78,13 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
 
 ### 3rd Party Provider
 
-* Chainstack: <https://chainstack.com/protocols/binance-smart-chain/>
-
-* QuikNode : <https://quiknode.io>
-
 * ANKR: <https://app.ankr.com/api>
 
+* [Chainstack](https://chainstack.com/): <https://chainstack.com/build-better-with-binance-smart-chain/>
+
 * [GetBlock.io](https://getblock.io/): <https://getblock.io/nodes/bsc>
+
+* QuikNode : <https://quiknode.io>
 
 
 ## Start
