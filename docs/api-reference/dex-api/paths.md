@@ -655,12 +655,15 @@ If the time window is larger than limits, only the first n klines will return. I
 
 ### /api/v1/transactions
 ---
+
+**Note:** This endpoint will be retired soon
+
 ##### ***GET***
 **Summary:** Get transactions.
 
 **Description:** Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
 
-**Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.
+**Query Window:** Default query window is latest 24 hours; he maximum start - end query window is 3 months.
 
 **Rate Limit:** 60 requests per IP per minute.
 
@@ -691,6 +694,8 @@ If the time window is larger than limits, only the first n klines will return. I
 
 ### /api/v1/transactions-in-block/{blockHeight}
 ---
+**Note:** This endpoint will be retired soon
+
 ##### ***GET***
 **Summary:** Get transactions in the specific block.
 
@@ -717,6 +722,9 @@ If the time window is larger than limits, only the first n klines will return. I
 | default | Generic error response | [Error](#error) |
 
 ### /api/v2/transactions-in-block/{blockHeight}
+
+**Note:** This endpoint will be retired soon
+
 ---
 ##### ***GET***
 **Summary:** transactions in Block

@@ -22,55 +22,97 @@ Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=
 The difference between Binance Chain and Ethereum is that there is no notion of `gas`. As a result,
 fees for the rest transactions are fixed. The details are showned in the table below:
 
-* Current Fees Table on Mainnet
+### Current Fees Table on Mainnet
+
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2021-03-21** is as follows:
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
 New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
-IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
-Transfer | N/A | 0.000375 BNB | N
-Multi-send | N/A | 0.0003 BNB | N
-Issue Asset | N/A | 500 BNB | N
-Mint Asset | N/A | 5 BNB | N
-Burn Asset | N/A | 0.5 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
-Lock/unlock/relock Asset | N/A | 0.01 BNB | N
-List Asset | N/A | 1000 BNB | N
-Submit Proposal | N/A | 5 BNB | N
-Deposit | N/A | 0.000625 BNB | N
-Enable Memo Check | N/A | 1 BNB | N
-Disable Memo Check | N/A | 1 BNB | N
-HTLT | N/A | 0.000375 BNB | N
-depositHTLT | N/A | 0.000375 BNB | N
-claimHTLT | N/A | 0.000375 BNB | N
-refundHTLT | N/A | 0.000375 BNB | N
+Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
+IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
+Transfer | N/A | 0.000075 BNB | N
+crossTransferOut| N/A | 0.000075 BNB | N
+Multi-send | N/A | 0.00006 BNB | N
+Issue Asset | N/A | 10 BNB |
+Mint Asset | N/A | 0.002 BNB | N
+Transfer ownership| N/A | 0.002 BNB | N
+Burn Asset | N/A | 0.002 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
+Lock/unlock/relock Asset | N/A | 0.002 BNB | N
+List Asset | N/A | 200 BNB | N
+Submit Proposal | N/A | 1 BNB | N
+Deposit | N/A | 0.000125 BNB | N
+Enable Memo Check | N/A | 0.2 BNB | N
+Disable Memo Check | N/A | 0.2 BNB | N
+HTLT | N/A | 0.000075 BNB | N
+depositHTLT | N/A |  0.000075 BNB | N
+claimHTLT | N/A |  0.000075 BNB | N
+refundHTLT | N/A |  0.000075 BNB | N
+refundHTLT | N/A |  0.000075 BNB | N
+TinyIssueFee | N/A | 0.4 BNB | N
+MiniIssueFee | N/A | 0.6 BNB | N
+SetTokenUri | N/A| 0.000075 BNB | N
+List BEP8 Token| N/A| 1 BNB | N
+Create A New Smart Chain Validator | N/A |2 BNB |N
+Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
+Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
+Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
+Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
+Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
+Submit Smart Chain Proposal | N/A| 1 BNB    | N
+Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
+Smart Chain Proposal Vote   | N/A| 0 BNB   | N
+Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
-* Current Fees Table on Testnet
+
+### Current Fees Table on Testnet
+
+Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2021-03-17** is as follows:
+
 
 Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
 -- | -- | -- | --
 New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00025 BNB | 0.00005 BNB | Y
-IOC (No Fill) | Equivalent 0.0001 BNB | 0.000025 BNB | Y
-Transfer | N/A | 0.000375 BNB | N
-Multi-send | N/A | 0.0003 BNB | N
-Issue Asset | N/A | 500 BNB | N
-Mint Asset | N/A | 5 BNB | N
-Burn Asset | N/A | 0.5 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.005 BNB | N
-Lock/unlock/relock Asset | N/A | 0.01 BNB | N
-List Asset | N/A | 1000 BNB | N
-Submit Proposal | N/A | 5 BNB | N
-Deposit | N/A | 0.000625 BNB | N
-Enable Memo Check | N/A | 1 BNB | N
-Disable Memo Check | N/A | 1 BNB | N
-HTLT | N/A | 0.000375 BNB | N
-depositHTLT | N/A |  0.000375 BNB | Y
-claimHTLT | N/A |  0.000375 BNB | Y
-refundHTLT | N/A |  0.000375 BNB | Y
+Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
+Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
+IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
+Transfer | N/A | 0.000075 BNB | N
+crossTransferOut| N/A | 0.000075 BNB | N
+Multi-send | N/A | 0.00006 BNB | N
+Issue Asset | N/A | 10 BNB |
+Mint Asset | N/A | 0.002 BNB | N
+Transfer ownership| N/A | 0.002 BNB | N
+Burn Asset | N/A | 0.002 BNB | N
+Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
+Lock/unlock/relock Asset | N/A | 0.002 BNB | N
+List Asset | N/A | 200 BNB | N
+Submit Proposal | N/A | 1 BNB | N
+Deposit | N/A | 0.000125 BNB | N
+Enable Memo Check | N/A | 0.2 BNB | N
+Disable Memo Check | N/A | 0.2 BNB | N
+HTLT | N/A | 0.000075 BNB | N
+depositHTLT | N/A |  0.000075 BNB | N
+claimHTLT | N/A |  0.000075 BNB | N
+refundHTLT | N/A |  0.000075 BNB | N
+refundHTLT | N/A |  0.000075 BNB | N
+TinyIssueFee | N/A | 0.4 BNB | N
+MiniIssueFee | N/A | 0.6 BNB | N
+SetTokenUri | N/A| 0.000075 BNB | N
+List BEP8 Token| N/A| 1 BNB | N
+Create A New Smart Chain Validator | N/A |2 BNB |N
+Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
+Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
+Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
+Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
+Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
+Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
+Submit Smart Chain Proposal | N/A| 1 BNB    | N
+Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
+Smart Chain Proposal Vote   | N/A| 0 BNB   | N
+Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
 ### How to calculate multisend fee
 `bnbcli`  offers you a multi-send command to transfer multiple tokens to multiple people. 20% discount is available for `multi-send` transactions. For now, `multi-send` transaction will send some tokens from one address to multiple output addresses. If the count of output address is bigger than the threshold, currently it's 2, then the total transaction fee is  0.001 BNB per token per address.
