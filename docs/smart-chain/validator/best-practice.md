@@ -12,11 +12,6 @@ t=2021-05-13T17:17:42+0800 lvl=info msg="Imported new chain segment"            
 Your syncing speed is `mgasps`. The value should be around 100.
 If you are syncing slowly, please check the speed of your disk.
 
-## Use Chaindata Snapshot
-
-Please download the chain data [snapshot](./snapshot.md) and extract to your home folder to speed up
-
-
 
 ## Store your BNB with a hardware wallet
 
@@ -48,8 +43,7 @@ It is important to keep `geth` running at all times. There are several ways to a
 
 ## Steps to run a backup node
 1. Install the latest version of geth
-2. Sync to the latest height using fast sync mode. You can either download the latest snapshot or start fast sync
-once your node is fully synced
+2. Sync to the latest height using fast sync mode. 
 3. Shut down your node gracefully kill -HUP $(pgrep geth)
 4. Restart your node with `--gcmode archive `
 
