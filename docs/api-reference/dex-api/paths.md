@@ -663,7 +663,7 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Description:** Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
 
-**Query Window:** Default query window is latest 24 hours; he maximum start - end query window is 3 months.
+**Query Window:** Default query window is latest 24 hours;The maximum start - end query window is 3 months.
 
 **Rate Limit:** 60 requests per IP per minute.
 
