@@ -21,24 +21,23 @@ The hardware must meet certain requirements to run a node.
 - A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
 
 ### Validator
-- VPS running recent versions of Mac OS X or Linux.
-- 1T GB of free disk space, solid-state drive(SSD).
-- 8 cores of CPU and 16 gigabytes of memory (RAM).
+- VDS running recent versions of Mac OS X or Linux.
+- 1T GB of free disk space, NVMe drive.
+- 8 cores of CPU and 32 gigabytes of memory (RAM).
 - A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
 
 ## Suggested Requirements
 
 ### Fullnode
 - VPS running recent versions of Mac OS X or Linux.
-- 1T GB of free disk space, solid-state drive(SSD).
+- 1T GB of free disk space, NVMe drive.
 - 8 cores of CPU and 32 gigabytes of memory (RAM).
 - A broadband Internet connection with upload/download speeds of 5 megabyte per second
 
 ### Validator
-- VPS running recent versions of Mac OS X or Linux.
-- 2T GB of free disk space, solid-state drive(SSD).
+- VDS running recent versions of Mac OS X or Linux.
+- 2T GB of free disk space, NVMe drive.
 - 8 cores of CPU and 32 gigabytes of memory (RAM)
-- Suggest m5zn.2xlarge instance type on AWS, or c2-standard-8 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 10 megabyte per second
 
 ## Settings
