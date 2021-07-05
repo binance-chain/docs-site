@@ -27,7 +27,7 @@ d. Step4: Click “ABI” to copy the contract abi and save it.
 
 <img src="https://lh6.googleusercontent.com/qY_5g3ZMnJca6n84W2JxIoBvd8iHRQ0qkOQuJ60pRIcKvgZB5-bXcGq6gS7dFwA5rYXbiS2NyaUQ1Qptcagqa0pb7kmq_S-Dh8drA4R-hDg9_NVp1zPl-tmqIDanlcgLibaR3CV7" alt="img" style="zoom:50%;" />
 
-6. Depoy the contract to BSC
+6. Deploy the contract to BSC
 
 a. Step1: Click button to switch to compile button.
 
